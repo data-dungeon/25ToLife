@@ -1,0 +1,90 @@
+//============================================================================
+//=
+//= FrontendPCH_SN.cpp - Precompiled header CPP file for SN
+//=
+//============================================================================
+
+// Codewarrior flag
+#ifdef CW
+#define CW_PCH
+#endif
+
+#if defined(PS2) && defined(SN)
+
+#include "frontend/customplayer.cpp"
+#include "frontend/frontend.cpp"
+#include "frontend/gamesettings.cpp"
+#include "frontend/inputdriver.cpp"
+#include "frontend/keyboardchat.cpp"
+#include "frontend/savegame.cpp"
+#include "frontend/texteffects.cpp"
+
+// include all the screens
+#include "frontend/screens/screen_AskPassword.cpp"
+#include "frontend/screens/screen_BaseClass.cpp"
+#include "frontend/screens/screen_BasePopup.cpp"
+#include "frontend/screens/screen_Briefing.cpp"
+#include "frontend/screens/screen_clan_create.cpp"
+#include "frontend/screens/screen_clan_invite.cpp"
+#include "frontend/screens/screen_clan_invite_popup.cpp"
+#include "frontend/screens/screen_clan_list.cpp"
+#include "frontend/screens/screen_clan_main.cpp"
+#include "frontend/screens/screen_clan_notices.cpp"
+#include "frontend/screens/screen_clan_popup.cpp"
+#include "frontend/screens/screen_CountryList.cpp"
+#include "frontend/screens/screen_CreateProfile.cpp"
+#include "frontend/screens/screen_CreateSession.cpp"
+#include "frontend/screens/screen_CustomPlayer.cpp"
+#include "frontend/screens/screen_DevMenu.cpp"
+#include "frontend/screens/screen_Dialog.cpp"
+#include "frontend/screens/screen_EOA.cpp"
+#include "frontend/screens/screen_EORConnect.cpp"
+#include "frontend/screens/screen_EORCreateAccount1.cpp"
+#include "frontend/screens/screen_EORCreateAccount2.cpp"
+#include "frontend/screens/screen_EORDeleteAccount.cpp"
+#include "frontend/screens/screen_EOREditAccount1.cpp"
+#include "frontend/screens/screen_EOREditAccount2.cpp"
+#include "frontend/screens/screen_EORLogin.cpp"
+#include "frontend/screens/screen_EORRecoverAccount.cpp"
+#include "frontend/screens/screen_friendConfirmed.cpp"
+#include "frontend/screens/screen_FriendRequested.cpp"
+#include "frontend/screens/screen_friends.cpp"
+#include "frontend/screens/screen_FriendsList.cpp"
+#include "frontend/screens/screen_FriendsPopup.cpp"
+#include "frontend/screens/screen_GamePadSettings.cpp"
+#include "frontend/screens/screen_GameSetting.cpp"
+#include "frontend/screens/screen_Invitations.cpp"
+#include "frontend/screens/screen_Keyboard.cpp"
+#include "frontend/screens/screen_MainMenu.cpp"
+#include "frontend/screens/screen_MemCard.cpp"
+#include "frontend/screens/screen_MultiplayerGameSettings.cpp"
+#include "frontend/screens/screen_MultiplayerMenu.cpp"
+#include "frontend/screens/screen_MySettings.cpp"
+#include "frontend/screens/screen_NetworkConfig.cpp"
+#include "frontend/screens/screen_NetworkError.cpp"
+#include "frontend/screens/screen_Objectives.cpp"
+#include "frontend/screens/screen_OnlineChat.cpp"
+#include "frontend/screens/screen_OnlineLobby.cpp"
+#include "frontend/screens/screen_OnlineMenu.cpp"
+#include "frontend/screens/screen_OnlineProfile.cpp"
+#include "frontend/screens/screen_Options.cpp"
+#include "frontend/screens/screen_PalMode.cpp"
+#include "frontend/screens/screen_Pause.cpp"
+#include "frontend/screens/screen_players.cpp"
+#include "frontend/screens/screen_PlayersList.cpp"
+#include "frontend/screens/screen_Popups.cpp"
+#include "frontend/screens/screen_Quickmatch.cpp"
+#include "frontend/screens/screen_Sandbox.cpp"
+#include "frontend/screens/screen_ScoreBoard.cpp"
+#include "frontend/screens/screen_SearchResult.cpp"
+#include "frontend/screens/screen_stats.cpp"
+#include "frontend/screens/screen_TagEditor.cpp"
+#include "frontend/screens/screen_Title.cpp"
+#include "frontend/screens/screen_title_only.cpp"
+#include "frontend/screens/screen_PopupText.cpp"
+#include "frontend/screens/screen_VoiceSetting.cpp"
+#include "frontend/screens/screen_wait.cpp"
+#include "frontend/screens/screen_Weapons.cpp"
+#include "frontend/screens/screen_YesNoDialog.cpp"
+
+#endif // defined(PS2) && defined(SN)

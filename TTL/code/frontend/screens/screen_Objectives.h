@@ -1,0 +1,6 @@
+#ifndef _SCREEN_OBJECTIVES_H_
+#define _SCREEN_OBJECTIVES_H_
+
+// DELETED
+
+#endif // _SCREEN_OBJECTIVES_H_

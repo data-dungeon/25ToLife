@@ -1,0 +1,160 @@
+@echo off
+REM ==========================================================================
+REM ==
+REM == BUILD.BTM : Build game from command line
+REM ==
+REM == USAGE: build [options]
+REM ==
+REM == OPTIONS:
+REM ==    clean                             -- nukes code and data before build
+REM ==    ps2/dx/xbox                       -- specify platform (one or more)
+REM ==    debug/release/cd/debugcd/consumer -- specify config (one or more)
+REM ==    sync                              -- sync to perforce before build
+REM ==    assets                            -- sync to assets before build
+REM ==    all                               -- do everything
+REM ==    post/nopost                       -- post CD
+REM ==    rar/norar                         -- rar CD
+REM ==
+REM ==========================================================================
+
+setlocal
+set PATH="C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE";%PATH
+cdd %TTLPATH
+
+REM ==========================================================================
+REM ==== CONFIGURATION
+REM ==========================================================================
+
+REM ==== Parse command line
+
+set CLEAN=0
+set PLATFORM_PS2=0
+set PLATFORM_DX=0
+set PLATFORM_XBOX=0
+set CONFIG_DEBUG=0
+set CONFIG_RELEASE=0
+set CONFIG_CD=0
+set CONFIG_DEBUGCD=0
+set CONFIG_CONSUMER=0
+set CONFIG_REPLAY=0
+set SYNC=0
+set ASSETS=0
+set POST=NOPOST
+set RAR=NORAR
+for %arg in ( %* ) (
+	if "%arg" == "clean"    set CLEAN=1
+	if "%arg" == "ps2"      set PLATFORM_PS2=1
+   if "%arg" == "dx"       set PLATFORM_DX=1
+   if "%arg" == "xbox"     set PLATFORM_XBOX=1
+   if "%arg" == "debug"    set CONFIG_DEBUG=1
+   if "%arg" == "release"  set CONFIG_RELEASE=1
+   if "%arg" == "cd"       set CONFIG_CD=1
+   if "%arg" == "debugcd"  set CONFIG_DEBUGCD=1
+	if "%arg" == "consumer" set CONFIG_CONSUMER=1
+   if "%arg" == "sync"     set SYNC=1
+	if "%arg" == "assets"   set ASSETS=1
+   if "%arg" == "post"     set POST=POST
+   if "%arg" == "nopost"   set POST=NOPOST
+   if "%arg" == "rar"      set RAR=RAR
+   if "%arg" == "norar"    set RAR=NORAR
+   if "%arg" == "replay"   set CONFIG_REPLAY=1
+	if "%arg" == "all" (
+		set PLATFORM_PS2=1
+		set PLATFORM_DX=1
+		set PLATFORM_XBOX=1
+		set CONFIG_DEBUG=1
+		set CONFIG_RELEASE=1
+		set CONFIG_CD=1
+		set CONFIG_DEBUGCD=1
+		set CONFIG_CONSUMER=1
+		set SYNC=1
+		set ASSETS=1
+	)
+)
+
+if %PLATFORM_PS2 != 1 .and. %PLATFORM_DX != 1 .and. %PLATFORM_XBOX != 1 (
+	gosub log "NO PLATFORM SPECIFIED"
+	quit 1
+)
+if %CONFIG_DEBUG != 1 .and. %CONFIG_RELEASE != 1 .and. %CONFIG_CD != 1 .and. %CONFIG_DEBUGCD != 1 .and. %CONFIG_CONSUMER != 1 .and. %CONFIG_REPLAY != 1 (
+	gosub log "NO CONFIGURATION SPECIFIED"
+	quit 1
+)
+
+REM ==========================================================================
+REM ==== SYNC
+REM ==========================================================================
+
+if %ASSETS == 1 (
+	gosub log "SYNCING ASSETS"
+	%TTLPATH\bin\AssetManager\AssetManagerCmd.exe "T_Drive" /cl /dl
+)
+if %SYNC == 1 (
+	gosub log "SYNCING CODE"
+	p4 sync
+)
+
+REM ==========================================================================
+REM ==== CLEAN
+REM ==========================================================================
+
+if %CLEAN == 1 (
+	gosub log "NUKE"
+	call nuke.bat
+
+	gosub log "ASSETS MAKE CLEAN"
+	cdd %TTLPATH\assets
+	make -k clean fmt=dx
+	make -k clean fmt=ps2
+	make -k clean fmt=xbox
+	cdd %TTLPATH
+
+	gosub log "BUILDING DDL FILES"
+	call makeddl.bat
+)
+
+REM ==========================================================================
+REM ==== BUILD
+REM ==========================================================================
+
+if %PLATFORM_DX == 1 (
+	if %CONFIG_DEBUG == 1    ( gosub build "DX Debug"   )
+	if %CONFIG_RELEASE == 1  ( gosub build "DX Release" )
+)
+if %PLATFORM_PS2 == 1 (
+	if %CONFIG_DEBUG == 1    ( gosub build "SN PS2 Debug"   )
+	if %CONFIG_RELEASE == 1  ( gosub build "SN PS2 Release" )
+	if %CONFIG_CD == 1       ( gosub build "SN PS2 CDROM"         & call ps2_makeiso release  %POST% %RAR% )
+	if %CONFIG_DEBUGCD == 1  ( gosub build "SN PS2 Debug CDROM"   & call ps2_makeiso debug    %POST% %RAR% )
+	if %CONFIG_CONSUMER == 1 ( gosub build "SN PS2 ConsumerBuild" & call ps2_makeiso consumer %POST% %RAR% )
+)
+if %PLATFORM_XBOX == 1 (
+	if %CONFIG_DEBUG == 1    ( gosub build "XBox Debug"            )
+	if %CONFIG_RELEASE == 1  ( gosub build "XBox Release"          )
+	if %CONFIG_CD == 1       ( gosub build "XBox Release LTCG DVD" & call xbox_makeiso release %POST% %RAR% )
+	if %CONFIG_REPLAY == 1   ( gosub build "XBox DVD Replay" & call xbox_makeiso replay %POST% %RAR% )
+)
+
+REM ==========================================================================
+REM ==== FINISHED
+REM ==========================================================================
+
+gosub log "DONE"
+quit 0
+
+REM ==========================================================================
+REM ==== SUBROUTINES
+REM ==========================================================================
+
+:build [cfg]
+gosub log %cfg
+devenv %TTLPATH\ttl.sln /build %cfg
+return
+
+:log [message]
+echo.
+echo ==============================================================================
+echo === TIME: %_DATE %_TIME - %message
+echo ==============================================================================
+echo.
+return

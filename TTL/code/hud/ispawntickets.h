@@ -1,0 +1,22 @@
+///////////////////////////////////////////////////////////////////////////////
+// Spawn ticket counter instrument
+///////////////////////////////////////////////////////////////////////////////
+#ifndef ISPAWNTICKETS_H
+#define ISPAWNTICKETS_H
+
+#include "hud\ipanel\itext.h"
+
+///////////////////////////////////////
+///////////////////////////////////////
+class SpawnTicketsInstrument : public TextInstrument
+{
+public:
+	// Constructor
+	SpawnTicketsInstrument();
+	~SpawnTicketsInstrument() {}
+
+	// The update (called once per frame)
+	void Update(float dt);
+};
+
+#endif

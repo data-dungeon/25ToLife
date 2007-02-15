@@ -1,0 +1,71 @@
+MotionSet5 File Commands
+
+Command Line Options:
+
+-f filename (input file) - specify input file.
+-o filename (output database file) - specify output file.
+-h filename (output header file) - specify header output file.
+-g filename (input group bone table file) - specify input bone group table file.
+-v - verbose mode
+-m - exclude model bone mode
+-t (value) - Set default error tolerance trans/rot/scale.
+-tt (value) - Set default error tolerance translation only.
+-tr (value) - Set default error tolerance rotation only.
+-ts (value) - Set default error tolerance scale only.
+-n - Include motion names in output database file instead of header file.
+-s (filename) - Save .mset file.
+
+
+Input File commands:
+
+MOTION_SET_NAME: (string) - Set the name of the mdb file to be outputted.
+
+MOTION_ID: (string) - Set name for the motion.
+
+MOTION_FILE: (string) - Set path and name of .kfm file to use for motion
+
+MOTION_BONEGROUPEXCLUDE: 
+MOTION_BONE_GROUP_EXCLUDE: (list of bone group #0-31 separated by spaces)
+	Exclude bone groups from outputing any motion data.
+
+MOTION_BONEGROUPFILTER:
+MOTION_BONE_GROUP_FILTER:
+MOTION_BONEGROUPINCLUDE: (list of bone group #0-31 separated by spaces)
+	Include specified bone groups (exclude all others) from outputting any motion data.
+
+MOTION_ERRORTOLERANCE:
+MOTION_ERROR_TOLERANCE: (floating point # >=0 && <100.0)
+	Set the tolerance for translation, rotation, & scale.
+
+MOTION_ERROR_TOLERANCE_MULTIPLIER:  (floating point # >=0 && <1000.0)
+	Set the tolerance multipler for translation, rotation & scale.
+
+MOTION_TRANSLATION_ERROR_TOLERANCE: (floating point # >=0 && <100.0)
+	Set the tolerance for translation.
+
+MOTION_TRANSLATION_ERROR_TOLERANCE_MULTIPLIER: (floating point # >=0 && <1000.0)
+	Set the tolerance multipler for translation.
+
+MOTION_ROTATION_ERROR_TOLERANCE: (floating point # >=0 && <100.0)
+	Set the tolerance multipler for rotation.
+
+MOTION_ROTATION_ERROR_TOLERANCE_MULTIPLIER: (floating point # >=0 && <1000.0)
+	Set the tolerance multipler for rotation.
+
+MOTION_SCALE_ERROR_TOLERANCE: (floating point # >=0 && <100.0)
+	Set the tolerance multipler for scale.
+ 
+MOTION_SCALE_ERROR_TOLERANCE_MULTIPLIER: (floating point # >=0 && <1000.0)
+	Set the tolerance multipler for scale.
+
+MOTION_USER_DATA: (string in the form of key=value)
+	Add a user data entry for key,value pair
+
+Old commands that are ignored but do not generate an error:
+
+MOTION_BONE_FILE:
+MOTION_CONTROL:
+MOTION_FLAGS:
+MOTION_TRANSLATION_SCALE_FACTOR:
+MOTION_GROUPBONETABLE:
+MOTION_GROUP_BONE_TABLE:

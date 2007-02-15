@@ -1,0 +1,4 @@
+create "SNPS2Consumer/fmv.lib"
+addmod "SNPS2Consumer/FMVPCH_SN.obj"
+save
+end

@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="PatchLib"
+	ProjectGUID="{5F078C44-4BF1-490F-8A44-E0B60EAD8EEB}"
+	RootNamespace="PatchLib"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="SN PS2 Debug|Win32"
+			OutputDirectory="SNPS2Debug"
+			IntermediateDirectory="SNPS2Debug"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -G0 -fno-exceptions -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib;$(SCE_ROOT)\ee\include;$(SCE_ROOT)\common\include;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include;$(SN_PATH)\ee-include;..\share"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;_DEBUG;PS2;SN"
+				ProgramDataBaseFileName=""
+				CompileAs="0"
+				ForcedIncludeFiles=""
+				ForcedUsingFiles=""/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0"
+				AdditionalDependencies=""
+				OutputFile="$(OutDir)/PatchLib.elf"
+				AdditionalLibraryDirectories="$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib"
+				IgnoreAllDefaultLibraries="FALSE"
+				ProgramDatabaseFile=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2Debug
+copy $(OutDir)\PatchLib*.elf $(TTLPATH)\code\SNPS2Debug\
+copy $(OutDir)\PatchLib*.map $(TTLPATH)\code\SNPS2Debug\
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\code\SNPS2Debug\
+md $(TTLPATH)\Data_PS2\Rel\debug
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\Data_PS2\Rel\debug\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Release|Win32"
+			OutputDirectory="SNPS2Release"
+			IntermediateDirectory="SNPS2Release"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -G0"
+				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib;&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;;$(SN_PATH)\ee-include;..\share"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;NDEBUG;PS2;SN"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\PatchLib.map,-sn-full-map"
+				AdditionalDependencies="dnas_mc.a"
+				OutputFile="$(OutDir)/PatchLib.elf"
+				AdditionalLibraryDirectories="$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib"
+				ProgramDatabaseFile=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2Release
+copy $(OutDir)\PatchLib*.elf $(TTLPATH)\code\SNPS2Release\
+copy $(OutDir)\PatchLib*.map $(TTLPATH)\code\SNPS2Release\
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\code\SNPS2Release\
+md $(TTLPATH)\Data_PS2\Rel\release
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\Data_PS2\Rel\release\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 CDROM|Win32"
+			OutputDirectory="SNPS2CDRom"
+			IntermediateDirectory="SNPS2CDRom"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -G0"
+				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib;&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;;$(SN_PATH)\ee-include;..\share"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;PS2;SN;NDEBUG;CDROM"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\PatchLib.map,-sn-full-map"
+				AdditionalDependencies="dnas_mc.a"
+				OutputFile="$(OutDir)/PatchLib.elf"
+				AdditionalLibraryDirectories="$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib"
+				ProgramDatabaseFile=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2CDRom
+copy $(OutDir)\PatchLib*.elf $(TTLPATH)\code\SNPS2CDRom\
+copy $(OutDir)\PatchLib*.map $(TTLPATH)\code\SNPS2CDRom\
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\code\SNPS2CDRom\
+md $(TTLPATH)\Data_PS2\Rel\cdrom
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\Data_PS2\Rel\cdrom\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="NULL|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="echo Done"
+				ReBuildCommandLine="echo Done"
+				CleanCommandLine="echo Done"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Debug CDROM|Win32"
+			OutputDirectory="SNPS2DebugCD"
+			IntermediateDirectory="SNPS2DebugCD"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -O0 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -G0"
+				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib;$(SCE_ROOT)\ee\include;$(SCE_ROOT)\common\include;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include;$(SN_PATH)\ee-include;..\share"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;_DEBUG;PS2;SN;CDROM"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\PatchLib.map,-sn-full-map"
+				AdditionalDependencies="dnas_mc.a"
+				OutputFile="$(OutDir)/PatchLib.elf"
+				AdditionalLibraryDirectories="$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib"
+				ProgramDatabaseFile=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2DebugCD
+copy $(OutDir)\PatchLib*.elf $(TTLPATH)\code\SNPS2DebugCD\
+copy $(OutDir)\PatchLib*.map $(TTLPATH)\code\SNPS2DebugCD\
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\code\SNPS2DebugCD\
+md $(TTLPATH)\Data_PS2\Rel\debugcdrom
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\Data_PS2\Rel\debugcdrom\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerBuild|Win32"
+			OutputDirectory="SNPS2Consumer"
+			IntermediateDirectory="SNPS2Consumer"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -G0"
+				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib;&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;;$(SN_PATH)\ee-include;..\share"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;PS2;SN;NDEBUG;CDROM;CONSUMER_BUILD"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\PatchLib.map,-sn-full-map"
+				AdditionalDependencies="dnas_mc.a"
+				OutputFile="$(OutDir)/PatchLib.elf"
+				AdditionalLibraryDirectories="$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib"
+				ProgramDatabaseFile=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2Consumer
+copy $(OutDir)\PatchLib*.elf $(TTLPATH)\code\SNPS2Consumer\
+copy $(OutDir)\PatchLib*.map $(TTLPATH)\code\SNPS2Consumer\
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\code\SNPS2Consumer\
+md $(TTLPATH)\Data_PS2\Rel\consumer
+copy $(OutDir)\PatchLib*.rel $(TTLPATH)\Data_PS2\Rel\consumer\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PC Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="..\share"
+				PreprocessorDefinitions="PATCHER_EXPORTS;WIN32;_WINDOWS;_DEBUG"
+				RuntimeLibrary="3"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="ws2_32.lib"
+				ShowProgress="0"
+				GenerateDebugInformation="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PC Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\share"
+				PreprocessorDefinitions="PATCHER_EXPORTS"
+				RuntimeLibrary="2"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="ws2_32.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Consumer DVD|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="echo Done"
+				ReBuildCommandLine="echo Done"
+				CleanCommandLine="echo Done"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;cc;s;asm;dsm;vcl">
+			<File
+				RelativePath=".\HttpMgr.cpp">
+			</File>
+			<File
+				RelativePath=".\HttpMgr_ps2.cpp">
+				<FileConfiguration
+					Name="PC Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\HttpMgr_win.cpp">
+				<FileConfiguration
+					Name="SN PS2 Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Release|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\PatchCommandThread_ps2.cpp">
+				<FileConfiguration
+					Name="PC Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\PatchCommandThread_win.cpp">
+				<FileConfiguration
+					Name="SN PS2 Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Release|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\Patcher.cpp">
+			</File>
+			<File
+				RelativePath=".\Patcher_win.cpp">
+				<FileConfiguration
+					Name="SN PS2 Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Release|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\share\PatcherCommon\PatchHelper.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;vsm">
+			<File
+				RelativePath=".\HttpMgr.h">
+			</File>
+			<File
+				RelativePath=".\HttpMgr_platform.h">
+			</File>
+			<File
+				RelativePath=".\PatchCommandThread.h">
+			</File>
+			<File
+				RelativePath=".\Patcher.h">
+			</File>
+			<File
+				RelativePath=".\Patcher_platform.h">
+			</File>
+			<File
+				RelativePath=".\PatchError.h">
+			</File>
+			<File
+				RelativePath="..\share\PatcherCommon\PatchHelper.h">
+			</File>
+			<File
+				RelativePath="..\share\PatcherCommon\patchplatform.h">
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\rel.cmd">
+		</File>
+		<File
+			RelativePath=".\rel.lk">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

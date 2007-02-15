@@ -1,0 +1,31 @@
+--------------------Configuration: ImageReadLIB - Win32 Debug--------------------
+Begining build with project "E:\tools\apps\ireader.lib\ImageReadLIB.dsp", at root.
+Active configuration is Win32 (x86) Static Library (based on Win32 (x86) Static Library)
+
+Project's tools are:
+			"32-bit C/C++ Compiler for 80x86" with flags "/nologo /MTd /W3 /GX /Z7 /Od /I "\tools\include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /Fp"Debug/ImageReadLIB.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c "
+			"Browser Database Maker" with flags "/nologo /o"Debug/ImageReadLIB.bsc" "
+			"Library Manager" with flags "/nologo /out:"ireaddbg.lib" "
+			"Custom Build" with flags ""
+			"<Component 0xa>" with flags ""
+
+Creating temp file "C:\WIN95\TEMP\RSP7282.TMP" with contents </nologo /MTd /W3 /GX /Z7 /Od /I "\tools\include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /Fp"Debug/ImageReadLIB.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"E:\tools\source\fn_wrap\fn_wrap.cpp"
+"E:\tools\source\ireaders\read_tga.cpp"
+"E:\tools\source\ireaders\readbase.cpp"
+"E:\tools\apps\ireader.lib\readmain.cpp"
+"E:\tools\source\strmwrap\str_wrap.cpp"
+>
+Creating command line "cl.exe @C:\WIN95\TEMP\RSP7282.TMP" 
+Creating command line "link.exe -lib /nologo /out:"ireaddbg.lib"  .\Debug\fn_wrap.obj .\Debug\read_tga.obj .\Debug\readbase.obj .\Debug\readmain.obj .\Debug\str_wrap.obj" 
+Compiling...
+fn_wrap.cpp
+read_tga.cpp
+readbase.cpp
+readmain.cpp
+str_wrap.cpp
+Creating library...
+
+
+
+ireaddbg.lib - 0 error(s), 0 warning(s)

@@ -1,0 +1,581 @@
+.vu
+changequote(',')
+
+define( 'irWorkPtr', 'VI14')
+
+define( 'irClipWorkArea', 'VI01')
+define( 'irClipWorkAreaSize', 'VI02')
+define( 'irExtBucketTri', 'VI03')
+define( 'irExtPrepTri', 'VI04')
+define( 'irExtOutputFan', 'VI05')
+
+define( 'frClipGIFTag', 'VF31')
+
+define( 'irTemp1', 'VI06')
+define( 'irTemp2', 'VI07')
+define( 'irTemp3', 'VI08')
+define( 'irTemp4', 'VI09')
+
+define( 'szeClipBuffer', eval( (13 * 3) + 1) )
+define( 'szeMinusTag', eval( (13 * 3) ) )
+define( 'szeClipStack', 4)
+
+	.global	GenericClip_CodeBegin
+	.global	GenericClip_CodeEnd
+
+	.global	GC_ClipBufferSetup
+	.global	GC_ClipBuffer
+
+	.global	GC_ClipTriangleSetup
+	.global	GC_ClipTriangle
+
+.dmadata GenericClip_CodeBegin
+;----------------------------------------------------------------------------------------------------------------------
+; GenericClipSetup( ) Sets up ClipWorkArea for Buffer Clipping or Triangle Clipping
+;Inputs:
+;	irClipWorkArea	VUMem address of ClipWorkArea
+;	irClipWorkAreaSize	size of ClipWorkArea
+;  frClipGIFTag		GIFTag for clipped Fans
+;	irExtBucketTriangle( )	ptr to extBucketTriangle( ) -- sends a triangle to GS
+;	irExtPrepTriangle( )	ptr to extPrepTriangle( ) -- preps a triangle for clipping
+;	irExtOutputClippedFan( )	ptr to extOutputClippedFan( ) -- outputs a clipped triangle as fan
+;	VI15		return address
+;
+;----------------------------------------------------------------------------------------------------------------------
+
+GC_ClipBufferSetup:
+	NOP		BAL	VI13, GBC_LocalAddr
+	NOP		NOP
+	
+GBC_LocalAddr:
+	NOP		ISUBIU	VI13, VI13, GBC_LocalAddr
+	NOP		IADDIU	VI13, VI13, GBC_Loop
+	
+	NOP		IADD	irTemp1, irClipWorkArea, irClipWorkAreaSize	; end
+	NOP		ISUBIU	irTemp2, irTemp1, szeMinusTag	; ptrBuffer3
+	NOP		ISUBIU	irTemp3, irTemp2, szeClipBuffer	; ptrBuffer2
+	NOP		ISUBIU	irTemp4, irTemp3, szeClipBuffer	; ptrBuffer1
+	NOP		ISUBIU	irWorkPtr, irTemp4, szeClipStack	; ptrWorkArea
+
+	NOP		ISW.x	irTemp4,  0(irWorkPtr)x
+	NOP		ISW.y	irTemp3,  0(irWorkPtr)y
+	NOP		ISW.z	irTemp2,  0(irWorkPtr)z
+	NOP		ISW.w	VI13, 0(irWorkPtr)w
+
+	NOP		ISW.x	irExtBucketTri,  1(irWorkPtr)x
+	NOP		ISW.y	irExtPrepTri,  1(irWorkPtr)y
+	NOP		ISW.z	irExtOutputFan,  1(irWorkPtr)z
+	
+	NOP		SQ	frClipGIFTag, -1(irTemp2)
+	NOP		SQ	frClipGIFTag, -1(irTemp3)
+	NOP		JR	VI15
+	NOP		SQ	frClipGIFTag, -1(irTemp4)	; <ds>
+
+GC_ClipTriangleSetup:
+	NOP		IADD	irTemp1, irClipWorkArea, irClipWorkAreaSize	; end
+	NOP		ISUBIU	irTemp2, irTemp1, szeMinusTag	; ptrBuffer3
+	NOP		ISUBIU	irTemp3, irTemp2, szeClipBuffer	; ptrBuffer2
+	NOP		ISUBIU	irTemp4, irTemp3, szeClipBuffer	; ptrBuffer1
+	NOP		ISUBIU	irWorkPtr, irTemp4, szeClipStack	; ptrWorkArea
+
+	NOP		ISW.x	irTemp4,  0(irWorkPtr)x
+	NOP		ISW.y	irTemp3,  0(irWorkPtr)y
+	NOP		ISW.z	irTemp2,  0(irWorkPtr)z
+
+	NOP		ISW.z	irExtOutputFan,  1(irWorkPtr)z
+	
+	NOP		SQ	frClipGIFTag, -1(irTemp2)
+	NOP		SQ	frClipGIFTag, -1(irTemp3)
+	NOP		JR	VI15
+	NOP		SQ	frClipGIFTag, -1(irTemp4)	; <ds>
+
+;----------------------------------------------------------------------------------------------------------------------
+; GenericBufferClip( ) Clips a Buffer
+; assumes
+;        x      y      z      w
+; 	QW1:  S      T      ?     ADC (float)
+;  QW2:  undefined
+;  QW3:  ClipX  ClipY  ClipZ  ClipW
+;
+;Inputs:
+;  irClipBufferPtr	ptr to ClipBuffer
+;  irClipBufferVerts	number of Verts to Clip
+;Note:
+;	VI01, VI02, VI03 must be left for Clip checks
+;----------------------------------------------------------------------------------------------------------------------
+define( 'irADCBit', 'VI01')
+define( 'irClipBufPtr', 'VI05')
+define( 'irNumVerts', 'VI06')
+define( 'irClipBufEnd', 'VI06')
+
+define( 'irBucketTri', 'VI12')
+define( 'irVtxClipMask', 'VI13')
+define( 'irClipFlag1', 'VI02')
+define( 'irClipFlag2', 'VI03')
+define( 'irClipFlag3', 'VI04')
+
+define( 'frVtx1', 'VF09')
+define( 'frVtx2', 'VF10')
+define( 'frVtx3', 'VF11')
+define( 'frVtx4', 'VF12')
+
+GC_ClipBuffer:
+	NOP		ISW.w	VI15, 1(irWorkPtr)	; store return address
+	NOP		ILW.w	VI15, 0(irWorkPtr)
+	
+	NOP		LQ	frVtx2,  2(irClipBufPtr)
+	
+	NOP		IADD	VI01, irClipBufPtr, irNumVerts
+	NOP		IADD	VI01, VI01, irNumVerts
+	NOP		IADD	irClipBufEnd, VI01, irNumVerts
+
+	CLIPw.xyz	frVtx2, frVtx2	LQ	frVtx3,  5(irClipBufPtr)
+	NOP		LQ	frVtx4,  8(irClipBufPtr)
+
+	NOP		IADDIU	irClipBufPtr, irClipBufPtr, 6
+
+GBC_ReStart:
+	NOP		IADDIU	irVtxClipMask, VI00, 0x003f	; single vtx CLIPMask
+	NOP		ILW.x	irBucketTri,  1(irWorkPtr)x	; load BucketTri
+	CLIPw.xyz	frVtx3, frVtx3	FCGET	irClipFlag2	
+									
+GBC_Loop:
+	ADDx.xyzw	frVtx1, frVtx2, VF00x	ILW.w	irADCBit,  0(irClipBufPtr)
+	ADDx.xyzw	frVtx2, frVtx3, VF00x	IADDIU	irClipBufPtr, irClipBufPtr, 3
+GBC_ReEnter:	
+	ADDx.xyzw	frVtx3, frVtx4, VF00x	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+	CLIPw.xyz	frVtx4, frVtx4	LQ	frVtx4,  2(irClipBufPtr)
+	NOP		IBNE	irADCBit, VI00, GBC_Loop
+	NOP		FCGET	irClipFlag2
+
+	NOP		IBEQ	irClipBufEnd, irClipBufPtr, GBC_LastTriangle
+	NOP		FCAND	VI01, 0x3ffff
+				
+	NOP		IBNE	VI01, VI00, GBC_NotAllIn
+	NOP		FCGET	irClipFlag3 	; <ds> grab ClipFlag3
+
+
+GBC_AllIn:
+	NOP		JR	irBucketTri
+	NOP		NOP
+		
+GBC_NotAllIn:
+	NOP		IAND	VI01, irClipFlag1, irClipFlag3
+	NOP		IAND	VI01, VI01, irClipFlag2
+	
+	NOP		NOP
+;	NOP		B	GBC_Loop
+	NOP		IBNE	VI01, VI00, GBC_Loop
+	NOP		NOP
+
+GBC_ClipTriangle:				
+	NOP		ILW.y	VI12,  1(VI14)y	; grab extPrepTriangle
+	NOP		ILW.x	VI08,  0(VI14)x	; load ClipIn_Start
+
+	NOP		ISW.x	irClipBufPtr,  2(irWorkPtr)x	; push - irClipBufPtr
+	NOP		ISW.y	irClipBufEnd,  2(irWorkPtr)y	; push - irClipBufEnd
+
+	NOP		JALR	VI15, VI12	; ClipSetup( )
+	NOP		ILW.y	VI09,  0(VI14)y	; load ClipOut_Start
+
+	NOP		IOR	VI13, irClipFlag2, irClipFlag1
+	NOP		IOR	VI13, VI13, irClipFlag3
+
+	NOP		BAL	VI15, BufferClipCore	
+	NOP		IADDIU	VI07, VI00, 3	; <ds> initial vertex count = 3
+
+	CLIPw.xyz	frVtx2, frVtx2	ILW.x	irClipBufPtr,  2(irWorkPtr)x	; pop - irClipBufPtr
+	NOP		ILW.y	irClipBufEnd,  2(irWorkPtr)y	; pop - irClipBufEnd
+	NOP		B	GBC_ReStart
+	NOP		ILW.w	VI15, 0(irWorkPtr)
+
+;----------------------------------------------------------------------------------------------------------------------
+GBC_LastTriangle:
+	NOP		IBNE	VI01, VI00, GBD_NotAllIn
+	NOP		FCGET	irClipFlag3 	; <ds> grab ClipFlag3
+
+
+GBD_AllIn:
+	NOP		JR	irBucketTri
+	NOP		ILW.w	VI15, 1(irWorkPtr)
+			
+GBD_NotAllIn:
+	NOP		ILW.w	VI15, 1(irWorkPtr)
+	NOP		IAND	VI01, irClipFlag1, irClipFlag3
+	NOP		IAND	VI01, VI01, irClipFlag2
+
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, GBD_ClipTriangle
+	NOP		NOP
+	NOP		JR	VI15
+	NOP		NOP
+
+GBD_ClipTriangle:				
+	NOP		ILW.y	VI12,  1(VI14)y	; grab extPrepTriangle
+	NOP		ILW.x	VI08,  0(VI14)x	; load ClipIn_Start
+
+	NOP		JALR	VI15, VI12	; ClipSetup( )
+	NOP		ILW.y	VI09,  0(VI14)y	; load ClipOut_Start
+
+	NOP		ILW.w	VI15, 1(irWorkPtr)	; load my return address
+
+	NOP		IOR	VI13, irClipFlag2, irClipFlag1
+	NOP		IOR	VI13, VI13, irClipFlag3
+
+	NOP		B	BufferClipCore	
+	NOP		IADDIU	VI07, VI00, 3	; <ds> initial vertex count = 3
+
+;----------------------------------------------------------------------------------------------------------------------
+; BufferClipCore( ) - core of ClipEngine
+;----------------------------------------------------------------------------------------------------------------------
+GC_ClipTriangle:
+
+BufferClipCore:
+	NOP		BAL	VI06, BufferClipSetup
+	NOP		MFIR.w	VF31, VI15	; store return address
+BufferClipSetup:
+	NOP		ISUBIU	VI06, VI06, BufferClipSetup
+	NOP		MFIR.z	VF31, VI06
+
+CheckZPlanes:	
+CheckZMinus:
+	NOP		IADDIU	VI05, VI00, 0x0020	; CLIPbits mask for vtx1
+	NOP		IAND	VI02, VI05, VI13	; mask ORedCLIPbits with mask
+	NOP		IADDIU	VI04, VI00, 0x0800	; CLIPbits mask for vtx2
+	NOP		IBEQ	VI02, VI00, CheckZPlus	; branch if bits for this plane not set
+	SUBw.x	VF30x, VF00x, VF00w	MTIR	VI06, VF31z	; <ds> grab base addr
+
+	NOP		BAL	VI15, ClipBuffer	; ClipBuffer
+	NOP		IADDIU	VI06, VI06, InterpolateZ	; <ds> ClipPlane idx x = 0, y = 1, z = 2
+
+	NOP		IBEQ	VI07, VI00, ClipTriangleEnd	
+	NOP		MTIR	VI15, VF31w	; <ds>
+	
+	NOP		IADDIU	VI02, VI00, 0x001f	; other clip flags are not valid
+	NOP		IOR	VI13, VI13, VI02
+		
+CheckZPlus:
+	NOP		IADDIU	VI05, VI00, 0x0010	
+	NOP		IAND	VI02, VI05, VI13
+	NOP		IADDIU	VI04, VI00, 0x0400
+	NOP		IBEQ	VI02, VI00, CheckXMinus
+	ADDw.x	VF30x, VF00x, VF00w	MTIR	VI06, VF31z	; <ds> grab base addr
+	
+	NOP		BAL	VI15, ClipBuffer
+	NOP		IADDIU	VI06, VI06, InterpolateZ	; <ds> ClipPlane idx x = 0, y = 1, z = 2
+	
+	NOP		IBEQ	VI07, VI00, ClipTriangleEnd	
+	NOP		MTIR	VI15, VF31w	; <ds>
+	
+CheckXMinus:	
+	NOP		IADDIU	VI05, VI00, 0x0002	
+	NOP		IAND	VI02, VI05, VI13
+	NOP		IADDIU	VI04, VI00, 0x0080
+	NOP		IBEQ	VI02, VI00, CheckXPlus
+	SUBw.x	VF30x, VF00x, VF00w	MTIR	VI06, VF31z	; <ds> gra base addr
+
+	NOP		BAL	VI15, ClipBuffer
+	NOP   		IADDIU	VI06, VI06, InterpolateX	; <ds> ClipPlane idx x = 0, y = 1, z = 2
+
+	NOP		IBEQ	VI07, VI00, ClipTriangleEnd	
+	NOP		MTIR	VI15, VF31w	; <ds>
+
+CheckXPlus:
+	NOP		IADDIU	VI05, VI00, 0x0001	
+	NOP		IAND	VI02, VI05, VI13
+	NOP		IADDIU	VI04, VI00, 0x0040
+	NOP		IBEQ	VI02, VI00, CheckYMinus
+	ADDw.x	VF30x, VF00x, VF00w	MTIR	VI06, VF31z	; <ds> grab base addr
+
+	NOP		BAL	VI15, ClipBuffer
+	NOP		IADDIU	VI06, VI06, InterpolateX	; <ds> ClipPlane idx x = 0, y = 1, z = 2
+	
+	NOP		IBEQ	VI07, VI00, ClipTriangleEnd	
+	NOP		MTIR	VI15, VF31w	; <ds>
+	
+CheckYMinus:
+	NOP		IADDIU	VI05, VI00, 0x0008	
+	NOP		IAND	VI02, VI05, VI13
+	NOP		IADDIU	VI04, VI00, 0x0200
+	NOP		IBEQ	VI02, VI00, CheckYPlus
+	SUBw.x	VF30x, VF00x, VF00w	MTIR	VI06, VF31z	; <ds> grab base addr
+
+	NOP		BAL	VI15, ClipBuffer
+	NOP    		IADDIU	VI06, VI06, InterpolateY	; <ds> ClipPlane idx x = 0, y = 1, z = 2
+
+	NOP		IBEQ	VI07, VI00, ClipTriangleEnd	
+	NOP		MTIR	VI15, VF31w	; <ds>
+	
+CheckYPlus:
+	NOP		IADDIU	VI05, VI00, 0x0004	
+	NOP		IAND	VI02, VI05, VI13
+	NOP		IADDIU	VI04, VI00, 0x0100
+	NOP		IBEQ	VI02, VI00, TransformResult
+	ADDw.x	VF30x, VF00x, VF00w	MTIR	VI06, VF31z	; <ds> grab base addr
+
+	NOP		BAL	VI15, ClipBuffer
+	NOP    		IADDIU	VI06, VI06, InterpolateY	; <ds> ClipPlane idx x = 0, y = 1, z = 2
+
+	NOP		IBEQ	VI07, VI00, ClipTriangleEnd	
+	NOP		MTIR	VI15, VF31w	; <ds>
+	
+TransformResult:
+	NOP		ILW.z	VI10, 0(VI14)z	; load last kicked buffer
+
+ChangeClipBuffers:
+	NOP		ISW.x	VI09, 0(VI14)x	; new ClipBuffer_1
+	NOP		ISW.z	VI08, 0(VI14)z	; new ClipBuffer_3		
+	NOP		ISW.y	VI10, 0(VI14)y	; new ClipBuffer_2
+
+ClipDone:
+	NOP		ISUBIU	VI09, VI08, 1	; point to GIFTag
+	NOP		ILW.z	VI06, 1(VI14)z	; load TransformClippedBuffer( )
+	NOP		IADDIU	VI01, VI00, 0x7fff
+	NOP		IADDIU	VI01, VI01, 1
+	NOP		IADD	VI01, VI01, VI07	; should give us 0x8000 | VertexCount
+	NOP		JALR	VI02, VI06	; TransformClippedBuffer( VI08)
+	NOP		ISW.x	VI01, 0(VI09)	; <ds> store [EOP | nLoop]
+
+	NOP		XGKICK	VI09	; kick the clipped triangle fan
+	NOP		NOP
+		
+ClipTriangleEnd:
+	NOP		JR	VI15
+	NOP		NOP
+	
+;------------------------------------------------------------------------------------------------------------------------------
+; ClipBuffer:
+;	Clips vertex buffer against a single plane
+;
+; Input:
+;	VI03	: 
+;	VI04	: CLIPbits Vtx 1
+;	VI05	: CLIPbits Vtx 2
+;	VI06	: ClipPlane( ) function
+;	VI07	: numClipVerts
+;	VI08	: ClipIn_Start
+;	VI09	: ClipOut_Start
+;  VI10	: ClipIn_End
+;	VI13	: ORedCLIPbits
+;	VI14	: stack (holds functions)
+;	VI15	: return address
+;
+; Output:
+;	VI07	: new numClipVerts
+;	VI08	: new ClipIn_Start
+;	VI09	: new ClipOut_Start
+;	VI10	: new ClipIn_End
+;
+; Temporaries:
+;	VI01	: temp - clip flag register
+;	VI02	: temp - return address for functions I call
+;	VI12	: temp - number of vertices in OutBuffer
+;
+;------------------------------------------------------------------------------------------------------------------------------
+ClipBuffer:
+	MULx.xyzw	VF20, VF20, VF00x	LQ	VF24, 2(VI08)	; grab XYZ (QW 3)
+	NOP		LQ	VF20, 0(VI08)	; grab QW 1
+	NOP		LQ	VF21, 1(VI08)	; grab QW 2
+	NOP		LQ	VF25, 5(VI08)	; grab second vertex
+	NOP		IADDIU	VI12, VI07, 0	; set output vertex counter
+	CLIPw.xyz	VF24, VF24w	IADDIU	VI07, VI00, 0	; check first point
+
+	ADDw.xyz	VF23, VF00, VF24w	MFIR.y	VF31, VI08	; store read ptr
+	CLIPw.xyz	VF25, VF25w	MOVE.xyzw	VF26, VF24
+	ADDx.xyzw	VF27, VF25, VF00x	SQ	VF20, 0(VI10)	; duplicate first vtx
+	ADDAx.xyz	ACC, VF24, VF00x	SQ	VF21, 1(VI10)	;
+	MSUBx.xyz	VF29, VF23, VF30x	SQ	VF24, 2(VI10)	;
+	NOP		IADDIU	VI10, VI09, 0	; set write ptr
+	NOP		IADDIU	VI08, VI08, 8	; inc read ptr
+	
+ClipBufferLoop:
+	ADDw.xyz	VF23, VF00, VF25w	FCGET	VI01	; get clip flag
+	ADDx.xyzw	VF24, VF25, VF00x	IAND	VI02, VI01, VI04	; mask 1st vertex clip flags
+	ADDAx.xyz	ACC, VF25, VF00x	LQ	VF25, 0(VI08)	; load new vertex 2
+	ABS.xyz	VF28, VF29	IAND	VI01, VI01, VI05	; mask 2nd vertex clip flags
+ClipBufferLoopReEntry:
+	NOP		IBEQ	VI02, VI00, V1In	;
+	MSUBx.xyz	VF29, VF23, VF30x	ISUBIU	VI12, VI12, 1	; decrement segment count
+	
+
+V1Out:
+	CLIPw.xyz	VF25, VF25w	IBEQ	VI01, VI00, V1OutV2In
+	NOP		NOP		; <ds>
+
+					; --- Case 1 -- Vtx1 Out / Vtx2 Out ------------
+V1OutV2Out:	
+	NOP		NOP		;  Do Nothing
+	ADDx.xyzw	VF26, VF24, VF00x	IBGTZ	VI12, ClipBufferLoop       
+	ADDx.xyzw	VF27, VF25, VF00x	IADDIU	VI08, VI08, 3	; <ds> inc to next vertex
+	
+	NOP		IADD	VI08, VI09, VI00	; set new ClipIn_Start
+	NOP		JR	VI15	; -- Exit
+	NOP		MTIR	VI09, VF31y	; <ds> set new ClipOut_Start
+
+					; --- Case 2 -- Vtx1 Out / Vtx2 In  ------------
+V1OutV2In:				;  Add Interpolated Vtx Only
+
+	ABS.xyz	VF29, VF29	JALR	VI02, VI06	; VF28 d = Interpolate( VF26 Vtx1, VF27 Vtx2)
+	ADDx.xyz	VF22, VF28, VF00x	IADDIU	VI07, VI07, 1	; <ds> 1 more vert
+
+	ADDx.xyzw	VF26, VF24, VF00x	IBGTZ	VI12, ClipBufferLoop	; -- Line Segment Done
+	ADDx.xyzw	VF27, VF25, VF00x	IADDIU	VI08, VI08, 3	; <ds> inc to next vertex
+
+	NOP		IADD	VI08, VI09, VI00	; set new ClipIn_Start
+	NOP		JR	VI15	; -- Exit
+	NOP		MTIR	VI09, VF31y	; <ds> set new ClipOut_Start
+
+V1In:
+	CLIPw.xyz	VF25, VF25w	IBEQ	VI01, VI00, V1InV2In
+	NOP		NOP
+					; --- Case 3 -- Vtx1 In  / Vtx2 Out ------------
+V1InV2Out:				;  Add Vtx1 and Add Interpolated Vtx
+
+	ABS.xyz	VF29, VF29	BAL	VI02, AddFirstVtx	; AddFirstVertex( VF26 Vtx1)
+	NOP		IADDIU	VI07, VI07, 2	; <ds> 2 new verts
+	
+	ADDx.xyzw	VF26, VF27, VF00x	MOVE.xyzw	VF27, VF26
+	
+	ADDx.xyz	VF22, VF29, VF00x	JALR	VI02, VI06	; Interpolate( VF26 Vtx1, VF27 Vtx2)
+	NOP		NOP		; <ds> 
+
+	ADDx.xyzw	VF26, VF24, VF00x	IBGTZ	VI12, ClipBufferLoop	; -- Line Segment Done
+	ADDx.xyzw	VF27, VF25, VF00x	IADDIU	VI08, VI08, 3	; <ds> inc to next vertex
+
+	NOP		IADD	VI08, VI09, VI00	; set new ClipIn_Start
+	NOP		JR	VI15	; -- Exit
+	NOP		MTIR	VI09, VF31y	; <ds> set new ClipOut_Start
+
+					; --- Case 4 -- Vtx1 In  / Vtx2 In  ------------
+V1InV2In:				;  Add Vtx1 Only
+
+	NOP		BAL	VI02, AddFirstVtx	; AddFirstVertex( VF26 Vtx1)
+	NOP		IADDIU	VI07, VI07, 1	; <ds> 1 more vert
+
+	ADDx.xyzw	VF26, VF24, VF00x	IBGTZ	VI12, ClipBufferLoop	; -- Line Segment Done
+	ADDx.xyzw	VF27, VF25, VF00x	IADDIU	VI08, VI08, 3	; <ds> inc to next vertex
+
+ClipBufferDone:		
+	NOP		IADD	VI08, VI09, VI00	; set new ClipIn_Start
+	NOP		JR	VI15	; -- Exit
+	NOP		MTIR	VI09, VF31y	; <ds> set new ClipOut_Start
+
+;------------------------------------------------------------------------------------------------------------------------------
+; Interpolate
+;	Interpolates between 2 points and a plane
+;
+; Input:
+;	VI02	: return address
+;	VI06	: loop counter for rotating clip plane into x component
+;	VF26	: Vertex1
+;	VF27	: Vertex2
+;	VF30.w	: +1 or -1 - sign multiply for Vertex w component
+;
+; Output:
+;	VF28.x	: distance between Vertex1 and Plane
+;
+; Temporaries:
+;	VI01	: loop counter
+;	VF20	: Vertex1 temp
+;	VF21	: Vertex2 temp
+;
+;------------------------------------------------------------------------------------------------------------------------------
+InterpolateX:
+					; VF28 = |V1 - (V1w * S)|
+					; VF29 = |V2 - (V2w * S)|
+	ADD.xyzw	VF23, VF28, VF29	NOP		; VF23 = |V1 - (V1w * S)| + |V2 - (V2w * S)|
+	
+	SUB.xyzw	VF27, VF27, VF26	DIV	Q, VF22x, VF23x	;    Q = |V1x - (V1w * S)| / |V1x - (V1w * S)| + |V2x - (V2w * S)|
+	NOP		B	AddInterpolatedVtx
+	NOP		NOP
+
+InterpolateY:
+					; VF28 = |V1 - (V1w * S)|
+					; VF29 = |V2 - (V2w * S)|
+	ADD.xyzw	VF23, VF28, VF29	NOP		; VF23 = |V1 - (V1w * S)| + |V2 - (V2w * S)|
+	
+	SUB.xyzw	VF27, VF27, VF26	DIV	Q, VF22y, VF23y	;    Q = |V1y - (V1w * S)| / |V1y - (V1w * S)| + |V2y - (V2w * S)|
+	NOP		B	AddInterpolatedVtx
+	NOP		NOP
+
+InterpolateZ:
+					; VF28 = |V1 - (V1w * S)|
+					; VF29 = |V2 - (V2w * S)|
+	ADD.xyzw	VF23, VF28, VF29	NOP		; VF23 = |V1 - (V1w * S)| + |V2 - (V2w * S)|
+	
+	SUB.xyzw	VF27, VF27, VF26	DIV	Q, VF22z, VF23z	;    Q = |V1z - (V1w * S)| / |V1z - (V1w * S)| + |V2z - (V2w * S)|
+	NOP		B	AddInterpolatedVtx
+	NOP		NOP
+	
+;------------------------------------------------------------------------------------------------------------------------------
+; AddVtx_3
+;	Add a Vertex to the output buffer
+;
+; Input:
+;	VI08	: & InBuffer[vertex + 2]
+;	VI10	: & OutBuffer[0]
+;	VF26	: clip space vertex
+;
+;
+;------------------------------------------------------------------------------------------------------------------------------
+AddFirstVtx:
+	NOP		LQ	VF20, -8(VI08)
+	NOP		LQ	VF21, -7(VI08)
+	NOP		IADDIU	VI10, VI10, 3
+	NOP		SQ	VF26, -1(VI10)	; <ds> store vertex only
+	NOP		SQ	VF20, -3(VI10)	
+	NOP		JR	VI02	; return
+	NOP		SQ	VF21, -2(VI10)	
+
+;------------------------------------------------------------------------------------------------------------------------------
+; ClipAddVtx_3
+;	Clip and Add a vertex to the output buffer
+;
+; Input:
+;	VI02	: return address
+;	VI08	: & InBuffer[vertex + 2]
+;	VI10	: & OutBuffer[0]
+;
+;	VF26	: Vertex 1
+;	VF27	: Vertex 2
+;	VF28.x	: d
+;
+;------------------------------------------------------------------------------------------------------------------------------
+AddInterpolatedVtx:
+	NOP		LQ	VF20, -8(VI08)	; VF27 = Vtx2 - Vtx1
+	NOP		LQ	VF21, -5(VI08)	; VF27 = d * (Vtx2 - Vtx1)
+	NOP		LQ	VF22, -7(VI08)	; VF27 = Vtx1 + d * (Vtx2 - Vtx1)
+	NOP		IBEQ	VI01, VI00, AIV_NoSwap
+	NOP		LQ	VF23, -4(VI08)
+
+	ADDx.xyzw	VF20, VF21, VF00x	MOVE.xyzw	VF21, VF20
+	ADDx.xyzw	VF22, VF23, VF00x	MOVE.xyzw	VF23, VF22
+
+AIV_NoSwap:	
+	NOP		IADDIU	VI10, VI10, 3
+	SUB.xyzw	VF21, VF21, VF20	WAITQ		; use q
+	MULq.xyzw	VF28, VF27, Q	NOP
+	SUB.xyzw	VF23, VF23, VF22	FCGET	VI01
+	ADDAx.xyzw	ACC, VF20, VF00x	MOVE.xyzw	VF27, VF25
+	MADDq.xyzw	VF21, VF21, Q	IAND	VI02, VI01, VI04
+	ADDAx.xyzw	ACC, VF22, VF00x	IADDIU	VI08, VI08, 3
+	MADDq.xyzw	VF23, VF23, Q	IAND	VI01, VI01, VI05
+	ADD.xyzw	VF20, VF26, VF28	MOVE.xyzw	VF26, VF24			
+	NOP		SQ	VF21, -3(VI10)
+	ADDx.xyzw	VF24, VF27, VF00x	LQ	VF25,  0(VI08)	
+	ADDw.xyz	VF23, VF00, VF27w	SQ	VF23, -2(VI10)
+	ADDAx.xyz	ACC, VF27, VF00	IBGTZ	VI12, ClipBufferLoopReEntry
+	ABS.xyz	VF28, VF29	SQ	VF20, -1(VI10)	; <ds> store interpolated vertex
+
+	NOP		IADD	VI08, VI09, VI00	; set new ClipIn_Start
+	NOP		JR	VI15	; -- Exit
+	NOP		MTIR	VI09, VF31y	; <ds> set new ClipOut_Start
+
+	NOP		NOP	
+	NOP		NOP	
+
+.enddmadata
+GenericClip_CodeEnd:
+
+	
+

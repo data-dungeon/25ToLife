@@ -1,0 +1,17 @@
+create "SNPS2Consumer/CollideHelper.lib"
+addmod "SNPS2Consumer/CapsuleBonesNode.obj"
+addmod "SNPS2Consumer/CapsuleNode.obj"
+addmod "SNPS2Consumer/ccoplanar.obj"
+addmod "SNPS2Consumer/EventMiner.obj"
+addmod "SNPS2Consumer/LineEntity.obj"
+addmod "SNPS2Consumer/ObbBonesNode.obj"
+addmod "SNPS2Consumer/obbchild.obj"
+addmod "SNPS2Consumer/ObbNode.obj"
+addmod "SNPS2Consumer/ProtagonistNode.obj"
+addmod "SNPS2Consumer/SelectionEntity.obj"
+addmod "SNPS2Consumer/SightEntity.obj"
+addmod "SNPS2Consumer/XZEntity.obj"
+addmod "SNPS2Consumer/zone.obj"
+addmod "SNPS2Consumer/zonemap.obj"
+save
+end

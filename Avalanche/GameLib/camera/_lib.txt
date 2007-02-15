@@ -1,0 +1,10 @@
+create "SNPS2Consumer\camera.lib"
+addmod "SNPS2Consumer/StationaryCam.obj"
+addmod "SNPS2Consumer/targetcam.obj"
+addmod "SNPS2Consumer/SecurityCam.obj"
+addmod "SNPS2Consumer/pathcam.obj"
+addmod "SNPS2Consumer/generalcam.obj"
+addmod "SNPS2Consumer/collidablecontrolcam.obj"
+addmod "SNPS2Consumer/CameraPCH_SN.obj"
+save
+end

@@ -1,0 +1,449 @@
+/* --------------------------------------------------
+ * File    : SOM_WRIT.CPP
+ * Created : Wed Oct  7 16:12:35 1998
+ * Descript:
+ * --------------------------------------------------*/
+/* --------------------------------------------------
+ * Includes
+ * --------------------------------------------------*/
+#include <iostream.h>
+#include <mpostr.h>
+
+#include <som_util.h>
+#include <t_som.h>
+
+/* --------------------------------------------------
+ * Local Defines
+ * --------------------------------------------------*/
+
+typedef struct SOMHdr
+{
+	t_lflagbits			Flags;
+	ts_Sphere			BoundingSphere;
+
+	unsigned long		ulVtxCount;
+	unsigned long		ulFaceCount;
+
+	union
+	{
+		unsigned long		ulFaceBufferSize;
+		unsigned long		ulSetFaceSize;
+	} ;
+
+	unsigned long		ulVtxOffset;
+	unsigned long		ulFaceOffset;
+	unsigned long		ulVtxNormalOffset;
+} ts_SOMHdr;
+
+typedef struct PSXSOMHdr
+{
+	t_lflagbits			Flags;
+	ts_Sphere			BoundingSphere;
+
+	unsigned long		ulVtxCount;
+	unsigned long		ulFaceCount;
+
+	union
+	{
+		unsigned long		ulFaceBufferSize;
+		unsigned long		ulSetFaceSize;
+	} ;
+
+	unsigned long		ulVtxOffset;
+	unsigned long		ulFaceOffset;
+	unsigned long		ulVtxNormalOffset;
+	unsigned long		ulPrimBufferSize;
+} ts_PSXSOMHdr;
+
+
+/* --------------------------------------------------
+ * Local Prototypes
+ * --------------------------------------------------*/
+unsigned char *	WriteFacePSX( mpostream &str, unsigned char *pFace, unsigned long *pPrimSize);
+
+mpostream & operator << (mpostream &str, ts_SOMHdr &Hdr);
+mpostream & operator << (mpostream &str, ts_PSXSOMHdr &Hdr);
+
+/* --------------------------------------------------
+ * Local Data
+ * --------------------------------------------------*/
+
+/* --------------------------------------------------
+ * Exported Functions
+ * --------------------------------------------------*/
+
+/* --------------------------------------------------
+ * Local Functions
+ * --------------------------------------------------*/
+
+mpostream & operator << (mpostream &str, ts_SOM &Model)
+{
+streampos			HdrPos;
+streampos			EndPos;
+
+ts_SOMHdr			Hdr;
+
+	Hdr.Flags = Model.ModelFlags;
+	Hdr.ulVtxCount = Model.ulVtxCount;
+	Hdr.ulFaceCount = Model.ulFaceCount;
+	Hdr.BoundingSphere = Model.BoundingSphere;
+
+	if( Model.ModelFlags & SOMM_SET_FACE)
+		Hdr.ulSetFaceSize = Model.ulSetFaceSize;
+	else
+		Hdr.ulFaceBufferSize = Model.ulFaceBufferSize;
+
+	Hdr.ulVtxOffset = 0;
+	Hdr.ulFaceOffset = 0;
+	Hdr.ulVtxNormalOffset = 0;
+
+	HdrPos = str.tellp( );
+
+	str << Hdr;
+
+	str.Align( );
+	Hdr.ulVtxOffset = str.tellp( ) - HdrPos;
+
+	str.Write( (unsigned char *) Model.pVtxBuffer, Model.ulVtxCount * sizeof( ts_f3DCoord));
+
+	str.Align( );
+	Hdr.ulFaceOffset = str.tellp( ) - HdrPos;
+
+	if( Model.ModelFlags & SOMM_SET_FACE)
+		str.Write( (unsigned char *) Model.pFaceBuffer, Model.ulFaceCount * Model.ulSetFaceSize);
+	else
+		str.Write( (unsigned char *) Model.pFaceBuffer, Model.ulFaceBufferSize);
+
+	if( Model.pVtxNormals)
+	{
+		str.Align( );
+		Hdr.ulVtxNormalOffset = str.tellp( ) - HdrPos;
+
+		str.Write( (unsigned char *) Model.pVtxNormals, Model.ulVtxCount * sizeof( ts_f3DCoord));
+	}
+
+
+	EndPos = str.tellp( );
+
+	str.seekp( HdrPos);
+
+	str << Hdr;
+
+	str.seekp( EndPos);
+
+	return str;
+
+}
+
+mpostream & WritePSXModel1(mpostream &str, ts_SOM &Model, int iHdrPadBytes)
+{
+unsigned char		*pFacePtr;
+
+unsigned long		i;
+unsigned long		ulPrimSize;
+
+streampos			HdrPos;
+streampos			EndPos;
+
+ts_PSXSOMHdr		Hdr;
+ts_f3DCoord			*pVtx;
+
+	Hdr.Flags = Model.ModelFlags;
+	Hdr.ulVtxCount = Model.ulVtxCount;
+	Hdr.ulFaceCount = Model.ulFaceCount;
+	Hdr.BoundingSphere = Model.BoundingSphere;
+	Hdr.ulPrimBufferSize = 0;
+
+	if( Model.ModelFlags & SOMM_SET_FACE)
+		Hdr.ulSetFaceSize = Model.ulSetFaceSize;
+	else
+		Hdr.ulFaceBufferSize = Model.ulFaceBufferSize;
+
+	Hdr.ulVtxOffset = 0;
+	Hdr.ulFaceOffset = 0;
+	Hdr.ulVtxNormalOffset = 0;
+
+	HdrPos = str.tellp( );
+
+	str << Hdr;
+
+	for( i = 0; i < (unsigned long) iHdrPadBytes; i++)
+		str << (char) 0xca;
+
+	str.Align( );
+	Hdr.ulVtxOffset = str.tellp( ) - HdrPos;
+
+	pVtx = Model.pVtxBuffer;
+
+	for( i = 0; i < Model.ulVtxCount; i++)
+	{
+		str << (short) (pVtx->X);
+		str << (short) (pVtx->Y);
+		str << (short) (pVtx->Z);
+		str << (short) 0;
+		pVtx++;
+	}
+
+	if( Model.pVtxNormals)
+	{
+		str.Align( );
+		Hdr.ulVtxNormalOffset = str.tellp( ) - HdrPos;
+
+		pVtx = Model.pVtxNormals;
+
+		for( i = 0; i < Model.ulVtxCount; i++)
+		{
+			str << pVtx->X;
+			str << pVtx->Y;
+			str << pVtx->Z;
+			pVtx++;
+		}
+
+	}
+
+	str.Align( );
+	Hdr.ulFaceOffset = str.tellp( ) - HdrPos;
+
+	pFacePtr = (unsigned char *) Model.pFaceBuffer;
+
+	for( i = 0; i < Model.ulFaceCount; i++)
+	{
+		pFacePtr = WriteFacePSX( str, pFacePtr, &ulPrimSize);
+		Hdr.ulPrimBufferSize += ulPrimSize;
+	}
+
+	EndPos = str.tellp( );
+
+	Hdr.ulFaceBufferSize = (EndPos - HdrPos) - Hdr.ulFaceOffset;
+
+	str.seekp( HdrPos);
+
+	str << Hdr;
+
+	str.seekp( EndPos);
+
+	return str;
+
+}
+
+#define PSXF_TRI			0x00000001
+#define PSXF_TEXTURED	0x00000002
+#define PSXF_CLR_VTXS	0x00000004
+#define PSXF_CLR_FACE	0x00000008
+#define PSXF_NORMAL		0x00000010
+
+long ConvertFlags( t_lflagbits Flags, unsigned long *pulPrimSize)
+{
+long					ReturnFlags = 0;
+unsigned long		ulVtxs;
+	if( Flags & SOMF_CLR_FLOAT)
+		return -1;
+
+	if( Flags & SOMF_MULT_TEXTURE)
+		return -1;
+
+	if( Flags & SOMF_SNGL_TEXTURE  &&  !(Flags & SOMF_UV_BYTE))
+		return -1;
+
+	if( Flags & SOMF_TRIANGLE)
+	{
+		ulVtxs = 3;
+		ReturnFlags |= PSXF_TRI;
+	}
+	else
+		ulVtxs = 4;
+
+	*pulPrimSize = 8 + (ulVtxs * 4);
+
+
+	if( Flags & SOMF_SNGL_TEXTURE)
+	{
+		*pulPrimSize += ulVtxs * 4;
+		ReturnFlags |= PSXF_TEXTURED;
+	}
+
+	if( Flags & SOMF_SNGL_TEXTURE  &&  Flags & SOMF_CLR_SINGLE)
+	{
+		ReturnFlags |= PSXF_CLR_FACE;
+	}
+	else if( Flags & SOMF_CLR_VERTEX)
+	{
+		*pulPrimSize += (ulVtxs * 4) - 4;
+		ReturnFlags |= PSXF_CLR_VTXS;
+	}
+
+	if( Flags & SOMF_NORMAL)
+		ReturnFlags |= PSXF_NORMAL;
+
+	return ReturnFlags;
+
+}
+
+unsigned char *WriteFacePSX( mpostream &str, unsigned char *pFace, unsigned long *pulPrimSize)
+{
+unsigned short *pVtxs;
+
+unsigned long	ulVtxs;
+long				lWriteFlags;
+
+ts_f3DCoord		*pNormal;
+
+ts_SOMFace		*pPackedFace = (ts_SOMFace *) pFace;
+
+	lWriteFlags = ConvertFlags( pPackedFace->Flags, pulPrimSize);
+
+	if( lWriteFlags == -1)
+	{
+		somNextFace( (ts_SOMFace **) &pFace);
+		return pFace;
+	}
+
+	ulVtxs = (pPackedFace->Flags & SOMF_TRIANGLE) ? 3 : 4;
+
+	pFace += sizeof( ts_SOMFace);
+
+	str << (unsigned long) lWriteFlags;
+
+// Write out the vertexs
+	pVtxs = (unsigned short *) pFace;
+	str << pVtxs[0];
+	str << pVtxs[1];
+
+	if( ulVtxs == 4)
+		str << pVtxs[3];
+
+	str << pVtxs[2];
+
+// 2->3 hack
+//	for( i = 0; i < ulVtxs; i++)
+//		str << pVtxs[i];
+
+	pFace += ulVtxs * sizeof( unsigned short);
+
+	if( ulVtxs == 3)
+		str << (unsigned short) 0xffff;
+
+// Write out color info
+	// Write out vertex colors
+	if( pPackedFace->Flags & SOMF_CLR_SINGLE)
+	{
+		str << *((unsigned long *) pFace);
+		pFace += sizeof( unsigned long);
+	}
+	// Write out vertex colors
+	else if( pPackedFace->Flags & SOMF_CLR_VERTEX)
+	{
+		unsigned long *pColor = (unsigned long *) pFace;
+
+		str << pColor[0];
+		str << pColor[1];
+		if( ulVtxs == 4)
+			str << pColor[3];
+
+		str << pColor[2];
+
+		pFace += ulVtxs * sizeof( unsigned long);
+
+	//		for( i = 0; i < ulVtxs; i++)
+//		{
+//			str << *((unsigned long *) pFace);
+//			pFace += sizeof( unsigned long);
+//		}
+
+		if( ulVtxs == 3)
+			str << (unsigned long) 0;
+	}
+	else if( !(pPackedFace->Flags & SOMF_SNGL_TEXTURE))
+		str << *((unsigned long *) &pPackedFace->PackedColor);
+	else
+		str << (unsigned long) 0xffffffff;
+
+// Write out texture id or single color
+	if( pPackedFace->Flags & SOMF_SNGL_TEXTURE)
+		str << pPackedFace->TexID;
+
+// Write out texture coord
+	if( pPackedFace->Flags & SOMF_SNGL_TEXTURE)
+	{
+		str << pFace[0]; // U[0]
+		str << pFace[1]; // V[0]
+
+		str << pFace[2]; // U[1]
+		str << pFace[3]; // U[1]
+
+		if( ulVtxs == 4)
+		{
+			str << pFace[6]; // U[3]
+			str << pFace[7]; // U[3]
+		}
+
+		str << pFace[4]; // U[2]
+		str << pFace[5]; // U[2]
+
+		pFace += ulVtxs * sizeof( unsigned char) * 2;
+
+//		for( i = 0; i < ulVtxs; i++)
+//		{
+//			str << *pFace++;
+//			str << *pFace++;
+//		}
+
+		if( ulVtxs == 3)
+			str << (unsigned short) 0;
+	}
+
+// Write out face normal
+	if( pPackedFace->Flags & SOMF_NORMAL)
+	{
+		pNormal = (ts_f3DCoord *) pFace;
+
+		str << pNormal->X;
+		str << pNormal->Y;
+		str << pNormal->Z;
+
+		pFace += sizeof( ts_f3DCoord);
+	}
+
+
+	return pFace;
+}
+
+
+
+
+mpostream & operator << (mpostream &str, ts_SOMHdr &Hdr)
+{
+
+	str << Hdr.Flags;
+	str << Hdr.BoundingSphere.C.X;
+	str << Hdr.BoundingSphere.C.Y;
+	str << Hdr.BoundingSphere.C.Z;
+	str << Hdr.BoundingSphere.R;
+	str << Hdr.ulVtxCount;
+	str << Hdr.ulFaceCount;
+	str << Hdr.ulFaceBufferSize;
+	str << Hdr.ulVtxOffset;
+	str << Hdr.ulFaceOffset;
+	str << Hdr.ulVtxNormalOffset;
+
+	return str;
+}
+
+mpostream & operator << (mpostream &str, ts_PSXSOMHdr &Hdr)
+{
+
+	str << Hdr.Flags;
+	str << Hdr.BoundingSphere.C.X;
+	str << Hdr.BoundingSphere.C.Y;
+	str << Hdr.BoundingSphere.C.Z;
+	str << Hdr.BoundingSphere.R;
+	str << Hdr.ulVtxCount;
+	str << Hdr.ulFaceCount;
+	str << Hdr.ulFaceBufferSize;
+	str << Hdr.ulVtxOffset;
+	str << Hdr.ulFaceOffset;
+	str << Hdr.ulVtxNormalOffset;
+	str << Hdr.ulPrimBufferSize;
+
+	return str;
+}

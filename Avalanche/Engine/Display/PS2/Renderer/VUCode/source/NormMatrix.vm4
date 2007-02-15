@@ -1,0 +1,72 @@
+	MULx.w	VF01, VF00, VF00	ELENG	P, Row1	; clear VF01.w
+					; P = length( X )
+	MUL.xyz	VF01, Row1, Row2	WAITP		; VF01 = X . Y
+	NOP		MFP.x	VF13, P	; VF13x = length( X )
+	NOP		DIV	Q, VF00w, VF13x	; Q = 1 / length( X )
+	NOP		WAITQ
+	MULQ.xyz	Row1, Row1, Q	ESUM	P, VF01	; P = X . Y
+					; X = | X |
+	NOP		WAITP	
+	MULAw.xyz	ACC, Row2, VF00w	MFP.x	VF14, P	; VF14x = shearXY
+					; ACC = Y
+	MSUBx.xyz	Row2, Row1, VF14x	NOP		; Y = Y - (X * shearXY)
+	NOP		ELENG	P, Row2	; P = length( Y )
+					
+	MUL.xyz	VF01, Row1, Row3	WAITP
+	MUL.xyz	VF02, Row2, Row3	MFP.y	VF13, P	; VF13y = length( Y )
+	NOP		DIV	Q, VF00w, VF13y	; Q = 1 / length( Y )
+	NOP		WAITQ
+
+	MULQ.x	VF14, VF14, Q	ESUM	P, VF01	; P = dot( X, Z )
+					; shearXY /= length( Y )
+	MULQ.xyz	Row2, Row2, Q	WAITP		; Y = | Y |
+	MULAw.xyz	ACC, Row3, VF00w	MFP.y	VF14, P	; VF14y = shearXZ	
+					; ACC = Z
+	MSUBAy.xyz	ACC, Row1, VF14y	ESUM	P, VF02	; P = Y . Z
+					; Z -= X * shearXZ
+	NOP		WAITP		
+	NOP		MFP.z	VF14, P	; VF14z = shearYZ
+	MSUBz.xyz	Row3, Row2, VF14z	NOP		; Z -= Y * shearYZ
+	NOP		ELENG	P, Row3	; P = length( Z )
+	NOP		WAITP
+	NOP		MFP.z	VF13, P	; VF13z = length( Z )
+	NOP		DIV	Q, VF00w, VF13z	; Q = 1 / length( Z )
+	NOP		WAITQ
+	MULQ.xyz	Row3, Row3, Q	NOP		; Z = | Z |
+	MULQ.yz	VF14, VF14, Q	NOP		; shearXZ /= length( Z )
+					; shearYZ /= length( Z )
+	OPMULA.xyz	ACC, Row2, Row3	NOP
+	OPMSUB.xyz	VF01, Row3, Row2	NOP		; VF01 = cross( Y, Z )
+	
+	MUL.xyz	VF02, VF01, Row1	NOP
+	NOP		ESUM	P, VF02	; P = dot( X, cross( Y, Z ) )
+	NOP		MFP.x	VF01, P	; VF01x = dot( X, cross( Y, Z ) )
+	MULx.w	VF01, VF00, VF01	NOP
+	NOP		IADDIU	VI02, VI00, 0x0010	; sign flag for w
+	NOP		NOP
+	NOP		NOP
+	NOP		FMAND	VI01, VI02	; is VF01x < 0.0f
+	NOP		IBNE	VI01, VI02, NM_NotFlipped
+	MULx.xyzw	VF01, VF00, VF00	NOP
+	SUB.xyz	VF13, VF00, VF13	NOP
+	SUB.xyz	Row1, VF00, Row1	NOP
+	SUB.xyz	Row2, VF00, Row2	NOP
+
+NM_NotFlipped:
+
+	OPMULA.xyz	ACC, Row1, Row2	LQ	VF01, offEVMtx1+0(VI00)
+	OPMSUB.xyz	Row3, Row2, Row1	LQ	VF02, offEVMtx1+1(VI00)
+	
+	OPMULA.xyz	ACC, Row3, Row1	MOVE	Row4, VF00
+	OPMSUB.xyz	Row2, Row1, Row3	LOI	.5
+	
+	MULI.xy	Row1, Row1, I	MOVE.z	Row1, VF00
+	MULI.xy	Row2, Row2, I	MOVE.z	Row2, VF00
+	MULI.xy	Row3, Row3, I	MOVE.z	Row3, VF00
+	ADDI.xy	Row4, VF00, I	MR32.z	Row4, VF00
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,17 @@
+# Alias|Wavefront Material File (MTL)
+newmtl default
+Ns 32
+d 1 
+illum 2
+Kd 0.8 0.8 0.8
+Ks 0 0 0
+Ka 0 0 0
+
+newmtl bbboss_face
+Ns 6
+dl 1
+illum 2
+Kd 0.8 0.8 0.8
+Ks 0 0 0
+Ka 0 0 0
+map_Kd \\TONY\public\test_objects\bbboss_face.tga

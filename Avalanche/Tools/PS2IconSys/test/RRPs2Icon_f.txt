@@ -1,0 +1,17 @@
+Title Les Razmoket La rancon royale
+LF 12
+Trans 127
+ULColor 44,135,212
+URColor 44,135,212
+LLColor 18,27,82
+LRColor 18,27,82
+L1Dir -1.0,1.0,-1.0
+L2Dir 1.0,-1.0,2.0
+L3Dir 1.0,0.0,1.0
+L1Color 170,170,170
+L2Color 70,70,70
+L3Color 0,0,0
+AColor 127,127,127
+ViewIcon rrlogodtf.ico
+CopyIcon rrlogodtf.ico
+DelIcon rrlogodtf.ico

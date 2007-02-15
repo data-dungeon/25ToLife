@@ -1,0 +1,168 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjpeg", "..\libjpeg\libjpeg.vcproj", "{4318C069-133A-4305-A98F-B2B406D4634F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpng", "..\libpng\libpng.vcproj", "{6D628EE1-C4EB-42D7-83EE-6831B724507F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtiff", "..\libtiff\libtiff.vcproj", "{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libungif", "..\libungif\libungif.vcproj", "{1C12D7F6-6025-4D07-B17C-74B19C85BCE3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paintlib", "paintlib.vcproj", "{52F1C094-9370-43A8-99D2-F89CA5949333}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4318C069-133A-4305-A98F-B2B406D4634F} = {4318C069-133A-4305-A98F-B2B406D4634F}
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F} = {6D628EE1-C4EB-42D7-83EE-6831B724507F}
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01} = {15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3} = {1C12D7F6-6025-4D07-B17C-74B19C85BCE3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "piclook", "..\piclook\PicLook.vcproj", "{E6F52B45-9707-4B15-B322-8B607D7A2995}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4318C069-133A-4305-A98F-B2B406D4634F} = {4318C069-133A-4305-A98F-B2B406D4634F}
+		{52F1C094-9370-43A8-99D2-F89CA5949333} = {52F1C094-9370-43A8-99D2-F89CA5949333}
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F} = {6D628EE1-C4EB-42D7-83EE-6831B724507F}
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01} = {15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3} = {1C12D7F6-6025-4D07-B17C-74B19C85BCE3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "..\test\test.vcproj", "{B7349BBA-5886-4425-A07C-FDF37F541D00}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4318C069-133A-4305-A98F-B2B406D4634F} = {4318C069-133A-4305-A98F-B2B406D4634F}
+		{52F1C094-9370-43A8-99D2-F89CA5949333} = {52F1C094-9370-43A8-99D2-F89CA5949333}
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F} = {6D628EE1-C4EB-42D7-83EE-6831B724507F}
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01} = {15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3} = {1C12D7F6-6025-4D07-B17C-74B19C85BCE3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testdec", "..\testdec\testdec.vcproj", "{74E4115C-75DA-402B-A366-629A70839CE5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4318C069-133A-4305-A98F-B2B406D4634F} = {4318C069-133A-4305-A98F-B2B406D4634F}
+		{52F1C094-9370-43A8-99D2-F89CA5949333} = {52F1C094-9370-43A8-99D2-F89CA5949333}
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F} = {6D628EE1-C4EB-42D7-83EE-6831B724507F}
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01} = {15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3} = {1C12D7F6-6025-4D07-B17C-74B19C85BCE3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testdib", "..\testdib\testdib.vcproj", "{93D51FA4-EC9C-4161-AD8B-AB155BF6AD05}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4318C069-133A-4305-A98F-B2B406D4634F} = {4318C069-133A-4305-A98F-B2B406D4634F}
+		{52F1C094-9370-43A8-99D2-F89CA5949333} = {52F1C094-9370-43A8-99D2-F89CA5949333}
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F} = {6D628EE1-C4EB-42D7-83EE-6831B724507F}
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01} = {15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3} = {1C12D7F6-6025-4D07-B17C-74B19C85BCE3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tiffex", "..\tiffex\tiffex.vcproj", "{23863C58-FBDC-446F-B6E6-52B518E82F83}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4318C069-133A-4305-A98F-B2B406D4634F} = {4318C069-133A-4305-A98F-B2B406D4634F}
+		{52F1C094-9370-43A8-99D2-F89CA5949333} = {52F1C094-9370-43A8-99D2-F89CA5949333}
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F} = {6D628EE1-C4EB-42D7-83EE-6831B724507F}
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01} = {15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3} = {1C12D7F6-6025-4D07-B17C-74B19C85BCE3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 11
+		SccProjectUniqueName0 = ..\\libjpeg\\libjpeg.vcproj
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = ..\\libjpeg\\
+		SccProjectUniqueName1 = ..\\libpng\\libpng.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = ..\\libpng\\
+		SccProjectUniqueName2 = ..\\libtiff\\libtiff.vcproj
+		SccLocalPath2 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection2 = ..\\libtiff\\
+		SccProjectUniqueName3 = ..\\libungif\\libungif.vcproj
+		SccLocalPath3 = ..\\libungif
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = paintlib.vcproj
+		SccLocalPath4 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\piclook\\PicLook.vcproj
+		SccLocalPath5 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection5 = ..\\piclook\\
+		SccProjectUniqueName6 = ..\\test\\test.vcproj
+		SccLocalPath6 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection6 = ..\\test\\
+		SccProjectUniqueName7 = ..\\testdec\\testdec.vcproj
+		SccLocalPath7 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection7 = ..\\testdec\\
+		SccProjectUniqueName8 = ..\\testdib\\testdib.vcproj
+		SccLocalPath8 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection8 = ..\\testdib\\
+		SccProjectUniqueName9 = ..\\tiffex\\tiffex.vcproj
+		SccLocalPath9 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection9 = ..\\tiffex\\
+		SccProjectName10 = Perforce\u0020Project
+		SccLocalPath10 = .
+		SccProvider10 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {9108CF99-CC73-4BE5-A790-C8EB83C817EF}
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4318C069-133A-4305-A98F-B2B406D4634F}.Debug.ActiveCfg = Debug|Win32
+		{4318C069-133A-4305-A98F-B2B406D4634F}.Debug.Build.0 = Debug|Win32
+		{4318C069-133A-4305-A98F-B2B406D4634F}.Release.ActiveCfg = Release|Win32
+		{4318C069-133A-4305-A98F-B2B406D4634F}.Release.Build.0 = Release|Win32
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F}.Debug.ActiveCfg = Debug|Win32
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F}.Debug.Build.0 = Debug|Win32
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F}.Release.ActiveCfg = Release|Win32
+		{6D628EE1-C4EB-42D7-83EE-6831B724507F}.Release.Build.0 = Release|Win32
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}.Debug.ActiveCfg = Debug|Win32
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}.Debug.Build.0 = Debug|Win32
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}.Release.ActiveCfg = Release|Win32
+		{15BFFDE7-9E2D-4AD1-B737-B83006CA2E01}.Release.Build.0 = Release|Win32
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3}.Debug.ActiveCfg = Debug|Win32
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3}.Debug.Build.0 = Debug|Win32
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3}.Release.ActiveCfg = Release|Win32
+		{1C12D7F6-6025-4D07-B17C-74B19C85BCE3}.Release.Build.0 = Release|Win32
+		{52F1C094-9370-43A8-99D2-F89CA5949333}.Debug.ActiveCfg = Debug|Win32
+		{52F1C094-9370-43A8-99D2-F89CA5949333}.Debug.Build.0 = Debug|Win32
+		{52F1C094-9370-43A8-99D2-F89CA5949333}.Release.ActiveCfg = Release|Win32
+		{52F1C094-9370-43A8-99D2-F89CA5949333}.Release.Build.0 = Release|Win32
+		{E6F52B45-9707-4B15-B322-8B607D7A2995}.Debug.ActiveCfg = Debug|Win32
+		{E6F52B45-9707-4B15-B322-8B607D7A2995}.Debug.Build.0 = Debug|Win32
+		{E6F52B45-9707-4B15-B322-8B607D7A2995}.Release.ActiveCfg = Release|Win32
+		{E6F52B45-9707-4B15-B322-8B607D7A2995}.Release.Build.0 = Release|Win32
+		{B7349BBA-5886-4425-A07C-FDF37F541D00}.Debug.ActiveCfg = Debug|Win32
+		{B7349BBA-5886-4425-A07C-FDF37F541D00}.Debug.Build.0 = Debug|Win32
+		{B7349BBA-5886-4425-A07C-FDF37F541D00}.Release.ActiveCfg = Release|Win32
+		{B7349BBA-5886-4425-A07C-FDF37F541D00}.Release.Build.0 = Release|Win32
+		{74E4115C-75DA-402B-A366-629A70839CE5}.Debug.ActiveCfg = Debug|Win32
+		{74E4115C-75DA-402B-A366-629A70839CE5}.Debug.Build.0 = Debug|Win32
+		{74E4115C-75DA-402B-A366-629A70839CE5}.Release.ActiveCfg = Release|Win32
+		{74E4115C-75DA-402B-A366-629A70839CE5}.Release.Build.0 = Release|Win32
+		{93D51FA4-EC9C-4161-AD8B-AB155BF6AD05}.Debug.ActiveCfg = Debug|Win32
+		{93D51FA4-EC9C-4161-AD8B-AB155BF6AD05}.Debug.Build.0 = Debug|Win32
+		{93D51FA4-EC9C-4161-AD8B-AB155BF6AD05}.Release.ActiveCfg = Release|Win32
+		{93D51FA4-EC9C-4161-AD8B-AB155BF6AD05}.Release.Build.0 = Release|Win32
+		{23863C58-FBDC-446F-B6E6-52B518E82F83}.Debug.ActiveCfg = Debug|Win32
+		{23863C58-FBDC-446F-B6E6-52B518E82F83}.Debug.Build.0 = Debug|Win32
+		{23863C58-FBDC-446F-B6E6-52B518E82F83}.Release.ActiveCfg = Release|Win32
+		{23863C58-FBDC-446F-B6E6-52B518E82F83}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

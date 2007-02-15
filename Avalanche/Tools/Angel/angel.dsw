@@ -1,0 +1,230 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Display"=..\..\Engine\Display\Display.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Display", ETAAAAAA
+    ..\..\engine\display
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EngineHelper"=..\..\GameLib\EngineHelper\EngineHelper.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/EngineHelper", JJKAAAAA
+    ..\..\gamelib\enginehelper
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Game"=..\..\Engine\Game\Game.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Game", FAAAAAAA
+    ..\..\engine\game
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Layers"=..\..\Engine\Layers\Layers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Layers", AAAAAAAA
+    ..\..\engine\layers
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Math"=..\..\Engine\Math\Math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Math", WEAAAAAA
+    ..\..\engine\math
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ToolHelper"=..\..\gamelib\ToolHelper\ToolHelper.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/ToolHelper", ITKAAAAA
+    ..\..\gamelib\toolhelper
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "angel"=.\angel.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/avalanche/tools/angel", QPFAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Display
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Layers
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Processor
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name container
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name effects
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name linearAlgebra
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ToolHelper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name platform
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EngineHelper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "container"=..\..\gamelib\container\container.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/container", QIKAAAAA
+    ..\..\gamelib\container
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "effects"=..\..\gamelib\Effects\effects.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/effects", YOKAAAAA
+    ..\..\gamelib\effects
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "linearAlgebra"=..\..\gamelib\linearalgebra\linearAlgebra.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/linearAlgebra", VIKAAAAA
+    ..\..\gamelib\linearalgebra
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "platform"=..\..\gamelib\platform\platform.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/platform", ODGAAAAA
+    ..\..\gamelib\platform
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/avalanche/tools/angel", QPFAAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

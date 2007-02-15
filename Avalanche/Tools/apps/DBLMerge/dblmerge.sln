@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DBLMerge", "DBLMerge.vcproj", "{42BD58A2-FD64-4267-AAF6-598EA8FA600B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5AF414E-58F4-4567-8EB8-F16D591612DA} = {B5AF414E-58F4-4567-8EB8-F16D591612DA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DBWriter", "..\DBWriter\DBWriter.vcproj", "{B5AF414E-58F4-4567-8EB8-F16D591612DA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = DBLMerge.vcproj
+		SccProjectName0 = \u0022$/Avalanche/tools/apps/DBLMerge\u0022,\u0020TFJAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = ..\\DBWriter\\DBWriter.vcproj
+		SccProjectName1 = \u0022$/Avalanche/tools/apps/DBWriter\u0022,\u0020JXTBAAAA
+		SccLocalPath1 = ..\\DBWriter
+		SccProvider1 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{42BD58A2-FD64-4267-AAF6-598EA8FA600B}.Debug.ActiveCfg = Debug|Win32
+		{42BD58A2-FD64-4267-AAF6-598EA8FA600B}.Debug.Build.0 = Debug|Win32
+		{42BD58A2-FD64-4267-AAF6-598EA8FA600B}.Release.ActiveCfg = Release|Win32
+		{42BD58A2-FD64-4267-AAF6-598EA8FA600B}.Release.Build.0 = Release|Win32
+		{B5AF414E-58F4-4567-8EB8-F16D591612DA}.Debug.ActiveCfg = Debug|Win32
+		{B5AF414E-58F4-4567-8EB8-F16D591612DA}.Debug.Build.0 = Debug|Win32
+		{B5AF414E-58F4-4567-8EB8-F16D591612DA}.Release.ActiveCfg = Release|Win32
+		{B5AF414E-58F4-4567-8EB8-F16D591612DA}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

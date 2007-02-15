@@ -1,0 +1,114 @@
+============================================================================
+Current Milestones
+============================================================================
+Edge Collapse
+
+SplitEdge
+   Vertex locations look wrong.  Is it tangents?
+   Connect doesn't work so well, also continuity?
+   Doesn't work correctly in Mirror mode
+   Do we want it to enter vertex mode?
+   Is position correct or does it seem to flat
+   Get Rid of all the menu items
+   
+Split Ring tool
+   Find Continuity Problem for loops
+   
+Make SplitPoly not realtime and hook up SplitRing   
+
+============================================================================
+BUGS
+============================================================================
+Continuity bad in SplitPoly
+SplitEdge crash in mirror mode, test one away from axis too
+Mirror mode center points
+Connect across axis
+Connect doesn't support continuity
+Weld in mirror mode
+------------------------------
+Speed up mirror mode by using maps
+FlipNormal Working
+Can't have face near focus anymore because it picks edges
+Changing seletion types shouldn't reset manipulator if possible. Tough
+real-time mouse over
+Why CreateSurface have Undo commented out for added to an existing
+Any manipulator other than Single pick you can't translate
+2 separators when delete menu is called
+OnSetCursor should use view it is over's manipulator not current manipulator
+Load Selection Toggle
+Undo needs to cancel current manipukator
+Right click should replace selection if the clicked object is not selected.
+Right click should Set Focus if the clicked object is not selected.
+fix having a PopupEdit open and closing or deleting a model that the popup is a property of
+Delete PolySets needs to somehow Disconnect the PropertyPlys;
+Delete TexCoordSet undo needs to dirty - TONY
+snipeobjectheader.SkipToEnd
+TOnys SetCurrentManipulator function and changes
+
+TONY
+   Tangent handles need to store with magnitude, alpha and gamma
+	Bias Handles
+	Need to be created when you turn on/off Show for Focus Object   
+	No Undo?
+	Peak is weird
+	Select Vertex 260 edge 362 on fish
+
+============================================================================
+Features
+============================================================================
+Joe Williamsen selections features
+Hit W a second time to show manipulator
+Look into Double click on folders adds new objects
+n Real-time mode of SplitPoly for speed
+Turn around selection bounds if no FocusWeld
+    Rename to Collapse
+    Add Percentages
+    Add Edgemode commandui
+Auto add bone assignments for new geometry, splitface too
+Default manipulator
+Need fast way to move Vertes on an edge without changing UV's.  Will make cool manipulators and speed up AddVertex and SPlitPoly
+Save all preferences
+123 key constraints
+Hidden percentage
+Syntax command parameters
+Convert importer to commands and have right click on folders, along with DoubleCLick
+need Segment Tool
+AlignConnectedNormalsLike
+Allow properties to have no Undo
+Select Manipulator has Space bar for choose selection type
+1, 2, 3 keys adds that many segents to all selected edges
+Bevel for verts, edges, and faces
+extrude
+Selections features
+Manipulator and navigator commansUIs
+OnModified
+Spline Component selection, edge of direction of vertex selection and drawing
+   Write FindNearest functions for Edge, Poly
+   Draw Neareast components different.
+Customize Buttons
+Finish Navigator plugins
+   Add AnimateCamera stuff
+   Add Hide to the AnimateCamera if it is a default camera
+   Fix zoom fit in ImageViews 
+Finish Select Manipulator for Lasso and PolyLasso and Paint/ Remove Place commands
+   Do Show Rules
+   Culled
+   Closes on face
+Mirror
+   Fix mirror bones
+   Hook up Mirror Properties
+CLI needs to alloc commands on for Objects for the current CommandList only
+
+==========================================================================================
+Notes
+==========================================================================================
+Save
+	[/] = classname : we allocate
+	{/} = user parsearg data
+	</> = property data : we find
+
+
+--------------------------------------------
+http://www.student.cs.uwaterloo.ca/~cs779/Gallery/Win2001/bbgrant/
+http://www.multires.caltech.edu/pubs/interpolation.pdf
+http://graphics.stanford.edu/~dzorin/multires/butterfly/

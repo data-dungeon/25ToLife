@@ -1,0 +1,8 @@
+create "SNPS2Consumer\Math.lib"
+addmod "SNPS2Consumer/fastrand.obj"
+addmod "SNPS2Consumer/MathMicro.obj"
+addmod "SNPS2Consumer/MathPCH_SN.obj"
+addmod "SNPS2Consumer/MathScriptFunc.obj"
+addmod "SNPS2Consumer/mtwister.obj"
+save
+end

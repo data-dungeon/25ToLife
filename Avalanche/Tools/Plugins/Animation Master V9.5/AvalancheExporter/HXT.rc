@@ -1,0 +1,242 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\HXT.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "HXT DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MPF Plugin\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "My Properties.HXT\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "HXT Dynamic Link Library\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EXPORTMODELDIALOG DIALOGEX 0, 0, 201, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Export Avalanche File"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,5,45,190,40
+    CONTROL         "Generate Model Maps ( if nessessary )",
+                    IDC_GENERATEMODELMAPS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,44,136,10
+    RTEXT           "M&in Size:",IDC_STATIC,13,65,30,8
+    COMBOBOX        IDC_MINSIZE_COMBO,47,63,48,86,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "M&ax Size:",IDC_STATIC,99,65,39,8
+    COMBOBOX        IDC_MAXSIZE_COMBO,139,63,48,86,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,88,93,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,145,93,50,14
+    GROUPBOX        "File Name",IDC_STATIC,5,7,190,31
+    LTEXT           "",IDC_FILENAME,11,18,157,13,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_BROWSE,174,18,15,13
+END
+
+IDD_EXPORTMODELSDIALOG DIALOGEX 0, 0, 203, 166
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Export Avalanche File"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Models to export:",IDC_LISTLABEL,7,7,67,8
+    LISTBOX         IDC_MODELLIST_COMBO,7,15,131,62,LBS_SORT | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Output Directory",IDC_STATIC,7,82,189,31
+    LTEXT           "",IDC_OUTPUTDIR,13,94,152,13,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_BROWSE,173,94,15,13
+    GROUPBOX        "",IDC_STATIC,7,119,190,40
+    CONTROL         "Generate Model Maps ( if nessessary )",
+                    IDC_GENERATEMODELMAPS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,118,136,10
+    RTEXT           "M&in Size:",IDC_STATIC,15,140,30,8
+    COMBOBOX        IDC_MINSIZE_COMBO,49,137,48,86,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "M&ax Size:",IDC_STATIC,101,140,39,8
+    COMBOBOX        IDC_MAXSIZE_COMBO,141,137,48,86,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,146,15,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,146,33,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_EXPORTMODELDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_EXPORTMODELSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MENUFILTER          "Avalanche File (*AV4)..."
+    IDS_EXPORTTITLE         "Export Avalanche File"
+    IDS_FILEFILTERS         "Avalanche File (*.AV4)|*.av4|HASH||"
+    IDS_CHOOSEDIRECTORY     "Choose Directory"
+    IDS_ERROREXPORTINGMODEL "Error Exporting Model [%1]."
+    IDS_IMPORTTITLE         "Import Avalanche File"
+    IDS_ERRORIMPORTINGMODEL "Error Importing Model [%1]."
+    IDS_ACTIONHASNOMODELASSIGNED 
+                            "Action [%1] has no Model assigned to it.  You must edit the Action to assign a Model."
+    IDS_ACTIONSTOEXPORT     "Actions to export:"
+    IDS_ERRORIMPORTING      "Error Importing"
+    IDS_INVALIDVERSION      "Invalid Avalanche file version"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INVALIDFILEFORMAT   "Invalid Avalanche file %1"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\HXT.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

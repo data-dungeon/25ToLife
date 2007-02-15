@@ -1,0 +1,113 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Math"=..\..\..\..\EngineNew\Math\Math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/EngineNew/Math", XTDCAAAA
+    ..\..\..\..\enginenew\math
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TupImpExp"=.\TupImpExp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Maya/TupImpExp", XWFCAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Tupper3d
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name tupperware
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TupperAttrib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Tupper3d"=..\..\..\Tupper3d\Tupper3d.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Tupper3d", RJRAAAAA
+    ..\..\..\tupper3d
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TupperAttrib"=..\..\..\TupperAttrib\TupperAttrib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/TupperAttrib", LHGBAAAA
+    ..\..\..\tupperattrib
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "tupperware"=..\..\..\Tupperware\tupperware.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/Tupperware", MROAAAAA
+    ..\..\..\tupperware
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Maya/TupImpExp", XWFCAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

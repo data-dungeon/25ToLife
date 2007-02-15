@@ -1,0 +1,5 @@
+create "SNPS2Consumer/Loop.lib"
+addmod "SNPS2Consumer/gameloop.obj"
+addmod "SNPS2Consumer/LoopPCH_SN.obj"
+save
+end

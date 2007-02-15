@@ -1,0 +1,488 @@
+;;-----------------------------------------------------------------------------
+;;                           PS2 Shell System Core
+;;
+;; shellDisp - efficient display handling and fullscreen antialiasing
+;; VU1 code to shrink or clear the display by drawing long, thin sprites
+;;
+;; $Workfile: shellDisp.c $
+;; $Author: Mdean $
+;; $Date: 11/02/03 12:00 $
+;; $Revision: 7 $
+;;
+;; Copyright (c) 2002-3 Sony Computer Entertainment Europe.
+;; All Rights Reserved.
+;;
+;;-----------------------------------------------------------------------------
+
+.include		"vumacros.h"
+
+.global			gvShellDispShrinkAndClearStart1
+.global			gvShellDispShrinkAndClearEnd1
+
+.global			gvShellDispShrinkScreenStart1
+.global			gvShellDispShrinkScreenEnd1
+
+.global			gvShellDispClearScreenStart1
+.global			gvShellDispClearScreenEnd1
+
+.global			gvShellDispNoClearStart1
+.global			gvShellDispNoClearEnd1
+
+.global			gvShellDispShrinkAndClearStart2
+.global			gvShellDispShrinkAndClearEnd2
+
+.global			gvShellDispShrinkScreenStart2
+.global			gvShellDispShrinkScreenEnd2
+
+.global			gvShellDispClearScreenStart2
+.global			gvShellDispClearScreenEnd2
+
+.global			gvShellDispNoClearStart2
+.global			gvShellDispNoClearEnd2
+
+.global			gvShellDispVUDrawEnv1
+.global			gvShellDispVUDrawEnv2
+
+.global			gvShellDispShrinkSpriteTag01
+.global			gvShellDispShrinkSpriteTag11
+.global			gvShellDispShrinkScreenEnv1
+
+.global			gvShellDispShrinkSpriteTag02
+.global			gvShellDispShrinkSpriteTag12
+.global			gvShellDispShrinkScreenEnv2
+
+.global			gvShellDispClearSpriteTag01
+.global			gvShellDispClearSpriteTag11
+.global			gvShellDispClearScreenEnv1
+
+.global			gvShellDispClearSpriteTag02
+.global			gvShellDispClearSpriteTag12
+.global			gvShellDispClearScreenEnv2
+
+.DmaPackVif		1																		; TTE on or off
+
+gvShellDispShrinkAndClearStart1:
+				DMAcall		*, ShrinkScreen1
+				FLUSHE
+.EndDmaData
+				DMAcall		*, ClearScreen1
+.EndDmaData
+				DMAcall		*, SetDrawingEnv1
+.EndDmaData
+gvShellDispShrinkAndClearEnd1:
+				DMAend
+
+gvShellDispShrinkScreenStart1:
+				DMAcall		*, ShrinkScreen1
+.EndDmaData
+				DMAcall		*, SetDrawingEnv1
+.EndDmaData
+gvShellDispShrinkScreenEnd1:
+				DMAend
+
+gvShellDispClearScreenStart1:
+				DMAcall		*, ClearScreen1
+.EndDmaData
+				DMAcall		*, SetDrawingEnv1
+.EndDmaData
+gvShellDispClearScreenEnd1:
+				DMAend
+
+gvShellDispNoClearStart1:
+				DMAcall		*, SetDrawingEnv1
+.EndDmaData
+gvShellDispNoClearEnd1:
+				DMAend
+
+
+gvShellDispShrinkAndClearStart2:
+				DMAcall		*, ShrinkScreen2
+				FLUSHE
+.EndDmaData
+				DMAcall		*, ClearScreen2
+.EndDmaData
+				DMAcall		*, SetDrawingEnv2
+.EndDmaData
+gvShellDispShrinkAndClearEnd2:
+				DMAend
+
+gvShellDispShrinkScreenStart2:
+				DMAcall		*, ShrinkScreen2
+.EndDmaData
+				DMAcall		*, SetDrawingEnv2
+.EndDmaData
+gvShellDispShrinkScreenEnd2:
+				DMAend
+
+gvShellDispClearScreenStart2:
+				DMAcall		*, ClearScreen2
+.EndDmaData
+				DMAcall		*, SetDrawingEnv2
+.EndDmaData
+gvShellDispClearScreenEnd2:
+				DMAend
+
+gvShellDispNoClearStart2:
+				DMAcall		*, SetDrawingEnv2
+.EndDmaData
+gvShellDispNoClearEnd2:
+				DMAend
+
+
+SetDrawingEnv1:
+				DMAcnt		*
+				stcycl	1,1
+				unpack		V4_32, 128, *
+
+gvShellDispVUDrawEnv1:
+				GIFpacked	REGS={A_D}, NLOOP=14, EOP
+				iwzyx		0x0, 0x4c, 0x0, 0x0													;Frame1
+				iwzyx		0x0, 0x4e, 0x0, 0x0													;ZBuf1
+				iwzyx		0x0, 0x18, 0x0, 0x0													;xyoffset1
+				iwzyx		0x0, 0x40, 0x0, 0x0													;scissor1
+				iwzyx		0x0, 0x1a, 0x0, 0x0													;prmodecont
+				iwzyx		0x0, 0x46, 0x0, 0x0													;colclamp
+				iwzyx		0x0, 0x45, 0x0, 0x0													;dthe(dither enable)
+				iwzyx		0x0, 0x47, 0x0, 0x0													;Test1
+				iwzyx		0x0, 0x44, 0x0, 0x0													;dimx
+;Context2
+				iwzyx		0x0, 0x4d, 0x0, 0x0													;Frame2
+				iwzyx		0x0, 0x4f, 0x0, 0x0													;ZBuf2
+				iwzyx		0x0, 0x19, 0x0, 0x0													;xyoffset2
+				iwzyx		0x0, 0x41, 0x0, 0x0													;scissor2
+				iwzyx		0x0, 0x48, 0x0, 0x0													;Test2
+.EndGIF
+.EndUnpack
+.EndDmaData
+				DMAcall		*, RestoreEnvironment
+.EndDmaData
+				DMAret		*
+.EndDmaData
+
+SetDrawingEnv2:
+				DMAcnt		*
+				stcycl	1,1
+				unpack		V4_32, 128, *
+
+gvShellDispVUDrawEnv2:
+				GIFpacked	REGS={A_D}, NLOOP=14, EOP
+				iwzyx		0x0, 0x4c, 0x0, 0x0													;Frame1
+				iwzyx		0x0, 0x4e, 0x0, 0x0													;ZBuf1
+				iwzyx		0x0, 0x18, 0x0, 0x0													;xyoffset1
+				iwzyx		0x0, 0x40, 0x0, 0x0													;scissor1
+				iwzyx		0x0, 0x1a, 0x0, 0x0													;prmodecont
+				iwzyx		0x0, 0x46, 0x0, 0x0													;colclamp
+				iwzyx		0x0, 0x45, 0x0, 0x0													;dthe(dither enable)
+				iwzyx		0x0, 0x47, 0x0, 0x0													;Test1
+				iwzyx		0x0, 0x44, 0x0, 0x0													;dimx
+;Context2
+				iwzyx		0x0, 0x4d, 0x0, 0x0													;Frame2
+				iwzyx		0x0, 0x4f, 0x0, 0x0													;ZBuf2
+				iwzyx		0x0, 0x19, 0x0, 0x0													;xyoffset2
+				iwzyx		0x0, 0x41, 0x0, 0x0													;scissor2
+				iwzyx		0x0, 0x48, 0x0, 0x0													;Test2
+.EndGIF
+.EndUnpack
+.EndDmaData
+				DMAcall		*, RestoreEnvironment
+.EndDmaData
+				DMAret		*
+.EndDmaData
+
+RestoreEnvironment:
+				DMAret		*
+				MPG			128, *
+				nop								iaddiu		vi6,vi0,128
+				NOP								XGKICK		vi06								; Restore environment
+				NOP[E]							NOP
+				NOP								NOP
+.EndMPG
+				MSCAL		128
+.EndDmaData
+
+
+
+ShrinkScreen1:
+;;-----------------------------------------------------------------------------
+;; Set up environment such Z write enable, Frame for shrink
+;;-----------------------------------------------------------------------------
+
+				DMAcnt		*
+				DIRECT		*
+				GIFpacked	REGS={A_D}, NLOOP=11, EOP
+gvShellDispShrinkScreenEnv1:
+				iwzyx		0x0, 0x18, 0x0, 0x0													;XYOFFSET1(0,0)
+				iwzyx		0x0, 0x47, 0x0, 0x030000											;Test1 (all pass)
+				iwzyx		0x0, 0x4e, 0x1, 0x0													;ZBuf1 (mask z write)
+				iwzyx		0x0, 0x4c, 0x0, 0x0													;Frame1
+				iwzyx		0x0, 0x45, 0x0, 0x0													;DTHE(DITHER OFF)
+				iwzyx		0x0, 0x40, 0xffff0000, 0xffff0000									; No scissoring
+				iwzyx		0x0, 0x14, 0x0, 0x0													; TEX1
+				iwzyx		0x0, 0x06, 0x0, 0x0													; TEX0
+				iwzyx		0x0, 0x3f, 0x0, 0x0													; TEXFLUSH
+				iwzyx		0x0, 0x08, 0x0, 0x05												;CLAMP
+				iwzyx		0x0, 0x44, 0x07165243, 0x34256170									;  DIMX 
+.EndGIF
+.EndDirect
+.EndDmaData
+
+;;-----------------------------------------------------------------------------
+;; DMA two sprite GIF packets for screen shrinking
+;;-----------------------------------------------------------------------------
+
+				DMAnext		*, DoShrink
+				stcycl	1,1
+				unpack		V4_32, 0, *
+
+gvShellDispShrinkSpriteTag01:
+				iwzyx		0x14, 0x53531, 0x508b4000, 0x00008001								; GIFTag and Strip Count
+				iwzyx		0x80, 0x0080, 0x0080, 0x0080										; rgb : 1
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv  : 2
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz : 3
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv  : 4
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz : 5
+
+gvShellDispShrinkSpriteTag11:
+				iwzyx		0x00, 0x53531, 0x508b4000, 0x00008001								; GIFTag
+				iwzyx		0x80, 0x0080, 0x0080, 0x0080										; rgb1  
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz
+
+.EndUnpack
+.EndDmaData
+
+ShrinkScreen2:
+;;-----------------------------------------------------------------------------
+;; Set up environment such Z write enable, Frame for shrink
+;;-----------------------------------------------------------------------------
+
+				DMAcnt		*
+				DIRECT		*
+				GIFpacked	REGS={A_D}, NLOOP=11, EOP
+gvShellDispShrinkScreenEnv2:
+				iwzyx		0x0, 0x18, 0x0, 0x0													;XYOFFSET1(0,0)
+				iwzyx		0x0, 0x47, 0x0, 0x030000											;Test1 (all pass)
+				iwzyx		0x0, 0x4e, 0x1, 0x0													;ZBuf1 (mask z write)
+				iwzyx		0x0, 0x4c, 0x0, 0x0													;Frame1
+				iwzyx		0x0, 0x45, 0x0, 0x0													;DTHE(DITHER OFF)
+				iwzyx		0x0, 0x40, 0xffff0000, 0xffff0000									; No scissoring
+				iwzyx		0x0, 0x14, 0x0, 0x0													; TEX1
+				iwzyx		0x0, 0x06, 0x0, 0x0													; TEX0
+				iwzyx		0x0, 0x3f, 0x0, 0x0													; TEXFLUSH
+				iwzyx		0x0, 0x08, 0x0, 0x05												;CLAMP
+				iwzyx		0x0, 0x44, 0x07165243, 0x34256170									;  DIMX 
+.EndGIF
+.EndDirect
+.EndDmaData
+
+;;-----------------------------------------------------------------------------
+;; DMA two sprite GIF packets for screen shrinking
+;;-----------------------------------------------------------------------------
+
+				DMAnext		*, DoShrink
+				stcycl	1,1
+				unpack		V4_32, 0, *
+
+gvShellDispShrinkSpriteTag02:
+				iwzyx		0x14, 0x53531, 0x508b4000, 0x00008001								; GIFTag and Strip Count
+				iwzyx		0x80, 0x0080, 0x0080, 0x0080										; rgb : 1
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv  : 2
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz : 3
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv  : 4
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz : 5
+
+gvShellDispShrinkSpriteTag12:
+				iwzyx		0x00, 0x53531, 0x508b4000, 0x00008001								; GIFTag
+				iwzyx		0x80, 0x0080, 0x0080, 0x0080										; rgb1  
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; uv
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz
+
+.EndUnpack
+.EndDmaData
+
+DoShrink:
+
+;;-----------------------------------------------------------------------------
+;; DMA microprogam for shrink screen
+;;-----------------------------------------------------------------------------
+
+				DMAcnt		*
+				MPG			0, *
+						
+				nop								lq.x	vf1,4(vi0)
+				nop								lq.x	vf2,5(vi0)
+				nop								lq.x	vf4,2(vi0)
+				nop								lq.x	vf5,3(vi0)
+				nop 							iaddiu	vi1,vi0,0
+				nop								iaddiu	vi2,vi0,6
+				nop								ILW.W	vi03, 0(vi00)
+				
+_NextLoopDrawShrinkStrip:
+				add.x		vf4,vf4,vf1			sq.x	vf4,2(vi1)
+				add.x		vf5,vf5,vf2			sq.x	vf5,3(vi1)
+				nop								iaddi	vi03, vi03, -1
+				nop								nop
+				nop								sq.x	vf4,4(vi1)
+				nop								sq.x	vf5,5(vi1)
+				nop								xgkick	vi1
+				add.x		vf4,vf4,vf1			sq.x	vf4,2(vi2)
+				add.x		vf5,vf5,vf2			sq.x	vf5,3(vi2)
+				nop								nop
+				nop								nop
+				nop								sq.x	vf4,4(vi2)
+				nop								sq.x	vf5,5(vi2)
+				nop								ibne	vi03, vi00, _NextLoopDrawShrinkStrip
+				nop								xgkick	vi2
+
+				nop[e]							nop
+				nop								nop
+				
+.EndMPG
+.EndDmaData
+
+;;-----------------------------------------------------------------------------
+;; Start program for shrink
+;;-----------------------------------------------------------------------------
+
+				DMAret		*
+				MSCAL		0
+.EndDmaData
+
+
+ClearScreen1:
+
+;;-----------------------------------------------------------------------------
+;; Set up environment such Z write enable, Frame, for clear
+;;-----------------------------------------------------------------------------
+
+				DMAcnt		*
+				DIRECT		*
+				GIFpacked	REGS={A_D}, NLOOP=6, EOP
+gvShellDispClearScreenEnv1:
+				iwzyx		0x0, 0x47, 0x0, 0x030000											;Test1 (all pass)
+				iwzyx		0x0, 0x4e, 0x0, 0x0													;ZBuf1
+				iwzyx		0x0, 0x4c, 0x0, 0x0													;Frame1
+				iwzyx		0x0, 0x18, 0x0, 0x0													;XYOFFSET1
+				iwzyx		0x0, 0x45, 0x0, 0x0													;DTHE(DITHER OFF)
+				iwzyx		0x0, 0x40, 0xffff0000, 0xffff0000									; No scissoring
+.EndGIF
+.EndDirect
+.EndDmaData
+
+
+;;-----------------------------------------------------------------------------
+;; DMA two Sprite GIF packets for clearing screen
+;;-----------------------------------------------------------------------------
+
+				DMAnext		*, DoClear
+				stcycl	1,1
+				unpack		V4_32, 0, *
+
+gvShellDispClearSpriteTag01:
+				iwzyx		0x14, 0x551, 0x30034000, 0x00008001									; GIFTag and Strip Count
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; rgb
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz
+				iwzyx		0x00, 0x0000, 0x0000, 0x0200										; xyz
+
+gvShellDispClearSpriteTag11:
+				iwzyx		0x00, 0x551, 0x30034000, 0x00008001									; GIFTag
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; rgb1
+				iwzyx		0x00, 0x0000, 0x0000, 0x0200										; xyz
+				iwzyx		0x00, 0x0000, 0x0000, 0x0400										; xyz
+
+.EndUnpack
+.EndDmaData
+
+ClearScreen2:
+
+;;-----------------------------------------------------------------------------
+;; Set up environment such Z write enable, Frame, for clear
+;;-----------------------------------------------------------------------------
+
+				DMAcnt		*
+				DIRECT		*
+				GIFpacked	REGS={A_D}, NLOOP=6, EOP
+gvShellDispClearScreenEnv2:
+				iwzyx		0x0, 0x47, 0x0, 0x030000											;Test1 (all pass)
+				iwzyx		0x0, 0x4e, 0x0, 0x0													;ZBuf1
+				iwzyx		0x0, 0x4c, 0x0, 0x0													;Frame1
+				iwzyx		0x0, 0x18, 0x0, 0x0													;XYOFFSET1
+				iwzyx		0x0, 0x45, 0x0, 0x0													;DTHE(DITHER OFF)
+				iwzyx		0x0, 0x40, 0xffff0000, 0xffff0000									; No scissoring
+.EndGIF
+.EndDirect
+.EndDmaData
+
+
+;;-----------------------------------------------------------------------------
+;; DMA two Sprite GIF packets for clearing screen
+;;-----------------------------------------------------------------------------
+
+				DMAnext		*, DoClear
+				stcycl	1,1
+				unpack		V4_32, 0, *
+
+gvShellDispClearSpriteTag02:
+				iwzyx		0x14, 0x551, 0x30034000, 0x00008001									; GIFTag and Strip Count
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; rgb
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; xyz
+				iwzyx		0x00, 0x0000, 0x0000, 0x0200										; xyz
+
+gvShellDispClearSpriteTag12:
+				iwzyx		0x00, 0x551, 0x30034000, 0x00008001									; GIFTag
+				iwzyx		0x00, 0x0000, 0x0000, 0x0000										; rgb1
+				iwzyx		0x00, 0x0000, 0x0000, 0x0200										; xyz
+				iwzyx		0x00, 0x0000, 0x0000, 0x0400										; xyz
+
+.EndUnpack
+.EndDmaData
+
+DoClear:
+
+;;-----------------------------------------------------------------------------
+;; DMA microprogam for clearscreen
+;;-----------------------------------------------------------------------------
+
+				DMAcnt		*
+				MPG			64, *
+
+; Initialise Variables (count stored in upper 4bytes of GIFTag)
+				NOP								LOI			32.0
+				NOP								ILW.W		vi02, 0(vi00)						; vi02 = 64pixel counter
+; Double buffered SPRITES packets are prepared in VU memory before start
+
+				add.x		vf02x, vf00, vf00	NOP												;
+				addi.x		vf03x, vf00, I		IADDIU		vi04, vi00, 0						; vi04 = GIFTAG SPRITE0
+				addi.x		vf02x, vf02x, I		IADDIU		vi05, vi00, 4						; vi05 = GIFTAG SPRITE1
+				addi.x		vf03x, vf03x, I		IADDIU		vi06, vi00, 8						; vi06 = GIFTAG RESTORE ENVIRONMENT
+
+_NextLoopDrawClearStrip:
+				ftoi4.x		vf04, vf02			XGKICK		vi04								; Kick 1st SPRITE		
+				ftoi4.x		vf05, vf03			sq.x		vf04, 2(vi05)						; Store xyz1
+				addi.x		vf02x, vf02x, I		sq.x		vf05, 3(vi05)						; Store xyz2                   ; Increment X2
+				addi.x		vf03x, vf03x, I		NOP
+				ftoi4.x		vf04, vf02			iaddi		vi02, vi02, -1						; Count--
+				ftoi4.x		vf05, vf03			NOP
+				addi.x		vf02x, vf02x, I		XGKICK		vi05								; Kick 2nd SPRITE
+				addi.x		vf03x, vf03x, I		sq.x		vf04, 2(vi04)						; Store xyz1
+				NOP								sq.x		vf05, 3(vi04)						; Store xyz2
+				NOP								NOP
+				NOP								ibne		vi02, vi00, _NextLoopDrawClearStrip
+				NOP								NOP
+
+				NOP[E]							NOP
+				NOP								NOP
+.EndMPG
+.EndDmaData
+
+;;-----------------------------------------------------------------------------
+;; Start program for clear
+;;-----------------------------------------------------------------------------
+
+				DMAret		*
+				MSCAL		64
+.EndDmaData

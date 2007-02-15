@@ -1,0 +1,823 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: freetype - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77A.tmp" with contents
+[
+/MD /Za /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release/" /Fd"..\..\..\objs\release/" /FD /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77A.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77B.tmp" with contents
+[
+/MD /Ze /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release/" /Fd"..\..\..\objs\release/" /FD /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77B.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77C.tmp" with contents
+[
+/nologo /out:"..\..\..\objs\freetype219.lib" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\autohint.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\bdf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\cff.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftbase.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftcache.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftdebug.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftglyph.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftgzip.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftlzw.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftinit.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftmm.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\ftsystem.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\pcf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\pfr.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\psaux.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\pshinter.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\psmodule.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\raster.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\sfnt.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\smooth.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\truetype.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\type1.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\type1cid.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\type42.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release\winfnt.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77C.tmp"
+<h3>Output Window</h3>
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /MD /Za /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release/" /Fd"..\..\..\objs\release/" /FD /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+
+autohint.c
+bdf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(419) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(425) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+cff.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(1690) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(2246) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftbase.c
+ftcache.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcmanag.c(167) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftccmap.c(295) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(73) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftglyph.c
+ftgzip.c
+ftlzw.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(253) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(262) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(280) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(325) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned char ', possible loss of data
+ftinit.c
+ftmm.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+ftsystem.c
+pcf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1100) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1106) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+pfr.c
+psaux.c
+pshinter.c
+psmodule.c
+raster.c
+sfnt.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfobjs.c(210) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(301) : warning C4054: 'type cast' : from function pointer 'void *(*)(struct TT_FaceRec_ *,int )' to data pointer 'void *'
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(304) : warning C4054: 'type cast' : from function pointer 'int (*)(struct TT_FaceRec_ *,unsigned long ,long ,unsigned char *,unsigned long *)' to data pointer 'void *'
+smooth.c
+truetype.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(157) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(161) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(165) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(168) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(737) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(738) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(739) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(740) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1210) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1239) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1245) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1399) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+Generating Code...
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1056) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1204) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(657) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(660) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(858) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(879) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(390) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(985) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(287) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1213) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1322) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1402) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1454) : warning C4701: local variable 'localpoints' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(312) : warning C4701: local variable 'node' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(432) : warning C4701: local variable 'node' may be used without having been initialized
+Compiling...
+type1.c
+type1cid.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(539) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(541) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(543) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(566) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(569) : warning C4244: '+=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(573) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+type42.c
+winfnt.c
+Generating Code...
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /MD /Ze /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release/" /Fd"..\..\..\objs\release/" /FD /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+
+ftdebug.c
+Creating library...
+
+
+
+<h3>Results</h3>
+freetype219.lib - 0 error(s), 51 warning(s)
+<h3>
+--------------------Configuration: freetype - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+freetype219_D.lib - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: freetype - Win32 Debug Multithreaded--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77D.tmp" with contents
+[
+/MTd /Za /W4 /GX /Zi /Od /I "..\..\..\include" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "FT_DEBUG_LEVEL_ERROR" /D "FT_DEBUG_LEVEL_TRACE" /Fo"..\..\..\objs\debug_mt/" /Fd"..\..\..\objs\debug_mt/" /FD /GZ /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77D.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77E.tmp" with contents
+[
+/MTd /Ze /W4 /GX /Zi /Od /I "..\..\..\include" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "FT_DEBUG_LEVEL_ERROR" /D "FT_DEBUG_LEVEL_TRACE" /Fo"..\..\..\objs\debug_mt/" /Fd"..\..\..\objs\debug_mt/" /FD /GZ /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77E.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77F.tmp" with contents
+[
+/nologo /out:"..\..\..\objs\freetype219MT_D.lib" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\autohint.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\bdf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\cff.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftbase.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftcache.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftdebug.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftglyph.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftgzip.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftlzw.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftinit.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftmm.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\ftsystem.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\pcf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\pfr.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\psaux.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\pshinter.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\psmodule.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\raster.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\sfnt.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\smooth.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\truetype.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\type1.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\type1cid.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\type42.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\debug_mt\winfnt.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP77F.tmp"
+<h3>Output Window</h3>
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /MTd /Za /W4 /GX /Zi /Od /I "..\..\..\include" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "FT_DEBUG_LEVEL_ERROR" /D "FT_DEBUG_LEVEL_TRACE" /Fo"..\..\..\objs\debug_mt/" /Fd"..\..\..\objs\debug_mt/" /FD /GZ /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+
+autohint.c
+bdf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(419) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(425) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+cff.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(1690) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(2246) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftbase.c
+ftcache.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcmanag.c(167) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftccmap.c(295) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(73) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftglyph.c
+ftgzip.c
+ftlzw.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(253) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(262) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(280) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(325) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned char ', possible loss of data
+ftinit.c
+ftmm.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+ftsystem.c
+pcf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1100) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1106) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+pfr.c
+psaux.c
+pshinter.c
+psmodule.c
+raster.c
+sfnt.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfobjs.c(210) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(301) : warning C4054: 'type cast' : from function pointer 'void *(*)(struct TT_FaceRec_ *,int )' to data pointer 'void *'
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(304) : warning C4054: 'type cast' : from function pointer 'int (*)(struct TT_FaceRec_ *,unsigned long ,long ,unsigned char *,unsigned long *)' to data pointer 'void *'
+smooth.c
+truetype.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(157) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(161) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(165) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(168) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(737) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(738) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(739) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(740) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1210) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1239) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1245) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1399) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+Generating Code...
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1056) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1204) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(657) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(660) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(858) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(879) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(390) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(985) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(287) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1213) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1322) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1402) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1454) : warning C4701: local variable 'localpoints' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(312) : warning C4701: local variable 'node' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(432) : warning C4701: local variable 'node' may be used without having been initialized
+Compiling...
+type1.c
+type1cid.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(539) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(541) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(543) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(566) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(569) : warning C4244: '+=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(573) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+type42.c
+winfnt.c
+Generating Code...
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /MTd /Ze /W4 /GX /Zi /Od /I "..\..\..\include" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "FT_DEBUG_LEVEL_ERROR" /D "FT_DEBUG_LEVEL_TRACE" /Fo"..\..\..\objs\debug_mt/" /Fd"..\..\..\objs\debug_mt/" /FD /GZ /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+
+ftdebug.c
+D:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\rpcasync.h(45) : warning C4115: '_RPC_ASYNC_STATE' : named type definition in parentheses
+Creating library...
+
+
+
+<h3>Results</h3>
+freetype219MT_D.lib - 0 error(s), 52 warning(s)
+<h3>
+--------------------Configuration: freetype - Win32 Release Multithreaded--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP780.tmp" with contents
+[
+/MT /Za /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_mt/" /Fd"..\..\..\objs\release_mt/" /FD /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP780.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP781.tmp" with contents
+[
+/MT /Ze /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_mt/" /Fd"..\..\..\objs\release_mt/" /FD /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP781.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP782.tmp" with contents
+[
+/nologo /out:"..\..\..\objs\freetype219MT.lib" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\autohint.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\bdf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\cff.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftbase.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftcache.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftdebug.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftglyph.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftgzip.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftlzw.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftinit.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftmm.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\ftsystem.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\pcf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\pfr.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\psaux.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\pshinter.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\psmodule.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\raster.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\sfnt.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\smooth.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\truetype.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\type1.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\type1cid.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\type42.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_mt\winfnt.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP782.tmp"
+<h3>Output Window</h3>
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /MT /Za /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_mt/" /Fd"..\..\..\objs\release_mt/" /FD /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+
+autohint.c
+bdf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(419) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(425) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+cff.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(1690) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(2246) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftbase.c
+ftcache.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcmanag.c(167) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftccmap.c(295) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(73) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftglyph.c
+ftgzip.c
+ftlzw.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(253) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(262) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(280) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(325) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned char ', possible loss of data
+ftinit.c
+ftmm.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+ftsystem.c
+pcf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1100) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1106) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+pfr.c
+psaux.c
+pshinter.c
+psmodule.c
+raster.c
+sfnt.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfobjs.c(210) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(301) : warning C4054: 'type cast' : from function pointer 'void *(*)(struct TT_FaceRec_ *,int )' to data pointer 'void *'
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(304) : warning C4054: 'type cast' : from function pointer 'int (*)(struct TT_FaceRec_ *,unsigned long ,long ,unsigned char *,unsigned long *)' to data pointer 'void *'
+smooth.c
+truetype.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(157) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(161) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(165) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(168) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(737) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(738) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(739) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(740) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1210) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1239) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1245) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1399) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+Generating Code...
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1056) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1204) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(657) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(660) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(858) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(879) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(390) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(985) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(287) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1213) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1322) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1402) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1454) : warning C4701: local variable 'localpoints' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(312) : warning C4701: local variable 'node' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(432) : warning C4701: local variable 'node' may be used without having been initialized
+Compiling...
+type1.c
+type1cid.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(539) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(541) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(543) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(566) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(569) : warning C4244: '+=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(573) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+type42.c
+winfnt.c
+Generating Code...
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /MT /Ze /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_mt/" /Fd"..\..\..\objs\release_mt/" /FD /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+
+ftdebug.c
+Creating library...
+
+
+
+<h3>Results</h3>
+freetype219MT.lib - 0 error(s), 51 warning(s)
+<h3>
+--------------------Configuration: freetype - Win32 Release Singlethreaded--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP783.tmp" with contents
+[
+/ML /Za /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_st/" /Fd"..\..\..\objs\release_st/" /FD /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP783.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP784.tmp" with contents
+[
+/ML /Ze /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_st/" /Fd"..\..\..\objs\release_st/" /FD /c 
+"D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP784.tmp" 
+Creating temporary file "C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP785.tmp" with contents
+[
+/out:"..\..\..\objs\freetype219ST.lib" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\autohint.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\bdf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\cff.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftbase.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftcache.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftdebug.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftglyph.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftgzip.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftlzw.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftinit.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftmm.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftsystem.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\pcf.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\pfr.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\psaux.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\pshinter.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\psmodule.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\raster.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\sfnt.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\smooth.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\truetype.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\type1.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\type1cid.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\type42.obj"
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\winfnt.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\Randy\LOCALS~1\Temp\RSP785.tmp"
+<h3>Output Window</h3>
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /ML /Za /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_st/" /Fd"..\..\..\objs\release_st/" /FD /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\autohint\autohint.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cff.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftbase.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcache.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftglyph.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\gzip\ftgzip.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\ftlzw.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftinit.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftsystem.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcf.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pfr\pfr.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psaux\psaux.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pshinter\pshinter.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\psnames\psmodule.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\raster\raster.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfnt.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\smooth\smooth.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\truetype.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type1\type1.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\type1cid.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\type42\type42.c"
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\src\winfonts\winfnt.c"
+
+autohint.c
+bdf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(419) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\bdf\bdfdrivr.c(425) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+cff.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(1690) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cff\cffload.c(2246) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftbase.c
+ftcache.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcmanag.c(167) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftccmap.c(295) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(73) : warning C4244: 'return' : conversion from 'int ' to 'unsigned char ', possible loss of data
+ftglyph.c
+ftgzip.c
+ftlzw.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(253) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(262) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(280) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\lzw\zopen.c(325) : warning C4244: '=' : conversion from 'unsigned int ' to 'unsigned char ', possible loss of data
+ftinit.c
+ftmm.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\base\ftmm.c(53) : warning C4127: conditional expression is constant
+ftsystem.c
+pcf.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1100) : warning C4244: '=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\pcf\pcfread.c(1106) : warning C4244: '=' : conversion from 'int ' to 'short ', possible loss of data
+pfr.c
+psaux.c
+pshinter.c
+psmodule.c
+raster.c
+sfnt.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfobjs.c(210) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(301) : warning C4054: 'type cast' : from function pointer 'void *(*)(struct TT_FaceRec_ *,int )' to data pointer 'void *'
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\sfnt\sfdriver.c(304) : warning C4054: 'type cast' : from function pointer 'int (*)(struct TT_FaceRec_ *,unsigned long ,long ,unsigned char *,unsigned long *)' to data pointer 'void *'
+smooth.c
+truetype.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(157) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(161) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(165) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(168) : warning C4244: '=' : conversion from 'int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(737) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(738) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(739) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(740) : warning C4244: '=' : conversion from 'unsigned long ' to 'char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1210) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1239) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1245) : warning C4244: '+=' : conversion from 'long ' to 'short ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1399) : warning C4244: 'function' : conversion from 'unsigned int ' to 'unsigned short ', possible loss of data
+Generating Code...
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1056) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgload.c(1204) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(657) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(660) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(858) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(879) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(390) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(985) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(287) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1213) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1322) : warning C4706: assignment within conditional expression
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1402) : warning C4761: integral size mismatch in argument; conversion supplied
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\truetype\ttgxvar.c(1454) : warning C4701: local variable 'localpoints' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(312) : warning C4701: local variable 'node' may be used without having been initialized
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cache\ftcbasic.c(432) : warning C4701: local variable 'node' may be used without having been initialized
+Compiling...
+type1.c
+type1cid.c
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(539) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(541) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(543) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(566) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(569) : warning C4244: '+=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+D:\Dev\Avalanche\Tools\freetype-2.1.9\src\cid\cidload.c(573) : warning C4244: '=' : conversion from 'int ' to 'unsigned char ', possible loss of data
+type42.c
+winfnt.c
+Generating Code...
+Compiling...
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+cl /ML /Ze /W4 /GX /Zi /O2 /I "..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /Fo"..\..\..\objs\release_st/" /Fd"..\..\..\objs\release_st/" /FD /c 
+   "D:\Dev\Avalanche\Tools\freetype-2.1.9\builds\win32\ftdebug.c"
+
+ftdebug.c
+Creating library...
+Microsoft (R) Library Manager Version 6.00.8168
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+"/out:..\..\..\objs\freetype219ST.lib" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\autohint.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\bdf.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\cff.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftbase.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftcache.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftdebug.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftglyph.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftgzip.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftlzw.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftinit.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftmm.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\ftsystem.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\pcf.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\pfr.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\psaux.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\pshinter.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\psmodule.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\raster.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\sfnt.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\smooth.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\truetype.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\type1.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\type1cid.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\type42.obj" 
+"\Dev\Avalanche\Tools\freetype-2.1.9\objs\release_st\winfnt.obj" 
+
+
+
+<h3>Results</h3>
+freetype219ST.lib - 0 error(s), 51 warning(s)
+<h3>
+--------------------Configuration: freetype - Win32 Debug Singlethreaded--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+freetype219ST_D.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

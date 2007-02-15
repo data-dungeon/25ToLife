@@ -1,0 +1,84 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupImpExp", "TupImpExp.vcproj", "{EDF808BF-3144-432E-8DCB-70D24B665109}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{94CA0549-FB11-4089-91EC-4A3701FADC05} = {94CA0549-FB11-4089-91EC-4A3701FADC05}
+		{EC317095-7A46-44A5-BC62-4E33B76074EE} = {EC317095-7A46-44A5-BC62-4E33B76074EE}
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D} = {FAF27AB7-B622-4B9C-B562-83AC0D28950D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\..\..\GameLib\Tupperware\tupperware.vcproj", "{FAF27AB7-B622-4B9C-B562-83AC0D28950D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "..\..\..\..\Engine\Math\Math.vcproj", "{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tupper3d", "..\..\..\Tupper3d\Tupper3d.vcproj", "{94CA0549-FB11-4089-91EC-4A3701FADC05}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mtools", "..\..\Libraries\MTools\MTools.vcproj", "{EC317095-7A46-44A5-BC62-4E33B76074EE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Plugins/Maya/TupImpExp\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {94F7081E-F981-47E2-B1F3-91A63E6CDDBE}
+		SccProjectUniqueName1 = TupImpExp.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath2 = ..\\..\\..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\..\\..\\Engine\\Math\\Math.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/Engine/Math\u0022
+		SccLocalPath3 = ..\\..\\..\\..\\Engine\\Math
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\..\\..\\Tupper3d\\Tupper3d.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/Tupper3d\u0022
+		SccLocalPath4 = ..\\..\\..\\Tupper3d
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\..\\Libraries\\MTools\\MTools.vcproj
+		SccProjectName5 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/MTools\u0022
+		SccLocalPath5 = ..\\..\\Libraries\\MTools
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EDF808BF-3144-432E-8DCB-70D24B665109}.Debug.ActiveCfg = Debug|Win32
+		{EDF808BF-3144-432E-8DCB-70D24B665109}.Debug.Build.0 = Debug|Win32
+		{EDF808BF-3144-432E-8DCB-70D24B665109}.Release.ActiveCfg = Release|Win32
+		{EDF808BF-3144-432E-8DCB-70D24B665109}.Release.Build.0 = Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.Build.0 = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.ActiveCfg = Tools Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.Build.0 = Tools Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Debug.Build.0 = Tools Hybrid|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Release.ActiveCfg = Tools Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Release.Build.0 = Tools Release|Win32
+		{94CA0549-FB11-4089-91EC-4A3701FADC05}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{94CA0549-FB11-4089-91EC-4A3701FADC05}.Debug.Build.0 = Tools Hybrid|Win32
+		{94CA0549-FB11-4089-91EC-4A3701FADC05}.Release.ActiveCfg = Tools Release|Win32
+		{94CA0549-FB11-4089-91EC-4A3701FADC05}.Release.Build.0 = Tools Release|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Debug.ActiveCfg = Debug|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Debug.Build.0 = Debug|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Release.ActiveCfg = Release|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

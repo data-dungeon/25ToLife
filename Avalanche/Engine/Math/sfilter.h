@@ -1,0 +1,79 @@
+///////////////////////////////////////////////////////////////////////////////
+// A set of templated filters
+///////////////////////////////////////////////////////////////////////////////
+#ifndef SFILTER_H
+#define SFILTER_H
+
+#include "Math/MathClass.h"
+#include "Math/Vector.h"
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+template<class X>
+inline bool DivByZero(X num, float denom)
+{
+	return(Math::DivByZero((float)num, denom));
+}
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+inline bool DivByZero(Vector2 num, float denom)
+{
+	return(Math::DivByZero(num.X(), denom) || Math::DivByZero(num.Y(), denom));
+}
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+inline bool DivByZero(Vector3 num, float denom)
+{
+	return(Math::DivByZero(num.X(), denom) || Math::DivByZero(num.Y(), denom) ||
+			Math::DivByZero(num.Z(), denom));
+}
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+inline bool DivByZero(Vector4 num, float denom)
+{
+	return(Math::DivByZero(num.X(), denom) || Math::DivByZero(num.Y(), denom) ||
+			Math::DivByZero(num.Z(), denom) || Math::DivByZero(num.W(), denom));
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// First order explicit (beware, will blow up if timeConstant = 0)
+///////////////////////////////////////////////////////////////////////////////
+template<class X>
+inline X FOFilterExplicit(X x0, X x1, float deltaT, float timeConstant)
+{
+	// Make sure it doesn't blow up
+	if (Math::DivByZero(deltaT, timeConstant))
+		return x1;
+
+	// Give them the filtered quantity
+	return x0 + (x1 - x0) * (deltaT / timeConstant);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// First order implicit (stable if timeConstant = 0)
+///////////////////////////////////////////////////////////////////////////////
+template<class X>
+inline X FOFilterImplicit(X x0, X x1, float deltaT, float timeConstant)
+{
+	// Compute terms
+	X num = x0 * timeConstant + x1 * deltaT;
+	float denom = timeConstant + deltaT;
+
+	// Make sure it doesn't blow up
+	if (DivByZero(num, denom))
+		return x1;
+
+	// Give them the filtered quantity
+	return num / denom;
+}
+
+template<class X>
+inline X SOFilterImplicit(X x0, X x1, float deltaT, float timeConstant)
+{
+	return X0;
+}
+
+#endif

@@ -1,0 +1,942 @@
+	.vu
+include( `VUDefines.vm4')
+include( 'VUAnimDefines.vm4')
+
+ 	.global 	dbAnimEV_CodeBegin
+	.global	dbAnimEV_CodeEnd
+
+	.global	dbAnimEV_Start
+
+	tableentry(AEVFinish)
+	
+	tableentry(AEVLoadStreamToCache)
+	
+	tableentry(AEVLoadCacheToMtx1)
+	tableentry(AEVLoadCacheToMtx2)
+
+	tableentry(AEVLoadStreamToMtx1)
+	tableentry(AEVLoadStreamToMtx2)
+	
+	tableentry(AEVLoadNextInst)
+	tableentry(AEVTransform_ProcessInst)
+	
+	tableentry(AEVTransform1_Start)
+	tableentry(AEVTransform1_ContinueNW)
+	tableentry(AEVTransform1_ContinueNW_ADC)
+	tableentry(AEVTransform1_Continue)
+	tableentry(AEVTransform1_Continue_ADC)
+	tableentry(AEVTransform1_ContinueNR)
+	tableentry(AEVTransform1_ContinueNR_ADC)
+
+	tableentry(AEVTransform2_Start)
+	tableentry(AEVTransform2_ContinueNW)
+	tableentry(AEVTransform2_ContinueNW_ADC)
+	tableentry(AEVTransform2_Continue)
+	tableentry(AEVTransform2_Continue_ADC)
+	tableentry(AEVTransform2_ContinueNR)
+	tableentry(AEVTransform2_ContinueNR_ADC)
+	
+	tableentry(AEVTransform_Finish)
+	tableentry(AEVTransform_Finish_ADC)
+
+		
+.dmadata dbAnimEV_CodeBegin
+
+dbAnimEV_Start:
+	NOP		BAL	VI01, AEV_RefAddress
+	NOP		XTOP	VI10
+AEV_RefAddress:
+	NOP		ILW.w	VI02, 1(VI10)w	; Flags | StatePacketSize
+
+	NOP		IADDIU	VI14, VI00, 0x1000	; EnvMapping mask
+	NOP		IAND	VI04, VI02, VI14	; mask EnvMap bit
+	NOP		NOP
+	NOP		IBNE	VI04, VI00, AEVStart
+	NOP		NOP
+
+	NOP		JR	VI15
+	NOP		NOP
+	
+AEVStart:
+	NOP		ISW.x	VI09, offEVD2+0(VI00)
+	NOP		ISUB	VI07, VI01, VI09
+	NOP		IADDIU	VI09, VI01, 0x0000
+	NOP		ILW.x	VI06, offEVD1+0(VI00)
+	NOP		ILW.y	VI04, offEVD1+0(VI00)
+	NOP		ILW.z	VI05, offEVD1+0(VI00)
+
+	NOP		IADDIU	VI12, VI10, 2	; Base GIFData Ptr
+	
+	NOP		ISW.y	VI06, offEVD1+0(VI00)
+	NOP		ISW.x	VI04, offEVD1+0(VI00)
+
+; load second header QWord
+	NOP		ILW.y	VI04, 1(VI10)y	; InputBuffer Offset
+	NOP		ILW.z	VI11, 1(VI10)z	; XGKICK Offset
+	NOP		ILW.x	VI01, 1(VI10)x	; Vertex Count
+
+	NOP		IADDIU	VI14, VI00, 0x00ff	; mask out StatePacketSize
+	NOP		IAND	VI02, VI02, VI14
+
+	NOP		IADD	VI04, VI04, VI10	; InGeomBuffer Ptr
+	NOP		IADD	VI11, VI11, VI06	; XGKICK Ptr
+	NOP		IADD	VI06, VI11, VI00	; Active OutGIFBuffer Ptr
+	NOP		IADD	VI12, VI12, VI02	; bypass State Packet
+AEVPreProcessSetup:
+	NOP		IADDIU	VI01, VI01, 0x7fff
+	NOP		IADDIU	VI01, VI01, 0x0001
+	NOP		MFIR.x	VF31x, VI01
+
+	NOP		IADDIU	VI08, VI00, 0x00ff	; VI07 = Instruction mask	
+
+	NOP		IADDIU	VI14, VI06, 0	; temporary GIFTag addr
+	NOP		SQI	VF31, (VI06++)	; store GIFTag to OutGIFBuffer	
+	NOP		ISW.z	VI06, offEVD1+0(VI00)
+
+	NOP		LQ	VF01, offEVMtx+0(VI00)
+	NOP		LQ	VF02, offEVMtx+1(VI00)
+	NOP		LQ	VF03, offEVMtx+2(VI00)
+	NOP		B	AEVLoadNextInst
+	NOP		LQ	VF04, offEVMtx+3(VI00)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+			
+AEVLoadNextInst:
+	NOP		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+;	NOP		ILW.y	VI02, 0(VI12)y
+	NOP		ILW.z	VI03, 0(VI12)z
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		IADD	VI01, VI01, VI07
+	NOP		JR	VI01	; Branch to InstructionRoutine
+	NOP		IADD	VI13, VI02, VI10	; <ds>
+
+
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) FinishUp
+;
+; ----------------------------------------------------------------------------------------------------------
+AEVFinish:
+	NOP		LQ	VF01, offEVD3+0(VI00)
+	NOP		MR32.w	VF07, VF00
+	NOP		LOI	2048
+	NOP		IADDIU	VI01, VI00, offEVTexGIFData
+	NOP		XGKICK	VI01
+
+	MULx.w	VF05, VF00, VF01	ILW.x	VI09, offEVD2+0(VI00)
+	MULy.w	VF06, VF00, VF01	LQ	VF31, 0(VI14)
+	SUBz.w	VF07, VF07, VF01	XGKICK	VI11
+	MULI.w	VF12, VF00, I	JR	VI15
+	NOP		XTOP	VI10	; Grab Buffer Base
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+; ----------------------------------------------------------------------------------------------------------
+; Instruction Data
+; VI01 	: Instruction Addr
+; VI02 	: Data1
+; VI03 	: Data2
+; VI12 	: Next Instruction
+; VI13	: Data1 Buffer Adjusted
+; ----------------------------------------------------------------------------------------------------------
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load MatrixCache from Matrix Stream
+; VI02	: MatrixStream Offset
+; VI03	: MatrixCache Offset
+; VI13	: MatrixStream Ptr
+; ----------------------------------------------------------------------------------------------------------
+AEVLoadStreamToCache:
+	NOP		B	AEVLoadNextInst	; fetch next Instruction
+	NOP		IADDIU	VI13, VI13, 4
+
+	NOP		NOP		; <pad>
+	NOP		NOP		; <pad>
+	NOP		NOP		; <pad>
+	NOP		NOP		; <pad>
+	NOP		NOP		; <pad>
+	NOP		NOP		; <pad>
+	NOP		NOP		; <pad>
+	NOP		NOP		; <pad>
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load Matrix From InstructionStream or MatrixCache
+; VI12	: InstructionStreamPtr
+;
+; ----------------------------------------------------------------------------------------------------------
+AEVLoadStreamToMtx1:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+AEVLoadCacheToMtx1:
+	NOP		LQI	VF05, (VI03++)
+	NOP		LQI	VF06, (VI03++)
+	NOP		LQI	VF07, (VI03++)
+	NOP		B	AEV_ApplyEVToMtx1
+	NOP		LQI	VF08, (VI03++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+				
+AEVLoadStreamToMtx2:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+AEVLoadCacheToMtx2:
+	NOP		LQI	VF09, (VI03++)
+	NOP		LQI	VF10, (VI03++)
+	NOP		LQI	VF11, (VI03++)
+	NOP		B	AEV_ApplyEVToMtx2
+	NOP		LQI	VF12, (VI03++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+;---------------------------------------------------------------------------------------------------------------					       
+
+
+
+
+
+;---------------------------------------------------------------------------------------------------------------					       
+; The following code is ordered to minimize in-Vertex instruction space requirements.
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform1_Start:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	NOP		NOP
+	MULAw.xyzw	ACC, VF08, VF00w	IADDIU	VI02, VI09, AEVTransform1_ContinueNW - AEV_RefAddress
+	MADDAw.xyzw	ACC, VF05, VF23w	MTIR	VI01, VF23w
+	MADDAz.xyzw	ACC, VF06, VF24z	IAND	VI01, VI01, VI08
+	MADDw.xyzw	VF28, VF07, VF24w 	IADD	VI01, VI01, VI02
+	NOP		LQI	VF25, (VI05++)
+	NOP		JR	VI01
+	NOP		LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform2_Start:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	NOP		NOP
+	MULAw.xyzw	ACC, VF12, VF00w	IADDIU	VI02, VI09, AEVTransform1_ContinueNW - AEV_RefAddress
+	MADDAw.xyzw	ACC, VF09, VF23w	MTIR	VI01, VF23w
+	MADDAz.xyzw	ACC, VF10, VF24z	IAND	VI01, VI01, VI08
+	MADDw.xyzw	VF28, VF11, VF24w 	IADD	VI01, VI01, VI02
+	NOP		LQI	VF25, (VI05++)
+	NOP		JR	VI01
+	NOP		LQI	VF26, (VI05++)
+		
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+AEVTransform1_ContinueNW:	
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP		NOP
+	ITOF0	VF29, VF26	NOP	
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF08, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF05, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+		
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform1_ContinueNW_ADC:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP		NOP
+	ITOF0	VF29, VF26	NOP
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF08, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF05, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+		
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform2_ContinueNW:		
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP		NOP
+	ITOF0	VF29, VF26	NOP	
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF12, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF09, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF10, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF11, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+		
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform2_ContinueNW_ADC:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP		NOP	
+	ITOF0	VF29, VF26	NOP
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF12, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF09, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF10, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF11, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Transform Loop Process Instruction
+;---------------------------------------------------------------------------------------------------------------					       
+AEVTransform_ProcessInst:
+	NOP		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+;	NOP		ILW.y	VI02, 0(VI12)y
+	NOP		ILW.z	VI03, 0(VI12)z
+	NOP		IADD	VI01, VI01, VI07
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		JR	VI01	; Branch to InstructionRoutine
+	NOP		IADD	VI13, VI02, VI10	; <ds>
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue the Vertex Pipeline - Matrix 1
+;---------------------------------------------------------------------------------------------------------------					       
+		
+AEVTransform1_Continue:
+	NOP	                   	LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP	  	SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26               SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP	                 	SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF08, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF05, VF23w  	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+		
+AEVTransform1_Continue_ADC:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP		SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26	SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF08, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF05, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue the Vertex Pipeline - Matrix 2
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform2_Continue:
+	NOP	                   	LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP	  	SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26               SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP	                 	SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF12, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF09, VF23w  	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF10, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF11, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+		
+AEVTransform2_Continue_ADC:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+	NOP		SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26	SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF12, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF09, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF10, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF11, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue the Vertex Pipeline w/o Read - Matrix 1
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform1_ContinueNR:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_Finish - AEV_RefAddress
+	NOP		SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26	SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF08, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF05, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform1_ContinueNR_ADC:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_Finish - AEV_RefAddress
+	NOP		SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26	SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF08, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF05, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue the Vertex Pipeline w/o Read - Matrix 1
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform2_ContinueNR:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_Finish - AEV_RefAddress
+	NOP		SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26	SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF12, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF09, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF10, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF11, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform2_ContinueNR_ADC:
+	NOP		LQI	VF23, (VI04++)
+	NOP		LQI	VF24, (VI04++)
+	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_Finish - AEV_RefAddress
+	NOP		SQI	VF29, (VI06++)	
+	ITOF0	VF29, VF26	SQI	VF27, (VI06++)
+	NOP		MTIR	VI01, VF23w
+	NOP		SQI	VF28, (VI06++)
+	MULAw.xyzw	ACC, VF12, VF00w	IAND	VI01, VI01, VI08
+	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+	MADDAw.xyzw	ACC, VF09, VF23w	LQI	VF27, (VI05++)
+	MADDAz.xyzw	ACC, VF10, VF24z	LQI	VF25, (VI05++)
+	MADDw.xyzw	VF28, VF11, VF24w	JR	VI01
+	FTOI0	VF29, VF29	LQI	VF26, (VI05++)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform_Finish:
+	MULz.xyz	VF28, VF28, VF25	ILW.x	VI01, 0(VI12)x
+	NOP		ILW.y	VI02, 0(VI12)y
+	NOP		ILW.z	VI03, 0(VI12)z
+	ITOF0	VF26, VF26	SQI	VF29, (VI06++)
+	NOP		SQI	VF27, (VI06++)
+	NOP		LQI	VF27, (VI05++)
+	NOP		IADDIU	VI06, VI06, 3
+	MULw.w	VF26, VF26, VF00w	SQ	VF28, -3(VI06)
+	NOP		NOP
+	NOP		NOP
+	NOP		IADD	VI01, VI01, VI07
+	FTOI0	VF26, VF26	IADDIU	VI12, VI12, 1
+	NOP		SQ	VF27, -1(VI06)	
+	NOP		JR	VI01
+	NOP		SQ	VF26, -2(VI06)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+
+AEVTransform_Finish_ADC:
+	MULz.xyz	VF28, VF28, VF25	ILW.x	VI01, 0(VI12)x
+	NOP		ILW.y	VI02, 0(VI12)y
+	NOP		ILW.z	VI03, 0(VI12)z
+	ITOF0	VF26, VF26	SQI	VF29, (VI06++)
+	NOP		SQI	VF27, (VI06++)
+	NOP		LQI	VF27, (VI05++)
+	NOP		IADDIU	VI06, VI06, 3
+	MULw.w	VF26, VF26, VF00w	SQ	VF28, -3(VI06)
+	NOP		NOP
+	NOP		NOP
+	NOP		IADD	VI01, VI01, VI07
+	FTOI0	VF26, VF26	IADDIU	VI12, VI12, 1
+	NOP		SQ	VF27, -1(VI06)	
+	NOP		JR	VI01
+	NOP		SQ	VF26, -2(VI06)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+AEV_ApplyEVToMtx1:
+	MULAx.xyzw	ACC, VF01, VF05x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF05y	NOP
+	MADDAz.xyzw	ACC, VF03, VF05z	NOP
+	MADDw.xyzw	VF05, VF04, VF05w	NOP
+	
+	MULAx.xyzw	ACC, VF01, VF06x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF06y	NOP
+	MADDAz.xyzw	ACC, VF03, VF06z	NOP
+	MADDw.xyzw	VF06, VF04, VF06w	NOP
+	
+	MULAx.xyzw	ACC, VF01, VF07x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF07y	NOP
+	MADDAz.xyzw	ACC, VF03, VF07z	NOP
+	MADDw.xyzw	VF07, VF04, VF07w	NOP
+	
+	MULAx.xyzw	ACC, VF01, VF08x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF08y	NOP
+	MADDAz.xyzw	ACC, VF03, VF08z	NOP
+	MADDw.xyzw	VF08, VF04, VF08w	NOP
+
+	MULx.w	VF01, VF00, VF00	ELENG	P, VF05	; clear VF01.w
+					; P = length( X )
+	NOP		WAITP		; VF01 = X . Y
+	NOP		MFP.x	VF13, P	; VF13x = length( X )
+	NOP		DIV	Q, VF00w, VF13x	; Q = 1 / length( X )
+	NOP		WAITQ
+	MULQ.xyz	VF05, VF05, Q	NOP
+					; X = | X |
+	MUL.xyz	VF01, VF05, VF06	NOP
+	NOP		ESUM	P, VF01	; P = X . Y
+	NOP		WAITP	
+	MULAw.xyz	ACC, VF06, VF00w	MFP.x	VF14, P	; VF14x = shearXY
+					; ACC = Y
+	MSUBx.xyz	VF06, VF05, VF14x	NOP		; Y = Y - (X * shearXY)
+	NOP		ELENG	P, VF06	; P = length( Y )
+	MUL.xyz	VF01, VF05, VF07	WAITP
+	NOP		MFP.y	VF13, P	; VF13y = length( Y )
+	NOP		DIV	Q, VF00w, VF13y	; Q = 1 / length( Y )
+	NOP		WAITQ
+
+	MULQ.x	VF14, VF14, Q	ESUM	P, VF01	; P = dot( X, Z )
+					; shearXY /= length( Y )
+	MULQ.xyz	VF06, VF06, Q	WAITP		; Y = | Y |
+	MUL.xyz	VF02, VF06, VF07	NOP
+		
+	MULAw.xyz	ACC, VF07, VF00w	MFP.y	VF14, P	; VF14y = shearXZ	
+					; ACC = Z
+	MSUBAy.xyz	ACC, VF05, VF14y	ESUM	P, VF02	; P = Y . Z
+					; Z -= X * shearXZ
+	NOP		WAITP		
+	NOP		MFP.z	VF14, P	; VF14z = shearYZ
+	MSUBz.xyz	VF07, VF06, VF14z	NOP		; Z -= Y * shearYZ
+	NOP		ELENG	P, VF07	; P = length( Z )
+	NOP		WAITP
+	NOP		MFP.z	VF13, P	; VF13z = length( Z )
+	NOP		DIV	Q, VF00w, VF13z	; Q = 1 / length( Z )
+	NOP		WAITQ
+	MULQ.xyz	VF07, VF07, Q	NOP		; Z = | Z |
+	MULQ.yz	VF14, VF14, Q	NOP		; shearXZ /= length( Z )
+					; shearYZ /= length( Z )
+	OPMULA.xyz	ACC, VF06, VF07	NOP
+	OPMSUB.xyz	VF01, VF07, VF06	NOP		; VF01 = cross( Y, Z )
+	
+	MUL.xyz	VF02, VF01, VF05	NOP
+	NOP		ESUM	P, VF02	; P = dot( X, cross( Y, Z ) )
+	NOP		MFP.x	VF01, P	; VF01x = dot( X, cross( Y, Z ) )
+	MULx.w	VF01, VF00, VF01	NOP
+	NOP		IADDIU	VI02, VI00, 0x0010	; sign flag for w
+	NOP		NOP
+	NOP		NOP
+	NOP		FMAND	VI01, VI02	; is VF01x < 0.0f
+	NOP		IBNE	VI01, VI02, NM_NotFlipped1
+	MULx.xyzw	VF01, VF00, VF00	NOP
+	SUB.xyz	VF13, VF00, VF13	NOP
+	SUB.xyz	VF05, VF00, VF05	NOP
+	SUB.xyz	VF06, VF00, VF06	NOP
+
+NM_NotFlipped1:
+
+	OPMULA.xyz	ACC, VF05, VF06	LQ	VF01, offEVMtx+0(VI00)
+	OPMSUB.xyz	VF07, VF06, VF05	LQ	VF02, offEVMtx+1(VI00)
+	
+	OPMULA.xyz	ACC, VF07, VF05	MOVE	VF08, VF00
+	OPMSUB.xyz	VF06, VF05, VF07	LOI	0.5
+	
+	MULI.xy	VF05, VF05, I	MR32.z	VF08, VF00
+	MULI.xy	VF06, VF06, I	MOVE.z	VF05, VF00
+	MULI.xy	VF07, VF07, I	MOVE.z	VF06, VF00
+	ADDI.xy	VF08, VF00, I	MOVE.z	VF07, VF00
+	NOP		B	AEVLoadNextInst
+	NOP		NOP
+
+AEV_ApplyEVToMtx2:
+	MULAx.xyzw	ACC, VF01, VF09x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF09y	NOP
+	MADDAz.xyzw	ACC, VF03, VF09z	NOP
+	MADDw.xyzw	VF09, VF04, VF09w	NOP
+	
+	MULAx.xyzw	ACC, VF01, VF10x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF10y	NOP
+	MADDAz.xyzw	ACC, VF03, VF10z	NOP
+	MADDw.xyzw	VF10, VF04, VF10w	NOP
+	
+	MULAx.xyzw	ACC, VF01, VF11x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF11y	NOP
+	MADDAz.xyzw	ACC, VF03, VF11z	NOP
+	MADDw.xyzw	VF11, VF04, VF11w	NOP
+	
+	MULAx.xyzw	ACC, VF01, VF12x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF12y	NOP
+	MADDAz.xyzw	ACC, VF03, VF12z	NOP
+	MADDw.xyzw	VF12, VF04, VF12w	NOP
+
+	MULx.w	VF01, VF00, VF00	ELENG	P, VF09	; clear VF01.w
+					; P = length( X )
+	MUL.xyz	VF01, VF09, VF10	WAITP		; VF01 = X . Y
+	NOP		MFP.x	VF13, P	; VF13x = length( X )
+	NOP		DIV	Q, VF00w, VF13x	; Q = 1 / length( X )
+	NOP		WAITQ
+	MULQ.xyz	VF09, VF09, Q	ESUM	P, VF01	; P = X . Y
+					; X = | X |
+	NOP		WAITP	
+	MULAw.xyz	ACC, VF10, VF00w	MFP.x	VF14, P	; VF14x = shearXY
+					; ACC = Y
+	MSUBx.xyz	VF10, VF09, VF14x	NOP		; Y = Y - (X * shearXY)
+	NOP		ELENG	P, VF10	; P = length( Y )
+	MUL.xyz	VF01, VF09, VF11	WAITP
+	NOP		MFP.y	VF13, P	; VF13y = length( Y )
+	NOP		DIV	Q, VF00w, VF13y	; Q = 1 / length( Y )
+	NOP		WAITQ
+
+	MULQ.x	VF14, VF14, Q	ESUM	P, VF01	; P = dot( X, Z )
+					; shearXY /= length( Y )
+	MULQ.xyz	VF10, VF10, Q	WAITP		; Y = | Y |
+	MUL.xyz	VF02, VF10, VF11	NOP
+	MULAw.xyz	ACC, VF11, VF00w	MFP.y	VF14, P	; VF14y = shearXZ	
+					; ACC = Z
+	MSUBAy.xyz	ACC, VF09, VF14y	ESUM	P, VF02	; P = Y . Z
+					; Z -= X * shearXZ
+	NOP		WAITP		
+	NOP		MFP.z	VF14, P	; VF14z = shearYZ
+	MSUBz.xyz	VF11, VF10, VF14z	NOP		; Z -= Y * shearYZ
+	NOP		ELENG	P, VF11	; P = length( Z )
+	NOP		WAITP
+	NOP		MFP.z	VF13, P	; VF13z = length( Z )
+	NOP		DIV	Q, VF00w, VF13z	; Q = 1 / length( Z )
+	NOP		WAITQ
+	MULQ.xyz	VF11, VF11, Q	NOP		; Z = | Z |
+	MULQ.yz	VF14, VF14, Q	NOP		; shearXZ /= length( Z )
+					; shearYZ /= length( Z )
+	OPMULA.xyz	ACC, VF10, VF11	NOP
+	OPMSUB.xyz	VF01, VF11, VF10	NOP		; VF01 = cross( Y, Z )
+	
+	MUL.xyz	VF02, VF01, VF09	NOP
+	NOP		ESUM	P, VF02	; P = dot( X, cross( Y, Z ) )
+	NOP		MFP.x	VF01, P	; VF01x = dot( X, cross( Y, Z ) )
+	MULx.w	VF01, VF00, VF01	NOP
+	NOP		IADDIU	VI02, VI00, 0x0010	; sign flag for w
+	NOP		NOP
+	NOP		NOP
+	NOP		FMAND	VI01, VI02	; is VF01x < 0.0f
+	NOP		IBNE	VI01, VI02, NM_NotFlipped2
+	MULx.xyzw	VF01, VF00, VF00	NOP
+	SUB.xyz	VF13, VF00, VF13	NOP
+	SUB.xyz	VF09, VF00, VF09	NOP
+	SUB.xyz	VF10, VF00, VF10	NOP
+
+NM_NotFlipped2:
+
+	OPMULA.xyz	ACC, VF09, VF10	LQ	VF01, offEVMtx+0(VI00)
+	OPMSUB.xyz	VF11, VF10, VF09	LQ	VF02, offEVMtx+1(VI00)
+	
+	OPMULA.xyz	ACC, VF11, VF09	MOVE	VF12, VF00
+	OPMSUB.xyz	VF10, VF09, VF11	LOI	0.5
+	
+	MULI.xy	VF09, VF09, I	MR32.z	VF12, VF00
+	MULI.xy	VF10, VF10, I	MOVE.z	VF09, VF00
+	MULI.xy	VF11, VF11, I	MOVE.z	VF10, VF00
+	ADDI.xy	VF12, VF00, I	MOVE.z	VF11, VF00
+	NOP		B	AEVLoadNextInst
+	NOP		NOP
+
+.enddmadata
+dbAnimEV_CodeEnd:
+
+;AEVTransform1_Start:
+;	NOP		LQI	VF23, (VI04++)
+;	NOP		LQI	VF24, (VI04++)
+;	NOP		NOP
+;	MULAw.xyzw	ACC, VF08, VF00w	IADDIU	VI02, VI09, AEVTransform1_ContinueNW - AEV_RefAddress
+;	MADDAw.xyzw	ACC, VF05, VF23w	MTIR	VI01, VF23w
+;	MADDAz.xyzw	ACC, VF06, VF24z	IAND	VI01, VI01, VI08
+;	MADDw.xyzw	VF28, VF07, VF24w 	IADD	VI01, VI01, VI02
+;	NOP		LQI	VF25, (VI05++) n
+;	NOP		JR	VI01
+;	NOP		LQI	VF26, (VI05++) n
+
+;AEVTransform1_ContinueNW:	
+;	NOP		LQI	VF23, (VI04++)
+;	NOP		LQI	VF24, (VI04++)
+;	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+;	ITOF	VF29, VF26	NOP	
+;	NOP		NOP
+;	NOP		MTIR	VI01, VF23w
+;	NOP		SQI	VF28, (VI06++)
+;	MULw.w	VF29, VF29, VF00w	IAND	VI01, VI01, VI08
+;	MULAw.xyzw	ACC, VF08, VF00w	IADD	VI01, VI01, VI02
+;	MADDAw.xyzw	ACC, VF05, VF23w	LQI	VF27, (VI05++)
+;	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+;	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+;	FTOI	VF29, VF29	LQI	VF26, (VI05++)
+
+;AEVTransform1_Continue:
+;	NOP	                   	LQI	VF23, (VI04++)
+;	NOP		LQI	VF24, (VI04++)
+;	MULz.xyz	VF28, VF28, VF25	IADDIU	VI02, VI09, AEVTransform_ProcessInst - AEV_RefAddress
+;	NOP		SQI	VF29, (VI06++)	
+;	ITOF0	VF29, VF26               SQI	VF27, (VI06++)
+;	NOP		MTIR	VI01, VF23w
+;	NOP	                 	SQI	VF28, (VI06++)
+;	MULAw.xyzw	ACC, VF08, VF00w	IAND	VI01, VI01, VI08
+;	MULw.w	VF29, VF29, VF00w	IADD	VI01, VI01, VI02
+;	MADDAw.xyzw	ACC, VF05, VF23w  	LQI	VF27, (VI05++)
+;	MADDAz.xyzw	ACC, VF06, VF24z	LQI	VF25, (VI05++)
+;	MADDw.xyzw	VF28, VF07, VF24w	JR	VI01
+;	FTOI0	VF29, VF29	LQI	VF26, (VI05++)

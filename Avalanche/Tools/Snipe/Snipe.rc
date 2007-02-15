@@ -1,0 +1,1605 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Snipe.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+IDR_MANIFEST            RT_MANIFEST             "res\\manifest.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Snipe.ico"
+ID_SPLITTER_WINDOWLIST  ICON                    "res\\WindowList.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREEICONS           BITMAP                  "res\\TreeIcons.bmp"
+IDB_TREEEXPAND          BITMAP                  "res\\TreeExpand.bmp"
+IDB_NUMERICALEDIT       BITMAP                  "res\\NumericalEdit.bmp"
+IDB_BACKGROUND          BITMAP                  "res\\Background.bmp"
+ID_BROWSEEDIT           BITMAP                  "res\\BrowseEdit.bmp"
+IDB_BUTTON              BITMAP                  "res\\Button.bmp"
+IDB_SLIDERKNOB          BITMAP                  "res\\SliderKnob.bmp"
+IDB_SLIDERBAR           BITMAP                  "res\\SliderBar.bmp"
+IDB_PROPERTYEXPAND      BITMAP                  "res\\PropertyExpand.bmp"
+IDB_COLORCHIP           BITMAP                  "res\\ColorChip.bmp"
+IDB_GROUPBOX            BITMAP                  "res\\GroupBox.bmp"
+IDB_VSCROLL             BITMAP                  "res\\VScroll.bmp"
+IDB_SCROLLKNOBV         BITMAP                  "res\\ScrollKnobV.bmp"
+IDB_TOOLBARBUTTON       BITMAP                  "res\\ToolBarButton.bmp"
+IDB_SPLITTERKNOB        BITMAP                  "res\\SplitterKnob.bmp"
+IDB_TABS                BITMAP                  "res\\Tabs.bmp"
+IDB_TABBORDER           BITMAP                  "res\\TabBorder.bmp"
+IDB_TABSTOP             BITMAP                  "res\\TabsTop.bmp"
+IDB_COMBOBOX            BITMAP                  "res\\ComboBox.bmp"
+IDB_PROGRESSCONTROL     BITMAP                  "res\\ProgressBar.bmp"
+32845                   BITMAP                  "res\\FileSave.bmp"
+57600                   BITMAP                  "res\\FileNew.bmp"
+57601                   BITMAP                  "res\\FileOpen.bmp"
+IDB_HISTORYICONS        BITMAP                  "res\\HistoryIcons.bmp"
+57644                   BITMAP                  "res\\EditRedo.bmp"
+57643                   BITMAP                  "res\\EditUndo.bmp"
+IDS_SOT_Vertex          BITMAP                  "res\\Vertices.bmp"
+IDS_SOT_Edge            BITMAP                  "res\\Edges.bmp"
+IDS_SOT_Poly            BITMAP                  "res\\Faces.bmp"
+IDB_TITLEBAR            BITMAP                  "res\\TitleBar.bmp"
+IDB_TITLEBARBUTTON      BITMAP                  "res\\TitleBarButton.bmp"
+IDB_TABBORDER2          BITMAP                  "res\\TabBorder2.bmp"
+IDB_TABSTOPBORDER       BITMAP                  "res\\TabsTopBorder.bmp"
+IDB_EDITBOX             BITMAP                  "res\\EditBox.bmp"
+IDS_SOT_BezierSpline    BITMAP                  "res\\Splines.bmp"
+IDS_SOT_Bone            BITMAP                  "res\\Bones.bmp"
+IDS_SOT_TransformableObject BITMAP                  "res\\Objects.bmp"
+ID_DISPLAY_TEXTURES     BITMAP                  "res\\Decal.bmp"
+ID_DISPLAY_WIREFRAME    BITMAP                  "res\\WireFrame.bmp"
+ID_DISPLAY_SHADED       BITMAP                  "res\\Shaded.bmp"
+ID_SPLITTER_CLOSE       BITMAP                  "res\\WindowClose.bmp"
+ID_SPLITTER_WINDOWLIST  BITMAP                  "res\\WindowList.bmp"
+IDB_TARGET              BITMAP                  "res\\Target.bmp"
+ID_MIRROR_MODE          BITMAP                  "res\\Mirror.bmp"
+ID_DISPLAYAS_PATCHMODEL BITMAP                  "res\\DrawAsPatch.bmp"
+ID_DISPLAYAS_POLYMODEL  BITMAP                  "res\\DrawAsPoly.bmp"
+IDB_FONT                BITMAP                  "res\\Font.bmp"
+IDB_SPLASH              BITMAP                  "res\\Splash.bmp"
+IDB_STATUSPANE          BITMAP                  "res\\StatusPane.bmp"
+IDB_MOUSE               BITMAP                  "res\\Mouse.bmp"
+ID_DISPLAY_SHADEDWIREFRAME BITMAP                  "res\\ShadedWireframe.bmp"
+ID_RESTORE              BITMAP                  "res\\Restore.bmp"
+ID_MAXIMIZE             BITMAP                  "res\\Maximize.bmp"
+IDB_ALLMODIFIERS        BITMAP                  "res\\AllModifiers.bmp"
+ID_PLAY                 BITMAP                  "res\\Play.bmp"
+IDB_TRANSPORTBUTTON     BITMAP                  "res\\TransportButton.bmp"
+ID_RECORD               BITMAP                  "res\\Record.bmp"
+ID_GOTOSTART            BITMAP                  "res\\GoToStart.bmp"
+ID_GOTOEND              BITMAP                  "res\\GoToEnd.bmp"
+ID_PLAYFROMSTART        BITMAP                  "res\\PlayFromStart.bmp"
+ID_LOOPPLAYBACK         BITMAP                  "res\\LoopPlayback.bmp"
+ID_GOTOPREVIOUSFRAME    BITMAP                  "res\\GoToPreviousFrame.bmp"
+ID_GOTONEXTFRAME        BITMAP                  "res\\GoToNextFrame.bmp"
+ID_PLAYMUTEAUDIO        BITMAP                  "res\\PlayMute.bmp"
+IDB_PLAYBUTTON          BITMAP                  "res\\PlayButton.bmp"
+IDB_KEY                 BITMAP                  "res\\Key.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+ID_VIEW_STANDARDBAR TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVEPROJECT
+    SEPARATOR
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_EDIT_REDO
+    SEPARATOR
+    BUTTON      ID_MIRROR_MODE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    ID_FILE_NEW_PROJECT
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   ID_FILE_NEW_MODEL_POLYGONAL
+
+                MENUITEM "Patch",                       ID_FILE_NEW_MODEL_PATCH
+
+            END
+            MENUITEM "Motion",                      ID_FILE_NEW_ACTION
+            MENUITEM "Motion Set",                  ID_FILE_NEW_MOTIONSET
+            MENUITEM "&Scene",                      ID_FILE_NEW_SCENE
+        END
+        MENUITEM "Open",                        ID_FILE_OPEN
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    ID_IMPORT_MODEL
+            MENUITEM "Scene...",                    ID_IMPORT_SCENE
+            MENUITEM "Image...",                    ID_IMPORT_IMAGE
+            MENUITEM "Motion...",                   ID_IMPORT_MOTION
+            MENUITEM "MotionSet...",                ID_IMPORT_MOTIONSET
+        END
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Model...",                    ID_EXPORT_MODEL
+            MENUITEM "Scene...",                    ID_EXPORT_SCENE
+            MENUITEM "Image...",                    ID_EXPORT_IMAGE
+            MENUITEM "Motion...",                   ID_EXPORT_MOTION
+            MENUITEM "MotionSet...",                ID_EXPORT_MOTIONSET
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Save Project",                ID_FILE_SAVEPROJECT
+        MENUITEM "Save Project As...",          ID_FILE_SAVEPROJECTAS
+        MENUITEM "Close &Project",              ID_FILE_CLOSEPROJECT
+        MENUITEM SEPARATOR
+        POPUP "Recent &Files"
+        BEGIN
+            MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Project Explorer",           ID_VIEW_PROJECTEXPLORER
+        MENUITEM "&Model Explorer",             ID_VIEW_MODELEXPLORER
+        MENUITEM "&Scene Explorer",             ID_VIEW_SCENEEXPLORER
+        MENUITEM "&Image Explorer",             ID_VIEW_IMAGEEXPLORER
+        MENUITEM "Properties &Window",          ID_VIEW_PROPERTYBAR
+        MENUITEM "&Output",                     ID_VIEW_OUTPUTBAR
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Customize...",                ID_TOOLS_CUSTOMIZE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Snipe...",             ID_APP_ABOUT
+    END
+END
+
+IDR_SPLITTER MENU 
+BEGIN
+    POPUP "Splitter"
+    BEGIN
+        MENUITEM "Add Horizontal Split",        ID_SPLITTER_ADDHORIZONTALSPLIT
+
+        MENUITEM "Add Vertical Split",          ID_SPLITTER_ADDVERTICALSPLIT
+        MENUITEM SEPARATOR
+        MENUITEM "Remove Horizontal Split",     ID_SPLITTER_REMOVEHORIZONTALSPLIT
+
+        MENUITEM "Remove Vertical Split",       ID_SPLITTER_REMOVEVERTICALSPLIT
+
+    END
+END
+
+IDR_MODELVIEW MENU 
+BEGIN
+    POPUP "ModelView"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      32859
+            MENUITEM "Wireframe",                   32860
+            MENUITEM "Control Points",              32861
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        32862
+            MENUITEM "Rulers",                      32863
+        END
+        POPUP "Split"
+        BEGIN
+            MENUITEM "Horizontally",                ID_SPLIT_HORIZONTALLY
+            MENUITEM "Vertically",                  ID_SPLIT_VERTICALLY
+            MENUITEM SEPARATOR
+            MENUITEM "Both",                        ID_SPLIT_BOTH
+        END
+    END
+END
+
+IDR_MODELTYPE MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    ID_FILE_NEW_PROJECT
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   32830
+                MENUITEM "Patch",                       32831
+                MENUITEM "Spline",                      32832
+            END
+            MENUITEM "Action",                      32834
+            MENUITEM "&Scene",                      ID_FILE_NEW_SCENE
+        END
+        MENUITEM "Open",                        57601
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    32886
+            MENUITEM "Image...",                    32887
+        END
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Model...",                    32884
+            MENUITEM "Image...",                    32885
+        END
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Save Project",                32845
+        MENUITEM "Save Project As...",          32846
+        MENUITEM "Close &Project",              ID_FILE_CLOSEPROJECT
+        MENUITEM SEPARATOR
+        POPUP "Recent &Files"
+        BEGIN
+            MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       ID_EDIT_UNDO
+        MENUITEM "&Redo",                       ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      ID_DISPLAY_SHADED
+            MENUITEM "Wireframe",                   ID_DISPLAY_WIREFRAME
+            MENUITEM "Control Points",              ID_DISPLAY_CONTROLPOINTS
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        ID_DISPLAY_GRID
+            MENUITEM "Rulers",                      ID_DISPLAY_RULERS
+        END
+        MENUITEM SEPARATOR
+        POPUP "Toolbars"
+        BEGIN
+            MENUITEM "&Standard",                   ID_EDIT_DELETE
+            MENUITEM "F&ull Screen",                ID_VIEW_FULLSCREENBAR
+        END
+        MENUITEM "&Status Bar",                 59393
+        MENUITEM SEPARATOR
+        MENUITEM "&Project Explorer",           ID_VIEW_PROJECTEXPLORER
+        MENUITEM "&Model Explorer",             ID_VIEW_MODELEXPLORER
+        MENUITEM "&Scene Explorer",             ID_VIEW_TOOLBOX
+        MENUITEM "&Image Explorer",             ID_VIEW_IMAGEEXPLORER
+        MENUITEM "Properties &Window",          ID_VIEW_PROPERTYBAR
+        MENUITEM "&Output",                     ID_VIEW_OUTPUTBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Full Screen Mode",           154
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Customize...",                ID_TOOLS_CUSTOMIZE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "C&lose All Documents ",       ID_WINDOW_CLOSEALLDOCUMENTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Snipe...",             ID_APP_ABOUT
+    END
+END
+
+IDR_NEWBUTTON_MENU MENU 
+BEGIN
+    POPUP "__POPUP__"
+    BEGIN
+        MENUITEM "&Project",                    130
+        POPUP "Model"
+        BEGIN
+            MENUITEM "Polygonal",                   32830
+            MENUITEM "Patch",                       32831
+            MENUITEM "Spline",                      32832
+        END
+        MENUITEM "Action",                      32834
+        MENUITEM "&Scene",                      32792
+    END
+END
+
+IDR_BASEDOCFRAME MENU 
+BEGIN
+    POPUP "SnipeDocFrame"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    130
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   32830
+                MENUITEM "Patch",                       32831
+                MENUITEM "Spline",                      32832
+            END
+            MENUITEM "Action",                      32834
+            MENUITEM "&Scene",                      32792
+        END
+        MENUITEM "Open",                        57601
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    32826
+        END
+    END
+END
+
+IDR_IMAGETYPE MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    ID_FILE_NEW_PROJECT
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   32830
+                MENUITEM "Patch",                       32831
+                MENUITEM "Spline",                      32832
+            END
+            MENUITEM "Action",                      32834
+            MENUITEM "&Scene",                      ID_FILE_NEW_SCENE
+        END
+        MENUITEM "Open",                        57601
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    32886
+            MENUITEM "Image...",                    32887
+        END
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Model...",                    32884
+            MENUITEM "Image...",                    32885
+        END
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Save Project",                32845
+        MENUITEM "Save Project As...",          32846
+        MENUITEM "Close &Project",              ID_FILE_CLOSEPROJECT
+        MENUITEM SEPARATOR
+        POPUP "Recent &Files"
+        BEGIN
+            MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       ID_EDIT_UNDO
+        MENUITEM "&Redo",                       ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      ID_DISPLAY_SHADED
+            MENUITEM "Wireframe",                   ID_DISPLAY_WIREFRAME
+            MENUITEM "Control Points",              ID_DISPLAY_CONTROLPOINTS
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        ID_DISPLAY_GRID
+            MENUITEM "Rulers",                      ID_DISPLAY_RULERS
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Project Explorer",           ID_VIEW_PROJECTEXPLORER
+        MENUITEM "&Model Explorer",             ID_VIEW_MODELEXPLORER
+        MENUITEM "&Scene Explorer",             ID_VIEW_TOOLBOX
+        MENUITEM "&Image Explorer",             ID_VIEW_IMAGEEXPLORER
+        MENUITEM "Properties &Window",          ID_VIEW_PROPERTYBAR
+        MENUITEM "&Output",                     ID_VIEW_OUTPUTBAR
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Customize...",                ID_TOOLS_CUSTOMIZE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "C&lose All Documents ",       ID_WINDOW_CLOSEALLDOCUMENTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Snipe...",             ID_APP_ABOUT
+    END
+END
+
+IDR_IMAGEVIEW MENU 
+BEGIN
+    POPUP "ImageView"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Grid",                        32862
+            MENUITEM "Rulers",                      32863
+        END
+        POPUP "Split"
+        BEGIN
+            MENUITEM "Horizontally",                ID_SPLIT_HORIZONTALLY
+            MENUITEM "Vertically",                  ID_SPLIT_VERTICALLY
+            MENUITEM SEPARATOR
+            MENUITEM "Both",                        ID_SPLIT_BOTH
+        END
+    END
+END
+
+IDR_OBJ_IMAGE MENU 
+BEGIN
+    POPUP "Image"
+    BEGIN
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Edit",                        ID_OBJECT_EDIT
+    END
+END
+
+IDR_OBJ_POLYMODEL MENU 
+BEGIN
+    POPUP "Image"
+    BEGIN
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Edit",                        ID_OBJECT_EDIT
+    END
+END
+
+IDR_TABCONTROL MENU 
+BEGIN
+    POPUP "TabControl"
+    BEGIN
+        MENUITEM "Close",                       ID_TABCONTROL_CLOSE
+        MENUITEM "Close All But This",          ID_TABCONTROL_CLOSEALLBUTTHIS
+
+    END
+END
+
+IDR_DOCUMENTTABCONTROL MENU 
+BEGIN
+    POPUP "TabControl"
+    BEGIN
+        MENUITEM "Save",                        ID_FILE_SAVE
+        MENUITEM "Close",                       ID_TABCONTROL_CLOSE
+        MENUITEM "Close All But This",          ID_TABCONTROL_CLOSEALLBUTTHIS
+
+        MENUITEM SEPARATOR
+        POPUP "Layout"
+        BEGIN
+            MENUITEM "New",                         ID_TABCONTROL_LAYOUT_NEW
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "New Horizontal Tab Group",    ID_TABCONTROL_NEWHORIZONTALTABGROUP
+
+        MENUITEM "New Vertical Tab Group",      ID_TABCONTROL_NEWVERTICALTABGROUP
+
+        MENUITEM "Move To Next Tab Group",      ID_TABCONTROL_MOVETONEXTTABGROUP
+
+        MENUITEM "Move To Previous Tab Group",  ID_TABCONTROL_MOVETOPREVIOUSTABGROUP
+
+    END
+END
+
+IDR_OUTPUTCONTROL MENU 
+BEGIN
+    POPUP "Output Control"
+    BEGIN
+        MENUITEM "Clear",                       ID_OUTPUT_CLEAR
+    END
+END
+
+IDR_SCENETYPE MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    ID_FILE_NEW_PROJECT
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   32830
+                MENUITEM "Patch",                       32831
+                MENUITEM "Spline",                      32832
+            END
+            MENUITEM "Action",                      32834
+            MENUITEM "&Scene",                      ID_FILE_NEW_SCENE
+        END
+        MENUITEM "Open",                        57601
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    32886
+            MENUITEM "Image...",                    32887
+        END
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Model...",                    32884
+            MENUITEM "Image...",                    32885
+        END
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Save Project",                32845
+        MENUITEM "Save Project As...",          32846
+        MENUITEM "Close &Project",              ID_FILE_CLOSEPROJECT
+        MENUITEM SEPARATOR
+        POPUP "Recent &Files"
+        BEGIN
+            MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       ID_EDIT_UNDO
+        MENUITEM "&Redo",                       ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      ID_DISPLAY_SHADED
+            MENUITEM "Wireframe",                   ID_DISPLAY_WIREFRAME
+            MENUITEM "Control Points",              ID_DISPLAY_CONTROLPOINTS
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        ID_DISPLAY_GRID
+            MENUITEM "Rulers",                      ID_DISPLAY_RULERS
+        END
+        MENUITEM SEPARATOR
+        POPUP "Toolbars"
+        BEGIN
+            MENUITEM "&Standard",                   ID_EDIT_DELETE
+            MENUITEM "F&ull Screen",                ID_VIEW_FULLSCREENBAR
+        END
+        MENUITEM "&Status Bar",                 59393
+        MENUITEM SEPARATOR
+        MENUITEM "&Project Explorer",           ID_VIEW_PROJECTEXPLORER
+        MENUITEM "&Model Explorer",             ID_VIEW_MODELEXPLORER
+        MENUITEM "&Scene Explorer",             ID_VIEW_TOOLBOX
+        MENUITEM "&Image Explorer",             ID_VIEW_IMAGEEXPLORER
+        MENUITEM "Properties &Window",          ID_VIEW_PROPERTYBAR
+        MENUITEM "&Output",                     ID_VIEW_OUTPUTBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Full Screen Mode",           154
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Customize...",                ID_TOOLS_CUSTOMIZE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "C&lose All Documents ",       ID_WINDOW_CLOSEALLDOCUMENTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Snipe...",             ID_APP_ABOUT
+    END
+END
+
+IDR_TEXCOORDTYPE MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    ID_FILE_NEW_PROJECT
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   32830
+                MENUITEM "Patch",                       32831
+                MENUITEM "Spline",                      32832
+            END
+            MENUITEM "Action",                      32834
+            MENUITEM "&Scene",                      ID_FILE_NEW_SCENE
+        END
+        MENUITEM "Open",                        57601
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    32886
+            MENUITEM "Image...",                    32887
+        END
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Model...",                    32884
+            MENUITEM "Image...",                    32885
+        END
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Save Project",                32845
+        MENUITEM "Save Project As...",          32846
+        MENUITEM "Close &Project",              ID_FILE_CLOSEPROJECT
+        MENUITEM SEPARATOR
+        POPUP "Recent &Files"
+        BEGIN
+            MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       ID_EDIT_UNDO
+        MENUITEM "&Redo",                       ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      ID_DISPLAY_SHADED
+            MENUITEM "Wireframe",                   ID_DISPLAY_WIREFRAME
+            MENUITEM "Control Points",              ID_DISPLAY_CONTROLPOINTS
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        ID_DISPLAY_GRID
+            MENUITEM "Rulers",                      ID_DISPLAY_RULERS
+        END
+        MENUITEM SEPARATOR
+        POPUP "Toolbars"
+        BEGIN
+            MENUITEM "&Standard",                   ID_EDIT_DELETE
+            MENUITEM "F&ull Screen",                ID_VIEW_FULLSCREENBAR
+        END
+        MENUITEM "&Status Bar",                 59393
+        MENUITEM SEPARATOR
+        MENUITEM "&Project Explorer",           ID_VIEW_PROJECTEXPLORER
+        MENUITEM "&Model Explorer",             ID_VIEW_MODELEXPLORER
+        MENUITEM "&Scene Explorer",             ID_VIEW_TOOLBOX
+        MENUITEM "&Image Explorer",             ID_VIEW_IMAGEEXPLORER
+        MENUITEM "Properties &Window",          ID_VIEW_PROPERTYBAR
+        MENUITEM "&Output",                     ID_VIEW_OUTPUTBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Full Screen Mode",           154
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Customize...",                ID_TOOLS_CUSTOMIZE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "C&lose All Documents ",       ID_WINDOW_CLOSEALLDOCUMENTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Snipe...",             ID_APP_ABOUT
+    END
+END
+
+IDR_TEXCOORDVIEW MENU 
+BEGIN
+    POPUP "TexCoordView"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      32859
+            MENUITEM "Wireframe",                   32860
+            MENUITEM "Control Points",              32861
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        32862
+            MENUITEM "Rulers",                      32863
+        END
+        POPUP "Split"
+        BEGIN
+            MENUITEM "Horizontally",                ID_SPLIT_HORIZONTALLY
+            MENUITEM "Vertically",                  ID_SPLIT_VERTICALLY
+            MENUITEM SEPARATOR
+            MENUITEM "Both",                        ID_SPLIT_BOTH
+        END
+    END
+END
+
+IDR_POINTERPROPERTYCONTROL MENU 
+BEGIN
+    POPUP "Pointer Property Control"
+    BEGIN
+        MENUITEM "Select Object",               ID_POINTERPROPERTY_SELECTOBJECT
+
+    END
+END
+
+IDR_MOTIONVIEW MENU 
+BEGIN
+    POPUP "ModelView"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      32859
+            MENUITEM "Wireframe",                   32860
+            MENUITEM "Control Points",              32861
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        32862
+            MENUITEM "Rulers",                      32863
+        END
+        POPUP "Split"
+        BEGIN
+            MENUITEM "Horizontally",                ID_SPLIT_HORIZONTALLY
+            MENUITEM "Vertically",                  ID_SPLIT_VERTICALLY
+            MENUITEM SEPARATOR
+            MENUITEM "Both",                        ID_SPLIT_BOTH
+        END
+    END
+END
+
+IDR_MOTIONTYPE MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    ID_FILE_NEW_PROJECT
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   32830
+                MENUITEM "Patch",                       32831
+                MENUITEM "Spline",                      32832
+            END
+            MENUITEM "Action",                      32834
+            MENUITEM "&Scene",                      ID_FILE_NEW_SCENE
+        END
+        MENUITEM "Open",                        57601
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    32886
+            MENUITEM "Image...",                    32887
+        END
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Model...",                    32884
+            MENUITEM "Image...",                    32885
+        END
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Save Project",                32845
+        MENUITEM "Save Project As...",          32846
+        MENUITEM "Close &Project",              ID_FILE_CLOSEPROJECT
+        MENUITEM SEPARATOR
+        POPUP "Recent &Files"
+        BEGIN
+            MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       ID_EDIT_UNDO
+        MENUITEM "&Redo",                       ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      ID_DISPLAY_SHADED
+            MENUITEM "Wireframe",                   ID_DISPLAY_WIREFRAME
+            MENUITEM "Control Points",              ID_DISPLAY_CONTROLPOINTS
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        ID_DISPLAY_GRID
+            MENUITEM "Rulers",                      ID_DISPLAY_RULERS
+        END
+        MENUITEM SEPARATOR
+        POPUP "Toolbars"
+        BEGIN
+            MENUITEM "&Standard",                   ID_EDIT_DELETE
+            MENUITEM "F&ull Screen",                ID_VIEW_FULLSCREENBAR
+        END
+        MENUITEM "&Status Bar",                 59393
+        MENUITEM SEPARATOR
+        MENUITEM "&Project Explorer",           ID_VIEW_PROJECTEXPLORER
+        MENUITEM "&Model Explorer",             ID_VIEW_MODELEXPLORER
+        MENUITEM "&Scene Explorer",             ID_VIEW_TOOLBOX
+        MENUITEM "&Image Explorer",             ID_VIEW_IMAGEEXPLORER
+        MENUITEM "Properties &Window",          ID_VIEW_PROPERTYBAR
+        MENUITEM "&Output",                     ID_VIEW_OUTPUTBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Full Screen Mode",           154
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Customize...",                ID_TOOLS_CUSTOMIZE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "C&lose All Documents ",       ID_WINDOW_CLOSEALLDOCUMENTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Snipe...",             ID_APP_ABOUT
+    END
+END
+
+IDR_MOTIONSETVIEW MENU 
+BEGIN
+    POPUP "ModelView"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      32859
+            MENUITEM "Wireframe",                   32860
+            MENUITEM "Control Points",              32861
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        32862
+            MENUITEM "Rulers",                      32863
+        END
+        POPUP "Split"
+        BEGIN
+            MENUITEM "Horizontally",                ID_SPLIT_HORIZONTALLY
+            MENUITEM "Vertically",                  ID_SPLIT_VERTICALLY
+            MENUITEM SEPARATOR
+            MENUITEM "Both",                        ID_SPLIT_BOTH
+        END
+    END
+END
+
+IDR_MOTIONSETTYPE MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        POPUP "New"
+        BEGIN
+            MENUITEM "&Project",                    ID_FILE_NEW_PROJECT
+            POPUP "Model"
+            BEGIN
+                MENUITEM "Polygonal",                   32830
+                MENUITEM "Patch",                       32831
+                MENUITEM "Spline",                      32832
+            END
+            MENUITEM "Action",                      32834
+            MENUITEM "&Scene",                      ID_FILE_NEW_SCENE
+        END
+        MENUITEM "Open",                        57601
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Model...",                    32886
+            MENUITEM "Image...",                    32887
+        END
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Model...",                    32884
+            MENUITEM "Image...",                    32885
+        END
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Save Project",                32845
+        MENUITEM "Save Project As...",          32846
+        MENUITEM "Close &Project",              ID_FILE_CLOSEPROJECT
+        MENUITEM SEPARATOR
+        POPUP "Recent &Files"
+        BEGIN
+            MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       ID_EDIT_UNDO
+        MENUITEM "&Redo",                       ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Delete",                     ID_EDIT_DELETE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Display"
+        BEGIN
+            MENUITEM "Shaded",                      ID_DISPLAY_SHADED
+            MENUITEM "Wireframe",                   ID_DISPLAY_WIREFRAME
+            MENUITEM "Control Points",              ID_DISPLAY_CONTROLPOINTS
+            MENUITEM SEPARATOR
+            MENUITEM "Grid",                        ID_DISPLAY_GRID
+            MENUITEM "Rulers",                      ID_DISPLAY_RULERS
+        END
+        MENUITEM SEPARATOR
+        POPUP "Toolbars"
+        BEGIN
+            MENUITEM "&Standard",                   ID_EDIT_DELETE
+            MENUITEM "F&ull Screen",                ID_VIEW_FULLSCREENBAR
+        END
+        MENUITEM "&Status Bar",                 59393
+        MENUITEM SEPARATOR
+        MENUITEM "&Project Explorer",           ID_VIEW_PROJECTEXPLORER
+        MENUITEM "&Model Explorer",             ID_VIEW_MODELEXPLORER
+        MENUITEM "&Scene Explorer",             ID_VIEW_TOOLBOX
+        MENUITEM "&Image Explorer",             ID_VIEW_IMAGEEXPLORER
+        MENUITEM "Properties &Window",          ID_VIEW_PROPERTYBAR
+        MENUITEM "&Output",                     ID_VIEW_OUTPUTBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Full Screen Mode",           154
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Customize...",                ID_TOOLS_CUSTOMIZE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "C&lose All Documents ",       ID_WINDOW_CLOSEALLDOCUMENTS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Snipe...",             ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    VK_RETURN,      ID_COMMANDLINE,         VIRTKEY, NOINVERT
+    "3",            ID_DISPLAY_GRID,        VIRTKEY, SHIFT, NOINVERT
+    "9",            ID_DISPLAY_SHADED,      ASCII,  NOINVERT
+    "0",            ID_DISPLAY_SHADEDWIREFRAME, ASCII, NOINVERT
+    "8",            ID_DISPLAY_WIREFRAME,   ASCII,  NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_ADD,         ID_GOTONEXTFRAME,       VIRTKEY, NOINVERT
+    VK_SUBTRACT,    ID_GOTOPREVIOUSFRAME,   VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "\\",           ID_TOGGLE_PERSPECTIVE,  ASCII,  NOINVERT
+    VK_NUMPAD8,     ID_VIEW_BACK,           VIRTKEY, NOINVERT
+    VK_NUMPAD7,     ID_VIEW_BIRDSEYE,       VIRTKEY, NOINVERT
+    VK_NUMPAD0,     ID_VIEW_BOTTOM,         VIRTKEY, NOINVERT
+    VK_NUMPAD1,     ID_VIEW_CAMERA,         VIRTKEY, NOINVERT
+    VK_NUMPAD2,     ID_VIEW_FRONT,          VIRTKEY, NOINVERT
+    VK_F11,         ID_VIEW_FULLSCREEN,     VIRTKEY, NOINVERT
+    "4",            ID_VIEW_IMAGEEXPLORER,  VIRTKEY, ALT, NOINVERT
+    VK_NUMPAD4,     ID_VIEW_LEFT,           VIRTKEY, NOINVERT
+    VK_NUMPAD3,     ID_VIEW_LIGHT,          VIRTKEY, NOINVERT
+    "2",            ID_VIEW_MODELEXPLORER,  VIRTKEY, ALT, NOINVERT
+    "6",            ID_VIEW_OUTPUTBAR,      VIRTKEY, ALT, NOINVERT
+    "1",            ID_VIEW_PROJECTEXPLORER, VIRTKEY, ALT, NOINVERT
+    "5",            ID_VIEW_PROPERTYBAR,    VIRTKEY, ALT, NOINVERT
+    VK_NUMPAD6,     ID_VIEW_RIGHT,          VIRTKEY, NOINVERT
+    "3",            ID_VIEW_SCENEEXPLORER,  VIRTKEY, ALT, NOINVERT
+    VK_SPACE,       ID_VIEW_TOGGLEMAXIMIZE, VIRTKEY, NOINVERT
+    VK_NUMPAD5,     ID_VIEW_TOP,            VIRTKEY, NOINVERT
+    "F",            ID_VIEW_ZOOMFITALL,     VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_VIEW_ZOOMFITSELECTED, VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "Snipe MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Snipe"
+            VALUE "LegalCopyright", "Copyright (C) 2004"
+            VALUE "OriginalFilename", "Snipe.EXE"
+            VALUE "ProductName", "Snipe Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 224, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About Snipe"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,21,20
+    LTEXT           "Snipe Version 1.0",IDC_STATIC,37,7,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2004",IDC_STATIC,37,22,119,8
+    DEFPUSHBUTTON   "OK",IDOK,167,7,50,14,WS_GROUP
+END
+
+IDD_COMMANDS DIALOGEX 0, 0, 306, 213
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Categories:",IDC_STATIC,0,0,107,8
+    LISTBOX         IDC_GROUP_LIST,0,10,107,139,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Commands:",IDC_STATIC,118,0,187,8
+    LISTBOX         IDC_COMMAND_LIST,118,10,188,139,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Shortcuts for command:",IDC_STATIC,0,160,108,8
+    LISTBOX         IDC_SHORTCUTSFORCOMMAND_LIST,0,170,107,43,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Press shortcut key(s):",IDC_STATIC,118,160,129,8
+    CONTROL         "",IDC_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,
+                    118,170,130,14
+    PUSHBUTTON      "Assign",IDC_ASSIGN_BUTTON,256,170,50,14
+    LTEXT           "Shortcut currently used for:",IDC_STATIC,118,189,187,8
+    LISTBOX         IDC_SHORTCUTUSEDFOR_LIST,118,199,188,14,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TOOLBARS DIALOGEX 0, 0, 306, 213
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Toolbars:",IDC_STATIC,0,0,107,8
+    LISTBOX         IDC_TOOLBAR_LIST,0,10,247,202,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "New...",IDC_NEW_BUTTON,256,10,50,14
+    PUSHBUTTON      "Rename...",IDC_RENAME_BUTTON,256,31,50,14
+    PUSHBUTTON      "Delete",IDC_DELETE_BUTTON,256,52,50,14
+    PUSHBUTTON      "Reset...",IDC_RESET_BUTTON,256,73,50,14
+END
+
+IDD_STRING DIALOGEX 0, 0, 216, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,101,41,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,159,41,50,14
+    LTEXT           ":",IDC_REQUEST_STATIC,7,7,202,8
+    EDITTEXT        IDC_STRING_EDIT,7,17,202,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_STRING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 209
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GEOMETRY
+//
+
+IDR_CAMERA_GEO          GEOMETRY                "res\\Camera.geo"
+IDR_LIGHT_GEO           GEOMETRY                "res\\Light.geo"
+IDR_CAMERALOGO_GEO      GEOMETRY                "res\\CameraLogo.geo"
+IDR_SPHERE_GEO          GEOMETRY                "res\\Sphere.geo"
+IDR_BONE_GEO            GEOMETRY                "res\\Bone.geo"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Snipe"
+    IDS_TITLE_STANDARDBAR   "Standard"
+    IDS_TITLE_FULLSCREENBAR "Fullscreen"
+    IDS_STATUSBAR           "Statusbar"
+    IDS_VISIBLE             "Visible"
+    IDS_WINDOWMENU          "&Window"
+    ID_VIEW_MENUBAR         "Show or hide the Menu Bar.\nToggle Menu Bar"
+    ID_VIEW_STANDARDBAR     "Show or hide the Standard Toolbar.\nToggle Standard Toolbar"
+    ID_VIEW_FULLSCREENBAR   "Show or hide the Full Screen Toolbar.\nToggle Full Screen Toolbar"
+    ID_OUTPUTCONTROL        "Output"
+    IDR_OBJECTPROPERTIES    "Object Properties"
+    IDR_VIEWPROPERTIES      "View Properties"
+    ID_SPLITTER_WINDOWLIST  "Display a list of available tabs.\nTab List"
+    ID_SPLITTER_CLOSE       "Remove the selected tab.\nClose"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_DOCUMENT_TAB         "Tab"
+    IDR_COMPONENTTYPE_COMBO "Component Type"
+    IDR_MANIPULATOR_COMBO   "Manipulator"
+    ID_TEXCOORD_COMBO       "Texture Coordinate Set"
+    ID_TEXCOORDINSTANCE_COMBO "Context"
+    IDS_NOTSET              "-"
+    IDR_MANIPULATORPROPERTIES "Manipulator Properties"
+    IDR_NAVIGATORPROPERTIES "Navigator Properties"
+    ID_DISPLAYAS_PATCHMODEL "Display the model as a patch model in this view.\nDraw As: Patches"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_DISPLAYAS_POLYMODEL  "Display the model as a polygonal model in this view.\nDraw As: Polygons"
+    IDC_ASSIGN_BUTTON       "Assign"
+    IDS_MODELFILTER         "Model Files (*.snipemodel)|*.snipemodel|"
+    IDS_PROJECTFILTER       "Project Files (*.snipeproject)|*.snipeproject|"
+    IDS_SCENEFILTER         "Scene Files (*.snipescene)|*.snipescene|"
+    IDS_ALLFORMATS          "All Formats"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_MIRROR_MODE          "Toggles miror mode on and off.\nToggle Mirror Mode"
+    ID_DISPLAY_SHADED       "Sets the view's shading mode to shaded.\nShading Mode: Shaded"
+    ID_DISPLAY_WIREFRAME    "Sets the view's shading mode to wireframe.\nShading Mode: Wireframe"
+    ID_DISPLAY_SHADEDWIREFRAME 
+                            "Sets the view mode's shading to shaded + wireframe.\nShading Mode: Shaded + Wireframe"
+    ID_DISPLAY_TEXTURES     "Toggles textures on and off.\nDisplay.Textures"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW_PROJECT     "Create a new Project.\nNew Project"
+    ID_FILE_OPEN_PROJECT    "Open an existing Project.\nOpen Project"
+    ID_FILE_SAVE_ALL        "Save All"
+    ID_VIEW_FRONT           "Front View"
+    ID_VIEW_BACK            "Back View"
+    ID_VIEW_LEFT            "Left View"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Snipe"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing Model\nOpen Model"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle Toolbar"
+    ID_VIEW_STATUS_BAR      "Show or hide the Status Bar\nToggle Status Bar"
+    ID_VIEW_MENU            "Show or hide the Menu Bar.\nToggle Menu Bar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_MODELEXPLORER   "Show or hide the Model Explorer.\nToggle Model Explorer"
+    ID_VIEW_IMAGEEXPLORER   "Show or hide the Image Explorer.\nToggle Image Explorer"
+    ID_VIEW_PROJECTEXPLORER "Show or hide the Project Explorer.\nToggle Project Explorer"
+    ID_VIEW_SCENEEXPLORER   "Show or hide the Scene Explorer.\nToggle Scene Explorer"
+    ID_VIEW_PROPERTYBAR     "Show or hide the Properties Window.\nToggle Properties"
+    ID_VIEW_MODE_COMBO      "Sets the view's current model\nView Mode"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_ANGLEPRESET_COMBO "Sets the view's viewing angle\nViewing Angle"
+    IDS_TITLE_PROJECTEXPLORER "Project Explorer"
+    IDS_TITLE_SCENEEXPLORER "Scene Explorer"
+    IDS_TITLE_MODELEXPLORER "Model Explorer"
+    IDS_TITLE_IMAGEEXPLORER "Image Explorer"
+    ID_VIEW_OUTPUTBAR       "Show or hide the Output Bar.\nToggle Output Bar"
+    IDS_TITLE_OUTPUTBAR     "Output Bar"
+    IDS_TITLE_PROPERTYBAR   "Properties"
+    IDS_ALLOWDOCKING        "Allow docking"
+    ID_OUTPUT_CLEAR         "Clear"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_RIGHT           "Right View"
+    ID_VIEW_TOP             "Top View"
+    ID_VIEW_BOTTOM          "Bottom View"
+    ID_VIEW_BIRDSEYE        "Bird's Eye View"
+    ID_VIEW_CAMERA          "Camera View"
+    IDS_VIEW_LIGHT          "Light View"
+    ID_FILE_NEW_MODEL       "Create new Model.\nNew Model"
+    ID_FILE_NEW_SCENE       "Create a new Scene.\nNew Scene"
+    ID_FILE_OPEN_MODEL      "Open an existing Model.\nOpen Model"
+    ID_FILE_OPEN_SCENE      "Open an existing scene.\nOpen Scene"
+    ID_FILE_CLOSEPROJECT    "Close the Project.\nClose Project"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_FULLSCREEN      "Show or hide the views toolbars.\nToggle Views Toolbars"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_SNIPETYPE           "\nUntitled\nUntitled\n\n\nSnipe.Document\nSnipe Document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW_ACTION      "Create a new Action.\nNew Action"
+    ID_FILE_SAVEPROJECT     "Save Project"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW_MODEL_POLYGONAL 
+                            "Create a new Polygonal Model.\nNew Polygonal Model"
+    ID_FILE_NEW_MODEL_PATCH "Create a new Patch Model.\nNew Patch Model"
+END
+
+STRINGTABLE 
+BEGIN
+    IDOK                    "OK"
+    IDS_TITLE_SELECTIONTOOLBAR "Component Selection"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_SELECTMODE_VERTEX 
+                            "Turn on vertex selection mode.\nTurn on vertex selection mode."
+    ID_VIEW_SELECTMODE_FACE "Turn on face selection mode.\nTurn on face selection mode."
+    ID_VIEW_SELECTMODE_EDGE "Turn on edge selection mode.\nTurn on edge selection mode."
+    ID_VIEW_SELECTMODE_SPLINE 
+                            "Turn on spline selection mode.\nTurn on spline selection mode."
+    ID_VIEW_SELECTMODE_OBJECT 
+                            "Turn on object selection mode.\nTurn on object selection mode."
+    ID_VIEW_SELECTMODE_BONE "Turn on bone selection mode.\nTurn on bone selection mode."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_DISPLAY_SUBDIVISIONS "Toggles draw subdivided on and off.\nToggle Draw Subdivided"
+    ID_RESTORE              "Restores the views to their states before being maximized.\nRestore View States"
+    ID_MAXIMIZE             "Maximizes this view, making it take up the entire working area.\nMaximize View"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_ZOOMFITALL      "Zoom Fit All"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SOT_Unknown         "Unknown"
+    IDS_SOT_Poly            "Faces"
+    IDS_SOT_Edge            "Edges"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SOT_Patch           "Patches"
+    IDS_SOT_Vertex          "Vertices"
+    IDS_SOT_UV              "Texture Coordinates"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SOT_TransformableObject "Objects"
+    IDS_SOT_Bone            "Bones"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_CLOSE                "Close"
+    ID_NEW                  "New"
+    ID_RENAME               "Rename"
+    ID_DELETE               "Delete"
+    ID_RESET                "Reset"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SOT_BezierSpline    "Splines"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_ZOOMFITSELECTED "Zoom Fit Selected"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOGGLEMAXIMIZE  "Toggles the current view between maximized and split view.\nToggle Maximized"
+    ID_TOGGLE_PERSPECTIVE   "Toggles between perspective and orthogonal views.\nToggle Perspective"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_RECORD               "Toggle record mode on and off.\nRecord"
+    ID_GOTOSTART            "Jump to the first frame of the animation.\nGo To Start"
+    ID_GOTOEND              "Jump to the last frame of the animation.\nGo To End"
+    ID_PLAYFROMSTART        "Play the animation from the beginning.\nPlay From Start"
+    ID_PLAY                 "Play the animation starting from the current frame.\nPlay"
+    ID_PAUSE                "Pause the animation.\nPause"
+    ID_LOOPPLAYBACK         "Toggle animation looping on and off.\nLoop Playback"
+    ID_GOTOPREVIOUSFRAME    "Jump to the previous frame of the animation.\nGo To Previous Frame"
+    ID_GOTONEXTFRAME        "Jump to the next frame of the animation.\nGo To Next Frame"
+    ID_PLAYMUTEAUDIO        "Play/Mute audio when playing the animation.\nPlay/Mute Audio"
+    1066                    "Set the current frame number in the animation.\nCurrent Frame"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SOT_Key             "Key"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_COMMANDLINE          "Set input focus to the Command Line window.\nGo To Command Line"
+    ID_FILE_NEW_MOTIONSET   "Create a new MotionSet.\nNew MotionSet"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SOT_MotionChannelBiasObject "MotionChannelBiasObject"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Snipe.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,1 @@
+int AVALANCHE_DDL_REVISION = -1;

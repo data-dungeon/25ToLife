@@ -1,0 +1,4 @@
+create "SNPS2Consumer\Profile.lib"
+addmod "SNPS2Consumer/ProfilePCH_SN.obj"
+save
+end

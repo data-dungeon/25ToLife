@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mdlio", "mdlio.vcproj", "{B5D154AD-52FF-467D-8D73-BD7D4CE2CD82}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC317095-7A46-44A5-BC62-4E33B76074EE} = {EC317095-7A46-44A5-BC62-4E33B76074EE}
+		{06EEB3CE-AC53-4195-B7F1-9564ACD7E503} = {06EEB3CE-AC53-4195-B7F1-9564ACD7E503}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mdllib", "..\..\Libraries\mdllib\mdllib.vcproj", "{06EEB3CE-AC53-4195-B7F1-9564ACD7E503}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mtools", "..\..\Libraries\MTools\MTools.vcproj", "{EC317095-7A46-44A5-BC62-4E33B76074EE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectUniqueName0 = mdlio.vcproj
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = ..\\..\\Libraries\\mdllib\\mdllib.vcproj
+		SccLocalPath1 = ..\\..\\Libraries\\mdllib
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\Libraries\\MTools\\MTools.vcproj
+		SccLocalPath2 = ..\\..\\Libraries\\MTools
+		CanCheckoutShared = true
+		SccProjectName3 = Perforce\u0020Project
+		SccLocalPath3 = .
+		SccProvider3 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {867F4EAC-0109-437E-8EF3-57EBF0305DAD}
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B5D154AD-52FF-467D-8D73-BD7D4CE2CD82}.Debug.ActiveCfg = Debug|Win32
+		{B5D154AD-52FF-467D-8D73-BD7D4CE2CD82}.Debug.Build.0 = Debug|Win32
+		{B5D154AD-52FF-467D-8D73-BD7D4CE2CD82}.Release.ActiveCfg = Release|Win32
+		{B5D154AD-52FF-467D-8D73-BD7D4CE2CD82}.Release.Build.0 = Release|Win32
+		{06EEB3CE-AC53-4195-B7F1-9564ACD7E503}.Debug.ActiveCfg = Debug|Win32
+		{06EEB3CE-AC53-4195-B7F1-9564ACD7E503}.Debug.Build.0 = Debug|Win32
+		{06EEB3CE-AC53-4195-B7F1-9564ACD7E503}.Release.ActiveCfg = Release|Win32
+		{06EEB3CE-AC53-4195-B7F1-9564ACD7E503}.Release.Build.0 = Release|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Debug.ActiveCfg = Debug|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Debug.Build.0 = Debug|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Release.ActiveCfg = Release|Win32
+		{EC317095-7A46-44A5-BC62-4E33B76074EE}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

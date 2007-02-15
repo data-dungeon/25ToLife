@@ -1,0 +1,630 @@
+Comparing files VUDataClass.cpp and C:\FILES\VUDATACLASS.CPP
+***** VUDataClass.cpp
+                        // unknown input matrix type specified.
+                        RENDER_ASSERT( FALSE );
+                        break;
+***** C:\FILES\VUDATACLASS.CPP
+                        // unknown input matrix type specified.
+                        ASSERT( FALSE );
+                        break;
+*****
+
+***** VUDataClass.cpp
+                        // unknown input matrix type specified.
+                        RENDER_ASSERT( FALSE );
+                        break;
+***** C:\FILES\VUDATACLASS.CPP
+                        // unknown input matrix type specified.
+                        ASSERT( FALSE );
+                        break;
+*****
+
+***** VUDataClass.cpp
+                        // unknown input matrix type specified.
+                        RENDER_ASSERT( FALSE );
+                        break;
+***** C:\FILES\VUDATACLASS.CPP
+                        // unknown input matrix type specified.
+                        ASSERT( FALSE );
+                        break;
+*****
+
+***** VUDataClass.cpp
+                        // unknown input matrix type specified.
+                        RENDER_ASSERT( FALSE );
+                        break;
+***** C:\FILES\VUDATACLASS.CPP
+                        // unknown input matrix type specified.
+                        ASSERT( FALSE );
+                        break;
+*****
+
+***** VUDataClass.cpp
+
+void VUDataClass::prepLightingInfo( const VURenderInfo & rndInfo )
+{
+***** C:\FILES\VUDATACLASS.CPP
+
+void VUDataClass::prepLightingInfo(const VURenderInfo & rndInfo)
+{
+*****
+
+***** VUDataClass.cpp
+                DBGASSERT( d_LightingInfo.numDirectionalLights <= 3 );
+                DBGASSERT( d_LightingInfo.numPointLights <= 3);
+                
+***** C:\FILES\VUDATACLASS.CPP
+                DBGASSERT( d_LightingInfo.numDirectionalLights <= 3 );
+                DBGASSERT( d_LightingInfo.numPointLights <= 2);
+                
+*****
+
+***** VUDataClass.cpp
+                        case LIGHT_TYPE_POINT:
+                                if( d_LightingInfo.numPointLights <= 2 )
+                                {
+***** C:\FILES\VUDATACLASS.CPP
+                        case LIGHT_TYPE_POINT:
+                                if( d_LightingInfo.numPointLights <= 1 )
+                                {
+*****
+
+***** VUDataClass.cpp
+
+#define NUM_REGS_IN_BASE_GSPACKET 6
+void VUDataClass::appendGSSettings(u_int bind, PS2MaterialInfo* matInfo)
+{
+        u_long128 * pPacket = (u_long128*)(*p_TextureDataCallback)(bind, true, matInfo);
+
+        unsigned int * pEVData = ((unsigned int *) pPacket) + 2;
+
+        if( matInfo && matInfo->fEnvironmentMapOpacity != 0.0f)
+        {
+                *pEVData++ |= 0x100;                    
+                *((float *) pEVData) = matInfo->fEnvironmentMapOpacity;
+        }
+
+        MasterList::Append( GIFInline::createGIFTAG(NUM_REGS_IN_BASE_GSPACKET, 1, 0xE, false));
+        MasterList::CopyToMasterList(pPacket, NUM_REGS_IN_BASE_GSPACKET);
+}
+
+void VUDataClass::addToMasterList_DTTable( void *pTableData, void *pDMAData)
+***** C:\FILES\VUDATACLASS.CPP
+
+void VUDataClass::addToMasterList_DTTable( void *pTableData, void *pDMAData)
+*****
+
+***** VUDataClass.cpp
+{
+        PS2MaterialInfo         matInfo = d_DefaultMaterial;
+        
+        unsigned int    numEntries = *((unsigned int *) pTableData)++;
+***** C:\FILES\VUDATACLASS.CPP
+{
+        unsigned int    numEntries = *((unsigned int *) pTableData)++;
+*****
+
+***** VUDataClass.cpp
+        {
+                u_int bind = pTable[i].uiTexID;
+                
+                bind &= 0x7FFFFFFF;
+                
+                unsigned int numQWs = NUM_REGS_IN_BASE_GSPACKET + 1;
+
+                MasterList::AppendDMATAG( numQWs, TAGID_CNT);
+                MasterList::Append( createNOP() );
+***** C:\FILES\VUDATACLASS.CPP
+        {
+                PS2MaterialInfo         matInfo = d_DefaultMaterial;
+                u_int bind = pTable[i].uiTexID;
+
+                u_int regs = 6;
+                bool includesAlpha = false;
+
+                if(bind & 0x80000000)
+                {
+                        includesAlpha = true;
+                        regs++;
+                }
+
+                bind &= 0x7FFFFFFF;
+
+                unsigned int    numQWs = regs + 1;
+
+                matInfo.bZBufferWriteDisable = ((pTable[i].uiBlockOffset & 0x80000000) == 0x80000000);
+                u_long128 * pPacket = (u_long128*)(*p_TextureDataCallback)(bind, includesAlpha, &matInfo);
+                
+                unsigned int * pEVData = ((unsigned int *) (pPacket + 1)) + 2;
+
+                if( matInfo.fEnvironmentMapOpacity != 0.0f)
+                {
+                        *pEVData++ |= 0x100;                    
+                        *((float *) pEVData) = matInfo.fEnvironmentMapOpacity;
+                }
+
+#if 1
+                MasterList::AppendDMATAG( numQWs, TAGID_REF, pPacket);
+                MasterList::Append( createNOP() );
+*****
+
+***** VUDataClass.cpp
+                MasterList::Append( createUNPACK( 2, V4_32, numQWs, 1 ));
+
+                appendGSSettings(bind, &matInfo);
+
+                MasterList::AppendDMATAG( 0, TAGID_CALL, (void *) (pTable[i].uiBlockOffset + (unsigned int) pDMAData));
+                MasterList::Append( createNOP( ) );
+***** C:\FILES\VUDATACLASS.CPP
+                MasterList::Append( createUNPACK( 2, V4_32, numQWs, 1 ));
+#else
+                MasterList::AppendDMATAG( numQWs, TAGID_CNT);
+                MasterList::Append( createNOP() );
+                MasterList::Append( createUNPACK( 2, V4_32, numQWs, 1 ));
+                MasterList::CopyToMasterList(pPacket, numQWs);
+#endif
+
+                int offset = pTable[i].uiBlockOffset & 0x0FFFFFFF;
+                MasterList::AppendDMATAG( 0, TAGID_CALL, (void *) (offset + (unsigned int) pDMAData));
+                MasterList::Append( createNOP( ) );
+*****
+
+***** VUDataClass.cpp
+        
+        RENDER_ASSERT( pBaseCode);
+        
+***** C:\FILES\VUDATACLASS.CPP
+        
+        assert( pBaseCode);
+        
+*****
+
+***** VUDataClass.cpp
+        unsigned int                                    vuAddrExtraPasses[SETUP_MAX_EXTRA_PASSES];
+
+        RENDER_ASSERT( p_CodeManager);  
+        
+***** C:\FILES\VUDATACLASS.CPP
+        unsigned int                                    vuAddrExtraPasses[SETUP_MAX_EXTRA_PASSES];
+        
+        assert( p_CodeManager); 
+        
+*****
+
+***** VUDataClass.cpp
+
+        if( Setup.sendFlagsAll & (VU_SEND_DATA_PLIGHTS | VU_SEND_DATA_DLIGHTS) )
+        {
+                prepLightingInfo( rndInfo );
+
+                // --- need to pass down the scale that was applied to the Model
+                if( d_LightingInfo.numPointLights )
+                {
+                        d_LightingInfo.PointLightColors[ 3 ][ 0 ] = sqrtf( (Mtx1[0][0] * Mtx1[0][0])+(Mtx1[0][1] * Mtx1[0][1])+
+Mtx1[0][2] * Mtx1[0][2]));
+                        d_LightingInfo.PointLightColors[ 3 ][ 1 ] = sqrtf( (Mtx1[1][0] * Mtx1[1][0])+(Mtx1[1][1] * Mtx1[1][1])+
+Mtx1[1][2] * Mtx1[1][2]));
+                        d_LightingInfo.PointLightColors[ 3 ][ 2 ] = sqrtf( (Mtx1[2][0] * Mtx1[2][0])+(Mtx1[2][1] * Mtx1[2][1])+
+Mtx1[2][2] * Mtx1[2][2]));
+                        d_LightingInfo.PointLightColors[ 3 ][ 3 ] = *( ( float * )&d_LightingInfo.numPointLights );
+                }
+***** C:\FILES\VUDATACLASS.CPP
+
+        if( Setup.sendFlagsAll  &  (VU_SEND_DATA_PLIGHTS | VU_SEND_DATA_DLIGHTS))
+        {
+                prepLightingInfo( rndInfo);
+                // --- need to pass down the scale that was applied to the Model
+                if( d_LightingInfo.numPointLights)
+                {
+                        d_LightingInfo.PointLightColors[ 2 ][ 0 ] = sqrtf( (Mtx1[0][0] * Mtx1[0][0])+(Mtx1[0][1] * Mtx1[0][1])+
+Mtx1[0][2] * Mtx1[0][2]));
+                        d_LightingInfo.PointLightColors[ 2 ][ 1 ] = sqrtf( (Mtx1[1][0] * Mtx1[1][0])+(Mtx1[1][1] * Mtx1[1][1])+
+Mtx1[1][2] * Mtx1[1][2]));
+                        d_LightingInfo.PointLightColors[ 2 ][ 2 ] = sqrtf( (Mtx1[2][0] * Mtx1[2][0])+(Mtx1[2][1] * Mtx1[2][1])+
+Mtx1[2][2] * Mtx1[2][2]));
+                }
+*****
+
+***** VUDataClass.cpp
+        
+        RENDER_ASSERT( modelVUMemBase >= d_VUMemBase);
+        if( Setup.infoFlagsAll & VU_USES_MODEL_BASE_OFFSET)
+***** C:\FILES\VUDATACLASS.CPP
+        
+        assert( modelVUMemBase >= d_VUMemBase);
+        if( Setup.infoFlagsAll & VU_USES_MODEL_BASE_OFFSET)
+*****
+
+***** VUDataClass.cpp
+                        if( pPass->sendFlags & VU_SEND_DATA_PLIGHTS )
+                                unpack += 7;
+                
+***** C:\FILES\VUDATACLASS.CPP
+                        if( pPass->sendFlags & VU_SEND_DATA_PLIGHTS )
+                                unpack += 5;
+                
+*****
+
+***** VUDataClass.cpp
+                if( pPass->sendFlags & VU_SEND_BLOCK_ENV_MAP )  
+                        unpack += 6 + 1 + NUM_REGS_IN_BASE_GSPACKET; 
+        }
+***** C:\FILES\VUDATACLASS.CPP
+                if( pPass->sendFlags & VU_SEND_BLOCK_ENV_MAP )  
+                        unpack += 5 + 1 + ((rndInfo.mEnvData.mEVMapTextureBind & 0x80000000) ? 7 : 6); 
+
+        }
+*****
+
+***** VUDataClass.cpp
+                // FogNear, FogFar, FogScale, FogConst
+
+                MasterList::Append4xF( rndInfo.fogNear,
+                                                                                rndInfo.fogFar,
+                                                                                fogScale,
+                                                                                fogConst );
+        }
+***** C:\FILES\VUDATACLASS.CPP
+                // FogNear, FogFar, FogScale, FogConst
+                MasterList::AppendF( rndInfo.fogNear );
+                MasterList::AppendF( rndInfo.fogFar );
+                MasterList::AppendF( fogScale );
+                MasterList::AppendF( fogConst );
+        }
+*****
+
+***** VUDataClass.cpp
+                // TexMtx 1
+                MasterList::Append4xF( texMtx[0][0],
+                                                                          texMtx[0][1],
+                                                                          0.0f,
+                                                                          ( baseSendFlags & VU_SEND_BLOCK_ALL_ALPHA_EARLY ) ? r
+dInfo.alphaMultiplier : 0.0f );
+
+***** C:\FILES\VUDATACLASS.CPP
+                // TexMtx 1
+                MasterList::AppendF( texMtx[0][0] );
+                MasterList::AppendF( texMtx[0][1] );
+                MasterList::AppendF( 0.0f );
+                if( baseSendFlags & VU_SEND_BLOCK_ALL_ALPHA_EARLY)
+                        MasterList::AppendF( rndInfo.alphaMultiplier ); // TJC - alpha multiplier moved?
+                else
+                        MasterList::AppendF( 0.0f ); // TJC - alpha multiplier moved?
+
+*****
+
+***** VUDataClass.cpp
+                // TexMtx 2
+                MasterList::Append4xF( texMtx[1][0],
+                                                                          texMtx[1][1],
+                                                                          0.0f,
+                                                                          0.0f );
+                
+***** C:\FILES\VUDATACLASS.CPP
+                // TexMtx 2
+                MasterList::AppendF( texMtx[1][0] );
+                MasterList::AppendF( texMtx[1][1] );
+                MasterList::AppendF( 0.0f );
+                MasterList::AppendF( 0.0f );
+                
+*****
+
+***** VUDataClass.cpp
+                // TexMtx 3
+                MasterList::Append4xF( texMtx[2][0],
+                                            texMtx[2][1],
+                                                                          texMtx[2][2],
+                                                                          ( baseSendFlags & VU_SEND_BLOCK_ALL_ALPHA_EARLY ) ? 0
+0f : rndInfo.alphaMultiplier );
+        }
+***** C:\FILES\VUDATACLASS.CPP
+                // TexMtx 3
+                MasterList::AppendF( texMtx[2][0] );
+                MasterList::AppendF( texMtx[2][1] );
+                MasterList::AppendF( texMtx[2][2] );
+                if( baseSendFlags & VU_SEND_BLOCK_ALL_ALPHA_EARLY)
+                        MasterList::AppendF( 0.0f ); // TJC - alpha multiplier moved?
+                else
+                        MasterList::AppendF( rndInfo.alphaMultiplier ); // TJC - alpha multiplier moved?
+        }
+*****
+
+***** VUDataClass.cpp
+                MasterList::Append4( vuAddrClipperClip );
+
+                MasterList::Append4xF(  (*viewMtx)[0][0],
+                                                                                (*viewMtx)[1][1],
+                                                                                (*viewMtx)[2][2],
+                                                                                (*viewMtx)[3][2] );
+        }
+***** C:\FILES\VUDATACLASS.CPP
+                MasterList::Append4( vuAddrClipperClip );
+                
+                MasterList::AppendF( (*viewMtx)[0][0] );
+                MasterList::AppendF( (*viewMtx)[1][1] );
+                MasterList::AppendF( (*viewMtx)[2][2] );
+                MasterList::AppendF( (*viewMtx)[3][2] );
+                
+        }
+*****
+
+***** VUDataClass.cpp
+                {
+                        MasterList::Append4x4( vuAddrExtraPasses[pass],
+                                                                                        0,
+                                                                                        0,
+                                                                                        0 );
+                }
+***** C:\FILES\VUDATACLASS.CPP
+                {
+                        MasterList::Append4( vuAddrExtraPasses[pass] );
+                        MasterList::Append4( 0 );
+                        MasterList::Append4( 0 );
+                        MasterList::Append4( 0 );
+                }
+*****
+
+***** VUDataClass.cpp
+                        {
+                                u_long128* dl = (u_long128*) MasterList::CurrentDMAPointer();
+                                dl[0] = *( ( u_long128 * ) &d_LightingInfo.PointLightMtx[ 0 ][ 0 ] );
+                                dl[1] = *( ( u_long128 * ) &d_LightingInfo.PointLightMtx[ 1 ][ 0 ] );
+                                dl[2] = *( ( u_long128 * ) &d_LightingInfo.PointLightMtx[ 2 ][ 0 ] );
+                                dl[3] = *( ( u_long128 * ) &d_LightingInfo.PointLightColors[ 0 ][ 0 ] );
+                                dl[4] = *( ( u_long128 * ) &d_LightingInfo.PointLightColors[ 1 ][ 0 ] );
+                                dl[5] = *( ( u_long128 * ) &d_LightingInfo.PointLightColors[ 2 ][ 0 ] );
+                                dl[6] = *( ( u_long128 * ) &d_LightingInfo.PointLightColors[ 3 ][ 0 ] ); // actually the scale 
+actor
+                                MasterList::CurrentDMAPointer() = (u_char*) &dl[7];
+                        }
+***** C:\FILES\VUDATACLASS.CPP
+                        {
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.PointLightMtx[ 0 ][ 0 ] ) );
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.PointLightMtx[ 1 ][ 0 ] ) );
+                                
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.PointLightColors[ 0 ][ 0 ] ) );
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.PointLightColors[ 1 ][ 0 ] ) );
+                                
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.PointLightColors[ 2 ][ 0 ] ) ); // act
+ally the scale factor
+                        }
+*****
+
+***** VUDataClass.cpp
+                        {
+                                u_long128* dl = (u_long128*) MasterList::CurrentDMAPointer();
+                                dl[0] = *( ( u_long128 * ) &d_LightingInfo.DirLightMtx[ 0 ][ 0 ] );
+                                dl[1] = *( ( u_long128 * ) &d_LightingInfo.DirLightMtx[ 1 ][ 0 ] );
+                                dl[2] = *( ( u_long128 * ) &d_LightingInfo.DirLightMtx[ 2 ][ 0 ] );
+                                dl[3] = *( ( u_long128 * ) &d_LightingInfo.DirLightColors[ 0 ][ 0 ] );
+                                dl[4] = *( ( u_long128 * ) &d_LightingInfo.DirLightColors[ 1 ][ 0 ] );
+                                dl[5] = *( ( u_long128 * ) &d_LightingInfo.DirLightColors[ 2 ][ 0 ] );
+                                MasterList::CurrentDMAPointer() = (u_char*) &dl[6];
+                        }
+***** C:\FILES\VUDATACLASS.CPP
+                        {
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.DirLightMtx[ 0 ][ 0 ] ) );
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.DirLightMtx[ 1 ][ 0 ] ) );
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.DirLightMtx[ 2 ][ 0 ] ) );
+                                
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.DirLightColors[ 0 ][ 0 ] ) );
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.DirLightColors[ 1 ][ 0 ] ) );
+                                MasterList::Append16( *( ( u_long128 * ) &d_LightingInfo.DirLightColors[ 2 ][ 0 ] ) );
+                        }
+*****
+
+***** VUDataClass.cpp
+                        
+                        MasterList::Append4xF( 1.0f,            // Vertex Add Multiplier
+                                                                                  0.0f,         // Vertex Mul Multiplier
+                                                                                  1.0f,         // Vertex Alpha Multiplier
+                                                                                  0.0f );       // Constant Alpha
+                }               
+***** C:\FILES\VUDATACLASS.CPP
+                        
+                        MasterList::AppendF( 1.0f);     // Vertex Add Multiplier
+                        MasterList::AppendF( 0.0f);     // Vertex Mul Multiplier
+                        MasterList::AppendF( 1.0f);     // Vertex Alpha Multiplier
+                        MasterList::AppendF( 0.0f);     // Constant Alpha
+                }               
+*****
+
+***** VUDataClass.cpp
+
+                        MasterList::Append4x4( myVUMemBase,
+                                                   myVUMemBase + myVUMemOffset,
+                                                                                 0,
+                                                                                 vuAddrExtraPasses[pass] );
+
+***** C:\FILES\VUDATACLASS.CPP
+
+                        MasterList::Append4( myVUMemBase );
+                        MasterList::Append4( myVUMemBase + myVUMemOffset );
+                        MasterList::Append4( 0 );
+                        MasterList::Append4( vuAddrExtraPasses[pass] );
+
+*****
+
+***** VUDataClass.cpp
+                                
+                        // send EV Texture
+                        unsigned int    bindEVMap = rndInfo.mEnvData.mEVMapTextureBind & 0x7FFFFFFF;
+                        
+                        u_long128 * pEVMapPacket = (u_long128 *)(*p_TextureDataCallback)( bindEVMap, true, 0);
+
+                        MasterList::Append( GIFInline::createGIFTAG( NUM_REGS_IN_BASE_GSPACKET, 1, 0xE, false) );
+                        MasterList::CopyToMasterList(pEVMapPacket, NUM_REGS_IN_BASE_GSPACKET);
+                }
+        
+        // ------------ add Sphere Map block ------------------------------------------
+***** C:\FILES\VUDATACLASS.CPP
+                                
+                                
+                        // send EV Texture
+                        bool                            includesAlpha = rndInfo.mEnvData.mEVMapTextureBind & 0x80000000;
+                        unsigned int    bindEVMap = rndInfo.mEnvData.mEVMapTextureBind & 0x7FFFFFFF;
+                        unsigned int    regsEVMap = includesAlpha ? 7 : 6;
+                        
+                        u_long128 * pEVMapPacket = (u_long128 *)(*p_TextureDataCallback)( bindEVMap, includesAlpha, 0);
+                        
+                        for( unsigned int i = 0; i < regsEVMap + 1; i++)
+                                MasterList::Append16( pEVMapPacket[i] );
+                }
+
+        // ------------ add Sphere Map block ------------------------------------------
+*****
+
+***** VUDataClass.cpp
+                        
+                        MasterList::Append4x4( myVUMemBase,
+                                                   myVUMemBase + myVUMemOffset,
+                                                                                 0,
+                                                                                 vuAddrExtraPasses[pass] );
+
+***** C:\FILES\VUDATACLASS.CPP
+                        
+                        MasterList::Append4( myVUMemBase );
+                        MasterList::Append4( myVUMemBase + myVUMemOffset );
+                        MasterList::Append4( 0 );
+                        MasterList::Append4( vuAddrExtraPasses[pass] );
+
+*****
+
+***** VUDataClass.cpp
+                                // unknown input matrix type specified.
+                                RENDER_ASSERT(FALSE);
+                                break;
+***** C:\FILES\VUDATACLASS.CPP
+                                // unknown input matrix type specified.
+                                ASSERT(FALSE);
+                                break;
+*****
+
+***** VUDataClass.cpp
+                                
+                        MasterList::Append4x4( 0, 0, 0, 0 );
+
+***** C:\FILES\VUDATACLASS.CPP
+                                
+                        MasterList::Append4( 0 );
+                        MasterList::Append4( 0 );
+                        MasterList::Append4( 0 );
+                        MasterList::Append4( 0 );
+
+*****
+
+***** VUDataClass.cpp
+                        // send EV Texture
+                        unsigned int    bindEVMap = rndInfo.mEnvData.mEVMapTextureBind & 0x7FFFFFFF;
+                        
+                        u_long128 * pEVMapPacket = (u_long128 *)(*p_TextureDataCallback)( bindEVMap, true, 0);
+
+                        MasterList::Append( GIFInline::createGIFTAG( NUM_REGS_IN_BASE_GSPACKET, 1, 0xE, false) );
+                        MasterList::CopyToMasterList(pEVMapPacket, NUM_REGS_IN_BASE_GSPACKET);
+                }
+        }
+***** C:\FILES\VUDATACLASS.CPP
+                        // send EV Texture
+                        bool                            includesAlpha = rndInfo.mEnvData.mEVMapTextureBind & 0x80000000;
+                        unsigned int    bindEVMap = rndInfo.mEnvData.mEVMapTextureBind & 0x7FFFFFFF;
+                        unsigned int    regsEVMap = includesAlpha ? 6 : 5;
+                        
+                        u_long128 * pEVMapPacket = (u_long128 *)(*p_TextureDataCallback)( bindEVMap, includesAlpha, 0);
+                        
+                        for( unsigned int i = 0; i < regsEVMap + 1; i++)
+                                MasterList::Append16( pEVMapPacket[i] );
+                }
+        
+        }
+*****
+
+***** VUDataClass.cpp
+                u_int * data = (u_int *) &d_GIFTag;
+                MasterList::Append4x4( data[0], data[1], data[2], data[3] );
+        }
+***** C:\FILES\VUDATACLASS.CPP
+                u_int * data = (u_int *) &d_GIFTag;
+                MasterList::Append4( data[0] );
+                MasterList::Append4( data[1] );
+                MasterList::Append4( data[2] );
+                MasterList::Append4( data[3] );
+        }
+*****
+
+***** VUDataClass.cpp
+// ------------ Add the MSCAL and MSCNT --------------------------------------
+        MasterList::Append4x4( createMSCAL( (vuAddrBasePass << 3) ),
+                                                                  createMSCNT( ),
+                                                                  createNOP( ),
+                                                                  createNOP( ) );
+
+
+***** C:\FILES\VUDATACLASS.CPP
+// ------------ Add the MSCAL and MSCNT --------------------------------------
+        MasterList::Append( createMSCAL( (vuAddrBasePass << 3) ) );
+        MasterList::Append( createMSCNT( ) );
+        MasterList::Append( createNOP( ) );
+        MasterList::Append( createNOP( ) );
+
+*****
+
+***** VUDataClass.cpp
+
+        RENDER_ASSERT( p_CodeManager);
+
+***** C:\FILES\VUDATACLASS.CPP
+
+        assert( p_CodeManager);
+
+*****
+
+***** VUDataClass.cpp
+// TJC - which is it?  is it fatal or not?
+//              RENDER_ASSERT( pCodeSet->Clip);
+                if( ! pCodeSet->Clip)
+***** C:\FILES\VUDATACLASS.CPP
+// TJC - which is it?  is it fatal or not?
+//              assert( pCodeSet->Clip);
+                if( ! pCodeSet->Clip)
+*****
+
+***** VUDataClass.cpp
+        {
+//              RENDER_ASSERT( pCodeSet->Cull);
+                if( ! pCodeSet->Cull)
+***** C:\FILES\VUDATACLASS.CPP
+        {
+//              assert( pCodeSet->Cull);
+                if( ! pCodeSet->Cull)
+*****
+
+***** VUDataClass.cpp
+        
+        RENDER_ASSERT( ModelVUMemBase >= d_VUMemBase);
+        if( rndInfo.drawFlags & MICROCODE_EVMAP)
+***** C:\FILES\VUDATACLASS.CPP
+        
+        assert( ModelVUMemBase >= d_VUMemBase);
+        if( rndInfo.drawFlags & MICROCODE_EVMAP)
+*****
+
+***** VUDataClass.cpp
+        {
+//              RENDER_ASSERT( ModelVUMemBase >= 45);
+
+***** C:\FILES\VUDATACLASS.CPP
+        {
+//              assert( ModelVUMemBase >= 45);
+
+*****
+
+***** VUDataClass.cpp
+                        // unknown input matrix type specified.
+                        RENDER_ASSERT(FALSE);
+                        break;
+***** C:\FILES\VUDATACLASS.CPP
+                        // unknown input matrix type specified.
+                        assert(FALSE);
+                        break;
+*****
+

@@ -1,0 +1,5 @@
+create "SNPS2Consumer/Script.lib"
+addmod "SNPS2Consumer/ScriptPCH_SN.obj"
+addmod "SNPS2Consumer/ScriptScriptFunc.obj"
+save
+end

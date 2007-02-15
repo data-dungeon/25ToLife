@@ -1,0 +1,433 @@
+#include "stdafx.h"
+/*
+//////////////////////////////////////////////////////
+// NPATCH SUBDIVSION TESTS
+
+class NPatchTriangle
+{
+public:
+   typedef struct //Preprocess polygon
+   {
+      Vector vertex;
+      Vector normal;
+      Vector2 uv;
+   } NPatchVertex;
+
+public:
+   NPatchTriangle()
+   {
+   }
+   ~NPatchTriangle()
+   {
+   }
+   Vector m_vV0,m_vV1,m_vV2;
+   Vector m_vVN0,m_vVN1,m_vVN2;
+   Vector2 m_v2UV0,m_v2UV1,m_v2UV2;
+
+   Vector m_fCoeff[10];
+   Vector m_fNormCoeff[6];
+   Vector2 m_fUVCoeff[10];
+
+   void BuildCoefficients();
+   void EvaluateBezierPoint(float b1, float b2, float b3,Vector *destVertices, Vector *destNormals, Vector2 *destUVs);
+
+   void Subdivide(int nLevel);
+
+   void Draw();
+};
+
+
+void NPatchTriangle::Draw()
+{
+ //  glPolygonMode(GL_FRONT, GL_FILL);
+
+   glBegin( GL_TRIANGLES );
+
+   glTexCoord2f( m_v2UV0.x, m_v2UV0.y );
+   glNormal3fv( &m_vVN0.x );
+   glVertex3fv( &m_vV0.x );
+
+   glTexCoord2f( m_v2UV1.x, m_v2UV1.y );
+   glNormal3fv( &m_vVN1.x );
+   glVertex3fv( &m_vV1.x );
+
+   glTexCoord2f( m_v2UV2.x, m_v2UV2.y );
+   glNormal3fv( &m_vVN2.x );
+   glVertex3fv( &m_vV2.x );
+
+   glEnd();
+//   glDisable(GL_LIGHTING);
+
+//   glPolygonMode(GL_FRONT,GL_LINE);
+
+//   glBegin( GL_TRIANGLES );
+//   glVertex3fv( &m_vV0.x );
+//   glVertex3fv( &m_vV1.x );
+//   glVertex3fv( &m_vV2.x );
+
+//   glEnd();
+//   glEnable(GL_LIGHTING);
+}
+
+
+void BuildEdgeCoefficients(Vector vV0, Vector vV1,
+                           Vector vVN0, Vector vVN1,
+                           Vector &vCoeff0, Vector &vCoeff1,
+                           Vector &vNormCoeff)
+{
+
+   // Vertex           
+
+   float tmpf;
+   Vector tangent1,tangent2;
+   Vector edge = vV1 - vV0;
+   
+   //E - (E.N)N
+   tangent1 = edge;
+   tmpf = tangent1.Dot(vVN0);
+   tangent1 -= vVN0 * tmpf;
+
+   vCoeff0 = vV0 + (tangent1 * 0.3333f);
+
+   //E - (E.N)N
+   tangent2 = edge;
+   tmpf = tangent2.Dot(vVN1);
+   tangent2 -= vVN1 * tmpf;
+
+   vCoeff1 = vV1 - (tangent2 * 0.3333f);
+
+   // Normal            
+
+   Vector avgNorm = vVN0 + vVN1;
+
+   //N - 2*(E.N)E
+   edge = vV1 - vV0;
+   tmpf = edge.Length();
+   if (tmpf > 0.0f)
+   {
+      edge /= tmpf;
+      tmpf = 2.0f * edge.Dot(avgNorm); //2*(E.N)
+      avgNorm -= tmpf * edge;
+      tmpf = 1.0f / avgNorm.Length();
+      vNormCoeff = avgNorm * tmpf;
+   }
+   else //Don't reflect normal about plane
+   {
+      tmpf = 1.0f / avgNorm.Length();
+      vNormCoeff = avgNorm *tmpf;
+   }
+}
+
+void BuildEdgeCoefficients(Vector2 vUV0, Vector2 vUV1,
+                           Vector vVN0, Vector vVN1,
+                           Vector2 &vCoeff0, Vector2 &vCoeff1)
+{
+   float tmpf;
+   Vector tangent1,tangent2;
+   Vector2 edge = vUV1 - vUV0;
+
+   //E - (E.N)N
+   tangent1 = edge;
+   tmpf = tangent1.Dot(vVN0);
+   tangent1 -= vVN0 * tmpf;
+
+   vCoeff0 = vUV0 + (Vector2(tangent1.x,tangent1.y) * 0.3333f);
+
+   //E - (E.N)N
+   tangent2 = edge;
+   tmpf = tangent2.Dot(vVN1);
+   tangent2 -= vVN1 * tmpf;
+
+   vCoeff1 = vUV1 - (Vector2(tangent2.x,tangent2.y) * 0.3333f);
+}
+
+void NPatchTriangle::BuildCoefficients()
+{
+ 
+   // Compute cubic Bezier control mesh for positions
+
+   //       v0
+   //        0
+   //  e0   1 2   e2
+   //      3 4 5
+   // v1  6 7 8 9  v2
+   //       e1
+   //3 corner vertices
+   m_fCoeff[0] = m_vV0;
+   m_fCoeff[6] = m_vV1;
+   m_fCoeff[9] = m_vV2;
+
+   // Edge #0
+
+   BuildEdgeCoefficients(m_vV0,m_vV1,m_vVN0,m_vVN1,m_fCoeff[1],m_fCoeff[3],m_fNormCoeff[1]);
+   BuildEdgeCoefficients(m_v2UV0,m_v2UV1,m_vVN0,m_vVN1,m_fUVCoeff[1],m_fUVCoeff[3]);
+
+   // Edge #1
+
+   BuildEdgeCoefficients(m_vV1,m_vV2,m_vVN1,m_vVN2,m_fCoeff[7],m_fCoeff[8],m_fNormCoeff[4]);
+   BuildEdgeCoefficients(m_v2UV1,m_v2UV2,m_vVN0,m_vVN1,m_fUVCoeff[7],m_fUVCoeff[8]);
+
+   // Edge #2
+
+   BuildEdgeCoefficients(m_vV2,m_vV0,m_vVN2,m_vVN0,m_fCoeff[5],m_fCoeff[2],m_fNormCoeff[2]);
+   BuildEdgeCoefficients(m_v2UV2,m_v2UV0,m_vVN2,m_vVN0,m_fUVCoeff[5],m_fUVCoeff[2]);
+
+
+   // Middle Point 
+
+   // Farin's Method
+   //       v0
+   //        0
+   //  e0   1 2   e2
+   //      3 4 5
+   // v1  6 7 8 9  v2
+   //       e1
+
+   m_fCoeff[4] = (m_fCoeff[1] + m_fCoeff[3] + m_fCoeff[2] + m_fCoeff[5] + m_fCoeff[7] + m_fCoeff[8]) / 4.0f;
+   m_fCoeff[4] -= (m_fCoeff[0] + m_fCoeff[6] + m_fCoeff[9]) / 6.0f;
+
+
+   // Compute control mesh for quadratic normal interpolation 
+
+   //       v0
+   //        0
+   //  e0   1 2   e2
+   //   v1 3 4 5 v2
+   //       e1
+
+   //3 corner normals
+   m_fNormCoeff[0] = m_vVN0;
+   m_fNormCoeff[3] = m_vVN1;
+   m_fNormCoeff[5] = m_vVN2;
+
+   // 3 corner uvs
+   m_fUVCoeff[0] = m_v2UV0;
+   m_fUVCoeff[6] = m_v2UV1;
+   m_fUVCoeff[9] = m_v2UV2;
+
+}
+
+void NPatchTriangle::EvaluateBezierPoint(float b1, float b2, float b3, Vector *destVertices, Vector *destNormals, Vector2 *destUVs)
+{
+   int i;
+   int x, y;
+   Vector buff[6];
+   float tmpf;
+
+  
+   // Vertex
+
+   x = 0;
+   y = 1;
+   for (i=0; i<6; i++)
+   {
+      buff[i] = m_fCoeff[x]*b2 + m_fCoeff[y]*b1 + m_fCoeff[y+1]*b3;
+
+      x++;
+      if ((i == 0) || (i == 2))
+         y += 2;
+      else
+         y++;
+   }
+
+   x = 0;
+   y = 1;
+   for (i=0; i<3; i++)
+   {
+      buff[i] = buff[x]*b2 + buff[y]*b1 + buff[y+1]*b3;
+ 
+      x++;
+      if (i == 0)
+         y += 2;
+      else
+         y++;
+   }
+
+   *destVertices = buff[0]*b2 + buff[1]*b1 + buff[2]*b3;
+
+   // UV
+
+   x = 0;
+   y = 1;
+   for (i=0; i<6; i++)
+   {
+      buff[i] = m_fUVCoeff[x]*b2 + m_fUVCoeff[y]*b1 + m_fUVCoeff[y+1]*b3;
+
+      x++;
+      if ((i == 0) || (i == 2))
+         y += 2;
+      else
+         y++;
+   }
+
+   x = 0;
+   y = 1;
+   for (i=0; i<3; i++)
+   {
+      buff[i] = buff[x]*b2 + buff[y]*b1 + buff[y+1]*b3;
+
+      x++;
+      if (i == 0)
+         y += 2;
+      else
+         y++;
+   }
+
+   destUVs->x = buff[0].x*b2 + buff[1].x*b1 + buff[2].x*b3;
+   destUVs->y = buff[0].y*b2 + buff[1].y*b1 + buff[2].y*b3;
+
+
+   // Normal
+ 
+   x = 0;
+   y = 1;
+   for (i=0; i<3; i++)
+   {
+      buff[i] = m_fNormCoeff[x]*b2 + m_fNormCoeff[y]*b1 + m_fNormCoeff[y+1]*b3;
+
+      x++;
+      if (i == 0)
+         y += 2;
+      else
+         y++;
+   }
+
+   *destNormals = buff[0]*b2 + buff[1]*b1 + buff[2]*b3;
+   tmpf = 1.0f / destNormals->Length();
+   *destNormals *= tmpf;
+}
+
+void NPatchTriangle::Subdivide(int nLevel)
+{
+   BuildCoefficients();
+
+   int nNumNewTriangles;
+   int nNumNewVertices;
+
+   nNumNewTriangles = 0;
+   for (int i=0; i<=nLevel; i++)
+      nNumNewTriangles += (i*2)+1;
+
+   nNumNewVertices = 3;
+   for (i=0; i<nLevel; i++)
+      nNumNewVertices += i+3;
+
+   NPatchVertex *pNPatchVertices = SNEW NPatchVertex[nNumNewVertices];
+   Vector *destVertices = &(pNPatchVertices[0].vertex);
+   Vector *destNormals = &(pNPatchVertices[0].normal);
+   Vector2 *destUVs = &(pNPatchVertices[0].uv);
+
+                               //   b3
+   // Compute new vertices     //
+                               // b1  b2
+   float b1 = 0.0f;
+   float b2 = 0.0f;
+   float b3 = 1.0f;
+   float inc = 1.0f / (nLevel+1);
+   float nNumVerticesBeforeAdd = 0; //Used below for indices
+   for (int j=0; j<(nLevel+2); j++) //For each row of vertices
+   {
+      b1 = inc*j;
+      b2 = 1.0f - b1 - b3;
+
+      for (int k=0; k<j+1; k++) //For each vertex in that row
+      {
+
+         // Compute new vertex 
+         EvaluateBezierPoint(b1, b2, b3, destVertices, destNormals, destUVs);
+         destVertices = (Vector*)((UINT)destVertices + sizeof(NPatchVertex));
+         destNormals = (Vector*)((UINT)destNormals + sizeof(NPatchVertex));
+         destUVs = (Vector2*)((UINT)destUVs + sizeof(NPatchVertex));
+         b1 -= inc;
+         b2 += inc;
+      }
+      b3 -= inc;
+   }
+
+   NPatchTriangle tri;
+
+ 
+   // Generate new indices
+
+   UINT x = nNumVerticesBeforeAdd + 0;
+   UINT y = nNumVerticesBeforeAdd + 1;
+   for (j=0; j<(nLevel+1); j++) //For each row of triangles
+   {
+      UINT indices[3];
+
+      indices[0] = y;
+      indices[1] = x;
+
+      // Add all polygons in this row 
+
+      for (int k=0; k<2*j+1; k++)
+      {
+         //Get new index
+         if (k & 0x1)
+            indices[2] = ++x;
+         else
+            indices[2] = ++y;
+
+         //Draw triangle
+         tri.m_vV0 = pNPatchVertices[indices[0]].vertex;
+         tri.m_vV1 = pNPatchVertices[indices[1]].vertex;
+         tri.m_vV2 = pNPatchVertices[indices[2]].vertex;
+         tri.m_vVN0 = pNPatchVertices[indices[0]].normal;
+         tri.m_vVN1 = pNPatchVertices[indices[1]].normal;
+         tri.m_vVN2 = pNPatchVertices[indices[2]].normal;
+         tri.m_v2UV0 = pNPatchVertices[indices[0]].uv;
+         tri.m_v2UV1 = pNPatchVertices[indices[1]].uv;
+         tri.m_v2UV2 = pNPatchVertices[indices[2]].uv;
+
+         tri.Draw();
+
+         //Swap indices for proper ordering
+         if (k & 0x1)
+            indices[1] = indices[2];
+         else
+            indices[0] = indices[2];
+      }
+
+      x++;
+      y++;
+   }
+
+   delete [] pNPatchVertices;
+}
+
+void Poly::Draw( const Matrix44 &viewmatrix, BOOL bDrawTess, SurfaceDriver *pSurfaceDriver)
+{
+   LPARAM lParam = 0L;
+   if (pSurfaceDriver && !pSurfaceDriver->IsValid( this, lParam ))
+      return;
+
+   PolyModel *pPolyModel = (PolyModel*)GetOwner();
+
+   NPatchTriangle tri;
+
+   Vector2 uv;
+   UINT numVerts = GetNumSides();
+   for (UINT i = 1; i < numVerts-1; i++)
+   {
+      if (pSurfaceDriver)
+         tri.m_v2UV0 = pSurfaceDriver->GetPropertyVertexAt(( viewmatrix, 0, this, lParam );
+
+      tri.m_vVN0 = GetVertexNormalAt(0)->GetDir();
+      tri.m_vV0 = GetVertexAt(0)->GetPos();
+
+      if (pSurfaceDriver)
+         tri.m_v2UV1 = pSurfaceDriver->GetPropertyVertexAt(( viewmatrix, i, this, lParam );
+
+      tri.m_vVN1 = GetVertexNormalAt(i)->GetDir();
+      tri.m_vV1 = GetVertexAt(i)->GetPos();
+
+      if (pSurfaceDriver)
+         tri.m_v2UV2 = pSurfaceDriver->GetPropertyVertexAt(( viewmatrix, i+1, this, lParam );
+
+      tri.m_vVN2 = GetVertexNormalAt(i+1)->GetDir();
+      tri.m_vV2 = GetVertexAt(i+1)->GetPos();
+
+      tri.Subdivide(pPolyModel->m_nNPatchSubdivisions.GetValue());
+   }
+}
+*/

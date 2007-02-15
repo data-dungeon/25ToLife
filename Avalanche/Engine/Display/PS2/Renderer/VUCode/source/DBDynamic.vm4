@@ -1,0 +1,404 @@
+.vu
+
+	.global	DBDynamicEntry
+	.global	DBDynamicXFrm
+	.global	DBDynamicCopy
+	.global	DBDynamicLoadMtx
+	.global	DBDynamicEnd
+	.global	DBDynamicFinalize
+	.global	DBDynamicSTPersp
+	.global	DBDynamicSTXFPersp
+	.global	DBDynamicLoadTexMtx
+	.global	DBDynamicCull
+
+include( `VUDefines.vm4')
+
+# setup for loops use
+
+define( 'LoopCount', VI05)
+define( 'SrcData', VI06)
+define( 'DstData', VI07)
+define( 'SkipCount', VI08)
+define( 'TmpData', VI09)
+define( 'TmpDataSkip', VI10)
+
+
+# global, don’t muck with them..
+define( 'bufferBase', VI12)
+define( 'PassData', VI13)
+define( 'PassCount', VI14)
+define( 'ReturnAddr', VI15)
+define( 'STMtxA', VF21)
+define( 'STMtxB', VF22)
+define( 'STMtxC', VF23)
+define( 'CMtxA', VF24)
+define( 'CMtxB', VF25)
+define( 'CMtxC', VF26)
+define( 'CMtxD', VF27)
+define( 'MtxA', VF28)
+define( 'MtxB', VF29)
+define( 'MtxC', VF30)
+define( 'MtxD', VF31)
+
+# temporary variables
+define( 'KickAddr', VI01)
+define( 'PassEntry', VI01)
+
+define( 'JumpTableEntries', 21)
+
+
+DBDynamicEntry:	NOP		XTOP	bufferBase
+	NOP		ILW.x	PassCount, 0(bufferBase)x
+	NOP		IADDIU	PassData, bufferBase, 1
+	NOP		ILW.x	PassEntry, 0(PassData)x
+loop:	NOP		ILW.y	DstData, 0(PassData)y
+	NOP		ILW.x	SrcData, 1(PassData)x
+	NOP		ILW.y	TmpData, 1(PassData)y
+	NOP		ILW.z	LoopCount, 0(PassData)z
+	NOP		ILW.x	PassEntry, 0(PassEntry)x
+	NOP		IADD	DstData, bufferBase, DstData
+	NOP		IADD	SrcData, bufferBase, SrcData
+	NOP		IADD	TmpData, bufferBase, TmpData
+	NOP		ILW.w	SkipCount, 0(PassData)w
+	NOP		ILW.z	TmpDataSkip, 1(PassData)z
+	NOP		IADDIU	PassData, PassData, 2
+	NOP		JALR	ReturnAddr, PassEntry
+	NOP		ISUBIU	PassCount, PassCount, 1
+	NOP		IBNE	PassCount, VI00, loop
+	NOP		ILW.x	PassEntry, 0(PassData)x
+	NOP		ILW.y	KickAddr, 0(bufferBase)y
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		IADD	KickAddr, bufferBase, KickAddr
+	NOP		NOP
+	NOP		XGKICK	KickAddr
+	NOP[E]		NOP
+	NOP		NOP
+
+
+define( 'Vtx1A', VF05)
+define( 'Vtx1Ax', VF05x)
+define( 'Vtx1Ay', VF05y)
+define( 'Vtx1Az', VF05z)
+define( 'Vtx1Aw', VF05w)
+define( 'Vtx2A', VF06)
+define( 'Vtx2Ax', VF06x)
+define( 'Vtx2Ay', VF06y)
+define( 'Vtx2Az', VF06z)
+define( 'Vtx2Aw', VF06w)
+define( 'Vtx1B', VF07)
+define( 'Vtx1Bw', VF07w)
+define( 'Vtx2B', VF08)
+define( 'Vtx2Bw', VF08w)
+define( 'Vtx1C', VF09)
+define( 'Vtx2C', VF10)
+DBDynamicXFrm:	NOP		LQI.xyz	Vtx1A, (SrcData++)
+	NOP		ISUBIU	LoopCount, LoopCount, 2
+	NOP		NOP
+	NOP		NOP
+	MULAw.xyzw	ACC, MtxD, VF00w	LQI.xyz	Vtx2A, (SrcData++)
+	MADDAx.xyzw	ACC, MtxA, Vtx1Ax	NOP
+	NOP		NOP
+	MADDAy.xyzw	ACC, MtxB, Vtx1Ay	NOP
+	MADDz.xyzw	Vtx1B, MtxC, Vtx1Az	NOP
+	MULAw.xyzw	ACC, MtxD, VF00w	NOP
+	MADDAx.xyzw	ACC, MtxA, Vtx2Ax	NOP
+	MADDAy.xyzw	ACC, MtxB, Vtx2Ay	NOP
+	NOP		NOP
+	NOP		DIV	Q, VF00w, Vtx1Bw
+DBDynamicXFrmPre2:	MADDz.xyzw	Vtx2B, MtxC, Vtx2Az	LQI.xyz	Vtx1A, (SrcData++)
+	NOP		ISUBIU	LoopCount, LoopCount, 2
+	NOP		MOVE.w	Vtx1Bw, VF00w
+	NOP		NOP
+	MULAw.xyzw	ACC, MtxD, VF00w	LQI.xyz	Vtx2A, (SrcData++)
+	MADDAx.xyzw	ACC, MtxA, Vtx1Ax	NOP
+	MULq.xyzw	Vtx1C, Vtx1B, Q	DIV	Q, VF00w, Vtx2Bw
+	MADDAy.xyzw	ACC, MtxB, Vtx1Ay	MOVE.w	Vtx2Bw, VF00w
+	MADDz.xyzw	Vtx1B, MtxC, Vtx1Az	NOP
+	MULAw.xyzw	ACC, MtxD, VF00w	NOP
+	MADDAx.xyzw	ACC, MtxA, Vtx2Ax	NOP
+	MADDAy.xyzw	ACC, MtxB, Vtx2Ay	NOP
+	NOP		IBEQ	LoopCount, VI00, DBDynamicXFrmPost2
+	MULq.xyzw	Vtx2C, Vtx2B, Q	DIV	Q, VF00w, Vtx1Bw
+DBDynamicXFrmLoop:	MADDz.xyzw	Vtx2B, MtxC, Vtx2Az	LQI.xyz	Vtx1A, (SrcData++)
+	NOP		ISUBIU	LoopCount, LoopCount, 2
+	NOP		MOVE.w	Vtx1Bw, VF00w
+	NOP		SQ.xyzw	Vtx1C, 0(DstData)
+	MULAw.xyzw	ACC, MtxD, VF00w	LQI.xyz	Vtx2A, (SrcData++)
+	MADDAx.xyzw	ACC, MtxA, Vtx1Ax	IADD	DstData, DstData, SkipCount
+	MULq.xyzw	Vtx1C, Vtx1B, Q	DIV	Q, VF00w, Vtx2Bw
+	MADDAy.xyzw	ACC, MtxB, Vtx1Ay	MOVE.w	Vtx2Bw, VF00w
+	MADDz.xyzw	Vtx1B, MtxC, Vtx1Az	SQ.xyzw	Vtx2C, 0(DstData)
+	MULAw.xyzw	ACC, MtxD, VF00w	IADD	DstData, DstData, SkipCount
+	MADDAx.xyzw	ACC, MtxA, Vtx2Ax	NOP
+	MADDAy.xyzw	ACC, MtxB, Vtx2Ay	NOP
+	NOP		IBNE	LoopCount, VI00, DBDynamicXFrmLoop
+	MULq.xyzw	Vtx2C, Vtx2B, Q	DIV	Q, VF00w, Vtx1Bw
+DBDynamicXFrmPost2:	MADDz.xyzw	Vtx2B, MtxC, Vtx2Az	NOP
+	NOP		NOP
+	NOP		MOVE.w	Vtx1Bw, VF00w
+	NOP		SQ.xyzw	Vtx1C, 0(DstData)
+	NOP		NOP
+	NOP		IADD	DstData, DstData, SkipCount
+	MULq.xyzw	Vtx1C, Vtx1B, Q	DIV	Q, VF00w, Vtx2Bw
+	NOP		MOVE.w	Vtx2Bw, VF00w
+	NOP		SQ.xyzw	Vtx2C, 0(DstData)
+	NOP		IADD	DstData, DstData, SkipCount
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	MULq.xyzw	Vtx2C, Vtx2B, Q	NOP
+DBDynamicXFrmPost1:	NOP		SQ.xyzw	Vtx1C, 0(DstData)
+	NOP		IADD	DstData, DstData, SkipCount
+	NOP		NOP
+	NOP		SQ.xyzw	Vtx2C, 0(DstData)
+	NOP		JR	ReturnAddr
+	NOP		IADD	DstData, DstData, SkipCount
+
+
+
+define( 'Data1', VF01)
+
+
+DBDynamicCopy:	NOP		LQ.xyzw	Data1, 0(TmpData)
+	NOP		ISUBIU	LoopCount, LoopCount, 1
+	NOP		IADD	TmpData, TmpData, TmpDataSkip
+	NOP		NOP
+	NOP		SQ.xyzw	Data1, 0(DstData)
+	NOP		NOP
+	NOP		IBNE	LoopCount, VI00, DBDynamicCopy
+	NOP		IADD	DstData, DstData, SkipCount
+	NOP		JR	ReturnAddr
+	NOP		NOP
+
+
+
+
+
+define( 'Temp1A', VF01)
+define( 'Temp1B', VF02)
+define( 'Temp1C', VF03)
+define( 'Temp1D', VF04)
+define( 'Temp2A', VF05)
+define( 'Temp2B', VF06)
+define( 'Temp2C', VF07)
+define( 'Temp2D', VF08)
+define( 'ScrnMtxA', eval( JumpTableEntries + 0) )
+define( 'ScrnMtxB', eval( JumpTableEntries + 1) )
+define( 'ScrnMtxC', eval( JumpTableEntries + 2) )
+define( 'ScrnMtxD', eval( JumpTableEntries + 3) )
+define( 'CullMtxA', eval( JumpTableEntries + 4) )
+define( 'CullMtxB', eval( JumpTableEntries + 5) )
+define( 'CullMtxC', eval( JumpTableEntries + 6) )
+define( 'CullMtxD', eval( JumpTableEntries + 7) )
+
+
+DBDynamicLoadMtx:	NOP		LQI.xyzw	Temp2A, (PassData++)
+	NOP		LQ.xyzw	Temp1A, ScrnMtxA (VI00)
+	NOP		LQ.xyzw	Temp1B, ScrnMtxB (VI00)
+	NOP		LQ.xyzw	Temp1C, ScrnMtxC (VI00)
+	NOP		LQ.xyzw	Temp1D, ScrnMtxD (VI00)
+	MULAx.xyzw	ACC, Temp1A, Temp2A	LQI.xyzw	Temp2B, (PassData++)
+	MADDAy.xyzw	ACC, Temp1B, Temp2A	LQI.xyzw	Temp2C, (PassData++)
+	MADDAz.xyzw	ACC, Temp1C, Temp2A	LQI.xyzw	Temp2D, (PassData++)
+	MADDw.xyzw	MtxA, Temp1D, Temp2A	NOP
+	MULAx.xyzw	ACC, Temp1A, Temp2B	NOP
+	MADDAy.xyzw	ACC, Temp1B, Temp2B	NOP
+	MADDAz.xyzw	ACC, Temp1C, Temp2B	NOP
+	MADDw.xyzw	MtxB, Temp1D, Temp2B	NOP
+	MULAx.xyzw	ACC, Temp1A, Temp2C	NOP
+	MADDAy.xyzw	ACC, Temp1B, Temp2C	NOP
+	MADDAz.xyzw	ACC, Temp1C, Temp2C	NOP
+	MADDw.xyzw	MtxC, Temp1D, Temp2C	NOP
+	MULAx.xyzw	ACC, Temp1A, Temp2D	LQ.xyzw	Temp1A, CullMtxA (VI00)
+	MADDAy.xyzw	ACC, Temp1B, Temp2D	LQ.xyzw	Temp1B, CullMtxB (VI00)
+	MADDAz.xyzw	ACC, Temp1C, Temp2D	LQ.xyzw	Temp1C, CullMtxC (VI00)
+	MADDw.xyzw	MtxD, Temp1D, Temp2D	LQ.xyzw	Temp1D, CullMtxD (VI00)
+	MULAx.xyzw	ACC, Temp1A, Temp2A	NOP
+	MADDAy.xyzw	ACC, Temp1B, Temp2A	NOP
+	MADDAz.xyzw	ACC, Temp1C, Temp2A	NOP
+	MADDw.xyzw	CMtxA, Temp1D, Temp2A	NOP
+	MULAx.xyzw	ACC, Temp1A, Temp2B	NOP
+	MADDAy.xyzw	ACC, Temp1B, Temp2B	NOP
+	MADDAz.xyzw	ACC, Temp1C, Temp2B	NOP
+	MADDw.xyzw	CMtxB, Temp1D, Temp2B	NOP
+	MULAx.xyzw	ACC, Temp1A, Temp2C	NOP
+	MADDAy.xyzw	ACC, Temp1B, Temp2C	NOP
+	MADDAz.xyzw	ACC, Temp1C, Temp2C	NOP
+	MADDw.xyzw	CMtxC, Temp1D, Temp2C	NOP
+	MULAx.xyzw	ACC, Temp1A, Temp2D	NOP
+	MADDAy.xyzw	ACC, Temp1B, Temp2D	NOP
+	MADDAz.xyzw	ACC, Temp1C, Temp2D	JR	ReturnAddr
+	MADDw.xyzw	CMtxD, Temp1D, Temp2D	NOP
+
+define( 'Vtx1in', VF01)
+define( 'Vtx2in', VF02)
+define( 'Vtx3in', VF03)
+define( 'Vtx4in', VF04)
+
+define( 'Vtx1out', VF11)
+define( 'Vtx2out', VF12)
+define( 'Vtx3out', VF13)
+define( 'Vtx4out', VF14)
+
+
+
+DBDynamicFinalize:	SUB.w	Vtx1out, VF00w, VF00w	LQ.xyzw	Vtx1in, 0(TmpData)
+	SUB.w	Vtx2out, VF00w, VF00w	IADD	TmpData, TmpData, TmpDataSkip
+	SUB.w	Vtx3out, VF00w, VF00w	LQ.xyzw	Vtx2in, 0(TmpData)
+	SUB.w	Vtx4out, VF00w, VF00w	IADD	TmpData, TmpData, TmpDataSkip
+	NOP		LQ.xyzw	Vtx3in, 0(TmpData)
+	NOP		IADD	TmpData, TmpData, TmpDataSkip
+	NOP		LQ.xyzw	Vtx4in, 0(TmpData)
+	NOP		IADD	TmpData, TmpData, TmpDataSkip
+DBDynamicFinalizeLoop:	FTOI4.xyz	Vtx1out, Vtx1in	LQ.xyzw	Vtx1in, 0(TmpData)
+	FTOI4.xyz	Vtx2out, Vtx2in	IADD	TmpData, TmpData, TmpDataSkip
+	FTOI4.xyz	Vtx3out, Vtx3in	LQ.xyzw	Vtx2in, 0(TmpData)
+	FTOI4.xyz	Vtx4out, Vtx4in	IADD	TmpData, TmpData, TmpDataSkip
+	NOP		LQ.xyzw	Vtx3in, 0(TmpData)
+	NOP		IADD	TmpData, TmpData, TmpDataSkip
+	NOP		LQ.xyzw	Vtx4in, 0(TmpData)
+	NOP		ISUBIU	LoopCount, LoopCount, 4
+	NOP		IADD	TmpData, TmpData, TmpDataSkip
+	NOP		SQ.xyzw	Vtx1out, 0(DstData)
+	NOP		SQ.xyzw	Vtx2out, 3(DstData)
+	NOP		SQ.xyzw	Vtx3out, 6(DstData)
+	NOP		SQ.xyzw	Vtx4out, 9(DstData)
+	NOP		IBGTZ	LoopCount, DBDynamicFinalizeLoop
+	NOP		IADDIU	DstData, DstData, 12
+DBDynamicFinalizePost:	NOP		JR	ReturnAddr
+	NOP		NOP
+
+
+
+
+
+
+
+
+define( 'ST1', VF01)
+define( 'ST2', VF02)
+define( 'ST1out', VF03)
+define( 'ST2out', VF04)
+define( 'STin', VF05)
+define( 'OneOverW1', VF06w)
+define( 'OneOverW2', VF07w)
+
+
+define( 'STinx', VF05x)
+define( 'STiny', VF05y)
+define( 'STinz', VF05z)
+define( 'STinw', VF05w)
+
+DBDynamicSTPersp:	NOP		MR32.xyzw	STMtxC, VF00
+	NOP		MR32.xyzw	STMtxB, STMtxC
+	NOP		MR32.xyzw	STMtxA, STMtxB
+DBDynamicSTXFPersp:	NOP		ISUB	DstData, DstData, SkipCount
+	NOP		LQI.xyzw	STin, (SrcData++)
+	NOP		ISUBIU	LoopCount, LoopCount, 1
+	MULAw.xyz	ACC, STMtxC, VF00w	LQ.w	OneOverW1, 0(TmpData)
+	NOP		NOP
+	MADDAx.xyz	ACC, STMtxA, STinx	NOP
+	NOP		IADD	TmpData, TmpData, TmpDataSkip
+	MADDy.xyz	ST1, STMtxB, STiny	LQ.w	OneOverW2, 0(TmpData)
+	MULAw.xyz	ACC, STMtxC, VF00w	NOP
+	MADDAz.xyz	ACC, STMtxA, STinz	NOP
+DBDynamicSTPerspLoop:	MADDw.xyz	ST2, STMtxB, STinw	IADD	TmpData, TmpData, TmpDataSkip
+	MULw.xyz	ST1out, ST1, OneOverW1	LQI.xyzw	STin, (SrcData++)
+	NOP		ISUBIU	LoopCount, LoopCount, 1
+	MULAw.xyz	ACC, STMtxC, VF00w	LQ.w	OneOverW1, 0(TmpData)
+	MULw.xyz	ST2out, ST2, OneOverW2	IADD	DstData, DstData, SkipCount
+	MADDAx.xyz	ACC, STMtxA, STinx	SQ.xyz	ST1out, 0(DstData)
+	NOP		IADD	TmpData, TmpData, TmpDataSkip
+	MADDy.xyz	ST1, STMtxB, STiny	LQ.w	OneOverW2, 0(TmpData)
+	MULAw.xyz	ACC, STMtxC, VF00w	IBNE	LoopCount, VI00, DBDynamicSTPerspLoop
+	MADDAz.xyz	ACC, STMtxA, STinz	SQ.xyz	ST2out, 3(DstData)
+DBDynamicSTPerspPost:	MADDw.xyz	ST2, STMtxB, STinw	NOP
+	MULw.xyz	ST1out, ST1, OneOverW1	NOP
+	NOP		NOP
+	NOP		NOP
+	MULw.xyz	ST2out, ST2, OneOverW2	IADD	DstData, DstData, SkipCount
+	NOP		SQ.xyz	ST1out, 0(DstData)
+	NOP		NOP
+	NOP		JR	ReturnAddr
+	NOP		SQ.xyz	ST2out, 3(DstData)
+
+
+
+
+
+
+
+DBDynamicLoadTexMtx:	NOP		LQI.xyzw	STMtxA, (PassData++)
+	NOP		LQI.xyzw	STMtxB, (PassData++)
+	NOP		JR	ReturnAddr
+	NOP		LQI.xyzw	STMtxC, (PassData++)
+
+
+
+
+
+define( 'Vtx1in', VF01)
+define( 'Vtx2in', VF02)
+define( 'Vtx3in', VF03)
+define( 'Vtx4in', VF04)
+define( 'Vtx1cull', VF05)
+define( 'Vtx2cull', VF06)
+define( 'Vtx3cull', VF07)
+define( 'Vtx4cull', VF08)
+define( 'Vtx1out', VF09)
+define( 'Vtx2out', VF10)
+define( 'Vtx3out', VF11)
+define( 'Vtx4out', VF12)
+define( 'Vtx1cullin', VF13)
+define( 'Vtx2cullin', VF14)
+define( 'Vtx3cullin', VF15)
+define( 'Vtx4cullin', VF16)
+define( 'CullFlags', 0x3FFFF)
+define( 'ADCBit', VI02)
+
+
+
+define( 'Temp1A', VF01)
+define( 'Temp1B', VF02)
+define( 'Temp1C', VF03)
+define( 'Temp1D', VF04)
+define( 'Temp2A', VF05)
+define( 'Temp2B', VF06)
+define( 'Temp2C', VF07)
+define( 'Temp2D', VF08)
+
+
+DBDynamicCull:	NOP		IADDIU	ADCBit, VI00, 0x7fff
+	NOP		IADDIU	ADCBit, ADCBit, 1
+	NOP		FCSET	0x000000
+DBDynamicCullLoop:	NOP		LQI.xyz	Vtx1cullin, (SrcData++)
+	NOP		ISUBIU	LoopCount, LoopCount, 1
+	NOP		NOP
+	MULAw.xyzw	ACC, CMtxD, VF00w	LQ.xyz	Vtx1in, 0(TmpData)
+	MADDAx.xyzw	ACC, CMtxA, Vtx1cullin	IADD	TmpData, TmpData, TmpDataSkip
+	MADDAy.xyzw	ACC, CMtxB, Vtx1cullin	NOP
+	MADDz.xyzw	Vtx1cull, CMtxC, Vtx1cullin	NOP
+	FTOI4.xyz	Vtx1out, Vtx1in	NOP
+	NOP		NOP
+	NOP		NOP
+	CLIPw.xyz	Vtx1cull, Vtx1cull	NOP
+	NOP		MR32.w	Vtx1out, VF00
+	NOP		NOP
+	NOP		NOP
+	NOP		FCAND	VI01, CullFlags
+	NOP		IBEQ	VI01, VI00, NoCull
+	NOP		NOP
+	NOP		MFIR.w	Vtx1out, ADCBit
+NoCull:	NOP		SQ.xyzw	Vtx1out, 0(DstData)
+	NOP		IBNE	LoopCount, VI00, DBDynamicCullLoop
+	NOP		IADD	DstData, DstData, SkipCount
+	NOP		JR	ReturnAddr
+	NOP		NOP
+
+
+
+	NOP		NOP
+	NOP		NOP
+DBDynamicEnd:

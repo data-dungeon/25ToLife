@@ -1,0 +1,3 @@
+Notes to self and others.
+
+Need to add multiple lights in model view all with different offsets from view. Some kind of cool gui like Strata.

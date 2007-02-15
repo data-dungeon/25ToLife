@@ -1,0 +1,7 @@
+create "SNPS2Consumer\effects.lib"
+addmod "SNPS2Consumer/WaterPS2.obj"
+addmod "SNPS2Consumer/EffectsPCH_SN.obj"
+addmod "SNPS2Consumer/fsdfx.obj"
+addmod "SNPS2Consumer/fsdsys.obj"
+save
+end

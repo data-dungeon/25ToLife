@@ -1,0 +1,36 @@
+// goto unit test
+
+// result: 1
+// result: 2
+// result: 3
+// result: 4
+// result: 5
+// result: 2222
+// result: 6
+// result: 7
+// result: 8
+// result: 9
+// result: 10
+// result: 1111
+// result: 3333
+
+int i = 0;
+
+start:
+
+	i = i + 1;
+        print i;
+	if ( i == 5 )
+		goto special;
+	if ( i < 10 )
+		goto start;
+
+        print 1111;
+        goto end;
+
+special:
+	print 2222;
+	goto start;
+
+end:
+	print 3333;

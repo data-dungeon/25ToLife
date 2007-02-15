@@ -1,0 +1,172 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EXPORT_DIALOG DIALOG DISCARDABLE  0, 0, 146, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Tupperware Export Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Text",IDC_OUTPUT_ASCII,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,13,16,30,10
+    CONTROL         "Binary",IDC_OUTPUT_BINARY,"Button",BS_AUTORADIOBUTTON,
+                    13,25,35,10
+    DEFPUSHBUTTON   "OK",IDOK,89,10,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,89,26,50,14
+    GROUPBOX        "File Output",IDC_STATIC,8,6,70,35
+    CONTROL         103,IDC_STATIC,"Static",SS_BITMAP,37,68,68,13
+    CTEXT           "ExporterInfo",IDC_EXPORTER_INFO,7,45,132,8
+    CTEXT           "DatabaseInfo",IDC_DATABASE_INFO,7,55,132,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_EXPORT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 139
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,0,0
+ PRODUCTVERSION 3,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileVersion", "4.0.0.0\0"
+            VALUE "InternalName", "TupExport\0"
+            VALUE "LegalCopyright", "\0"
+            VALUE "OriginalFilename", "TupExport.dle\0"
+            VALUE "ProductName", "3ds max\0"
+            VALUE "ProductVersion", "4.0.0.0\0"
+            VALUE "FileDescription", "Tupperware Exporter\0"
+            VALUE "Comments", "TECH: \0"
+            VALUE "LegalTrademarks", "3D Studio MAX, Biped, Character Studio, Heidi, Kinetix and Physique are registered trademarks and 3ds max, combustion, Discreet, DWG Unplugged, DXF, FLI and FLC are trademarks of Autodesk, Inc.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_AVALOGO             BITMAP  DISCARDABLE     "avaLogo_256.bmp"
+IDB_TUPPIC              BITMAP  DISCARDABLE     "tuppic.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LIBDESCRIPTION      "Tupperware Exporter"
+    IDS_CATEGORY            "Avalanche Plugins"
+    IDS_CLASS_NAME          "TupExport"
+    IDS_PARAMS              "Parameters"
+    IDS_SPIN                "Spin"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

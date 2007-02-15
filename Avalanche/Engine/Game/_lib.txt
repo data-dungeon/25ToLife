@@ -1,0 +1,12 @@
+create "SNPS2Consumer\Game.lib"
+addmod "SNPS2Consumer/OccluderMgr.obj"
+addmod "SNPS2Consumer/replayMgr.obj"
+addmod "SNPS2Consumer/ResourceManager.obj"
+addmod "SNPS2Consumer/TextureCache.obj"
+addmod "SNPS2Consumer/attachp.obj"
+addmod "SNPS2Consumer/ActorInstance.obj"
+addmod "SNPS2Consumer/GamePCH_SN.obj"
+addmod "SNPS2Consumer/GameScriptFunc.obj"
+addmod "SNPS2Consumer/ParameterSet.obj"
+save
+end

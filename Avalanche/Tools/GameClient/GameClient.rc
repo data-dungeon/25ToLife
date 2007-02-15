@@ -1,0 +1,378 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GameClient.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\GameClient.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About GameClient"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "GameClient Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_GAMECLIENT_DIALOG DIALOGEX 0, 0, 423, 246
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Avalanche Game Client"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tab1",IDC_MASTERTAB,"SysTabControl32",0x0,7,7,409,232
+END
+
+IDD_HARDWARE DIALOG DISCARDABLE  0, 0, 310, 218
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_HARDWARETYPE,86,7,100,98,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Hardware Type",IDC_STATIC,21,9,50,8
+    CONTROL         "IPAddress1",IDC_DEVICEIPADDRESS,"SysIPAddress32",
+                    WS_TABSTOP,86,23,100,15
+    LTEXT           "Device IP Address",IDC_STATIC,18,25,60,8
+    CONTROL         "Connected",IDC_CONNECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,193,25,51,10
+    EDITTEXT        IDC_FILESERVERROOT,86,41,100,15,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_FILESERVERROOT_BROWSE,193,41,21,14
+    LTEXT           "File Server Root",IDC_STATIC,21,44,52,8
+END
+
+IDD_OUTPUTLOG DIALOG DISCARDABLE  0, 0, 354, 227
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_LOG,"RICHEDIT",ES_MULTILINE | ES_READONLY | 
+                    WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,7,7,340,
+                    160
+    PUSHBUTTON      "Clear Output Log",IDC_CLEAROUTPUTLOG,99,179,50,14
+END
+
+IDD_FILESERVER DIALOG DISCARDABLE  0, 0, 246, 190
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List2",IDC_FILELOG,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,232,157
+    CONTROL         "Open Files",IDC_CURRENTLYOPENFILES,"Button",
+                    BS_AUTORADIOBUTTON,127,173,49,10
+    CONTROL         "History",IDC_FILEACCESSHISTORY,"Button",
+                    BS_AUTORADIOBUTTON,73,173,37,10
+    PUSHBUTTON      "Clear History",IDC_CLEARHISTORY,7,169,50,14
+    CONTROL         "Hide Errors",IDC_HIDEERRORS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,188,173,51,10
+END
+
+IDD_PS2_TEST_COMMANDS DIALOG DISCARDABLE  0, 0, 310, 218
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Connected to PS2 TEST box @ 10.0.3.54",IDC_STATUS,7,7,
+                    296,8
+    PUSHBUTTON      "Reset",IDC_RESET,7,25,55,14,WS_DISABLED
+    EDITTEXT        IDC_LOADFILE,64,42,170,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_LOADFILE_BROWSE,236,42,20,14
+    PUSHBUTTON      "Load ELF/IRX",IDC_LOAD,7,42,55,14
+    PUSHBUTTON      "Hello",IDC_HELLO,64,25,55,14
+END
+
+IDD_CONNECTING DIALOG DISCARDABLE  0, 0, 248, 36
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Connecting to hardware..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Attempting to establish a connection with the hardware.",
+                    IDC_STATIC,7,7,234,22,SS_CENTERIMAGE
+END
+
+IDD_VARIABLE_WATCH DIALOG DISCARDABLE  0, 0, 354, 227
+STYLE DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",IDC_NODETREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    WS_BORDER | WS_TABSTOP,7,7,182,213
+    CONTROL         "List1",IDC_NODELIST,"SysListView32",LVS_REPORT | 
+                    LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,193,7,154,106
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,191,116,142,22
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,336,
+                    118,11,21
+END
+
+IDD_DIRSELECT DIALOG DISCARDABLE  0, 0, 185, 223
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select a directory"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,73,202,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,128,202,50,14
+    CONTROL         "Tree1",IDC_PATHTREE,"SysTreeView32",WS_BORDER | 
+                    WS_TABSTOP,7,26,171,172
+    COMBOBOX        IDC_DRIVE,7,7,171,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "GameClient MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "GameClient\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "GameClient.EXE\0"
+            VALUE "ProductName", "GameClient Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_GAMECLIENT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 416
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 239
+    END
+
+    IDD_HARDWARE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 211
+    END
+
+    IDD_OUTPUTLOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 347
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 220
+    END
+
+    IDD_FILESERVER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+    END
+
+    IDD_PS2_TEST_COMMANDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 211
+    END
+
+    IDD_CONNECTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 29
+    END
+
+    IDD_VARIABLE_WATCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 347
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 220
+    END
+
+    IDD_DIRSELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_HARDWARE DLGINIT
+BEGIN
+    IDC_HARDWARETYPE, 0x403, 9, 0
+0x6f4c, 0x6163, 0x206c, 0x4350, "\000" 
+    IDC_HARDWARETYPE, 0x403, 10, 0
+0x6552, 0x6f6d, 0x6574, 0x5020, 0x0043, 
+    IDC_HARDWARETYPE, 0x403, 5, 0
+0x4258, 0x584f, "\000" 
+    IDC_HARDWARETYPE, 0x403, 4, 0
+0x5350, 0x0032, 
+    IDC_HARDWARETYPE, 0x403, 10, 0
+0x6147, 0x656d, 0x4320, 0x6275, 0x0065, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDS_ABOUTBOX            "&About GameClient..."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+    IDS_RICHEDITINITFAIL    "Windows Rich Edit Control Initialization failed"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\GameClient.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

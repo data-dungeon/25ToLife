@@ -1,0 +1,28 @@
+--------------------Configuration: fntest - Win32 Debug--------------------
+Begining build with project "E:\tools\source\testapps\fntest\fntest.dsp", at root.
+Active configuration is Win32 (x86) Console Application (based on Win32 (x86) Console Application)
+
+Project's tools are:
+			"32-bit C/C++ Compiler for 80x86" with flags "/nologo /MLd /W3 /Gm /GX /Zi /Od /I "\tools\include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/fntest.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c "
+			"Win32 Resource Compiler" with flags "/l 0x409 /d "_DEBUG" "
+			"Browser Database Maker" with flags "/nologo /o"Debug/fntest.bsc" "
+			"COFF Linker for 80x86" with flags "kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/fntest.pdb" /debug /machine:I386 /out:"Debug/fntest.exe" /pdbtype:sept "
+			"Custom Build" with flags ""
+			"<Component 0xa>" with flags ""
+
+Creating temp file "C:\WIN95\TEMP\RSP6022.TMP" with contents </nologo /MLd /W3 /Gm /GX /Zi /Od /I "\tools\include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/fntest.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"E:\tools\source\fn_wrap\fn_wrap.cpp"
+>
+Creating command line "cl.exe @C:\WIN95\TEMP\RSP6022.TMP" 
+Creating temp file "C:\WIN95\TEMP\RSP6023.TMP" with contents <kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/fntest.pdb" /debug /machine:I386 /out:"Debug/fntest.exe" /pdbtype:sept 
+.\Debug\fn_wrap.obj
+.\Debug\fntest.obj>
+Creating command line "link.exe @C:\WIN95\TEMP\RSP6023.TMP" 
+Compiling...
+fn_wrap.cpp
+Linking...
+LINK : LNK6004: Debug/fntest.exe not found or not built by the last incremental link; performing full link
+
+
+
+fntest.exe - 0 error(s), 0 warning(s)

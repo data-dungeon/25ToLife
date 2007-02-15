@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PS2Booter", "PS2Booter.vcproj", "{EB31D3D4-DE04-400A-AC82-1028C8A73FC1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SolutionUniqueID = {6F8BF061-F3FB-4CEC-A6CD-85D627E7610D}
+		SccProjectUniqueName1 = PS2Booter.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		PS2 EE Debug = PS2 EE Debug
+		PS2 EE Release = PS2 EE Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EB31D3D4-DE04-400A-AC82-1028C8A73FC1}.PS2 EE Debug.ActiveCfg = PS2 EE Debug|Win32
+		{EB31D3D4-DE04-400A-AC82-1028C8A73FC1}.PS2 EE Debug.Build.0 = PS2 EE Debug|Win32
+		{EB31D3D4-DE04-400A-AC82-1028C8A73FC1}.PS2 EE Release.ActiveCfg = PS2 EE Release|Win32
+		{EB31D3D4-DE04-400A-AC82-1028C8A73FC1}.PS2 EE Release.Build.0 = PS2 EE Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

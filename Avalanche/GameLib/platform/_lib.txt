@@ -1,0 +1,14 @@
+create "SNPS2Consumer\platform.lib"
+addmod "SNPS2Consumer/PS2Keyboard.obj"
+addmod "SNPS2Consumer/PS2Mouse.obj"
+addmod "SNPS2Consumer/util.obj"
+addmod "SNPS2Consumer/MemoryCard.obj"
+addmod "SNPS2Consumer/MemoryCard_ps2.obj"
+addmod "SNPS2Consumer/cfocus.obj"
+addmod "SNPS2Consumer/CKeyboard.obj"
+addmod "SNPS2Consumer/CMouse.obj"
+addmod "SNPS2Consumer/defcontrolmap.obj"
+addmod "SNPS2Consumer/PlatformPCH_SN.obj"
+addmod "SNPS2Consumer/wantpal.obj"
+save
+end

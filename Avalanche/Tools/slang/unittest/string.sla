@@ -1,0 +1,51 @@
+// unit test for strings
+
+print "test 1";		// result: test 1
+
+string a;
+a = "test 2";
+print a;		// result: test 2
+
+a = "test 3";
+print a;		// result: test 3
+
+string b = "test 4";
+print b;		// result: test 4
+
+print a <  b;		// result: 1
+print a <= b;		// result: 1
+print a == b;		// result: 0
+print a >= b;		// result: 0
+print a >  b;		// result: 0
+print a != b;		// result: 1
+
+b = "test 3";
+print b;		// result: test 3
+print a <  b;		// result: 0
+print a <= b;		// result: 1
+print a == b;		// result: 1
+print a >= b;		// result: 1
+print a >  b;		// result: 0
+print a != b;		// result: 0
+
+string list[ 5 ] = ( "every", "good", "boy", "does", "fine" );
+print list[0];		// result: every
+print list[1];		// result: good
+print list[2];		// result: boy
+print list[3];		// result: does
+print list[4];		// result: fine
+
+// sort the list
+int i, j;
+for ( i = 0 ; i < 5 - 1 ; ++i )
+   for ( j = i + 1 ; j < 5 ; ++j )
+      if ( list[i] > list[j] )
+         ( list[i], list[j] ) = ( list[j], list[i] );
+
+print list[0];		// result: boy
+print list[1];		// result: does
+print list[2];		// result: every
+print list[3];		// result: fine
+print list[4];		// result: good
+
+

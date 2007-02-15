@@ -1,0 +1,7 @@
+LIBRARY ExportTextures
+EXPORTS
+	LibDescription			@1
+	LibPluginDesc			@2
+	LibVersion				@3
+SECTIONS
+	.data READ WRITE

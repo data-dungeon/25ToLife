@@ -1,0 +1,113 @@
+switch( 1 )
+{
+case 1:
+   switch( 3 )
+   {
+      case 1: print "bad 1"; break;
+      case 2: print "bad 2"; break;
+      case 3: print "good inside 3"; break; // result: good inside 3
+   }
+   break;
+case 2:
+   print "bad outside 2"; break;
+case 3:
+   print "bad outside 3"; break;
+default:
+   print "bad outside default"; break;
+}
+
+// result: out 1, in 1
+// result: out 2, in 2
+// result: out 3, in 3
+// result: out 4, in 4
+// result: out 5, in 5
+// result: out 1, in def
+// result: out 2, in def
+// result: out 3, in def
+// result: out 4, in def
+// result: out 5, in def
+// result: out def, in def
+// result: out def, in 1
+// result: out def, in 2
+// result: out def, in 3
+// result: out def, in 4
+// result: out def, in 5
+int v[ 16 ] = ( 11, 22, 33, 44, 55, 17, 27, 37, 47, 57, 77, 71, 72, 73, 74, 75 );
+int i;
+for ( i = 0 ; i < sizeof( v ) ; i++ )
+{
+   switch( v[i] / 10 )
+   {
+      case 1:
+	switch( v[i] % 10 )
+	{
+	   case 1:  print "out 1, in 1";   break;
+	   case 2:  print "out 1, in 2";   break;
+	   case 3:  print "out 1, in 3";   break;
+	   case 4:  print "out 1, in 4";   break;
+	   case 5:  print "out 1, in 5";   break;
+	   default: print "out 1, in def"; break;
+	}
+	break;
+
+      case 2:
+	switch( v[i] % 10 )
+	{
+	   case 1:  print "out 2, in 1";   break;
+	   case 2:  print "out 2, in 2";   break;
+	   case 3:  print "out 2, in 3";   break;
+	   case 4:  print "out 2, in 4";   break;
+	   case 5:  print "out 2, in 5";   break;
+	   default: print "out 2, in def"; break;
+	}
+	break;
+
+      case 3:
+	switch( v[i] % 10 )
+	{
+	   case 1:  print "out 3, in 1";   break;
+	   case 2:  print "out 3, in 2";   break;
+	   case 3:  print "out 3, in 3";   break;
+	   case 4:  print "out 3, in 4";   break;
+	   case 5:  print "out 3, in 5";   break;
+	   default: print "out 3, in def"; break;
+	}
+	break;
+
+      case 4:
+	switch( v[i] % 10 )
+	{
+	   case 1:  print "out 4, in 1";   break;
+	   case 2:  print "out 4, in 2";   break;
+	   case 3:  print "out 4, in 3";   break;
+	   case 4:  print "out 4, in 4";   break;
+	   case 5:  print "out 4, in 5";   break;
+	   default: print "out 4, in def"; break;
+	}
+	break;
+
+      case 5:
+	switch( v[i] % 10 )
+	{
+	   case 1:  print "out 5, in 1";   break;
+	   case 2:  print "out 5, in 2";   break;
+	   case 3:  print "out 5, in 3";   break;
+	   case 4:  print "out 5, in 4";   break;
+	   case 5:  print "out 5, in 5";   break;
+	   default: print "out 5, in def"; break;
+	}
+	break;
+
+      default:
+	switch( v[i] % 10 )
+	{
+	   case 1:  print "out def, in 1";   break;
+	   case 2:  print "out def, in 2";   break;
+	   case 3:  print "out def, in 3";   break;
+	   case 4:  print "out def, in 4";   break;
+	   case 5:  print "out def, in 5";   break;
+	   default: print "out def, in def"; break;
+	}
+	break;
+   }
+}

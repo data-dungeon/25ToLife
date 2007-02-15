@@ -1,0 +1,19 @@
+// function unit test #2
+
+int a();	// prototypes
+int b(int a);
+float c(float f);
+int d(int a, int b);
+float e(float f, float g);
+
+print a();				// result: 1
+print b(1);				// result: 2
+print c(2.0);			// result: 6.000000
+print d(3, 4);			// result: 48
+print e(5.0, 6.0);	// result: 150.000000
+
+int a()                   { return 1; }
+int b(int a)              { return 2 * a; }
+float c(float f)          { return 3 * f; }
+int d(int a, int b)       { return 4 * a * b; }
+float e(float f, float g) { return 5 * f * g; }

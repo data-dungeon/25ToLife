@@ -1,0 +1,9 @@
+//
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+
+IDR_BADFILE  RCDATA  DISCARDABLE  "res/badfile.bmp"
+
+

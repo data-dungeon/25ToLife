@@ -1,0 +1,210 @@
+.vu
+
+include( `VUDefines.vm4')
+include( 'VUStaticDefines.vm4')
+
+define( 'irCopyCount', 'VI01')
+
+define( 'irBaseVtxPtr', 'VI02')
+define( 'irKickPtr', 'VI03')
+
+define( 'irNormalPtr', 'VI04')
+define( 'irOutDataPtr', 'VI05')
+
+define( 'irOutPtr', 'VI06')
+define( 'irVtxPtr', 'VI07')
+define( 'irZADCPtr', 'VI08')
+
+define( 'irVtxCount', 'VI10')
+define( 'irLoopCount', 'VI11')
+define( 'irOutputPtr', 'VI12')
+define( 'irTemp1', 'VI04')
+
+	.global	dbStaticSphereMap_CodeBegin
+	.global	dbStaticSphereMap_CodeEnd
+
+.dmadata dbStaticSphereMap_CodeBegin
+	NOP		XTOP	irBaseVtxPtr		; get ptr to VUBuffer
+	NOP		ILW.w	irTemp1, 0(irBaseVtxPtr)w		; grab stateFlags
+
+	NOP		IADDIU	VI01, VI00, 0x0002		; EnvMapping flag
+	NOP		IAND	irTemp1, irTemp1, VI01		; mask EnvMapping bit
+	NOP		IBEQ	irTemp1, VI00, dbSC_Return		; skip non-mapped blocks
+	NOP		NOP
+
+	NOP		ILW.x	irOutPtr, offEVD1+0(VI00)
+	NOP		ILW.y	irTemp1, offEVD1+0(VI00)
+	NOP		ILW.z	irOutDataPtr, offEVD1+0(VI00)
+
+	NOP		ISW.y	irOutPtr, offEVD1+0(VI00)
+	NOP		ISW.x	irTemp1, offEVD1+0(VI00)
+
+	NOP		ILW.y	irNormalPtr, 1(irBaseVtxPtr)y	; grab NormalStreamOffset
+	NOP		ILW.w	irOutputPtr, 1(irBaseVtxPtr)w	; grab OutputOffset
+	
+	NOP		ILW.x	irVtxCount, 0(irBaseVtxPtr)x	; grab vertexCount
+	NOP		ILW.z	irCopyCount, 0(irBaseVtxPtr)z	; grab copyCount
+	NOP		ILW.y	irLoopCount, 0(irBaseVtxPtr)y	; grab loopCount
+
+	NOP	 	IADD	irKickPtr, irOutputPtr, irOutPtr	; calculate OutBuffer base ptr
+	NOP		IADD	irNormalPtr, irNormalPtr, irBaseVtxPtr
+	
+	NOP		IADDIU	irOutPtr, irKickPtr, 0		; calculate OutBuffer moving ptr
+
+	NOP		IADDIU	irBaseVtxPtr, irBaseVtxPtr, 2	; skip header
+	NOP		IADD	irVtxPtr, irBaseVtxPtr, irCopyCount	; skip texture packet to get to packed vertices
+	NOP		IADD	irZADCPtr, irVtxPtr, irVtxCount	; skip packed vertices to get z data
+
+	NOP		LQ.w	VF23, offBaseTexGIFData+1(VI00)
+
+	NOP		LQ	VF09, offEVMtx+0(VI00)
+	NOP		LQ	VF10, offEVMtx+1(VI00)
+	NOP		LQ	VF11, offEVMtx+2(VI00)
+	NOP		LQ	VF12, offEVMtx+3(VI00)
+
+	NOP		SQI	VF31, (irOutPtr++)
+	NOP		ISW.z	irOutPtr, offEVD1+0(VI00)
+
+dbSC_Prolog:
+	NOP		LQI	VF22, (irZADCPtr++)		; load ZADC for 4 vertices
+
+	NOP		LQI	VF17, (irVtxPtr++)		; load Vertex1
+	NOP		LQI	VF18, (irVtxPtr++)		; load Vertex2
+	NOP		NOP
+	NOP		NOP
+	ADDz.x	VF17, VF00, VF17	NOP
+	ADDw.y	VF17, VF00, VF17	NOP
+	ADDx.z	VF17, VF00, VF22	NOP			; create XYZ Vector
+	
+	NOP		NOP
+	NOP		NOP
+
+	ADDz.x	VF18, VF00, VF18	NOP
+	ADDw.y	VF18, VF00, VF18	ERLENG	P, VF17		; calculate 1 / length
+	ADDy.z	VF18, VF00, VF22	LQ	VF13, 1(irOutDataPtr)		; load RGBA1 from OutData
+	
+dbSC_Loop:	
+	NOP		WAITP			; wait for 1 / length to finish
+	
+	NOP		MFP.w	VF17, P		; move invLength to usable register
+	NOP		ERLENG	P, VF18		; normalize vector ( Vertex1 * invLength )
+	NOP		NOP
+	ITOF0.w	VF13, VF13	NOP
+	
+	MULw.xyz	VF17, VF17, VF17w	NOP
+						; creates spherical normal
+	MULAw.xyzw	ACC, VF12, VF00w	NOP			; start transform of normal
+	NOP		LQI.zw	VF19, (irVtxPtr++)		; load Vertex3
+	MULw.w	VF13, VF13, VF23w	NOP			; scale alpha
+	MADDAz.xyzw	ACC, VF11, VF17z	NOP			; transform step 2
+	MADDAy.xyzw	ACC, VF10, VF17y	LQ.z	VF17, 0(irOutDataPtr)		; transform step 3 + load 1/Q
+	MADDx.xy	VF17, VF09, VF17x	MR32.yz	VF19, VF19		; transform finish
+
+	NOP		NOP
+	NOP		LQ	VF21, 2(irOutDataPtr)		; load XYZW1 from OutData
+	FTOI0.w	VF13, VF13	IADDIU	irOutDataPtr, irOutDataPtr, 3     	; increment OutDataPtr
+	MULz.xy	VF17, VF17	MR32.xy	VF19, VF19		; perspective multiply S and T
+		
+	NOP		LQ	VF14, 1(irOutDataPtr)		; load RGBA2 from OutData
+	
+	NOP		SQ	VF21, 2(irOutPtr)		; store XYZW1
+	ADDz.z	VF19, VF00, VF22	SQ	VF13, 1(irOutPtr)		; store RGBA1
+	NOP		SQ	VF17, 0(irOutPtr)		; store STQ1
+	
+;; start vertex 2
+	NOP		WAITP			; wait for 1 / length to finish
+	NOP		MFP.w	VF18, P		; move invLength to usable register
+	
+	NOP		ERLENG	P, VF19		; normalize vector ( Vertex1 * invLength )
+	NOP		IADDIU	irOutPtr, irOutPtr, 3		; increment OutPtr
+	ITOF0.w	VF14, VF14	NOP
+	
+	MULw.xyz	VF18, VF18, VF18w	NOP
+	MULAw.xyzw	ACC, VF12, VF00w	NOP			; start transform of normal
+	NOP		LQI.zw	VF20, (irVtxPtr++)		; load Vertex4	
+	MULw.w	VF14, VF14, VF23w	NOP			; scale alpha
+	MADDAz.xyzw	ACC, VF11, VF18z	NOP			; transform step 2
+	MADDAy.xyzw	ACC, VF10, VF18y	LQ.z	VF18, 0(irOutDataPtr)		; transform step 3 + load 1/Q
+	MADDx.xy	VF18, VF09, VF18x	MR32.yz	VF20, VF20		; transform finish
+
+	NOP		NOP
+	NOP		LQ	VF21, 2(irOutDataPtr)		; load XYZW1 from OutData
+	FTOI0.w	VF14, VF14	IADDIU	irOutDataPtr, irOutDataPtr, 3 	; increment OutDataPtr
+	MULz.xy	VF18, VF18	MR32.xy	VF20, VF20		; perspective multiply S and T
+		
+	NOP		LQ	VF15, 1(irOutDataPtr)		; load RGBA3 from OutData
+	
+	NOP		SQ	VF21, 2(irOutPtr)		; store XYZW2
+	ADDw.z	VF20, VF00, VF22	SQ	VF14, 1(irOutPtr)		; store RGBA2
+	NOP		SQ	VF18, 0(irOutPtr)		; store STQ2
+	
+;; start vertex 3
+	NOP		WAITP			; wait for 1 / length to finish
+	NOP		MFP.w	VF19, P		; move invLength to usable register
+	
+	NOP		ERLENG	P, VF20		; normalize vector ( Vertex1 * invLength )
+	NOP		IADDIU	irOutPtr, irOutPtr, 3		; increment OutPtr
+	ITOF0.w	VF15, VF15	NOP
+	
+	MULw.xyz	VF19, VF19, VF19w	NOP
+	MULAw.xyzw	ACC, VF12, VF00w	NOP			; start transform of normal
+	NOP		LQI.zw	VF17, (irVtxPtr++)		; load Vertex1
+	MULw.w	VF15, VF15, VF23w	NOP			; scale alpha
+	MADDAz.xyzw	ACC, VF11, VF19z	LQ	VF22, (irZADCPtr++)		; transform step 2
+	MADDAy.xyzw	ACC, VF10, VF19y	LQ.z	VF19, 0(irOutDataPtr)		; transform step 3 + load 1/Q
+	MADDx.xy	VF19, VF09, VF19x	MR32.yz	VF17, VF17		; transform finish
+
+	NOP		NOP
+	NOP		LQ	VF21, 2(irOutDataPtr)		; load XYZW1 from OutData
+	FTOI0.w	VF15, VF15	IADDIU	irOutDataPtr, irOutDataPtr, 3 	; increment OutDataPtr
+	MULz.xy	VF19, VF19	MR32.xy	VF17, VF17		; perspective multiply S and T
+		
+	NOP		LQ	VF16, 1(irOutDataPtr)		; load RGBA4 from OutData
+	
+	NOP		SQ	VF21, 2(irOutPtr)		; store XYZW2
+	ADDx.z	VF17, VF00, VF22	SQ	VF15, 1(irOutPtr)		; store RGBA2
+	NOP		SQ	VF19, 0(irOutPtr)		; store STQ2
+	
+;; start vertex 4
+	NOP		WAITP			; wait for 1 / length to finish
+	NOP		MFP.w	VF20, P		; move invLength to usable register
+	
+	NOP		ERLENG	P, VF17		; normalize vector ( Vertex1 * invLength )
+	NOP		IADDIU	irOutPtr, irOutPtr, 3		; increment OutPtr
+	ITOF0.w	VF16, VF16	NOP
+	
+	MULw.xyz	VF20, VF20, VF20w	ISUBIU	irLoopCount, irLoopCount, 1
+	MULAw.xyzw	ACC, VF12, VF00w	NOP			; start transform of normal
+	NOP		LQI.zw	VF18, (irVtxPtr++)		; load Vertex2	
+	MULw.w	VF16, VF16, VF23w	NOP			; scale alpha
+	MADDAz.xyzw	ACC, VF11, VF20z	NOP			; transform step 2
+	MADDAy.xyzw	ACC, VF10, VF20y	LQ.z	VF20, 0(irOutDataPtr)		; transform step 3 + load 1/Q
+	MADDx.xy	VF20, VF09, VF20x	MR32.yz	VF18, VF18		; transform finish
+	    
+	NOP		NOP
+	NOP		LQ	VF21, 2(irOutDataPtr)		; load XYZW1 from OutData
+	FTOI0.w	VF16, VF16	IADDIU	irOutDataPtr, irOutDataPtr, 3   	; increment OutDataPtr
+	MULz.xy	VF20, VF20	MR32.xy	VF18, VF18	     	; perspective multiply S and T
+		
+	NOP		LQ	VF13, 1(irOutDataPtr)		; load RGBA1 from OutData
+	
+	NOP		SQ	VF21, 2(irOutPtr)		; store XYZW2
+	ADDy.z	VF18, VF00, VF22	SQ	VF16, 1(irOutPtr)		; store RGBA2
+	NOP		SQ	VF20, 0(irOutPtr)		; store STQ2
+
+	NOP		IBNE	irLoopCount, VI00, dbSC_Loop
+	NOP		IADDIU	irOutPtr, irOutPtr, 3		; <ds> increment OutPtr
+
+dbSC_Kick:
+	NOP		IADDIU	VI01, VI00, offEVTexGIFData
+	NOP		NOP
+	NOP		XGKICK	VI01
+	NOP		NOP
+	NOP		XGKICK	irKickPtr
+
+dbSC_Return:
+	NOP		JR	VI15
+	NOP		NOP
+
+.enddmadata
+dbStaticSphereMap_CodeEnd:

@@ -1,0 +1,215 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_KEYVALPANEL DIALOGEX 0, 0, 226, 180
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_KEYVAL,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_TRACKSELECT | 
+                    WS_BORDER,3,17,220,141,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Apply To Selection",IDC_BUTTON_APPLYTOSEL,3,163,70,14
+    PUSHBUTTON      "Apply To Scene",IDC_BUTTON_APPLYTOSCENE,78,163,70,14
+    PUSHBUTTON      "",IDC_SELECT_BUTTON,5,3,13,12,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_APPLY_BUTTON,19,3,13,12,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_PURGE_BUTTON,33,3,13,12,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_REMAP_BUTTON,47,3,13,12,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_CLEAR_BUTTON,65,3,13,12,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_SHOW_ACTIVE_BUTTON,88,3,13,12,BS_ICON | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "",IDC_FILTER_BUTTON,140,3,13,12,BS_ICON | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "",IDC_SHOW_DEFAULT_BUTTON,104,3,13,12,BS_ICON | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "",IDC_SHOW_UNUSED_BUTTON,120,3,13,12,BS_ICON | NOT 
+                    WS_TABSTOP
+END
+
+IDD_FIND DIALOGEX 0, 0, 244, 114
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Find"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Find",IDC_BTN_FIND,187,6,50,14
+    PUSHBUTTON      "Close",IDCLOSE,187,36,50,14
+    COMBOBOX        IDC_COMBO_KEY,48,6,132,114,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_VALUE,48,24,132,90,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Match case",IDC_CHECK_MATCH_CASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,6,48,52,10
+    CONTROL         "Match whole word",IDC_CHECK_MATCH_WHOLE_WORD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,6,60,74,10
+    CONTROL         "Append selection",IDC_CHECK_APPEND_SELECTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,6,72,71,10
+    CONTROL         "Current selection",IDC_RDO_SEARCH_CURRENT_SELECTION,
+                    "Button",BS_AUTORADIOBUTTON,90,54,71,10
+    CONTROL         "Entire scene",IDC_RDO_SEARCH_ENTIRE_SCENE,"Button",
+                    BS_AUTORADIOBUTTON,90,66,55,10
+    CONTROL         "Key",IDC_CHECK_KEY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,6,28,10
+    CONTROL         "Value",IDC_CHECK_VALUE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,24,33,10
+    LTEXT           "Select from:",IDC_STATIC,89,43,57,8
+    CONTROL         "Search default Keys/Values",IDC_CHECK_SEARCH_DEFAULTS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,84,103,10
+    CONTROL         "Search unused Keys/Values",IDC_CHECK_SEARCH_UNUSED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,97,104,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_KEYVALPANEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_FIND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREEVIEW_STATE      BITMAP                  "TreeViewState.bmp"
+IDB_TREEVIEW_NORMAL     BITMAP                  "TreeViewNormal.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APPLY               ICON                    "apply.ico"
+IDI_CLEAR               ICON                    "clear.ico"
+IDI_PURGE               ICON                    "purge.ico"
+IDI_REMAP               ICON                    "remap.ico"
+IDI_SELECT              ICON                    "select.ico"
+IDI_FILTER              ICON                    "filter.ico"
+IDI_SHOW_DEFAULTS       ICON                    "showdefaults.ico"
+IDI_SHOW_ACTIVE         ICON                    "showactive.ico"
+IDI_SHOW_UNUSED         ICON                    "showunused.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_KEYS_AND_VALUES     "Keys & Values"
+    IDS_TT_SELECT           "Select - Choose key/values to use for selecting desired nodes"
+    IDS_TT_APPLYVALUE       "Apply - Choose key/values to apply to desired nodes"
+    IDS_TT_PURGE            "Purge - Choose keys and/or values to purge from desired nodes"
+    IDS_TT_REMAP            "Remap - Choose keys and/or values to remap within desired nodes"
+    IDS_TT_CLEAR            "Uncheck all checked keys and values"
+    IDS_TT_SEARCH_DEFAULTS  "Search for default key values"
+    IDS_TT_FIND_BUTTON      "Perform Find"
+    IDS_TT_KEY_COMBO        "Key to search for"
+    IDS_TT_VALUE_COMBO      "Value to search for - multiple values may be specified separated by ','"
+    IDS_TT_KEY_CHECK        "Enable/Disable search for key"
+    IDS_TT_VALUE_CHECK      "Enable/Disable search for value"
+    IDS_TT_MATCH_CASE       "Match case on value"
+    IDS_TT_MATCH_WHOLE_WORD "Match whole word on value"
+    IDS_TT_APPEND_CHECK     "Add found object to current selection"
+    IDS_TT_CURRENT_SELECTION_CHECK "Search through current selection"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TT_ENTIRE_SCENE_CHECK "Search through entire scene"
+    IDS_TT_FILTER           "Filter display to checked keys/values"
+    IDS_TT_SHOW_ACTIVE      "Show / Hide Active Key Values"
+    IDS_TT_SHOW_DEFAULT     "Show / Hide Default Key Values"
+    IDS_TT_SHOW_UNUSED      "Show / Hide Unused Key Values"
+    IDS_TT_SEARCH_UNUSED    "Search for unused key values"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

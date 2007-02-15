@@ -1,0 +1,47 @@
+; ---------------------------------------------------------------------------------------------
+LoadMPData:
+	NOP		LQI	VF05,(VI01++)	; EVMap Ctrl data
+	
+	NOP		LQI	VF01,(VI01++)	; EVMap Mtx r1
+	NOP		LQI	VF02,(VI01++)	; EVMap Mtx r2
+	NOP		LQI	VF03,(VI01++)	; EVMap Mtx r3
+	NOP		LQI	VF04,(VI01++)	; EVMap Mtx r4
+
+	NOP		MTIR	VI03, VF05z	; get MiscData size
+	NOP		SQ	VF05, offEVD1+0(VI00)	; store EVMap D1
+	NOP		LQ	VF05, (VI01++)	; EVMiscData
+
+	NOP		LQI	VF31,(VI01++)	; get First QW of EVMap GIFData	
+
+	NOP		LOI	0.5	
+	
+;	MULI.xy	VF01, VF01, I	MR32.z	VF04, VF00
+;	MULI.xy	VF02, VF02, I	MOVE.z	VF01, VF00
+;	MULI.xy	VF03, VF03, I	MOVE.z	VF02, VF00
+;	ADDI.xy	VF04, VF00, I	MOVE.z	VF03, VF00
+	
+	NOP		SQ	VF01, offEVMtx+0(VI00)	; EVMap Mtx r1
+	NOP		SQ	VF02, offEVMtx+1(VI00)	; EVMap Mtx r2
+	NOP		SQ	VF03, offEVMtx+2(VI00)	; EVMap Mtx r3
+	NOP		SQ	VF04, offEVMtx+3(VI00)	; EVMap Mtx r4
+
+	NOP		SQ	VF05, offEVMiscData+0(VI00)	; store MiscData
+
+	NOP		MTIR	VI02, VF31x	; get Copy Count from GIFTag
+	NOP		IADDIU	VI05, VI02, 1	; add 1 for GIFTag
+	NOP		IADDIU	VI02, VI05, 0x7fff	; trick to get EOP Flag set
+	NOP		MFIR.x	VF31, VI02	; store back w/ EOP Set
+		
+	NOP		IADDIU	VI04, VI00, offEVTexGIFData	; dst offset
+
+SC_MP_CopyLoop:
+	NOP		SQI	VF31, (VI04++)
+	NOP		ISUBIU	VI05, VI05, 1
+	NOP		NOP
+	NOP		IBNE	VI05, VI00, SC_MP_CopyLoop
+	NOP		LQI	VF31, (VI01++)
+
+	NOP		JR	VI15
+	NOP		ISUBIU	VI01, VI01, 1
+	
+; ---------------------------------------------------------------------------------------------

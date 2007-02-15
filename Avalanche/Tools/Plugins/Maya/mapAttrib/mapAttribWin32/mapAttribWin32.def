@@ -1,0 +1,7 @@
+; objAttribWin32.def : Declares the module parameters for the DLL.
+
+LIBRARY      "mapAttribWin32"
+DESCRIPTION  'mapAttribWin32 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

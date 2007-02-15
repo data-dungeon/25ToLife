@@ -1,0 +1,39 @@
+PASS = 1 # Default to using pass 1
+
+# This filter will flip the meshes and the transforms to be YUP
+FILTER "makeyup.twf" =
+{
+}
+# This filter will add data to the tupperware tree that is used by the exportpc
+# and collision filters
+FILTER "annotate.twf" = 
+{
+}
+# This filter does the triangle stripping
+FILTER "tristrip.twf" = 
+{
+}
+# This filter writes out the terrain collision data
+FILTER "terraintoola.twf" = 
+{
+	OPTION "SavePerimeterFile" = "true" #saves perimeter file
+	OPTION "SaveMapFile" = "true" #saves map file
+	OPTION "SaveVisFile" = "true" #saves vis file
+	OPTION "SectorSize" = "8" #sets sector size to 8
+}
+# This filter writes out the collision bounding boxes
+FILTER "obbworld.twf" = 
+{
+	OPTION "SaveVisFile" = "true" #saves vis file
+	OPTION "MinDimension" = "1" #sets the minimum dimension to 1
+	OPTION "MinQuadrantSize" = "1" #sets the minimum quadrant size to 1
+#	OPTION "Shrinkage" = "50" #sets the shrinkage for x,y,z to 50%
+#	OPTION "ShrinkageX" = "12" #sets the shrinkage for x to 12%
+#	OPTION "ShrinkageY" = "72" #sets the shrinkage for y to 72%
+#	OPTION "ShrinkageZ" = "5.3" #sets the shrinkage for z to 5.3%
+	OPTION "Shrinkage" = "25" #sets the shrinkage for x,y,z to 25%
+}
+# This filter writes out the render DBL file
+FILTER "exportpc.twf" =
+{
+}

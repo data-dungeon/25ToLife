@@ -1,0 +1,60 @@
+// scope unit tests
+
+int i;
+
+i = 0;
+print i;	// result: 0
+
+{
+   i = 1;
+   print i;	// result: 1
+}
+print i;	// result: 1
+
+{
+   int i;
+   i = 2;
+   print i;	// result: 2
+}
+print i;	// result: 1
+
+{
+   print i;	// result: 1
+   int i = 3;
+   print i;	// result: 3
+}
+
+print i;	// result: 1
+
+//-----
+
+print "loops";	// result: loops
+// result: 10
+// result: 0
+// result: 1
+// result: 2
+// result: 11
+// result: 0
+// result: 1
+// result: 2
+// result: 12
+// result: 0
+// result: 1
+// result: 2
+
+int a = 10;
+LOOP:
+print a;
+{
+   int a = 0;
+   LOOP:
+   print a;
+   a++;
+   if ( a < 3 ) goto LOOP;
+}
+a++;
+if ( a < 13 ) goto LOOP;
+
+
+
+   

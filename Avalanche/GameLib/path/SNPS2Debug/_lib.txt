@@ -1,0 +1,4 @@
+create SNPS2Debug/path.lib
+addmod SNPS2Debug/PathPCH_SN.obj
+save
+end

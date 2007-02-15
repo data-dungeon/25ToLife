@@ -1,0 +1,281 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MotionAttributes.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\r\n"
+    "#include ""../../../libraries/KeyVal/KeyVal.rc""\r\n"
+    "#include ""../../../libraries/UIDisplay/UIDisplay.rc""\r\n"
+    "#include ""../../../libraries/AttrControls/AttrControls.rc""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "objAttribWin32 DLL"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "objAttribWin32"
+            VALUE "LegalCopyright", "Copyright (C) 2002"
+            VALUE "OriginalFilename", "objAttribWin32.DLL"
+            VALUE "ProductName", "objAttribWin32 Dynamic Link Library"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MOTIONATTRIB DIALOGEX 0, 0, 238, 316
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+CAPTION "Motion Attributes"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_CUSTOM_ROLLUP,"AttrRollupWindow",WS_VSCROLL | 
+                    WS_GROUP | WS_TABSTOP,1,18,235,286
+    PUSHBUTTON      "",IDC_ONETOMANY,147,3,15,13,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_REPLACE,163,3,15,13,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_COPY_BUTTON,126,3,15,13,BS_ICON | NOT WS_TABSTOP
+    COMBOBOX        IDC_CFG_LIST,1,3,97,138,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "",IDC_BROWSE,100,3,15,13,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_PURGE_UNUSED,183,3,15,13,BS_ICON | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_FIND,205,3,15,13,BS_ICON | NOT WS_TABSTOP
+    LTEXT           "",IDC_STATS,1,306,235,8
+END
+
+IDD_ATTRIBUTES DIALOG  0, 0, 224, 49
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Please select one or more keys.",
+                    IDC_STATIC_SELOBJECTS,16,20,183,8
+END
+
+IDD_CONFIG_FILES DIALOGEX 0, 0, 259, 151
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Edit Configuration File List"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "OK",ID_OK_BUTTON,194,7,58,14
+    PUSHBUTTON      "Cancel",ID_CANCEL_BUTTON,194,97,58,14
+    LISTBOX         IDC_CONFIG_LIST,33,7,142,104,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Config",IDC_STATIC,7,52,24,10
+    LTEXT           "Name",IDC_STATIC,7,118,24,9
+    EDITTEXT        IDC_CONFIG_NAME,33,115,142,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CONFIG_FILE,33,131,142,14,ES_AUTOHSCROLL
+    LTEXT           "File",IDC_STATIC,7,133,24,9
+    PUSHBUTTON      "New",ID_NEW_BUTTON,194,30,58,14
+    PUSHBUTTON      "Edit",ID_EDIT_BUTTON,194,45,58,14
+    PUSHBUTTON      "Delete",ID_DELETE,194,60,58,14
+    PUSHBUTTON      "Accept",ID_ACCEPT_BUTTON,194,81,58,14
+    PUSHBUTTON      "Button1",IDC_BROWSE_FILE_BUTTON,179,131,15,13,BS_ICON
+    LTEXT           "Files",IDC_STATIC,7,61,24,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MOTIONATTRIB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 309
+    END
+
+    IDD_ATTRIBUTES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_CONFIG_FILES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        VERTGUIDE, 33
+        VERTGUIDE, 175
+        VERTGUIDE, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+        HORZGUIDE, 111
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_REPLACE_DISABLED    ICON                    "res/replacedisabled.ico"
+IDI_PURGE_UNUSED        ICON                    "res/purgeunused.ico"
+IDI_ONETOMANY           ICON                    "res/onetomany.ico"
+IDI_ONETOMANY_DISABLED  ICON                    "res/onetomanydisabled.ico"
+IDI_REPLACE             ICON                    "res/replace.ico"
+IDI_COPY_DISABLED       ICON                    "res/copydisabled.ico"
+IDI_COPY                ICON                    "res/copy.ico"
+IDI_BROWSE              ICON                    "res/browse.ico"
+IDI_FIND                ICON                    "res\\Find.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MOTIONATTRIBUTES    BITMAP                  "res\\motionattributes.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_LIBDESCRIPTION      "This plugin will allow the user to apply game specific data to keys within the scene"
+    IDS_CATEGORY            "Avalanche Plugins"
+    IDS_CLASS_NAME          "MotionAttributes"
+    IDS_PARAMS              "Parameters"
+    IDS_SPIN                "Spin"
+    IDS_ATTRIBUTES          "Attributes"
+    IDS_SELECT_OBJECTS      "Please select one or more objects in the world."
+    IDS_ONETOMANY_TOOLTIP   "Add the copied attributes to the selected objects"
+    IDS_NO_ATTRIBUTES       "This object has no attributes to copy."
+    IDS_MOTION_ATTRIBUTES   "Motion Attributes"
+    IDS_ONETOMANY__REPLACE_TOOLTIP 
+                            "Replace the copied attributes to the selected objects"
+    IDS_COPY_TOOLTIP        "<b>Copy</b> the attributes from the selected object"
+    IDS_CFG_LIST_TOOLTIP    "Select config file to use"
+    IDS_BROWSE_TOOLTIP      "Edit config file list"
+    IDS_PURGE_UNUSED_TOOLTIP "Purge unused keys and values from selection"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_APPLY_DEFAULT_VALUES_TOOLTIP "Apply default values to selection"
+    IDS_FIND                "Show Find Dialog"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MotionAttributes.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+#include "../../../libraries/KeyVal/KeyVal.rc"
+#include "../../../libraries/UIDisplay/UIDisplay.rc"
+#include "../../../libraries/AttrControls/AttrControls.rc"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

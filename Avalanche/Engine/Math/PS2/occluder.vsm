@@ -1,0 +1,89 @@
+; === (null)
+; =================================================
+; flowMon::Emit() vcl 1.4beta7 produced this code:
+		.align 4
+		.global	VU0_Occluder_Test_CodeStart
+		.global	VU0_Occluder_Test_CodeEnd
+VU0_Occluder_Test_CodeStart:
+__v_occluder_gasp_4:
+; _LNOPT_w=[ dumb ] 4 [4 0] 4   [__v_occluder_gasp_4]
+         NOP                                                        iaddiu        VI03,VI00,0x0000001c                
+         NOP                                                        iaddiu        VI02,VI00,0                         
+         NOP                                                        iaddiu        VI04,VI00,0x00000080                
+         maxw          VF17,VF00,VF00w                              iaddiu        VI05,VI00,0x00000040                
+OccluderLoop:
+; _LNOPT_w=[ dumb ] 66 [59 59] 94   [OccluderLoop]
+         NOP                                                        lqi           VF19,(VI03++)                       
+         NOP                                                        lqi           VF18,(VI03++)                       
+         mulax         ACC,VF19,VF16x                               iaddiu        VI12,VI00,0x000000f0                       ;	STALL_LATENCY ?2
+         madday        ACC,VF18,VF16y                               lqi           VF18,(VI03++)                       
+         maddaz        ACC,VF18,VF16z                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?3
+         NOP                                                        lqi           VF19,(VI03++)                       
+         maddaw        ACC,VF18,VF00w                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?2
+         msubw         VF20,VF17,VF16w                              iaddiu        VI10,VI00,0x00000010                
+         mulax         ACC,VF19,VF16x                               NOP                                               
+         madday        ACC,VF18,VF16y                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?1
+         abs           VF00,VF20                                    fsand         VI06,0x00000002                     
+         maddaz        ACC,VF18,VF16z                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?2
+         NOP                                                        lqi           VF19,(VI03++)                       
+         maddaw        ACC,VF18,VF00w                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?2
+         msubw         VF21,VF17,VF16w                              NOP                                               
+         mulax         ACC,VF19,VF16x                               NOP                                               
+         madday        ACC,VF18,VF16y                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?1
+         abs           VF00,VF21                                    fsand         VI07,0x00000002                     
+         NOP                                                        isubiu        VI07,VI07,0x00000002                
+         maddaz        ACC,VF18,VF16z                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?1
+         NOP                                                        lqi           VF19,(VI03++)                       
+         maddaw        ACC,VF18,VF00w                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?2
+         msubw         VF22,VF17,VF16w                              NOP                                               
+         mulax         ACC,VF19,VF16x                               NOP                                               
+         madday        ACC,VF18,VF16y                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?1
+         abs           VF00,VF22                                    fsand         VI08,0x00000002                     
+         NOP                                                        isubiu        VI08,VI08,0x00000002                
+         maddaz        ACC,VF18,VF16z                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?1
+         NOP                                                        lqi           VF19,(VI03++)                       
+         maddaw        ACC,VF18,VF00w                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?2
+         msubw         VF23,VF17,VF16w                              NOP                                               
+         mulax         ACC,VF19,VF16x                               NOP                                               
+         madday        ACC,VF18,VF16y                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?1
+         abs           VF00,VF23                                    fsand         VI09,0x00000002                     
+         NOP                                                        isubiu        VI09,VI09,0x00000002                
+         maddaz        ACC,VF18,VF16z                               lqi           VF18,(VI03++)                              ;	STALL_LATENCY ?1
+         maddaw        ACC,VF18,VF00w                               iaddiu        VI11,VI00,0x00000020                       ;	STALL_LATENCY ?3
+         msubw         VF24,VF17,VF16w                              isubiu        VI06,VI06,0x00000002                
+         abs           VF00,VF24                                    fmand         VI14,VI12                                  ;	STALL_LATENCY ?3
+         NOP                                                        iand          VI13,VI14,VI04                      
+         NOP                                                        iand          VI12,VI14,VI05                      
+         NOP                                                        iand          VI11,VI14,VI11                      
+         NOP                                                        iand          VI10,VI14,VI10                      
+         NOP                                                        isubiu        VI13,VI13,0x00000080                
+         NOP                                                        iand          VI06,VI06,VI13                      
+         NOP                                                        isubiu        VI12,VI12,0x00000040                
+         NOP                                                        iaddiu        VI13,VI00,0x00000001                
+         NOP                                                        isub          VI13,VI13,VI01                      
+         NOP                                                        iand          VI07,VI07,VI12                      
+         NOP                                                        iand          VI07,VI07,VI13                      
+         NOP                                                        isubiu        VI11,VI11,0x00000020                
+         NOP                                                        iaddiu        VI12,VI00,0x00000002                
+         NOP                                                        isub          VI12,VI12,VI01                      
+         NOP                                                        iand          VI08,VI08,VI11                      
+         NOP                                                        iand          VI08,VI08,VI12                      
+         NOP                                                        isubiu        VI10,VI10,0x00000010                
+         NOP                                                        iaddiu        VI11,VI00,0x00000003                
+         NOP                                                        isub          VI11,VI11,VI01                      
+         NOP                                                        iand          VI09,VI09,VI10                      
+         NOP                                                        iand          VI09,VI09,VI11                      
+         NOP                                                        ior           VI06,VI06,VI07                      
+         NOP                                                        ior           VI06,VI06,VI08                      
+         NOP                                                        isubiu        VI01,VI01,0x00000004                
+         NOP                                                        ior           VI06,VI06,VI09                      
+         NOP                                                        ibgtz         VI01,OccluderLoop                   
+         NOP                                                        ior           VI02,VI02,VI06                      
+         NOP[E]                                                     NOP                                               
+         NOP                                                        NOP                                               
+		.align 4
+VU0_Occluder_Test_CodeEnd:
+;	iCount=72
+; register stats:
+;  15 VU User integer
+;  10 VU User floating point

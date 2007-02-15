@@ -1,0 +1,105 @@
+########################################################
+# PS2 Makefile generated for GNU Make by ProDG VSI.NET #
+########################################################
+
+.SILENT:
+.SUFFIXES:
+.SUFFIXES: .c .cpp .cxx .cc .s .asm .dsm
+
+OUTDIR = SNPS2CDRom
+INTDIR = SNPS2CDRom
+
+LCFILE = "c:/dev/Avalanche/GameLib/PatcherDLL/rel.cmd"
+LIBS=\
+	 "dnas_mc.a"\
+
+AS=ps2cc
+AS_FLAGS=\
+	-DSN_TARGET_PS2_DLL\
+	-DPS2\
+	-DSN\
+	-DNDEBUG\
+	-DCDROM\
+	-I"C:/Dev/Avalanche/Engine"\
+	-I"C:/Dev/Avalanche/GameLib"\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scea/ee/include"\
+	-I"C:/dev/PS2/SN/ProDG for PlayStation2/ee-include"\
+	-I. -c\
+	-fdevstudio\
+	-Wa,-sn\
+
+DVP=ps2cc
+DVP_FLAGS=\
+	-DSN_TARGET_PS2_DLL\
+	-DPS2\
+	-DSN\
+	-DNDEBUG\
+	-DCDROM\
+	-I"C:/Dev/Avalanche/Engine"\
+	-I"C:/Dev/Avalanche/GameLib"\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scea/ee/include"\
+	-I"C:/dev/PS2/SN/ProDG for PlayStation2/ee-include"\
+	-I. -fdevstudio -c\
+
+CC=ps2cc
+CC_FLAGS=\
+	-DSN_TARGET_PS2_DLL\
+	-DPS2\
+	-DSN\
+	-DNDEBUG\
+	-DCDROM\
+	-I"C:/Dev/Avalanche/Engine"\
+	-I"C:/Dev/Avalanche/GameLib"\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scea/ee/include"\
+	-I"C:/dev/PS2/SN/ProDG for PlayStation2/ee-include"\
+	-I. -c\
+	-fdevstudio\
+	-MMD\
+	-O2\
+	-Wno-inline-static-semantics\
+	-Wa,-sn\
+	-fno-rtti\
+	-fno-exceptions\
+	-mno-check-zero-division\
+	-ffast-math\
+	-mvu0-use-vf0-vf15\
+	-G0\
+
+CXX_FLAGS=$(CC_FLAGS)
+
+LD=ps2dlllk
+LD_FLAGS=\
+	"c:\dev\Avalanche\GameLib\PatcherDLL\rel.lk" ps2cc.exe @_ps2cc.txt
+
+LD_OBJS=\
+	"SNPS2CDRom/Patcher.obj"\
+	"SNPS2CDRom/PatchHelper.obj"\
+	"SNPS2CDRom/PS2HTTPManager.obj"\
+
+COMPILE: $(LD_OBJS)
+
+"SNPS2CDRom/Patcher.obj":
+	@echo ProDG Compiling "c:/dev/Avalanche/GameLib/PatcherDLL/Patcher.cpp"
+	$(CC) $(CC_FLAGS) "c:/dev/Avalanche/GameLib/PatcherDLL/Patcher.cpp" -o $@
+
+"SNPS2CDRom/PatchHelper.obj":
+	@echo ProDG Compiling "c:/dev/Avalanche/GameLib/PatchCommon/PatchHelper.cpp"
+	$(CC) $(CC_FLAGS) "c:/dev/Avalanche/GameLib/PatchCommon/PatchHelper.cpp" -o $@
+
+"SNPS2CDRom/PS2HTTPManager.obj":
+	@echo ProDG Compiling "c:/dev/Avalanche/GameLib/PatcherDLL/PS2HTTPManager.cpp"
+	$(CC) $(CC_FLAGS) "c:/dev/Avalanche/GameLib/PatcherDLL/PS2HTTPManager.cpp" -o $@
+
+LINK: "SNPS2CDRom/PatchLib.elf"
+
+"SNPS2CDRom/PatchLib.elf" : $(LD_OBJS)
+	@echo ProDG Linking $@
+	$(LD) $(LD_FLAGS) $(LD_OBJS) -o $@
+
+

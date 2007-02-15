@@ -1,0 +1,9 @@
+-L"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scea/ee/lib"
+
+-T "c:\dev\Avalanche\GameLib\Patcher\PatchLib\rel.cmd" -nostartfiles
+--start-group
+"dnas_mc.a"
+--end-group
+
+-Wl,-G0,-Map,SNPS2Consumer/PatchLib.map,-sn-full-map
+

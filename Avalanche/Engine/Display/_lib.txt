@@ -1,0 +1,17 @@
+create "SNPS2Consumer\Display.lib"
+addmod "SNPS2Consumer/newparticle.obj"
+addmod "SNPS2Consumer/Particulate.obj"
+addmod "SNPS2Consumer/Sprites.obj"
+addmod "SNPS2Consumer/VUStripBuffer1x2CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer1x3CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer2x2CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer3x2CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer4x2CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer5x2CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer6x2CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer7x2CD.obj"
+addmod "SNPS2Consumer/VUStripBuffer8x2CD.obj"
+addmod "SNPS2Consumer/DisplayPCH_SN.obj"
+addmod "SNPS2Consumer/TextureUtil.obj"
+save
+end

@@ -1,0 +1,187 @@
+# Microsoft Developer Studio Generated Dependency File, included by IE.mak
+
+.\Entry.cpp : \
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\exports.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\filecons.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\hashhand.h"\
+	"..\..\..\include\hashtime.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\macros.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\quaterni.h"\
+	"..\..\..\include\rotate.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\IE.h"\
+	
+
+.\Export.cpp : \
+	"..\..\..\include\allocate.h"\
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\datatype.h"\
+	"..\..\..\include\exports.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\filecons.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\hashfile.h"\
+	"..\..\..\include\hashhand.h"\
+	"..\..\..\include\hashtime.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\macros.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\quaterni.h"\
+	"..\..\..\include\rotate.h"\
+	"..\..\..\include\singlelo.h"\
+	"..\..\..\include\strclass.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\ExportActionsDialog.h"\
+	".\ExportModelDialog.h"\
+	".\ExportModelsDialog.h"\
+	".\IE.h"\
+	
+
+.\ExportActionsDialog.cpp : \
+	"..\..\..\include\allocate.h"\
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\datatype.h"\
+	"..\..\..\include\exports.h"\
+	"..\..\..\include\f_protos.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\filecons.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\hashhand.h"\
+	"..\..\..\include\hashtime.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\macros.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\quaterni.h"\
+	"..\..\..\include\rotate.h"\
+	"..\..\..\include\singlelo.h"\
+	"..\..\..\include\strclass.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\ExportActionsDialog.h"\
+	".\IE.h"\
+	
+
+.\ExportModelDialog.cpp : \
+	"..\..\..\include\allocate.h"\
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\datatype.h"\
+	"..\..\..\include\exports.h"\
+	"..\..\..\include\f_protos.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\filecons.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\hashhand.h"\
+	"..\..\..\include\hashtime.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\macros.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\quaterni.h"\
+	"..\..\..\include\rotate.h"\
+	"..\..\..\include\singlelo.h"\
+	"..\..\..\include\strclass.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\ExportModelDialog.h"\
+	".\IE.h"\
+	
+
+.\ExportModelsDialog.cpp : \
+	"..\..\..\include\allocate.h"\
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\datatype.h"\
+	"..\..\..\include\exports.h"\
+	"..\..\..\include\f_protos.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\filecons.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\hashhand.h"\
+	"..\..\..\include\hashtime.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\macros.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\quaterni.h"\
+	"..\..\..\include\rotate.h"\
+	"..\..\..\include\singlelo.h"\
+	"..\..\..\include\strclass.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\ExportModelsDialog.h"\
+	".\IE.h"\
+	
+
+.\IE.cpp : \
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\localize.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\IE.h"\
+	
+
+.\IE.rc : \
+	".\res\IE.rc2"\
+	
+
+.\Import.cpp : \
+	"..\..\..\include\allocate.h"\
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\datatype.h"\
+	"..\..\..\include\exports.h"\
+	"..\..\..\include\f_protos.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\filecons.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\hashfile.h"\
+	"..\..\..\include\hashhand.h"\
+	"..\..\..\include\hashtime.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\macros.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\quaterni.h"\
+	"..\..\..\include\rotate.h"\
+	"..\..\..\include\singlelo.h"\
+	"..\..\..\include\strclass.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\IE.h"\
+	".\ImportModelDialog.h"\
+	
+
+.\ImportModelDialog.cpp : \
+	"..\..\..\include\allocate.h"\
+	"..\..\..\include\attr.h"\
+	"..\..\..\include\datatype.h"\
+	"..\..\..\include\exports.h"\
+	"..\..\..\include\f_protos.h"\
+	"..\..\..\include\fastftol.h"\
+	"..\..\..\include\filecons.h"\
+	"..\..\..\include\hasharra.h"\
+	"..\..\..\include\hashhand.h"\
+	"..\..\..\include\hashtime.h"\
+	"..\..\..\include\iemodel.h"\
+	"..\..\..\include\macros.h"\
+	"..\..\..\include\maplimit.h"\
+	"..\..\..\include\quaterni.h"\
+	"..\..\..\include\rotate.h"\
+	"..\..\..\include\singlelo.h"\
+	"..\..\..\include\strclass.h"\
+	"..\..\..\include\vector.h"\
+	"..\..\..\include\vector2.h"\
+	".\IE.h"\
+	".\ImportModelDialog.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

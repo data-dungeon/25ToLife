@@ -1,0 +1,7 @@
+LIBRARY FilterChain
+EXPORTS
+	LibDescription			@1
+	LibProcess				@2
+	LibVersion				@3
+SECTIONS
+	.data READ WRITE

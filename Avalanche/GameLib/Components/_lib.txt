@@ -1,0 +1,13 @@
+create "SNPS2Consumer/Components.lib"
+addmod "SNPS2Consumer/weapdep.obj"
+addmod "SNPS2Consumer/weapstats.obj"
+addmod "SNPS2Consumer/ActorList.obj"
+addmod "SNPS2Consumer/ComponentsPCH_SN.obj"
+addmod "SNPS2Consumer/GroundHeight.obj"
+addmod "SNPS2Consumer/InstantMover.obj"
+addmod "SNPS2Consumer/InventoryList.obj"
+addmod "SNPS2Consumer/PathFollowerCam.obj"
+addmod "SNPS2Consumer/Rider.obj"
+addmod "SNPS2Consumer/Slave.obj"
+save
+end

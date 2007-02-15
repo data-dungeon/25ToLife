@@ -1,0 +1,1093 @@
+.vu
+
+include( `VUDefines.vm4')
+
+
+define( 'szeDblBuffer', eval( (szeVUMemAvailable) / 2))
+
+define( 'irOutPtr', 'VI11')
+define( 'irKickPtr', 'VI12')
+
+	.global	dbStaticCompress2AllClipPLight_CodeBegin
+	.global	dbStaticCompress2AllClipPLight_CodeEnd
+
+.dmadata dbStaticCompress2AllClipPLight_CodeBegin
+	NOP		XTOP	VI01	; get ptr to VUBuffer_1
+	NOP		LOI	16.0
+	
+	NOP		LQ	VF09, 0(VI01)	; Load CommonToClipMtx row 1
+	NOP		LQ	VF10, 1(VI01)	; Load CommonToClipMtx row 2
+	NOP		LQ	VF11, 2(VI01)	; Load CommonToClipMtx row 3
+	NOP		LQ	VF12, 3(VI01)	; Load CommonToClipMtx row 4
+	NOP		LQ	VF13, 4(VI01)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF14, 5(VI01)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF15, 6(VI01)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF16, 7(VI01)	; Load ObjToCommonMtx row1
+	
+	NOP		LQ	VF20,12(VI01)	; Load ClipToScreen Values1
+	NOP		LQ	VF21,13(VI01)	; Load ClipToScreen Values2
+	NOP		LQ	VF01,14(VI01)	; point light 1
+	NOP		LQ	VF02,15(VI01)	; point light 2
+	NOP		LQ	VF03,16(VI01)	; point light color 1
+	NOP		LQ	VF04,17(VI01)	; point light color 2
+	NOP		lq	vf05,18(VI01)	; point light scale
+	NOP		SQ	VF01, 28(VI00)	
+	NOP		SQ	VF02, 29(VI00)
+	NOP		SQ	VF03, 30(VI00)
+	NOP		SQ	VF04, 31(VI00)
+	NOP		sq	vf05, 15(vi00)
+	NOP		SQ	VF13, 24(vi00)
+	NOP		sq	vf14, 25(vi00)
+	NOP		sq	vf15, 26(vi00)
+	NOP		sq	vf16, 27(vi00)
+	
+	NOP		LQ	VF27, 8(VI01)	; Load FogData { FogNear, FogFar, FogScale, FogConst }
+	NOP		LQ	VF28, 9(VI01)	; Load TextureMtx1 { w = alphaMul }
+	NOP		LQ	VF29,10(VI01)	; Load TextureMtx2
+	MULi.zw	VF21, VF21, I	LQ	VF30,11(VI01)	; Load TextureMtx3
+	NOP[E]	LQ	VF31,19(VI01)	; Load GIFTag
+	NOP		IADDIU	irKickPtr, VI01, 0
+	
+; load the NOP giftag into addr 0
+	NOP		IADDIU	VI01, VI00, 0x7fff
+	NOP		IADDIU	VI01, VI01, 0x0001
+	NOP		ISW.x  	VI01, 0(VI00)x
+	
+dbSC_GetRelAddr:
+
+	NOP		BAL	VI15, dbSC_ConcatMatrices
+	NOP		NOP
+
+dbSC_ConcatMatrices:
+; Concatinate ObjToCommon * CommonToClip and build up ClipToScreen
+	MULAx.xyzw	ACC, VF09, VF13x	XTOP	VI01
+	MADDAy.xyzw	ACC, VF10, VF13y	ISUBIU	VI15, VI15, dbSC_ConcatMatrices
+	MADDAz.xyzw	ACC, VF11, VF13z	NOP
+	MADDw.xyzw	VF01, VF12, VF13w	LOI	2048.0
+	
+	MULAx.xyzw	ACC, VF09, VF14x	MR32.w	VF05, VF00
+	MADDAy.xyzw	ACC, VF10, VF14y	MOVE.x	VF05, VF21
+	MADDAz.xyzw	ACC, VF11, VF14z	MOVE.yz	VF05, VF00
+	MADDw.xyzw	VF02, VF12, VF14w	MOVE.y	VF06, VF21
+	
+	MULAx.xyzw	ACC, VF09, VF15x	MOVE.xz	VF06, VF00
+	MADDAy.xyzw	ACC, VF10, VF15y	MR32.w	VF06, VF00
+	MADDAz.xyzw	ACC, VF11, VF15z	MOVE.z	VF07, VF21
+	MADDw.xyzw	VF03, VF12, VF15w	MOVE.xy	VF07, VF00
+	
+	MULAx.xyzw	ACC, VF09, VF16x	MR32.w	VF07, VF00
+	MADDAy.xyzw	ACC, VF10, VF16y	MR32.z	VF08, VF21
+	MADDAz.xyzw	ACC, VF11, VF16z	MOVE.w	VF08, VF00
+	MADDw.xyzw	VF04, VF12, VF16w	MOVE.xy	VF08, VF20
+
+	ADDx.z	VF28, VF00, VF27	NOP
+	ADDw.x	VF27, VF00, VF28	IADDIU	VI01, irKickPtr, 0
+	MULy.w	VF28, VF00, VF27	MTIR	VI13, VF20z	; grab ptrClipSetup( )
+	MULz.w	VF29, VF00, VF27	IADDIU	VI05, VI15, dbSC_OutputClippedFan
+	
+	MULw.w	VF30, VF27, VF00	JALR	VI15, VI13
+	NOP		IADDIU	VI02, VI00, szeDblBuffer	; <ds>
+	
+	NOP		MTIR	VI01, VF20w	; grab ptrClipBuffer( )
+	
+	NOP		ISW.z	VI13, -1(VI14)z
+	NOP		ISW.w	VI01, -1(VI14)w
+	
+	NOP		XGKICK	VI00
+	NOP[E]	NOP
+	NOP		NOP
+
+define( 'irBaseVtxPtr', 'VI02')
+
+define( 'irCopyCount', 'VI07')
+define( 'irVtxCount', 'VI08')
+define( 'irLoopCount', 'VI09')
+
+dbSC_Start:
+	NOP		XTOP	irBaseVtxPtr	; get ptr to VUBuffer
+
+	NOP		ilw.y	vi01, 1(irBaseVtxPtr)y	; grab offset to normals
+	NOP		ILW.z	irCopyCount, 0(irBaseVtxPtr)z	; grab copyCount
+	NOP		ILW.x	irVtxCount, 0(irBaseVtxPtr)x	; grab vertexCount
+	NOP		ILW.y	irLoopCount, 0(irBaseVtxPtr)y	; grab loopCount
+	
+	NOP		iadd	vi01, vi01, irBaseVtxPtr
+	NOP		isw.x	vi01, 16(vi00)	; normals ptr
+	NOP		isw.y	vi00, 16(vi00)	; lighting var
+	NOP		isw.z	vi00, 16(vi00)	; flag
+
+	NOP		IADDIU	irBaseVtxPtr, irBaseVtxPtr, 2	; skip BufferHdr
+	NOP		IBEQ	irCopyCount, VI00, dbSC_NoGIFData	; skip GIFPacket copy if count == 0
+	NOP		IADDIU	VI15, VI00, 0x7fff
+
+dbSC_GIFDataSetup:
+	NOP		ILW.x	VI01, 0(irBaseVtxPtr)x
+	NOP		IADD	irBaseVtxPtr, irBaseVtxPtr, irCopyCount	; calculate CopyEnd ptr
+	NOP		ISUB	irCopyCount, irBaseVtxPtr, irCopyCount
+	NOP		IADDIU	VI15, VI15, 0x0001
+	NOP		IOR	VI01, VI01, VI15
+	NOP		ISW.x	VI01,  0(irCopyCount)x
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		XGKICK	irCopyCount
+
+dbSC_NoGIFData:
+define( 'irTemp1', 'VI01')
+
+define( 'irVtxPtr', 'irBaseVtxPtr')
+define( 'irZADCPtr', 'VI03')
+define( 'irEndLoopPtr', 'VI04')
+define( 'irEndAllPtr', 'VI05')
+define( 'irADCBits', 'VI06')
+define( 'irClipFlag2', 'VI07')
+define( 'irClipFlag1', 'VI08')
+define( 'irClipFlag3', 'VI09')
+define( 'irADCMask1', 'VI10')
+define( 'irADCMask2', 'VI11')
+define( 'irADCMask3', 'VI12')
+define( 'irADCMask4', 'VI13')
+define( 'irVtxClipMask', 'VI15')
+define( 'irLightTemp1', 'irADCMask1')
+define( 'irLightTemp2', 'irADCMask2')
+define( 'irLightTemp3', 'irADCMask3')
+define( 'irLightTemp4', 'irADCMask4')
+define( 'X_COMPONENT', '0')
+define( 'Y_COMPONENT', '1')
+define( 'Z_COMPONENT', '2')
+define( 'W_COMPONENT', '3')
+
+dbSC_Prolog:
+	NOP		IADD	irZADCPtr, irVtxPtr, irVtxCount	; set stream ptrs
+	NOP		ISUBIU	irTemp1, irLoopCount, 1	; set InnerLoop count
+	NOP		IADD	irTemp1, irTemp1, irTemp1	; irTemp2 = LoopCnt * 2
+	NOP		IADD	irTemp1, irTemp1, irTemp1	; irTemp2 = LoopCnt * 4
+	NOP		IADD	irEndLoopPtr, irVtxPtr, irTemp1	; set EndLoop ptr
+	NOP		IADDIU	irEndLoopPtr, irEndLoopPtr, 2	; add 2 for pre-loads
+	NOP		IADD	irEndAllPtr, irVtxPtr, irVtxCount	; set EndAll ptr
+	NOP		IADDIU	irEndAllPtr, irEndAllPtr, 2	; add 2 for pre-loads
+	NOP		LQI	VF09, (irVtxPtr++)	; grab first vtx
+	NOP		LQI	VF13, (irZADCPtr++)	; grab first ZADC Data
+
+	NOP		iaddiu	vi01, vi00, 0
+	NOP		iaddiu	irLightTemp1, vi00, X_COMPONENT	;specify which field of vf13 to use
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf09	;vf21 will always hold the vertex to light
+
+
+	NOP		IADDIU	irADCMask1, VI00, 0x0001	; set ADCMask1
+	MULAw.xyzw	ACC, VF04, VF00w 	IADDIU	irADCMask2, VI00, 0x0002	; set ADCMask2
+	MADDAz.xyzw	ACC, VF01, VF09z	IADDIU	irADCMask3, VI00, 0x0004	; set ADCMask3
+	MADDAw.xyzw	ACC, VF02, VF09w	LQI	VF10, (irVtxPtr++)	; grab second Vtx
+	MADDx.xyzw	VF14, VF03, VF13x	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask4
+
+
+	NOP		iaddiu	irLightTemp1, vi00, Y_COMPONENT	;specify which field of vf13 to use
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf10	;vf21 will always hold the vertex to light
+	NOP		iaddiu	irLightTemp1, vi00, 0x001
+	NOP		iaddiu	irLightTemp2, vi00, 0x002
+
+	NOP		ISUB	VI01, irEndAllPtr, irEndLoopPtr
+	NOP		MTIR	irADCBits, VF13x
+	NOP		IBLTZ	VI01, dbSC_Epilog
+	MULAw.xyzw	ACC, VF04, VF00w	IADDIU	irVtxClipMask, VI00, 0x003f
+
+dbSC_Loop:
+	MADDAz.xyzw	ACC, VF01, VF10z	LQI	VF11, (irVtxPtr++)
+	CLIPw.xyz	VF14, VF14w	IAND	VI01, irADCBits, irADCMask1
+	MADDAw.xyzw	ACC, VF02, VF10w	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+	MADDy.xyzw	VF15, VF03, VF13y	iaddiu	irLightTemp1, vi00, Z_COMPONENT
+	NOP		FCGet	irClipFlag2
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf11	;vf21 will always hold the vertex to light
+	NOP		iaddiu	irLightTemp1, vi00, 0x001
+	NOP		iaddiu	irLightTemp2, vi00, 0x002
+;	NOP		IBNE	VI01, VI00, dbCheckVtx2
+	NOP		IBNE	VI01, VI00, Vtx2PopRGBStack
+	NOP		NOP
+
+dbProcessTri341:
+	ADDx.xyzw	VF19, VF12, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF09, VF00x	IBNE	VI01, VI00, dbTri341NotAllIn
+	ADDx.xyzw	VF24, VF16, VF00x	FCGET	irClipFlag3
+	
+dbTri341AllIn:
+	ADDx.xyzw	VF25, VF17, VF00x	B	dbBucketTri341
+	ADDx.xyzw	VF26, VF14, VF00x	IADDIU	VI15, VI00, dbCheckVtx2	
+	
+dbTri341NotAllIn:
+	ADDx.xyzw	VF25, VF17, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF14, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri341
+	NOP		IADDIU	VI15, VI00, dbReturnClip341
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbReturnClip341:
+	CLIPw.xyz	VF17, VF17w	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask4
+;	NOP		b	dbCheckVtx2
+	CLIPw.xyz	VF14, VF14w	IADDIU	irVtxClipMask, VI00, 0x003f	; set ADCMask4
+	
+Vtx2PopRGBStack:
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iblez	vi01, dbCheckVtx2
+	NOP		ilw.y	vi01, 16(vi00)y
+	NOP		iblez	vi01, dbCheckVtx2
+	NOP		lq	vf21, 18(vi00)
+	NOP		lq	vf22, 19(vi00)
+	NOP		lq	vf23, 20(vi00)
+	NOP		iaddi	vi01, vi01, -1
+	NOP		sq	vf21, 17(vi00)
+	NOP		sq	vf22, 18(vi00)
+	NOP		sq	vf23, 19(vi00)
+	NOP		lq	vf21, 21(vi00)
+	NOP		lq	vf22, 22(vi00)
+	NOP		lq	vf23, 23(vi00)
+	NOP		isw.y	vi01, 16(vi00)y
+	NOP		sq	vf21, 20(vi00)
+	NOP		sq	vf22, 21(vi00)
+	NOP		sq	vf23, 22(vi00)
+
+dbCheckVtx2:
+	MULAw.xyzw	ACC, VF04, VF00w	MOVE	VF18, VF12
+	MADDAz.xyzw	ACC, VF01, VF11z	LQI	VF12, (irVtxPtr++)
+	CLIPw.xyz	VF15, VF15w	IAND	VI01, irADCBits, irADCMask2
+	MADDAw.xyzw	ACC, VF02, VF11w	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+	MADDz.xyzw	VF16, VF03, VF13z	fcget	irClipFlag2
+
+	NOP		iaddiu	irLightTemp1, vi00, W_COMPONENT	;specify which field of vf13 to use
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf12	;vf21 will always hold the vertex to light
+	NOP		iaddiu	irLightTemp1, vi00, 0x001
+	NOP		iaddiu	irLightTemp2, vi00, 0x002
+;	NOP		IBNE	VI01, VI00, dbCheckVtx3
+	NOP		IBNE	VI01, VI00, Vtx3PopRGBStack
+	NOP		NOP
+
+dbProcessTri412:
+	ADDx.xyzw	VF19, VF09, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF10, VF00x	IBNE	VI01, VI00, dbTri412NotAllIn
+	ADDx.xyzw	VF24, VF17, VF00x	FCGET	irClipFlag3
+	
+dbTri412AllIn:
+	ADDx.xyzw	VF25, VF14, VF00x	B	dbBucketTri412
+	ADDx.xyzw	VF26, VF15, VF00x  	IADDIU	VI15, VI00, dbCheckVtx3
+	
+dbTri412NotAllIn:
+	ADDx.xyzw	VF25, VF14, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF15, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri412
+	NOP		IADDIU	VI15, VI00, dbReturnClip412
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbReturnClip412:
+	CLIPw.xyz	VF14, VF14w	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask3
+;	NOP		b	dbCheckVtx3
+	CLIPw.xyz	VF15, VF15w	IADDIU	irVtxClipMask, VI00, 0x003f	; set ADCMask4
+
+
+Vtx3PopRGBStack:
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iblez	vi01, dbCheckVtx3
+	NOP		ilw.y	vi01, 16(vi00)y
+	NOP		iblez	vi01, dbCheckVtx3
+	NOP		lq	vf21, 18(vi00)
+	NOP		lq	vf22, 19(vi00)
+	NOP		lq	vf23, 20(vi00)
+	NOP		iaddi	vi01, vi01, -1
+	NOP		sq	vf21, 17(vi00)
+	NOP		sq	vf22, 18(vi00)
+	NOP		sq	vf23, 19(vi00)
+	NOP		lq	vf21, 21(vi00)
+	NOP		lq	vf22, 22(vi00)
+	NOP		lq	vf23, 23(vi00)
+	NOP		isw.y	vi01, 16(vi00)y
+	NOP		sq	vf21, 20(vi00)
+	NOP		sq	vf22, 21(vi00)
+	NOP		sq	vf23, 22(vi00)
+
+
+dbCheckVtx3:
+	MULAw.xyzw	ACC, VF04, VF00w	MOVE	VF18, VF09
+	MADDAz.xyzw	ACC, VF01, VF12z	LQI	VF09, (irVtxPtr++)
+	CLIPw.xyz	VF16, VF16w	IAND	VI01, irADCBits, irADCMask3
+	MADDAw.xyzw	ACC, VF02, VF12w	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+;	MADDw.xyzw	VF17, VF03, VF13w	IBNE	VI01, VI00, dbCheckVtx4
+	MADDw.xyzw	VF17, VF03, VF13w	IBNE	VI01, VI00, Vtx4PopRGBStack
+	NOP		FCGET	irClipFlag2
+
+dbProcessTri123:
+	ADDx.xyzw	VF19, VF10, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF11, VF00x	IBNE	VI01, VI00, dbTri123NotAllIn
+	ADDx.xyzw	VF24, VF14, VF00x	FCGET	irClipFlag3
+	
+dbTri123AllIn:
+	ADDx.xyzw	VF25, VF15, VF00x	B	dbBucketTri123
+	ADDx.xyzw	VF26, VF16, VF00x	IADDIU	VI15, VI00, dbCheckVtx4
+	
+dbTri123NotAllIn:
+	ADDx.xyzw	VF25, VF15, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF16, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri123
+	NOP		IADDIU	VI15, VI00, dbReturnClip123
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbReturnClip123:
+	CLIPw.xyz	VF15, VF15w	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask3
+;	NOP		b	dbCheckVtx4
+	CLIPw.xyz	VF16, VF16w	IADDIU	irVtxClipMask, VI00, 0x003f	; set ADCMask4
+
+Vtx4PopRGBStack:
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iblez	vi01, dbCheckVtx4
+	NOP		ilw.y	vi01, 16(vi00)y
+	NOP		iblez	vi01, dbCheckVtx4
+	NOP		lq	vf21, 18(vi00)
+	NOP		lq	vf22, 19(vi00)
+	NOP		lq	vf23, 20(vi00)
+	NOP		iaddi	vi01, vi01, -1
+	NOP		sq	vf21, 17(vi00)
+	NOP		sq	vf22, 18(vi00)
+	NOP		sq	vf23, 19(vi00)
+	NOP		lq	vf21, 21(vi00)
+	NOP		lq	vf22, 22(vi00)
+	NOP		lq	vf23, 23(vi00)
+	NOP		isw.y	vi01, 16(vi00)y
+	NOP		sq	vf21, 20(vi00)
+	NOP		sq	vf22, 21(vi00)
+	NOP		sq	vf23, 22(vi00)
+
+dbCheckVtx4:
+	NOP		MOVE	VF18, VF10
+	NOP		LQI	VF13, (irZADCPtr++)
+	MULAw.xyzw	ACC, VF04, VF00w	LQI	VF10, (irVtxPtr++)
+	CLIPw.xyz	VF17, VF17w	IAND	VI01, irADCBits, irADCMask4
+	MADDAz.xyzw	ACC, VF01, VF09z	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+	MADDAw.xyzw	ACC, VF02, VF09w	NOP
+	MADDx.xyzw	VF14, VF03, VF13x	fcget	irClipFlag2
+
+	NOP		iaddiu	irLightTemp1, vi00, X_COMPONENT	;specify which field of vf13 to use
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf09	;vf21 will always hold the vertex to light
+
+	NOP		iaddiu	irLightTemp1, vi00, Y_COMPONENT	;specify which field of vf13 to use
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf10	;vf21 will always hold the vertex to light
+	NOP		iaddiu	irLightTemp1, vi00, 0x001
+	NOP		iaddiu	irLightTemp2, vi00, 0x002
+
+;	NOP		ibne	vi01, vi00, dbSC_CheckFinish
+	NOP		ibne	vi01, vi00, VtxFinishPopRGBStack
+	NOP		NOP
+
+
+dbProcessTri234:
+	ADDx.xyzw	VF19, VF11, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF12, VF00x	IBNE	Vi01, VI00, dbTri234NotAllIn
+	ADDx.xyzw	VF24, VF15, VF00x	FCGET	irClipFlag3
+	
+dbTri234AllIn:
+	ADDx.xyzw	VF25, VF16, VF00x	B	dbBucketTri234
+	ADDx.xyzw	VF26, VF17, VF00x	IADDIU	VI15, VI00, dbSC_CheckFinish
+	
+dbTri234NotAllIn:
+	ADDx.xyzw	VF25, VF16, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF17, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri234
+	NOP		IADDIU	VI15, VI00, dbReturnClip234
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbReturnClip234:
+	CLIPw.xyz	VF16, VF16w	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask3
+;	NOP		b	dbSC_CheckFinish
+	CLIPw.xyz	VF17, VF17w	IADDIU	irVtxClipMask, VI00, 0x003f	; set ADCMask4
+
+VtxFinishPopRGBStack:
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iblez	vi01, dbSC_CheckFinish
+	NOP		ilw.y	vi01, 16(vi00)y
+	NOP		iblez	vi01, dbSC_CheckFinish
+	NOP		lq	vf21, 18(vi00)
+	NOP		lq	vf22, 19(vi00)
+	NOP		lq	vf23, 20(vi00)
+	NOP		iaddi	vi01, vi01, -1
+	NOP		sq	vf21, 17(vi00)
+	NOP		sq	vf22, 18(vi00)
+	NOP		sq	vf23, 19(vi00)
+	NOP		lq	vf21, 21(vi00)
+	NOP		lq	vf22, 22(vi00)
+	NOP		lq	vf23, 23(vi00)
+	NOP		isw.y	vi01, 16(vi00)y
+	NOP		sq	vf21, 20(vi00)
+	NOP		sq	vf22, 21(vi00)
+	NOP		sq	vf23, 22(vi00)
+	
+dbSC_CheckFinish:
+	NOP		MOVE	VF18, VF11
+	NOP		IBNE	irVtxPtr, irEndLoopPtr, dbSC_Loop
+	MULAw.xyzw	ACC, VF04, VF00w	MTIR	irADCBits, VF13x
+
+
+dbSC_Epilog:
+	NOP		IBEQ	irVtxPtr, irEndAllPtr, dbSC_End
+	MADDAz.xyzw	ACC, VF01, VF10z	IAND	VI01, irADCBits, irADCMask1
+	CLIPw.xyz	VF14, VF14w	LQI	VF11, (irVtxPtr++)
+	MADDAw.xyzw	ACC, VF02, VF10w	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+	MADDy.xyzw	VF15, VF03, VF13y	fcget	irClipFlag2
+
+
+	NOP		iaddiu	irLightTemp1, vi00, Z_COMPONENT	;specify which field of vf13 to use
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf11	;vf21 will always hold the vertex to light
+	NOP		iaddiu	irLightTemp1, vi00, 0x001
+	NOP		iaddiu	irLightTemp2, vi00, 0x002
+
+;	NOP		IBNE	VI01, VI00, dbCheckEndVtx2
+	NOP		IBNE	VI01, VI00, Vtx2EndPopRGBStack
+	NOP		NOP
+
+dbProcessEndTri341:
+	ADDx.xyzw	VF19, VF12, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF09, VF00x	IBNE	VI01, VI00, dbEndTri341NotAllIn
+	ADDx.xyzw	VF24, VF16, VF00x	FCGET	irClipFlag3
+	
+dbEndTri341AllIn:
+	ADDx.xyzw	VF25, VF17, VF00x	B	dbBucketTri341
+	ADDx.xyzw	VF26, VF14, VF00x	IADDIU	VI15, VI00, dbCheckEndVtx2	
+	
+dbEndTri341NotAllIn:
+	ADDx.xyzw	VF25, VF17, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF14, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri341
+	NOP		IADDIU	VI15, VI00, dbReturnClipEnd341
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbReturnClipEnd341:
+	CLIPw.xyz	VF17, VF17w	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask3
+;	NOP		b	dbCheckEndVtx2
+	CLIPw.xyz	VF14, VF14w	IADDIU	irVtxClipMask, VI00, 0x003f	; set ADCMask4
+	
+Vtx2EndPopRGBStack:
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iblez	vi01, dbCheckEndVtx2
+	NOP		ilw.y	vi01, 16(vi00)y
+	NOP		iblez	vi01, dbCheckEndVtx2
+	NOP		lq	vf21, 18(vi00)
+	NOP		lq	vf22, 19(vi00)
+	NOP		lq	vf23, 20(vi00)
+	NOP		iaddi	vi01, vi01, -1
+	NOP		sq	vf21, 17(vi00)
+	NOP		sq	vf22, 18(vi00)
+	NOP		sq	vf23, 19(vi00)
+	NOP		lq	vf21, 21(vi00)
+	NOP		lq	vf22, 22(vi00)
+	NOP		lq	vf23, 23(vi00)
+	NOP		isw.y	vi01, 16(vi00)y
+	NOP		sq	vf21, 20(vi00)
+	NOP		sq	vf22, 21(vi00)
+	NOP		sq	vf23, 22(vi00)
+
+dbCheckEndVtx2:
+	NOP		IBEQ	irVtxPtr, irEndAllPtr, dbSC_End
+	MULAw.xyzw	ACC, VF04, VF00w	MOVE	VF18, VF12
+	MADDAz.xyzw	ACC, VF01, VF11z	LQI	VF12, (irVtxPtr++)
+	CLIPw.xyz	VF15, VF15w	IAND	VI01, irADCBits, irADCMask2
+	MADDAw.xyzw	ACC, VF02, VF11w	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+	MADDz.xyzw	VF16, VF03, VF13z	fcget	irClipFlag2
+
+	NOP		iaddiu	irLightTemp1, vi00, W_COMPONENT	;specify which field of vf13 to use
+	NOP		bal	irLightTemp2, computeLighting
+	NOP		move	vf21, vf12	;vf21 will always hold the vertex to light
+	NOP		iaddiu	irLightTemp1, vi00, 0x001
+	NOP		iaddiu	irLightTemp2, vi00, 0x002
+
+;	NOP		IBNE	VI01, VI00, dbCheckEndVtx3
+	NOP		IBNE	VI01, VI00, Vtx3EndPopRGBStack
+	NOP		NOP
+
+dbProcessEndTri412:
+	ADDx.xyzw	VF19, VF09, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF10, VF00x	IBNE	VI01, VI00, dbEndTri412NotAllIn
+	ADDx.xyzw	VF24, VF17, VF00x	FCGET	irClipFlag3
+	
+dbEndTri412AllIn:
+	ADDx.xyzw	VF25, VF14, VF00x	B	dbBucketTri412
+	ADDx.xyzw	VF26, VF15, VF00x	IADDIU	VI15, VI00, dbCheckEndVtx3
+	
+dbEndTri412NotAllIn:
+	ADDx.xyzw	VF25, VF14, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF15, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri412
+	NOP		IADDIU	VI15, VI00, dbReturnClipEnd412
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbReturnClipEnd412:
+	CLIPw.xyz	VF14, VF14w	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask3
+;	NOP		b	dbCheckEndVtx3
+	CLIPw.xyz	VF15, VF15w	IADDIU	irVtxClipMask, VI00, 0x003f	; set ADCMask4
+
+Vtx3EndPopRGBStack:
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iblez	vi01, dbCheckEndVtx3
+	NOP		ilw.y	vi01, 16(vi00)y
+	NOP		iblez	vi01, dbCheckEndVtx3
+	NOP		lq	vf21, 18(vi00)
+	NOP		lq	vf22, 19(vi00)
+	NOP		lq	vf23, 20(vi00)
+	NOP		iaddi	vi01, vi01, -1
+	NOP		sq	vf21, 17(vi00)
+	NOP		sq	vf22, 18(vi00)
+	NOP		sq	vf23, 19(vi00)
+	NOP		lq	vf21, 21(vi00)
+	NOP		lq	vf22, 22(vi00)
+	NOP		lq	vf23, 23(vi00)
+	NOP		isw.y	vi01, 16(vi00)y
+	NOP		sq	vf21, 20(vi00)
+	NOP		sq	vf22, 21(vi00)
+	NOP		sq	vf23, 22(vi00)
+
+dbCheckEndVtx3:
+	NOP		IBEQ	irVtxPtr, irEndAllPtr, dbSC_End
+	MULAw.xyzw	ACC, VF04, VF00w	MOVE	VF18, VF09
+	MADDAz.xyzw	ACC, VF01, VF12z	IADDIU	irVtxPtr, irVtxPtr, 1
+	CLIPw.xyz	VF16, VF16w	IAND	VI01, irADCBits, irADCMask3
+	MADDAw.xyzw	ACC, VF02, VF12w	IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+;	MADDw.xyzw	VF17, VF03, VF13w	IBNE	VI01, VI00, dbCheckEndVtx4
+	MADDw.xyzw	VF17, VF03, VF13w	IBNE	VI01, VI00, Vtx4EndPopRGBStack
+	NOP		FCGET	irClipFlag2
+
+dbProcessEndTri123:
+	ADDx.xyzw	VF19, VF10, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF11, VF00x	IBNE	VI01, VI00, dbEndTri123NotAllIn
+	ADDx.xyzw	VF24, VF14, VF00x	FCGET	irClipFlag3
+	
+dbEndTri123AllIn:
+	ADDx.xyzw	VF25, VF15, VF00x	B	dbBucketTri123
+	ADDx.xyzw	VF26, VF16, VF00x	IADDIU	VI15, VI00, dbCheckEndVtx4
+	
+dbEndTri123NotAllIn:
+	ADDx.xyzw	VF25, VF15, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF16, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri123
+	NOP		IADDIU	VI15, VI00, dbReturnClipEnd123
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbReturnClipEnd123:
+	CLIPw.xyz	VF15, VF15w	IADDIU	irADCMask4, VI00, 0x0008	; set ADCMask3
+;	NOP		b	dbCheckEndVtx4
+	CLIPw.xyz	VF16, VF16w	IADDIU	irVtxClipMask, VI00, 0x003f	; set ADCMask4
+
+Vtx4EndPopRGBStack:
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iblez	vi01, dbCheckEndVtx4
+	NOP		ilw.y	vi01, 16(vi00)y
+	NOP		iblez	vi01, dbCheckEndVtx4
+	NOP		lq	vf21, 18(vi00)
+	NOP		lq	vf22, 19(vi00)
+	NOP		lq	vf23, 20(vi00)
+	NOP		iaddi	vi01, vi01, -1
+	NOP		sq	vf21, 17(vi00)
+	NOP		sq	vf22, 18(vi00)
+	NOP		sq	vf23, 19(vi00)
+	NOP		lq	vf21, 21(vi00)
+	NOP		lq	vf22, 22(vi00)
+	NOP		lq	vf23, 23(vi00)
+	NOP		isw.y	vi01, 16(vi00)y
+	NOP		sq	vf21, 20(vi00)
+	NOP		sq	vf22, 21(vi00)
+	NOP		sq	vf23, 22(vi00)
+
+dbCheckEndVtx4:
+	NOP		IBEQ	irVtxPtr, irEndAllPtr, dbSC_End
+	NOP		MOVE	VF18, VF10
+	NOP		IADDIU	irVtxPtr, irVtxPtr, 1
+	CLIPw.xyz	VF17, VF17w	IAND	VI01, irADCBits, irADCMask4
+	NOP		IAND	irClipFlag1, irClipFlag2, irVtxClipMask
+	NOP		IBNE	VI01, VI00, dbSC_End
+	NOP		FCGET	irClipFlag2
+
+dbProcessEndTri234:
+	ADDx.xyzw	VF19, VF11, VF00x	FCAND	VI01, 0x3ffff
+	ADDx.xyzw	VF20, VF12, VF00x	IBNE	VI01, VI00, dbEndTri234NotAllIn
+	ADDx.xyzw	VF24, VF15, VF00x	FCGET	irClipFlag3
+	
+dbEndTri234AllIn:
+	ADDx.xyzw	VF25, VF16, VF00x	B	dbBucketTri234
+	ADDx.xyzw	VF26, VF17, VF00x	IADDIU	VI15, VI00, dbSC_End
+	
+dbEndTri234NotAllIn:
+	ADDx.xyzw	VF25, VF16, VF00x	IAND	VI01, irClipFlag1, irClipFlag2
+	ADDx.xyzw	VF26, VF17, VF00x	IAND	VI01, VI01, irClipFlag3
+	NOP		NOP
+	NOP		IBEQ	VI01, VI00, dbClipTri234
+	NOP		IADDIU	VI15, VI00, dbSC_End
+	NOP		ilw.z	vi01, 16(vi00)z
+	NOP		iaddiu	vi01, vi01, 1
+	NOP		isw.z	vi01, 16(vi00)z
+
+dbSC_End:
+
+; TJC - kick NOP giftag incase we didnt have anything to kick
+	NOP		XGKICK	VI00
+	NOP[E]	NOP
+	NOP		NOP	
+	NOP		B	dbSC_Start
+	NOP		NOP
+
+;-----------------------------------------------------------------------------------------------------------------------------------------------
+dbBucketTri123:
+	MINIw.w	VF27, VF24, VF28	MOVE	VF21, VF18
+	MULAw.xyzw	ACC, VF08, VF24w	MOVE	VF22, VF10
+	MADDAx.xyzw	ACC, VF05, VF24x	MOVE	VF23, VF11
+	MADDAy.xyzw	ACC, VF06, VF24y	B	BucketTri
+	MADDz.xyzw	VF24, VF07, VF24z	MTIR	VI09, VF18w
+
+dbBucketTri234:
+	MINIw.w	VF27, VF24, VF28	MOVE	VF21, VF18
+	MULAw.xyzw	ACC, VF08, VF24w	MOVE	VF22, VF11
+	MADDAx.xyzw	ACC, VF05, VF24x	MOVE	VF23, VF12
+	MADDAy.xyzw	ACC, VF06, VF24y	B	BucketTri
+	MADDz.xyzw	VF24, VF07, VF24z	MTIR	VI09, VF18w
+
+dbBucketTri341:
+	MINIw.w	VF27, VF24, VF28	MOVE	VF21, VF18
+	MULAw.xyzw	ACC, VF08, VF24w	MOVE	VF22, VF12
+	MADDAx.xyzw	ACC, VF05, VF24x	MOVE	VF23, VF09
+	MADDAy.xyzw	ACC, VF06, VF24y	B	BucketTri
+	MADDz.xyzw	VF24, VF07, VF24z	MTIR	VI09, VF18w
+
+dbBucketTri412:
+	MINIw.w	VF27, VF24, VF28	MOVE	VF21, VF18
+	MULAw.xyzw	ACC, VF08, VF24w	MOVE	VF22, VF09
+	MADDAx.xyzw	ACC, VF05, VF24x	MOVE	VF23, VF10
+	MADDAy.xyzw	ACC, VF06, VF24y	B	BucketTri
+	MADDz.xyzw	VF24, VF07, VF24z	MTIR	VI09, VF18w
+
+BucketTri:
+	MAXz.w	VF27, VF27, VF28	BAL	VI08, BucketTriRefAddr
+	MULAw.xyz	ACC, VF30, VF00w	IADDIU	VI01, VI00, 0x00ff
+
+BucketTriRefAddr:
+	MADDAx.xy	ACC, VF28, VF18x	IAND	VI09, VI09, VI01
+	MADDy.xyz	VF18, VF29, VF18y	DIV	Q, VF00w, VF24w
+
+	MULAw.w	ACC, VF30, VF00w	MFIR.w	VF21, VI09
+	MSUBw.w	VF24, VF29, VF27	MTIR	VI09, VF22w
+	MINIw.w	VF27, VF25, VF28	IAND	VI09, VI09, VI01
+
+	MULAw.xyzw	ACC, VF08, VF25w	MFIR.w	VF22, VI09
+	MADDAx.xyzw	ACC, VF05, VF25x	MTIR	VI09, VF23w
+	ITOF0.w	VF21, VF21	IAND	VI09, VI09, VI01
+
+	MULq.xyz	VF24, VF24, Q	MFIR.w	VF23, VI09
+	MULq.xyz	VF18, VF18, Q	ilw.z	vi01, 16(vi00)z	
+	MADDAy.xyzw	ACC, VF06, VF25y	NOP
+	MADDz.xyzw	VF25, VF07, VF25z	NOP
+	MAXz.w	VF27, VF27, VF28	NOP
+	ITOF0.w	VF22, VF22	iaddiu	vi01, vi01, 1
+	MULAw.xyz	ACC, VF30, VF00w	isw.z	vi01, 16(vi00)z
+	MADDAx.xy	ACC, VF28, VF19x	DIV	Q, VF00w, VF25w
+	MADDy.xyz	VF19, VF29, VF19y	NOP
+	MULAw.w	ACC, VF30, VF00w	NOP
+	MSUBw.w	VF25, VF29, VF27	ISUBIU	VI08, VI08, BucketTriRefAddr
+	MINIw.w	VF27, VF26, VF28	IADD	VI01, VI08, VI15
+	ITOF0.w	VF23, VF23	NOP
+	MULAw.xyzw	ACC, VF08, VF26w	NOP
+	MADDAx.xyzw	ACC, VF05, VF26x	NOP
+	MULq.xyz	VF25, VF25, Q	ILW.x	VI08,  0(VI14)x
+	MULq.xyz	VF19, VF19, Q	ILW.z	VI09,  0(VI14)z
+	MADDAy.xyzw	ACC, VF06, VF26y	NOP
+	MADDz.xyzw	VF26, VF07, VF26z	NOP
+	MAXz.w	VF27, VF27, VF28	NOP
+	MULx.w	VF21, VF21, VF27	ISW.z	VI08,  0(VI14)z
+	MULAw.xyz	ACC, VF30, VF00w	ISW.x	VI09,  0(VI14)x
+	MADDAx.xy	ACC, VF28, VF20x	DIV	Q, VF00w, VF26w
+	MADDy.xyz	VF20, VF29, VF20y	NOP
+	MULx.w	VF22, VF22, VF27	NOP
+	MULx.w	VF23, VF23, VF27	NOP
+	MULAw.w	ACC, VF30, VF00	ISUBIU	VI09, VI08, 1
+	MSUBw.w	VF26, VF29, VF27	IADDIU	VI15, VI00, 0x0004
+	FTOI0.w	VF21, VF21	IADDIU	VI15, VI15, 0x7fff
+	FTOI0.w	VF22, VF22	NOP
+	FTOI4.xyzw	VF24, VF24	ISW.x	VI15,  0(VI09)
+	MULq.xyz	VF26, VF26, Q	SQ	VF18,  0(VI08)
+	MULq.xyz	VF20, VF20, Q	SQ	VF19,  3(VI08)
+	FTOI0.w	VF23, VF23	SQ.w	VF21,  1(VI08)
+	FTOI4.xyzw	VF25, VF25	SQ.w	VF22,  4(VI08)
+	FTOI4.xyzw	VF26, VF26	SQ	VF24,  2(VI08)
+	NOP		SQ	VF20,  6(VI08)
+	NOP		SQ.w	VF23,  7(VI08)
+	NOP		SQ	VF25,  5(VI08)
+	NOP		SQ	VF26,  8(VI08)
+
+	NOP		lq.xyzw	vf21, 17(vi00)
+	NOP		lq.xyzw	vf22, 18(vi00)
+	NOP		lq.xyzw	vf23, 19(vi00)
+	NOP		ilw.y	irVtxClipMask, 16(vi00)y	;get color store index
+	NOP		sq.xyzw	vf21, 1(vi08)
+	NOP		lq	vf21, 20(vi00)
+	NOP		sq.xyzw	vf22, 4(vi08)
+	NOP		sq	vf22, 17(vi00)
+	NOP		lq	vf22, 21(vi00)
+	NOP		sq.xyzw	vf23, 7(vi08)
+	NOP		sq	vf23, 18(vi00)
+	NOP		lq	vf23, 22(vi00)
+	NOP		sq	vf21, 19(vi00)
+	NOP		lq	vf21, 23(vi00)
+	NOP		sq	vf22, 20(vi00)
+	NOP		sq	vf23, 21(vi00)
+	NOP		sq	vf21, 22(vi00)
+
+	NOP		iaddi	irVtxClipMask, irVtxClipMask, -1
+	NOP		isw.y	irVtxClipMask, 16(vi00)y
+	NOP		IADDIU	irVtxClipMask, VI00, 0x003f
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		XGKICK	VI09
+	NOP		JR	VI01
+	NOP		NOP
+
+
+;-----------------------------------------------------------------------------------------------------------------------------------------------
+
+dbClipTri123:
+	NOP		MOVE	VF21, VF18
+	NOP		MOVE	VF22, VF10
+	NOP		B	ClipTri
+	NOP		MOVE	VF23, VF11
+
+dbClipTri234:
+	NOP		MOVE	VF21, VF18
+	NOP		MOVE	VF22, VF11
+	NOP		B	ClipTri
+	NOP		MOVE	VF23, VF12
+
+dbClipTri341:
+	NOP		MOVE	VF21, VF18
+	NOP		MOVE	VF22, VF12
+	NOP		B	ClipTri
+	NOP		MOVE	VF23, VF09
+
+dbClipTri412:
+	NOP		MOVE	VF21, VF18
+	NOP		MOVE	VF22, VF09
+	NOP		B	ClipTri
+	NOP		MOVE	VF23, VF10
+
+ClipTri:
+	NOP		BAL	VI01, ClipTriRefAddr
+	NOP		ISW.x	irZADCPtr, 2(VI14)x	; store off stream ptrs
+
+ClipTriRefAddr:
+	NOP		ISUBIU	VI01, VI01, ClipTriRefAddr
+	NOP		IADD	VI15, VI15, VI01
+	
+	NOP		ISW.y	irVtxPtr,  2(VI14)y
+	
+	NOP		ISW.x	irEndLoopPtr, -2(VI14)x	; store off End ptrs
+	NOP		ISW.y	irEndAllPtr, -2(VI14)y
+	NOP		ISW.z	irADCBits, -2(VI14)z	; store off ADCBits
+	NOP		ISW.w	irClipFlag2, -2(VI14)w	; store off ClipFlag2
+	
+	NOP		ISW.x	VI15, -3(VI14)x	; store return addr
+	
+	NOP		SQ	VF27, -4(VI14)
+	NOP		SQ	VF28, -5(VI14)
+	NOP		SQ	VF29, -6(VI14)
+	NOP		SQ	VF30, -7(VI14)
+	
+	NOP		IOR	VI13, irClipFlag1, irClipFlag2
+	NOP		IOR	VI13, VI13, irClipFlag3	; create ORedCLIPBits
+	
+	NOP		ILW.x	VI08,  0(VI14)x
+	NOP		ILW.y	VI09,  0(VI14)y
+	NOP		IADDIU	VI01, VI00, 0x00ff
+
+	ADDw.z	VF18, VF00, VF00	ilw.z	vi07, 16(vi00)z
+	ADDw.z	VF19, VF00, VF00	lq.xyzw	vf21, 17(vi00)
+	ADDw.z	VF20, VF00, VF00	lq.xyzw	vf22, 18(vi00)
+	NOP		lq.xyzw	vf23, 19(vi00)
+	NOP		iaddiu	vi07, vi07, 1
+	NOP		isw.z	vi07, 16(vi00)z
+
+
+	ITOF0	VF21, VF21	SQ	VF24,  2(VI08)
+	ITOF0	VF22, VF22	SQ	VF25,  5(VI08)
+	NOP		SQ	VF26,  8(VI08)
+
+	ITOF0	VF23, VF23	SQ	VF18,  0(VI08)	
+	NOP		SQ	VF19,  3(VI08)	
+	NOP		SQ	VF20,  6(VI08)	
+	
+	NOP		ILW.w	VI01, -1(VI14)w	; load ClipTri func( )
+
+	NOP		SQ	VF21,  1(VI08)	
+	NOP		SQ	VF22,  4(VI08)	
+	NOP		SQ	VF23,  7(VI08)	
+	
+
+	NOP		IADDIU	VI07, VI00, 3	; set initial vtx count
+	NOP		JALR	VI15, VI01	; call ClipTri( )
+	NOP		IADDIU	VI10, VI08, 9	; set ClipBuffer_End
+
+
+	NOP		ILW.x	VI01, -3(VI14)x	
+	
+	NOP		ILW.x	irZADCPtr, 2(VI14)x	; store off stream ptrs
+	NOP		ILW.y	irVtxPtr,  2(VI14)y
+	
+	NOP		ILW.x	irEndLoopPtr, -2(VI14)x	; store off End ptrs
+	NOP		ILW.y	irEndAllPtr, -2(VI14)y
+	NOP		ILW.z	irADCBits, -2(VI14)z	; store off ADCBits
+	NOP		ILW.w	irClipFlag2, -2(VI14)w	; store off ClipFlag2
+	
+	NOP		LQ	VF27, -4(VI14)
+	NOP		LQ	VF28, -5(VI14)
+	NOP		LQ	VF29, -6(VI14)
+	NOP		LQ	VF30, -7(VI14)
+	
+	NOP		IADDIU	irADCMask1, VI00, 0x0001	; set ADCMask1
+	NOP		IADDIU	irADCMask2, VI00, 0x0002	; set ADCMask2
+	NOP		JR	VI01	; return
+	NOP		IADDIU	irADCMask3, VI00, 0x0004	; set ADCMask3
+
+
+dbSC_OutputClippedFan:
+	NOP		LQ	VF28, -5(VI14)	
+
+	NOP		LQ	VF22,  2(VI08)
+	NOP		LQ	VF27, -4(VI14)
+	NOP		LQ	VF29, -6(VI14)
+	MINIw.w	VF27, VF22, VF28	LQ	VF30, -7(VI14)
+	MULAw.xyzw	ACC, VF08, VF22w	NOP
+	MADDAx.xyzw	ACC, VF05, VF22x	IADD	VI04, VI08, VI00
+	MADDAy.xyzw	ACC, VF06, VF22y	LQ	VF20, 0(VI08)
+	MADDz.xyzw	VF25, VF07, VF22z	ISUBIU	VI05, VI07, 2
+
+	MAXz.w	VF27, VF27, VF28	NOP
+	MULAw.xyz	ACC, VF30, VF00w	LQ	VF21,  1(VI08)
+	MADDAx.xy	ACC, VF28, VF20x	LQ	VF22,  5(VI04)
+	MADDy.xyz	VF23, VF29, VF20y	DIV	Q, VF00w, VF25w
+
+	MULAw.w	ACC, VF30, VF00w	NOP
+	MSUBw.w	VF25, VF29, VF27	NOP
+
+	MULx.w	VF21, VF21, VF27x	NOP
+dbSC_OCFLoop:
+	MINIw.w	VF27, VF22, VF28	IADDIU	VI04, VI04, 3
+
+	MULAw.xyzw	ACC, VF08, VF22w	ISUBIU	VI05, VI05, 1
+	MADDAx.xyzw	ACC, VF05, VF22x	NOP
+	MULq.xyz	VF25, VF25, Q	NOP
+	MULq.xyz	VF23, VF23, Q	NOP
+	MADDAy.xyzw	ACC, VF06, VF22y	NOP
+	FTOI0.xyzw	VF24, VF21	NOP
+	FTOI4.xyzw	VF26, VF25	LQ	VF20,  0(VI04)
+
+	MADDz.xyzw	VF25, VF07, VF22z	SQ	VF23, -3(VI04)
+	
+	MAXz.w	VF27, VF27, VF28	LQ	VF21,  1(VI04)
+	MULAw.xyz	ACC, VF30, VF00w	SQ	VF24, -2(VI04)
+	MADDAx.xy	ACC, VF28, VF20x	LQ	VF22,  5(VI04)
+	MADDy.xyz	VF23, VF29, VF20y	DIV	Q, VF00w, VF25w
+
+	MULAw.w	ACC, VF30, VF00	SQ	VF26, -1(VI04)
+	MSUBw.w	VF25, VF29, VF27	IBNE	VI05, VI00, dbSC_OCFLoop
+	MULx.w	VF21, VF21, VF27x	NOP
+
+	MINIw.w	VF27, VF22, VF28	NOP
+
+	MULAw.xyzw	ACC, VF08, VF22w	NOP
+	MADDAx.xyzw	ACC, VF05, VF22x	NOP
+	MADDAy.xyzw	ACC, VF06, VF22y	NOP
+	MADDz.xyzw	VF26, VF07, VF22z	NOP
+
+	MULq.xyz	VF25, VF25, Q	LQ	VF20,  3(VI04)
+	MULq.xyz	VF23, VF23, Q	NOP
+	FTOI0.xyzw	VF21, VF21	LQ	VF24,  4(VI04)
+	MAXz.w	VF27, VF27, VF28	DIV	Q, VF00w, VF26w
+	FTOI4.xyzw	VF25, VF25	NOP
+
+	MULAw.xyz	ACC, VF30, VF00w	SQ	VF23,  0(VI04)
+	MADDAx.xy	ACC, VF28, VF20x	NOP
+	MADDy.xyz	VF20, VF29, VF20y	SQ	VF21,  1(VI04)
+
+	MULAw.w	ACC, VF30, VF00	NOP
+	MSUBw.w	VF26, VF29, VF27	SQ	VF25,  2(VI04)
+
+	MULx.w	VF24, VF24, VF27x	NOP
+
+	MULq.xyz	VF26, VF26, Q	NOP
+	MULq.xyz	VF20, VF20, Q	NOP
+	NOP		NOP
+	FTOI0.xyzw	VF24, VF24	NOP
+	FTOI4.xyzw	VF26, VF26	NOP
+	NOP		SQ	VF20,  3(VI04)
+	NOP		NOP
+	NOP		SQ	VF24,  4(VI04)
+	NOP		SQ	VF26,  5(VI04)
+	NOP		NOP
+
+	NOP		NOP
+	NOP		JR	VI02	; return
+	NOP		NOP
+
+computeLighting:
+	NOP		sq	vf05, -9(vi14)
+	NOP		sq	vf06, -10(vi14)
+	NOP		sq	vf17, -11(vi14)
+	NOP		sq	vf18, -12(vi14)
+	NOP		sq	vf20, -13(vi14)
+	NOP		sq	vf21, -14(vi14)
+	NOP		sq	vf26, -17(vi14)
+	NOP		sq	vf29, -19(vi14)
+	NOP		sq	vf30, -20(vi14)
+	NOP		move	vf26, vf21
+	NOP		move	vf20, vf21
+	NOP		move	vf21, vf13
+
+computeLightingL1:
+	NOP		ibeq	irLightTemp1, vi00, computeLightingStart
+	NOP		iaddi	irLightTemp1, irLightTemp1, -1
+	NOP		b	computeLightingL1
+	NOP		mr32	vf21, vf21	;rotate which xyzw component we want into x
+
+computeLightingStart:
+	NOP		ilw.x	irLightTemp1, 16(vi00)x	;normal ptr
+	NOP		mr32.yz	vf20, vf20
+	NOP		mr32.w	vf20, vf21
+	NOP		mr32.xyz	vf20, vf20
+	NOP		lq	vf21, 0(irLightTemp1)	;load normal for this vertex
+	NOP		iaddiu	irLightTemp1, irLightTemp1, 1	;inc normal ptr
+	NOP		isw.x	irLightTemp1, 16(vi00)x
+
+
+
+; ------------------------------------------------------------------------------
+;
+; Point, Vertex, Ambient, Directional lighting with 2 Point lights, 3 Directional, 1 ambient
+;
+; Assuming:
+;	Light Positions are in VF05, VF06
+;	Light Colors are in VF17, VF18
+;	Light Ambient in VF16
+;	Vertex color in vf26
+;	Vertex in VF20
+;	Normal in VF21
+;	Temporary registers used: vf24, vf25, vf27, vf29, vf30
+;	Color returned in vf26
+; ------------------------------------------------------------------------------
+PLight:
+	; --- get the 2 lights
+	NOP		lq	vf05, 28( vi00 )
+	itof15.xyz	vf21, vf21	lq 	vf06, 29( vi00 )
+
+	; --- Compute Vectors to Lights	- Assuming light positions are in VF05xyz, VF06xyz
+	; --- Important! Light attenuation coefficient is in VF05w, VF06w
+	;
+	sub.xyz	VF29, VF05, VF20	lq	vf17, 15( vi00 )	;Light position1 - Vertex
+	sub.xyz	VF30, VF06, VF20	lq	vf18, 31( vi00 ) 	;Light position2 - Vertex
+	NOP		mfir.w	vf20w, irLightTemp3
+	NOP		sq	vf24, -15(vi14)
+	mul.xyz	vf29, vf29, vf17xyz  	sq 	vf16, -21(vi14)	;vf17 contains model scale that needs to be applied
+	mul.xyz	vf30, vf30, vf17xyz  	lq 	vf17, 30( vi00 )
+	NOP		move	vf16, vf00
+	NOP		sq 	vf27, -18(vi14)
+	addw.xyz	vf27, vf00, vf00w	erleng 	p, vf29	;start 1/length1 calculation - 24 cycles
+	mul.xyz	vf24, vf30, vf30	ilw.w	irLightTemp1, 16(vi00)w	;VF30x*VF30x,VF30y*VF30y,VF30z*VF30z
+	mul.xyz	vf29, vf29, vf21  	sq	vf25, -16(vi14)	;Light1 * Normal
+	mul.xyz	vf30, vf30, vf21  	loi	0.0	;Light2 * Normal
+	addi.w	vf16, vf00, i     	NOP		
+	mulax.x	ACC, vf27x, vf24x 	NOP
+	madday.x	ACC, vf27x, vf24y 	iaddiu	irLightTemp1, irLightTemp1, 1
+	maddz.x	vf24, vf27x, vf24z	isw.w	irLightTemp1, 16(vi00)w	;VF24 = 1/length2^2
+	NOP		mfir.w	vf21w, irLightTemp4
+	NOP		iaddiu	irLightTemp3, vi00, 0xff	;rgba mask
+	NOP		rsqrt	q, vf00w, vf24x	;start 1/length2 calculation - 13 cycles
+	NOP		mtir	irLightTemp4, vf26x	;get R
+	NOP		mtir	irLightTemp1, vf26y	;get G
+	NOP		NOP
+	NOP		NOP
+	NOP		iand	irLightTemp4, irLightTemp4, irLightTemp3	;mask out 8 bits of R
+	NOP		iand	irLightTemp1, irLightTemp1, irLightTemp3	;mask out 8 bits of G
+	NOP		mfir.x	vf26x, irLightTemp4	;save masked R
+	NOP		mtir	irLightTemp4, vf26z	;get B
+	NOP		mfir.y	vf26y, irLightTemp1	;save masked G
+	NOP		mtir	irLightTemp1, vf26w	;Get A
+	NOP		NOP
+	NOP		iand	irLightTemp4, irLightTemp4, irLightTemp3	;mask out 8 bits of B
+	NOP		waitq
+	mulq.y	vf24, vf27y, q	iand	irLightTemp1, irLightTemp1, irLightTemp3	;mask out 8 bits of A
+	NOP		waitp
+	NOP		mfp.x	vf24x, p	;Now have 1/length1, 1/length2
+	NOP		lq	vf27, -18(vi14)
+	NOP		mfir.z	vf26z, irLightTemp4	;save masked B
+	NOP		mfir.w	vf26w, irLightTemp1	;save masked A
+	NOP		ilw.y	irLightTemp1, 16(vi00)y
+	mul.xy	vf25, vf24, vf24	mtir	irLightTemp3, vf20w	;1/lenght1^2, 1/length2^2
+	NOP		mtir	irLightTemp4, vf21w
+	itof0.xyzw	vf26, vf26	NOP
+	NOP		iaddiu	irLightTemp1, irLightTemp1, 1
+	mul.xy	vf25, vf25, vf24	lq	vf21, -14(vi14)	;1/length1^3, l/length2^3
+	mulx.w	vf17, vf17, vf00x	NOP
+	mulx.w	vf18, vf18, vf00x	isw.y	irLightTemp1, 16(vi00)y	;inc rgba store index
+	NOP		NOP
+	mulax.x	ACC, vf25x, vf29x	lq	vf24, -15(vi14)
+	madday.x	ACC, vf25x, vf29y	NOP
+	maddz.x	vf29, vf25x, vf29z	NOP		;light1 dotted, normalized, and attenuated
+	mulax.y	ACC, vf25y, vf30x	NOP
+	madday.y	ACC, vf25y, vf30y	NOP
+	maddz.y	vf29, vf25y, vf30z	lq	vf25, -16(vi14)	;light2 dotted, normalized, and attenuated
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	mulw.x	vf29, vf29, vf05w	lq	vf05, -9(vi14)	;apply attenuation
+	mulw.y	vf29, vf29, vf06w	NOP
+	NOP		lq	vf06, -10(vi14)
+	NOP		NOP
+	maxx.xy	vf29, vf29, vf00x	NOP		;clamp to zero
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	mulax.xyz	ACC, vf17, vf29x	loi	255.0	;light1 * color1
+	madday.xyz	ACC, vf18, vf29y	lq	vf17, -11(vi14)	;light2 * color2
+	maddaw.xyzw	ACC, vf26, vf00w	NOP		;vertex color
+	maddw.xyz	vf26, vf16, vf00w	NOP		;ambient
+	NOP		NOP
+	NOP		lq	vf18, -12(vi14)
+	NOP		NOP
+	minii.xyzw	vf26, vf26, I	lq	vf29, -19(vi14)
+	NOP		NOP
+	NOP		lq	vf16, -21(vi14)
+	NOP		NOP
+	ftoi0.xyzw	vf26, vf26	lq	vf20, -13(vi14)
+	NOP		NOP
+	NOP		lq	vf30, -20(vi14)
+	NOP		NOP
+	NOP		sq	vf26, 16(irLightTemp1)
+	NOP		jr	irLightTemp2
+	NOP		lq	vf26, -17(vi14)
+.enddmadata
+dbStaticCompress2AllClipPLight_CodeEnd:

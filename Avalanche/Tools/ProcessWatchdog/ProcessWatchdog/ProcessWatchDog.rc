@@ -1,0 +1,410 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\ProcessWatchDog.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ProcessWatchDog.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 50
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About ProcessWatchDog"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,10,21,20
+    LTEXT           "ProcessWatchDog Version 1.0a",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003 Avalanche Software",IDC_STATIC,40,21,
+                    154,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_PROCESS_WATCHDOG_DIALOG DIALOGEX 0, 0, 388, 329
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "ProcessWatchDog"
+MENU IDR_MAIN
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PROCESS_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SORTASCENDING | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,7,93,374,154
+    CONTROL         "",IDC_WATCHDOG_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,
+                    16,374,64
+    LTEXT           "Watchdog List",IDC_WATCHDOG_TITLE,7,7,46,8
+    LTEXT           "Process List",IDC_PROCESS_TITLE,7,83,38,8
+    CONTROL         "",IDC_LOG_WINDOW,"RichEdit20A",ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_BORDER | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP,7,258,374,64
+    LTEXT           "Log Window",IDC_LOG_WINDOW_TITLE,8,249,40,8
+END
+
+IDD_GENERAL DIALOGEX 0, 0, 300, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "General"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_NAME_EDIT,32,6,97,14,ES_AUTOHSCROLL
+    LTEXT           "Name:",IDC_STATIC,7,9,22,8
+    EDITTEXT        IDC_CHECK_INTERVAL_EDIT,81,24,42,14,ES_AUTOHSCROLL
+    LTEXT           "Check Interval (sec):",IDC_STATIC,7,26,68,8
+    LTEXT           "Wait for Response (sec):",IDC_STATIC,7,44,81,8
+    EDITTEXT        IDC_WAIT_FOR_RESPONSE_EDIT,93,42,40,14,ES_AUTOHSCROLL
+    LTEXT           "Wait After Creation (sec):",IDC_STATIC,6,63,84,8
+    EDITTEXT        IDC_WAIT_AFTER_CREATION_EDIT,96,60,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WAIT_FOR_NO_PROCESSES,103,78,40,14,ES_AUTOHSCROLL
+    LTEXT           "Wait For No Processes (sec):",IDC_STATIC,6,80,94,8
+END
+
+IDD_NO_PROCESSES DIALOGEX 0, 0, 300, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "No Processes"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "No Action",IDC_NO_ACTION,"Button",BS_AUTORADIOBUTTON,6,
+                    6,47,10
+    CONTROL         "Open",IDC_OPEN,"Button",BS_AUTORADIOBUTTON,6,18,33,10
+    LTEXT           "Target:",IDC_TARGET_PATH_TITLE,18,30,25,8
+    EDITTEXT        IDC_TARGET_PATH,54,30,227,12,ES_AUTOHSCROLL
+    LTEXT           "Start In:",IDC_START_IN_TITLE,18,48,28,8
+    EDITTEXT        IDC_START_IN_PATH,54,48,226,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_RUN_COMBO,54,130,114,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Run:",IDC_RUN_TITLE,24,131,16,8
+    EDITTEXT        IDC_PARAMETERS,54,65,242,60,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Parameters:",IDC_PARAMETERS_TITLE,7,67,40,8
+    PUSHBUTTON      "...",IDC_TARGET_PATH_BROWSE,284,30,12,12
+    PUSHBUTTON      "...",IDC_START_IN_BROWSE,284,48,12,12
+END
+
+IDD_ACTIVE_PROCESS DIALOGEX 0, 0, 256, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Active Process"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "No Action",IDC_NO_ACTION,"Button",BS_AUTORADIOBUTTON,6,
+                    6,47,10
+    CONTROL         "Kill Process",IDC_KILL_PROCESS,"Button",
+                    BS_AUTORADIOBUTTON,6,18,51,10
+    CONTROL         "Set Priority",IDC_SET_PRIORITY,"Button",
+                    BS_AUTORADIOBUTTON,6,30,66,10
+    COMBOBOX        IDC_PRIORITY_COMBO,48,42,63,72,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Priority:",IDC_PRIORITY_TITLE,21,44,26,8
+END
+
+IDD_NOT_RESPONDING DIALOGEX 0, 0, 300, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Not Responding"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "No Action",IDC_NO_ACTION,"Button",BS_AUTORADIOBUTTON,6,
+                    6,47,10
+    CONTROL         "Kill Process",IDC_KILL_PROCESS,"Button",
+                    BS_AUTORADIOBUTTON,6,18,51,10
+END
+
+IDD_WATCH_FILE DIALOGEX 0, 0, 300, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Watch File"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "No Action",IDC_NO_ACTION,"Button",BS_AUTORADIOBUTTON,6,
+                    6,47,10
+    CONTROL         "Kill Process",IDC_KILL_PROCESS,"Button",
+                    BS_AUTORADIOBUTTON,6,18,51,10
+    LTEXT           "Watch File Path:",IDC_WATCH_FILE_TITLE,13,33,54,8
+    EDITTEXT        IDC_WATCH_FILE_PATH,70,32,208,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_WATCH_FILE_BROWSE,281,31,12,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Avalanche Software"
+            VALUE "FileDescription", "Application for watching other applications"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "ProcessWatchDog.exe"
+            VALUE "LegalCopyright", "TODO: (c) Avalanche Software.  All rights reserved."
+            VALUE "OriginalFilename", "ProcessWatchDog.exe"
+            VALUE "ProductName", "Process Watchdog"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 43
+    END
+
+    IDD_PROCESS_WATCHDOG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 381
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 322
+    END
+
+    IDD_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_NO_PROCESSES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_ACTIVE_PROCESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_NOT_RESPONDING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_WATCH_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Open",                        ID_FILE_LOAD
+        MENUITEM "Save",                        ID_FILE_SAVE
+        MENUITEM "Save As",                     ID_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "Close",                       ID_FILE_CLOSE
+    END
+    POPUP "Watchdog"
+    BEGIN
+        MENUITEM "New",                         ID_WATCHDOG_NEW
+        MENUITEM "Edit",                        ID_WATCHDOG_EDIT
+        MENUITEM "Delete",                      ID_WATCHDOG_DELETE
+    END
+END
+
+IDR_TRAY MENU 
+BEGIN
+    POPUP "TrayMenu"
+    BEGIN
+        MENUITEM "Restore",                     ID_RESTORE
+        MENUITEM "Exit",                        ID_FILE_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CHECKBOXES          BITMAP                  "res\\checkboxes.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_NO_PROCESSES DLGINIT
+BEGIN
+    IDC_RUN_COMBO, 0x403, 14, 0
+0x6f4e, 0x6d72, 0x6c61, 0x7720, 0x6e69, 0x6f64, 0x0077, 
+    IDC_RUN_COMBO, 0x403, 10, 0
+0x614d, 0x6978, 0x696d, 0x657a, 0x0064, 
+    IDC_RUN_COMBO, 0x403, 10, 0
+0x694d, 0x696e, 0x696d, 0x657a, 0x0064, 
+    0
+END
+
+IDD_ACTIVE_PROCESS DLGINIT
+BEGIN
+    IDC_PRIORITY_COMBO, 0x403, 9, 0
+0x6552, 0x6c61, 0x6974, 0x656d, "\000" 
+    IDC_PRIORITY_COMBO, 0x403, 5, 0
+0x6948, 0x6867, "\000" 
+    IDC_PRIORITY_COMBO, 0x403, 12, 0
+0x6241, 0x766f, 0x4e65, 0x726f, 0x616d, 0x006c, 
+    IDC_PRIORITY_COMBO, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRIORITY_COMBO, 0x403, 12, 0
+0x6542, 0x6f6c, 0x4e77, 0x726f, 0x616d, 0x006c, 
+    IDC_PRIORITY_COMBO, 0x403, 4, 0
+0x6f4c, 0x0077, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About ProcessWatchDog..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\ProcessWatchDog.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,53 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Stamp - Win32 Max Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Adam\LOCALS~1\Temp\RSPA31.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I "d:\dev\avalanche\tools" /I "d:\dev\avalanche\enginenew" /I "d:\dev\avalanche\gamelibnew" /D "NDEBUG" /D "_WINDOWS" /D "_USRDLL" /D "WIN32" /D "WIN32_MAX_RELEASE" /Fp"Max_Release/stamp.pch" /Yu"StampPch.h" /Fo"Max_Release/" /Fd"Max_Release/" /FD /c 
+"D:\DEV\Avalanche\tools\TupperFilters\Stamp\MaterialMaps.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Adam\LOCALS~1\Temp\RSPA31.tmp" 
+Creating temporary file "C:\DOCUME~1\Adam\LOCALS~1\Temp\RSPA32.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"Max_Release/Stamp.pdb" /debug /machine:I386 /def:".\Stamp.def" /out:"Max_Release/Stamp.twf" /implib:"Max_Release/Stamp.lib" /IGNORE:4089 
+.\Max_Release\DllEntry.obj
+.\Max_Release\PluginDesc.obj
+.\Max_Release\StampPch.obj
+.\Max_Release\MeshLayers.obj
+.\Max_Release\StampManager.obj
+.\Max_Release\MaterialMaps.obj
+.\Max_Release\ProcessStamps.obj
+.\Max_Release\Stamp.obj
+\DEV\Avalanche\EngineNew\Math\Max_Release\Math.lib
+\DEV\Avalanche\tools\TupperFilters\Libraries\Plugins\Max_Release\Plugins.lib
+\DEV\Avalanche\tools\Tupper3d\Max_Release\Tupper3d.lib
+\DEV\Avalanche\tools\TupperAttrib\Max_Release\TupperAttrib.lib
+\DEV\Avalanche\tools\Tupperware\Max_Release\tupperware.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\Adam\LOCALS~1\Temp\RSPA32.tmp"
+Creating temporary file "C:\DOCUME~1\Adam\LOCALS~1\Temp\RSPA33.bat" with contents
+[
+@echo off
+copy .\Max_Release\Stamp.twf d:\TWFilters\Stamp.twf
+]
+Creating command line "C:\DOCUME~1\Adam\LOCALS~1\Temp\RSPA33.bat"
+Compiling...
+MaterialMaps.cpp
+Linking...
+   Creating library Max_Release/Stamp.lib and object Max_Release/Stamp.exp
+<h3>Output Window</h3>
+Copying Stamp to TWFilers Directory
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+Stamp.twf - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

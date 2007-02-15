@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Netapi32", "Netapi32\Netapi32.vcproj", "{2BE7C97E-B77C-4355-8622-E33422867141}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Iphlpapi", "Iphlpapi\Iphlpapi.vcproj", "{49937A1D-58B7-4942-A3CE-DDB4F647CE14}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ketapi32", "Ketapi32\Ketapi32.vcproj", "{31C1D090-661A-49FA-AAB7-A2583526C6AD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/SNCrack\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {B153D25E-0D33-432B-820F-1212390982AC}
+		SccProjectUniqueName1 = Netapi32\\Netapi32.vcproj
+		SccProjectName1 = \u0022//depot/Avalanche/Tools/SNCrack/Netapi32\u0022
+		SccLocalPath1 = Netapi32
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = Iphlpapi\\Iphlpapi.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/SNCrack/Iphlpapi\u0022
+		SccLocalPath2 = Iphlpapi
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = Ketapi32\\Ketapi32.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/Tools/SNCrack/Ketapi32\u0022
+		SccLocalPath3 = Ketapi32
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2BE7C97E-B77C-4355-8622-E33422867141}.Debug.ActiveCfg = Debug|Win32
+		{2BE7C97E-B77C-4355-8622-E33422867141}.Debug.Build.0 = Debug|Win32
+		{2BE7C97E-B77C-4355-8622-E33422867141}.Release.ActiveCfg = Release|Win32
+		{2BE7C97E-B77C-4355-8622-E33422867141}.Release.Build.0 = Release|Win32
+		{49937A1D-58B7-4942-A3CE-DDB4F647CE14}.Debug.ActiveCfg = Debug|Win32
+		{49937A1D-58B7-4942-A3CE-DDB4F647CE14}.Debug.Build.0 = Debug|Win32
+		{49937A1D-58B7-4942-A3CE-DDB4F647CE14}.Release.ActiveCfg = Release|Win32
+		{49937A1D-58B7-4942-A3CE-DDB4F647CE14}.Release.Build.0 = Release|Win32
+		{31C1D090-661A-49FA-AAB7-A2583526C6AD}.Debug.ActiveCfg = Debug|Win32
+		{31C1D090-661A-49FA-AAB7-A2583526C6AD}.Debug.Build.0 = Debug|Win32
+		{31C1D090-661A-49FA-AAB7-A2583526C6AD}.Release.ActiveCfg = Release|Win32
+		{31C1D090-661A-49FA-AAB7-A2583526C6AD}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,70 @@
+// GameClient.odl : type library source for GameClient.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (GameClient.tlb).
+
+[ uuid(F6F4ED57-6E98-4278-949D-074CEF9982B5), version(1.0) ]
+library GameClient
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CGameClientDoc
+	
+	[ uuid(8CCC8BBA-F068-4C27-96B5-2C334E38CE96) ]
+	dispinterface IGameClient
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CGameClientDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CGameClientDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CGameClientDoc
+	
+	[ uuid(8AB45716-DBDD-466B-BEA2-11C9601A2083) ]
+	coclass GameClient
+	{
+		[default] dispinterface IGameClient;
+	};
+
+
+	//  Primary dispatch interface for CGameClientDlg
+	
+	[ uuid(A7693B49-394A-4509-A351-C75A1F13C65D) ]
+	dispinterface IGameClientDlg
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CGameClientDlg)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CGameClientDlg)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CGameClientDlg
+
+	[ uuid(A77D2C6B-BE96-46BA-B1FE-5BA7F1155B75) ]
+	coclass GameClientDlg
+	{
+		[default] dispinterface IGameClientDlg;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

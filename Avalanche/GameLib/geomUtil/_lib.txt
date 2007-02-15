@@ -1,0 +1,9 @@
+create "SNPS2Consumer\geomUtil.lib"
+addmod "SNPS2Consumer/AnimCurve.obj"
+addmod "SNPS2Consumer/BoxExtents.obj"
+addmod "SNPS2Consumer/GeomUtilPCH.obj"
+addmod "SNPS2Consumer/GeomUtilPCH_SN.obj"
+addmod "SNPS2Consumer/LineToLine.obj"
+addmod "SNPS2Consumer/Spline.obj"
+save
+end

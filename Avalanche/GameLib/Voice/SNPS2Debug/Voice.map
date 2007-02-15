@@ -1,0 +1,2241 @@
+Address  Size     Align Out     In      File    Symbol
+=================================================================
+UNDEFINED
+                                                memcpy 
+                                                memset 
+                                                malloc 
+                                                free 
+                                                sqrt 
+                                                cos 
+                                                log 
+                                                asin 
+                                                memmove 
+                                                exp 
+                                                sin 
+                                                rand 
+                                                __Q26Quazal5Codec 
+                                                _$_Q26Quazal5Codec 
+                                                __dl__Q26Quazal10RootObjectPv 
+                                                printf 
+                                                _$_Q26Quazal10StationURL 
+                                                Free__Q26Quazal13MemoryManagerPvQ36Quazal13MemoryManager16_InstructionType 
+                                                GetCompressionRatio__Q26Quazal5Codec 
+                                                Trace__Q26Quazal5CodecUi 
+                                                CallHandler__6AssertPCcT1iT1 
+                                                memFree__FPv 
+                                                memAlloc__FUiUib 
+                                                SystemCheck__Q26Quazal8PlatformbPcT2Ui 
+                                                Allocate__Q26Quazal13MemoryManagerUiPcUiQ36Quazal13MemoryManager16_InstructionType 
+                                                strlen 
+                                                Load__Q26Quazal9PS2ModulePCciT1 
+                                                GetInstance__Q26Quazal8TraceLog 
+                                                g_consolePtr 
+                                                Echo__14CommandConsolePCce 
+                                                GetTime__Q26Quazal4Time 
+                                                __as__Q26Quazal4TimeRCQ26Quazal4Time 
+                                                __mi__CQ26Quazal4TimeRCQ26Quazal4Time 
+                                                Allocate__Q26Quazal13MemoryManagerUiQ36Quazal13MemoryManager16_InstructionType 
+                                                __13CMessageOwner 
+                                                g_timer 
+                                                _$_13CMessageOwner 
+                                                __nw__Q26Quazal10RootObjectUi 
+                                                g_RemoteIPAddress 
+                                                RegisterCodec__Q26Quazal12CodecManagerUcPQ26Quazal5Codec 
+                                                GetHandle__CQ26Quazal16DuplicatedObject 
+                                                IsAMember__Q26Quazal12VoiceChannelGQ26Quazal8DOHandle 
+                                                GetFormat__CQ26Quazal5Codec 
+                                                SetStreamSink__Q26Quazal17DemuxEventHandlerUcPQ26Quazal10SinkDevice 
+                                                RequestUpdate__Q26Quazal17_DS_DSTalkerProps 
+                                                g_inputPtr 
+                                                JoinCompleted__Q26Quazal17ChannelMemberSink 
+                                                __Q26Quazal5DORefPQ26Quazal16DuplicatedObject 
+                                                _$_Q26Quazal5DORef 
+                                                ButtonDown__21ControllerInputDriver16ControllerButton 
+                                                SendMessageToAll__18CMessageDispatcherPCcPvGt7CHandle1ZP6CActor 
+                                                UnregisterAll__13CMessageOwner 
+                                                UnregisterCodec__Q26Quazal12CodecManagerUc 
+                                                GetStaticClassID__Q26Quazal12_DO_DOTalker 
+                                                IsAKindOf__Q26Quazal8DOHandleUi 
+                                                InitPaths__15CNetZConnection 
+                                                sceSifInitRpc 
+                                                GetLocalHost__C8CSession 
+                                                SendMessageToSession__18CMessageDispatcherPCcPvGt7CHandle1ZP6CActor 
+                                                SendMessageToHost__18CMessageDispatcherPCcPvGt7CHandle1ZP6CActorP5CHost 
+                                                memSetReturnAddress__FUi 
+                                                __as__Q26Quazal23_DDL_VoiceChannelMemberRCQ26Quazal23_DDL_VoiceChannelMember 
+                                                __vd__Q26Quazal10RootObjectPv 
+                                                _18CMessageDispatcher$s_debugFile 
+                                                _18CMessageDispatcher$s_debugLine 
+                                                _Q26Quazal12CodecManager$s_oInstance 
+                                                _$_15CMessageHandler 
+                                                __15CMessageHandler 
+                                                SetRules__15CMessageHandlerUi 
+                                                Register__18CMessageDispatcherP15CMessageHandlerPCcR13CMessageOwner 
+                                                EngineTimer__Time 
+                                                __Q26Quazal17DemuxEventHandler 
+                                                __Q26Quazal5DORefGQ26Quazal8DOHandle 
+                                                SignalError__Q26Quazal11SystemErrorPcUiUiUi 
+                                                GetDOClass__CQ26Quazal16DuplicatedObject 
+                                                GetRealDOClassID__Q26Quazal12_DO_DOTalker 
+                                                __Q26Quazal5DORefRCQ26Quazal5DORef 
+                                                _t10CSingleton1Z8CSession$s_instance 
+                                                _t10CSingleton1Z18CMessageDispatcher$s_instance 
+                                                _$_Q26Quazal17DemuxEventHandler 
+                                                Print__Q26Quazal9ConsoleIOPce 
+                                                StreamOpened__Q26Quazal17DemuxEventHandlerUcGQ26Quazal8DOHandle 
+                                                FindMember__Q26Quazal12VoiceChannelGQ26Quazal8DOHandle 
+                                                GetMemberStation__Q26Quazal18VoiceChannelMember 
+                                                GetMasterStation__CQ26Quazal16DuplicatedObject 
+                                                GetNextRemoteHost__C8CSessionPC5CHost 
+                                                StreamClosed__Q26Quazal17DemuxEventHandlerUcGQ26Quazal8DOHandle 
+                                                StreamPacketReceived__Q26Quazal17DemuxEventHandlerUcGQ26Quazal8DOHandlePUcUi 
+                                                TraceMembers__CQ26Quazal12VoiceChannelUi 
+                                                _vt$Q26Quazal18VoiceChannelMember 
+                                                PostData__15CMessageHandlerPvR14CPostedMessage 
+                                                SetAutoOpen__Q26Quazal17DemuxEventHandlerb 
+                                                GetRole__Q26Quazal7Session 
+                                                Create__Q26Quazal16_DO_VoiceChannelUi 
+                                                __Q26Quazal6StringPCc 
+                                                SetDescription__Q26Quazal12VoiceChannelGQ26Quazal6String 
+                                                SetNbStreams__Q26Quazal12VoiceChannelUc 
+                                                SetEventHandler__Q26Quazal12VoiceChannelPQ36Quazal12VoiceChannel12EventHandler 
+                                                SetCodecID__Q26Quazal12VoiceChannelUc 
+                                                SetJitterTolerance__Q26Quazal12VoiceChanneli 
+                                                SetPacketSize__Q26Quazal12VoiceChannelUi 
+                                                GetPacketSize__CQ26Quazal12VoiceChannel 
+                                                __nw__Q26Quazal10RootObjectUiPcUi 
+                                                __Q26Quazal17ChannelMemberSinkPQ26Quazal12VoiceChannelGQ26Quazal8DOHandleb 
+                                                Dispatch__Q26Quazal12VoiceChannel 
+                                                Leave__Q26Quazal17ChannelMemberSink 
+                                                SelectAppropriateSelection__Q26Quazal15IteratorOverDOsbT1 
+                                                GetInstance__Q26Quazal9Scheduler 
+                                                SystemLock__Q26Quazal9Scheduler 
+                                                GetNext__CQ26Quazal9SelectionGQ26Quazal8DOHandle 
+                                                CurrentItemIsValid__CQ26Quazal15IteratorOverDOs 
+                                                __Q26Quazal5DORef 
+                                                SetFilter__Q26Quazal15IteratorOverDOsPQ26Quazal8DOFilter 
+                                                GetClassNameString__CQ26Quazal8DOHandle 
+                                                QLOG__6QuazalQ36Quazal8EventLog8LogLevelPCce 
+                                                GetRealDOClassID__Q26Quazal16_DO_VoiceChannel 
+                                                __Q26Quazal17IsAKindOfDOFilterUi 
+                                                __as__Q26Quazal5DORefRCQ26Quazal8DOHandle 
+                                                EnterImpl__Q26Quazal15CriticalSection 
+                                                SetThreadOwner__Q26Quazal15CriticalSection 
+                                                CheckRecursion__CQ26Quazal15CriticalSection 
+                                                ClearThreadOwner__Q26Quazal15CriticalSection 
+                                                LeaveImpl__Q26Quazal15CriticalSection 
+                                                _Q26Quazal14MutexPrimitive$s_bNoOp 
+                                                abort 
+                                                strcmp 
+                                                sceSifBindRpc 
+                                                sceSifCallRpc 
+                                                CreateSema 
+                                                InvalidDCache 
+                                                WaitSema 
+                                                SignalSema 
+                                                sceSifCheckStatRpc 
+                                                DeleteSema 
+                                                iSignalSema 
+                                                log10f 
+                                                powf 
+                                                ceilf 
+                                                expf 
+                                                calloc 
+                                                memalign 
+                                                cosf 
+                                                sinf 
+                                                FlushCache 
+                                                asinf 
+                                                logf 
+00000000 00035814    80 .text
+00000000 00035814     8         .text
+00000000 00002790     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\gsm_decode.obj
+00000000 0000007c     0                         Decode_gsm_div
+00000080 000000c8     0                         DecodeCoefficients_0_12
+00000148 000000a8     0                         DecodeCoefficients_13_26
+000001f0 000000c8     0                         DecodeCoefficients_27_39
+000002b8 00000088     0                         DecodeCoefficients_40_159
+00000340 000000fc     0                         Postprocessing
+00000440 000000f0     0                         APCM_quantization_xmaxc_to_exp_mant
+00000530 000001c8     0                         APCM_inverse_quantization
+000006f8 0000014c     0                         RPE_grid_positioning
+00000848 00000088     0                         Gsm_RPE_Decoding
+000008d0 00000574     0                         Decoding_of_the_coded_Log_Area_Ratios
+00000e48 00000154     0                         LARp_to_rp
+00000fa0 000005b8     0                         Short_term_synthesis_filtering
+00001558 000001e4     0                         Gsm_Short_Term_Synthesis_Filter
+00001740 0000018c     0                         Gsm_Long_Term_Synthesis_Filtering
+000018d0 0000015c     0                         Gsm_Decoder
+00001a30 00000d5c     0                         gsm_decode
+00002790 000062c0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\gsm_encode.obj
+00002790 0000007c     0                         Encode_gsm_div
+00002810 000000c8     0                         EncodeCoefficients_0_12
+000028d8 000000a8     0                         EncodeCoefficients_13_26
+00002980 000000c8     0                         EncodeCoefficients_27_39
+00002a48 00000088     0                         EncodeCoefficients_40_159
+00002ad0 0000017c     0                         gsm_norm
+00002c50 00000170     0                         Gsm_Preprocess
+00002dc0 00000d3c     0                         Autocorrelation
+00003b00 00000430     0                         Reflection_coefficients
+00003f30 00000104     0                         Transformation_to_Log_Area_Ratios
+00004038 00000504     0                         Quantization_and_coding
+00004540 00000070     0                         Gsm_LPC_Analysis
+000045b0 000001b0     0                         Weighting_filter
+00004760 000008fc     0                         RPE_grid_selection
+00005060 000000f0     0                         APCM_quantization_xmaxc_to_exp_mant
+00005150 000002a8     0                         APCM_quantization
+000053f8 000001c8     0                         APCM_inverse_quantization
+000055c0 0000014c     0                         RPE_grid_positioning
+00005710 000000c4     0                         Gsm_RPE_Encoding
+000057d8 00000574     0                         Decoding_of_the_coded_Log_Area_Ratios
+00005d50 00000154     0                         LARp_to_rp
+00005ea8 00000624     0                         Short_term_analysis_filtering
+000064d0 000001c4     0                         Gsm_Short_Term_Analysis_Filter
+00006698 00000f00     0                         Calculation_of_the_LTP_parameters
+00007598 00000394     0                         Cut_Calculation_of_the_LTP_parameters
+00007930 000003b0     0                         Long_term_analysis_filtering
+00007ce0 000000b4     0                         Gsm_Long_Term_Predictor
+00007d98 00000218     0                         Gsm_Coder
+00007fb0 00000aa0     0                         gsm_encode
+00008a50 000001c8     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\gsm_state.obj
+00008a50 0000004c     0                         gsm_state_init
+00008aa0 00000090     0                         gsm_create
+00008b30 00000044     0                         gsm_destroy
+00008b78 0000009c     0                         gsm_option
+00008c18 00002a38     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\openlpc.obj
+00008c18 00000064     0                         lrintf
+00008c80 0000012c     0                         auto_correl1
+00008db0 0000012c     0                         auto_correl2
+00008ee0 000003dc     0                         durbin
+000092c0 0000041c     0                         calc_pitch
+000096e0 00000048     0                         create_openlpc_encoder_state
+00009728 00000328     0                         init_openlpc_encoder_state
+00009a50 00000048     0                         destroy_openlpc_encoder_state
+00009a98 00000c94     0                         openlpc_encode
+0000a730 00000048     0                         create_openlpc_decoder_state
+0000a778 00000198     0                         init_openlpc_decoder_state
+0000a910 00000cf4     0                         openlpc_decode
+0000b608 00000048     0                         destroy_openlpc_decoder_state
+0000b650 000002c0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\CTimer.obj
+0000b650 00000000     0                         __gnu_compiled_cplusplus
+0000b650 00000054     0                         CTimer::CTimer(void)
+0000b8c8 00000048     0                         CTimer::GetTickCount(void)
+0000b6a8 0000005c     0                         CTimer::~CTimer(void)
+0000b708 0000004c     0                         CTimer::Start(void)
+0000b758 00000058     0                         CTimer::Stop(void)
+0000b830 00000098     0                         CTimer::GetEllapsedTime(void)
+0000b7b0 00000080     0                         CTimer::GetTickDifference(unsigned int, unsigned int)
+0000b910 00000848     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\GSMCodec.obj
+0000b910 00000000     0                         __gnu_compiled_cplusplus
+0000b910 000000a4     0                         GSMCodec::GSMCodec(int)
+0000c128 0000002c     0                         Quazal::AudioStreamFormat::SetNbSamplesPerPacket(unsigned int)
+0000b9b8 00000070     0                         GSMCodec::~GSMCodec(void)
+0000ba28 00000034     0                         GSMCodec::GetName(void)
+0000ba60 00000040     0                         GSMCodec::GetNbBytesPerEncodedFrame(void)
+0000baa0 0000003c     0                         GSMCodec::GetNbSamplesPerFrame(void)
+0000bae0 00000080     0                         GSMCodec::CreateEncoderState(void)
+0000bb60 00000080     0                         GSMCodec::CreateDecoderState(void)
+0000bbe0 00000044     0                         GSMCodec::ReleaseEncoderState(Quazal::Codec::EncoderState *)
+0000bc28 00000044     0                         GSMCodec::ReleaseDecoderState(Quazal::Codec::DecoderState *)
+0000bc70 00000044     0                         GSMCodec::ResetState(Quazal::Codec::EncoderState *)
+0000bcb8 00000044     0                         GSMCodec::ResetState(Quazal::Codec::DecoderState *)
+0000bd00 00000170     0                         GSMCodec::Encode(Quazal::Codec::EncoderState *, short *, unsigned char *)
+0000be70 00000158     0                         GSMCodec::Decode(Quazal::Codec::DecoderState *, unsigned char *, short *)
+0000bfc8 00000044     0                         void _STL::_Destroy<Quazal::StationURL>(Quazal::StationURL *)
+0000c010 000000b8     0                         _STL::_List_base<Quazal::StationURL, Quazal::MemAllocator<Quazal::StationURL> >::clear(void)
+0000c0c8 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::StationURL> >::deallocate(void *, unsigned int)
+0000c158 00001950     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\nellymoser_wrapper.obj
+0000c158 00000000     0                         __gnu_compiled_cplusplus
+0000c158 000000a8     0                         myfree(void *)
+0000c200 0000007c     0                         mycalloc(unsigned int, unsigned int)
+0000c280 0000006c     0                         mymemalign(unsigned int, unsigned int)
+0000c2f0 0000007c     0                         nmsInit
+0000c370 00000334     0                         nmsCreate4
+0000c6a8 00000160     0                         nmsDestroy4
+0000c808 00000110     0                         nmsEncode
+0000c918 000003c4     0                         nmsDecode4x
+0000cce0 000001d0     0                         nmsDecode
+0000ceb0 000001ec     0                         nmsSetDecVoiceFont
+0000d0a0 00000194     0                         nmsSetVoiceEffect
+0000d238 000005e0     0                         nmsSetVoiceEffect4
+0000d818 000001ac     0                         nmsSetEncVoiceFont
+0000d9c8 000000e0     0                         nmsSetVFValue
+0000daa8 00000b30     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\NellyMoserCodec.obj
+0000daa8 00000000     0                         __gnu_compiled_cplusplus
+0000daa8 0000010c     0                         NellyMoserCodec::NellyMoserCodec(int)
+0000e570 0000002c     0                         Quazal::AudioStreamFormat::SetNbSamplesPerPacket(unsigned int)
+0000dbb8 00000098     0                         NellyMoserCodec::~NellyMoserCodec(void)
+0000dc50 00000034     0                         NellyMoserCodec::GetName(void)
+0000dc88 0000003c     0                         NellyMoserCodec::GetNbBytesPerEncodedFrame(void)
+0000dcc8 0000003c     0                         NellyMoserCodec::GetNbSamplesPerFrame(void)
+0000dd08 00000074     0                         NellyMoserCodec::CreateEncoderState(void)
+0000dd80 00000074     0                         NellyMoserCodec::CreateDecoderState(void)
+0000ddf8 00000050     0                         NellyMoserCodec::ReleaseEncoderState(Quazal::Codec::EncoderState *)
+0000de48 00000050     0                         NellyMoserCodec::ReleaseDecoderState(Quazal::Codec::DecoderState *)
+0000de98 00000028     0                         NellyMoserCodec::ResetState(Quazal::Codec::EncoderState *)
+0000dec0 00000028     0                         NellyMoserCodec::ResetState(Quazal::Codec::DecoderState *)
+0000dee8 00000174     0                         NellyMoserCodec::Encode(Quazal::Codec::EncoderState *, short *, unsigned char *)
+0000e060 00000060     0                         NellyMoserCodec::Decode(Quazal::Codec::DecoderState *, unsigned char *, short *)
+0000e0c0 00000164     0                         NellyMoserCodec::DecodeSingleStream(unsigned char *, short *)
+0000e228 00000104     0                         NellyMoserCodec::DecodeMultipleStreams(unsigned char *, unsigned char *, unsigned char *, unsigned char *, short *)
+0000e330 000000e0     0                         NellyMoserCodec::SetVoiceMaskEffect(int, float, float, float, float, float, float, float, int)
+0000e410 00000044     0                         void _STL::_Destroy<Quazal::StationURL>(Quazal::StationURL *)
+0000e458 000000b8     0                         _STL::_List_base<Quazal::StationURL, Quazal::MemAllocator<Quazal::StationURL> >::clear(void)
+0000e510 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::StationURL> >::deallocate(void *, unsigned int)
+0000e5a0 00000034     0                         NellyMoserCodec::GetNumFramesPerPacket(void)
+0000e5d8 00000a20     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\OpenLPCCodec.obj
+0000e5d8 00000000     0                         __gnu_compiled_cplusplus
+0000e5d8 00000120     0                         OpenLPCCodec::OpenLPCCodec(unsigned int, int)
+0000efc8 0000002c     0                         Quazal::AudioStreamFormat::SetNbSamplesPerPacket(unsigned int)
+0000e6f8 00000070     0                         OpenLPCCodec::~OpenLPCCodec(void)
+0000e768 00000034     0                         OpenLPCCodec::GetName(void)
+0000e7a0 0000003c     0                         OpenLPCCodec::GetNbSamplesPerFrame(void)
+0000e7e0 00000040     0                         OpenLPCCodec::GetNbBytesPerEncodedFrame(void)
+0000e820 00000088     0                         OpenLPCCodec::CreateEncoderState(void)
+0000ee28 0000005c     0                         openlpc_e_state * Quazal::SpecialNew<openlpc_e_state>(char *, unsigned int)
+0000e8a8 00000088     0                         OpenLPCCodec::CreateDecoderState(void)
+0000ee88 0000005c     0                         openlpc_d_state * Quazal::SpecialNew<openlpc_d_state>(char *, unsigned int)
+0000e930 00000044     0                         OpenLPCCodec::ReleaseEncoderState(Quazal::Codec::EncoderState *)
+0000eee8 0000003c     0                         void Quazal::SpecialDelete<openlpc_e_state>(openlpc_e_state *)
+0000e978 00000044     0                         OpenLPCCodec::ReleaseDecoderState(Quazal::Codec::DecoderState *)
+0000ef28 0000003c     0                         void Quazal::SpecialDelete<openlpc_d_state>(openlpc_d_state *)
+0000e9c0 00000048     0                         OpenLPCCodec::ResetState(Quazal::Codec::EncoderState *)
+0000ea08 00000048     0                         OpenLPCCodec::ResetState(Quazal::Codec::DecoderState *)
+0000ea50 00000178     0                         OpenLPCCodec::Encode(Quazal::Codec::EncoderState *, short *, unsigned char *)
+0000ebc8 00000160     0                         OpenLPCCodec::Decode(Quazal::Codec::DecoderState *, unsigned char *, short *)
+0000ed28 00000044     0                         void _STL::_Destroy<Quazal::StationURL>(Quazal::StationURL *)
+0000ed70 000000b8     0                         _STL::_List_base<Quazal::StationURL, Quazal::MemAllocator<Quazal::StationURL> >::clear(void)
+0000ef68 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::StationURL> >::deallocate(void *, unsigned int)
+0000eff8 00000460     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechDevices.obj
+0000eff8 00000000     0                         __gnu_compiled_cplusplus
+0000eff8 000000d8     0                         Quazal::PS2LogitechDevices::Init(const char *, const char *)
+0000f0d0 00000300     0                         Quazal::PS2LogitechDevices::OpenDevice(int, unsigned int, unsigned int, unsigned int)
+0000f420 00000034     0                         Quazal::TraceLog::GetFlags(void)
+0000f3d0 0000004c     0                         Quazal::PS2LogitechDevices::CloseDevice(int)
+0000f458 00001de0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSink.obj
+0000f458 00000000     0                         __gnu_compiled_cplusplus
+0000f458 000000ac     0                         Quazal::PS2LogitechSink::PS2LogitechSink(const Quazal::AudioStreamFormat &, int)
+00010918 00000058     0                         Quazal::SinkDevice::SinkDevice(void)
+00010608 00000050     0                         Quazal::Time::Time(void)
+000106b8 00000080     0                         Quazal::AudioStreamFormat::AudioStreamFormat(const Quazal::AudioStreamFormat &)
+0000f508 000000d8     0                         Quazal::PS2LogitechSink::~PS2LogitechSink(void)
+00010738 00000074     0                         Quazal::AudioStreamFormat::~AudioStreamFormat(void)
+000105a0 00000068     0                         Quazal::Time::~Time(void)
+00010970 00000074     0                         Quazal::SinkDevice::~SinkDevice(void)
+0000f5e0 00000264     0                         Quazal::PS2LogitechSink::createSinkBuffers(int, int)
+00010a20 00000034     0                         Quazal::PS2LogitechSink::GetFormat(void) const
+00010858 00000088     0                         Quazal::AudioStreamFormat::GetPacketSize(void) const
+00010f00 00000084     0                         SafePtr(CommandConsole *)
+0000f848 00000158     0                         Quazal::PS2LogitechSink::Open(void)
+000107b0 00000034     0                         Quazal::AudioStreamFormat::GetNbChannels(void) const
+00010820 00000034     0                         Quazal::AudioStreamFormat::GetNbSamplesPerSecond(void) const
+000107e8 00000034     0                         Quazal::AudioStreamFormat::GetNbBitsPerSample(void) const
+0000f9a0 000002b8     0                         Quazal::PS2LogitechSink::Write(unsigned char *, unsigned int)
+0000fc58 0000030c     0                         Quazal::PS2LogitechSink::GetSinkBuffer(int)
+0000ff68 0000047c     0                         Quazal::PS2LogitechSink::WriteFinal(void)
+00010a58 00000034     0                         Quazal::PS2LogitechSink::resetStreamID(void)
+00010568 00000034     0                         Quazal::TraceLog::GetFlags(void)
+000103e8 00000080     0                         Quazal::PS2LogitechSink::Close(void)
+00010468 00000044     0                         void _STL::_Destroy<Quazal::StationURL>(Quazal::StationURL *)
+000104b0 000000b8     0                         _STL::_List_base<Quazal::StationURL, Quazal::MemAllocator<Quazal::StationURL> >::clear(void)
+00010658 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::StationURL> >::deallocate(void *, unsigned int)
+000108e0 00000034     0                         Quazal::StreamingDevice::IsOpen(void)
+00010fb8 00000058     0                         Quazal::RootObject::~RootObject(void)
+00010f88 00000030     0                         Quazal::RootObject::RootObject(void)
+00011010 00000058     0                         Quazal::_DDL_AudioStreamFormat::_DDL_AudioStreamFormat(void)
+000110e0 00000044     0                         Quazal::AudioStreamFormat::Initialize(unsigned int, unsigned int, unsigned int, unsigned int)
+00011068 00000074     0                         Quazal::_DDL_AudioStreamFormat::~_DDL_AudioStreamFormat(void)
+00011128 00000034     0                         Quazal::AudioStreamFormat::GetNbSamplesPerPacket(void) const
+00011160 0000005c     0                         Quazal::StreamingDevice::StreamingDevice(void)
+000111c0 00000074     0                         Quazal::StreamingDevice::~StreamingDevice(void)
+000109e8 00000034     0                         Quazal::PS2LogitechSink::GetDeviceHandle(void)
+00010a90 00000044     0                         Quazal::PS2LogitechSink::GetPCMBuffer(void)
+00010ad8 00000034     0                         Quazal::PS2LogitechSink::GetCurNumStreams(void)
+00010b10 00000054     0                         Quazal::PS2LogitechSink::GetExtraEncodeBuffer(int)
+00010b68 0000002c     0                         Quazal::PS2LogitechSink::SetIncomingPacketStreamIndex(int)
+00010b98 0000002c     0                         Quazal::PS2LogitechSink::SetVolume(float)
+00010bc8 000000a8     0                         Quazal::PS2LogitechSink::HaveDataToDecode(void)
+00010c70 000000c8     0                         Quazal::PS2LogitechSink::HaveDataToDecode(int)
+00010d38 0000010c     0                         Quazal::PS2LogitechSink::HaveDataToDecodeOnStreams(int)
+00010e48 000000b4     0                         Quazal::PS2LogitechSink::flushStream(int)
+00011238 00000d88     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSource.obj
+00011238 00000000     0                         __gnu_compiled_cplusplus
+00011238 000000a8     0                         Quazal::PS2LogitechSource::PS2LogitechSource(const Quazal::AudioStreamFormat &, int)
+00011ba0 00000058     0                         Quazal::SourceDevice::SourceDevice(void)
+00011940 00000080     0                         Quazal::AudioStreamFormat::AudioStreamFormat(const Quazal::AudioStreamFormat &)
+00011cd8 00000034     0                         Quazal::PS2LogitechSource::GetFormat(void) const
+00011ae0 00000088     0                         Quazal::AudioStreamFormat::GetPacketSize(void) const
+000112e0 00000094     0                         Quazal::PS2LogitechSource::~PS2LogitechSource(void)
+000119c0 00000074     0                         Quazal::AudioStreamFormat::~AudioStreamFormat(void)
+00011bf8 00000074     0                         Quazal::SourceDevice::~SourceDevice(void)
+00011378 00000120     0                         Quazal::PS2LogitechSource::Open(void)
+00011a38 00000034     0                         Quazal::AudioStreamFormat::GetNbChannels(void) const
+00011aa8 00000034     0                         Quazal::AudioStreamFormat::GetNbSamplesPerSecond(void) const
+00011a70 00000034     0                         Quazal::AudioStreamFormat::GetNbBitsPerSample(void) const
+00011498 00000260     0                         Quazal::PS2LogitechSource::Read(unsigned char *, unsigned int)
+000118a8 00000034     0                         Quazal::TraceLog::GetFlags(void)
+000116f8 000000ac     0                         Quazal::PS2LogitechSource::Close(void)
+000117a8 00000044     0                         void _STL::_Destroy<Quazal::StationURL>(Quazal::StationURL *)
+000117f0 000000b8     0                         _STL::_List_base<Quazal::StationURL, Quazal::MemAllocator<Quazal::StationURL> >::clear(void)
+000118e0 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::StationURL> >::deallocate(void *, unsigned int)
+00011b68 00000034     0                         Quazal::StreamingDevice::IsOpen(void)
+00011d10 00000058     0                         Quazal::_DDL_AudioStreamFormat::_DDL_AudioStreamFormat(void)
+00011de0 00000044     0                         Quazal::AudioStreamFormat::Initialize(unsigned int, unsigned int, unsigned int, unsigned int)
+00011d68 00000074     0                         Quazal::_DDL_AudioStreamFormat::~_DDL_AudioStreamFormat(void)
+00011e28 00000034     0                         Quazal::AudioStreamFormat::GetNbSamplesPerPacket(void) const
+00011e60 0000005c     0                         Quazal::StreamingDevice::StreamingDevice(void)
+00011ec0 00000074     0                         Quazal::StreamingDevice::~StreamingDevice(void)
+00011c70 00000030     0                         Quazal::PS2LogitechSource::IsEmpty(void)
+00011ca0 00000034     0                         Quazal::PS2LogitechSource::GetDeviceHandle(void)
+00011f38 00000030     0                         Quazal::RootObject::RootObject(void)
+00011f68 00000058     0                         Quazal::RootObject::~RootObject(void)
+00011fc0 00008ca8     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChat.obj
+00011fc0 00000000     0                         __gnu_compiled_cplusplus
+00011fc0 00000240     0                         CVoiceChat::CVoiceChat(void)
+00018980 0000005c     0                         CVoiceChat::CRequestMuting::CRequestMuting(void)
+00018ab8 0000005c     0                         CVoiceChat::CMute::CMute(void)
+00018bf0 0000005c     0                         CVoiceChat::CUnMute::CUnMute(void)
+00018d28 0000005c     0                         CVoiceChat::CRemoteMute::CRemoteMute(void)
+00018e60 0000005c     0                         CVoiceChat::CRemoteUnMute::CRemoteUnMute(void)
+00017fd0 0000005c     0                         Quazal::DOHandle::DOHandle(unsigned int)
+000180d8 00000038     0                         Quazal::DOHandle::operator=(const Quazal::DOHandle &)
+00017f68 00000068     0                         Quazal::DOHandle::~DOHandle(void)
+000191f0 0000004c     0                         CMasterTimer::GetOSTime(void)
+00012200 000003d8     0                         CVoiceChat::~CVoiceChat(void)
+000188f8 00000050     0                         CVoiceChat::CRemoteUnMute::~CRemoteUnMute(void)
+000188a8 00000050     0                         CVoiceChat::CRemoteMute::~CRemoteMute(void)
+00018858 00000050     0                         CVoiceChat::CUnMute::~CUnMute(void)
+00018808 00000050     0                         CVoiceChat::CMute::~CMute(void)
+000187b8 00000050     0                         CVoiceChat::CRequestMuting::~CRequestMuting(void)
+00016e70 00000048     0                         __builtin_delete
+000125d8 000000d8     0                         CVoiceChat::createCodecs(void)
+000126b0 00000030     0                         CVoiceChat::createPlatformSpecific(void)
+000126e0 00000030     0                         CVoiceChat::releasePlatformSpecific(void)
+00012710 000004f8     0                         CVoiceChat::create(DOTalker *, CSession &)
+00018350 00000030     0                         Quazal::CodecManager::GetInstance(void)
+000189e0 000000d4     0                         CVoiceChat::CRequestMuting::Initialize(const char *, unsigned int, CMessageOwner &, CVoiceChat *)
+00018b18 000000d4     0                         CVoiceChat::CMute::Initialize(const char *, unsigned int, CMessageOwner &, CVoiceChat *)
+00018c50 000000d4     0                         CVoiceChat::CUnMute::Initialize(const char *, unsigned int, CMessageOwner &, CVoiceChat *)
+00018d88 000000d4     0                         CVoiceChat::CRemoteMute::Initialize(const char *, unsigned int, CMessageOwner &, CVoiceChat *)
+00018ec0 000000d4     0                         CVoiceChat::CRemoteUnMute::Initialize(const char *, unsigned int, CMessageOwner &, CVoiceChat *)
+00016d40 00000098     0                         __builtin_new
+00019240 00000068     0                         MyDemuxEventHandler::MyDemuxEventHandler(Quazal::VoiceChannel *)
+00018710 00000034     0                         Quazal::VoiceChatManager::SetCodecID(unsigned char)
+00012c08 00001980     0                         CVoiceChat::update(void)
+00019168 00000084     0                         SafePtr(CommandConsole *)
+00014be0 000004ec     0                         CVoiceChat::enableChatChannel(CVoiceChat::eChatChannels, bool)
+00018f98 000000b0     0                         CVoiceChat::allJoined(void) const
+00019598 00000034     0                         MyDemuxEventHandler::GetChannel(void)
+00018780 00000034     0                         Quazal::VoiceChatManager::GetChannel(void) const
+00019538 0000002c     0                         MyDemuxEventHandler::SetChannel(Quazal::VoiceChannel *)
+00019568 0000002c     0                         MyDemuxEventHandler::SetChannelIndex(int)
+00018748 00000034     0                         Quazal::VoiceChatManager::GetEventHandler(void)
+00018948 00000034     0                         CVoiceChat::isVoiceEnabled(void) const
+00017db8 00000084     0                         SafePtr(SystemInputDriver *)
+00019048 000000ac     0                         CVoiceChat::isChatChannelEnabled(int) const
+000186d8 00000034     0                         Quazal::VoiceChatManager::GetMemberSink(void)
+00018090 00000044     0                         Quazal::DOHandle::operator!=(const Quazal::DOHandle &) const
+000195d0 0000005c     0                         Quazal::RefTemplate<DOTalker>::RefTemplate(const Quazal::DORef &)
+000193a0 00000114     0                         Quazal::RefTemplate<DOTalker>::IsValid(void) const
+00019630 00000080     0                         Quazal::RefTemplate<DOTalker>::operator->(void)
+000192a8 00000068     0                         Quazal::RefTemplate<DOTalker>::~RefTemplate(void)
+00018030 00000060     0                         Quazal::DOHandle::DOHandle(const Quazal::DOHandle &)
+00019310 00000090     0                         Quazal::RefTemplate<DOTalker>::RefTemplate(Quazal::DOHandle)
+000194b8 00000080     0                         Quazal::RefTemplate<DOTalker>::operator*(void)
+00017e40 00000068     0                         GetMessageDispatcher(const char *, int)
+000196b0 00000034     0                         CHandle<CActor *>::CHandle(unsigned int)
+00014588 000004d8     0                         CVoiceChat::tearDown(void)
+000190f8 0000006c     0                         CVoiceChat::setWhosTalking(Quazal::DOHandle)
+00014a60 00000148     0                         CVoiceChat::postNetZTearDown(void)
+00014ba8 00000034     0                         CVoiceChat::GetSpeakerHost(void)
+000150d0 000000ec     0                         CVoiceChat::enable(bool)
+000151c0 00000278     0                         CVoiceChat::isPlayerTalking(DOTalker *)
+00015438 00000064     0                         CVoiceChat::setOutputVolume(float)
+000154a0 0000017c     0                         CVoiceChat::enableVoiceMasking(bool, int)
+00015620 000001ac     0                         CVoiceChat::updateVoiceMasking(int, float, float, float, float, float, float, float, int)
+000157d0 00000024     0                         CVoiceChat::refreshPlatformData(void)
+000157f8 00000030     0                         CVoiceChat::channelVoiceThruSpeakers(bool)
+00015828 000004cc     0                         CVoiceChat::openHeadSet(void)
+00015cf8 000004e8     0                         CVoiceChat::updateHeadSet(void)
+000161e0 000005f8     0                         CVoiceChat::closeHeadSet(void)
+000167d8 00000040     0                         CVoiceChat::getPlatformVoiceManager(void)
+00016818 00000048     0                         CVoiceChat::isPlayerMuted(unsigned long, unsigned int)
+00016860 000000ec     0                         CVoiceChat::updateMuting(void)
+000196e8 000000a0     0                         CSingleton<CSession>::Get(void)
+00016950 000001cc     0                         CVoiceChat::CRequestMuting::HandleMessage(void *, CHandle<CActor *>, bool)
+00016b20 00000088     0                         CVoiceChat::CRemoteMute::HandleMessage(void *, CHandle<CActor *>, bool)
+00016ba8 00000088     0                         CVoiceChat::CRemoteUnMute::HandleMessage(void *, CHandle<CActor *>, bool)
+00016c30 00000088     0                         CVoiceChat::CMute::HandleMessage(void *, CHandle<CActor *>, bool)
+00016cb8 00000088     0                         CVoiceChat::CUnMute::HandleMessage(void *, CHandle<CActor *>, bool)
+00016dd8 00000098     0                         __builtin_vec_new
+00016eb8 00000048     0                         __builtin_vec_delete
+00016f00 00000054     0                         void _STL::_Destroy<Quazal::StationURL>(Quazal::StationURL *)
+00016f58 000000c8     0                         _STL::_List_base<Quazal::StationURL, Quazal::MemAllocator<Quazal::StationURL> >::clear(void)
+00018110 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::StationURL> >::deallocate(void *, unsigned int)
+00017020 00000034     0                         void _STL::_Destroy<float>(float *)
+00017058 000000c8     0                         _STL::_List_base<float, Quazal::MemAllocator<float> >::clear(void)
+00018170 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<float> >::deallocate(void *, unsigned int)
+00017120 00000034     0                         void _STL::_Destroy<int>(int *)
+00017158 000000c8     0                         _STL::_List_base<int, Quazal::MemAllocator<int> >::clear(void)
+000181d0 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<int> >::deallocate(void *, unsigned int)
+00017220 00000034     0                         void _STL::_Destroy<short>(short *)
+00017258 000000c8     0                         _STL::_List_base<short, Quazal::MemAllocator<short> >::clear(void)
+00018230 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<short> >::deallocate(void *, unsigned int)
+00017320 00000034     0                         void _STL::_Destroy<char>(char *)
+00017358 000000c8     0                         _STL::_List_base<char, Quazal::MemAllocator<char> >::clear(void)
+00018290 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<char> >::deallocate(void *, unsigned int)
+00017420 00000034     0                         void _STL::_Destroy<double>(double *)
+00017458 000000c8     0                         _STL::_List_base<double, Quazal::MemAllocator<double> >::clear(void)
+000182f0 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<double> >::deallocate(void *, unsigned int)
+00017520 00000070     0                         void _STL::_Destroy<Quazal::VoiceChannelMember>(Quazal::VoiceChannelMember *)
+00017590 000000c8     0                         _STL::_List_base<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::clear(void)
+00018380 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::VoiceChannelMember> >::deallocate(void *, unsigned int)
+00017658 00000074     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::operator++(int)
+00017ea8 00000030     0                         _STL::_List_iterator_base::_M_incr(void)
+000176d0 00000094     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::operator++(int)
+00018440 0000005c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::_List_iterator(const _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> > &)
+00017768 00000048     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::operator*(void) const
+000177b0 00000074     0                         Quazal::VoiceChannelMember::operator=(const Quazal::VoiceChannelMember &)
+00017828 000000d8     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::erase(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >)
+000183e0 0000005c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::_List_iterator(_STL::_List_node<Quazal::VoiceChannelMember> *)
+00017900 000000dc     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::erase(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >)
+00017f20 00000044     0                         _STL::_List_iterator_base::operator!=(const _STL::_List_iterator_base &) const
+000179e0 00000230     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::operator=(const _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> > &)
+000184a0 00000060     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::begin(void)
+00018678 0000005c     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::end(void)
+00018500 00000058     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::begin(void) const
+00018558 00000054     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::end(void) const
+000185b0 00000038     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::operator*(void) const
+00017ed8 00000044     0                         _STL::_List_iterator_base::operator==(const _STL::_List_iterator_base &) const
+000185e8 00000090     0                         void _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::insert<_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> > >(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >)
+00017c10 000001a8     0                         __static_initialization_and_destruction_0
+00019788 00000090     0                         CSingleton<CMessageDispatcher>::Get(void)
+00019848 00000058     0                         Quazal::RootObject::~RootObject(void)
+00019818 00000030     0                         Quazal::RootObject::RootObject(void)
+000198a0 00000034     0                         _STL::_List_iterator_base::_List_iterator_base(_STL::_List_node_base *)
+00019910 0000005c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::_List_iterator(_STL::_List_node<Quazal::VoiceChannelMember> *)
+00019970 000000e4     0                         void _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::_M_insert_dispatch<_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> > >(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >, const _STL::__false_type &)
+000198d8 00000034     0                         Quazal::DORef::GetDOPtr(void) const
+00019a58 00000060     0                         Quazal::VoiceChannel::EventHandler::ApproveJoinRequest(Quazal::DOHandle)
+0001a570 00000074     0                         MyDemuxEventHandler::MembershipChanged(void)
+00019b18 000005c0     0                         MyDemuxEventHandler::StreamOpened(unsigned char, Quazal::DOHandle)
+0001a2d8 00000294     0                         MyDemuxEventHandler::StreamPacketReceived(unsigned char, Quazal::DOHandle, unsigned char *, unsigned int)
+0001a0d8 00000200     0                         MyDemuxEventHandler::StreamClosed(unsigned char, Quazal::DOHandle)
+00019ab8 0000005c     0                         MyDemuxEventHandler::~MyDemuxEventHandler(void)
+0001a708 000000cc     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::insert(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, const Quazal::VoiceChannelMember &)
+0001a6b8 0000004c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::operator++(void)
+0001a630 00000034     0                         Quazal::DOHandle::GetValue(void) const
+0001a838 00000034     0                         CVoiceChat::getLocalTalker(void)
+0001a870 0000002c     0                         CVoiceChat::setTalkTimer(unsigned int)
+0001a5e8 00000044     0                         Quazal::DOHandle::operator==(const Quazal::DOHandle &) const
+0001a7d8 0000002c     0                         CVoiceChat::setListen(bool)
+0001a668 00000050     0                         Quazal::DOHandle::operator unsigned int(void) const
+0001a808 0000002c     0                         CVoiceChat::setMemberShipChanged(bool)
+0001a8a0 00000080     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::_M_create_node(const Quazal::VoiceChannelMember &)
+0001a920 00000074     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::VoiceChannelMember> >::allocate(unsigned int, const void *)
+0001a998 00000060     0                         void _STL::_Construct<Quazal::VoiceChannelMember, Quazal::VoiceChannelMember>(Quazal::VoiceChannelMember *, const Quazal::VoiceChannelMember &)
+0001a9f8 00000034     0                         Quazal::RootObject::operator new(unsigned int, void *)
+0001aa30 00000070     0                         Quazal::VoiceChannelMember::VoiceChannelMember(const Quazal::VoiceChannelMember &)
+0001aaa0 00000094     0                         Quazal::_DDL_VoiceChannelMember::_DDL_VoiceChannelMember(const Quazal::_DDL_VoiceChannelMember &)
+0001ab38 0000009c     0                         Quazal::_DDL_VoiceChannelMember::~_DDL_VoiceChannelMember(void)
+0001abd8 00000048     0                         global constructors keyed to d__Ttl_Avalanche_GameLib_Voice_NetZ_Ps2_VoiceChat.cppHxaaaa
+0001ac20 00000048     0                         global destructors keyed to d__Ttl_Avalanche_GameLib_Voice_NetZ_Ps2_VoiceChat.cppeVaaaa
+0001ac68 00003c90     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChatManager.obj
+0001ac68 00000000     0                         __gnu_compiled_cplusplus
+0001ac68 00000068     0                         Quazal::VoiceChatManager::VoiceChatManager(void)
+0001ca28 00000030     0                         Quazal::RootObject::RootObject(void)
+0001acd0 00000064     0                         Quazal::VoiceChatManager::~VoiceChatManager(void)
+0001ca58 00000058     0                         Quazal::RootObject::~RootObject(void)
+0001ad38 00000284     0                         Quazal::VoiceChatManager::InitializeChannel(char *, unsigned int, Quazal::VoiceChannel::EventHandler *)
+0001afc0 000001ac     0                         Quazal::VoiceChatManager::discoverChannel(int)
+0001d3f0 0000008c     0                         Quazal::SelectionIteratorTemplate<Quazal::VoiceChannel>::SelectionIteratorTemplate(void)
+0001cd20 00000070     0                         Quazal::IteratorOverDOs::GotoStart(void)
+0001cc70 000000ac     0                         Quazal::IteratorOverDOs::EndReached(void) const
+0001cd90 0000005c     0                         Quazal::IteratorOverDOs::operator++(int)
+0001d480 00000058     0                         Quazal::SelectionIteratorTemplate<Quazal::VoiceChannel>::operator*(void)
+0001d388 00000068     0                         Quazal::SelectionIteratorTemplate<Quazal::VoiceChannel>::~SelectionIteratorTemplate(void)
+0001b170 000001e4     0                         Quazal::VoiceChatManager::InitializeTalker(Quazal::DOHandle, Quazal::SourceDevice *)
+0001cc10 00000060     0                         Quazal::DOHandle::DOHandle(const Quazal::DOHandle &)
+0001cba8 00000068     0                         Quazal::DOHandle::~DOHandle(void)
+0001b358 0000015c     0                         Quazal::VoiceChatManager::StartTalking(void)
+0001b4b8 00000144     0                         Quazal::VoiceChatManager::StopTalking(void)
+0001b600 000000b4     0                         Quazal::VoiceChatManager::IsTalking(void)
+0001b6b8 000003a0     0                         Quazal::VoiceChatManager::Process(void)
+0001cab0 00000034     0                         Quazal::TraceLog::GetFlags(void)
+0001ba58 00000124     0                         Quazal::VoiceChatManager::Teardown(void)
+0001bb80 00000194     0                         Quazal::VoiceChatManager::unJoin(void)
+0001bd18 00000054     0                         void _STL::_Destroy<Quazal::StationURL>(Quazal::StationURL *)
+0001bd70 000000c8     0                         _STL::_List_base<Quazal::StationURL, Quazal::MemAllocator<Quazal::StationURL> >::clear(void)
+0001cdf0 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::StationURL> >::deallocate(void *, unsigned int)
+0001be38 00000034     0                         void _STL::_Destroy<float>(float *)
+0001be70 000000c8     0                         _STL::_List_base<float, Quazal::MemAllocator<float> >::clear(void)
+0001ce50 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<float> >::deallocate(void *, unsigned int)
+0001bf38 00000034     0                         void _STL::_Destroy<int>(int *)
+0001bf70 000000c8     0                         _STL::_List_base<int, Quazal::MemAllocator<int> >::clear(void)
+0001ceb0 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<int> >::deallocate(void *, unsigned int)
+0001c038 00000034     0                         void _STL::_Destroy<short>(short *)
+0001c070 000000c8     0                         _STL::_List_base<short, Quazal::MemAllocator<short> >::clear(void)
+0001cf10 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<short> >::deallocate(void *, unsigned int)
+0001c138 00000034     0                         void _STL::_Destroy<char>(char *)
+0001c170 000000c8     0                         _STL::_List_base<char, Quazal::MemAllocator<char> >::clear(void)
+0001cf70 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<char> >::deallocate(void *, unsigned int)
+0001c238 00000034     0                         void _STL::_Destroy<double>(double *)
+0001c270 000000c8     0                         _STL::_List_base<double, Quazal::MemAllocator<double> >::clear(void)
+0001cfd0 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<double> >::deallocate(void *, unsigned int)
+0001c338 00000070     0                         void _STL::_Destroy<Quazal::VoiceChannelMember>(Quazal::VoiceChannelMember *)
+0001c3a8 000000c8     0                         _STL::_List_base<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::clear(void)
+0001d030 0000005c     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::VoiceChannelMember> >::deallocate(void *, unsigned int)
+0001c470 00000074     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::operator++(int)
+0001cae8 00000030     0                         _STL::_List_iterator_base::_M_incr(void)
+0001c4e8 00000094     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::operator++(int)
+0001d0f0 0000005c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::_List_iterator(const _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> > &)
+0001c580 00000048     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::operator*(void) const
+0001c5c8 00000074     0                         Quazal::VoiceChannelMember::operator=(const Quazal::VoiceChannelMember &)
+0001c640 000000d8     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::erase(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >)
+0001d090 0000005c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >::_List_iterator(_STL::_List_node<Quazal::VoiceChannelMember> *)
+0001c718 000000dc     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::erase(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >)
+0001cb60 00000044     0                         _STL::_List_iterator_base::operator!=(const _STL::_List_iterator_base &) const
+0001c7f8 00000230     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::operator=(const _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> > &)
+0001d150 00000060     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::begin(void)
+0001d328 0000005c     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::end(void)
+0001d1b0 00000058     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::begin(void) const
+0001d208 00000054     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::end(void) const
+0001d260 00000038     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::operator*(void) const
+0001cb18 00000044     0                         _STL::_List_iterator_base::operator==(const _STL::_List_iterator_base &) const
+0001d298 00000090     0                         void _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::insert<_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> > >(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >)
+0001d5b8 00000060     0                         Quazal::DORef::GetHandle(void) const
+0001d510 0000005c     0                         Quazal::DOHandle::DOHandle(unsigned int)
+0001d570 00000044     0                         Quazal::DOHandle::operator==(const Quazal::DOHandle &) const
+0001d618 00000054     0                         Quazal::IteratorOverDOs::GotoEnd(void)
+0001d670 000000b4     0                         Quazal::IteratorOverDOs::MoveStart(void)
+0001d728 00000170     0                         Quazal::IteratorOverDOs::AdvanceToValidItem(bool)
+0001d4d8 00000034     0                         _STL::_List_iterator_base::_List_iterator_base(_STL::_List_node_base *)
+0001dcd8 0000005c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::_List_iterator(_STL::_List_node<Quazal::VoiceChannelMember> *)
+0001dd38 000000e4     0                         void _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::_M_insert_dispatch<_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> > >(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >, _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >, const _STL::__false_type &)
+0001d980 000000d4     0                         Quazal::IteratorOverDOs::~IteratorOverDOs(void)
+0001d898 000000e4     0                         Quazal::IteratorOverDOs::IteratorOverDOs(const Quazal::Selection *, Quazal::DOFilter *)
+0001dc50 00000084     0                         Quazal::IteratorOverDOs::SetSelection(Quazal::Selection *)
+0001de20 000000b4     0                         Quazal::SelectionIteratorTemplate<Quazal::VoiceChannel>::InitFilter(void)
+0001da58 000001f4     0                         Quazal::IteratorOverDOs::GetDOPtr(void) const
+0001e220 0000006c     0                         Quazal::IteratorOverDOs::SetCurrentItem(Quazal::DOHandle)
+0001ded8 00000068     0                         Quazal::ScopedCS::ScopedCS(Quazal::CriticalSection &)
+0001e160 00000060     0                         Quazal::IteratorOverDOs::GetMinimumValidHandle(void) const
+0001df40 00000074     0                         Quazal::ScopedCS::~ScopedCS(void)
+0001e290 000000b4     0                         Quazal::IteratorOverDOs::MoveNext(void)
+0001e1c0 00000060     0                         Quazal::IteratorOverDOs::GetHandle(void) const
+0001e000 00000050     0                         Quazal::DOHandle::operator unsigned int(void) const
+0001e130 0000002c     0                         Quazal::DORef::NameReference(const char *)
+0001dfb8 00000044     0                         Quazal::DOHandle::operator!=(const Quazal::DOHandle &) const
+0001e0e0 00000050     0                         Quazal::DORef::IsValid(void) const
+0001e050 00000054     0                         Quazal::DORef::GetHandleValue(void) const
+0001e0a8 00000034     0                         Quazal::DORef::GetDOPtr(void) const
+0001e398 000000cc     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::insert(_STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Nonconst_traits<Quazal::VoiceChannelMember> >, const Quazal::VoiceChannelMember &)
+0001e348 0000004c     0                         _STL::_List_iterator<Quazal::VoiceChannelMember, _STL::_Const_traits<Quazal::VoiceChannelMember> >::operator++(void)
+0001e468 00000080     0                         Quazal::CriticalSection::Enter(void)
+0001e4e8 00000068     0                         Quazal::CriticalSection::Leave(void)
+0001e550 00000034     0                         Quazal::DOHandle::GetValue(void) const
+0001e588 00000080     0                         _STL::list<Quazal::VoiceChannelMember, Quazal::MemAllocator<Quazal::VoiceChannelMember> >::_M_create_node(const Quazal::VoiceChannelMember &)
+0001e608 00000034     0                         Quazal::MutexPrimitive::IsANoOp(void)
+0001e640 00000074     0                         Quazal::MemAllocator<_STL::_List_node<Quazal::VoiceChannelMember> >::allocate(unsigned int, const void *)
+0001e6b8 00000060     0                         void _STL::_Construct<Quazal::VoiceChannelMember, Quazal::VoiceChannelMember>(Quazal::VoiceChannelMember *, const Quazal::VoiceChannelMember &)
+0001e718 00000034     0                         Quazal::RootObject::operator new(unsigned int, void *)
+0001e750 00000070     0                         Quazal::VoiceChannelMember::VoiceChannelMember(const Quazal::VoiceChannelMember &)
+0001e7c0 00000094     0                         Quazal::_DDL_VoiceChannelMember::_DDL_VoiceChannelMember(const Quazal::_DDL_VoiceChannelMember &)
+0001e858 0000009c     0                         Quazal::_DDL_VoiceChannelMember::~_DDL_VoiceChannelMember(void)
+0001e8f8 00000128     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(__main.o)
+0001e8f8 00000054     0                         __do_global_dtors
+0001e950 000000b0     0                         __do_global_ctors
+0001ea00 00000020     0                         __main
+0001ea20 00000000     4                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_ctors.o)
+0001ea20 000006ec     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_divdi3.o)
+0001ea20 000006ec     0                         __divdi3
+0001f110 00000060     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_muldi3.o)
+0001f110 00000060     0                         __muldi3
+0001f170 00000008     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_pure.o)
+0001f170 00000008     0                         __pure_virtual
+0001f178 00000cf4     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(dp-bit.o)
+0001f178 0000012c     0                         __pack_d
+0001f2a8 0000009c     0                         __unpack_d
+0001f348 00000240     0                         _fpadd_parts
+0001f588 00000058     0                         dpadd
+0001f5e0 00000064     0                         dpsub
+0001f648 000002a8     0                         dpmul
+0001f8f0 00000168     0                         dpdiv
+0001fa58 00000114     0                         __fpcmp_parts_d
+0001fb70 0000004c     0                         dpcmp
+0001fbc0 000000b8     0                         litodp
+0001fc78 00000094     0                         dptoli
+0001fd10 000000a0     0                         dptoul
+0001fdb0 00000038     0                         __negdf2
+0001fde8 0000002c     0                         __make_dp
+0001fe18 00000054     0                         dptofp
+0001fe70 00000be0     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(fp-bit.o)
+0001fe70 0000010c     0                         __pack_f
+0001ff80 00000090     0                         __unpack_f
+00020010 00000234     0                         _fpadd_parts
+00020248 00000058     0                         fpadd
+000202a0 00000064     0                         fpsub
+00020308 000001f4     0                         fpmul
+00020500 00000160     0                         fpdiv
+00020660 00000114     0                         __fpcmp_parts_f
+00020778 0000004c     0                         fpcmp
+000207c8 000000b8     0                         sitofp
+00020880 0000008c     0                         fptosi
+00020910 00000098     0                         fptoui
+000209a8 00000038     0                         __negsf2
+000209e0 0000002c     0                         __make_fp
+00020a10 00000040     0                         fptodp
+00020a50 00000f6c     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_eh.o)
+00020a50 00000010     0                         __default_terminate
+00020a60 00000024     0                         __terminate
+00020a88 0000002c     0                         __throw_type_match
+00020ab8 00000008     0                         __empty
+00020ac0 00000054     0                         new_eh_context
+00020b68 00000028     0                         eh_context_initialize
+00020b18 00000024     0                         __get_eh_context
+00020b40 00000028     0                         __get_eh_info
+00020b90 00000068     0                         eh_context_static
+00020bf8 00000028     0                         __get_dynamic_handler_chain
+00020c20 00000178     0                         __sjthrow
+00020d98 00000118     0                         __sjpopnthrow
+00020eb0 00000048     0                         __eh_rtime_match
+00020ef8 00000008     0                         __get_eh_table_version
+00020f00 00000008     0                         __get_eh_table_language
+00020f08 000000d8     0                         old_find_exception_handler
+00020fe0 00000144     0                         find_exception_handler
+00021128 00000088     0                         get_reg_addr
+000211b0 0000007c     0                         copy_reg
+00021230 0000008c     0                         next_stack_level
+000212c0 00000008     0                         __unwinding_cleanup
+000212c8 00000330     0                         throw_helper
+000215f8 000001dc     0                         __throw
+000217d8 000001e4     0                         __rethrow
+000219c0 0000102c     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(frame.o)
+000219c0 00000044     0                         decode_uleb128
+00021a08 00000050     0                         decode_sleb128
+00021a58 000000fc     0                         fde_merge
+00021b58 00000264     0                         end_fde_sort
+00022878 00000174     0                         fde_split
+00021dc0 00000048     0                         count_fdes
+00021e08 00000088     0                         add_fdes
+00021e90 0000013c     0                         frame_init
+00021fd0 000000e4     0                         find_fde
+000220b8 00000104     0                         extract_cie_info
+000221c0 00000398     0                         execute_cfa_insn
+00022558 00000028     0                         __register_frame_info
+00022580 00000030     0                         __register_frame
+000225b0 00000028     0                         __register_frame_info_table
+000225d8 00000030     0                         __register_frame_table
+00022608 00000078     0                         __deregister_frame_info
+00022680 00000020     0                         __deregister_frame
+000226a0 000001d8     0                         __frame_state_for
+000229f0 00001ec8     8                 d:\ttl\PS2\Logitech\liblgaud.a(liblgaud.o)
+000229f0 000004b4     0                         lgAudInit
+00022ea8 00000164     0                         lgAudOpen
+00023010 00000170     0                         lgAudRead
+00023180 00000170     0                         lgAudWrite
+000232f0 00000170     0                         lgAudWriteVag
+00023460 000000ec     0                         lgAudPrepareForReboot
+00024770 0000009c     0                         lgAudASync
+00023550 00000174     0                         lgAudARead
+000236c8 00000184     0                         lgAudAWrite
+00023850 00000184     0                         lgAudAWriteVag
+000239d8 000000d0     0                         lgAudDeInit
+00023aa8 00000070     0                         lgAudEnumHint
+00023b18 000001cc     0                         lgAudEnumerate
+00023ce8 000000c4     0                         lgAudClose
+00023db0 000000d8     0                         lgAudGetRemainingPlaybackBytes
+00023e88 000000d8     0                         lgAudGetAvailableRecordingBytes
+00023f60 00000120     0                         lgAudGetMixer
+00024080 00000118     0                         lgAudSetMixer
+00024198 000000c4     0                         lgAudStartRecording
+00024260 000000c4     0                         lgAudStopRecording
+00024328 000000c4     0                         lgAudStartPlayback
+000243f0 000000c4     0                         lgAudStopPlayback
+000244b8 000000c4     0                         lgAudResumePlayback
+00024580 000000f4     0                         lgAudSetPlaybackVolume
+00024678 000000f4     0                         lgAudSetRecordingVolume
+000248b8 00000608     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciVad.o)
+000248b8 00000164     0                         nemAgcVadMain
+00024a20 000000b0     0                         nciEnableVAD
+00024ad0 00000084     0                         nciDisableVAD
+00024b58 00000044     0                         nciSetVADSilenceDuration
+00024ba0 00000048     0                         nciGetVADSilenceDuration
+00024be8 00000054     0                         nciSetVADEnergyTrigLevel
+00024c40 00000058     0                         nciGetVADEnergyTrigLevel
+00024c98 00000058     0                         nciGetVADVoiceActivity
+00024cf0 00000044     0                         nciEnableAGC
+00024d38 00000044     0                         nciDisableAGC
+00024d80 00000048     0                         nciSetAGCTargetGain
+00024dc8 00000058     0                         nciGetAGCTargetGain
+00024e20 00000048     0                         nciSetAGCControlValue
+00024e68 00000058     0                         nciGetAGCControlValue
+00024ec0 00000440     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nemAgc.o)
+00024ec0 0000012c     0                         nemAgcMeanEngLevel
+00024ff0 00000194     0                         nemAgcCalc
+00025188 00000074     0                         nemAgcUpdateCounter
+00025200 00000008     0                         nemAgcGetMeanEnergy
+00025208 00000084     0                         nemAgcInit
+00025290 00000070     0                         nemAgcFree
+00025300 00000588     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nemVad.o)
+00025300 00000234     0                         nemVadUpdateNoiseFlr
+00025538 00000098     0                         nemVadBlockDec
+000255d0 00000090     0                         nemVadSpkrDec
+00025660 000000bc     0                         nemVadTransmit
+00025720 00000054     0                         nemVadVoicingDec
+00025778 000000d0     0                         nemVadInit
+00025848 00000040     0                         nemVadFree
+00025888 00000360     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciSaseEnc3200.o)
+00025888 00000150     0                         nciEncodeSase3200
+000259d8 00000130     0                         nciInitEncodeSase3200
+00025b08 000000dc     0                         nciFreeEncodeSase3200
+00025be8 00000c28     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(EncSC.o)
+00025be8 0000023c     0                         NellyEncodeSC
+00026628 000000e0     0                         CoarsePitchAndFrameEnergy
+00026708 00000104     0                         PitchAdaptiveSpectrum
+00026198 00000324     0                         OuterFrameParam
+00025e28 00000144     0                         NellyInitEncodeSC3
+00025f70 00000224     0                         NellyLinearInterpolate
+000264c0 00000084     0                         NellyFreeEncodeSC3
+00026548 0000000c     0                         NellySetEncPitchWarpSase3200
+00026558 0000000c     0                         NellySetEncPitchOffsetSase3200
+00026568 0000000c     0                         NellySetEncSpectrumWarpSase3200
+00026578 00000024     0                         NellySetEncSpectrumOffsetSase3200
+000265a0 00000024     0                         NellySetEncSpectrumLedgeSase3200
+000265c8 00000018     0                         NellySetEncWhisperSase3200
+000265e0 00000044     0                         NellySetEncRobotSase3200
+00026810 00000080     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PackSC.o)
+00026810 00000080     0                         NellyPackSC3
+00026890 000000e0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(BitPackC.o)
+00026890 000000e0     0                         BitPackCBuffer
+00026970 00000298     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libsnd.o)
+00026970 00000060     0                         InitSpCBM
+000269d0 0000003c     0                         FreeSpCBM
+00026a10 00000110     0                         PutFrameSpCBM
+00026b20 000000e8     0                         GetFrameSpCBM
+00026c08 00000288     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(MidFrame.o)
+00026c08 00000104     0                         MidFrameParam
+00026d10 0000006c     0                         GetWindowedSpeech
+00026d80 00000110     0                         MidFramePv
+00026e90 000002e0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(MidPitch.o)
+00026e90 00000208     0                         TDPitchRefine
+00027098 000000d8     0                         MidEstPitch
+00027170 000003c8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciEncodeVoiceFonts.o)
+00027170 00000048     0                         nciSetEncPitchWarpSase3200
+000271b8 00000048     0                         nciSetEncPitchOffsetSase3200
+00027200 0000006c     0                         nciSetEncPitchChangeSase3200
+00027270 00000048     0                         nciSetEncSpectrumWarpSase3200
+000272b8 00000048     0                         nciSetEncSpectrumOffsetSase3200
+00027300 00000048     0                         nciSetEncSpectrumLedgeSase3200
+00027348 00000084     0                         nciSetEncSpectrumChangeSase3200
+000273d0 00000048     0                         nciSetEncWhisperSase3200
+00027418 00000070     0                         nciSetEncRobotSase3200
+00027488 000000ac     0                         nciSetEncVoiceFontSase3200
+00027538 00001b10     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciSaseDec3200.o)
+00027538 00000164     0                         nciDecodeVoicePropSase3200
+000276a0 000003f8     0                         nciTripleDecodeVoicePropSase3200
+00027a98 00000568     0                         nciQuadrupleDecodeVoicePropSase3200
+00028000 00000128     0                         nciInitDecodeSase3200
+00028da8 000000c4     0                         nciFreeDecodeSase3200
+00028128 00000278     0                         nciInitTripleDecodeSase3200
+00028678 000001c8     0                         nciFreeTripleDecodeSase3200
+000283a0 000002d4     0                         nciInitQuadrupleDecodeSase3200
+00028840 0000021c     0                         nciFreeQuadrupleDecodeSase3200
+00028a60 000000e8     0                         nciGetInfoSase3200
+00028b48 0000001c     0                         nciDecodeSase3200
+00028b68 00000024     0                         nciTripleDecodeSase3200
+00028b90 000000d4     0                         nciSetTripleDecodeGainSase3200
+00028c68 00000028     0                         nciQuadrupleDecodeSase3200
+00028c90 00000118     0                         nciSetQuadrupleDecodeGainSase3200
+00028e70 00000014     0                         nciDecodeNeedsInputSase3200
+00028e88 000000ac     0                         nciGetSilenceFrame
+00028f38 00000048     0                         nciGetSilenceNoiseLevel
+00028f80 00000050     0                         nciSetSilenceNoiseLevel
+00028fd0 00000054     0                         nciInjectSilence
+00029028 00000020     0                         nciSetEFactorSase3200
+00029048 00001b50     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(DecSC.o)
+00029048 00000268     0                         unquantize
+000292b0 000005e0     0                         NellyTripleDecodeSase3200
+00029890 00000198     0                         NellyInitDecodeSase3200
+00029a28 000002f4     0                         NellyInitTripleDecodeSase3200
+00029d20 00000340     0                         NellyInitQuadrupleDecodeSase3200
+0002a060 0000019c     0                         NellyFreeTripleDecodeSase3200
+0002a200 000001b8     0                         NellyFreeQuadrupleDecodeSase3200
+0002a3b8 00000260     0                         NellyDecodeSase3200
+0002a618 00000224     0                         NellyAltDecodeSase3200
+0002a840 000000dc     0                         NellyFreeDecodeSase3200
+0002a920 00000008     0                         NellySetTFactorSase3200
+0002a928 00000008     0                         NellySetDecPitchWarpSase3200
+0002a930 00000008     0                         NellySetDecPitchOffsetSase3200
+0002a938 00000008     0                         NellySetDecSpectrumWarpSase3200
+0002a940 00000024     0                         NellySetDecSpectrumLedgeSase3200
+0002a968 00000024     0                         NellySetDecSpectrumOffsetSase3200
+0002a990 00000040     0                         NellySetDecWhisperSase3200
+0002a9d0 00000040     0                         NellySetDecRobotSase3200
+0002aa10 00000008     0                         NellySetDecGainSase3200
+0002aa18 0000000c     0                         NellyGetSilenceNoiseLevel
+0002aa28 00000008     0                         NellySetSilenceNoiseLevel
+0002aa30 00000148     0                         NellyInjectSilence
+0002ab78 0000000c     0                         get3by1SPRusage
+0002ab88 0000000c     0                         get4by1SPRusage
+0002ab98 000004b0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(MSVqPredInline.o)
+0002ab98 00000168     0                         rsmsvqDecode
+0002ad00 00000264     0                         NellyMSVQDecPred
+0002af68 000000bc     0                         predict
+0002b028 0000001c     0                         DecodeCBIndexTo2DVector
+0002b048 000008c8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(AskToEnvInline.o)
+0002b048 00000124     0                         lpcToCepstrum
+0002b170 00000604     0                         NellyAskToEnv
+0002b778 00000098     0                         reflectionToLpc
+0002b810 000000fc     0                         spectralWarp
+0002b910 00000b78     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(SWSynth.o)
+0002b910 0000052c     0                         NellySWSynth
+0002be40 00000538     0                         NellyAltSWSynth
+0002c378 00000074     0                         NellyInitHFRegen
+0002c3f0 0000003c     0                         NellyFreeHFRegen
+0002c430 00000054     0                         NuRand
+0002c488 00000cf0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(FftSmCos.o)
+0002c488 000002a0     0                         FftSumCosOlAdd
+0002c728 000004b0     0                         FftTripleSumCosOlAdd
+0002cbd8 0000059c     0                         FftQuadrupleSumCosOlAdd
+0002d178 000001d8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(SetAmps.o)
+0002d178 00000178     0                         SetAmpAndPhase
+0002d2f0 00000060     0                         CalcWarpedFreq
+0002d350 00000200     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(SubFmSyn.o)
+0002d350 000000fc     0                         SubFrameSynth
+0002d450 000000fc     0                         SubFrameAltSynth
+0002d550 000003c8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciDecodeVoiceFonts.o)
+0002d550 00000048     0                         nciSetDecPitchWarpSase3200
+0002d598 00000048     0                         nciSetDecPitchOffsetSase3200
+0002d5e0 0000006c     0                         nciSetDecPitchChangeSase3200
+0002d650 00000048     0                         nciSetDecSpectrumWarpSase3200
+0002d698 00000048     0                         nciSetDecSpectrumOffsetSase3200
+0002d6e0 00000048     0                         nciSetDecSpectrumLedgeSase3200
+0002d728 00000084     0                         nciSetDecSpectrumChangeSase3200
+0002d7b0 00000048     0                         nciSetDecWhisperSase3200
+0002d7f8 00000070     0                         nciSetDecRobotSase3200
+0002d868 000000ac     0                         nciSetDecVoiceFontSase3200
+0002d918 00000090     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciVoiceEffects.o)
+0002d918 00000024     0                         nciVoiceEffects
+0002d940 00000020     0                         nciEnableVoiceEffects
+0002d960 00000020     0                         nciDisableVoiceEffects
+0002d980 00000024     0                         nciSetVoiceEffect
+0002d9a8 00000860     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PcmEffects.o)
+0002d9a8 000006f8     0                         SetPcmEffect
+0002e0a0 00000060     0                         NellyPcmEffects
+0002e100 000000a8     0                         NellyInitPcmEffect
+0002e1a8 00000060     0                         NellyFreePcmEffect
+0002e208 00000580     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PcmEffectsFct.o)
+0002e208 00000190     0                         vfchorus
+0002e398 00000168     0                         vfdelay
+0002e500 00000220     0                         vfdelayOsc
+0002e720 0000005c     0                         vfring
+0002e780 00000008     0                         vfnull
+0002e788 00000110     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciExport.o)
+0002e788 00000034     0                         nciSetCallocFunction
+0002e7c0 00000034     0                         nciSetFreeFunction
+0002e7f8 0000001c     0                         nciSetMemsetFunction
+0002e818 0000001c     0                         nciSetMemcpyFunction
+0002e838 0000001c     0                         nciSetMemalignFunction
+0002e858 0000001c     0                         nciSetCosFunction
+0002e878 0000001c     0                         nciSetSinFunction
+0002e898 00000220     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fftIf.o)
+0002e898 00000118     0                         NellyFftCenter512
+0002ea60 00000058     0                         realFft512
+0002e9b0 00000058     0                         realFft
+0002ea08 00000058     0                         inverseRealFft
+0002eab8 000003e8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG.o)
+0002eab8 000003e4     0                         fftCore4CFG
+0002eea0 00000260     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(rFft2G.o)
+0002eea0 00000138     0                         pack2G
+0002efd8 00000128     0                         unpack2G
+0002f100 00000e68     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nellyVuFft.o)
+0002f100 00000208     0                         rFft_vu4
+0002f308 000000fc     0                         nvuInitVuFft4CFG_enc
+0002f408 000000fc     0                         nvuInitVuFft4CFG_dec
+0002f508 0000002c     0                         setVuFftMode
+0002f538 0000000c     0                         getVuFftMode
+0002f548 00000010     0                         isInVuFftMode
+0002f558 000000c8     0                         updateVuFft
+0002f620 00000120     0                         nvuFftCenter512
+0002f740 00000158     0                         nvuRealFft_enc
+0002f898 00000158     0                         nvuRealFft_dec
+0002f9f0 0000013c     0                         nvuInverseRealFft_enc
+0002fb30 0000013c     0                         nvuInverseRealFft_dec
+0002fc70 00000068     0                         SendToVif0
+0002fcd8 00000030     0                         SyncToVif0
+0002fd08 0000012c     0                         fftCore4CFGV_enc
+0002fe38 0000012c     0                         fftCore4CFGV_dec
+0002ff68 000001a8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(VU0Utils.o)
+0002ff68 00000028     0                         nciEnableVu0Optimizations
+0002ff90 0000001c     0                         nciGetVu0Mode
+0002ffb0 00000020     0                         nciSetDMAUse
+0002ffd0 000000a8     0                         VU0Save
+00030078 00000094     0                         VU0Restore
+00030110 00000020     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(vuDma.o)
+00030110 0000000c     0                         vuSetDMAUseState
+00030120 0000000c     0                         vuGetDMAUseState
+00030130 00000378     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(miscfunc.o)
+00030130 000000c8     0                         NellyMemZero
+000301f8 00000110     0                         NellyMemCopy
+00030308 00000070     0                         NellyMemCopyFromVu
+00030370 00000000     0                         cfvu_done
+00030378 00000070     0                         NellyMemCopyToVu
+000303e0 00000000     0                         ctvu_done
+000303e8 000000c0     0                         vuRandFast
+000304a8 00000250     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(SPRUtils.o)
+000304a8 00000030     0                         nciSetSPRMode
+000304d8 0000000c     0                         nciGetSPRMode
+000304e8 0000000c     0                         getSPRMode
+000304f8 00000030     0                         setSPRMode
+00030528 000000e4     0                         CopyMainMemToSPR
+00030610 000000e8     0                         CopySPRToMainMem
+000306f8 00000000     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(trigSC.o)
+000306f8 00000108     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libvect.o)
+000306f8 00000054     0                         FindMaxValueFlt
+00030750 0000003c     0                         NellyMagSq
+00030790 00000038     0                         NellyMagSqIL
+000307c8 00000038     0                         ScaleVector
+00030800 00000238     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PostFilt.o)
+00030800 00000238     0                         PostFilter
+00030a38 00000068     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(Log2_.o)
+00030a38 00000020     0                         NellyLog2
+00030a58 00000020     0                         NellyInvLog2
+00030a78 00000028     0                         ApproxExpf
+00030aa0 00000018     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(expired.o)
+00030aa0 00000010     0                         expired
+00030ab0 00000008     0                         LibExpires
+00030ab8 00000050     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(DotProd_.o)
+00030ab8 00000050     0                         DotProd
+00030b08 000000b8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(Coder.o)
+00030b08 000000b4     0                         NellyQuantSC3
+00030bc0 00000560     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(DecVcFry.o)
+00030bc0 000001d8     0                         Detect_VocalFry
+00030fc0 00000160     0                         Cepstrum4VocalFry
+00030d98 00000120     0                         UpdateVF_States
+00030eb8 000000a4     0                         NellyInitVocalFry
+00030f60 0000005c     0                         NellyFreeVocalFry
+00031120 00000368     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(EstOnset.o)
+00031120 00000294     0                         EstOnset
+000313b8 00000090     0                         NellyInitEstOnset
+00031448 00000040     0                         NellyFreeEstOnset
+00031488 00000b60     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(LDPDA.o)
+00031488 00000148     0                         powerpoly_125
+000315d0 0000023c     0                         CalcMaskEnvelope
+00031810 00000354     0                         SelectPeaks
+00031b68 00000320     0                         NellyLDPDA
+00031e88 00000018     0                         GetPitchTable
+00031ea0 00000060     0                         NellyInitLDPDA
+00031f00 00000040     0                         NellyFreeLDPDA
+00031f40 000000a8     0                         FindBaseBand
+00031fe8 00000960     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libquan.o)
+00031fe8 000002e0     0                         NellyMSVQEncPred
+000326a8 0000006c     0                         CompPredCoef
+000323d8 000001e4     0                         RS2StageVQ2Enc
+00032340 0000006c     0                         Dim2VectorQuantize
+000323b0 00000024     0                         Dim2VectorLUT
+000322c8 0000005c     0                         ScalarQuant
+00032328 00000018     0                         ScalarLUT
+00032718 00000128     0                         VQ2mbest
+00032840 00000050     0                         RotScaleVQ2
+00032900 00000048     0                         SelectOutCellCB
+00032890 0000006c     0                         DeRotScaleVQ2
+000325c0 000000e4     0                         RS2StageVQ2Dec
+00032948 000002b8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libsigproc.o)
+00032948 000001e0     0                         WindowKernel
+00032b28 00000050     0                         HammingWindowNormSC
+00032b78 00000084     0                         SymWindowSignal
+00032c00 000009a0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libspeech.o)
+00032c00 00000398     0                         NellySeevocFlattop
+00032f98 000001d4     0                         NellySTFTpeaks
+00033170 00000198     0                         NellySquareLawPeaks
+00033308 00000038     0                         BandExpand
+00033340 00000180     0                         NellyDurbin
+000334c0 0000007c     0                         PeakPick
+00033540 00000060     0                         QuadraticPeak
+000335a0 00000430     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libtran.o)
+000335a0 000001dc     0                         NellyLogEnvelopeToAs
+00033780 00000140     0                         NellyAsToCs
+000338c0 0000005c     0                         K2ASK
+00033920 000000b0     0                         NellyKsToAs
+000339d0 00000128     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PreProc.o)
+000339d0 0000007c     0                         NellyPreProcess
+00033a50 00000068     0                         NellyInitPreProc
+00033ab8 0000003c     0                         NellyFreePreProc
+00033af8 00000828     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PtchCand.o)
+00033af8 000001b4     0                         EliminateSmallP0
+00033cb0 0000066c     0                         SelectPitchCandidates
+00034320 000000f8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(QP0SC3.o)
+00034320 0000008c     0                         NellyQuanPitchSC3
+000343b0 00000044     0                         NellyUnQuanPitchSC3
+000343f8 0000001c     0                         UnQuanMidPitchSC3
+00034418 00000898     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(Voicing.o)
+00034418 0000073c     0                         NellySTCVoicing
+00034b58 00000158     0                         ModifyPv
+00034cb0 00000248     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(VoicLD.o)
+00034cb0 00000204     0                         VoicingLD
+00034eb8 0000003c     0                         FindBand4VoicLD
+00034ef8 00000088     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(warp.o)
+00034ef8 00000084     0                         NellyWarpSC36
+00034f80 000000f8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(Window.o)
+00034f80 000000f4     0                         NellyAdaptiveWindow
+00035078 000000d8     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(BitUnpackC.o)
+00035078 000000d4     0                         BitUnpackCBuffer
+00035150 00000160     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(CalcCost_.o)
+00035150 0000015c     0                         CalcCostFunc
+000352b0 00000088     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(CodeGain.o)
+000352b0 0000005c     0                         QuanGainSC3
+00035310 00000028     0                         UnQuanGainSC3
+00035338 00000108     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(CodePv.o)
+00035338 00000098     0                         QuanPvSC3
+000353d0 00000070     0                         UnQuanPvSC3
+00035440 000002f0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(RefineC0.o)
+00035440 000002ec     0                         NellyRefineC0
+00035730 00000000     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(scratch.o)
+00035730 000000c0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(corrfunc.o)
+00035730 000000bc     0                         corrfunc
+000357f0 00000024     4                 Collect2
+000357f0 00000014     0                         sn_reg_frame
+00035808 0000000c     0                         sn_dereg_frame
+00035814 00000000     1         .text.*
+00035814 00000000     1         .gnu.linkonce.t*
+00035814 00000000     1         <default>
+00000000 00000800     1 .DVP.overlay..0x0.3107378691.27.0
+00000000 00000800     1         <default>
+00000000 00000800     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_enc.o)
+00000000 00000000    eb                         vu0_ucode_enc
+00000000 00000000    eb                         vuFft4CF8V_enc
+00000000 00000000    eb                         __start_.DVP.overlay..0x0.3107378691.27.0
+00000050 00000000    eb                         loop
+00000208 00000000    eb                         loop2
+00000250 00000000    eb                         loop2a
+00000330 00000000    eb                         stage3
+000003c8 00000000    eb                         loop3
+00000768 00000000    eb                         stage4sub
+00000000 00000790     1 .DVP.overlay..0x800.3107378691.402.1
+00000000 00000790     1         <default>
+00000000 00000790     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_enc.o)
+00000f88 00000000    eb                         vu0_codeEnd_enc
+00000850 00000000    eb                         vuFft4CF6V_enc
+00000dd8 00000000    eb                         vuUnpack2GV_enc
+00000dc0 00000000    eb                         vuPack2GV_enc
+00000800 00000000    eb                         __start_.DVP.overlay..0x800.3107378691.402.1
+000008a0 00000000    eb                         O6Stage1
+00000a58 00000000    eb                         O6Stage2
+00000cd8 00000000    eb                         stage3sub
+00000de8 00000000    eb                         vuRFftCore2GV_enc
+00000e38 00000000    eb                         unpackLoop_enc
+00000000 00000001     1 .debug_str
+00000000 00000001     1         <default>
+00000000 00000001     1                 Dwarf1
+00035814 00000000     1 .mdebug.eabi64
+00035814 00000000     1         <default>
+00035814 00000000     1                 d:\ttl\PS2\Logitech\liblgaud.a(liblgaud.o)
+00035814 00000000     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(Log2_.o)
+00035814 00000000     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(DotProd_.o)
+00035814 00000000     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(CalcCost_.o)
+00035880 00002c60    80 .data
+00035880 00000d50    10         .data
+00035880 00000060     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\gsm_decode.obj
+00035880 00000040     0                         gsm_FACd
+000358c0 00000020     0                         gsm_QLB
+000358e0 000000f8     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\gsm_encode.obj
+000358e0 00000040     0                         gsm_FAC
+00035920 00000040     0                         gsm_NRFAC
+00035960 00000058     0                         gsm_H
+000359b8 00000020     0                         gsm_DLB
+000359d8 00000028     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\openlpc.obj
+000359d8 00000028     0                         parambits
+00035a00 00000050     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\GSMCodec.obj
+00035a00 00000048     0                         Quazal::g_pcOpNames
+00035a48 00000004     0                         maxEncodeTime
+00035a4c 00000004     0                         maxDecodeTime
+00035a50 00000048     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\nellymoser_wrapper.obj
+00035a50 00000048     0                         l_buildFromAxisInfo
+00035a98 00000098     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\NellyMoserCodec.obj
+00035a98 00000048     0                         l_buildFromAxisInfo
+00035ae0 00000048     0                         Quazal::g_pcOpNames
+00035b28 00000004     0                         maxEncodeTime
+00035b2c 00000004     0                         maxDecodeTime
+00035b30 00000050     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\OpenLPCCodec.obj
+00035b30 00000048     0                         Quazal::g_pcOpNames
+00035b78 00000004     0                         maxEncodeTime
+00035b7c 00000004     0                         maxDecodeTime
+00035b80 00000004     4                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechDevices.obj
+00035b80 00000004     0                         Quazal::PS2LogitechDevices::s_bInitialized
+00035b88 00000090     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSink.obj
+00035b88 00000048     0                         l_buildFromAxisInfo
+00035bd0 00000048     0                         Quazal::g_pcOpNames
+00035c18 00000090     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSource.obj
+00035c18 00000048     0                         Quazal::g_pcOpNames
+00035c60 00000048     0                         l_buildFromAxisInfo
+00035ca8 000000b0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChat.obj
+00035ca8 00000048     0                         l_buildFromAxisInfo
+00035cf0 00000048     0                         Quazal::g_pcOpNames
+00035d38 00000004     0                         speakerHost
+00035d3c 00000004     0                         m_lastMS
+00035d40 00000004     0                         pSession
+00035d44 00000004     0                         CVoiceChat::s_pushToTalkButton
+00035d48 00000004     0                         pStreamSink
+00035d4c 00000004     0                         pMicrophone
+00035d50 00000004     0                         s_microphoneTestFrequency
+00035d54 00000004     0                         status.11283
+00035d58 00000098     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChatManager.obj
+00035d58 00000048     0                         l_buildFromAxisInfo
+00035da0 00000048     0                         Quazal::g_pcOpNames
+00035de8 00000004     0                         m_joined
+00035df0 00000004     4                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(__main.o)
+00035df0 00000004     0                         p.3
+00035df4 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_ctors.o)
+00035df4 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_divdi3.o)
+00035df4 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_muldi3.o)
+00035df4 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_pure.o)
+00035df4 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(dp-bit.o)
+00035df4 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(fp-bit.o)
+00035df4 000005f8     4                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_eh.o)
+00035df4 00000004     0                         __terminate_func
+00035df8 00000004     0                         get_eh_context
+00035dfc 00000000     0                         _GLOBAL_$F$__default_terminate
+00035dfc 00000000     0                         __FRAME_BEGIN__
+000363ec 00000004     4                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(frame.o)
+000363ec 00000004     0                         object_mutex
+000363f0 00000028     4                 d:\ttl\PS2\Logitech\liblgaud.a(liblgaud.o)
+00036418 00000018     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciSaseDec3200.o)
+00036418 00000004     0                         SPRStore3by1
+0003641c 00000004     0                         SPRStore3by1_ourstuff
+00036420 00000004     0                         SPRStore4by1
+00036424 00000004     0                         SPRStore4by1_ourstuff
+00036428 00000004     0                         Correct3by1InitSequence
+0003642c 00000004     0                         Correct4by1InitSequence
+00036430 00000020    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(DecSC.o)
+00036430 00000004     0                         SPR_Used_by3by1
+00036440 00000004     0                         SPR_Used_by4by1
+00036450 00000038     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(MSVqPredInline.o)
+00036450 00000018     0                         ptab_ASK12_V_Pred
+00036468 00000018     0                         ptab_ASK12_UV_Pred
+00036480 00000008     0                         pASK8_11_VQ
+00036490 00000030    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(SWSynth.o)
+00036490 00000030     0                         global_vuSeeds
+000364c0 00000020     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciExport.o)
+000364c0 00000004     0                         callocfunc
+000364c4 00000004     0                         freefunc
+000364c8 00000004     0                         memsetfunc
+000364cc 00000004     0                         memcpyfunc
+000364d0 00000004     0                         memalignfunc
+000364d4 00000004     0                         cosfunc
+000364d8 00000004     0                         sinfunc
+000364dc 00000002     0                         gMemCounter
+000364e0 00000070    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nellyVuFft.o)
+000364e0 00000004     0                         nellyVuFftMode
+000364e4 00000004     0                         EncoderFftinVu0Flag
+000364e8 00000004     0                         DecoderFftinVu0Flag
+000364f0 00000030     0                         UploadCodeData_enc
+00036520 00000030     0                         UploadCodeData_dec
+00036550 00000004     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(vuDma.o)
+00036550 00000004     0                         DMAUseState
+00036554 00000004     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(SPRUtils.o)
+00036554 00000004     0                         nellySPRMode
+00036558 00000010     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(trigSC.o)
+00036558 00000004     0                         trigTBL_32
+0003655c 00000004     0                         sinTBL_32
+00036560 00000004     0                         cosTBL_32
+00036564 00000004     0                         CsTable
+00036568 00000038     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libquan.o)
+00036568 00000018     0                         ptab_ASK12_V_Pred
+00036580 00000018     0                         ptab_ASK12_UV_Pred
+00036598 00000008     0                         pASK8_11_VQ
+000365a0 00000004     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(scratch.o)
+000365a0 00000004     0                         pCosPlus1Table
+000365a4 0000002c     4                 Collect2
+000365c8 00000000     0                         sn_frame_table
+000365a4 00000010     0                         __CTOR_LIST__
+000365b4 00000010     0                         __DTOR_LIST__
+000365d0 00000000     1         .data.*
+000365d0 00000000     1         .gnu.linkonce.d*
+000365d0 00001f10    10         .vutext
+000365d0 00000f60    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_dec.o)
+000365d0 00000000    eb                         vu0_code_mpg_dec
+00037530 00000000     0                         vu0_code_mpgEnd_dec
+000365d0 00000000    eb                         .vu.1
+000365d0 00000000    e9                         .vif.2
+000365d8 00000000    eb                         .vu.3
+000365d8 00000000    eb                         _$vu0_ucode_dec
+000365d8 00000000    eb                         _$vuFft4CF8V_dec
+00036628 00000000    eb                         _$loop
+000367e0 00000000    eb                         _$loop2
+00036828 00000000    eb                         _$loop2a
+00036908 00000000    eb                         _$stage3
+000369a0 00000000    eb                         _$loop3
+00036c98 00000000    eb                         _$stage4sub0
+00036ca0 00000000    eb                         _$stage4sub
+00036d20 00000000    eb                         _$stage4sub_end
+00036d88 00000000    eb                         _$vuMultiplexClearFFT_dec
+00036dd0 00000000    eb                         _$MuxLoop
+00036dd8 00000000    e9                         .vif.4
+00036de0 00000000    eb                         .vu.5
+00036e28 00000000    eb                         _$MuxLoopEntry
+00036e78 00000000    eb                         _$ClrLoop
+00036e90 00000000    eb                         _$vuFft4CF6V_dec
+00036ee0 00000000    eb                         _$O6Stage1
+00037098 00000000    eb                         _$O6Stage2
+00037308 00000000    eb                         _$nop_e
+00037318 00000000    eb                         _$stage3sub
+00037400 00000000    eb                         _$vuExpf4_dec
+000374a8 00000000    eb                         _$nodivx
+000374c8 00000000    eb                         _$nodivy
+000374e8 00000000    eb                         _$nodivz
+00037508 00000000    eb                         _$nodivw
+00037518 00000000    eb                         _$vu0_codeEnd_dec
+00037520 00000000    e9                         .vif.6
+00037530 00000fb0    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_enc.o)
+00037530 00000000    eb                         vu0_code_mpg_enc
+000384e0 00000000     0                         vu0_code_mpgEnd_enc
+00037530 00000000    eb                         .vu.1
+00037530 00000000    e9                         .vif.2
+00037538 00000000    eb                         .vu.3
+00037538 00000000    eb                         _$vu0_ucode_enc
+00037538 00000000    eb                         _$vuFft4CF8V_enc
+00037588 00000000    eb                         _$loop
+00037740 00000000    eb                         _$loop2
+00037788 00000000    eb                         _$loop2a
+00037868 00000000    eb                         _$stage3
+00037900 00000000    eb                         _$loop3
+00037ca0 00000000    eb                         _$stage4sub
+00037d38 00000000    e9                         .vif.4
+00037d40 00000000    eb                         .vu.5
+00037d90 00000000    eb                         _$vuFft4CF6V_enc
+00037de0 00000000    eb                         _$O6Stage1
+00037f98 00000000    eb                         _$O6Stage2
+00038218 00000000    eb                         _$stage3sub
+00038300 00000000    eb                         _$vuPack2GV_enc
+00038318 00000000    eb                         _$vuUnpack2GV_enc
+00038328 00000000    eb                         _$vuRFftCore2GV_enc
+00038378 00000000    eb                         _$unpackLoop_enc
+000384c8 00000000    eb                         _$vu0_codeEnd_enc
+000384d0 00000000    e9                         .vif.6
+000384e0 00000000     1         .vutext.*
+000384e0 00000000     1         .vudata
+000384e0 00000000     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_dec.o)
+000384e0 00000000     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_enc.o)
+000384e0 00000000     1         .vudata.*
+000384e0 00000000     1         <default>
+00000000 00000800     1 .DVP.overlay..0x0.3119174819.27.0
+00000000 00000800     1         <default>
+00000000 00000800     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_dec.o)
+00000000 00000000    eb                         vu0_ucode_dec
+00000000 00000000    eb                         vuFft4CF8V_dec
+000007b0 00000000    eb                         vuMultiplexClearFFT_dec
+00000000 00000000    eb                         __start_.DVP.overlay..0x0.3119174819.27.0
+00000050 00000000    eb                         loop
+00000208 00000000    eb                         loop2
+00000250 00000000    eb                         loop2a
+00000330 00000000    eb                         stage3
+000003c8 00000000    eb                         loop3
+00000748 00000000    eb                         stage4sub_end
+000006c8 00000000    eb                         stage4sub
+000006c0 00000000    eb                         stage4sub0
+000007f8 00000000    eb                         MuxLoop
+00000000 00000740     1 .DVP.overlay..0x800.3119174819.456.1
+00000000 00000740     1         <default>
+00000000 00000740     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_dec.o)
+00000f38 00000000    eb                         vu0_codeEnd_dec
+000008b0 00000000    eb                         vuFft4CF6V_dec
+00000e20 00000000    eb                         vuExpf4_dec
+00000d28 00000000    eb                         nop_e
+00000848 00000000    eb                         MuxLoopEntry
+00000800 00000000    eb                         __start_.DVP.overlay..0x800.3119174819.456.1
+00000898 00000000    eb                         ClrLoop
+00000900 00000000    eb                         O6Stage1
+00000ab8 00000000    eb                         O6Stage2
+00000d38 00000000    eb                         stage3sub
+00000ec8 00000000    eb                         nodivx
+00000ee8 00000000    eb                         nodivy
+00000f08 00000000    eb                         nodivz
+00000f28 00000000    eb                         nodivw
+00038500 0000cac0    80 .rodata
+00038500 0000cac0    10         .rodata
+00038500 00000100     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\gsm_encode.obj
+00038500 00000100     0                         bitoff
+00038600 000009d0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\GSMCodec.obj
+00038f48 00000080     0                         GSMCodec virtual table
+00038fc8 00000004     0                         Quazal::RNGStateVectorSize
+00038fd0 00000528     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\nellymoser_wrapper.obj
+00038fd0 0000001e     0                         assertExpression.2272
+00038ff0 00000031     0                         assertFile.2273
+00039028 0000000b     0                         assertExpression.3339
+00039038 00000032     0                         assertFile.3340
+00039080 00000018     0                         assertExpression.3752
+00039098 0000002e     0                         assertFile.3753
+000394f8 00000cd0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\NellyMoserCodec.obj
+000394f8 0000001e     0                         assertExpression.2272
+00039518 00000031     0                         assertFile.2273
+00039550 0000000b     0                         assertExpression.3339
+00039560 00000032     0                         assertFile.3340
+000395a8 00000018     0                         assertExpression.3752
+000395c0 0000002e     0                         assertFile.3753
+0003a120 000000a0     0                         NellyMoserCodec virtual table
+0003a1c0 00000004     0                         Quazal::RNGStateVectorSize
+0003a1c8 00000a10     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\OpenLPCCodec.obj
+0003ab50 00000080     0                         OpenLPCCodec virtual table
+0003abd0 00000004     0                         Quazal::RNGStateVectorSize
+0003abd8 00000088     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechDevices.obj
+0003ac5c 00000004     0                         Quazal::RNGStateVectorSize
+0003ac60 00000eb0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSink.obj
+0003ac60 0000001e     0                         assertExpression.2272
+0003ac80 00000031     0                         assertFile.2273
+0003acb8 0000000b     0                         assertExpression.3339
+0003acc8 00000032     0                         assertFile.3340
+0003ad10 00000018     0                         assertExpression.3752
+0003ad28 0000002e     0                         assertFile.3753
+0003ba38 00000038     0                         Quazal::PS2LogitechSink virtual table
+0003bab0 00000018     0                         Quazal::AudioStreamFormat virtual table
+0003ba78 00000038     0                         Quazal::SinkDevice virtual table
+0003ba70 00000004     0                         Quazal::RNGStateVectorSize
+0003baf8 00000018     0                         Quazal::_DDL_AudioStreamFormat virtual table
+0003bac8 00000030     0                         Quazal::StreamingDevice virtual table
+0003bb10 00000ba8     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSource.obj
+0003c3f0 0000001e     0                         assertExpression.4868
+0003c410 00000031     0                         assertFile.4869
+0003c5e0 00000038     0                         Quazal::PS2LogitechSource virtual table
+0003c658 00000018     0                         Quazal::AudioStreamFormat virtual table
+0003c620 00000038     0                         Quazal::SourceDevice virtual table
+0003c618 00000004     0                         Quazal::RNGStateVectorSize
+0003c6a0 00000018     0                         Quazal::_DDL_AudioStreamFormat virtual table
+0003c670 00000030     0                         Quazal::StreamingDevice virtual table
+0003c6b8 000015d0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChat.obj
+0003c6b8 0000001e     0                         assertExpression.2272
+0003c6d8 00000031     0                         assertFile.2273
+0003c710 0000000b     0                         assertExpression.3339
+0003c720 00000032     0                         assertFile.3340
+0003c768 00000018     0                         assertExpression.3752
+0003c780 0000002e     0                         assertFile.3753
+0003da30 0000000b     0                         assertExpression.11314
+0003da40 00000032     0                         assertFile.11315
+0003db58 00000028     0                         CVoiceChat::CRemoteUnMute virtual table
+0003db80 00000028     0                         CVoiceChat::CRemoteMute virtual table
+0003dba8 00000028     0                         CVoiceChat::CUnMute virtual table
+0003dbd0 00000028     0                         CVoiceChat::CMute virtual table
+0003dbf8 00000028     0                         CVoiceChat::CRequestMuting virtual table
+0003dc28 00000048     0                         MyDemuxEventHandler virtual table
+0003dc20 00000004     0                         _STL::__stl_chunk_size
+0003dc24 00000004     0                         Quazal::RNGStateVectorSize
+0003dc70 00000018     0                         Quazal::_DDL_VoiceChannelMember virtual table
+0003dc88 00000ec8     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChatManager.obj
+0003dc88 0000001e     0                         assertExpression.2272
+0003dca8 00000031     0                         assertFile.2273
+0003dce0 0000000b     0                         assertExpression.3339
+0003dcf0 00000032     0                         assertFile.3340
+0003dd38 00000018     0                         assertExpression.3752
+0003dd50 0000002e     0                         assertFile.3753
+0003eb2c 00000004     0                         _STL::__stl_chunk_size
+0003eb30 00000004     0                         Quazal::RNGStateVectorSize
+0003eb38 00000018     0                         Quazal::_DDL_VoiceChannelMember virtual table
+0003eb50 00000100     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_divdi3.o)
+0003eb50 00000100     0                         __clz_tab
+0003ec50 000000cc    10                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(frame.o)
+0003ed20 00000909     8                 d:\ttl\PS2\Logitech\liblgaud.a(liblgaud.o)
+0003f630 00000250    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(EncSC.o)
+0003f630 00000248     0                         Kaiwin0
+0003f880 00000028     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PackSC.o)
+0003f880 00000022     0                         BitTable_SC3
+0003f8a8 00000004     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(MidPitch.o)
+0003f8b0 00000010     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nciSaseDec3200.o)
+0003f8c0 00000170    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(DecSC.o)
+0003f8c0 00000020     0                         PvCodeBook
+0003f8e0 00000100     0                         GainCodeBook
+0003f9e0 00000044     0                         BitTable_SC3
+0003fa30 000015b0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(MSVqPredInline.o)
+0003fa30 00000030     0                         tab_ASK12_V_Means
+0003fa60 00000030     0                         tab_ASK12_UV_Means
+0003fa90 000000f0     0                         tab_ASK12_V_Predictors
+0003fb80 000000f0     0                         tab_ASK12_UV_Predictors
+0003fc70 00000400     0                         tab_ASK0_1_V_CB
+00040070 0000002c     0                         tab_ASK0_1_V_OutCellIndex
+000400a0 00000020     0                         ASK0_1_V_mblk
+000400c0 00000400     0                         tab_ASK0_1_UV_CB
+000404c0 0000002c     0                         tab_ASK0_1_UV_OutCellIndex
+000404f0 00000020     0                         ASK0_1_UV_mblk
+00040510 00000300     0                         tab_ASK2_3_CB
+00040810 00000038     0                         tab_ASK2_3_OutCellIndex
+00040848 00000020     0                         ASK2_3_mblk
+00040868 00000280     0                         tab_ASK4_5_CB
+00040ae8 00000034     0                         tab_ASK4_5_OutCellIndex
+00040b20 00000020     0                         ASK4_5_mblk
+00040b40 00000240     0                         tab_ASK6_7_CB
+00040d80 00000030     0                         tab_ASK6_7_OutCellIndex
+00040db0 00000020     0                         ASK6_7_mblk
+00040dd0 00000100     0                         tab_ASK8_9_CB
+00040ed0 00000100     0                         tab_ASK10_11_CB
+00040fd0 00000008     0                         ASK8_9_mblk
+00040fd8 00000008     0                         ASK10_11_mblk
+00040fe0 00000038     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(SWSynth.o)
+00040fe0 00000004     0                         fPhaseScale
+00040fe8 00000018     0                         fLog2WinScale
+00041000 00000014     0                         fWinPeriod
+00041020 00000040    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PcmEffects.o)
+00041060 000007e0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG.o)
+00041060 000007e0     0                         twiddle
+00041840 00000500    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(rFft2G.o)
+00041840 000003f8     0                         twiddle512
+00041c40 000000f8     0                         twiddle128
+00041d40 00000be0    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(nellyVuFft.o)
+00041d40 00000400     0                         realTwiddle
+00042140 000007e0     0                         cmplxTwiddle
+00042920 000005d0    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(trigSC.o)
+00042920 00000510     0                         trigTBL_32_data
+00042e30 000000b0     0                         CsTable_data
+00042ee0 00000004     0                         g_kTrigTableByteSize
+00042ee4 00000004     0                         g_kCsTableByteSize
+00042ee8 00000004     0                         fRadiansToIndex
+00042ef0 00000014     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PostFilt.o)
+00042ef0 00000004     0                         fLogWOver
+00042ef4 00000004     0                         fLogWUnder
+00042ef8 00000004     0                         iK0
+00042efc 00000004     0                         fInverseK0
+00042f00 00000004     0                         iFund
+00042f10 00000030    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(DecVcFry.o)
+00042f10 00000030     0                         fCepWeight
+00042f40 00000210    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(LDPDA.o)
+00042f40 00000128     0                         CpfPitchTable
+00043070 0000001c     0                         cpfBoundary
+00043090 00000018     0                         cpfScaleFactor
+000430b0 00000090     0                         cpfPowTab_125
+00043140 0000000c     0                         PV_TH.9
+00043150 000015c0     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libquan.o)
+00043150 00000030     0                         tab_ASK12_V_Means
+00043180 00000030     0                         tab_ASK12_UV_Means
+000431b0 000000f0     0                         tab_ASK12_V_Predictors
+000432a0 000000f0     0                         tab_ASK12_UV_Predictors
+00043390 00000400     0                         tab_ASK0_1_V_CB
+00043790 0000002c     0                         tab_ASK0_1_V_OutCellIndex
+000437c0 00000020     0                         ASK0_1_V_mblk
+000437e0 00000400     0                         tab_ASK0_1_UV_CB
+00043be0 0000002c     0                         tab_ASK0_1_UV_OutCellIndex
+00043c10 00000020     0                         ASK0_1_UV_mblk
+00043c30 00000300     0                         tab_ASK2_3_CB
+00043f30 00000038     0                         tab_ASK2_3_OutCellIndex
+00043f68 00000020     0                         ASK2_3_mblk
+00043f88 00000280     0                         tab_ASK4_5_CB
+00044208 00000034     0                         tab_ASK4_5_OutCellIndex
+00044240 00000020     0                         ASK4_5_mblk
+00044260 00000240     0                         tab_ASK6_7_CB
+000444a0 00000030     0                         tab_ASK6_7_OutCellIndex
+000444d0 00000020     0                         ASK6_7_mblk
+000444f0 00000100     0                         tab_ASK8_9_CB
+000445f0 00000100     0                         tab_ASK10_11_CB
+000446f0 00000008     0                         ASK8_9_mblk
+000446f8 00000008     0                         ASK10_11_mblk
+00044710 00000004     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(libspeech.o)
+00044710 00000004     0                         fOverflowThreshold
+00044714 00000004     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(Voicing.o)
+00044714 00000004     0                         fCutOffBand
+00044720 00000380    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(VoicLD.o)
+00044720 00000380     0                         tfWinSpec
+00044aa0 00000100     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(CodeGain.o)
+00044aa0 00000100     0                         GainCodeBook
+00044ba0 00000020    10                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(CodePv.o)
+00044ba0 00000020     0                         PvCodeBook
+00044bc0 00000400     8                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(scratch.o)
+00044bc0 00000400     0                         cosPlus1Table
+00044fc0 00000000     1         .rodata.*
+00044fc0 00000000     1         .gnu.linkonce.r*
+00044fc0 00000000     1         <default>
+00044fc0 00005eb0     8 .assert
+00044fc0 00005eb0     8         <default>
+00044fc0 00000cf0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\nellymoser_wrapper.obj
+00044fc0 00000004     0                         assertExpression.165
+00044fc8 0000002c     0                         assertFile.166
+00044ff8 00000027     0                         assertExpression.1889
+00045020 0000002e     0                         assertFile.1890
+00045050 00000027     0                         assertExpression.1894
+00045078 0000002e     0                         assertFile.1895
+000450a8 00000010     0                         assertExpression.1899
+000450b8 0000002e     0                         assertFile.1900
+000450e8 00000010     0                         assertExpression.1904
+000450f8 0000002e     0                         assertFile.1905
+00045128 0000002c     0                         assertExpression.1909
+00045158 0000002e     0                         assertFile.1910
+00045188 0000002c     0                         assertExpression.1914
+000451b8 0000002e     0                         assertFile.1915
+000451e8 0000007f     0                         assertExpression.2261
+00045268 00000030     0                         assertFile.2262
+00045298 00000031     0                         assertExpression.2421
+000452d0 00000030     0                         assertFile.2422
+00045300 0000007f     0                         assertExpression.2426
+00045380 00000030     0                         assertFile.2427
+000453b0 00000006     0                         assertExpression.2440
+000453b8 00000030     0                         assertFile.2441
+000453e8 00000006     0                         assertExpression.2445
+000453f0 00000030     0                         assertFile.2446
+00045420 00000006     0                         assertExpression.2450
+00045428 00000030     0                         assertFile.2451
+00045458 00000006     0                         assertExpression.2455
+00045460 00000030     0                         assertFile.2456
+00045490 00000006     0                         assertExpression.2460
+00045498 00000030     0                         assertFile.2461
+000454c8 00000006     0                         assertExpression.2465
+000454d0 00000030     0                         assertFile.2466
+00045500 00000006     0                         assertExpression.2470
+00045508 00000030     0                         assertFile.2471
+00045538 00000006     0                         assertExpression.2475
+00045540 00000030     0                         assertFile.2476
+00045570 00000006     0                         assertExpression.2480
+00045578 00000030     0                         assertFile.2481
+000455a8 00000006     0                         assertExpression.3085
+000455b0 00000030     0                         assertFile.3086
+000455e0 00000006     0                         assertExpression.3090
+000455e8 00000030     0                         assertFile.3091
+00045618 00000006     0                         assertExpression.3095
+00045620 00000030     0                         assertFile.3096
+00045650 00000006     0                         assertExpression.3100
+00045658 00000030     0                         assertFile.3101
+00045688 00000006     0                         assertExpression.3105
+00045690 00000030     0                         assertFile.3106
+000456c0 00000006     0                         assertExpression.3110
+000456c8 00000030     0                         assertFile.3111
+000456f8 00000006     0                         assertExpression.3115
+00045700 00000030     0                         assertFile.3116
+00045730 00000006     0                         assertExpression.3120
+00045738 00000030     0                         assertFile.3121
+00045768 00000006     0                         assertExpression.3125
+00045770 00000030     0                         assertFile.3126
+000457a0 00000006     0                         assertExpression.3130
+000457a8 00000030     0                         assertFile.3131
+000457d8 00000006     0                         assertExpression.3135
+000457e0 00000030     0                         assertFile.3136
+00045810 00000006     0                         assertExpression.3140
+00045818 00000030     0                         assertFile.3141
+00045848 00000018     0                         assertExpression.3190
+00045860 00000027     0                         assertFile.3191
+00045888 0000004d     0                         assertExpression.4921
+000458d8 00000031     0                         assertFile.4922
+00045910 00000012     0                         assertExpression.4926
+00045928 00000031     0                         assertFile.4927
+00045960 0000002f     0                         assertExpression.5021
+00045990 00000033     0                         assertFile.5022
+000459c8 0000005f     0                         assertExpression.5302
+00045a28 00000036     0                         assertFile.5303
+00045a60 0000000a     0                         assertExpression.5343
+00045a70 00000036     0                         assertFile.5344
+00045aa8 00000011     0                         assertExpression.5453
+00045ac0 0000003f     0                         assertFile.5454
+00045b00 00000005     0                         assertExpression.5467
+00045b08 0000003f     0                         assertFile.5468
+00045b48 00000006     0                         assertExpression.5469
+00045b50 0000003f     0                         assertFile.5470
+00045b90 00000006     0                         assertExpression.5471
+00045b98 0000003f     0                         assertFile.5472
+00045bd8 00000006     0                         assertExpression.5473
+00045be0 0000003f     0                         assertFile.5474
+00045c20 00000006     0                         assertExpression.5475
+00045c28 0000003f     0                         assertFile.5476
+00045c68 00000006     0                         assertExpression.5498
+00045c70 0000003f     0                         assertFile.5499
+00045cb0 00000bb8     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\NellyMoserCodec.obj
+00045cb0 00000004     0                         assertExpression.165
+00045cb8 0000002c     0                         assertFile.166
+00045ce8 00000027     0                         assertExpression.1889
+00045d10 0000002e     0                         assertFile.1890
+00045d40 00000027     0                         assertExpression.1894
+00045d68 0000002e     0                         assertFile.1895
+00045d98 00000010     0                         assertExpression.1899
+00045da8 0000002e     0                         assertFile.1900
+00045dd8 00000010     0                         assertExpression.1904
+00045de8 0000002e     0                         assertFile.1905
+00045e18 0000002c     0                         assertExpression.1909
+00045e48 0000002e     0                         assertFile.1910
+00045e78 0000002c     0                         assertExpression.1914
+00045ea8 0000002e     0                         assertFile.1915
+00045ed8 0000007f     0                         assertExpression.2261
+00045f58 00000030     0                         assertFile.2262
+00045f88 00000031     0                         assertExpression.2421
+00045fc0 00000030     0                         assertFile.2422
+00045ff0 0000007f     0                         assertExpression.2426
+00046070 00000030     0                         assertFile.2427
+000460a0 00000006     0                         assertExpression.2440
+000460a8 00000030     0                         assertFile.2441
+000460d8 00000006     0                         assertExpression.2445
+000460e0 00000030     0                         assertFile.2446
+00046110 00000006     0                         assertExpression.2450
+00046118 00000030     0                         assertFile.2451
+00046148 00000006     0                         assertExpression.2455
+00046150 00000030     0                         assertFile.2456
+00046180 00000006     0                         assertExpression.2460
+00046188 00000030     0                         assertFile.2461
+000461b8 00000006     0                         assertExpression.2465
+000461c0 00000030     0                         assertFile.2466
+000461f0 00000006     0                         assertExpression.2470
+000461f8 00000030     0                         assertFile.2471
+00046228 00000006     0                         assertExpression.2475
+00046230 00000030     0                         assertFile.2476
+00046260 00000006     0                         assertExpression.2480
+00046268 00000030     0                         assertFile.2481
+00046298 00000006     0                         assertExpression.3085
+000462a0 00000030     0                         assertFile.3086
+000462d0 00000006     0                         assertExpression.3090
+000462d8 00000030     0                         assertFile.3091
+00046308 00000006     0                         assertExpression.3095
+00046310 00000030     0                         assertFile.3096
+00046340 00000006     0                         assertExpression.3100
+00046348 00000030     0                         assertFile.3101
+00046378 00000006     0                         assertExpression.3105
+00046380 00000030     0                         assertFile.3106
+000463b0 00000006     0                         assertExpression.3110
+000463b8 00000030     0                         assertFile.3111
+000463e8 00000006     0                         assertExpression.3115
+000463f0 00000030     0                         assertFile.3116
+00046420 00000006     0                         assertExpression.3120
+00046428 00000030     0                         assertFile.3121
+00046458 00000006     0                         assertExpression.3125
+00046460 00000030     0                         assertFile.3126
+00046490 00000006     0                         assertExpression.3130
+00046498 00000030     0                         assertFile.3131
+000464c8 00000006     0                         assertExpression.3135
+000464d0 00000030     0                         assertFile.3136
+00046500 00000006     0                         assertExpression.3140
+00046508 00000030     0                         assertFile.3141
+00046538 00000018     0                         assertExpression.3190
+00046550 00000027     0                         assertFile.3191
+00046578 0000004d     0                         assertExpression.4921
+000465c8 00000031     0                         assertFile.4922
+00046600 00000012     0                         assertExpression.4926
+00046618 00000031     0                         assertFile.4927
+00046650 0000002f     0                         assertExpression.5021
+00046680 00000033     0                         assertFile.5022
+000466b8 0000005f     0                         assertExpression.5302
+00046718 00000036     0                         assertFile.5303
+00046750 0000000a     0                         assertExpression.5343
+00046760 00000036     0                         assertFile.5344
+00046798 00000014     0                         assertExpression.8516
+000467b0 0000003c     0                         assertFile.8517
+000467f0 00000010     0                         assertExpression.8563
+00046800 0000003c     0                         assertFile.8564
+00046840 00000022     0                         assertString.8565
+00046868 00001650     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSink.obj
+00046868 00000004     0                         assertExpression.165
+00046870 0000002c     0                         assertFile.166
+000468a0 00000027     0                         assertExpression.1889
+000468c8 0000002e     0                         assertFile.1890
+000468f8 00000027     0                         assertExpression.1894
+00046920 0000002e     0                         assertFile.1895
+00046950 00000010     0                         assertExpression.1899
+00046960 0000002e     0                         assertFile.1900
+00046990 00000010     0                         assertExpression.1904
+000469a0 0000002e     0                         assertFile.1905
+000469d0 0000002c     0                         assertExpression.1909
+00046a00 0000002e     0                         assertFile.1910
+00046a30 0000002c     0                         assertExpression.1914
+00046a60 0000002e     0                         assertFile.1915
+00046a90 0000007f     0                         assertExpression.2261
+00046b10 00000030     0                         assertFile.2262
+00046b40 00000031     0                         assertExpression.2421
+00046b78 00000030     0                         assertFile.2422
+00046ba8 0000007f     0                         assertExpression.2426
+00046c28 00000030     0                         assertFile.2427
+00046c58 00000006     0                         assertExpression.2440
+00046c60 00000030     0                         assertFile.2441
+00046c90 00000006     0                         assertExpression.2445
+00046c98 00000030     0                         assertFile.2446
+00046cc8 00000006     0                         assertExpression.2450
+00046cd0 00000030     0                         assertFile.2451
+00046d00 00000006     0                         assertExpression.2455
+00046d08 00000030     0                         assertFile.2456
+00046d38 00000006     0                         assertExpression.2460
+00046d40 00000030     0                         assertFile.2461
+00046d70 00000006     0                         assertExpression.2465
+00046d78 00000030     0                         assertFile.2466
+00046da8 00000006     0                         assertExpression.2470
+00046db0 00000030     0                         assertFile.2471
+00046de0 00000006     0                         assertExpression.2475
+00046de8 00000030     0                         assertFile.2476
+00046e18 00000006     0                         assertExpression.2480
+00046e20 00000030     0                         assertFile.2481
+00046e50 00000006     0                         assertExpression.3085
+00046e58 00000030     0                         assertFile.3086
+00046e88 00000006     0                         assertExpression.3090
+00046e90 00000030     0                         assertFile.3091
+00046ec0 00000006     0                         assertExpression.3095
+00046ec8 00000030     0                         assertFile.3096
+00046ef8 00000006     0                         assertExpression.3100
+00046f00 00000030     0                         assertFile.3101
+00046f30 00000006     0                         assertExpression.3105
+00046f38 00000030     0                         assertFile.3106
+00046f68 00000006     0                         assertExpression.3110
+00046f70 00000030     0                         assertFile.3111
+00046fa0 00000006     0                         assertExpression.3115
+00046fa8 00000030     0                         assertFile.3116
+00046fd8 00000006     0                         assertExpression.3120
+00046fe0 00000030     0                         assertFile.3121
+00047010 00000006     0                         assertExpression.3125
+00047018 00000030     0                         assertFile.3126
+00047048 00000006     0                         assertExpression.3130
+00047050 00000030     0                         assertFile.3131
+00047080 00000006     0                         assertExpression.3135
+00047088 00000030     0                         assertFile.3136
+000470b8 00000006     0                         assertExpression.3140
+000470c0 00000030     0                         assertFile.3141
+000470f0 00000018     0                         assertExpression.3190
+00047108 00000027     0                         assertFile.3191
+00047130 0000004d     0                         assertExpression.4921
+00047180 00000031     0                         assertFile.4922
+000471b8 00000012     0                         assertExpression.4926
+000471d0 00000031     0                         assertFile.4927
+00047208 0000002f     0                         assertExpression.5021
+00047238 00000033     0                         assertFile.5022
+00047270 0000005f     0                         assertExpression.5302
+000472d0 00000036     0                         assertFile.5303
+00047308 0000000a     0                         assertExpression.5343
+00047318 00000036     0                         assertFile.5344
+00047350 00000019     0                         assertExpression.8402
+00047370 0000003a     0                         assertFile.8403
+000473b0 00000013     0                         assertString.8404
+000473c8 0000001d     0                         assertExpression.8408
+000473e8 0000003a     0                         assertFile.8409
+00047428 00000013     0                         assertString.8410
+00047440 00000019     0                         assertExpression.8414
+00047460 0000003a     0                         assertFile.8415
+000474a0 00000013     0                         assertString.8416
+000474b8 0000001e     0                         assertExpression.8561
+000474d8 00000029     0                         assertFile.8562
+00047508 00000007     0                         assertExpression.8563
+00047510 00000029     0                         assertFile.8564
+00047540 0000001e     0                         assertExpression.8568
+00047560 00000029     0                         assertFile.8569
+00047590 00000004     0                         assertExpression.8597
+00047598 00000029     0                         assertFile.8598
+000475c8 0000001f     0                         assertExpression.8608
+000475e8 0000003c     0                         assertFile.8609
+00047628 00000036     0                         assertString.8610
+00047660 00000053     0                         assertExpression.8617
+000476b8 0000003c     0                         assertFile.8618
+000476f8 0000001d     0                         assertExpression.8619
+00047718 0000003c     0                         assertFile.8620
+00047758 00000033     0                         assertString.8621
+00047790 00000058     0                         assertExpression.8622
+000477e8 0000003c     0                         assertFile.8623
+00047828 0000000f     0                         assertString.8624
+00047838 0000005c     0                         assertExpression.8625
+00047898 0000003c     0                         assertFile.8626
+000478d8 0000000f     0                         assertString.8627
+000478e8 00000015     0                         assertExpression.8631
+00047900 0000003c     0                         assertFile.8632
+00047940 00000013     0                         assertString.8633
+00047958 00000058     0                         assertExpression.8634
+000479b0 0000003c     0                         assertFile.8635
+000479f0 0000000f     0                         assertString.8636
+00047a00 0000005c     0                         assertExpression.8637
+00047a60 0000003c     0                         assertFile.8638
+00047aa0 0000000f     0                         assertString.8639
+00047ab0 0000002b     0                         assertExpression.8640
+00047ae0 0000003c     0                         assertFile.8641
+00047b20 0000004c     0                         assertString.8642
+00047b70 00000053     0                         assertExpression.8643
+00047bc8 0000003c     0                         assertFile.8644
+00047c08 00000058     0                         assertExpression.8648
+00047c60 0000003c     0                         assertFile.8649
+00047ca0 0000000f     0                         assertString.8650
+00047cb0 0000005c     0                         assertExpression.8651
+00047d10 0000003c     0                         assertFile.8652
+00047d50 0000000f     0                         assertString.8653
+00047d60 00000058     0                         assertExpression.8654
+00047db8 0000003c     0                         assertFile.8655
+00047df8 0000000f     0                         assertString.8656
+00047e08 0000005c     0                         assertExpression.8657
+00047e68 0000003c     0                         assertFile.8658
+00047ea8 0000000f     0                         assertString.8659
+00047eb8 00000960     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\PS2LogitechSource.obj
+00047eb8 00000027     0                         assertExpression.4485
+00047ee0 0000002e     0                         assertFile.4486
+00047f10 00000027     0                         assertExpression.4490
+00047f38 0000002e     0                         assertFile.4491
+00047f68 00000010     0                         assertExpression.4495
+00047f78 0000002e     0                         assertFile.4496
+00047fa8 00000010     0                         assertExpression.4500
+00047fb8 0000002e     0                         assertFile.4501
+00047fe8 0000002c     0                         assertExpression.4505
+00048018 0000002e     0                         assertFile.4506
+00048048 0000002c     0                         assertExpression.4510
+00048078 0000002e     0                         assertFile.4511
+000480a8 0000007f     0                         assertExpression.4857
+00048128 00000030     0                         assertFile.4858
+00048158 00000031     0                         assertExpression.5017
+00048190 00000030     0                         assertFile.5018
+000481c0 0000007f     0                         assertExpression.5022
+00048240 00000030     0                         assertFile.5023
+00048270 00000006     0                         assertExpression.5036
+00048278 00000030     0                         assertFile.5037
+000482a8 00000006     0                         assertExpression.5041
+000482b0 00000030     0                         assertFile.5042
+000482e0 00000006     0                         assertExpression.5046
+000482e8 00000030     0                         assertFile.5047
+00048318 00000006     0                         assertExpression.5051
+00048320 00000030     0                         assertFile.5052
+00048350 00000006     0                         assertExpression.5056
+00048358 00000030     0                         assertFile.5057
+00048388 00000006     0                         assertExpression.5061
+00048390 00000030     0                         assertFile.5062
+000483c0 00000006     0                         assertExpression.5066
+000483c8 00000030     0                         assertFile.5067
+000483f8 00000006     0                         assertExpression.5071
+00048400 00000030     0                         assertFile.5072
+00048430 00000006     0                         assertExpression.5076
+00048438 00000030     0                         assertFile.5077
+00048468 00000006     0                         assertExpression.5681
+00048470 00000030     0                         assertFile.5682
+000484a0 00000006     0                         assertExpression.5686
+000484a8 00000030     0                         assertFile.5687
+000484d8 00000006     0                         assertExpression.5691
+000484e0 00000030     0                         assertFile.5692
+00048510 00000006     0                         assertExpression.5696
+00048518 00000030     0                         assertFile.5697
+00048548 00000006     0                         assertExpression.5701
+00048550 00000030     0                         assertFile.5702
+00048580 00000006     0                         assertExpression.5706
+00048588 00000030     0                         assertFile.5707
+000485b8 00000006     0                         assertExpression.5711
+000485c0 00000030     0                         assertFile.5712
+000485f0 00000006     0                         assertExpression.5716
+000485f8 00000030     0                         assertFile.5717
+00048628 00000006     0                         assertExpression.5721
+00048630 00000030     0                         assertFile.5722
+00048660 00000006     0                         assertExpression.5726
+00048668 00000030     0                         assertFile.5727
+00048698 00000006     0                         assertExpression.5731
+000486a0 00000030     0                         assertFile.5732
+000486d0 00000006     0                         assertExpression.5736
+000486d8 00000030     0                         assertFile.5737
+00048708 0000001e     0                         assertExpression.5897
+00048728 00000029     0                         assertFile.5898
+00048758 00000007     0                         assertExpression.5899
+00048760 00000029     0                         assertFile.5900
+00048790 0000001e     0                         assertExpression.5904
+000487b0 00000029     0                         assertFile.5905
+000487e0 00000004     0                         assertExpression.5933
+000487e8 00000029     0                         assertFile.5934
+00048818 000018a0     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChat.obj
+00048818 00000004     0                         assertExpression.165
+00048820 0000002c     0                         assertFile.166
+00048850 00000027     0                         assertExpression.1889
+00048878 0000002e     0                         assertFile.1890
+000488a8 00000027     0                         assertExpression.1894
+000488d0 0000002e     0                         assertFile.1895
+00048900 00000010     0                         assertExpression.1899
+00048910 0000002e     0                         assertFile.1900
+00048940 00000010     0                         assertExpression.1904
+00048950 0000002e     0                         assertFile.1905
+00048980 0000002c     0                         assertExpression.1909
+000489b0 0000002e     0                         assertFile.1910
+000489e0 0000002c     0                         assertExpression.1914
+00048a10 0000002e     0                         assertFile.1915
+00048a40 0000007f     0                         assertExpression.2261
+00048ac0 00000030     0                         assertFile.2262
+00048af0 00000031     0                         assertExpression.2421
+00048b28 00000030     0                         assertFile.2422
+00048b58 0000007f     0                         assertExpression.2426
+00048bd8 00000030     0                         assertFile.2427
+00048c08 00000006     0                         assertExpression.2440
+00048c10 00000030     0                         assertFile.2441
+00048c40 00000006     0                         assertExpression.2445
+00048c48 00000030     0                         assertFile.2446
+00048c78 00000006     0                         assertExpression.2450
+00048c80 00000030     0                         assertFile.2451
+00048cb0 00000006     0                         assertExpression.2455
+00048cb8 00000030     0                         assertFile.2456
+00048ce8 00000006     0                         assertExpression.2460
+00048cf0 00000030     0                         assertFile.2461
+00048d20 00000006     0                         assertExpression.2465
+00048d28 00000030     0                         assertFile.2466
+00048d58 00000006     0                         assertExpression.2470
+00048d60 00000030     0                         assertFile.2471
+00048d90 00000006     0                         assertExpression.2475
+00048d98 00000030     0                         assertFile.2476
+00048dc8 00000006     0                         assertExpression.2480
+00048dd0 00000030     0                         assertFile.2481
+00048e00 00000006     0                         assertExpression.3085
+00048e08 00000030     0                         assertFile.3086
+00048e38 00000006     0                         assertExpression.3090
+00048e40 00000030     0                         assertFile.3091
+00048e70 00000006     0                         assertExpression.3095
+00048e78 00000030     0                         assertFile.3096
+00048ea8 00000006     0                         assertExpression.3100
+00048eb0 00000030     0                         assertFile.3101
+00048ee0 00000006     0                         assertExpression.3105
+00048ee8 00000030     0                         assertFile.3106
+00048f18 00000006     0                         assertExpression.3110
+00048f20 00000030     0                         assertFile.3111
+00048f50 00000006     0                         assertExpression.3115
+00048f58 00000030     0                         assertFile.3116
+00048f88 00000006     0                         assertExpression.3120
+00048f90 00000030     0                         assertFile.3121
+00048fc0 00000006     0                         assertExpression.3125
+00048fc8 00000030     0                         assertFile.3126
+00048ff8 00000006     0                         assertExpression.3130
+00049000 00000030     0                         assertFile.3131
+00049030 00000006     0                         assertExpression.3135
+00049038 00000030     0                         assertFile.3136
+00049068 00000006     0                         assertExpression.3140
+00049070 00000030     0                         assertFile.3141
+000490a0 00000018     0                         assertExpression.3190
+000490b8 00000027     0                         assertFile.3191
+000490e0 0000004d     0                         assertExpression.4921
+00049130 00000031     0                         assertFile.4922
+00049168 00000012     0                         assertExpression.4926
+00049180 00000031     0                         assertFile.4927
+000491b8 0000002f     0                         assertExpression.5021
+000491e8 00000033     0                         assertFile.5022
+00049220 0000005f     0                         assertExpression.5302
+00049280 00000036     0                         assertFile.5303
+000492b8 0000000a     0                         assertExpression.5343
+000492c8 00000036     0                         assertFile.5344
+00049300 00000019     0                         assertExpression.10118
+00049320 0000003a     0                         assertFile.10119
+00049360 00000013     0                         assertString.10120
+00049378 0000001d     0                         assertExpression.10124
+00049398 0000003a     0                         assertFile.10125
+000493d8 00000013     0                         assertString.10126
+000493f0 00000019     0                         assertExpression.10130
+00049410 0000003a     0                         assertFile.10131
+00049450 00000013     0                         assertString.10132
+00049468 00000019     0                         assertExpression.10739
+00049488 00000031     0                         assertFile.10740
+000494c0 00000015     0                         assertString.10741
+000494d8 0000001e     0                         assertExpression.10907
+000494f8 00000029     0                         assertFile.10908
+00049528 00000007     0                         assertExpression.10909
+00049530 00000029     0                         assertFile.10910
+00049560 0000001e     0                         assertExpression.10914
+00049580 00000029     0                         assertFile.10915
+000495b0 00000004     0                         assertExpression.10943
+000495b8 00000029     0                         assertFile.10944
+000495e8 00000029     0                         assertExpression.11116
+00049618 00000036     0                         assertFile.11117
+00049650 0000000c     0                         assertExpression.11136
+00049660 00000036     0                         assertFile.11137
+00049698 00000037     0                         assertString.11138
+000496d0 00000028     0                         assertExpression.11139
+000496f8 00000036     0                         assertFile.11140
+00049730 0000001a     0                         assertString.11141
+00049750 00000023     0                         assertExpression.11178
+00049778 00000036     0                         assertFile.11179
+000497b0 00000022     0                         assertString.11180
+000497d8 00000021     0                         assertExpression.11190
+00049800 00000036     0                         assertFile.11191
+00049838 00000024     0                         assertString.11192
+00049860 00000022     0                         assertExpression.11193
+00049888 00000036     0                         assertFile.11194
+000498c0 0000002a     0                         assertString.11195
+000498f0 00000021     0                         assertExpression.11199
+00049918 00000036     0                         assertFile.11200
+00049950 00000026     0                         assertString.11201
+00049978 0000000c     0                         assertExpression.11202
+00049988 00000036     0                         assertFile.11203
+000499c0 0000001d     0                         assertString.11204
+000499e0 0000000c     0                         assertExpression.11205
+000499f0 00000036     0                         assertFile.11206
+00049a28 0000001c     0                         assertString.11207
+00049a48 00000007     0                         assertExpression.11208
+00049a50 00000036     0                         assertFile.11209
+00049a88 0000002c     0                         assertString.11210
+00049ab8 00000034     0                         assertExpression.11238
+00049af0 00000036     0                         assertFile.11239
+00049b28 00000007     0                         assertExpression.11246
+00049b30 00000036     0                         assertFile.11247
+00049b68 00000007     0                         assertExpression.11251
+00049b70 00000036     0                         assertFile.11252
+00049ba8 00000014     0                         assertExpression.11262
+00049bc0 00000036     0                         assertFile.11263
+00049bf8 0000002c     0                         assertString.11264
+00049c28 00000014     0                         assertExpression.11265
+00049c40 00000036     0                         assertFile.11266
+00049c78 0000002c     0                         assertString.11267
+00049ca8 00000017     0                         assertExpression.11268
+00049cc0 00000036     0                         assertFile.11269
+00049cf8 00000027     0                         assertString.11270
+00049d20 0000000f     0                         assertExpression.11271
+00049d30 00000036     0                         assertFile.11272
+00049d68 00000017     0                         assertString.11273
+00049d80 0000000c     0                         assertExpression.11274
+00049d90 00000036     0                         assertFile.11275
+00049dc8 0000001e     0                         assertString.11276
+00049de8 0000000c     0                         assertExpression.11277
+00049df8 00000036     0                         assertFile.11278
+00049e30 00000020     0                         assertString.11279
+00049e50 00000007     0                         assertExpression.11284
+00049e58 00000036     0                         assertFile.11285
+00049e90 00000006     0                         assertExpression.11286
+00049e98 00000036     0                         assertFile.11287
+00049ed0 00000006     0                         assertExpression.11288
+00049ed8 00000036     0                         assertFile.11289
+00049f10 00000014     0                         assertExpression.11293
+00049f28 00000036     0                         assertFile.11294
+00049f60 00000022     0                         assertString.11295
+00049f88 00000014     0                         assertExpression.11296
+00049fa0 00000036     0                         assertFile.11297
+00049fd8 00000022     0                         assertString.11298
+0004a000 00000017     0                         assertExpression.11299
+0004a018 00000036     0                         assertFile.11300
+0004a050 0000001d     0                         assertString.11301
+0004a070 0000000d     0                         assertExpression.11319
+0004a080 00000036     0                         assertFile.11320
+0004a0b8 00000db8     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChatManager.obj
+0004a0b8 00000004     0                         assertExpression.165
+0004a0c0 0000002c     0                         assertFile.166
+0004a0f0 00000027     0                         assertExpression.1889
+0004a118 0000002e     0                         assertFile.1890
+0004a148 00000027     0                         assertExpression.1894
+0004a170 0000002e     0                         assertFile.1895
+0004a1a0 00000010     0                         assertExpression.1899
+0004a1b0 0000002e     0                         assertFile.1900
+0004a1e0 00000010     0                         assertExpression.1904
+0004a1f0 0000002e     0                         assertFile.1905
+0004a220 0000002c     0                         assertExpression.1909
+0004a250 0000002e     0                         assertFile.1910
+0004a280 0000002c     0                         assertExpression.1914
+0004a2b0 0000002e     0                         assertFile.1915
+0004a2e0 0000007f     0                         assertExpression.2261
+0004a360 00000030     0                         assertFile.2262
+0004a390 00000031     0                         assertExpression.2421
+0004a3c8 00000030     0                         assertFile.2422
+0004a3f8 0000007f     0                         assertExpression.2426
+0004a478 00000030     0                         assertFile.2427
+0004a4a8 00000006     0                         assertExpression.2440
+0004a4b0 00000030     0                         assertFile.2441
+0004a4e0 00000006     0                         assertExpression.2445
+0004a4e8 00000030     0                         assertFile.2446
+0004a518 00000006     0                         assertExpression.2450
+0004a520 00000030     0                         assertFile.2451
+0004a550 00000006     0                         assertExpression.2455
+0004a558 00000030     0                         assertFile.2456
+0004a588 00000006     0                         assertExpression.2460
+0004a590 00000030     0                         assertFile.2461
+0004a5c0 00000006     0                         assertExpression.2465
+0004a5c8 00000030     0                         assertFile.2466
+0004a5f8 00000006     0                         assertExpression.2470
+0004a600 00000030     0                         assertFile.2471
+0004a630 00000006     0                         assertExpression.2475
+0004a638 00000030     0                         assertFile.2476
+0004a668 00000006     0                         assertExpression.2480
+0004a670 00000030     0                         assertFile.2481
+0004a6a0 00000006     0                         assertExpression.3085
+0004a6a8 00000030     0                         assertFile.3086
+0004a6d8 00000006     0                         assertExpression.3090
+0004a6e0 00000030     0                         assertFile.3091
+0004a710 00000006     0                         assertExpression.3095
+0004a718 00000030     0                         assertFile.3096
+0004a748 00000006     0                         assertExpression.3100
+0004a750 00000030     0                         assertFile.3101
+0004a780 00000006     0                         assertExpression.3105
+0004a788 00000030     0                         assertFile.3106
+0004a7b8 00000006     0                         assertExpression.3110
+0004a7c0 00000030     0                         assertFile.3111
+0004a7f0 00000006     0                         assertExpression.3115
+0004a7f8 00000030     0                         assertFile.3116
+0004a828 00000006     0                         assertExpression.3120
+0004a830 00000030     0                         assertFile.3121
+0004a860 00000006     0                         assertExpression.3125
+0004a868 00000030     0                         assertFile.3126
+0004a898 00000006     0                         assertExpression.3130
+0004a8a0 00000030     0                         assertFile.3131
+0004a8d0 00000006     0                         assertExpression.3135
+0004a8d8 00000030     0                         assertFile.3136
+0004a908 00000006     0                         assertExpression.3140
+0004a910 00000030     0                         assertFile.3141
+0004a940 00000018     0                         assertExpression.3190
+0004a958 00000027     0                         assertFile.3191
+0004a980 0000004d     0                         assertExpression.4921
+0004a9d0 00000031     0                         assertFile.4922
+0004aa08 00000012     0                         assertExpression.4926
+0004aa20 00000031     0                         assertFile.4927
+0004aa58 0000002f     0                         assertExpression.5021
+0004aa88 00000033     0                         assertFile.5022
+0004aac0 0000005f     0                         assertExpression.5302
+0004ab20 00000036     0                         assertFile.5303
+0004ab58 0000000a     0                         assertExpression.5343
+0004ab68 00000036     0                         assertFile.5344
+0004aba0 0000000b     0                         assertExpression.10403
+0004abb0 0000003d     0                         assertFile.10404
+0004abf0 0000001f     0                         assertString.10405
+0004ac10 00000006     0                         assertExpression.10406
+0004ac18 0000003d     0                         assertFile.10407
+0004ac58 00000030     0                         assertString.10408
+0004ac88 00000006     0                         assertExpression.10409
+0004ac90 0000003d     0                         assertFile.10410
+0004acd0 0000002d     0                         assertString.10411
+0004ad00 00000006     0                         assertExpression.10427
+0004ad08 0000003d     0                         assertFile.10428
+0004ad48 0000001d     0                         assertString.10429
+0004ad68 00000018     0                         assertExpression.10433
+0004ad80 0000003d     0                         assertFile.10434
+0004adc0 00000021     0                         assertExpression.10435
+0004ade8 0000003d     0                         assertFile.10436
+0004ae28 00000005     0                         assertExpression.10455
+0004ae30 0000003d     0                         assertFile.10456
+0004ae80 00000000    80 .rdata
+0004ae80 00000000     1         .rdata
+0004ae80 00000000     1         .rdata.*
+0004ae80 00000000     1         <default>
+0004ae80 00000000    80 .gcc_except_table
+0004ae80 00000000     1         .gcc_except_table
+0004ae80 00000000     1         <default>
+0004ae80 00000000    80 .lit8
+0004ae80 00000000     1         .lit8
+0004ae80 00000000     1         <default>
+0004ae80 00000000    80 .lit4
+0004ae80 00000000     1         .lit4
+0004ae80 00000000     1         <default>
+0004ae80 00000000    80 .sdata
+0004ae80 00000000     1         .sdata
+0004ae80 00000000     1         .sdata.*
+0004ae80 00000000     1         .gnu.linkonce.s.*
+0004ae80 00000000     1         <default>
+0004ae80 00000000    80 .sbss
+0004ae80 00000000     1         .sbss
+0004ae80 00000000     1         .sbss.*
+0004ae80 00000000     1         .scommon
+0004ae80 00000000     1         <default>
+00000000 00000090     1 .DVP.ovlystrtab
+00000000 00000090     1         <default>
+00000000 00000048     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_dec.o)
+00000048 00000048     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_enc.o)
+00000000 00000030     4 .DVP.ovlytab
+00000000 00000030     4         <default>
+00000000 00000018     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_dec.o)
+00000018 00000018     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_enc.o)
+0004ae80 00000520    80 .bss
+0004ae80 00000520    40         .bss
+0004ae80 00000008     4                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\openlpc.obj
+0004ae84 00000004     0                         sizeofparm
+0004ae80 00000004     0                         logmaxminper
+0004ae88 00000004     4                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\NellyMoserCodec.obj
+0004ae88 00000004     0                         g_NellyMoserHNMS1x4
+0004ae90 00000228     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChat.obj
+0004b090 00000020     0                         m_talkersDO
+0004b088 00000008     0                         m_talkerDO
+0004ae90 000001f8     0                         g_CVoiceChat
+0004b0b0 00000004     0                         m_talkersStream
+0004b0b8 00000004     4                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(__main.o)
+0004b0b8 00000000     0                         initialized.10
+0004b0bc 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_ctors.o)
+0004b0bc 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_divdi3.o)
+0004b0bc 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_muldi3.o)
+0004b0bc 00000000     1                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_pure.o)
+0004b0c0 00000018     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(dp-bit.o)
+0004b0c0 00000000     0                         thenan.3
+0004b0d8 00000010     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(fp-bit.o)
+0004b0d8 00000000     0                         thenan.3
+0004b0e8 00000020     8                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(_eh.o)
+0004b0e8 00000000     0                         eh.39
+0004b0f8 00000000     0                         initialized.40
+0004b100 00000000     0                         top_elt.41
+0004b108 00000004     4                 C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.95.3\libgcc.a(frame.o)
+0004b108 00000000     0                         objects
+0004b140 00000240    40                 d:\ttl\PS2\Logitech\liblgaud.a(liblgaud.o)
+0004b380 00000004     4                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(PcmEffects.o)
+0004b380 00000004     0                         fxfunct
+0004b388 00000018     8                 Collect2
+0004b3a0 00000000     1         .bss.*
+0004b3a0 00000000     1         .vubss
+0004b3a0 00000000     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_dec.o)
+0004b3a0 00000000     1                 d:\ttl\NellyMoser\Lib\SaseCodec3200_G0_v163b.a(fft4CFG_VU_enc.o)
+0004b3a0 00000000     1         .vubss.*
+0004b3a0 00000000     1         <default>

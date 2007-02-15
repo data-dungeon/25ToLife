@@ -1,0 +1,4 @@
+create "SNPS2Consumer\hud.lib"
+addmod "SNPS2Consumer/HudPCH_SN.obj"
+save
+end

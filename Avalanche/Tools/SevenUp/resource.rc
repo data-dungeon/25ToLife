@@ -1,0 +1,580 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.rc""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New",                        ID_FILE_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "&Open...",                    ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Combine",                    ID_FILE_COMBINE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent Files",                ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "Undo\tCtrl+Z",                ID_EDIT_UNDO
+        MENUITEM "Redo\tCtrl+Y",                ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "&Cut\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "&Delete\tDel",                ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select All\tCtrl+A",          ID_EDIT_SELECTALL
+        MENUITEM SEPARATOR
+        MENUITEM "Find\tCtrl+F",                ID_EDIT_FIND
+        MENUITEM "Find && Replace\tCtrl+Shift+F", ID_EDIT_FINDREPLACE
+    END
+    POPUP "Project"
+    BEGIN
+        POPUP "Add To Project"
+        BEGIN
+            MENUITEM "New Screen",                  ID_NEW_SCREEN
+            MENUITEM "Existing Screens",            ID_NEW_EXISTING
+        END
+        MENUITEM "&Settings",                   ID_PROJECT_SETTINGS
+    END
+    POPUP "&Sprite"
+    BEGIN
+        MENUITEM "Lock",                        40027
+        MENUITEM SEPARATOR
+        POPUP "Texture"
+        BEGIN
+            MENUITEM "Apply",                       ID_TEXTURE_APPLY
+            MENUITEM "Select",                      ID_TEXTURE_SELECT
+            MENUITEM "Customize",                   ID_TEXTURE_CUSTOMIZE
+            MENUITEM SEPARATOR
+            POPUP "Rotate"
+            BEGIN
+                MENUITEM "Flip Horizontal",             40044
+                MENUITEM "Flip Vertical",               40045
+                MENUITEM SEPARATOR
+                MENUITEM "90° Clockwise",               40049
+                MENUITEM "90° Counter Clockwise",       40050
+                MENUITEM SEPARATOR
+                MENUITEM "Arbitrary",                   40047
+                MENUITEM SEPARATOR
+                MENUITEM "Default",                     40052
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "Auto-Fit",                    ID_TEXTURE_AUTOFIT
+            MENUITEM SEPARATOR
+            MENUITEM "Remove",                      40041
+        END
+        POPUP "Transform"
+        BEGIN
+            MENUITEM "Position",                    40060
+            MENUITEM "Size",                        40068
+            MENUITEM "Scale",                       40061
+            POPUP "Rotate"
+            BEGIN
+                MENUITEM "Flip Horizonal",              40074
+                MENUITEM "Flip Vertical",               40075
+                MENUITEM SEPARATOR
+                MENUITEM "90° Clockwise",               40076
+                MENUITEM "90° Counter Clockwise",       40077
+                MENUITEM SEPARATOR
+                MENUITEM "Arbitrary",                   40062
+            END
+        END
+        POPUP "Group"
+        BEGIN
+            MENUITEM "Remove",                      40080
+            MENUITEM "Select Parent",               40081
+            MENUITEM "Select Family",               40082
+        END
+        POPUP "Modules"
+        BEGIN
+            MENUITEM "Screen",                      40094
+            MENUITEM "Button",                      40095
+        END
+        POPUP "Text"
+        BEGIN
+            MENUITEM "Apply Font",                  ID_TEXT_APPLYFONT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Properties",                  40033
+        MENUITEM SEPARATOR
+        MENUITEM "Save As...",                  ID_SPRITE_SAVEAS
+        MENUITEM "Add Files...",                ID_SPRITE_ADDFILES
+        MENUITEM SEPARATOR
+        POPUP "Delete"
+        BEGIN
+            MENUITEM "Confirm",                     40032
+        END
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Options",                    ID_VIEW_OPTIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "About SevenUp...",            ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    BUTTON      ID_BUTTON_STAMPER
+    BUTTON      ID_EDIT_DELETE
+    SEPARATOR
+    BUTTON      ID_BUTTON_UNDO
+    BUTTON      ID_BUTTON_REDO
+    SEPARATOR
+    BUTTON      ID_BUTTON_ZOOM
+    BUTTON      ID_BUTTON_CENTERVIEW
+    SEPARATOR
+    BUTTON      ID_BUTTON_ARROW
+    BUTTON      ID_BUTTON_ARROWSELECT
+    BUTTON      ID_BUTTON_NEWSPRITE
+    BUTTON      ID_BUTTON_NEWTEXT
+    BUTTON      ID_BUTTON_NEWFAMILY
+    SEPARATOR
+    BUTTON      ID_BUTTON_GRIDLOCK
+    SEPARATOR
+    BUTTON      ID_BUTTON_SELECTFAMILY
+    BUTTON      ID_BUTTON_SELECTPARENT
+    BUTTON      ID_BUTTON_SELECTCHILDREN
+    BUTTON      ID_BUTTON_SELECTNEXTCHILD
+    BUTTON      ID_BUTTON_CHILDORDER
+    SEPARATOR
+    BUTTON      ID_BUTTON_GROUP
+    BUTTON      ID_BUTTON_CREATEFAMILY
+    BUTTON      ID_BUTTON_SEPARATEFAMILY
+    SEPARATOR
+    BUTTON      ID_BUTTON_SAMESIZE
+    BUTTON      ID_BUTTON_SAMEWIDTH
+    BUTTON      ID_BUTTON_SAMEHEIGHT
+    SEPARATOR
+    BUTTON      ID_BUTTON_ALIGNLEFT
+    BUTTON      ID_BUTTON_ALIGNRIGHT
+    BUTTON      ID_BUTTON_ALIGNTOP
+    BUTTON      ID_BUTTON_ALIGNBOTTOM
+    SEPARATOR
+    BUTTON      ID_BUTTON_SPACEVERTICAL
+    BUTTON      ID_BUTTON_SPACEHORIZONTAL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "toolbar1.bmp"
+IDB_APPICON             BITMAP                  "appicon.bmp"
+IDB_APPICON16           BITMAP                  "appicon16.bmp"
+IDB_APPICON16B          BITMAP                  "appicon16b.bmp"
+IDB_TVSET16             BITMAP                  "tvset16.bmp"
+IDB_TVSET16B            BITMAP                  "tvset16b.bmp"
+IDB_LETTER16B           BITMAP                  "letter16b.bmp"
+IDB_LETTER16            BITMAP                  "letter16.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_EDIT_SELECTALL,      VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_PRIOR,       ID_GROUP_SELECTPARENT,  VIRTKEY, NOINVERT
+    VK_ESCAPE,      ID_KEY_ESCAPE,          VIRTKEY, NOINVERT
+    "F",            ID_EDIT_FIND,           VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_EDIT_FINDREPLACE,    VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS DIALOGEX 0, 0, 256, 65
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,148,45,48,15
+    PUSHBUTTON      "Cancel",IDCANCEL,200,45,48,15
+    EDITTEXT        IDC_EXPORTUTILITYPATH,8,18,196,12,ES_AUTOHSCROLL
+    LTEXT           "Enter the location the ImportExport utility",IDC_STATIC,
+                    8,6,134,8
+    PUSHBUTTON      "Browse",IDC_BROWSE1,208,18,40,12
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,8,36,240,1
+END
+
+IDD_PATHS DIALOGEX 0, 0, 256, 236
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Paths"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Game Directory (i.e F:\\DEV\\TTL)",IDC_STATIC,8,6,108,8,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_GAMEDIR,8,18,188,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_GAMEDIR,200,18,40,12
+    GROUPBOX        " Data Directories ",IDC_STATIC,8,39,240,123
+    EDITTEXT        IDC_DATADIR,76,54,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_DATADIR,200,54,40,12
+    CONTROL         "Data_PC",IDC_CHECK_PC,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,20,72,52,12
+    EDITTEXT        IDC_DATAPC,76,72,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_DATAPC,200,72,40,12
+    CONTROL         "Data_PS2",IDC_CHECK_PS2,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,20,108,52,12
+    EDITTEXT        IDC_DATAPS2,76,108,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_DATAPS2,200,108,40,12
+    CONTROL         "Data_GCN",IDC_CHECK_GCN,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,20,127,52,12
+    EDITTEXT        IDC_DATAGCN,76,127,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_DATAGCN,200,127,40,12
+    CONTROL         "Data_XBOX",IDC_CHECK_XBOX,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,16,145,56,12
+    EDITTEXT        IDC_DATAXBOX,76,145,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_DATAXBOX,200,145,40,12
+    PUSHBUTTON      "Use Default Directories",IDC_DEFAULTDIR,8,216,100,15
+    RTEXT           "Data",IDC_STATIC,20,54,52,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_DATAPATH,20,192,176,12,ES_AUTOHSCROLL
+    LTEXT           "When the project is built, what directory within the Data directory should the computed files be stored?",
+                    IDC_STATIC,20,171,220,18
+    PUSHBUTTON      "Browse",IDC_BROWSE_DATAPATH,200,192,40,12
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,8,210,240,1
+    CONTROL         "Data_DX",IDC_CHECK_DX,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | BS_RIGHT | WS_TABSTOP,20,90,52,12
+    EDITTEXT        IDC_DATADX,76,90,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE_DATADX,200,90,40,12
+END
+
+IDD_NEWSCREEN DIALOGEX 0, 0, 180, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "New Screen"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,76,42,48,15
+    PUSHBUTTON      "Cancel",IDCANCEL,128,42,48,15
+    EDITTEXT        IDC_SCREENNAME,4,18,172,12,ES_AUTOHSCROLL
+    LTEXT           "Screen Name",IDC_STATIC,8,6,43,8
+END
+
+IDD_PREFERENCES DIALOGEX 0, 0, 256, 223
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Preferences"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_SCREENSETTINGS DIALOGEX 0, 0, 256, 223
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Screen"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    RTEXT           "Screen Width",IDC_STATIC,8,9,52,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_SCREENWIDTH,64,9,40,12,ES_AUTOHSCROLL
+    RTEXT           "Screen Height",IDC_STATIC,8,24,52,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_SCREENHEIGHT,64,24,40,12,ES_AUTOHSCROLL
+    RTEXT           "Horizontal Safe Zone %",IDC_STATIC,116,9,84,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_SAFEZONEX,204,9,40,12,ES_AUTOHSCROLL
+    RTEXT           "Vertical Safe Zone %",IDC_STATIC,116,24,84,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_SAFEZONEY,204,24,40,12,ES_AUTOHSCROLL
+    CONTROL         "Draw Screen Border",IDC_SCREENBORDER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,51,80,12
+    CONTROL         "Draw Safe Zone Border",IDC_SAFEZONEBORDER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,66,91,12
+END
+
+IDD_FINDDIALOG DIALOGEX 0, 0, 276, 226
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Find & Replace"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Find What:",IDC_STATIC,4,3,52,12,SS_CENTERIMAGE
+    COMBOBOX        ID_COMBO_FINDWHAT,56,3,160,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Replace With:",IDC_STATIC,4,21,52,12,SS_CENTERIMAGE
+    COMBOBOX        ID_COMBO_REPLACEWITH,56,21,160,30,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Match &case",ID_CHECK_MATCHCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,63,74,10
+    COMBOBOX        ID_COMBO_EXCLUDEWHAT,88,48,176,38,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Match case",ID_BUTTON_XMATCHCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,88,63,52,10
+    CONTROL         "Match whole word",ID_BUTTON_XMATCHWHOLEWORD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,144,63,74,10
+    DEFPUSHBUTTON   "&Find",ID_BUTTON_FIND,220,2,50,15
+    PUSHBUTTON      "Replace",ID_BUTTON_REPLACE,220,20,50,15
+    GROUPBOX        " Exclude What ",IDC_STATIC,80,36,190,43
+    PUSHBUTTON      "Select",ID_BUTTON_SELECT,4,127,48,14
+    CONTROL         "Preserve Case",ID_CHECK_PRESERVECASE,"Button",
+                    BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE | WS_TABSTOP,4,
+                    78,74,10
+    COMBOBOX        ID_COMBO_SEARCHPATH,88,93,176,121,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        " Search Path ",IDC_STATIC,80,82,190,39
+    CONTROL         "Parents",ID_CHECK_PARENTS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,88,108,41,10
+    CONTROL         "Children",ID_CHECK_CHILDREN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,156,108,42,10
+    CONTROL         "Siblings",ID_CHECK_SIBLINGS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,225,108,39,10
+    CONTROL         "Match &whole word",ID_CHECK_MATCHWHOLEWORD2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,48,74,10
+    CONTROL         "",ID_LIST_FOUNDITEMS,"SysListView32",LVS_REPORT | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,54,127,216,95
+    CONTROL         "Auto-Select",ID_CHECK_AUTOSELECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,108,53,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_PATHS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        VERTGUIDE, 76
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_NEWSCREEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 173
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PREFERENCES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_SCREENSETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_FINDDIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 4
+        VERTGUIDE, 80
+        VERTGUIDE, 215
+        VERTGUIDE, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 222
+        HORZGUIDE, 127
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "appicon.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Sevenup\nScreen\nScreen\nSevenup Screens (*.sc7)\n.sc7\nSevenupScreen\nSevenup Screen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "\nNew"
+    ID_FILE_OPEN            "\nOpen"
+    ID_FILE_SAVE            "\nSave"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_ARROW         "\nHover"
+    ID_BUTTON_PROPERTIES    "\nCopy and stamp properties mode (not yet implemented)."
+    ID_BUTTON_SAMEHEIGHT    "\nMake selected sprites the same height"
+    ID_BUTTON_ALIGNLEFT     "\nAlign sprites to the left edge"
+    ID_BUTTON_ALIGNRIGHT    "\nAlign sprites to the right edge"
+    ID_BUTTON_ALIGNTOP      "\nAlign sprites to the top edge"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_ALIGNBOTTOM   "\nAlign sprites to the bottom edge"
+    ID_BUTTON_GROUP         "\nGroup"
+    ID_BUTTON_SPACEVERTICAL "\nVertical space evenly"
+    ID_BUTTON_SPACEHORIZONTAL "\nHorizontal space evenly"
+    ID_BUTTON_SELECTPARENT  "\nSelect parent"
+    ID_BUTTON_SELECTCHILDREN "\nSelect all children"
+    ID_BUTTON_SELECTFAMILY  "\nSelect family"
+    ID_BUTTON_SIZE          "\nResize selected sprites"
+    ID_BUTTON_DRAG          "\nDrag selected sprites"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_ZOOM          "\nZoom in and out by using the left and right mouse buttons."
+    ID_BUTTON_CENTERVIEW    "\nZoom 1x and reset the view to its default position"
+    ID_BUTTON_ARROWSELECT   "\nSelect multiple sprites using the mouse"
+    ID_BUTTON_NEWSPRITE     "\nCreate a new sprite"
+    ID_BUTTON_NEWTEXT       "\nCreate a new text box"
+    ID_BUTTON_SAMEWIDTH     "\nMake selected sprites the same width"
+    ID_BUTTON_SAMESIZE      "\nMake selected sprites the same size"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_SELECTNEXTCHILD "\nSelect next child"
+    ID_BUTTON_CREATEFAMILY  "\nCreate a family"
+    ID_BUTTON_SEPARATEFAMILY "\nSeparate family"
+    ID_BUTTON_NEWFAMILY     "\nCreate a new family"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_COPY            "\nCopy"
+    ID_EDIT_CUT             "\nCut"
+    ID_EDIT_PASTE           "\nPaste"
+    ID_EDIT_UNDO            "\nUndo"
+    ID_EDIT_REDO            "\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_DELETE          "\nDelete"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_BUTTONORDER   "\nSet the button cycle order"
+    ID_BUTTON_CHILDORDER    "\nSet the child order"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "afxres.rc"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

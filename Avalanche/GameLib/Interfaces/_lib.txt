@@ -1,0 +1,11 @@
+create "SNPS2Consumer/Interfaces.lib"
+addmod "SNPS2Consumer/BasicMoverIF.obj"
+addmod "SNPS2Consumer/CollisionIF.obj"
+addmod "SNPS2Consumer/GroundHeightIF.obj"
+addmod "SNPS2Consumer/InterfacesPCH_SN.obj"
+addmod "SNPS2Consumer/InventoryListIF.obj"
+addmod "SNPS2Consumer/RigidBodyIF.obj"
+addmod "SNPS2Consumer/SurfaceTypeIF.obj"
+addmod "SNPS2Consumer/ViewIF.obj"
+save
+end

@@ -1,0 +1,141 @@
+// test to find first 100 primes
+
+// prototypes
+extern float sqrt( float f );
+int isPrime( int n );
+
+// variables
+int primes[ 100 + 1 ];
+int nPrimes = 0;
+
+// setup
+primes[ nPrimes++ ] = 2;
+primes[ nPrimes++ ] = 3;
+
+// do it
+int test = 6;
+while ( nPrimes < 100 )
+{
+   if ( isPrime( test - 1 ) ) primes[ nPrimes++ ] = test - 1;
+   if ( isPrime( test + 1 ) ) primes[ nPrimes++ ] = test + 1;
+   test += 6;
+}
+
+// output
+int i;
+for ( i = 0 ; i < nPrimes ; i++ )
+   print primes[ i ];
+
+// prime test function
+int isPrime( int n )
+{
+   int i;
+   int stop = sqrt( n );
+
+   for ( i = 0 ; i < nPrimes && primes[ i ] <= stop ; i++ )
+      if ( ( n % primes[ i ] ) == 0 )
+         return 0;
+
+   return 1;
+}
+
+// result: 2
+// result: 3
+// result: 5
+// result: 7
+// result: 11
+// result: 13
+// result: 17
+// result: 19
+// result: 23
+// result: 29
+// result: 31
+// result: 37
+// result: 41
+// result: 43
+// result: 47
+// result: 53
+// result: 59
+// result: 61
+// result: 67
+// result: 71
+// result: 73
+// result: 79
+// result: 83
+// result: 89
+// result: 97
+// result: 101
+// result: 103
+// result: 107
+// result: 109
+// result: 113
+// result: 127
+// result: 131
+// result: 137
+// result: 139
+// result: 149
+// result: 151
+// result: 157
+// result: 163
+// result: 167
+// result: 173
+// result: 179
+// result: 181
+// result: 191
+// result: 193
+// result: 197
+// result: 199
+// result: 211
+// result: 223
+// result: 227
+// result: 229
+// result: 233
+// result: 239
+// result: 241
+// result: 251
+// result: 257
+// result: 263
+// result: 269
+// result: 271
+// result: 277
+// result: 281
+// result: 283
+// result: 293
+// result: 307
+// result: 311
+// result: 313
+// result: 317
+// result: 331
+// result: 337
+// result: 347
+// result: 349
+// result: 353
+// result: 359
+// result: 367
+// result: 373
+// result: 379
+// result: 383
+// result: 389
+// result: 397
+// result: 401
+// result: 409
+// result: 419
+// result: 421
+// result: 431
+// result: 433
+// result: 439
+// result: 443
+// result: 449
+// result: 457
+// result: 461
+// result: 463
+// result: 467
+// result: 479
+// result: 487
+// result: 491
+// result: 499
+// result: 503
+// result: 509
+// result: 521
+// result: 523
+// result: 541

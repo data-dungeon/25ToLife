@@ -1,0 +1,30 @@
+I use this file to keep track of planned changes or ideas that pop into my head.
+
+Multipel Selection
+==================
+
+	The user should be able to select multiple objects at the same time.  A shift or control key should be used.
+	When the user selects multiple objects, he can choose to group them, which will insert an invisible sprite
+	as the parent.
+	
+	Size and position should effect all sprites when they are selected or when part of a group.
+
+Rules for Object Naming
+=======================
+
+	Because the name of a sprite is exported to a C header file, the name of the file must have certain rules.
+	i.e. it cannot start with a number or contain spaces, and special characters such as () or {} are not
+	allowed.
+	
+Drag and Drop Textures
+======================
+
+	You should be able to drag a texture from the thumbnail/texture browser and drop it into the game window.
+	There are some issues with this.  The size of the texture in the preview window will be different than
+	what is inserted into the game window.
+	
+Tools to Align Objects
+======================
+
+	There needs to be some tools to align objects.  Rulers would be nice, and a button to align sprites to
+	a certain position or space them evenly or make them all the same size, for example.

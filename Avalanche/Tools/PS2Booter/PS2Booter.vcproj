@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="PS2Booter"
+	ProjectGUID="{EB31D3D4-DE04-400A-AC82-1028C8A73FC1}"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="PS2 EE Debug|Win32"
+			OutputDirectory="PS2_EE_Debug"
+			IntermediateDirectory="PS2_EE_Debug"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -O0 -Wall -fno-exceptions"
+				AdditionalIncludeDirectories="$(PS2_DRIVE):\usr\local\sce\ee\include;$(PS2_DRIVE):\usr\local\sce\common\include"
+				PreprocessorDefinitions="SN_TARGET_PS2;_DEBUG"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="libsn.a libgraph.a libdma.a libdev.a libpad.a libpkt.a libvu0.a libm.a libcdvd.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories=""
+				ProgramDatabaseFile=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 EE Release|Win32"
+			OutputDirectory="PS2_EE_Release"
+			IntermediateDirectory="PS2_EE_Release"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-O2 -Wall -fno-exceptions"
+				AdditionalIncludeDirectories="$(PS2_DRIVE):\usr\local\sce\ee\include;$(PS2_DRIVE):\usr\local\sce\common\include"
+				PreprocessorDefinitions="SN_TARGET_PS2;NDEBUG"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions=""
+				AdditionalDependencies="libsn.a libgraph.a libdma.a libdev.a libpad.a libpkt.a libvu0.a libm.a libcdvd.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories=""
+				ProgramDatabaseFile=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;cc;s;asm;dsm;vcl">
+			<File
+				RelativePath=".\crt0.s">
+			</File>
+			<File
+				RelativePath=".\draw.c">
+			</File>
+			<File
+				RelativePath=".\Draw.h">
+			</File>
+			<File
+				RelativePath=".\main.c">
+			</File>
+			<File
+				RelativePath=".\rdtarga.c">
+			</File>
+			<File
+				RelativePath=".\Rdtarga.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;vsm">
+		</Filter>
+		<File
+			RelativePath=".\readme.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

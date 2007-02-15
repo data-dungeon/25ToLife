@@ -1,0 +1,212 @@
+; AutoExp.Dat - templates for automaticially expanding data
+; Copyright(c) 1997-2001 Microsoft Corporation. All Rights Reserved.
+;---------------------------------------------------------------
+;
+; Copy this file to your C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Packages\Debugger folder
+;
+; While debugging, Data Tips and items in the Watch and Variable
+; windows are automatically expanded to show their most important
+; elements. The expansion follows the format given by the rules
+; in this file. You can add rules for your types or change the
+; predefined rules.
+;
+; For good examples, read the rules in this file.
+;
+; To find what the debugger considers the type of a variable to
+; be, add it to the Watch window and look at the Type column.
+;
+; An AutoExpand rule is a line with the name of a type, an equals 
+; sign, and text with replaceable parts in angle brackets. The 
+; part in angle brackets names a member of the type and an 
+; optional Watch format specifier.
+;
+; AutoExpand rules use the following syntax. The equals sign (=), 
+; angle brackets (<>), and comma are taken literally. Square
+; brackets ([]) indicate optional items.
+;
+; type=[text]<member[,format]>...
+;
+; type      Name of the type (may be followed by <*> for template
+;           types such as the ATL types listed below).
+;
+; text      Any text.Usually the name of the member to display, 
+;           or a shorthand name for the member.
+;
+; member    Name of a member to display.
+;
+; format    Watch format specifier. One of the following:
+;
+;   Letter  Description                 Sample         Display
+;   ------  --------------------------  ------------   -------------
+;   d,i     Signed decimal integer      0xF000F065,d   -268373915
+;   u       Unsigned decimal integer    0x0065,u       101
+;   o       Unsigned octal integer      0xF065,o       0170145
+;   x,X     Hexadecimal integer         61541,X        0X0000F065
+;   l,h     long or short prefix for    00406042,hx    0x0c22
+;             d, i, u, o, x, X
+;   f       Signed floating-point       3./2.,f        1.500000
+;   e       Signed scientific-notation  3./2.,e        1.500000e+000
+;   g       Shorter of e and f          3./2.,g        1.5
+;   c       Single character            0x0065,c       'e'
+;   s       Zero-terminated string      pVar,s         "Hello world"
+;   su      Unicode string              pVar,su        "Hello world"
+;
+; For details of other format specifiers see Help under:
+; "format specifiers/watch variable"
+;
+; The special format <,t> specifies the name of the most-derived 
+; type of the object. This is especially useful with pointers or
+; references to a base class.
+;
+; If there is no rule for a class, the base classes are checked for
+; a matching rule.
+;
+; There are some special entries allowed in the AutoExpand section:
+; $BUILTIN is used to display more complex types that need to do more
+; than just show a member variable or two.
+; $ADDIN allows external DLLs to be added to display even more complex
+; types via the EE Add-in API. The first argument is the DLL name, the
+; second argument is the name of the export from the DLL to use. For 
+; further information on this API see the sample called EEAddIn.
+;
+
+[AutoExpand]
+
+; from windef.h
+tagPOINT =x=<x> y=<y>
+tagRECT =top=<top> bottom=<bottom> left=<left> right=<right>
+
+; from winuser.h
+tagMSG =msg=<message,x> wp=<wParam,x> lp=<lParam,x>
+
+; intrinsics
+__m64 =<m64_i64,x>
+__m128=$BUILTIN(M128)
+__m128i=$BUILTIN(M128I)
+__m128d=$BUILTIN(M128D)
+
+; from afxwin.h
+CDC =hDC=<m_hDC> attrib=<m_hAttribDC>
+CPaintDC =<,t> hWnd=<m_hWnd>
+CPoint =x=<x> y=<y>
+CRect =top=<top> bottom=<bottom> left=<left> right=<right>
+CSize =cx=<cx> cy=<cy>
+CWnd =<,t> hWnd=<m_hWnd>
+CWinApp =<,t> <m_pszAppName,s>
+CWinThread =<,t> h=<m_hThread> proc=<m_pfnThreadProc>
+
+; from afxcoll.h
+CPtrList =cnt=<m_nCount>
+
+; from afxstat_.h
+CProcessLocalObject =<,t>
+CThreadLocalObject =<,t>
+
+; from afx.h
+CArchiveException =cause=<m_cause>
+CFile =hFile=<m_hFile> name=<m_strFileName.m_pchData,s>
+CFileException =cause=<m_cause> OS Error=m_lOsError
+CMemFile =pos=<m_nPosition> size=<m_nFileSize>
+CObject =<,t>
+CRuntimeClass =<m_lpszClassName,s>
+CStdioFile =FILE*=<m_pStream> name=<m_strFilename.m_pchData,s>
+CTimeSpan =time=<m_time>
+CTime =time=<m_time>
+
+; from afxcoll.h
+CByteArray =count=<m_nCount>
+CStringList =count=<m_nCount>
+; same for all CXXXArray classes
+; same for CXXXList
+; same for CMapXXToXX
+
+; various string classes from MFC & ATL
+ATL::CStringT<*> =<m_pszData>
+CSimpleStringT<*>=<m_pszData>
+ATL::CSimpleStringT<*>=<m_pszData>
+
+_com_error=<m_hresult,hr>
+_bstr_t=<m_Data->m_wstr,su> (<m_Data->m_RefCount,u>)
+_com_ptr_t<*>=<m_pInterface>
+_LARGE_INTEGER=<QuadPart>
+ATL::CComPtr<*>=<p>
+ATL::CComBSTR=<m_str,su>
+ATL::CComQIPtr<*>=<p>
+
+tagVARIANT=$BUILTIN(VARIANT)
+VARIANT=$BUILTIN(VARIANT)
+_GUID=$BUILTIN(GUID)
+
+; see EEAddIn sample for how to use these
+;_SYSTEMTIME=$ADDIN(EEAddIn.dll,AddIn_SystemTime)
+;_FILETIME=$ADDIN(EEAddIn.dll,AddIn_FileTime)
+
+;ANSI C++ Standard Template library
+std::basic_string<char,std::char_traits<char>,std::allocator<char> >=$BUILTIN(NSTDSTRING)
+std::basic_string<unsigned short,std::char_traits<unsigned short>,std::allocator<unsigned short> >=$BUILTIN(WSTDSTRING)
+std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t> >=$BUILTIN(WSTDSTRING)
+
+
+
+
+std::map<*>=size=<_Mysize>
+std::vector<*>= first=<_First> last=<_Last>
+std::list<*> =size=<_Mysize>
+std::multimap<*>=size=<_Mysize>
+std::set<*> =size=<_Mysize>
+std::deque<*> =size=<_Mysize>
+std::queue<*> =size=<c._Mysize>
+std::priority_queue<*>= first=<c._First> last=<c._Last>
+std::stack<*> =size=<c._Mysize>
+std::binder1st<*>= op=<op> value=<value>
+std::binder2nd<*>= op=<op> value=<value>
+std::pair<*> =first=<first> second=<second>
+std::less<*>=lessthan
+std::greater<*>=greaterthan
+
+_SYSTEMTIME=$ADDIN(eeaddin.dll,_AddIn_SystemTime@28)
+_FILETIME=$ADDIN(eeaddin.dll,_AddIn_FileTime@28)
+
+; Snipe stuff
+Vector2 =x=<x,g> y=<y,g>
+Vector =x=<x,g> y=<y,g> z=<z,g>
+Vector4 =x=<n[0],g> y=<n[1],g> z=<n[2],g> w=<n[3],g>
+RGBFloat =r=<m_red,g> g=<m_green,g> b=<m_blue,g>
+RGBAFloat =r=<m_red,g> g=<m_green,g> b=<m_blue,g>, a=<m_alpha,g>
+RGBByte =r=<m_red,u> g=<m_green,u> b=<m_blue,u>
+RGBAByte =r=<m_red,u> g=<m_green,u> b=<m_blue,u>, a=<m_alpha,u>
+Quaternion =x=<v.x,g> y=<v.y,g> z=<v.z,g> w=<w,g>
+String =<m_pData,st>
+Time =seconds=<(float)m_ticks/135000,g> ticks=<m_ticks>
+TimeRange =begin=<m_start.m_ticks> end=<m_end.m_ticks>
+HeaderBase =key=<m_strKey.m_pData>
+PropertyHeader =key=<m_strKey.m_pData,st> value=<m_strValue.m_pData,st>
+
+Component =id=<m_nID> ref=<m_nRefCount>
+Vertex =id=<m_nID> ref=<m_nRefCount> edges=<m_pVertexData->m_nNumSurroundingEdges> polys=<m_pVertexData->m_nNumSurroundingFaces>
+Edge =id=<m_nID> ref=<m_nRefCount> v0=<m_vertexarray[0]->m_nID> v1=<m_vertexarray[1]->m_nID>
+Poly =id=<m_nID> ref=<m_nRefCount> sides=<m_nNumSides>
+
+SnipeObject =<,t>
+HierObject =<,t> name=<m_strName.m_pData,st>
+
+Property =<m_pPropertyInfo->m_strName.m_pData,st>
+BoolProperty =<m_pPropertyInfo->m_strName.m_pData,st>=<m_value,d>
+IntProperty =<m_pPropertyInfo->m_strName.m_pData,st>=<m_value,d>
+FloatProperty =<m_pPropertyInfo->m_strName.m_pData,st>=<m_value,g>
+Vector2Property =<m_pPropertyInfo->m_strName.m_pData,st>=x:<m_value.x,g> y:<m_value.y>
+VectorProperty =<m_pPropertyInfo->m_strName.m_pData,st>=x:<m_value.x,g> y:<m_value.y> z:<m_value.z>
+ColorProperty =<m_pPropertyInfo->m_strName.m_pData,st>=r:<m_value.m_red,g> g:<m_value.m_green> b:<m_value.m_blue>
+BoolProperty =<m_pPropertyInfo->m_strName.m_pData,st>=<m_value.m_pData,st>
+ImagePointerProperty =<m_pPropertyInfo->m_strName.m_pData,st>=<m_value->m_strName.m_pData,st>
+PropertyPointerProperty =<m_pPropertyInfo->m_strName.m_pData,st>=<m_value->m_pPropertyInfo->m_strName.m_pData,st>
+TexCoordsPointerProperty =<m_pPropertyInfo->m_strName.m_pData,st>=<m_value->m_strName.m_pData,st>
+
+// Snipe SDK
+HComponent =$ADDIN(SnipeEEAddIn.dll,_AddIn_HComponent@28)
+
+; This section lets you define your own errors for the HRESULT display.
+; You need to list the error code in unsigned decimal, followed by the message.
+; Changes will take effect the next time you redisplay the variable.
+[hresult]
+;1234=my custom error code

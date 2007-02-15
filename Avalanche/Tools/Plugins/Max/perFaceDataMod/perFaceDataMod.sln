@@ -1,0 +1,84 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "perFaceDataMod", "perFaceDataMod.vcproj", "{8F2FF213-B69A-4C47-A011-8D5509F5BA28}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40} = {4E93A073-E9F1-45D4-BC74-DE14F6C21B40}
+		{421C44AF-3606-4090-862C-8E014283C927} = {421C44AF-3606-4090-862C-8E014283C927}
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D} = {FAF27AB7-B622-4B9C-B562-83AC0D28950D}
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233} = {2E17F3EB-52B4-4105-9496-AF131B5FB233}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\..\..\GameLib\Tupperware\tupperware.vcproj", "{FAF27AB7-B622-4B9C-B562-83AC0D28950D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KeyVal", "..\..\Libraries\KeyVal\KeyVal.vcproj", "{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIDisplay", "..\..\Libraries\UIDisplay\UIDisplay.vcproj", "{2E17F3EB-52B4-4105-9496-AF131B5FB233}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AttrControls", "..\..\Libraries\AttrControls\AttrControls.vcproj", "{421C44AF-3606-4090-862C-8E014283C927}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Plugins/Max/perFaceDataMod\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {2888CE13-C080-4641-8B7E-CB0C38993E77}
+		SccProjectUniqueName1 = perFaceDataMod.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath2 = ..\\..\\..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\Libraries\\KeyVal\\KeyVal.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/KeyVal\u0022
+		SccLocalPath3 = ..\\..\\Libraries\\KeyVal
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\..\\Libraries\\UIDisplay\\UIDisplay.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/UIDisplay\u0022
+		SccLocalPath4 = ..\\..\\Libraries\\UIDisplay
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\..\\Libraries\\AttrControls\\AttrControls.vcproj
+		SccProjectName5 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/AttrControls\u0022
+		SccLocalPath5 = ..\\..\\Libraries\\AttrControls
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8F2FF213-B69A-4C47-A011-8D5509F5BA28}.Debug.ActiveCfg = Debug|Win32
+		{8F2FF213-B69A-4C47-A011-8D5509F5BA28}.Debug.Build.0 = Debug|Win32
+		{8F2FF213-B69A-4C47-A011-8D5509F5BA28}.Release.ActiveCfg = Release|Win32
+		{8F2FF213-B69A-4C47-A011-8D5509F5BA28}.Release.Build.0 = Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.Build.0 = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.ActiveCfg = Tools Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.Build.0 = Tools Release|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Debug.Build.0 = Tools Hybrid|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Release.ActiveCfg = Tools Release|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Release.Build.0 = Tools Release|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Debug.Build.0 = Tools Hybrid|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Release.ActiveCfg = Tools Release|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Release.Build.0 = Tools Release|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Debug.Build.0 = Tools Hybrid|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Release.ActiveCfg = Tools Release|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

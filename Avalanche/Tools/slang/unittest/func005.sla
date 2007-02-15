@@ -1,0 +1,75 @@
+// unit test for functions with multiple return parameters
+
+int x;
+int y;
+int z;
+
+// simple
+
+( int min, int max ) minmax( int a, int b )
+{
+   if ( a < b ) return( a, b );
+   else         return( b, a );
+}
+
+( x, y ) = minmax( 2, 5 );
+print x;  // result: 2
+print y;  // result: 5
+
+( x, y ) = minmax( 17, 12 );
+print x;  // result: 12
+print y;  // result: 17
+
+// with a function as the arg
+
+( int one, int two ) nextTwo( int a )
+{
+   return( a+1, a+2 );
+}
+
+( x, y ) = nextTwo( 5 );
+print x;  // result: 6
+print y;  // result: 7
+
+( x, y ) = minmax( nextTwo( 15 ) );
+print x;  // result: 16
+print y;  // result: 17
+
+// with a function and another var as the arg
+
+( int c, int b, int a ) reverse( int a, int b, int c )
+{
+   return( c, b, a );
+}
+
+( x, y, z ) = ( 1, 10, 100 );
+print x;  // result: 1
+print y;  // result: 10
+print z;  // result: 100
+
+( x, y, z ) = reverse( 20, 30, 40 );
+print x;  // result: 40
+print y;  // result: 30
+print z;  // result: 20
+
+( x, y, z ) = reverse( nextTwo( 66 ), 2 );
+print x;  // result: 2
+print y;  // result: 68
+print z;  // result: 67
+
+( x, y, z ) = reverse( 7, nextTwo( 22 ) );
+print x;  // result: 24
+print y;  // result: 23
+print z;  // result: 7
+
+
+
+
+
+
+
+
+
+
+
+

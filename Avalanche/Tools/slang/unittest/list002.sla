@@ -1,0 +1,36 @@
+// arrays with lists
+
+int v[ 3 ];
+
+v = ( 1, 2, 3 );
+print v[0]; // result: 1
+print v[1]; // result: 2
+print v[2]; // result: 3
+
+int x[ 3 ];
+x = v;
+print x[0]; // result: 1
+print x[1]; // result: 2
+print x[2]; // result: 3
+
+int z[ 6 ];
+z = ( 10, 20, 30, 100, 200, 300 );
+
+( x, v ) = z;
+print x[0];	// result: 10
+print x[1]; // result: 20
+print x[2]; // result: 30
+print v[0]; // result: 100
+print v[1]; // result: 200
+print v[2]; // result: 300
+
+x = ( 3, 4, 5 );
+v = ( 30, 40, 50 );
+z = ( x, v );
+print z[0];	// result: 3
+print z[1]; // result: 4
+print z[2]; // result: 5
+print z[3]; // result: 30
+print z[4]; // result: 40
+print z[5]; // result: 50
+

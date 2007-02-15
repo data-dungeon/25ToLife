@@ -1,0 +1,989 @@
+//#include "pch.h"
+#include <Game/Database/DBFile.h>
+#include <Game/Managers/TextureMgr/TextureMgr.h>
+#include "dibblefile.h"
+#include "xpress.h"
+
+// tupperware general
+#include "tupperware/aggregate.h"
+#include "tupperware/list.h"
+#include "tupperware/scalar.h"
+#include "tupperware/pool.h"
+#include "tupperware/tuparray.h"
+#include "tupperware/tupstring.h"
+#include "tupperware/memorymanager.h"
+#include "tupperware/keeper.h"
+#include "TupperAttrib\KeyValue.h"
+#include "TupperAttrib\AuxKeyValue.h"
+#include "Tupperware/LoadSave.h"
+
+#include "colorconversions.h"
+
+
+extern	TupAuxKeyValue m_Keys;
+extern	int	g_NumTextures;
+
+DibbleManager dm;
+
+DibbleManager::DibbleManager( void )
+{
+}
+
+DibbleManager::~DibbleManager( void )
+{
+	while( m_DibbleFiles.Child() )
+		delete m_DibbleFiles.Child();
+
+	return;
+}
+
+DibbleFile* DibbleManager::NewDibbleFile( void )
+{
+	DibbleFile *pDibble = new DibbleFile;
+
+	if( pDibble )
+		m_DibbleFiles.SetChild( pDibble );
+
+	return pDibble;
+}
+
+DibbleFile* DibbleManager::FindDibble( const char *pFilePath )
+{
+	DibbleFile *pDibble = (DibbleFile *) m_DibbleFiles.Child();
+
+	while( pDibble )
+	{
+		if( 0 == pDibble->m_FilePath.stricmp( pFilePath ) )
+			return pDibble;
+
+		pDibble = (DibbleFile *) pDibble->Next();
+	}
+
+	return pDibble;
+}
+
+DibbleFile* DibbleManager::LoadDibble( const char *pFilePath )
+{
+	//=============================================================================
+	// See if the dbl has already been loaded.
+	//=============================================================================
+
+	DibbleFile *pDibble = FindDibble( pFilePath );
+
+	if( !pDibble )
+	{
+		//=============================================================================
+		// The dbl wasn't found in memory, so it needs to be loaded from disk.
+		//=============================================================================
+
+		HANDLE hFile;
+		int FileSize;
+		u8 *pFileData;
+
+		hFile = FileOpen( pFilePath );
+
+		if( hFile == INVALID_HANDLE_VALUE )
+			return 0;
+
+		FileSize = GetFileSize( hFile, 0 );
+
+		if( FileSize > 0 )
+		{
+			//=============================================================================
+			// Allocate some memory.
+			//=============================================================================
+
+			pFileData = new u8[FileSize];
+
+			if( pFileData )
+			{
+				//=============================================================================
+				// Read the file and stuff it into a temporary buffer.
+				//=============================================================================
+
+				FileRead( hFile, pFileData, FileSize );
+
+				//=============================================================================
+				// Process the data.
+				//=============================================================================
+
+				pDibble = NewDibbleFile();
+
+				if( pDibble )
+					pDibble->ProcessFile( (char *) pFilePath, pFileData, FileSize );
+
+				//=============================================================================
+				// Delete the buffer.
+				//=============================================================================
+
+				delete [] pFileData;
+			}
+		}
+
+		//=============================================================================
+		// Close the stream.
+		//=============================================================================
+
+		FileClose( hFile );
+	}
+
+	return pDibble;
+}
+
+//=============================================================================
+// DibbleFile::DibbleFile
+//=============================================================================
+
+DibbleFile::DibbleFile( void )
+{
+	m_pTrueData = 0;
+	m_pData = 0;
+	m_DataSize = 0;
+	m_ppTextures = 0;
+	m_TextureCount = 0;
+	m_pChunkData = 0;
+	m_ChunkSize = 0;
+}
+
+//=============================================================================
+// DibbleFile::~DibbleFile
+//=============================================================================
+
+DibbleFile::~DibbleFile()
+{
+	Destroy();
+}
+
+//=============================================================================
+// DibbleFile::ProcessFile
+//=============================================================================
+
+bool DibbleFile::ProcessFile( char *pFilePath, void *pData, int DataSize )
+{
+	//=============================================================================
+	// Set the file path and size. ////////////////////////////////////////////////
+	//=============================================================================
+
+	m_FilePath.set( pFilePath );
+	m_DataSize = DataSize;
+
+	//=============================================================================
+	// Allocate some memory. //////////////////////////////////////////////////////
+	//=============================================================================
+
+	m_pTrueData = new u8[DataSize];
+
+	if( !m_pTrueData )
+		return false;
+
+	m_pData = m_pTrueData;
+
+	//=============================================================================
+	// Copy the file into memory. /////////////////////////////////////////////////
+	//=============================================================================
+
+	memcpy( m_pData, pData, DataSize );
+
+	//=============================================================================
+	// Copy in the header, too. ///////////////////////////////////////////////////
+	//=============================================================================
+
+	memcpy( &m_Header, pData, sizeof(m_Header) );
+
+	//=============================================================================
+	// A dibble may have a skip value coded into the first bytes as a string. /////
+	//=============================================================================
+
+	int cskip = atoi( m_Header.cSkipCount);
+
+	//=============================================================================
+	// If there is a skip value, copy the header from the appropriate location. ///
+	//=============================================================================
+
+	if( cskip != 0 )
+		memcpy( &m_Header, (void *)( (u32)pData + cskip), sizeof(m_Header) );
+
+	//=============================================================================
+	// Collapse the header ////////////////////////////////////////////////////////
+	//=============================================================================
+
+	Collapse( sizeof(m_Header) + cskip );
+
+	//=============================================================================
+	// Parse the data. ////////////////////////////////////////////////////////////
+	//=============================================================================
+
+	return Parse();
+}
+
+//=============================================================================
+// DibbleFile::Collapse
+//=============================================================================
+
+void DibbleFile::Collapse( u32 Bytes )
+{
+	m_pData = &m_pData[Bytes];
+}
+
+//=============================================================================
+// DibbleFile::Parse
+//=============================================================================
+
+bool DibbleFile::Parse( void )
+{
+	FILE	*fp;
+	int	SaveSize;
+
+	//=============================================================================
+	// Make sure we can handle this type of data
+	//=============================================================================
+
+	if((strcmp(m_Header.cID, "DB"   ) != 0) &&		// generic data ok
+		(strcmp(m_Header.cID, "WIN32") != 0) &&	   // win32 data
+		(strcmp(m_Header.cID, "PS2"  ) != 0) &&		// ps2
+		(strcmp(m_Header.cID, "DX"   ) != 0) &&		// directx
+		(strcmp(m_Header.cID, "GL"   ) != 0) &&		// gl
+		(strcmp(m_Header.cID, "XBOX" ) != 0) )			// xbox
+	{
+		return false;
+	}
+
+	//=============================================================================
+	// Check for DB_VERSION
+	//=============================================================================
+
+	if( m_Header.u32Version != DB_VERSION )
+		return false;
+
+	// write out the new file if necessary
+	if (XPRessObj.m_NoTextures)
+	{
+		fp = fopen( XPRessObj.m_DibbleOutputName, "wb");
+		if (!fp)
+			return false;
+
+		// make sure its xbox
+		strcpy (m_Header.cID, "XBOX");
+		fwrite ( &m_Header, sizeof (ts_DBFileHdr), 1, fp);
+	}
+
+	int nChunks = m_Header.u32Chunks;
+
+	ts_DBBaseChunkHdr *pChunkHeader;
+	u8 *pChunkData;
+	u32 HeaderSize;
+
+	for( int i = 0; i < nChunks; i++ )
+	{
+		pChunkHeader = (ts_DBBaseChunkHdr *) m_pData;
+
+		if( pChunkHeader->u16Flags & DBL_HEADER_32BYTE )
+		{
+			if( pChunkHeader->u16Flags & DBL_NAMED_CHUNK )
+				HeaderSize = sizeof(ts_DBChunkHdr);
+			else
+				HeaderSize = sizeof(ts_DBBaseChunkHdr);
+		}
+		else
+		{
+			if( pChunkHeader->u16Flags & DBL_NAMED_CHUNK)
+				HeaderSize = sizeof(ts_DBChunkHdrNonAlign);
+			else
+				HeaderSize = sizeof(ts_DBBaseChunkHdrNonAlign);
+		}
+
+		pChunkData = &m_pData[HeaderSize];
+
+		SaveSize = pChunkHeader->u32Size;
+
+		switch( pChunkHeader->u16Type )
+		{
+		case DB_TEXTURE_SET:
+		case DB_MERGED_TEXTURE_SET:
+			int Mips;
+			Mips = 0;
+			ProcessTextureSet( pChunkData, (ts_DBChunkHdr*) pChunkHeader, HeaderSize, &Mips );
+
+			// write out new chunk without the texture data
+			if (XPRessObj.m_NoTextures)
+			{
+				u8 *pChunk = (u8 *) pChunkData;
+				ts_TextureChunkHeader *pTextureHeader = (ts_TextureChunkHeader *) pChunk;
+
+				int	size = sizeof (ts_TextureChunkHeader) + 
+										 (pTextureHeader->u32TextureCount * sizeof (ts_TextureChunkRecord)) +
+										 (Mips * sizeof (ts_TextureChunkRecord) - sizeof (ts_TextureChunkRecord));
+
+				// loop through and set the record flags appropriately....
+				ts_TextureChunkRecord*	tr;
+				tr = (ts_TextureChunkRecord*) (pChunk + sizeof(ts_TextureChunkHeader));
+				int	numRecords = ((pTextureHeader->u32TextureCount * sizeof (ts_TextureChunkRecord)) +
+										 (Mips * sizeof (ts_TextureChunkRecord) - sizeof (ts_TextureChunkRecord))) / sizeof(ts_TextureChunkRecord);
+
+				// go through all the records and fixup the format flags... 
+				// eventually we want to support diff types, right now everything on Xbox is going to A8R8G8B8
+
+				pTextureHeader->TextureChunkRecord->u32Flags = (pTextureHeader->TextureChunkRecord->u32Flags & 0xFFFFFF40) | TEX_FLAG_FMT_RGBA | TEX_FLAG_SIZE_32_BIT ;
+				pTextureHeader->TextureChunkRecord->u32PaletteOffset = 0;
+
+				for (int j=0; j<numRecords; j++)
+				{
+					// set to RGBA.. not sure what else we need yet..
+					tr->u32PaletteOffset = 0;
+					tr->u32Flags = (tr->u32Flags & 0xFFFFFF40) | TEX_FLAG_FMT_RGBA | TEX_FLAG_SIZE_32_BIT;
+					tr++;
+				}
+
+				size = ((size+3) / 4) * 4;
+				pChunkHeader->u32Size = size + (pTextureHeader->u32PieceCount * sizeof(ts_PieceRecord));
+
+				if (pTextureHeader->u32PieceCount == 0)
+					pTextureHeader->u32PieceOffset = 0;
+
+				fwrite( pChunkHeader, HeaderSize, 1, fp);
+				fwrite( pTextureHeader, pChunkHeader->u32Size - (pTextureHeader->u32PieceCount * sizeof(ts_PieceRecord)), 1, fp);
+
+				// fix these up...
+				if (pTextureHeader->u32PieceCount != 0)
+				{
+					char	*Pr = (char*)(pTextureHeader) + (pChunkHeader->u32Size - (pTextureHeader->u32PieceCount * sizeof(ts_PieceRecord)));
+               ts_PieceRecord* PieceRec = (ts_PieceRecord*) Pr;
+					fwrite ( PieceRec, pTextureHeader->u32PieceCount,sizeof(ts_PieceRecord),fp);
+				}
+			}
+			break;
+
+//		case DB_ANIMATED_TEXTURE_SET:
+//			break;
+
+		default:
+			if (XPRessObj.m_NoTextures)
+			{
+				fwrite( pChunkHeader, HeaderSize, 1, fp);
+
+				int size = ((pChunkHeader->u32Size + 3) / 4) * 4;
+				pChunkHeader->u32Size = size;
+
+				fwrite( pChunkData, pChunkHeader->u32Size, 1, fp);
+			}
+			break;
+		}
+		Collapse( HeaderSize + SaveSize );
+	}
+
+	if (XPRessObj.m_NoTextures)
+		fclose (fp);
+
+	return true;
+}
+
+//=============================================================================
+// DibbleFile::Destroy
+//=============================================================================
+
+void DibbleFile::Destroy( void )
+{
+	delete [] m_pTrueData;
+
+	m_FilePath.set("");
+	m_pTrueData = 0;
+	m_pData = 0;
+	m_DataSize = 0;
+}
+
+//=============================================================================
+// DibbleFile::ProcessTextureSet
+//=============================================================================
+
+int DibbleFile::GetMaxMips(int width, int height)
+{
+	unsigned int smallest = (width < height) ? width : height;
+
+	unsigned int maxLevels = 1;
+
+	while( smallest > 1 )
+	{
+		smallest = smallest >> 1;
+		maxLevels++;
+	}
+
+	return maxLevels;
+}
+
+BOOL DibbleFile::ProcessTextureSet( void *pChunkDataVoid, ts_DBChunkHdr *pChunkHeader, int HeaderSize, int* mips )
+{
+	int		LastI = -1;
+	ts_TextureChunkHeader *pTextureHeader;
+	ts_TextureChunkRecord *pTextureRecord;
+
+	u8 *pChunkData = (u8 *) pChunkDataVoid;
+
+	pTextureHeader = (ts_TextureChunkHeader *) pChunkData;
+	u32 TextureCount = pTextureHeader->u32TextureCount;
+
+	m_ppTextures = new BITMAP2*[TextureCount];
+
+	if( !m_ppTextures )
+		return false;
+
+	m_ChunkSize = HeaderSize+pChunkHeader->u32Size;
+	m_pChunkData = new u8[m_ChunkSize];
+
+	if( !m_pChunkData )
+		return false;
+
+	memcpy( m_pChunkData, pChunkHeader, HeaderSize );
+	memcpy( &m_pChunkData[HeaderSize], pChunkDataVoid, pChunkHeader->u32Size );
+
+	m_TextureCount = TextureCount;
+
+	// count num of mips
+	*mips = 0;
+	for (unsigned int i=0; i<TextureCount; i++)
+	{
+		MapAttrib[i].MipLevels = 1;
+		MapAttrib[i].CompressionType = 1;	// default to DXT1
+	}
+
+	g_NumTextures = TextureCount;
+
+	// 
+	for(  i = 0; i < TextureCount; i++ )
+	{
+		pTextureRecord = &pTextureHeader->TextureChunkRecord[i];
+
+		while( pTextureRecord )
+		{
+			if( pTextureRecord->u32TextureOffset != 0 )
+				pTextureRecord->pTexture = (void *) &pChunkData[pTextureRecord->u32TextureOffset];
+
+			if( pTextureRecord->u32PaletteOffset != 0 )
+				pTextureRecord->pPalette = (ts_bRGBA *) &pChunkData[pTextureRecord->u32PaletteOffset];
+
+			if( pTextureRecord->u32NextOffset != 0 )
+				pTextureRecord->pNext = (ts_TextureChunkRecord *) &pChunkData[pTextureRecord->u32NextOffset];
+
+			if (LastI != i)
+			{
+				ProcessTexture( i, pTextureRecord );
+				LastI = i;
+			}
+			
+			// get the texture name and match to the key file if we need to
+			if (XPRessObj.m_UseMapAttrib)
+			{
+				TupKeyValue	TKV;
+				if (m_Keys.GetKeyValues( pTextureRecord->acTextureName, TKV))
+				{
+					int	val;
+					// get mips
+					val = TKV.KeyExistsAt("MipMapping");
+					if (val != -1)
+					{
+						bool result = TKV.GetValueAsBool(val);
+
+						if (result)
+						{
+							val = TKV.KeyExistsAt("NumSubMaps");
+							if (val != -1)
+							{
+								int	Mips = TKV.GetValueAsBool(val);
+
+								if (Mips == 0)
+									MapAttrib[i].MipLevels = GetMaxMips(pTextureRecord->s16TextureWidth, pTextureRecord->s16TextureHeight);
+								else
+									MapAttrib[i].MipLevels = Mips;
+							}
+						}
+						else
+							MapAttrib[i].MipLevels = 1;
+					}
+					else
+						MapAttrib[i].MipLevels = 1;
+
+					// get texture format...
+					val = TKV.KeyExistsAt("XBoxFormat");
+					if (val != -1)
+					{
+						char*	fmt = (char*)TKV.GetValueAsString(val);
+						MapAttrib[i].TextureFormat = fmt;
+					}
+					else
+						MapAttrib[i].TextureFormat = "BestFit";
+
+					// get filter type
+					val = TKV.KeyExistsAt("FilterType");
+					if (val != -1)
+					{
+						char*	flt = (char*)TKV.GetValueAsString(val);
+						MapAttrib[i].FilterType = flt;
+					}
+
+					// two sides faces
+					val = TKV.KeyExistsAt("TwoSidedFaces");
+					if (val != -1)
+						MapAttrib[i].TwoSidedFaces = TKV.GetValueAsBool(val);
+					else
+						MapAttrib[i].TwoSidedFaces = false;
+				}
+			}
+
+			pTextureRecord = pTextureRecord->pNext;
+		
+			if (pTextureRecord != 0)
+				*mips += 1;
+
+			if (!XPRessObj.m_UseMapAttrib)
+			{
+				if (pTextureRecord != 0)
+				{
+					MapAttrib[i].MipLevels++;
+				}
+			}
+		}
+	}
+
+	memcpy ( pChunkHeader, m_pChunkData, HeaderSize );
+	memcpy ( pChunkDataVoid, &m_pChunkData[HeaderSize], pChunkHeader->u32Size );
+	return true;
+}
+
+//=============================================================================
+// DibbleFile::ProcessTexture
+//=============================================================================
+
+u8 PaletteSwizzle[256] = {
+
+	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+	0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17,
+	0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
+	0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f,
+	0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27,
+	0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37,
+	0x28, 0x29, 0x2a, 0x2b, 0x2c, 0x2d, 0x2e, 0x2f,
+	0x38, 0x39, 0x3a, 0x3b, 0x3c, 0x3d, 0x3e, 0x3f,
+
+	0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47,
+	0x50, 0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57,
+	0x48, 0x49, 0x4a, 0x4b, 0x4c, 0x4d, 0x4e, 0x4f,
+	0x58, 0x59, 0x5a, 0x5b, 0x5c, 0x5d, 0x5e, 0x5f,
+	0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67,
+	0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77,
+	0x68, 0x69, 0x6a, 0x6b, 0x6c, 0x6d, 0x6e, 0x6f,
+	0x78, 0x79, 0x7a, 0x7b, 0x7c, 0x7d, 0x7e, 0x7f,
+
+	0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87,
+	0x90, 0x91, 0x92, 0x93, 0x94, 0x95, 0x96, 0x97,
+	0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f,
+	0x98, 0x99, 0x9a, 0x9b, 0x9c, 0x9d, 0x9e, 0x9f,
+	0xa0, 0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0xa7,
+	0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7,
+	0xa8, 0xa9, 0xaa, 0xab, 0xac, 0xad, 0xae, 0xaf,
+	0xb8, 0xb9, 0xba, 0xbb, 0xbc, 0xbd, 0xbe, 0xbf,
+
+	0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0xc5, 0xc6, 0xc7,
+	0xd0, 0xd1, 0xd2, 0xd3, 0xd4, 0xd5, 0xd6, 0xd7,
+	0xc8, 0xc9, 0xca, 0xcb, 0xcc, 0xcd, 0xce, 0xcf,
+	0xd8, 0xd9, 0xda, 0xdb, 0xdc, 0xdd, 0xde, 0xdf,
+	0xe0, 0xe1, 0xe2, 0xe3, 0xe4, 0xe5, 0xe6, 0xe7,
+	0xf0, 0xf1, 0xf2, 0xf3, 0xf4, 0xf5, 0xf6, 0xf7,
+	0xe8, 0xe9, 0xea, 0xeb, 0xec, 0xed, 0xee, 0xef,
+	0xf8, 0xf9, 0xfa, 0xfb, 0xfc, 0xfd, 0xfe, 0xff,
+
+};
+
+BOOL DibbleFile::ProcessTexture( unsigned int n, ts_TextureChunkRecord *pTextureRecord )
+{
+	int Bind = 0;
+
+	MapAttrib[n].CompressionType = 0;
+
+	if( pTextureRecord )
+	{
+		int BPP = 0;
+
+		switch( pTextureRecord->u32Flags & TEX_FLAG_SIZE_MASK )
+		{
+		case TEX_FLAG_SIZE_4_BIT:
+			BPP = 4;
+			break;
+		case TEX_FLAG_SIZE_8_BIT:
+			BPP = 8;
+			break;
+		case TEX_FLAG_SIZE_16_BIT:
+			BPP = 16;
+			break;
+		case TEX_FLAG_SIZE_24_BIT:
+			BPP = 24;
+			break;
+		case TEX_FLAG_SIZE_32_BIT:
+			BPP = 32;
+			break;
+		case TEX_FLAG_SIZE_S3TC:
+			break;
+		}
+
+		BITMAP2 Bitmap;
+
+		Bitmap.Width = (int) pTextureRecord->s16TextureWidth;
+		Bitmap.Height = (int) pTextureRecord->s16TextureHeight;
+		Bitmap.Format = PixelFormatFromBPP( BPP );
+		Bitmap.Stride = GetImageStride( Bitmap.Width, BPP );
+		Bitmap.pBits = (BYTE *) pTextureRecord->pTexture;
+
+		switch( Bitmap.Format )
+		{
+		case PIXELFMT_A8R8G8B8:
+			Bitmap.Format = PIXELFMT_A8B8G8R8;
+			break;
+		case PIXELFMT_X8R8G8B8:
+			Bitmap.Format = PIXELFMT_X8B8G8R8;
+			break;
+		case PIXELFMT_A4R4G4B4:
+			//		Bitmap.Format = PIXELFMT_A4B4G4R4;
+			break;
+		case PIXELFMT_X4R4G4B4:
+			//		Bitmap.Format = PIXELFMT_X4B4G4R4;
+			break;
+		case PIXELFMT_A1R5G5B5:
+			//		Bitmap.Format = PIXELFMT_A1B5G5R5;
+			break;
+		case PIXELFMT_X1R5G5B5:
+			break;
+		case PIXELFMT_R5G6B5:
+			//		Bitmap.Format = PIXELFMT_B5G6R5;
+			break;
+
+		default:
+			break;
+		}
+
+		u32 Format = pTextureRecord->u32Flags & TEX_FLAG_FMT_MASK;
+
+		BOOL Paletted = FALSE;
+
+		if( Format == TEX_FLAG_FMT_CI || Format == TEX_FLAG_FMT_CI_IA )
+			Paletted = TRUE;
+
+		if( Format == TEX_FLAG_FMT_RGB )
+		{
+			if( Bitmap.Format == PIXELFMT_A8B8G8R8 )
+			{
+				Bitmap.Format = PIXELFMT_X8B8G8R8;
+				MapAttrib[n].CompressionType = 3;
+			}
+
+			if( Bitmap.Format == PIXELFMT_A4R4G4B4 )
+			{
+				Bitmap.Format = PIXELFMT_X4R4G4B4;
+				MapAttrib[n].CompressionType = 3;
+			}
+
+			if( Bitmap.Format == PIXELFMT_A1R5G5B5 )
+			{
+				Bitmap.Format = PIXELFMT_X1R5G5B5;
+				MapAttrib[n].CompressionType = 1;
+			}
+
+			if( Bitmap.Format == PIXELFMT_A8B8G8R8 )
+			{
+				Bitmap.Format = PIXELFMT_X8B8G8R8;
+				MapAttrib[n].CompressionType = 3;
+			}
+
+			if( Bitmap.Format == PIXELFMT_X1R5G5B5 )
+			{
+				Bitmap.Format = PIXELFMT_X1R5G5B5;
+				MapAttrib[n].CompressionType = 3;
+			}
+		}
+		else if( Format == TEX_FLAG_FMT_RGBA )
+		{
+			if( Bitmap.Format == PIXELFMT_A8B8G8R8 )
+			{
+				Bitmap.Format = PIXELFMT_A8B8G8R8;
+				MapAttrib[n].CompressionType = 3;		// use A8R8G8B8
+			}
+
+			if( Bitmap.Format == PIXELFMT_X8B8G8R8 )
+			{
+				Bitmap.Format = PIXELFMT_A8B8G8R8;
+				MapAttrib[n].CompressionType = 3;		// use A8R8G8B8
+			}
+
+			if( Bitmap.Format == PIXELFMT_X4R4G4B4 )
+			{
+				Bitmap.Format = PIXELFMT_A4R4G4B4;
+				MapAttrib[n].CompressionType = 3;		// use A8R8G8B8
+			}
+
+			if( Bitmap.Format == PIXELFMT_X1R5G5B5 )
+			{
+				Bitmap.Format = PIXELFMT_A1R5G5B5;
+				MapAttrib[n].CompressionType = 1;		// DXT1
+			}
+		}
+		else if( Paletted )
+		{
+			int	AlphaVals[256];
+			bool	alpha = false;
+			int PaletteSize =
+				pTextureRecord->s16PaletteWidth *
+				pTextureRecord->s16PaletteHeight;
+
+			int A, R, G, B;
+			int i, m;
+
+			// zero out alpha tags
+			for (i=0; i<PaletteSize; i++)
+				AlphaVals[i] = 0;
+
+		//	if( Bitmap.Format == PIXELFMT_PALETTE8 )
+		//		Bitmap.Format = PIXELFMT_INDEX8;
+
+		//	if( Bitmap.Format == PIXELFMT_PALETTE4 )
+		//		Bitmap.Format = PIXELFMT_INDEX4;
+
+			for( i = 0; i < PaletteSize; i++ )
+			{
+				if( BPP == 8 )
+					m = (int) PaletteSwizzle[i];
+				else
+					m = i;
+
+				if (pTextureRecord->pPalette)
+				{
+					A = (int) pTextureRecord->pPalette[m].A << 24;
+					R = (int) pTextureRecord->pPalette[m].R << 16;
+					G = (int) pTextureRecord->pPalette[m].G << 8;
+					B = (int) pTextureRecord->pPalette[m].B << 0;
+
+					Bitmap.Palette[i] = (COLOR32) (A|R|G|B);
+					AlphaVals[i] = pTextureRecord->pPalette[m].A;
+				}
+			}
+
+			for (i=0; i<PaletteSize; i++)
+			{
+				if (AlphaVals[i] != 0x80 && AlphaVals[i] != 0x00)
+					alpha = true;
+			}
+
+			if (alpha)
+				MapAttrib[n].CompressionType = 3;		// use A8R8G88
+			else
+				MapAttrib[n].CompressionType = 1;		// need to experiment
+		}
+		else
+		{
+		}
+
+		// fill out filenames for textures
+		strcpy(MapAttrib[n].Fname, pTextureRecord->acTextureName);
+
+		if( m_ppTextures )
+			m_ppTextures[n] = CreateTextureFromBitmap( &Bitmap, Bitmap.Width, Bitmap.Height, PIXELFMT_A8R8G8B8 );
+	}
+
+	return Bind;
+}
+
+BITMAP2* DibbleFile::CreateTextureFromBitmap( BITMAP2 *pBitmap, int Width, int Height, PIXELFORMAT Format )
+{
+	if( !pBitmap )
+		return 0;
+
+	COLOR32 c;
+	int w = pBitmap->Width;
+	int h = pBitmap->Height;
+	int x, y;
+	int A;
+
+	BITMAP2 *newBitmap = CreateBitmap2( w, h, Format, pBitmap->Palette, 256 );
+
+	if( newBitmap )
+	{
+		SetPalette( 0, newBitmap->Palette, 256 );
+		SetPalette( 1, pBitmap->Palette, 256 );
+
+		BitmapToBitmap( newBitmap, 0, 0, w, h, pBitmap, 0, 0, w, h );
+
+		BeginBitmap( 0, newBitmap );
+
+		for( y = 0; y < h; y++ )
+		{
+			for( x = 0; x < w; x++ )
+			{
+				c = GetPixelU( 0, x, y );
+
+				A = (c>>24) & 0xff;
+
+				if( A > 0 )
+					A = (A * 2 - 1) << 24;
+
+				// if x1r5g5b5 - swap r and blue
+				if (pBitmap->Format == PIXELFMT_X1R5G5B5 || pBitmap->Format == PIXELFMT_A1R5G5B5)
+				{
+					float	r,g,b,a, temp;
+					COLOR_TO_RGBA(c,r,g,b,a); 
+	
+					temp = r;
+					r = b;
+					b = temp;
+		
+					c = RGBA_TO_COLOR (r,g,b,a);
+				}
+
+				// adjust saturation
+				if (XPRessObj.m_PS2Saturation)
+				{
+					float	r,g,b,a;
+					float	h,s,v;
+					COLOR_TO_RGBA(c,r,g,b,a); 
+					RGBtoHSV(r,g,b,&h,&s,&v);
+
+					// adjust saturation
+//					if (s < 88.0f)
+					s *= 1.115f;
+					
+					if (s > 100.0f)
+						s = 100.0f;
+
+					// back to rgba
+					HSVtoRGB(&r,&g,&b, h,s,v);
+					if (r >255.0f)
+						r = 255.0f;
+					if (g >255.0f)
+						g = 255.0f;
+					if (b >255.0f)
+						b = 255.0f;
+					c = RGBA_TO_COLOR (r,g,b,a);
+				}
+
+				SetPixelU( 0, x, y, (c&0xffffff)|A );
+			}
+		}
+
+		FinishBitmap(0);
+	}
+
+	return newBitmap;
+}
+
+void DibbleFile::RGBtoHSV( float r, float g, float b, float *h, float *s, float *v )
+{
+	float min;
+	float max;
+	float delta;
+
+	// get a val between 0 and 1
+	r /= 255.0f;
+	g /= 255.0f;
+	b /= 255.0f;
+
+	min = Math::Min( r, g, b );
+	max = Math::Max( r, g, b );
+
+	*v = max;					// v
+	delta = max - min;
+	
+	if( max != 0 )
+		*s = delta / max;		// s
+	else 
+	{
+		// r = g = b = 0		
+		// s = 0, v is undefined
+		*s = 0;
+		*h = -1;
+		return;
+	}
+	
+	if( r == max )
+		*h = ( g - b ) / delta;			// between yellow & magenta
+	else if( g == max )
+		*h = 2 + ( b - r ) / delta;	// between cyan & yellow
+	else
+		*h = 4 + ( r - g ) / delta;	// between magenta & cyan
+	
+	*h *= 60;								// degrees
+	if( *h < 0 )
+		*h += 360;
+
+	// set to 0-100 scale
+	*s *= 100.0f;
+	*v *= 100.0f;
+}
+
+//----------------------------------------------------------------------------------
+
+// RGB 0-255
+// h = 0-360 s,v 0 - 100
+
+void DibbleFile::HSVtoRGB( float *r, float *g, float *b, float h, float s, float v )
+{
+	int i;
+	float f, p, q, t;
+
+	// get a val between 0 and 1
+	s /= 100.0f;
+	v /= 100.0f;
+
+	if( s == 0 ) 
+	{
+		// achromatic (grey)
+		*r = *g = *b = v;
+		return;
+	}
+
+	h /= 60;					// sector 0 to 5
+	i = (int)Math::Floor( h );
+	f = h - i;				// factorial part of h
+	p = v * ( 1 - s );
+	q = v * ( 1 - s * f );
+	t = v * ( 1 - s * ( 1 - f ) );
+	
+	switch( i ) 
+	{
+		case 0:
+			*r = v;
+			*g = t;
+			*b = p;
+			break;
+
+		case 1:
+			*r = q;
+			*g = v;
+			*b = p;
+			break;
+	
+		case 2:
+			*r = p;
+			*g = v;
+			*b = t;
+			break;
+
+		case 3:
+			*r = p;
+			*g = q;
+			*b = v;
+			break;
+
+		case 4:
+			*r = t;
+			*g = p;
+			*b = v;
+			break;
+
+		default:		// case 5:
+			*r = v;
+			*g = p;
+			*b = q;
+			break;
+	}
+
+	// get scale back to 0-100
+	*r *= 255.0f;
+	*g *= 255.0f;
+	*b *= 255.0f;
+}
+

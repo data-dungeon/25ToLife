@@ -1,0 +1,12 @@
+-L"C:/Dev/PS2/Logitech"
+
+-L"C:/Dev/NellyMoser/Lib"
+
+-T "c:\dev\Avalanche\GameLib\Voice\rel.cmd" -nostartfiles
+--start-group
+"liblgaud.a"
+"SaseCodec3200_G0_v163b.a"
+--end-group
+
+-Wl,-G0,-Map,SNPS2Consumer/Voice.map,-sn-full-map
+

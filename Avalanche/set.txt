@@ -1,0 +1,40 @@
+// This text file is used for setting up environment variables to point to various directories
+// Help us all out and put descriptions next to these so we know what uses them
+
+AMSDKPATH=c:\dev\amsdk
+AVPATH=c:\dev\avalanche\engine
+AVTOOLS=c:\dev\avalanche\tools
+AVGAME=C:\dev\avalanche\gamelib
+CWFolder=C:\Program Files\Metrowerks\CodeWarrior
+EAOPENGL=c:\dev\ea\opengl
+HASHPATH=c:\dev\hash
+MGAPIDIST=c:\dev\multigen\mgapi
+MWCIncludes=C:\Program Files\Metrowerks\CodeWarrior\PS2 Support;c:\usr/local/sce/ee/gcc/lib/gcc-lib/ee/3.0.3/include;c:\usr/local/sce/ee/gcc/ee/include;c:\usr/local/sce/ee/gcc/include/g++-2;c:/usr/local/sce/common/include
+MWLibraries=C:\usr\local\sce
+PLUGPATH=c:\dev\multigen plug-ins
+PS2_CPATH=c:\usr/local/sce/ee/gcc/lib/gcc-lib/ee/3.0.3/include;c:\usr/local/sce/ee/gcc/ee/include
+PS2_DRIVE=c
+PS2_ROOT=c:\usr\local\sce
+SCPATH=C:\dev\StripChart
+SSUSER=shon
+TARGETPATH=C:\dev
+WORLDTOOL=C:\dev\WorldTool
+
+// MAYA Plugins Variables
+// MAYAPATH is used for getting to the mayasdk lib and include directories as well as placement of the plugin
+MAYAPATH=C:\AW\MAYA4.0
+
+// Max Plugins Variables
+//MAXSDK is used for getting to the maxsdk lib and include directories
+MAXSDK=C:\3dsmax4\maxsdk 
+//MAXDIR is used for running max
+MAXDIR=C:\3dsmax4
+//MAXDEBUGDIR is used for running the debug version of max
+MAXDEBUGDIR=c:\3dsmax4debug
+
+// Math Library $\avalanche\engine\math
+MMX_OK=0 // if MMX routines should not be used (this should be a runtime check...)
+MMX_OK=1 // if MMX routines are ok to use
+
+// Tupperware Filter Chain Variables
+TFC_FILTERS=c:\TWFilters // where the filters are stored

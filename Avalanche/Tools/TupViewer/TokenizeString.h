@@ -1,0 +1,20 @@
+////////////////////////////////////////////////////////////////////////////
+//
+// TokenizeString
+//
+// Class build an array of string that are created from a string with token string between tokens
+//
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+
+#ifndef TOKENIZE_STRING_H
+#define TOKENIZE_STRING_H
+
+class TokenizeString
+{
+public:
+	static void BuildArray(const char *pSourceString,const char *pTokenString,TupArray<TupString> &destArray);
+};
+
+#endif

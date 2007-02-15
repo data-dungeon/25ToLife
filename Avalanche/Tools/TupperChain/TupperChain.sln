@@ -1,0 +1,657 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AAA Master", "AAA Master.vcproj", "{9502190A-8E88-4D81-A560-5ACA8776F01D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3234E306-4EC1-4225-9681-6A1B559147E9} = {3234E306-4EC1-4225-9681-6A1B559147E9}
+		{B441F110-AE22-402B-AA69-9F8BB45EA764} = {B441F110-AE22-402B-AA69-9F8BB45EA764}
+		{D7489720-DB0E-41D2-B58F-CF702A1DD6C0} = {D7489720-DB0E-41D2-B58F-CF702A1DD6C0}
+		{2F51D42B-7FEB-469E-95EB-D6440A717A54} = {2F51D42B-7FEB-469E-95EB-D6440A717A54}
+		{CB46A02C-2CBE-4563-AB17-0C4ABB88AAB4} = {CB46A02C-2CBE-4563-AB17-0C4ABB88AAB4}
+		{540BDF36-3B2C-4D53-BAAF-AB01EFBEACBB} = {540BDF36-3B2C-4D53-BAAF-AB01EFBEACBB}
+		{7D7B4E41-9B37-4DC7-A5A1-34B19C694860} = {7D7B4E41-9B37-4DC7-A5A1-34B19C694860}
+		{93A1D744-04C2-4589-BC2C-ECF73E8B91C2} = {93A1D744-04C2-4589-BC2C-ECF73E8B91C2}
+		{6A762748-D3E3-4F6B-B3A0-AEFE6110A0AB} = {6A762748-D3E3-4F6B-B3A0-AEFE6110A0AB}
+		{B2BF2856-6D4C-4C20-86E6-EDAE30FB75A4} = {B2BF2856-6D4C-4C20-86E6-EDAE30FB75A4}
+		{1971AE62-5E70-420E-8918-D50AD95EADBE} = {1971AE62-5E70-420E-8918-D50AD95EADBE}
+		{F2B86D64-7FAD-405A-92A2-2D2BB66E491D} = {F2B86D64-7FAD-405A-92A2-2D2BB66E491D}
+		{ED03B56F-25B0-41D4-8B62-B003B10184C0} = {ED03B56F-25B0-41D4-8B62-B003B10184C0}
+		{7BD8F16F-080A-4492-99EF-E0DD82919CD2} = {7BD8F16F-080A-4492-99EF-E0DD82919CD2}
+		{5C966F83-8E78-4E92-9709-0CFC77BE5C20} = {5C966F83-8E78-4E92-9709-0CFC77BE5C20}
+		{C4BA83A1-8CD4-4EC6-8E7B-4D3EB97A0ECC} = {C4BA83A1-8CD4-4EC6-8E7B-4D3EB97A0ECC}
+		{DD7F8CA1-821F-4ADB-B7BF-B636622711A3} = {DD7F8CA1-821F-4ADB-B7BF-B636622711A3}
+		{F67A3DA3-5008-4D9A-A2C8-EF3A9A33CEF8} = {F67A3DA3-5008-4D9A-A2C8-EF3A9A33CEF8}
+		{129C4DA7-22D6-4D1D-9175-4CBEC232444C} = {129C4DA7-22D6-4D1D-9175-4CBEC232444C}
+		{F7751CC6-606F-4AE3-930F-72984D9FC86F} = {F7751CC6-606F-4AE3-930F-72984D9FC86F}
+		{5BC857CC-7869-49E7-8569-26285EB3FE07} = {5BC857CC-7869-49E7-8569-26285EB3FE07}
+		{961012E4-B454-4BE4-96DE-0806840A8167} = {961012E4-B454-4BE4-96DE-0806840A8167}
+		{4493C7F1-F63A-4F9A-A349-CF4C0FB7B0C5} = {4493C7F1-F63A-4F9A-A349-CF4C0FB7B0C5}
+		{7CC720F4-2044-4330-931C-E04C52F3A2A8} = {7CC720F4-2044-4330-931C-E04C52F3A2A8}
+		{F6E18AF5-9E88-4CAF-A3AA-2E46BED37CF7} = {F6E18AF5-9E88-4CAF-A3AA-2E46BED37CF7}
+		{3F1172FA-8AB8-4894-B622-A29677271170} = {3F1172FA-8AB8-4894-B622-A29677271170}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Annotate", "..\TupperFilters\Annotate\Annotate.vcproj", "{961012E4-B454-4BE4-96DE-0806840A8167}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bounding", "..\TupperFilters\Bounding\Bounding.vcproj", "{F2B86D64-7FAD-405A-92A2-2D2BB66E491D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BreakLargeMeshes", "..\TupperFilters\BreakLargeMeshes\BreakLargeMeshes.vcproj", "{1971AE62-5E70-420E-8918-D50AD95EADBE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cineman", "..\TupperFilters\Cineman\Cineman.vcproj", "{B441F110-AE22-402B-AA69-9F8BB45EA764}"
+	ProjectSection(ProjectDependencies) = postProject
+		{294B8709-DE1B-4DA1-9A3B-270FF56D15FB} = {294B8709-DE1B-4DA1-9A3B-270FF56D15FB}
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C} = {D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Collage", "..\TUPPERFILTERS\Collage\Collage.vcproj", "{4493C7F1-F63A-4F9A-A349-CF4C0FB7B0C5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConvertObjects", "..\TupperFilters\ConvertObjects\ConvertObjects.vcproj", "{7CC720F4-2044-4330-931C-E04C52F3A2A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DBLUtils", "..\TUPPERFILTERS\LIBRARIES\DBLUtils\DBLUtils.vcproj", "{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrOctopus", "..\TupperFilters\Collision\droctopus\droctopus.vcproj", "{3234E306-4EC1-4225-9681-6A1B559147E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{294B8709-DE1B-4DA1-9A3B-270FF56D15FB} = {294B8709-DE1B-4DA1-9A3B-270FF56D15FB}
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80} = {0828CF92-E610-4CE6-87F0-5D4B1FA46D80}
+		{46BBDDD0-3505-4A45-AC25-13BA03370B23} = {46BBDDD0-3505-4A45-AC25-13BA03370B23}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExportGCN", "..\TupperFilters\Export\ExportGCN\ExportGCN.vcproj", "{D7489720-DB0E-41D2-B58F-CF702A1DD6C0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C} = {D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExportPC", "..\TUPPERFILTERS\Export\ExportPC\ExportPC.vcproj", "{F6E18AF5-9E88-4CAF-A3AA-2E46BED37CF7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C} = {D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExportPS2", "..\TupperFilters\Export\ExportPS2\ExportPS2.vcproj", "{F7751CC6-606F-4AE3-930F-72984D9FC86F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C} = {D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MakeYUp", "..\TUPPERFILTERS\MakeYUp\MakeYUp.vcproj", "{540BDF36-3B2C-4D53-BAAF-AB01EFBEACBB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeXRefs", "..\TupperFilters\MergeXRefs\MergeXRefs.vcproj", "{5BC857CC-7869-49E7-8569-26285EB3FE07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiTex", "..\TupperFilters\MultiTex\MultiTex.vcproj", "{F67A3DA3-5008-4D9A-A2C8-EF3A9A33CEF8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OBBWorld", "..\TupperFilters\Collision\OBBWorld\OBBWorld.vcproj", "{B2BF2856-6D4C-4C20-86E6-EDAE30FB75A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{294B8709-DE1B-4DA1-9A3B-270FF56D15FB} = {294B8709-DE1B-4DA1-9A3B-270FF56D15FB}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80} = {0828CF92-E610-4CE6-87F0-5D4B1FA46D80}
+		{46BBDDD0-3505-4A45-AC25-13BA03370B23} = {46BBDDD0-3505-4A45-AC25-13BA03370B23}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjectAttributes", "..\TUPPERFILTERS\ObjectAttributes\ObjectAttributes.vcproj", "{3F1172FA-8AB8-4894-B622-A29677271170}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Plugins", "..\TupperFilters\Libraries\Plugins\Plugins.vcproj", "{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RealTimeLighting", "..\TupperFilters\RealTimeLighting\RealTimeLighting.vcproj", "{7D7B4E41-9B37-4DC7-A5A1-34B19C694860}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stamp", "..\TupperFilters\Stamp\stamp.vcproj", "{C4BA83A1-8CD4-4EC6-8E7B-4D3EB97A0ECC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TriStrip", "..\TUPPERFILTERS\TriStrip\TriStrip.vcproj", "{5C966F83-8E78-4E92-9709-0CFC77BE5C20}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tupper3d", "..\Tupper3d\Tupper3d.vcproj", "{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupperAttrib", "..\..\GameLib\TupperAttrib\TupperAttrib.vcproj", "{59F44753-89BF-4F90-80E3-46E46A3B9736}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupperChain", "TupperChain.vcproj", "{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupperChainApp", "TupperChainApp\TupperChainApp.vcproj", "{129C4DA7-22D6-4D1D-9175-4CBEC232444C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9} = {15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupperChainGuiApp", "TupperChainGuiApp\TupperChainGuiApp.vcproj", "{93A1D744-04C2-4589-BC2C-ECF73E8B91C2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9} = {15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\GameLib\Tupperware\tupperware.vcproj", "{FE455E60-6975-452F-8052-C71C5B4FCCD6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "collide", "..\..\GameLib\collide\collide.vcproj", "{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "container", "..\..\GameLib\container\container.vcproj", "{2E87B0A1-90CE-4646-B34D-1B8B25DAA7BE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "geomUtil", "..\..\GameLib\geomUtil\geomUtil.vcproj", "{294B8709-DE1B-4DA1-9A3B-270FF56D15FB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "..\..\Engine\Math\Math.vcproj", "{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToolHelper", "..\..\GameLib\toolhelper\ToolHelper.vcproj", "{46BBDDD0-3505-4A45-AC25-13BA03370B23}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeshPath", "..\TupperFilters\MeshPath\MeshPath.vcproj", "{DD7F8CA1-821F-4ADB-B7BF-B636622711A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E1F9F03-AB3B-423D-972D-56B30CC8FD41} = {4E1F9F03-AB3B-423D-972D-56B30CC8FD41}
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80} = {0828CF92-E610-4CE6-87F0-5D4B1FA46D80}
+		{2E87B0A1-90CE-4646-B34D-1B8B25DAA7BE} = {2E87B0A1-90CE-4646-B34D-1B8B25DAA7BE}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Navigate", "..\..\gamelib\Navigate\Navigate.vcproj", "{4E1F9F03-AB3B-423D-972D-56B30CC8FD41}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadAttribCfg", "..\TupperFilters\LoadAttribCfg\LoadAttribCfg.vcproj", "{CB46A02C-2CBE-4563-AB17-0C4ABB88AAB4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExportTextures", "..\TupperFilters\ExportTextures\ExportTextures.vcproj", "{6A762748-D3E3-4F6B-B3A0-AEFE6110A0AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C} = {D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExportDX", "..\TupperFilters\Export\ExportDX\ExportDX.vcproj", "{7BD8F16F-080A-4492-99EF-E0DD82919CD2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C} = {D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CombineMeshes", "..\TupperFilters\CombineMeshes\CombineMeshes.vcproj", "{2F51D42B-7FEB-469E-95EB-D6440A717A54}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{59F44753-89BF-4F90-80E3-46E46A3B9736} = {59F44753-89BF-4F90-80E3-46E46A3B9736}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupperChainDLL", "TupperChainDLL\TupperChainDLL.vcproj", "{ED03B56F-25B0-41D4-8B62-B003B10184C0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+		{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9} = {15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MotionSet", "..\TupperFilters\MotionSet\MotionSet.vcproj", "{2CC18558-04C2-4CC1-8B3D-186D2EDF9C49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464} = {63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2} = {A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6} = {FE455E60-6975-452F-8052-C71C5B4FCCD6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 41
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/TupperChain\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {32B64B58-F5D5-4618-9FD7-37FBA8034201}
+		SccProjectUniqueName1 = AAA\u0020Master.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\TupperFilters\\Annotate\\Annotate.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/TupperFilters/Annotate\u0022
+		SccLocalPath2 = ..\\TupperFilters\\Annotate
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\TupperFilters\\Bounding\\Bounding.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/Tools/TupperFilters/Bounding\u0022
+		SccLocalPath3 = ..\\TupperFilters\\Bounding
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\TupperFilters\\BreakLargeMeshes\\BreakLargeMeshes.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/TupperFilters/BreakLargeMeshes\u0022
+		SccLocalPath4 = ..\\TupperFilters\\BreakLargeMeshes
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\TupperFilters\\Cineman\\Cineman.vcproj
+		SccProjectName5 = \u0022//depot/Avalanche/Tools/TupperFilters/Cineman\u0022
+		SccLocalPath5 = ..\\TupperFilters\\Cineman
+		CanCheckoutShared = true
+		SccProjectUniqueName6 = ..\\TUPPERFILTERS\\Collage\\Collage.vcproj
+		SccProjectName6 = \u0022//depot/Avalanche/Tools/TupperFilters/Collage\u0022
+		SccLocalPath6 = ..\\TUPPERFILTERS\\Collage
+		CanCheckoutShared = true
+		SccProjectUniqueName7 = ..\\TupperFilters\\ConvertObjects\\ConvertObjects.vcproj
+		SccProjectName7 = \u0022//depot/Avalanche/Tools/TupperFilters/ConvertObjects\u0022
+		SccLocalPath7 = ..\\TupperFilters\\ConvertObjects
+		CanCheckoutShared = true
+		SccProjectUniqueName8 = ..\\TUPPERFILTERS\\LIBRARIES\\DBLUtils\\DBLUtils.vcproj
+		SccProjectName8 = \u0022//depot/Avalanche/Tools/TupperFilters/Libraries/DBLUtils\u0022
+		SccLocalPath8 = ..\\TUPPERFILTERS\\LIBRARIES\\DBLUtils
+		CanCheckoutShared = true
+		SccProjectUniqueName9 = ..\\TupperFilters\\Collision\\droctopus\\droctopus.vcproj
+		SccProjectName9 = \u0022//depot/Avalanche/Tools/TupperFilters/Collision\u0022
+		SccLocalPath9 = ..\\TupperFilters\\Collision
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection9 = droctopus\\
+		SccProjectUniqueName10 = ..\\TupperFilters\\Export\\ExportGCN\\ExportGCN.vcproj
+		SccProjectName10 = \u0022//depot/Avalanche/Tools/TupperFilters/Export\u0022
+		SccLocalPath10 = ..\\TupperFilters\\Export
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection10 = ExportGCN\\
+		SccProjectUniqueName11 = ..\\TUPPERFILTERS\\Export\\ExportPC\\ExportPC.vcproj
+		SccProjectName11 = \u0022//depot/Avalanche/Tools/TupperFilters/Export\u0022
+		SccLocalPath11 = ..\\TUPPERFILTERS\\Export
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection11 = ExportPC\\
+		SccProjectUniqueName12 = ..\\TupperFilters\\Export\\ExportPS2\\ExportPS2.vcproj
+		SccProjectName12 = \u0022//depot/Avalanche/Tools/TupperFilters/Export\u0022
+		SccLocalPath12 = ..\\TupperFilters\\Export
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection12 = ExportPS2\\
+		SccProjectUniqueName13 = ..\\TUPPERFILTERS\\MakeYUp\\MakeYUp.vcproj
+		SccProjectName13 = \u0022//depot/Avalanche/Tools/TupperFilters/MakeYUp\u0022
+		SccLocalPath13 = ..\\TUPPERFILTERS\\MakeYUp
+		CanCheckoutShared = true
+		SccProjectUniqueName14 = ..\\TupperFilters\\MergeXRefs\\MergeXRefs.vcproj
+		SccProjectName14 = \u0022//depot/Avalanche/Tools/TupperFilters/MergeXRefs\u0022
+		SccLocalPath14 = ..\\TupperFilters\\MergeXRefs
+		CanCheckoutShared = true
+		SccProjectUniqueName15 = ..\\TupperFilters\\MultiTex\\MultiTex.vcproj
+		SccProjectName15 = \u0022//depot/Avalanche/Tools/TupperFilters/MultiTex\u0022
+		SccLocalPath15 = ..\\TupperFilters\\MultiTex
+		CanCheckoutShared = true
+		SccProjectUniqueName16 = ..\\TupperFilters\\Collision\\OBBWorld\\OBBWorld.vcproj
+		SccProjectName16 = \u0022//depot/Avalanche/Tools/TupperFilters/Collision\u0022
+		SccLocalPath16 = ..\\TupperFilters\\Collision
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection16 = OBBWorld\\
+		SccProjectUniqueName17 = ..\\TUPPERFILTERS\\ObjectAttributes\\ObjectAttributes.vcproj
+		SccProjectName17 = \u0022//depot/Avalanche/Tools/TupperFilters/ObjectAttributes\u0022
+		SccLocalPath17 = ..\\TUPPERFILTERS\\ObjectAttributes
+		CanCheckoutShared = true
+		SccProjectUniqueName18 = ..\\TupperFilters\\Libraries\\Plugins\\Plugins.vcproj
+		SccProjectName18 = \u0022//depot/Avalanche/Tools/TupperFilters/Libraries/Plugins\u0022
+		SccLocalPath18 = ..\\TupperFilters\\Libraries\\Plugins
+		CanCheckoutShared = true
+		SccProjectUniqueName19 = ..\\TupperFilters\\RealTimeLighting\\RealTimeLighting.vcproj
+		SccProjectName19 = \u0022//depot/Avalanche/Tools/TupperFilters/RealTimeLighting\u0022
+		SccLocalPath19 = ..\\TupperFilters\\RealTimeLighting
+		CanCheckoutShared = true
+		SccProjectUniqueName20 = ..\\TupperFilters\\Stamp\\stamp.vcproj
+		SccProjectName20 = \u0022//depot/Avalanche/Tools/TupperFilters/Stamp\u0022
+		SccLocalPath20 = ..\\TupperFilters\\Stamp
+		CanCheckoutShared = true
+		SccProjectUniqueName21 = ..\\TUPPERFILTERS\\TriStrip\\TriStrip.vcproj
+		SccProjectName21 = \u0022//depot/Avalanche/Tools/TupperFilters/TriStrip\u0022
+		SccLocalPath21 = ..\\TUPPERFILTERS\\TriStrip
+		CanCheckoutShared = true
+		SccProjectUniqueName22 = ..\\Tupper3d\\Tupper3d.vcproj
+		SccProjectName22 = \u0022//depot/Avalanche/Tools/Tupper3d\u0022
+		SccLocalPath22 = ..\\Tupper3d
+		CanCheckoutShared = true
+		SccProjectUniqueName23 = TupperChain.vcproj
+		SccLocalPath23 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName24 = TupperChainApp\\TupperChainApp.vcproj
+		SccProjectName24 = \u0022//depot/Avalanche/Tools/TupperChain/TupperChainApp\u0022
+		SccLocalPath24 = TupperChainApp
+		CanCheckoutShared = true
+		SccProjectUniqueName25 = TupperChainGuiApp\\TupperChainGuiApp.vcproj
+		SccProjectName25 = \u0022//depot/Avalanche/Tools/TupperChain/TupperChainGuiApp\u0022
+		SccLocalPath25 = TupperChainGuiApp
+		CanCheckoutShared = true
+		SccProjectUniqueName26 = ..\\..\\GameLib\\collide\\collide.vcproj
+		SccProjectName26 = \u0022//depot/Avalanche/GameLib/collide\u0022
+		SccLocalPath26 = ..\\..\\GameLib\\collide
+		CanCheckoutShared = true
+		SccProjectUniqueName27 = ..\\..\\GameLib\\container\\container.vcproj
+		SccProjectName27 = \u0022//depot/Avalanche/GameLib/container\u0022
+		SccLocalPath27 = ..\\..\\GameLib\\container
+		CanCheckoutShared = true
+		SccProjectUniqueName28 = ..\\..\\GameLib\\geomUtil\\geomUtil.vcproj
+		SccProjectName28 = \u0022//depot/Avalanche/GameLib/geomUtil\u0022
+		SccLocalPath28 = ..\\..\\GameLib\\geomUtil
+		CanCheckoutShared = true
+		SccProjectUniqueName29 = ..\\..\\Engine\\Math\\Math.vcproj
+		SccProjectName29 = \u0022//depot/Avalanche/Engine/Math\u0022
+		SccLocalPath29 = ..\\..\\Engine\\Math
+		CanCheckoutShared = true
+		SccProjectUniqueName30 = ..\\..\\GameLib\\toolhelper\\ToolHelper.vcproj
+		SccProjectName30 = \u0022//depot/Avalanche/GameLib/ToolHelper\u0022
+		SccLocalPath30 = ..\\..\\GameLib\\toolhelper
+		CanCheckoutShared = true
+		SccProjectUniqueName31 = ..\\..\\GameLib\\TupperAttrib\\TupperAttrib.vcproj
+		SccProjectName31 = \u0022//depot/Avalanche/GameLib/TupperAttrib\u0022
+		SccLocalPath31 = ..\\..\\GameLib\\TupperAttrib
+		CanCheckoutShared = true
+		SccProjectUniqueName32 = ..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName32 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath32 = ..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+		SccProjectUniqueName33 = ..\\TupperFilters\\MeshPath\\MeshPath.vcproj
+		SccProjectName33 = \u0022//depot/Avalanche/Tools/TupperFilters/MeshPath\u0022
+		SccLocalPath33 = ..\\TupperFilters\\MeshPath
+		CanCheckoutShared = true
+		SccProjectUniqueName34 = ..\\TupperFilters\\LoadAttribCfg\\LoadAttribCfg.vcproj
+		SccProjectName34 = \u0022//depot/Avalanche/Tools/TupperFilters/LoadAttribCfg\u0022
+		SccLocalPath34 = ..\\TupperFilters\\LoadAttribCfg
+		CanCheckoutShared = true
+		SccProjectUniqueName35 = ..\\..\\gamelib\\Navigate\\Navigate.vcproj
+		SccProjectName35 = \u0022//depot/Avalanche/GameLib/Navigate\u0022
+		SccLocalPath35 = ..\\..\\gamelib\\Navigate
+		CanCheckoutShared = true
+		SccProjectUniqueName36 = ..\\TupperFilters\\ExportTextures\\ExportTextures.vcproj
+		SccProjectName36 = \u0022//depot/Avalanche/Tools/TupperFilters/ExportTextures\u0022
+		SccLocalPath36 = ..\\TupperFilters\\ExportTextures
+		CanCheckoutShared = true
+		SccProjectUniqueName37 = ..\\TupperFilters\\Export\\ExportDX\\ExportDX.vcproj
+		SccProjectName37 = \u0022//depot/Avalanche/Tools/TupperFilters/Export\u0022
+		SccLocalPath37 = ..\\TupperFilters\\Export
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection37 = ExportDX\\
+		SccProjectUniqueName38 = ..\\TupperFilters\\CombineMeshes\\CombineMeshes.vcproj
+		SccProjectName38 = \u0022//depot/Avalanche/Tools/TupperFilters/CombineMeshes\u0022
+		SccLocalPath38 = ..\\TupperFilters\\CombineMeshes
+		CanCheckoutShared = true
+		SccProjectUniqueName39 = TupperChainDLL\\TupperChainDLL.vcproj
+		SccProjectName39 = \u0022//depot/Avalanche/Tools/TupperChain/TupperChainDLL\u0022
+		SccLocalPath39 = TupperChainDLL
+		CanCheckoutShared = true
+		SccProjectUniqueName40 = ..\\TupperFilters\\MotionSet\\MotionSet.vcproj
+		SccProjectName40 = \u0022//depot/Avalanche/Tools/TupperFilters/MotionSet\u0022
+		SccLocalPath40 = ..\\TupperFilters\\MotionSet
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Tools Debug = Tools Debug
+		Tools Release = Tools Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9502190A-8E88-4D81-A560-5ACA8776F01D}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{9502190A-8E88-4D81-A560-5ACA8776F01D}.Tools Debug.Build.0 = Tools Debug|Win32
+		{9502190A-8E88-4D81-A560-5ACA8776F01D}.Tools Release.ActiveCfg = Tools Release|Win32
+		{9502190A-8E88-4D81-A560-5ACA8776F01D}.Tools Release.Build.0 = Tools Release|Win32
+		{961012E4-B454-4BE4-96DE-0806840A8167}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{961012E4-B454-4BE4-96DE-0806840A8167}.Tools Debug.Build.0 = Tools Debug|Win32
+		{961012E4-B454-4BE4-96DE-0806840A8167}.Tools Release.ActiveCfg = Tools Release|Win32
+		{961012E4-B454-4BE4-96DE-0806840A8167}.Tools Release.Build.0 = Tools Release|Win32
+		{F2B86D64-7FAD-405A-92A2-2D2BB66E491D}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{F2B86D64-7FAD-405A-92A2-2D2BB66E491D}.Tools Debug.Build.0 = Tools Debug|Win32
+		{F2B86D64-7FAD-405A-92A2-2D2BB66E491D}.Tools Release.ActiveCfg = Tools Release|Win32
+		{F2B86D64-7FAD-405A-92A2-2D2BB66E491D}.Tools Release.Build.0 = Tools Release|Win32
+		{1971AE62-5E70-420E-8918-D50AD95EADBE}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{1971AE62-5E70-420E-8918-D50AD95EADBE}.Tools Debug.Build.0 = Tools Debug|Win32
+		{1971AE62-5E70-420E-8918-D50AD95EADBE}.Tools Release.ActiveCfg = Tools Release|Win32
+		{1971AE62-5E70-420E-8918-D50AD95EADBE}.Tools Release.Build.0 = Tools Release|Win32
+		{B441F110-AE22-402B-AA69-9F8BB45EA764}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{B441F110-AE22-402B-AA69-9F8BB45EA764}.Tools Debug.Build.0 = Tools Debug|Win32
+		{B441F110-AE22-402B-AA69-9F8BB45EA764}.Tools Release.ActiveCfg = Tools Release|Win32
+		{B441F110-AE22-402B-AA69-9F8BB45EA764}.Tools Release.Build.0 = Tools Release|Win32
+		{4493C7F1-F63A-4F9A-A349-CF4C0FB7B0C5}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{4493C7F1-F63A-4F9A-A349-CF4C0FB7B0C5}.Tools Debug.Build.0 = Tools Debug|Win32
+		{4493C7F1-F63A-4F9A-A349-CF4C0FB7B0C5}.Tools Release.ActiveCfg = Tools Release|Win32
+		{4493C7F1-F63A-4F9A-A349-CF4C0FB7B0C5}.Tools Release.Build.0 = Tools Release|Win32
+		{7CC720F4-2044-4330-931C-E04C52F3A2A8}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{7CC720F4-2044-4330-931C-E04C52F3A2A8}.Tools Debug.Build.0 = Tools Debug|Win32
+		{7CC720F4-2044-4330-931C-E04C52F3A2A8}.Tools Release.ActiveCfg = Tools Release|Win32
+		{7CC720F4-2044-4330-931C-E04C52F3A2A8}.Tools Release.Build.0 = Tools Release|Win32
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}.Tools Debug.Build.0 = Tools Debug|Win32
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}.Tools Release.ActiveCfg = Tools Release|Win32
+		{D273E6C7-A8ED-41F8-8192-1BC0FCA8655C}.Tools Release.Build.0 = Tools Release|Win32
+		{3234E306-4EC1-4225-9681-6A1B559147E9}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{3234E306-4EC1-4225-9681-6A1B559147E9}.Tools Debug.Build.0 = Tools Debug|Win32
+		{3234E306-4EC1-4225-9681-6A1B559147E9}.Tools Release.ActiveCfg = Tools Release|Win32
+		{3234E306-4EC1-4225-9681-6A1B559147E9}.Tools Release.Build.0 = Tools Release|Win32
+		{D7489720-DB0E-41D2-B58F-CF702A1DD6C0}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{D7489720-DB0E-41D2-B58F-CF702A1DD6C0}.Tools Debug.Build.0 = Tools Debug|Win32
+		{D7489720-DB0E-41D2-B58F-CF702A1DD6C0}.Tools Release.ActiveCfg = Tools Release|Win32
+		{D7489720-DB0E-41D2-B58F-CF702A1DD6C0}.Tools Release.Build.0 = Tools Release|Win32
+		{F6E18AF5-9E88-4CAF-A3AA-2E46BED37CF7}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{F6E18AF5-9E88-4CAF-A3AA-2E46BED37CF7}.Tools Debug.Build.0 = Tools Debug|Win32
+		{F6E18AF5-9E88-4CAF-A3AA-2E46BED37CF7}.Tools Release.ActiveCfg = Tools Release|Win32
+		{F6E18AF5-9E88-4CAF-A3AA-2E46BED37CF7}.Tools Release.Build.0 = Tools Release|Win32
+		{F7751CC6-606F-4AE3-930F-72984D9FC86F}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{F7751CC6-606F-4AE3-930F-72984D9FC86F}.Tools Debug.Build.0 = Tools Debug|Win32
+		{F7751CC6-606F-4AE3-930F-72984D9FC86F}.Tools Release.ActiveCfg = Tools Release|Win32
+		{F7751CC6-606F-4AE3-930F-72984D9FC86F}.Tools Release.Build.0 = Tools Release|Win32
+		{540BDF36-3B2C-4D53-BAAF-AB01EFBEACBB}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{540BDF36-3B2C-4D53-BAAF-AB01EFBEACBB}.Tools Debug.Build.0 = Tools Debug|Win32
+		{540BDF36-3B2C-4D53-BAAF-AB01EFBEACBB}.Tools Release.ActiveCfg = Tools Release|Win32
+		{540BDF36-3B2C-4D53-BAAF-AB01EFBEACBB}.Tools Release.Build.0 = Tools Release|Win32
+		{5BC857CC-7869-49E7-8569-26285EB3FE07}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{5BC857CC-7869-49E7-8569-26285EB3FE07}.Tools Debug.Build.0 = Tools Debug|Win32
+		{5BC857CC-7869-49E7-8569-26285EB3FE07}.Tools Release.ActiveCfg = Tools Release|Win32
+		{5BC857CC-7869-49E7-8569-26285EB3FE07}.Tools Release.Build.0 = Tools Release|Win32
+		{F67A3DA3-5008-4D9A-A2C8-EF3A9A33CEF8}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{F67A3DA3-5008-4D9A-A2C8-EF3A9A33CEF8}.Tools Debug.Build.0 = Tools Debug|Win32
+		{F67A3DA3-5008-4D9A-A2C8-EF3A9A33CEF8}.Tools Release.ActiveCfg = Tools Release|Win32
+		{F67A3DA3-5008-4D9A-A2C8-EF3A9A33CEF8}.Tools Release.Build.0 = Tools Release|Win32
+		{B2BF2856-6D4C-4C20-86E6-EDAE30FB75A4}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{B2BF2856-6D4C-4C20-86E6-EDAE30FB75A4}.Tools Debug.Build.0 = Tools Debug|Win32
+		{B2BF2856-6D4C-4C20-86E6-EDAE30FB75A4}.Tools Release.ActiveCfg = Tools Release|Win32
+		{B2BF2856-6D4C-4C20-86E6-EDAE30FB75A4}.Tools Release.Build.0 = Tools Release|Win32
+		{3F1172FA-8AB8-4894-B622-A29677271170}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{3F1172FA-8AB8-4894-B622-A29677271170}.Tools Debug.Build.0 = Tools Debug|Win32
+		{3F1172FA-8AB8-4894-B622-A29677271170}.Tools Release.ActiveCfg = Tools Release|Win32
+		{3F1172FA-8AB8-4894-B622-A29677271170}.Tools Release.Build.0 = Tools Release|Win32
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}.Tools Debug.Build.0 = Tools Debug|Win32
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}.Tools Release.ActiveCfg = Tools Release|Win32
+		{A25FA23A-2E12-4BBF-A675-CF0B356AC9B2}.Tools Release.Build.0 = Tools Release|Win32
+		{7D7B4E41-9B37-4DC7-A5A1-34B19C694860}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{7D7B4E41-9B37-4DC7-A5A1-34B19C694860}.Tools Debug.Build.0 = Tools Debug|Win32
+		{7D7B4E41-9B37-4DC7-A5A1-34B19C694860}.Tools Release.ActiveCfg = Tools Release|Win32
+		{7D7B4E41-9B37-4DC7-A5A1-34B19C694860}.Tools Release.Build.0 = Tools Release|Win32
+		{C4BA83A1-8CD4-4EC6-8E7B-4D3EB97A0ECC}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{C4BA83A1-8CD4-4EC6-8E7B-4D3EB97A0ECC}.Tools Debug.Build.0 = Tools Debug|Win32
+		{C4BA83A1-8CD4-4EC6-8E7B-4D3EB97A0ECC}.Tools Release.ActiveCfg = Tools Release|Win32
+		{C4BA83A1-8CD4-4EC6-8E7B-4D3EB97A0ECC}.Tools Release.Build.0 = Tools Release|Win32
+		{5C966F83-8E78-4E92-9709-0CFC77BE5C20}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{5C966F83-8E78-4E92-9709-0CFC77BE5C20}.Tools Debug.Build.0 = Tools Debug|Win32
+		{5C966F83-8E78-4E92-9709-0CFC77BE5C20}.Tools Release.ActiveCfg = Tools Release|Win32
+		{5C966F83-8E78-4E92-9709-0CFC77BE5C20}.Tools Release.Build.0 = Tools Release|Win32
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}.Tools Debug.Build.0 = Tools Debug|Win32
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}.Tools Release.ActiveCfg = Tools Release|Win32
+		{63DAAF33-CCB8-4C83-BCCD-25F1A2A9F464}.Tools Release.Build.0 = Tools Release|Win32
+		{59F44753-89BF-4F90-80E3-46E46A3B9736}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{59F44753-89BF-4F90-80E3-46E46A3B9736}.Tools Debug.Build.0 = Tools Debug|Win32
+		{59F44753-89BF-4F90-80E3-46E46A3B9736}.Tools Release.ActiveCfg = Tools Release|Win32
+		{59F44753-89BF-4F90-80E3-46E46A3B9736}.Tools Release.Build.0 = Tools Release|Win32
+		{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}.Tools Debug.Build.0 = Tools Debug|Win32
+		{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}.Tools Release.ActiveCfg = Tools Release|Win32
+		{15F9CE86-1B1C-4FD9-9B8B-36A6495A3AE9}.Tools Release.Build.0 = Tools Release|Win32
+		{129C4DA7-22D6-4D1D-9175-4CBEC232444C}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{129C4DA7-22D6-4D1D-9175-4CBEC232444C}.Tools Debug.Build.0 = Tools Debug|Win32
+		{129C4DA7-22D6-4D1D-9175-4CBEC232444C}.Tools Release.ActiveCfg = Tools Release|Win32
+		{129C4DA7-22D6-4D1D-9175-4CBEC232444C}.Tools Release.Build.0 = Tools Release|Win32
+		{93A1D744-04C2-4589-BC2C-ECF73E8B91C2}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{93A1D744-04C2-4589-BC2C-ECF73E8B91C2}.Tools Debug.Build.0 = Tools Debug|Win32
+		{93A1D744-04C2-4589-BC2C-ECF73E8B91C2}.Tools Release.ActiveCfg = Tools Release|Win32
+		{93A1D744-04C2-4589-BC2C-ECF73E8B91C2}.Tools Release.Build.0 = Tools Release|Win32
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6}.Tools Debug.Build.0 = Tools Debug|Win32
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6}.Tools Release.ActiveCfg = Tools Release|Win32
+		{FE455E60-6975-452F-8052-C71C5B4FCCD6}.Tools Release.Build.0 = Tools Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.Tools Debug.Build.0 = Tools Debug|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.Tools Release.ActiveCfg = Tools Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.Tools Release.Build.0 = Tools Release|Win32
+		{2E87B0A1-90CE-4646-B34D-1B8B25DAA7BE}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{2E87B0A1-90CE-4646-B34D-1B8B25DAA7BE}.Tools Debug.Build.0 = Tools Debug|Win32
+		{2E87B0A1-90CE-4646-B34D-1B8B25DAA7BE}.Tools Release.ActiveCfg = Tools Release|Win32
+		{2E87B0A1-90CE-4646-B34D-1B8B25DAA7BE}.Tools Release.Build.0 = Tools Release|Win32
+		{294B8709-DE1B-4DA1-9A3B-270FF56D15FB}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{294B8709-DE1B-4DA1-9A3B-270FF56D15FB}.Tools Debug.Build.0 = Tools Debug|Win32
+		{294B8709-DE1B-4DA1-9A3B-270FF56D15FB}.Tools Release.ActiveCfg = Tools Release|Win32
+		{294B8709-DE1B-4DA1-9A3B-270FF56D15FB}.Tools Release.Build.0 = Tools Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Tools Debug.Build.0 = Tools Debug|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Tools Release.ActiveCfg = Tools Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Tools Release.Build.0 = Tools Release|Win32
+		{46BBDDD0-3505-4A45-AC25-13BA03370B23}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{46BBDDD0-3505-4A45-AC25-13BA03370B23}.Tools Debug.Build.0 = Tools Debug|Win32
+		{46BBDDD0-3505-4A45-AC25-13BA03370B23}.Tools Release.ActiveCfg = Tools Release|Win32
+		{46BBDDD0-3505-4A45-AC25-13BA03370B23}.Tools Release.Build.0 = Tools Release|Win32
+		{DD7F8CA1-821F-4ADB-B7BF-B636622711A3}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{DD7F8CA1-821F-4ADB-B7BF-B636622711A3}.Tools Debug.Build.0 = Tools Debug|Win32
+		{DD7F8CA1-821F-4ADB-B7BF-B636622711A3}.Tools Release.ActiveCfg = Tools Release|Win32
+		{DD7F8CA1-821F-4ADB-B7BF-B636622711A3}.Tools Release.Build.0 = Tools Release|Win32
+		{4E1F9F03-AB3B-423D-972D-56B30CC8FD41}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{4E1F9F03-AB3B-423D-972D-56B30CC8FD41}.Tools Debug.Build.0 = Tools Debug|Win32
+		{4E1F9F03-AB3B-423D-972D-56B30CC8FD41}.Tools Release.ActiveCfg = Tools Release|Win32
+		{4E1F9F03-AB3B-423D-972D-56B30CC8FD41}.Tools Release.Build.0 = Tools Release|Win32
+		{CB46A02C-2CBE-4563-AB17-0C4ABB88AAB4}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{CB46A02C-2CBE-4563-AB17-0C4ABB88AAB4}.Tools Debug.Build.0 = Tools Debug|Win32
+		{CB46A02C-2CBE-4563-AB17-0C4ABB88AAB4}.Tools Release.ActiveCfg = Tools Release|Win32
+		{CB46A02C-2CBE-4563-AB17-0C4ABB88AAB4}.Tools Release.Build.0 = Tools Release|Win32
+		{6A762748-D3E3-4F6B-B3A0-AEFE6110A0AB}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{6A762748-D3E3-4F6B-B3A0-AEFE6110A0AB}.Tools Debug.Build.0 = Tools Debug|Win32
+		{6A762748-D3E3-4F6B-B3A0-AEFE6110A0AB}.Tools Release.ActiveCfg = Tools Release|Win32
+		{6A762748-D3E3-4F6B-B3A0-AEFE6110A0AB}.Tools Release.Build.0 = Tools Release|Win32
+		{7BD8F16F-080A-4492-99EF-E0DD82919CD2}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{7BD8F16F-080A-4492-99EF-E0DD82919CD2}.Tools Debug.Build.0 = Tools Debug|Win32
+		{7BD8F16F-080A-4492-99EF-E0DD82919CD2}.Tools Release.ActiveCfg = Tools Release|Win32
+		{7BD8F16F-080A-4492-99EF-E0DD82919CD2}.Tools Release.Build.0 = Tools Release|Win32
+		{2F51D42B-7FEB-469E-95EB-D6440A717A54}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{2F51D42B-7FEB-469E-95EB-D6440A717A54}.Tools Debug.Build.0 = Tools Debug|Win32
+		{2F51D42B-7FEB-469E-95EB-D6440A717A54}.Tools Release.ActiveCfg = Tools Release|Win32
+		{2F51D42B-7FEB-469E-95EB-D6440A717A54}.Tools Release.Build.0 = Tools Release|Win32
+		{ED03B56F-25B0-41D4-8B62-B003B10184C0}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{ED03B56F-25B0-41D4-8B62-B003B10184C0}.Tools Debug.Build.0 = Tools Debug|Win32
+		{ED03B56F-25B0-41D4-8B62-B003B10184C0}.Tools Release.ActiveCfg = Tools Release|Win32
+		{ED03B56F-25B0-41D4-8B62-B003B10184C0}.Tools Release.Build.0 = Tools Release|Win32
+		{2CC18558-04C2-4CC1-8B3D-186D2EDF9C49}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{2CC18558-04C2-4CC1-8B3D-186D2EDF9C49}.Tools Debug.Build.0 = Tools Debug|Win32
+		{2CC18558-04C2-4CC1-8B3D-186D2EDF9C49}.Tools Release.ActiveCfg = Tools Release|Win32
+		{2CC18558-04C2-4CC1-8B3D-186D2EDF9C49}.Tools Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

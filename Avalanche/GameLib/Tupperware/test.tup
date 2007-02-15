@@ -1,0 +1,3613 @@
+#  Ohh, a comment!  Fancy!
+
+SCENE "test.vif "" (That was a quote)" = {
+    OBJECT "NMSU_30" = {
+        MODEL   #  Here
+			=   #  are some comments
+			"NMSU_30"  #  at weird places
+        POSITION = [  
+            0.000000, 0.000000, 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "Pylons" = {
+        MODEL = "Pylons"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "goal1far" = {
+        MODEL = "goal1far"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "goal1near" = {
+        MODEL = "goal1near"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "net1" = {
+        MODEL = "net1"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "net3" = {
+        MODEL = "net3"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "post1far" = {
+        MODEL = "post1far"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "post1near" = {
+        MODEL = "post1near"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "post2near" = {
+        MODEL = "post2near"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "goal2far" = {
+        MODEL = "goal2far"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "goal2near" = {
+        MODEL = "goal2near"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    OBJECT "Field_grass1" = {
+        MODEL = "Field_grass1"
+        POSITION = [
+            0.000000 0.000000 0.000000 
+        ]
+        ORIENTATION = [
+            0.000000 0.000000 0.000000 
+        ]
+    }
+
+    MATERIAL "NMSU_29_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+    }
+
+    MATERIAL "NMSU_cement1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_background_mountain_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_background_mountain.tga"
+    }
+
+    MATERIAL "NMSU_car_top4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_top4.tga"
+    }
+
+    MATERIAL "NMSU_car_side4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_side4.tga"
+    }
+
+    MATERIAL "NMSU_car_front_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_front.tga"
+    }
+
+    MATERIAL "NMSU_car_back4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_back4.tga"
+    }
+
+    MATERIAL "NMSU_car_top3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_top3.tga"
+    }
+
+    MATERIAL "NMSU_car_side3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_side3.tga"
+    }
+
+    MATERIAL "NMSU_car_back3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_back3.tga"
+    }
+
+    MATERIAL "NMSU_car_top2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_top2.tga"
+    }
+
+    MATERIAL "NMSU_car_side2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_side2.tga"
+    }
+
+    MATERIAL "NMSU_car_back2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_back2.tga"
+    }
+
+    MATERIAL "NMSU_car_top1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_top1.tga"
+    }
+
+    MATERIAL "NMSU_car_side1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_side1.tga"
+    }
+
+    MATERIAL "NMSU_car_back1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_back1.tga"
+    }
+
+    MATERIAL "NMSU_car_top_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_top.tga"
+    }
+
+    MATERIAL "NMSU_car_side_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_side.tga"
+    }
+
+    MATERIAL "NMSU_car_back_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_back.tga"
+    }
+
+    MATERIAL "NMSU_car_topMANY_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_topMANY.tga"
+    }
+
+    MATERIAL "NMSU_car_front1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_front.tga"
+    }
+
+    MATERIAL "NMSU_car_topMANY1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_car_topMANY1.tga"
+    }
+
+    MATERIAL "NMSU_dirtfade_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_dirtfade.tga"
+    }
+
+    MATERIAL "NMSU_Roadfade_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Roadfade.tga"
+    }
+
+    MATERIAL "NMSU_dirt_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_dirt.tga"
+    }
+
+    MATERIAL "NMSU_Road_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Road.tga"
+    }
+
+    MATERIAL "NMSU_Road1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Road.tga"
+    }
+
+    MATERIAL "NMSU_Parkinglot_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Parkinglot.tga"
+    }
+
+    MATERIAL "NMSU_Road2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Road.tga"
+    }
+
+    MATERIAL "NMSU_Parkinglot1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Parkinglot.tga"
+    }
+
+    MATERIAL "NMSU_Road3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Road.tga"
+    }
+
+    MATERIAL "NMSU_grass_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_grass.tga"
+    }
+
+    MATERIAL "NMSU_Road_intersection_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Road_intersection.tga"
+    }
+
+    MATERIAL "NMSU_Road4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Road.tga"
+    }
+
+    MATERIAL "NMSU_dirtfade1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_dirtfade.tga"
+    }
+
+    MATERIAL "NMSU_dirt1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_dirt.tga"
+    }
+
+    MATERIAL "NMSU_dirtfade2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_dirtfade.tga"
+    }
+
+    MATERIAL "NMSU_lights_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_lights.tga"
+    }
+
+    MATERIAL "NMSU_metal_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_metal.tga"
+    }
+
+    MATERIAL "NMSU_cement2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_grass1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_grass.tga"
+    }
+
+    MATERIAL "NMSU_cement5_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement6_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement7_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_stairs_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_stairs.tga"
+    }
+
+    MATERIAL "crowd_upper_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/crowd_upper.tga"
+    }
+
+    MATERIAL "NMSU_stairs1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_stairs.tga"
+    }
+
+    MATERIAL "NMSU_stairs2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_stairs.tga"
+    }
+
+    MATERIAL "NMSU_sign5_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_sign5.tga"
+    }
+
+    MATERIAL "NMSU_sign2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_sign2.tga"
+    }
+
+    MATERIAL "NMSU_sign4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_sign4.tga"
+    }
+
+    MATERIAL "NMSU_sign3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_sign3.tga"
+    }
+
+    MATERIAL "NMSU_sign1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_sign1.tga"
+    }
+
+    MATERIAL "NMSU_door_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_door.tga"
+    }
+
+    MATERIAL "NMSU_windows_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_windows.tga"
+    }
+
+    MATERIAL "NMSU_pressbox_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox.tga"
+    }
+
+    MATERIAL "NMSU_pressbox1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox1.tga"
+    }
+
+    MATERIAL "NMSU_windows1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_windows.tga"
+    }
+
+    MATERIAL "NMSU_pressbox2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox.tga"
+    }
+
+    MATERIAL "NMSU_pressbox3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox1.tga"
+    }
+
+    MATERIAL "NMSU_pressbox4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox.tga"
+    }
+
+    MATERIAL "NMSU_pressbox5_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox1.tga"
+    }
+
+    MATERIAL "NMSU_flag_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_flag.tga"
+    }
+
+    MATERIAL "NMSU_billboard_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_billboard.tga"
+    }
+
+    MATERIAL "NMSU_rail_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_rail.tga"
+    }
+
+    MATERIAL "crowd_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/crowd.tga"
+    }
+
+    MATERIAL "NMSU_cement8_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement9_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_stands_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_stands.tga"
+    }
+
+    MATERIAL "NMSU_rail1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_rail.tga"
+    }
+
+    MATERIAL "NMSU_cement10_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement11_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_rail2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_rail.tga"
+    }
+
+    MATERIAL "NMSU_rail3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_rail.tga"
+    }
+
+    MATERIAL "NMSU_cement12_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement13_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement14_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement15_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement16_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement17_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement18_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement1.tga"
+    }
+
+    MATERIAL "NMSU_cement19_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_Road5_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_Road.tga"
+    }
+
+    MATERIAL "NMSU_pressbox_light_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox_light.tga"
+    }
+
+    MATERIAL "NMSU_pressbox_light1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox_light.tga"
+    }
+
+    MATERIAL "NMSU_pressbox6_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox.tga"
+    }
+
+    MATERIAL "NMSU_windows2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_windows.tga"
+    }
+
+    MATERIAL "NMSU_windows3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_windows.tga"
+    }
+
+    MATERIAL "NMSU_billboard_edge_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_billboard_edge.tga"
+    }
+
+    MATERIAL "NMSU_pressbox7_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_pressbox1.tga"
+    }
+
+    MATERIAL "NMSU_cement20_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement21_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "NMSU_cement22_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "D:/NCAA/ncaa_stads/Hashprojects/New_Mexico_State/models/Maps/NMSU_cement.tga"
+    }
+
+    MATERIAL "pylon_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pylon.tga"
+    }
+
+    MATERIAL "marker_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/marker.tga"
+    }
+
+    MATERIAL "pole_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pole.TGA"
+    }
+
+    MATERIAL "pad_logo_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pad logo.tga"
+    }
+
+    MATERIAL "pole1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pole.TGA"
+    }
+
+    MATERIAL "pad_logo1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pad logo.tga"
+    }
+
+    MATERIAL "net_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/net.tga"
+    }
+
+    MATERIAL "net2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/net.tga"
+    }
+
+    MATERIAL "pole2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pole.TGA"
+    }
+
+    MATERIAL "pole3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pole.TGA"
+    }
+
+    MATERIAL "pole4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pole.TGA"
+    }
+
+    MATERIAL "pole5_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pole.TGA"
+    }
+
+    MATERIAL "pad_logo2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pad logo.tga"
+    }
+
+    MATERIAL "pad_logo3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pad logo.tga"
+    }
+
+    MATERIAL "pole6_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/pole.TGA"
+    }
+
+    MATERIAL "EZ2e_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ2e.tga"
+    }
+
+    MATERIAL "EZ2d_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ2d.tga"
+    }
+
+    MATERIAL "EZ2a_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ2a.tga"
+    }
+
+    MATERIAL "EZ2b_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ2b.tga"
+    }
+
+    MATERIAL "EZ2c_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ2c.tga"
+    }
+
+    MATERIAL "EZ1a_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ1a.tga"
+    }
+
+    MATERIAL "EZ1b_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ1b.tga"
+    }
+
+    MATERIAL "EZ1c_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ1c.tga"
+    }
+
+    MATERIAL "EZ1d_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ1d.tga"
+    }
+
+    MATERIAL "EZ1e_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/EZ1e.tga"
+    }
+
+    MATERIAL "F_N_A_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/F_N-A.tga"
+    }
+
+    MATERIAL "F_N_1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/F_N-1.tga"
+    }
+
+    MATERIAL "F_N_0_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/F_N-0.tga"
+    }
+
+    MATERIAL "F_N_2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/F_N-2.tga"
+    }
+
+    MATERIAL "F_N_3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/F_N-3.tga"
+    }
+
+    MATERIAL "F_N_4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/F_N-4.tga"
+    }
+
+    MATERIAL "F_N_5_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/F_N-5.tga"
+    }
+
+    MATERIAL "Field_grass_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-grass.tga"
+    }
+
+    MATERIAL "line_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/line.tga"
+    }
+
+    MATERIAL "Field_1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-1.tga"
+    }
+
+    MATERIAL "Field_2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-2.tga"
+    }
+
+    MATERIAL "logo2_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/logo2.tga"
+    }
+
+    MATERIAL "logo1_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/logo1.tga"
+    }
+
+    MATERIAL "Field_3_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-2.tga"
+    }
+
+    MATERIAL "Field_4_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-1.tga"
+    }
+
+    MATERIAL "Field_EZ_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-EZ.tga"
+    }
+
+    MATERIAL "Field_5_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-3.tga"
+    }
+
+    MATERIAL "Field_6_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-3.tga"
+    }
+
+    MATERIAL "Field_7_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-2.tga"
+    }
+
+    MATERIAL "Field_8_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-2.tga"
+    }
+
+    MATERIAL "Field_9_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-1.tga"
+    }
+
+    MATERIAL "Field_10_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/Field-1.tga"
+    }
+
+    MATERIAL "line_corner_DOUBLESIDED" = {
+        SHADING_MODEL = "BLINN"
+        COLOR = [
+            1.000000 1.000000 1.000000 1.000000 
+        ]
+        INCANDESCENCE = [
+            0.000000 0.000000 0.000000 0.000000 
+        ]
+        DIFFUSE_DEGREE = 0.800000
+        SPECULAR_COLOR = [
+            1.000000 0.000000 0.000000 0.000000 
+        ]
+        REFLECTIVITY = 0.500000
+        SPECULAR_ROLLOFF = 0.700000
+        ECCENTRICITY = 0.300000
+        DOUBLESIDED = "TRUE"
+        WRAP_U = "ON"
+        WRAP_V = "ON"
+        MIRROR_U = "OFF"
+        MIRROR_V = "OFF"
+        ENVIRONMENT_MAP = "OFF"
+        PIXELMAP = "C:/NCAA tools/Fields/Field Grass/Models/Maps/line-corner.tga"
+    }
+
+
+    LIGHT "ambientLight2" = {
+        TYPE = "AMBIENT"
+        COLOR = [
+            0.000000 0.696714 0.697304 0.769000 
+        ]
+        INTENSITY = 2.000000
+    }
+
+	STRINGLIST "this is a test list" = [ "this" "is" "a" "test" "of" "the" "emergency" "broadcast" "system"
+										 "this is only a test" ]
+
+	STRINGLIST "this is a test list" = [ "this" "is" "a" "test" "of" "the" "emergency" "broadcast" "system"
+										 "this is only a test" ]
+
+	INTLIST "this is a int list" = [1 2 3 4 5 6 7 8 9 -10023]
+
+	FLOATLIST "this is a float list" = [1.234 2.345 3.345 -10023.12312]
+
+	INT "this is an int scalar" = -34234
+
+	FLOAT "this is a float scalar" = -34.234234
+
+	TESTAGGREGATE1 = 
+	{
+		TESTAGGREGATE2 =
+		{
+			TESTAGGREGATE3 = {
+				FLOAT = -34.234234
+			}
+		} 
+	}
+
+	TESTBINARYDATA = $000102030405060708090a0b0c0d0e0f$
+	TESTBINARYDATAFILE = <testbin.txt>	
+
+}
+

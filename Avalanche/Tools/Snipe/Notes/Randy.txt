@@ -1,0 +1,103 @@
+Chris Bentley
+chrisb@ati.com
+
+-----
+Fixes
+-----
+Snipe modeler now has new improved, MUCH faster drawing.  Multi-texturing to come.
+Added rotoscopes.
+
+Fixed a sporadic crash on exit bug
+Scenes can be saved and loaded in a .snipeproject now
+Added drag-n-drop support for .snipe___ files from explorer
+Open dialog remembers last opened file now
+Added Recent Files list
+
+----
+TODO
+----
+Constrained verteces don't save in Snipe Project files
+Motion Combo in MotionSetView
+
+Retained surface icon drawer
+Hidden Object Opacity
+GL Context menu stuff
+Window states in project
+Multi-select setting of properties
+More robust realtime surface renderer
+FloatProperty factors/types
+Visible object picking
+Promote/Demote models
+Sort Transparent Polys
+Cookie-cut maps
+Save .snipemodel
+Pointer property combo
+Component Properties
+Drag-n-Drop rearrange hierarchy in explorer
+
+------------
+MANIPULATORS
+------------
+X	Translate and Scale need two dimensional axis constrainers. (possibly Maya-like)
+X	Rotate needs angle feedback.
+	Rotate gets deadlocked when the disc you are rotating is straight at you.
+X	Ortho views don't work.
+	Ability to offset the pivot for scale and rotate.
+	Undoability for scale.
+	World/Local axis property.
+X	Manipulator property tab.
+	Ability to manipulate current hitbox without being on it. (Maybe Alt-drag)
+
+----
+INFO
+----
+Whole Tomato 7.1 key
+User name: bvanoverbeck@avalanchesoftware.com (20-user license)
+      Key: 9aoPp 14w7g 8Tfp/ FYAAU TCG/F 2hl3H IQTBk mK7vZ jE/oh BLwej pZRSP A
+
+---------
+OLD FIXES
+---------
+Added status bar text for mouse over buttons.
+Added properties for components (i.e. position on a vertex).
+Fixed tab control's tab list button.
+Fixed surface loader problem in proprietary format
+Added Timeline tab
+Beginnings of animated property values
+-----
+Added layered surfaces
+Added Base Surface properties to a model
+Added a warning when exporting a 6+ sided patch in an MDL file
+Orbit now centers around the selected object if there is one (otherwise the target)
+-----
+Added Save Project As... {Barry Zundel}
+Fixed manifold edge on import problem (Turtle) {Scott Stoddard}
+Made mouse wheel dolly 4x faster {Scott Stoddard}
+Added Alt+Left+Middle dollying {Scott Stoddard}
+Fixed MDL export of hooks created in Snipe
+-----
+Fixed bug preventing selection of objects with a perenthesis in its name
+Improved MDL Import/Export
+  Cookie-cut maps
+  Decal percentages
+  Bone manipulator options
+  Bone roll method
+Proprietary saver/loader is ready to play with (at your own risk :)
+Fixed redraw problem when views are maximized
+Added "View" property panel
+Moved model's display options to the view properties
+Added grid settings to view properties
+Fixed Alt key modifier sticking problem
+Key modifier pane is working now
+-----
+Alphabetized the command list in the Customize dialog
+Added status bar pane for Left, Middle and Right mouse button actions
+Added toolbar button descriptions to status bar
+Added coloring to the output window
+Added history to the CLI window (up and down arrow in edit box)
+Fixed image views
+-----
+Output view context menu
+Windows are zoomed fit when split
+Display option for statistics
+More fixes to the scale manipulator

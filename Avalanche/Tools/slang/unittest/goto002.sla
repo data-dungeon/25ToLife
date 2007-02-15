@@ -1,0 +1,96 @@
+// goto unit test 2
+
+int i;
+
+//-------------------------------------------------------------
+
+// result: 0
+// result: 1
+i = 0;
+test1:
+	print i;
+	if ( i++ < 1 )
+		goto test1;
+
+//-------------------------------------------------------------
+
+	i = 10;
+	goto test2;
+	i++;
+test2:
+	print i;	// result: 10
+
+//-------------------------------------------------------------
+
+// result: 20
+// result: 21
+i = 20;
+test3:
+	print i;
+	if ( i++ < 21 )
+	{
+		goto test3;
+	}
+
+//-------------------------------------------------------------
+
+	i = 30;
+	{
+		goto test4;
+	}
+	i++;
+test4:
+	print i;	// result: 30
+
+//-------------------------------------------------------------
+
+// result: 0
+// result: 10
+// result: 100
+// result: 101
+// result: 11
+// result: 100
+// result: 101
+// result: 1
+// result: 10
+// result: 100
+// result: 101
+// result: 11
+// result: 100
+// result: 101
+
+void func()
+{
+	int i, j, k;
+
+	i = 0;
+	test1:
+	print i;
+	{
+		j = 10;
+		test1:
+		print j;
+		{
+			k = 100;
+			test1:
+			print k;
+			if ( k++ < 101 )
+			{
+				goto test1;
+			}
+
+		}
+		if ( j++ < 11 )
+		{
+			goto test1;
+		}
+	}
+	if ( i++ < 1 )
+	{
+		goto test1;
+	}
+
+}
+
+func();
+

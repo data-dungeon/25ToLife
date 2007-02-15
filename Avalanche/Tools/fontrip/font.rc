@@ -1,0 +1,191 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FONTRIP DIALOGEX 0, 0, 288, 311
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "FONTRIP"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Typeface",IDC_STATIC,8,3,116,153
+    LISTBOX         IDC_LIST_TYPEFACES,16,15,100,132,LBS_SORT | 
+                    LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Style",IDC_STATIC,8,159,116,51
+    LISTBOX         IDC_LIST_STYLE,16,168,100,36,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Size",IDC_STATIC,128,3,52,207
+    EDITTEXT        IDC_EDIT_SIZE,136,15,36,12,ES_AUTOHSCROLL
+    LISTBOX         IDC_LIST_SIZE,136,27,36,177,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC_RED,"Static",SS_BLACKRECT,184,6,20,12,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "Slider1",IDC_SLIDER_RED,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,204,6,60,12
+    CONTROL         "",IDC_STATIC_GREEN,"Static",SS_BLACKRECT,184,22,20,12,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "Slider1",IDC_SLIDER_GREEN,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,204,22,60,12
+    CONTROL         "",IDC_STATIC_BLUE,"Static",SS_BLACKRECT,184,36,20,12,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "Slider1",IDC_SLIDER_BLUE,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,204,36,60,12
+    CONTROL         "",IDC_STATIC_COLOR,"Static",SS_BLACKRECT,264,6,16,42,
+                    WS_EX_DLGMODALFRAME
+    GROUPBOX        "Antialiasing",IDC_STATIC,188,54,92,39
+    CONTROL         "On",IDC_CHECK_ENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,196,66,24,10
+    CONTROL         "Alpha Only",IDC_CHECK_ALPHA_ONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,224,66,52,10
+    RTEXT           "&Quality",IDC_STATIC,192,78,24,11,SS_CENTERIMAGE
+    CONTROL         "Slider1",IDC_SLIDER_QUALITY,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,244,78,32,12
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",0x1,8,300,
+                    216,6
+    EDITTEXT        IDC_EDIT_PREVIEW,8,216,172,63,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | 
+                    WS_VSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,8,285,271,1
+    CTEXT           "",IDC_STATIC_QUALITY,220,78,24,11,SS_CENTERIMAGE
+    CONTROL         "Outline",IDC_CHECK_OUTLINE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,188,186,36,12
+    DEFPUSHBUTTON   "Go",IDC_BUTTON_OPTIMIZE,228,291,52,15
+    RTEXT           "Image Width",IDC_STATIC,188,99,44,12,SS_CENTERIMAGE
+    RTEXT           "Image Height",IDC_STATIC,188,114,44,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_IMAGEWIDTH,236,99,44,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_IMAGEHEIGHT,236,114,44,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FIRSTCHAR,220,129,20,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LASTCHAR,260,129,20,12,ES_AUTOHSCROLL
+    RTEXT           "&Range",IDC_STATIC,188,129,28,12,SS_CENTERIMAGE
+    RTEXT           "to",IDC_STATIC,244,129,8,12,SS_CENTERIMAGE
+    CTEXT           "Type characters to exclude",IDC_STATIC,188,144,92,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_EXCLUDE,188,156,92,12,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_SLIDER_OUTLINE,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,244,186,36,12
+    CTEXT           "",IDC_STATIC_OUTLINE,228,186,16,11,SS_CENTERIMAGE
+    CONTROL         "Force tm, Copyright © and Registered ®",
+                    IDC_CHECK_TMREGISTERED,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,188,171,92,15
+    CONTROL         "",IDC_PROGRESS2,"msctls_progress32",0x0,8,291,216,6
+    CONTROL         "Exclude upper case letters, or",IDC_CHECK_UPPERTOLOWER,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,188,
+                    204,92,18
+    CONTROL         "Exclude lower case letters.",IDC_CHECK_LOWERTOUPPER,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,188,
+                    222,92,18
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,188,201,92,1
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKRECT,188,242,92,1
+    CONTROL         "Use a character map",IDC_CHECK_USECHARACTERMAP,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,188,244,92,
+                    11
+    EDITTEXT        IDC_EDIT_CHARACTERMAPFILENAME,188,256,77,12,
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_CHOOSECHARACTERMAP,266,256,15,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_FONTRIP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 304
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Save &As...\tCtrl+S",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Alpha Channel",               ID_VIEW_ALPHACHANNEL
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

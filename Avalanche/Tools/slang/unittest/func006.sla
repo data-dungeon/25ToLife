@@ -1,0 +1,67 @@
+// lists with c finctions
+
+extern ( float w, float x, float y, float z ) sort4( float w, float x, float y, float z );
+extern ( float x, float y, float z ) vectorNormalize( float x, float y, float z );
+
+float a, b, c, d;
+
+( a, b, c, d ) = sort4( 9, 1, 12, 5 );
+print a;  // result: 1.000000
+print b;  // result: 5.000000
+print c;  // result: 9.000000
+print d;  // result: 12.000000
+
+( a, b, c, d ) = ( 17, 2, 19, 3 );
+print a;  // result: 17.000000
+print b;  // result: 2.000000
+print c;  // result: 19.000000
+print d;  // result: 3.000000
+
+( a, b, c, d ) = sort4( a, b, c, d );
+print a;  // result: 2.000000
+print b;  // result: 3.000000
+print c;  // result: 17.000000
+print d;  // result: 19.000000
+
+( a, b, c ) = vectorNormalize( 255, 0, 0 );
+print a;  // result: 1.000000
+print b;  // result: 0.000000
+print c;  // result: 0.000000
+
+( a, b, c ) = vectorNormalize( 256, 128, 0 );
+print a;  // result: 0.894427
+print b;  // result: 0.447214
+print c;  // result: 0.000000
+
+( a, b, c ) = ( 3, 4, 5 );
+( a, b, c ) = vectorNormalize( a, b, c );
+print a;  // result: 0.424264
+print b;  // result: 0.565685
+print c;  // result: 0.707107
+
+float v[4];
+v = ( 7, 6, 5, 4 );
+v = sort4( v );
+print v[0];	// result: 4.000000
+print v[1]; // result: 5.000000
+print v[2]; // result: 6.000000
+print v[3]; // result: 7.000000
+
+float x[3];
+x = ( 7, 6, 5 );
+v = sort4( vectorNormalize( x ), 0.001 );
+print v[0]; // result: 0.001000
+print v[1]; // result: 0.476731
+print v[2]; // result: 0.572078
+print v[3]; // result: 0.667424
+
+(float x, float y) testNoReturn()
+{
+   print "blah";
+}
+
+( a, b ) = testNoReturn(); // result: blah
+print a;  // result: 0.000000
+print b;  // result: 0.000000
+
+

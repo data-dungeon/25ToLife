@@ -1,0 +1,1 @@
+"m:\ttl\NetZ\PlayStation2\bin\ddl" -I "m:\ttl\avalanche\Gamelib" -I "m:\ttl\NetZ\PlayStation2\include" -p Network/NetworkPCH.h -includeprefix "Network/NetZ/" NetZ/Avalanche.ddl & perl m:\ttl\ttl\bin\FileRev.pl m:\ttl\avalanche\gamelib\network\netz\avalanche.ddl m:\ttl\avalanche\gamelib\network\netz\avalanche_ddl_rev.cpp

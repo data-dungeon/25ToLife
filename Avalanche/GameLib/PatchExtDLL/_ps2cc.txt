@@ -1,0 +1,6 @@
+-T "c:\dev\Avalanche\GameLib\PatchExtDLL\rel.cmd" -nostartfiles
+--start-group
+--end-group
+
+-Wl,-G0,-Map,SNPS2CDRom/PatchExt.map,-sn-full-map
+

@@ -1,0 +1,119 @@
+switch ( 3 )
+{
+}
+
+switch ( 4 )
+{
+   print "bogus";
+}
+
+switch ( 5 )
+{
+   print "bogus";
+   case 6:
+   print "bogus";
+}
+
+// result: good
+switch ( 6 )
+{
+   print "bogus";
+   case 6:
+   print "good";
+}
+
+
+// result: correct 3
+switch ( 3 )
+{
+   case 1:	print "bad 1"; break;
+   case 2:	print "bad 2"; break;
+   case 3:	print "correct 3"; break;
+   case 4:	print "bad 4"; break;
+   default:     print "bad default"; break;
+}
+
+// result: correct default
+switch ( 7 )
+{
+   case 1:	print "bad 1"; break;
+   case 2:	print "bad 2"; break;
+   case 3:	print "bad 3"; break;
+   case 4:	print "bad 4"; break;
+   default:     print "correct default"; break;	
+}
+
+// result: correct default
+int v = 2;
+switch ( v )
+{
+   default:     print "correct default"; break;	
+   case 7:	print "bad 7";	     break;
+}
+
+v = 2;
+switch ( v )
+{
+   case 7:	print "bad 7";	     break;
+}
+
+// result: correct 7
+v = 7;
+switch ( v )
+{
+   default:     print "bad default"; break;
+   case 7:	print "correct 7";   break;
+}
+
+
+// result: good 3
+// result: good fallthru 4
+// result: good fallthru default
+v = 3;
+switch ( v )
+{
+   case 2:
+	print "bad 2";
+   case 3:
+	print "good 3";
+   case 4:
+	print "good fallthru 4";
+   default:
+	print "good fallthru default";
+}
+
+// result: default
+// result: default
+// result: 5
+// result: default
+// result: 7
+// result: default
+// result: default
+for ( v = 3 ; v < 10 ; v++ )
+{
+   switch ( v )
+   {
+      case 5:	  print "5"; break;
+      case 7:	  print "7"; break;
+      default:    print "default"; break;
+   }
+}
+
+
+v = 3;
+switch ( v++ )
+{
+   case 2: print 2; break;
+   case 3: print 3; break; // result: 3
+   case 4: print 4; break;
+}
+print v;		   // result: 4
+
+v = 15;
+switch ( ++v )
+{
+   case 14: print 14;  break;
+   case 15: print 15;  break;
+   case 16: print 16;  break;  // result: 16
+}
+print v;                       // result: 16

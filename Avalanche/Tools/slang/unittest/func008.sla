@@ -1,0 +1,21 @@
+// variable number of arguments test.  these functions don't
+// actually exist so we can't call anything to virtually test them,
+// we're just checking declarations
+
+extern void f1( ... );
+extern void f2( int x, ... );
+extern void f3( int x, float y, ... );
+extern void f4( int x[4], ... );
+extern void f5( int x, float y[7], ... );
+extern void f6( int x[ 3 ], float y[ 1 ], ... );
+
+// this function actually exists, so we can test functionality.
+
+extern float sum( ... );
+print sum();			// result: 0.000000
+print sum( 1 );		// result: 1.000000
+print sum( 1, 2 );	// result: 3.000000
+print sum( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ); // result: 210.000000
+
+
+

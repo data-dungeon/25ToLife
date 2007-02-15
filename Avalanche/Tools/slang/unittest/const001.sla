@@ -1,0 +1,49 @@
+// test the compiler reading of constants
+
+print 1;		// result: 1
+print 123;		// result: 123
+print 12345678;		// result: 12345678
+print 345;		// result: 345
+
+print -1;		// result: -1
+print -123;		// result: -123
+print -12345678;	// result: -12345678
+print -345;		// result: -345
+
+print 0x0;		// result: 0
+print 0x100;		// result: 256
+print 0xffff;		// result: 65535
+print 0xa;		// result: 10
+print 0xb;		// result: 11
+print 0xc;		// result: 12
+print 0xd;		// result: 13
+print 0xe;		// result: 14
+print 0xf;		// result: 15
+print 0x20;		// result: 32
+
+print -0x0;		// result: 0
+print -0x100;		// result: -256
+print -0xffff;		// result: -65535
+print -0xa;		// result: -10
+print -0xb;		// result: -11
+print -0xc;		// result: -12
+print -0xd;		// result: -13
+print -0xe;		// result: -14
+print -0xf;		// result: -15
+print -0x20;		// result: -32
+
+print 0f;		// result: 0.000000
+print 1.0;		// result: 1.000000
+print 1.3f;		// result: 1.300000
+print 1e2;		// result: 100.000000
+print 1.2e2;		// result: 120.000000
+print 1.3e-1;		// result: 0.130000
+print 2e-1;		// result: 0.200000
+
+print -0f;		// result: 0.000000
+print -1.0;		// result: -1.000000
+print -1.3f;		// result: -1.300000
+print -1e2;		// result: -100.000000
+print -1.2e2;		// result: -120.000000
+print -1.3e-1;		// result: -0.130000
+print -2e-1;		// result: -0.200000

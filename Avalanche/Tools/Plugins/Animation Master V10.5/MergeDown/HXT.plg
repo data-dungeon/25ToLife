@@ -1,0 +1,52 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HXT - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo".\Release/HXT.res" /d "NDEBUG" /d "_AFXDLL" "C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MergeDown\HXT.rc"" 
+Creating temporary file "C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP97.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\..\..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /FR".\Release/" /Fp".\Release/HXT.pch" /Yu"stdafx.h" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MergeDown\Entry.cpp"
+"C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MergeDown\HXT.cpp"
+"C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MergeDown\Merge.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP97.tmp" 
+Creating temporary file "C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP98.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\..\..\..\..\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /FR".\Release/" /Fp".\Release/HXT.pch" /Yc"stdafx.h" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MergeDown\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP98.tmp" 
+Creating temporary file "C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP99.tmp" with contents
+[
+..\..\..\..\..\lib\pc\Plugin.lib ..\..\..\..\..\lib\pc\matrix.lib ..\..\..\..\..\lib\pc\Fileio.lib /nologo /subsystem:windows /dll /incremental:no /pdb:".\Release/MergeDown.pdb" /machine:I386 /out:"..\..\..\..\HXT\MergeDown.hxt" /implib:".\Release/MergeDown.lib" 
+.\Release\Entry.obj
+.\Release\HXT.obj
+.\Release\Merge.obj
+.\Release\StdAfx.obj
+.\Release\HXT.res
+]
+Creating command line "link.exe @C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP99.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Entry.cpp
+HXT.cpp
+Merge.cpp
+Generating Code...
+Linking...
+   Creating library .\Release/MergeDown.lib and object .\Release/MergeDown.exp
+
+
+
+<h3>Results</h3>
+MergeDown.hxt - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

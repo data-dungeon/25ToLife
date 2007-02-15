@@ -1,0 +1,17 @@
+AR      = iop-elf-ar
+AS      = iop-elf-as
+CC      = iop-elf-gcc
+GCC     = iop-elf-gcc
+LD      = iop-elf-ld
+NM      = iop-elf-nm
+SIZE    = iop-elf-size
+STRIP   = iop-elf-strip
+RANLIB  = iop-elf-ranlib
+OBJCOPY = iop-elf-objcopy
+OBJDUMP = iop-elf-objdump
+IFIXUP  = iopfixup
+ILBGEN  = ioplibgen
+ILBLD   = ioplibld
+ILBDUMP = ioplibdump
+BIN2OBJ = bin2elf
+GCCINSTDIR = /usr/local/sce/iop/gcc//lib/gcc-lib/mipsel-scei-elfl/2.8.1/

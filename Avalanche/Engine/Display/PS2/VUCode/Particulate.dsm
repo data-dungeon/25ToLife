@@ -1,0 +1,266 @@
+; === (null)
+; === __LP__ EXPL_Particulate_gasp_ParticulateLoop__MAIN_LOOP:
+; ===          normal2 : optimal=80 clid=0 mlid=1 size=(87) 
+; =================================================
+; flowMon::Emit() vcl 1.4beta7 produced this code:
+		.align 4
+		.global	Particulate_CodeStart
+		.global	Particulate_CodeEnd
+		.global	Particulate_DmaTag
+		.global	Particulate_DmaEnd
+
+Particulate_DmaTag:
+		DMAret	*
+		vifnop	
+		vifnop	
+		vifnop	
+		MPG	0,*
+Particulate_CodeStart:
+__v_Particulate_gasp_4:
+; _LNOPT_w=[ normal2 ] 2 [0 0] 2   [__v_Particulate_gasp_4]
+         NOP[E]                                                     NOP                                               
+         NOP                                                        NOP                                               
+Particulate_Restart:
+; _LNOPT_w=[ normal2 ] 110 [93 0] 120   [Particulate_Restart]
+         addax.w       ACC,VF00,VF00x                               xtop          VI02                                
+         maxw.xz       VF15,VF00,VF00w                              iaddiu        VI03,VI02,0x00000171                
+         maxw.xy       VF16,VF00,VF00w                              lqi           VF25,(VI03++)                       
+         NOP                                                        lqi           VF24,(VI03++)                       
+         NOP                                                        lqi           VF23,(VI03++)                       
+         NOP                                                        lqi           VF22,(VI03++)                       
+         NOP                                                        lqi           VF21,(VI03++)                       
+         NOP                                                        lqi           VF20,(VI03++)                       
+         NOP                                                        lqi           VF19,(VI03++)                       
+         NOP                                                        lqi           VF14,(VI03++)                       
+         NOP                                                        lqi           VF01,(VI03++)                       
+         NOP                                                        lqi           VF02,(VI03++)                       
+         NOP                                                        lqi           VF03,(VI03++)                       
+         NOP                                                        mtir          VI05,VF14x                          
+         NOP                                                        lqi           VF04,(VI03++)                       
+         NOP                                                        lqi           VF05,(VI03++)                       
+         NOP                                                        lqi           VF06,(VI03++)                       
+         NOP                                                        lqi           VF07,(VI03++)                       
+         NOP                                                        lqi           VF08,(VI03++)                       
+         NOP                                                        lqi           VF09,(VI03++)                       
+         NOP                                                        lqi           VF10,(VI03++)                       
+         NOP                                                        lqi           VF11,(VI03++)                       
+         NOP                                                        lqi           VF12,(VI03++)                       
+         NOP                                                        lqi           VF13,(VI03++)                       
+         NOP                                                        iaddiu        VI04,VI02,0                         
+         NOP                                                        sqi           VF25,(VI02++)                       
+         NOP                                                        sqi           VF24,(VI02++)                       
+         NOP                                                        sqi           VF23,(VI02++)                       
+         NOP                                                        sqi           VF22,(VI02++)                       
+         NOP                                                        sqi           VF21,(VI02++)                       
+         NOP                                                        sqi           VF20,(VI02++)                       
+         NOP                                                        sqi           VF19,(VI02++)                       
+         NOP                                                        sqi           VF14,(VI02++)                       
+         NOP                                                        lqi           VF14,(VI03++)                       
+         NOP                                                        lqi           VF21,(VI03++)                       
+         NOP                                                        lqi           VF22,(VI03++)                       
+         NOP                                                        lqi.xyz       VF19,(VI03++)                       
+         subx.w        VF20,VF08,VF19x                              NOP                                                      ;	STALL_LATENCY ?3
+         subx.y        VF20,VF19,VF19x                              NOP                                               
+         maddw.w       VF16,VF20,VF07w                              NOP                                                      ;	STALL_LATENCY ?2
+         mulw          VF23,VF14,VF20w                              div           Q,VF20w,VF20y                       
+         addax.w       ACC,VF21,VF00x                               NOP                                               
+         maddaw.w      ACC,VF22,VF20w                               NOP                                               
+         maddw.w       VF21,VF23,VF20w                              NOP                                                      ;	STALL_LATENCY ?1
+         addq.y        VF20,VF00,Q                                  div           Q,VF20w,VF16w                              ;	STALL_THRUPUT ?2
+         addw.xyz      VF24,VF00,VF21w                              loi           0x3f5a6000                          
+         muli.w        VF15,VF00,I                                  NOP                                               
+         suby.w        VF20,VF00,VF20y                              loi           0x3fc90fdb                                 ;	STALL_LATENCY ?1
+         addax.xyz     ACC,VF21,VF00x                               move.y        VF24,VF24                           
+         subi.xz       VF24,VF24,I                                  NOP                                               
+         maddaq.xyz    ACC,VF22,Q                                   waitq                                             
+         maddq.xyz     VF21,VF23,Q                                  mr32.xz       VF20,VF20                           
+         addax         ACC,VF04,VF00x                               NOP                                               
+         abs.xyz       VF24,VF24                                    NOP                                               
+         maxw.xyz      VF23,VF00,VF00w                              NOP                                               
+         maddax        ACC,VF01,VF21x                               move          VF22,VF20                           
+         madday        ACC,VF02,VF21y                               NOP                                               
+         maddz         VF21,VF03,VF21z                              loi           0xbe22f983                          
+         mulai.xyz     ACC,VF24,I                                   mr32.yw       VF25,VF20                           
+         mul.yw        VF22,VF22,VF20                               NOP                                               
+         minix.y       VF15,VF00,VF00x                              loi           0x4b400000                          
+         msubai.xyz    ACC,VF23,I                                   div           Q,VF00w,VF21w                       
+         maddai.xyz    ACC,VF23,I                                   mr32.xz       VF25,VF25                           
+         mul           VF22,VF22,VF20                               loi           0xbe22f983                          
+         msubai.xyz    ACC,VF24,I                                   loi           0x3f000000                          
+         msubi.xyz     VF23,VF23,I                                  NOP                                               
+         mul.xz        VF22,VF22,VF25                               NOP                                                      ;	STALL_LATENCY ?1
+         mulq.xyz      VF20,VF21,Q                                  waitq                                             
+         abs.xyz       VF21,VF23                                    NOP                                               
+         mulaw         ACC,VF09,VF22w                               NOP                                               
+         maddaz        ACC,VF10,VF22z                               NOP                                               
+         mul           VF23,VF13,VF22                               NOP                                               
+         maddax        ACC,VF11,VF22x                               fcset         0                                   
+         clipw.xyz     VF20xyz,VF15w                                loi           0x3e800000                          
+         subi.xyz      VF21,VF21,I                                  NOP                                               
+         maddy         VF24,VF12,VF22y                              NOP                                               
+         clipw.xyz     VF20xyz,VF00w                                NOP                                               
+         mulax.z       ACC,VF19,VF23x                               NOP                                               
+         madday.z      ACC,VF19,VF23y                               NOP                                               
+         mul.xyz       VF22,VF21,VF21                               NOP                                               
+         maxx          VF24,VF24,VF00x                              NOP                                               
+         maddaz.z      ACC,VF19,VF23z                               loi           0xc2992661                          
+         muli.xyz      VF25,VF21,I                                  NOP                                               
+         maddw.z       VF16,VF19,VF23w                              NOP                                               
+         addax.xyz     ACC,VF08,VF00x                               loi           0xc2255de0                          
+         muli.xyz      VF23,VF21,I                                  NOP                                               
+         mul.xyz       VF19,VF22,VF22                               NOP                                               
+         maddax.xyz    ACC,VF05,VF20x                               NOP                                               
+         mul.xyz       VF25,VF25,VF22                               NOP                                               
+         mulq.z        VF16,VF16,Q                                  NOP                                               
+         madday.xyz    ACC,VF06,VF20y                               loi           0x42a33457                          
+         muli.xyz      VF27,VF21,I                                  loi           0x421ed7b7                          
+         muli.xyz      VF26,VF21,I                                  NOP                                               
+         addz.xy       VF28,VF00,VF16z                              loi           0x43000000                          
+         minii         VF29,VF24,I                                  NOP                                               
+         mul.xyz       VF24,VF19,VF19                               NOP                                               
+         maddz.xyz     VF20,VF07,VF20z                              NOP                                               
+         mulw.x        VF28,VF28,VF05w                              NOP                                               
+         mulw.y        VF28,VF28,VF06w                              iaddiu        VI06,VI00,0x00007fff                
+         ftoi0         VF29,VF29                                    iand          VI05,VI05,VI06                      
+         mula.xyz      ACC,VF23,VF22                                iaddiu        VI06,VI00,0x00007fff                
+         madda.xyz     ACC,VF25,VF19                                iaddiu        VI06,VI06,0x00000001                
+         madda.xyz     ACC,VF27,VF19                                loi           0x40c90fda                          
+         maddai.xyz    ACC,VF21,I                                   sqi.xyz       VF15,(VI02++)                       
+         madd.xyz      VF22,VF26,VF24                               loi           0x43960000                          
+         minii.xy      VF23,VF28,I                                  isubiu        VI05,VI05,0x00000001                
+         minix.xy      VF17,VF00,VF00x                              sqi           VF29,(VI02++)                       
+         minix.x       VF18,VF00,VF00x                              loi           0xbf800000                          
+         maxw.y        VF18,VF00,VF00w                              ibeq          VI05,VI00,EXPL_Particulate_gasp_ParticulateLoop__EPI0
+         muli.x        VF22,VF22,I                                  mr32.xy       VF25,VF22                           
+EXPL_Particulate_gasp_ParticulateLoop__MAIN_LOOP:
+; _LPOPT_w=[ normal2 ] 87 [80 80] 87   [EXPL_Particulate_gasp_ParticulateLoop__MAIN_LOOP]
+         NOP                                                        lqi           VF21,(VI03++)                       
+         NOP                                                        loi           0x3f5a6000                          
+         NOP                                                        move.z        VF24,VF00                           
+         mul.xy        VF24,VF22,VF23                               lqi           VF22,(VI03++)                       
+         muli.w        VF15,VF00,I                                  lqi.xyz       VF19,(VI03++)                       
+         mul.xy        VF25,VF25,VF23                               NOP                                               
+         addax.w       ACC,VF00,VF00x                               NOP                                               
+         add.xyz       VF26,VF20,VF24                               move.z        VF25,VF00                           
+         subx.w        VF20,VF08,VF19x                              NOP                                               
+         subx.y        VF19,VF19,VF19x                              NOP                                               
+         sub.xyz       VF24,VF20,VF24                               NOP                                               
+         add.xyz       VF27,VF20,VF25                               NOP                                               
+         mulw          VF23,VF14,VF20w                              NOP                                               
+         maddw.w       VF24,VF20,VF07w                              div           Q,VF20w,VF19y                       
+         addax.w       ACC,VF21,VF00x                               NOP                                               
+         maddaw.w      ACC,VF22,VF20w                               fcand         VI01,1008                           
+         maddw.w       VF21,VF23,VF20w                              iaddiu        VI01,VI01,0x00007fff                
+         sub.xyz       VF25,VF20,VF25                               mfir.w        VF26,VI06                           
+         ftoi4.xyz     VF26,VF26                                    mfir.w        VF27,VI06                           
+         ftoi4.xyz     VF27,VF27                                    mfir.w        VF25,VI01                           
+         addq.y        VF20,VF00,Q                                  div           Q,VF20w,VF24w                       
+         addw.xyz      VF29,VF00,VF21w                              loi           0x3fc90fdb                          
+         ftoi4.xyz     VF25,VF25                                    sqi           VF26,(VI02++)                       
+         ftoi4.xyz     VF26,VF24                                    sqi.xy        VF16,(VI02++)                       
+         suby.w        VF20,VF00,VF20y                              sqi           VF27,(VI02++)                       
+         addax.xyz     ACC,VF21,VF00x                               move.y        VF24,VF29                           
+         subi.xz       VF24,VF29,I                                  mfir.w        VF26,VI01                           
+         maddaq.xyz    ACC,VF22,Q                                   sqi.xy        VF17,(VI02++)                       
+         maddq.xyz     VF21,VF23,Q                                  mr32.xz       VF20,VF20                           
+         addax         ACC,VF04,VF00x                               sqi           VF25,(VI02++)                       
+         abs.xyz       VF24,VF24                                    sqi.xy        VF18,(VI02++)                       
+         maxw.xyz      VF23,VF00,VF00w                              sqi           VF26,(VI02++)                       
+         maddax        ACC,VF01,VF21x                               move          VF22,VF20                           
+         madday        ACC,VF02,VF21y                               mr32.yw       VF25,VF20                           
+         maddz         VF21,VF03,VF21z                              loi           0xbe22f983                          
+         mulai.xyz     ACC,VF24,I                                   NOP                                               
+         mul.yw        VF22,VF22,VF20                               loi           0x4b400000                          
+         msubai.xyz    ACC,VF23,I                                   mr32.xz       VF25,VF25                           
+         maddai.xyz    ACC,VF23,I                                   div           Q,VF00w,VF21w                       
+         NOP                                                        loi           0xbe22f983                          
+         mul           VF22,VF22,VF20                               sqi.xyz       VF15,(VI02++)                       
+         msubai.xyz    ACC,VF24,I                                   loi           0x3f000000                          
+         msubi.xyz     VF24,VF23,I                                  NOP                                               
+         NOP                                                        NOP                                               
+         mul.xz        VF22,VF22,VF25                               NOP                                               
+         mulq.xyz      VF20,VF21,Q                                  NOP                                               
+         abs.xyz       VF21,VF24                                    NOP                                               
+         mulaw         ACC,VF09,VF22w                               NOP                                               
+         maddaz        ACC,VF10,VF22z                               NOP                                               
+         mul           VF23,VF13,VF22                               NOP                                               
+         maddax        ACC,VF11,VF22x                               NOP                                               
+         clipw.xyz     VF20xyz,VF15w                                loi           0x3e800000                          
+         subi.xyz      VF21,VF21,I                                  NOP                                               
+         maddy         VF24,VF12,VF22y                              NOP                                               
+         clipw.xyz     VF20xyz,VF00w                                NOP                                               
+         mulax.z       ACC,VF19,VF23x                               NOP                                               
+         madday.z      ACC,VF19,VF23y                               NOP                                               
+         mul.xyz       VF22,VF21,VF21                               NOP                                               
+         maxx          VF24,VF24,VF00x                              NOP                                               
+         maddaz.z      ACC,VF19,VF23z                               loi           0xc2992661                          
+         muli.xyz      VF25,VF21,I                                  NOP                                               
+         maddw.z       VF16,VF19,VF23w                              NOP                                               
+         addax.xyz     ACC,VF08,VF00x                               loi           0xc2255de0                          
+         muli.xyz      VF23,VF21,I                                  NOP                                               
+         mul.xyz       VF19,VF22,VF22                               NOP                                               
+         maddax.xyz    ACC,VF05,VF20x                               NOP                                               
+         mul.xyz       VF25,VF25,VF22                               NOP                                               
+         mulq.z        VF16,VF16,Q                                  NOP                                               
+         madday.xyz    ACC,VF06,VF20y                               loi           0x42a33457                          
+         muli.xyz      VF27,VF21,I                                  loi           0x421ed7b7                          
+         muli.xyz      VF26,VF21,I                                  NOP                                               
+         addz.xy       VF28,VF00,VF16z                              loi           0x43000000                          
+         minii         VF29,VF24,I                                  NOP                                               
+         mul.xyz       VF24,VF19,VF19                               NOP                                               
+         maddz.xyz     VF20,VF07,VF20z                              NOP                                               
+         mulw.x        VF28,VF28,VF05w                              NOP                                               
+         mulw.y        VF28,VF28,VF06w                              NOP                                               
+         ftoi0         VF29,VF29                                    NOP                                               
+         mula.xyz      ACC,VF23,VF22                                NOP                                               
+         madda.xyz     ACC,VF25,VF19                                NOP                                               
+         madda.xyz     ACC,VF27,VF19                                loi           0x40c90fda                          
+         maddai.xyz    ACC,VF21,I                                   loi           0x43960000                          
+         madd.xyz      VF22,VF26,VF24                               sqi           VF29,(VI02++)                       
+         minii.xy      VF23,VF28,I                                  isubiu        VI05,VI05,0x00000001                
+         NOP                                                        loi           0xbf800000                          
+         NOP                                                        ibne          VI05,VI00,EXPL_Particulate_gasp_ParticulateLoop__MAIN_LOOP
+         muli.x        VF22,VF22,I                                  mr32.xy       VF25,VF22                           
+EXPL_Particulate_gasp_ParticulateLoop__EPI0:
+; _LNOPT_w=[ ] 20 [19 0] 23   [EXPL_Particulate_gasp_ParticulateLoop__EPI0]
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        move.z        VF01,VF00                           
+         mul.xy        VF01,VF22,VF23                               move.z        VF25,VF00                           
+         mul.xy        VF25,VF25,VF23                               mfir.w        VF01,VI06                           
+         add.xyz       VF22,VF20,VF01                               NOP                                                      ;	STALL_LATENCY ?2
+         sub.xyz       VF23,VF20,VF01                               NOP                                               
+         add.xyz       VF01,VF20,VF25                               NOP                                               
+         sub.xyz       VF25,VF20,VF25                               mfir.w        VF20,VI06                           
+         ftoi4.xyz     VF20,VF22                                    fcand         VI01,1008                           
+         ftoi4.xyz     VF01,VF01                                    iaddiu        VI01,VI01,0x00007fff                       ;	STALL_LATENCY ?1
+         NOP                                                        mfir.w        VF25,VI01                           
+         NOP                                                        sqi           VF20,(VI02++)                       
+         ftoi4.xyz     VF25,VF25                                    sqi.xy        VF16,(VI02++)                       
+         ftoi4.xyz     VF20,VF23                                    sqi           VF01,(VI02++)                       
+         NOP                                                        mfir.w        VF20,VI01                           
+         NOP                                                        sqi.xy        VF17,(VI02++)                       
+         NOP                                                        sqi           VF25,(VI02++)                       
+         NOP                                                        sqi.xy        VF18,(VI02++)                       
+         NOP                                                        sqi           VF20,(VI02++)                       
+; _LNOPT_w=[ ] 1 [0 0] 1   [__v_Particulate_gasp_9]
+         NOP                                                        NOP                                               
+; _LNOPT_w=[ normal2 ] 1 [1 0] 1   [__v_Particulate_gasp_10]
+         NOP                                                        xgkick        VI04                                
+; _LNOPT_w=[ ] 1 [0 0] 1   [__v_Particulate_gasp_11]
+         NOP                                                        NOP                                               
+; _LNOPT_w=[ normal2 ] 2 [0 0] 2   [__v_Particulate_gasp_13]
+         NOP[E]                                                     NOP                                               
+         NOP                                                        NOP                                               
+; _LNOPT_w=[ normal2 ] 2 [2 0] 2   [__v_Particulate_gasp_14]
+         NOP                                                        b             Particulate_Restart                 
+         NOP                                                        NOP                                               
+		.align 4
+Particulate_CodeEnd:
+	.EndMPG
+	.EndDmaData
+Particulate_DmaEnd:
+;	iCount=226
+; register stats:
+;   7 VU User integer
+;  30 VU User floating point

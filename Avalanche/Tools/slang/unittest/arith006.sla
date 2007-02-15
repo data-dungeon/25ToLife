@@ -1,0 +1,99 @@
+// pre increment tests
+
+int i;
+int a[ 3 ];
+
+a[ 0 ] = 1;
+a[ 1 ] = 10;
+a[ 2 ] = 100;
+
+i = 0;
+++i;		print i;   	 // result: 1
+++i;		print i;   	 // result: 2
+++a[i];		print a[i];	 // result: 101
+--i;		print i;	 // result: 1
+--a[i];         print a[i];      // result: 9
+
+--a[--i];
+print a[0];			// result: 0
+print a[1];			// result: 9
+print a[2];			// result: 101
+print i;			// result: 0
+
+i = -1;
+--a[++i];	print a[0];	// result: -1
+--a[++i];	print a[1];	// result: 8
+--a[++i];	print a[2];	// result: 100
+print i;			// result: 2
+
+i = -1;
+print a[++i];			// result: -1
+print a[++i];			// result: 8
+print a[++i];			// result: 100
+print i;			// result: 2
+
+i = -1;
+print ++a[++i];                 // result: 0
+print ++a[++i];                 // result: 9
+print ++a[++i];                 // result: 101
+print i;                        // result: 2
+
+print a[0];                     // result: 0
+print a[1];                     // result: 9
+print a[2];                     // result: 101
+
+i = 5;
+print ( i *= 3 );		// result: 15
+print i;			// result: 15
+print ( i /= 5 );		// result: 3
+print i;			// result: 3
+print ( i -= 7 );		// result: -4
+print i;			// result: -4
+print ( i *= -1 );		// result: 4
+print i;			// result: 4
+
+a[0] = 1;
+a[1] = 10;
+a[2] = 100;
+print a[0] *= 3;		// result: 3
+print a[1] %= 6;		// result: 4
+print a[2] |= 0xff;		// result: 255
+print a[0];			// result: 3
+print a[1];			// result: 4
+print a[2];			// result: 255
+
+i = -1;
+print a[++i] *= 2;		// result: 6
+print a[++i] -= -20;		// result: 24
+print a[++i] ^= 0x80;		// result: 127
+print i;                        // result: 2
+
+i = -1;
+print a[++i] -= a[++i];		// result: -18
+print a[++i] -= a[i];		// result: 0
+
+print a[0];			// result: -18
+print a[1];			// result: 24
+print a[2];			// result: 0
+
+int b;
+i = 5;
+b = 50;
+
+print (i *= 3) * (b += i);	// i->15,b->65,15*65=975 // result: 975
+print i;			// result: 15
+print b;			// result: 65
+
+print ( b = ( i *= 2 ) ) * ( b += 2 ); // i->30,b->30,b->32,30*32 // result: 960
+print i;                        // result: 30
+print b;                        // result: 32
+
+
+
+
+
+
+
+
+
+

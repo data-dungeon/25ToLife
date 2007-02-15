@@ -1,0 +1,75 @@
+########################################################
+# PS2 Makefile generated for GNU Make by ProDG VSI.NET #
+########################################################
+
+.SILENT:
+.SUFFIXES:
+.SUFFIXES: .c .cpp .cxx .cc .s .asm .dsm
+
+OUTDIR = SNPS2CDRom
+INTDIR = SNPS2CDRom
+
+LCFILE = "c:/dev/Avalanche/GameLib/dnasdll/rel.cmd"
+LIBS=\
+	 "dnas_net.a"\
+
+AS=ps2cc
+AS_FLAGS=\
+	-DSN_TARGET_PS2_DLL\
+	-DNDEBUG\
+	-DCDROM\
+	-DPS2\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scee/ee/include"\
+	-I. -c\
+	-fdevstudio\
+
+DVP=ps2cc
+DVP_FLAGS=\
+	-DSN_TARGET_PS2_DLL\
+	-DNDEBUG\
+	-DCDROM\
+	-DPS2\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scee/ee/include"\
+	-I. -fdevstudio -c\
+
+CC=ps2cc
+CC_FLAGS=\
+	-DSN_TARGET_PS2_DLL\
+	-DNDEBUG\
+	-DCDROM\
+	-DPS2\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scee/ee/include"\
+	-I. -c\
+	-fdevstudio\
+	-MMD\
+	-G0\
+	-Wall\
+	-fno-exceptions\
+	-O2\
+
+CXX_FLAGS=$(CC_FLAGS)
+
+LD=ps2dlllk
+LD_FLAGS=\
+	"c:\dev\Avalanche\GameLib\Osi\Ps2\rel.lk" ps2cc.exe @_ps2cc.txt-pal
+
+LD_OBJS=\
+	"SNPS2CDRom/do_netstart_dll.obj"\
+
+COMPILE: $(LD_OBJS)
+
+"SNPS2CDRom/do_netstart_dll.obj":
+
+LINK: "SNPS2CDRom/dnasdllPAL.elf"
+
+"SNPS2CDRom/dnasdllPAL.elf" : $(LD_OBJS)
+	@echo ProDG Linking $@
+	$(LD) $(LD_FLAGS) $(LD_OBJS) -o $@
+
+

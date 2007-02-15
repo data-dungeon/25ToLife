@@ -1,0 +1,648 @@
+
+[ running comments are within []'s, like these :) ]
+
+============================================================================
+TUPPERWARE  ( July 26th, 2001 )
+============================================================================
+
+Tupperware refers to a collection of classes and a file format for generic 
+data manipulation and storage.
+
+----------------------------------------------------------------------------
+STRUCTURE TYPES
+----------------------------------------------------------------------------
+
+Tupperware defines three basic structure types: scalars, lists, and 
+aggregates.  A scalar is a single value of a certain data type, a list is a 
+collection of values with the same data type, and an aggregate is a 
+collection of these basic structures.
+
+----------------------------------------------------------------------------
+DATA TYPES
+----------------------------------------------------------------------------
+
+Tupperware defines three basic data types: integer, floating point, string,
+and binary.  Only list and scalar structure types have a data type.  Only a
+scalar can be binary.  
+
+[ we're thinking of deprecating this, in favor of binary data in separate 
+  files:
+Binary data is encoded (similar to uuencode) when
+written to a file, and decoded when read from a file (i.e., it is 
+transparent to the user - so why am I telling you this?  Damn good 
+question).
+]
+
+----------------------------------------------------------------------------
+CLASSES
+----------------------------------------------------------------------------
+
+--------------------
+TupperwareAtom
+--------------------
+
+The TupperwareAtom class is used to deal with tupperware structures
+(scalars, lists, aggregates) in a generic way.  It provides the interface 
+for get/setting the name and key, and for getting the actual structure type.
+
+--------------------
+TupperwareAggregate
+--------------------
+
+The TupperwareAggregate class is used to deal with tupperware aggregate 
+structures.  Other tupperware atoms may be added to an aggregate, and atoms
+which are members of an aggregate may be searched for.
+
+--------------------
+TupperwareList
+--------------------
+
+The TupperwareList class is used to deal with tupperware list structures.  
+It provides an interface for setting and getting the list data, length and 
+type.
+
+--------------------
+TupperwareScalar
+--------------------
+
+The TupperwareScalar class is used to deal with tupperware scalar 
+structures.  It provides an interface for setting and getting the scalar 
+data and type.
+
+--------------------
+TupperwareIterator
+--------------------
+
+The TupperwareIterator class is used to iterate over atoms within an 
+aggregate.
+
+[ candidate for deprecation:
+--------------------
+TupperwareCodec
+--------------------
+
+The TupperwareCodec class is used to encode/decode binary data into/from an 
+ascii printable string (much like uuencode/uudecode).  It is used 
+internally, and probably shouldn't be used externally.
+]
+
+--------------------
+TupperwareLog
+--------------------
+
+The TupperwareLog class is used to log tupperware specific information.  It
+provides an interface for writing a string to a log file, or to a callback.
+
+--------------------
+TupperwareReader
+--------------------
+
+The TupperwareReader class is used to read a tupperware structure from a 
+file.
+
+--------------------
+TupperwareWriter
+--------------------
+
+The TupperwareWriter class is used to write a tupperware structure to a 
+file.
+
+----------------------------------------------------------------------------
+FILE FORMAT
+----------------------------------------------------------------------------
+
+A tupperware file is an ascii file containing key/value pairs of the 
+following form:
+
+    KEY NAME = VALUE
+
+the KEY is any identifier which starts with an alphabetic character, or an 
+underscore (_), and is followed by any alphanumeric character (much like C 
+identifiers).
+
+the NAME is a string surrounded by quotation marks ("...").  It must not 
+contain any quotation marks (").  It is optional, and may be omitted:
+
+    KEY "name of this instance" = VALUE
+
+or, if the name is not important:
+
+    KEY = VALUE
+
+the VALUE is one of: a scalar, a list, or an aggregate.
+
+a scalar is a single value (string, integer or float).  For example,
+
+    MATERIAL "material name" = "metallic blue"
+
+is a string scalar,
+
+    NUMBER "pi" = 3.14159265
+
+is a float scalar, and
+
+    SCALAR "number of sides on a cube" = 6
+
+is an integer scalar.
+
+a list is a collection of values of the same type, and is identified by
+surrounding braces ([ ... ]).
+
+    PRIMITIVE "triangles" = [ 1 2 3 3 2 4 2 4 5 ]
+
+an aggregate is a collection of key/value pairs and is identified by 
+surrounding curly braces ({ ... }):
+
+    POLYGON "green polygon" = {
+       NAME = "front face"
+       COLOR = [ 0 255 0 0 255 0 0 255 0 0 255 0 ]
+       VERTICES = [ -10 10 0 -10 -10 0 10 -10 0 10 10 0 ]
+    }
+
+aggregates may be nested arbitrarily deep:
+
+    KEY "grand parent" = {
+       KEY "parent" = {
+          KEY "oldest child" = {
+          }
+          KEY "youngest child" = {
+          }
+       }
+    }
+
+----------------------------------------------------------------------------
+MODELS
+----------------------------------------------------------------------------
+
+The following key/value pairs are used to identify models in the tupperware
+format.
+
+A key followed by a plus symbol (+) indicates that the key may appear one or 
+more times in the aggregate.  A key followed by an asterisk symbol (*) means 
+that the key may appear zero or more times in the aggregate (i.e., it is) 
+optional.  A key followed by nothing indicates that there can be only one of 
+them in the aggregate.
+
+--------------------
+MODEL
+--------------------
+
+    Structure Type:  Aggregate
+    
+    Contains data which fully specify a static model or instance (i.e. no 
+    animation data is present).
+    
+    Required Attributes:  VERTEX_DATA, GEOMETRY+
+    Optional Attributes:  BINDING*, MATERIAL*, MAP*
+
+--------------------
+GEOMETRY
+--------------------
+
+    Parent:  MODEL
+    Structure Type:  Aggregate
+    
+    Data specifying a particular subset of a MODEL's connectivity.  The
+    data within a single GEOMETRY aggregate is of a single geometric
+    primitive type, as specified by the TYPE scalar.  Each list in the
+    GEOMETRY aggregate must be the same length.
+    
+    Required Attributes:  TYPE.
+    
+    TYPE = "triangles"
+        
+        The "triangles" GEOMETRY type contains a list of independent 
+        triangles.  The length of all lists in a "triangles" GEOMETRY must be 
+        the same and a multiple of three.
+        
+        Required Attributes:  POSITION_INDICES
+        Optional Attributes:  NORMAL_INDICES, TEXTURE_COORDINATE_INDICES,
+                              COLOR_INDICES
+
+[ multiple texture coordinate indices? ]
+
+--------------------
+BINDING
+--------------------
+
+    Parent:  MODEL
+    Structure Type:  Aggregate
+
+    Binds a GEOMETRY aggregate with some non-GEOMETRY data, such as a
+    MATERIAL.  The TYPE attribute specifies the binding type.
+
+    Required Attributes:  TYPE, GEOMETRY_REF
+
+    TYPE = "material"
+
+        A "material" binding specifies the MATERIAL to be used when
+        drawing a particular GEOMETRY.
+
+        Required Attributes:  MATERIAL_REF
+
+--------------------
+MATERIAL
+--------------------
+
+    Parent:  MODEL
+    Structure Type:  Aggregate
+
+    Data specifying the material properties to be used when drawing geometry.
+    Multiple properties are modulated (multiplied) together.
+
+    Optional Attributes:  DIFFUSE_MAP_REF, DIFFUSE_COLOR, BUMP_MAP_REF, 
+                          SPECULAR_MAP_REF, SPECULAR_COLOR
+
+--------------------
+VERTEX_DATA
+--------------------
+
+    Parent:  MODEL
+    Structure Type:  Aggregate
+
+    Data specifying all of a MODEL's vertex information, including
+    positions, normals, colors and texture coordinates.
+
+    Required Attributes:  POSITIONS
+    Optional Attributes:  NORMALS, COLORS, TEXTURE_COORDINATES
+
+--------------------
+POSITION_INDICES
+--------------------
+
+    Parent:  GEOMETRY
+    Structure Type:  List
+    Data Type:  Integer
+
+    A list of integers which are indices into the POSITIONS list of a
+    MODEL's VERTEX_DATA.  This list specifies connectivity.
+
+--------------------
+NORMAL_INDICES
+--------------------
+
+    Parent:  GEOMETRY
+    Structure Type:  List
+    Data Type:  Integer
+
+    A list of integers which are indices into the NORMALS list of a
+    MODEL's VERTEX_DATA.
+
+--------------------
+TEXTURE_COORDINATE_INDICES
+--------------------
+
+    Parent:  GEOMETRY
+    Structure Type:  List
+    Data Type:  Integer
+
+    A list of integers which are indices into the TEXTURE_COORDINATES
+    list of a MODEL's VERTEX_DATA.
+
+--------------------
+COLOR_INDICES
+--------------------
+
+    Parent:  GEOMETRY
+    Structure Type:  List
+    Data Type:  Integer
+
+    A list of integers which are indices into the COLORS list of a
+    MODEL's VERTEX_DATA.
+
+--------------------
+DIFFUSE_MAP_REF
+--------------------
+
+    Parent:  MATERIAL
+    Structure Type:  Scalar
+    Data Type:  String
+
+    A scalar string naming a MAP to be mapped as the diffuse color of 
+    the MATERIAL.  The MAP aggregate is expected to be defined in the
+    same MODEL aggregate that contains the MATERIAL aggregate.
+
+--------------------
+SPECULAR_MAP_REF
+--------------------
+
+    Parent:  MATERIAL
+    Structure Type:  Scalar
+    Data Type:  String
+
+    A scalar string naming a MAP to be mapped as the specular color
+    of the MATERIAL.  The MAP aggregate is expected to be defined
+    in the same MODEL aggregate that contains the MATERIAL aggregate.      
+
+--------------------
+BUMP_MAP_REF
+--------------------
+
+    Parent: MATERIAL
+    Structure Type:  Scalar
+    Data Type:  String
+
+    A scalar string naming a MAP to be mapped as the bump height of
+    the MATERIAL.  The MAP aggregate is expected to be defined 
+    in the same MODEL aggregate that contains the MATERIAL aggregate.
+
+--------------------
+DIFFUSE_COLOR
+--------------------
+
+    Parent:  MATERIAL
+    Structure Type:  List
+    Data Type:  Float
+
+    A list of floats indicating the diffuse color of the material.
+
+--------------------
+SPECULAR_COLOR
+--------------------
+
+    Parent:  MATERIAL
+    Structure Type:  List
+    Data Type:  Float
+
+    A list of floats indicating the specular color of the material.
+
+--------------------
+MAP
+--------------------
+
+    Parent:  MODEL
+    Structure Type:  Aggregate
+
+    Contains image data describing an image to be used as a texture.  The 
+    DATA attribute is encoding by performing a base64 transformation on 
+    raw color data in ABGR format.
+
+    Required Attributes:  WIDTH, HEIGHT, DEPTH, IMAGE_REF
+    Optional Attributes:  IMAGE_FILE
+
+--------------------
+IMAGE_REF
+--------------------
+
+    Parent:  MAP
+    Structure Type:  Scalar
+    Data Type:  String
+
+    A scalar string naming the file which contains the binary data which
+    makes up the map (image data).
+
+--------------------
+IMAGE_FILE
+--------------------
+
+    Parent:  MAP
+    Structure Type:  Scalar
+    Data Type:  String
+
+    A scalar string naming the file which contains the source image data.
+    (i.e., where the modelling package got the image.)
+
+
+--------------------
+Example Model Aggregate
+--------------------
+
+MODEL "cube" = {
+    VERTEX_DATA = {
+        POSITIONS = [ 
+            -10.0 -10.0 10.0 -10.0 10.0 10.0 10.0 10.0 10.0 -10.0 10.0 10.0 
+            -10.0 -10.0 -10.0 -10.0 10.0 -10.0 10.0 10.0 -10.0 -10.0 10.0 
+            -10.0 
+        ]
+        NORMALS = [ 
+            1.0 0.0 0.0 -1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0 0.0 0.0 1.0 
+            0.0 0.0 -1.0 
+        ]
+        COLORS = [ 
+            1.0 0.0 0.0 1.0 0.5 0.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 1.0 
+            0.0 1.0 
+        ]
+        TEXTURE_COORDINATES = [ 
+            0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 
+        ]
+    }
+
+    GEOMETRY "front face" = {
+        TYPE = "triangles"
+        POSITION_INDICES = [ 
+            0 1 2 0 2 3
+        ]
+        NORMAL_INDICES = [ 
+            5 5 5 5 5 5 
+        ]
+        COLOR_INDICES = [ 
+            0 0 0 0 0 0 
+        ]
+        TEXTURE_COORDINATE_INDICES = [ 
+            0 1 2  0 2 3 
+        ]
+    }
+
+    GEOMETRY "back face" = {
+        ...
+    }
+
+    GEOMETRY "left face" = {
+        ...
+    }
+
+    GEOMETRY "right face" = {
+        ...
+    }
+
+    GEOMETRY "top face" = {
+        ...
+    }
+
+    GEOMETRY "bottom face" = {
+        ...
+    }
+
+    BINDING = {
+        TYPE = "material"
+        GEOMETRY_REF = "back face"
+        MATERIAL_REF = "checkered"
+    }
+
+    MATERIAL "checkered" = {
+        DIFFUSE_MAP_REF = "checker"
+    }
+
+    MAP "checker" = {
+        WIDTH = 4
+        HEIGHT = 4
+        DEPTH = 4
+        IMAGE = <...encoded ABGR....>
+    }
+}
+
+----------------------------------------------------------------------------
+USAGE IDIOMS
+----------------------------------------------------------------------------
+
+--------------------
+Creating a Hierarchy
+--------------------
+
+To create a tupperware hierarchy, a root aggregate must first be 
+instantiated:
+
+    TupperwareAggregate root;
+
+Then, other atoms may be added to this aggregate:
+
+    TupperwareScalar* s = root->AddScalar( "FIRST_ATOM", "number 1" );
+
+That atom may then be modified:
+
+    s->SetAsInt( 1 );
+
+Or, a convenience function may be used:
+
+    root->AddScalarInt( "FIRST_ATOM", "number 1", 1 );
+
+For example, to create the example model aggregate above:
+
+--- begin code sample ---
+
+    TupperwareAggregate root;
+
+    TupperwareAggregate* model = root->AddAggregate( "MODEL", "cube" );
+    {
+        float* positions = { ... };
+        float* normals = { ... };
+        float* colors = { ... };
+        float* texture_coordinates = { ... };
+
+        TupperwareAggregate* vertex_data = model->AddAggregate( "VERTEX_DATA", NULL );
+        {
+            vertex_data->AddListFloat( "POSITIONS", NULL, positions );
+            vertex_data->AddListFloat( "NORMALS", NULL, normals );
+            vertex_data->AddListFloat( "COLORS", NULL, colors );
+            vertex_data->AddListFloat( "TEXTURE_COORDINATES", NULL, texture_coordinates );
+        }
+
+        TupperwareAggregate* geometry;
+        geometry = model->AddAggregate( "GEOMETRY", "front face" );
+        {
+            int* positions_indices = { ... };
+            int* normals_indices = { ... };
+            int* colors_indices = { ... };
+            int* texture_coordinates_indices = { ... };
+
+            geometry->AddScalarString( "TYPE", NULL, "triangles" );
+            geometry->AddListInt( "POSITION_INDICES", NULL, position_indices );
+            geometry->AddListInt( "NORMAL_INDICES", NULL, normal_indices );
+            geometry->AddListInt( "COLOR_INDICES", NULL, color_indices );
+            geometry->AddListInt( "TEXTURE_COORDINATE_INDICES", NULL, texture_coordinate_indices );
+        }
+        geometry = model->AddAggregate( "GEOMETRY", "back face" );
+        {
+            ...
+        }
+        geometry = model->AddAggregate( "GEOMETRY", "left face" );
+        {
+            ...
+        }
+        geometry = model->AddAggregate( "GEOMETRY", "right face" );
+        {
+            ...
+        }
+        geometry = model->AddAggregate( "GEOMETRY", "top face" );
+        {
+            ...
+        }
+        geometry = model->AddAggregate( "GEOMETRY", "bottom face" );
+        {
+            ...
+        }
+        
+        TupperwareAggregate* binding = model->AddAggregate( "BINDING", NULL );
+        {
+            binding->AddScalarString( "TYPE", NULL, "material" );
+            binding->AddScalarString( "GEOMETRY_REF", NULL, "back face" );
+            binding->AddScalarString( "MATERIAL_REF", NULL, "checkered" );
+        }
+
+        TupperwareAggregate* material = model->AddAggregate( "MATERIAL", "checkered" );
+        {
+            material->AddScalarString( "DIFFUSE_MAP_REF", NULL, "checker" );
+        }
+
+        TupperwareAggregate* map = model->AddAggregate( "MAP", "checker" );
+        {
+            int width = ...;
+            int height = ...;
+            int depth = ...;
+            unsigned char* image = { ... };
+
+            map->AddScalarInt( "WIDTH", NULL, width );
+            map->AddScalarInt( "HEIGHT", NULL, height );
+            map->AddScalarInt( "DEPTH", NULL, depth );
+            map->AddScalarBinary( "IMAGE", NULL, image, width * height * depth );
+        }
+    }
+
+--- end code sample ---
+
+--------------------
+Examining a Hierarchy
+--------------------
+
+To examine a tupperware hierarchy, iterators are used.  To find every atom
+in an aggregate:
+
+    TupperwareRoot root;
+
+    for ( TupperwareIterator i = root.FindAll(); ! i.Finished(); i.Next() ) {
+        TupperwareAtom* atom = i.GetAsAtom();
+        int type = atom->GetAtomType();
+        switch ( type ) {
+        case TupperwareAtom::ATOM_AGGREGATE:
+            . . .
+            break;
+        case TupperwareAtom::ATOM_LIST:
+            . . .
+            break;
+        case TupperwareAtom::ATOM_SCALAR:
+            . . .
+            break;
+        case TupperwareAtom::ATOM_UNKNOWN:
+            . . .
+            break;
+        default:
+            assert( 0 || "Bad structure type." ); 
+            break;
+        }
+    }
+
+To find a specific atom in a whole hierarchy, use the 
+Find*ByKeyAndName() functions:
+
+    TupperwareAggregate* a = FindAggregateByKeyAndName( "MAP", "checker" );
+
+The above code will find the aggregate with the key "MAP" and name 
+"checker", or return NULL if it wasn't found in the hierarchy.
+
+To find all of a particular key in a hierarchy, use the FindByKey() 
+function:
+
+    for ( TupperwareIterator i = root.FindByKey( "MAP" ); ! i.Finished(); i.Next() ) {
+        . . .
+    }
+
+The above code will find all MAPs in the hierarchy.
+
+See PrintTup.cpp for a more complete example of examining a full hierarchy.
+
+--------------------
+Modifying a Hierarchy
+--------------------
+
+. . .
+

@@ -1,0 +1,938 @@
+	.vu
+include( `VUDefines.vm4')
+include( 'VUAnimDefines.vm4')
+
+	.global	dbAnimPLit_MP_CodeBegin
+	.global	dbAnimPLit_MP_CodeEnd
+
+	.global	dbAnimPLit_MP_Start
+	
+	tableentry(APL_MPFinish)
+	
+	tableentry(APL_MPLoadStreamToCache)
+	
+	tableentry(APL_MPLoadCacheToMtx1)
+	tableentry(APL_MPLoadCacheToMtx2)
+	
+	tableentry(APL_MPLoadStreamToMtx1)
+	tableentry(APL_MPLoadStreamToMtx2)
+
+	tableentry(APL_MPLoadNextInst)
+	tableentry(APL_MPTransform_ProcessInst)
+
+	tableentry(APL_MPTransform1_Start)	
+	tableentry(APL_MPTransform1_ContinueNW)
+	tableentry(APL_MPTransform1_ContinueNW_ADC)
+	tableentry(APL_MPTransform1_Continue)
+	tableentry(APL_MPTransform1_Continue_ADC)
+	tableentry(APL_MPTransform1_ContinueNR)
+	tableentry(APL_MPTransform1_ContinueNR_ADC)
+
+
+	tableentry(APL_MPTransform2_Start)	
+	tableentry(APL_MPTransform2_ContinueNW)
+	tableentry(APL_MPTransform2_ContinueNW_ADC)
+	tableentry(APL_MPTransform2_Continue)
+	tableentry(APL_MPTransform2_Continue_ADC)
+	tableentry(APL_MPTransform2_ContinueNR)
+	tableentry(APL_MPTransform2_ContinueNR_ADC)
+
+	tableentry(APL_MPTransform_Finish)
+	tableentry(APL_MPTransform_Finish_ADC)
+	
+.dmadata dbAnimPLit_MP_CodeBegin
+APL_MPStart:
+	nop		BAL	VI09, APL_MP_RefAddress
+	nop		NOP
+APL_MP_RefAddress:
+	nop		XTOP	VI10	; Grab Buffer Base
+
+APL_MPContinue:
+	nop		IADDIU	VI12, VI10, 2	; Base GIFData Ptr
+
+; load first header QWord
+	nop		ILW.y	VI03, 0(VI10)y	; DirtyMatrix Count
+	nop		ILW.x	VI02, 0(VI10)x	; MatrixCacheBase Offset
+	nop		ILW.z	VI04, 0(VI10)z	; DirtyMatrixBits1
+	nop		ILW.w	VI05, 0(VI10)w	; DirtyMatrixBits2
+	
+	nop		IBEQ	VI03, VI00, APL_MP_LoadHdr2
+	nop		NOP
+	
+	nop		BAL	VI14, A_UpdateDirtyMatrices
+	nop		NOP
+	
+APL_MP_LoadHdr2:
+	nop		ILW.x	VI06, offEVD1+0(VI00)	
+	nop		ILW.y	VI05, offEVD1+0(VI00)	
+	nop		ISw.y	VI06, offEVD1+0(VI00)
+	nop		ISw.x	VI05, offEVD1+0(VI00)
+
+;
+	nop		ISW.y	VI00, offEVD2+0(VI00)	
+;	
+; load second header QWord
+	nop		ILW.y	VI04, 1(VI10)y	; InputBuffer Offset
+	nop		ILW.z	VI11, 1(VI10)z	; XGKICK Offset
+	nop		ILW.w	VI02, 1(VI10)w	; VertexOutput Offset
+	nop		ILW.x	VI01, 1(VI10)x	; Vertex Count
+
+	NOP		IADDIU	VI08, VI00, 0x00ff	; mask out StatePacketSize
+	NOP		IAND	VI02, VI02, VI08
+
+	nop		IADDIU	VI08, VI00, 0x7fff
+	nop		IADDIU	VI08, VI08, 0x0001	; VI08 = ADC bit - 0x8000
+
+	nop		IADD	VI04, VI04, VI10	; InputBuffer Ptr - Vertices
+	nop		IADD	VI11, VI11, VI06	; XGKICK Ptr
+	nop		IBEQ	VI02, VI00, APL_MPPreProcessSetup
+	nop		IADD	VI06, VI11, VI00	; VertexOutput Ptr
+
+APL_MPCopyGIFData:
+	nop		IADD	VI03, VI12, VI02
+	nop		IADDIU	VI05, VI00, offBaseTexGIFData	; dst ptr
+
+	nop		LQI	VF01, (VI12++)
+	nop		MTIR	VI07, VF01x
+	nop		IADD	VI07, VI07, VI08
+	nop		MFIR.x	VF01, VI07
+	nop		SQI	VF01, (VI05++)
+
+APL_MPCopyLoop:	
+	nop		LQI	VF01, (VI12++)
+	nop		NOP
+	nop		IBNE	VI03, VI12, APL_MPCopyLoop
+	nop		SQI	VF01, (VI05++)
+
+APL_MPPreProcessSetup:
+	nop		IADD	VI01, VI01, VI08
+	nop		MFIR.x	VF31x, VI01
+
+	nop		IADDIU	VI07, VI00, 0x00ff	; VI07 = Instruction mask	
+
+	nop		NOP
+	nop		SQI	VF31, (VI06++)	; store GIFTag to OutGIFBuffer	
+
+	nop		ISW.z	VI06, offEVD1+0(VI00)
+	
+APL_MPLoadNextInst:
+	nop		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	nop		ILW.y	VI02, 0(VI12)y
+	nop		ILW.z	VI03, 0(VI12)z
+	nop		IADDIU	VI12, VI12, 1
+	nop		JR	VI01	; Branch to InstructionRoutine
+	nop		IADD	VI13, VI02, VI10	; <ds>
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) FinishUp
+;
+; ----------------------------------------------------------------------------------------------------------
+APL_MPFinish:
+	nop		ILW.w	VI02, offEVD1+0(VI00)
+	nop		ILW.z	VI03, offBaseTexGIFData+1(VI00)
+
+	nop		IADDIU	VI05, VI00, offBaseTexGIFData
+
+	nop		IADDIU	VI01, VI00, 0x0100
+	nop		IAND	VI01, VI01, VI03
+
+	nop		XGKICK	VI05
+
+	nop		IBEQ	VI01, VI00, APL_NoEVMap
+	nop		XGKICK	VI11
+
+	nop		JALR	VI15, VI02
+	nop		LQ.w	VF30, offBaseTexGIFData+1(VI00)
+
+APL_NoEVMap:
+	NOP[E]	NOP
+	nop		NOP
+	nop		B	APL_MPContinue
+	nop		XTOP	VI10	; Grab Buffer Base
+
+	nop		NOP
+	
+; ----------------------------------------------------------------------------------------------------------
+; Instruction Data
+; VI01 	: Instruction Addr
+; VI02 	: Data1
+; VI03 	: Data2
+; VI12 	: Next Instruction
+; VI13	: Data1 Buffer Adjusted
+; ----------------------------------------------------------------------------------------------------------
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load MatrixCache from Matrix Stream
+; VI02	: MatrixStream Offset
+; VI03	: MatrixCache Offset
+; VI13	: MatrixStream Ptr
+; ----------------------------------------------------------------------------------------------------------
+APL_MPLoadStreamToCache:
+	nop		LQI	VF28, (VI13++)	; load matrix from IS
+	nop		LQI	VF29, (VI13++)
+	nop		LQI	VF30, (VI13++)
+	nop		NOP
+	nop		SQI	VF28, (VI03++)	; store matrix in MatrixCache
+	nop		LQI	VF28, (VI13++)
+	nop		SQI	VF29, (VI03++)
+	nop		SQI	VF30, (VI03++)
+	nop		B	APL_MPLoadNextInst	; fetch next Instruction
+	nop		SQI	VF28, (VI03++)	; <ds>
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load Matrix From InstructionStream or MatrixCache
+; VI12	: InstructionStreamPtr
+;
+; ----------------------------------------------------------------------------------------------------------
+APL_MPLoadStreamToMtx1:
+	nop		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+APL_MPLoadCacheToMtx1:
+	nop		LQI	VF01, (VI03++)
+	nop		LQI	VF02, (VI03++)
+	nop		LQI	VF03, (VI03++)
+	nop		LQI	VF04, (VI03++)
+	nop		LQI	VF05, (VI03++)
+	nop		LQI	VF06, (VI03++)
+;	nop		B	APL_MPLoadNextInst	; fetch next Instruction
+	nop		B	setPLights1
+	nop		LQI	VF07, (VI03++)	; <ds>
+	
+APL_MPLoadStreamToMtx2:
+	nop		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+APL_MPLoadCacheToMtx2:
+	nop		LQI	VF08, (VI03++)
+	nop		LQI	VF09, (VI03++)
+	nop		LQI	VF10, (VI03++)
+	nop		LQI	VF11, (VI03++)
+	nop		LQI	VF12, (VI03++)
+	nop		LQI	VF13, (VI03++)
+;	nop		B	APL_MPLoadNextInst
+	nop		B	setPLights2
+	nop		LQI	VF14, (VI03++)
+
+	
+;---------------------------------------------------------------------------------------------------------------	       
+;---------------------------------------------------------------------------------------------------------------	       
+
+;---------------------------------------------------------------------------------------------------------------	       
+; The following code is ordered to minimize in-Vertex instruction space requirements.
+;---------------------------------------------------------------------------------------------------------------	       
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Start the Vertex Pipeline - Matrix 1
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform1_Start:	
+	ADDw.z VF27, VF00, VF00w	LQ	VF20, 0(VI04)	; load Vertex 1
+	nop		LQ	VF21, 1(VI04)	; load Normal 1
+	nop		LOI	255.0	; load ColorClamp
+	nop			bal	vi01, PLight
+	nop			iaddiu	vi15, vi00, 0
+	nop		IADDIU	VI04, VI04, 2	; next Vertex/Normal pair
+	MULAw.xyzw	ACC, VF04, VF00w	MTIR	VI01, VF20w	; copy Inst.
+	MADDAx.xyzw	ACC, VF01, VF20x	NOP
+	MADDAy.xyzw	ACC, VF02, VF20y	MOVE.xy	VF27, VF21
+	MADDz.xyzw	VF22, VF03, VF20z	IADDIU	VI02, VI09, APL_MPTransform1_ContinueNW - APL_MP_RefAddress
+	nop		IAND	VI01, VI01, VI07
+	MULAw.xyz	ACC, VF05, VF20w	IADD	VI01, VI01, VI02
+	MADDAz.xyzw	ACC, VF06, VF21z	LQI	VF20, (VI04++)	; load Vertex 2
+	MADDw.xyzw	VF23, VF07, VF21w 	JR	VI01	
+	nop		LQI	VF21, (VI04++)	; load Normal 2
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform2_Start:
+	ADDw.z	VF27, VF00, VF00w	LQ	VF20, 0(VI04)	; load Vertex 1
+	nop		LQ	VF21, 1(VI04)	; load Normal 1
+	nop		LOI	255.0	; load ColorClamp
+	nop			bal	vi01, PLight
+	nop			iaddiu	vi15, vi00, 2
+	MULAw.xyzw	ACC, VF11, VF00w	IADDIU	VI04, VI04, 2	; next Vertex/Normal pair
+	MADDAx.xyzw	ACC, VF08, VF20x	MTIR	VI01, VF20w	; copy Inst.
+	MADDAy.xyzw	ACC, VF09, VF20y	MOVE.xy	VF27, VF21
+	MADDz.xyzw	VF22, VF10, VF20z	IADDIU	VI02, VI09, APL_MPTransform1_ContinueNW - APL_MP_RefAddress
+	nop		IAND	VI01, VI01, VI07
+	MULAw.xyz	ACC, VF12, VF20w	IADD	VI01, VI01, VI02
+	MADDAz.xyzw	ACC, VF13, VF21z	LQI	VF20, (VI04++)	; load Vertex 2
+	MADDw.xyzw	VF23, VF14, VF21w 	JR	VI01	
+	nop		LQI	VF21, (VI04++)	; load Normal 2
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue Pipeline - No Data Write - Matrix 1
+;
+; Lighting:
+;	clamp VF23( Normal * Directional Lights ) to zero, VF23 contains intensities of the 3 lights at the vertex
+;	add in ambient light(VF16)
+;	mult intensities(VF23) by the color of each light(VF17, VF18, VF19), store result in VF23
+;	clamp light color(VF23) to 255, store in VF26
+;	
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform1_ContinueNW:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	nop			iaddiu	vi15, vi00, 0
+	nop		DIV	Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF04, VF00w	NOP
+	MADDAx.xyzw	ACC, VF01, VF20x	MOVE.xyzw	VF28, VF22	
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF02, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	NOP
+	MADDAx.xyzw	ACC, VF17, VF23x	NOP
+	MADDAy.xyzw	ACC, VF18, VF23y	NOP
+	MADDz.xyzw	VF23, VF19, VF23z	IAND	VI01, VI01, VI07
+	MULQ.xyz	VF28, VF28, Q	IADDIU	VI01, VI01, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MULQ.xyz	VF25, VF27, Q	IADD	VI01, VI01, VI09
+	MULAw.xyz	ACC, VF05, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI00
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)
+	MADDAz.xyz	ACC, VF06, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF07, VF21w	LQI	VF21, (VI04++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+APL_MPTransform1_ContinueNW_ADC:	
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	nop			iaddiu	vi15, vi00, 0
+	nop		DIV	Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF04, VF00w	NOP
+	MADDAx.xyzw	ACC, VF01, VF20x	MOVE.xyzw	VF28, VF22	
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF02, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	NOP
+	MADDAx.xyzw	ACC, VF17, VF23x	NOP
+	MADDAy.xyzw	ACC, VF18, VF23y	NOP
+	MADDz.xyzw	VF23, VF19, VF23z	IAND	VI01, VI01, VI07
+	MULQ.xyz	VF28, VF28, Q	IADDIU	VI01, VI01, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MULQ.xyz	VF25, VF27, Q	IADD	VI01, VI01, VI09
+	MULAw.xyz	ACC, VF05, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI08
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)
+	MADDAz.xyz	ACC, VF06, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF07, VF21w	LQI	VF21, (VI04++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue Pipeline - No Data Write - Matrix 2
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform2_ContinueNW:	
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	nop			iaddiu	vi15, vi00, 2
+	nop		DIV	Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF11, VF00w	NOP
+	MADDAx.xyzw	ACC, VF08, VF20x	MOVE.xyzw	VF28, VF22	
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF09, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	NOP
+	MADDAx.xyzw	ACC, VF17, VF23x	NOP
+	MADDAy.xyzw	ACC, VF18, VF23y	NOP
+	MADDz.xyzw	VF23, VF19, VF23z	IAND	VI01, VI01, VI07
+	MULQ.xyz	VF28, VF28, Q	IADDIU	VI01, VI01, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MULQ.xyz	VF25, VF27, Q	IADD	VI01, VI01, VI09
+	MULAw.xyz	ACC, VF12, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI00
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF14, VF21w	LQI	VF21, (VI04++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+APL_MPTransform2_ContinueNW_ADC:	
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	nop			iaddiu	vi15, vi00, 2
+	nop		DIV	Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF11, VF00w	NOP
+	MADDAx.xyzw	ACC, VF08, VF20x	MOVE.xyzw	VF28, VF22	
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF09, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	NOP
+	MADDAx.xyzw	ACC, VF17, VF23x	NOP
+	MADDAy.xyzw	ACC, VF18, VF23y	NOP
+	MADDz.xyzw	VF23, VF19, VF23z	IAND	VI01, VI01, VI07
+	MULQ.xyz	VF28, VF28, Q	IADDIU	VI01, VI01, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MULQ.xyz	VF25, VF27, Q	IADD	VI01, VI01, VI09
+	MULAw.xyz	ACC, VF12, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI08
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF14, VF21w	LQI	VF21, (VI04++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Transform Loop Process Instruction
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform_ProcessInst:
+	nop		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	nop		ILW.y	VI02, 0(VI12)y
+	nop		ILW.z	VI03, 0(VI12)z
+	nop		IADDIU	VI12, VI12, 1
+	nop		JR	VI01	; Branch to InstructionRoutine
+	nop		IADD	VI13, VI02, VI10	; <ds>
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue Pipeline - Matrix 1
+;
+; Lighting: Uses VF23, VF26, ( VF16, VF17, VF18, VF19 )Color Matrix,
+;	VF23 holds itermediate lighting results( N dot L ) = I, ( I dot C ) = VC(vertex color)
+;	VF26 holds final rgba result of directional lighting calculation
+;
+; VertexXYZ: Uses( VF20, VF22, VF24, VF28 )
+;	loaded in VF20, transformed to VF22, Moved to VF28 for perspective divide, and finally to VF24 on FTOI
+;
+; VertexUV: Uses( VF21xy, VF25, VF27
+;
+; Available In Routine: VF29, VF30
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform1_Continue:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 0
+	nop		DIV Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF04, VF00w	nop		;begin next vertex transform
+	MADDAx.xyzw	ACC, VF01, VF20x	MOVE.xyzw	VF28, VF22	;save current vert
+	MAXx.xyzw	VF23, VF23, VF00x	nop		;clamp light intensities
+	MADDAy.xyzw	ACC, VF02, VF20y	MTIR	VI01, VF20w	;get jump adr for next iteration
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)	;save u, v
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07	;mask off lower 8 bits of jump adr
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02	;add in base adr for jump
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)	;save r,g,b,a
+	MULQ.xyz	VF25, VF27, Q	SQI.xyzw	VF24, (VI06++)	;save Sx,Sy,Sz
+	MULAw.xyz	ACC, VF05, VF20w	MOVE.xy	VF27, VF21	;move next uv to vf27
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI00	;clear adc
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)	;load vertex/normal
+	MADDAz.xyz	ACC, VF06, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF07, VF21w	LQI	VF21, (VI04++)	;load normal/uv
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	
+APL_MPTransform1_Continue_ADC:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 0
+	nop		DIV Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF04, VF00w	NOP
+	MADDAx.xyzw	ACC, VF01, VF20x	MOVE.xyzw	VF28, VF22	;
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF02, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)
+	MULQ.xyz	VF25, VF27, Q	SQI	VF24, (VI06++)
+	MULAw.xyz	ACC, VF05, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI08
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)
+	MADDAz.xyz	ACC, VF06, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF07, VF21w	LQI	VF21, (VI04++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue Pipeline - Matrix 2
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform2_Continue:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 2
+	nop		DIV	Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF11, VF00w	NOP
+	MADDAx.xyzw	ACC, VF08, VF20x	MOVE.xyzw	VF28, VF22	;
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF09, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)
+	MULQ.xyz	VF25, VF27, Q	SQI	VF24, (VI06++)
+	MULAw.xyz	ACC, VF12, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI00
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF14, VF21w	LQI	VF21, (VI04++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	
+APL_MPTransform2_Continue_ADC:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 2
+	nop		DIV Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF11, VF00w	NOP
+	MADDAx.xyzw	ACC, VF08, VF20x	MOVE.xyzw	VF28, VF22	;
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF09, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_ProcessInst - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)
+	MULQ.xyz	VF25, VF27, Q	SQI	VF24, (VI06++)
+	MULAw.xyz	ACC, VF12, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI08
+	FTOI4.xyz	VF24, VF28	LQI	VF20, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF14, VF21w	LQI	VF21, (VI04++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue Pipeline - No Data Read - Matrix 1
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform1_ContinueNR:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 0
+	nop		DIV Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF04, VF00w	NOP
+	MADDAx.xyzw	ACC, VF01, VF20x	MOVE.xyzw	VF28, VF22	;
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF02, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_Finish - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)
+	MULQ.xyz	VF25, VF27, Q	SQI	VF24, (VI06++)
+	MULAw.xyz	ACC, VF05, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI00
+	FTOI4.xyz	VF24, VF28	NOP
+	MADDAz.xyz	ACC, VF06, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF07, VF21w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+APL_MPTransform1_ContinueNR_ADC:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 0
+	nop		DIV Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF04, VF00w	NOP
+	MADDAx.xyzw	ACC, VF01, VF20x	MOVE.xyzw	VF28, VF22	;
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF02, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_Finish - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)
+	MULQ.xyz	VF25, VF27, Q	SQI	VF24, (VI06++)
+	MULAw.xyz	ACC, VF05, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI08
+	FTOI4.xyz	VF24, VF28	NOP
+	MADDAz.xyz	ACC, VF06, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF07, VF21w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue Pipeline - No Data Read - Matrix 2
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform2_ContinueNR:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 2
+	nop		DIV Q, VF00w, VF22w
+	MULAw.xyzw	ACC, VF11, VF00w	NOP
+	MADDAx.xyzw	ACC, VF08, VF20x	MOVE.xyzw	VF28, VF22	;
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF09, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_Finish - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)
+	MULQ.xyz	VF25, VF27, Q	SQI	VF24, (VI06++)
+	MULAw.xyz	ACC, VF12, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI00
+	FTOI4.xyz	VF24, VF28	NOP
+	MADDAz.xyz	ACC, VF13, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF14, VF21w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+APL_MPTransform2_ContinueNR_ADC:
+	addx.xyzw	vf15, vf16, vf00x	bal	vi01, PLight
+	ftoi0.xyzw	vf26, vf26	iaddiu	vi15, vi00, 2
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF22w
+	MADDAx.xyzw	ACC, VF08, VF20x	MOVE.xyzw	VF28, VF22	;
+	MAXx.xyzw	VF23, VF23, VF00x	NOP
+	MADDAy.xyzw	ACC, VF09, VF20y	MTIR	VI01, VF20w
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	ADDAx.xyzw	ACC, VF15, VF00x	SQI	VF25, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	IADDIU	VI02, VI09, APL_MPTransform_Finish - APL_MP_RefAddress
+	MADDAy.xyzw	ACC, VF18, VF23y	IAND	VI01, VI01, VI07
+	MADDz.xyzw	VF23, VF19, VF23z	IADD	VI01, VI01, VI02
+	MULQ.xyz	VF28, VF28, Q	SQI	VF26, (VI06++)
+	MULQ.xyz	VF25, VF27, Q	SQI	VF24, (VI06++)
+	MULAw.xyz	ACC, VF12, VF20w	MOVE.xy	VF27, VF21
+	MINIi.xyzw	VF26, VF23, I	MFIR.w	VF24w, VI08
+	FTOI4.xyz	VF24, VF28	NOP
+	MADDAz.xyz	ACC, VF13, VF21z	JR	VI01
+	MADDw.xyz	VF23, VF14, VF21w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+
+
+;---------------------------------------------------------------------------------------------------------------	       
+;---------------------------------------------------------------------------------------------------------------	       
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Finish Transformation Pipeline 
+;---------------------------------------------------------------------------------------------------------------	       
+APL_MPTransform_Finish:
+	ftoi0.xyzw	vf26, vf26	DIV	Q, VF00w, VF22w
+	MAXx.xyzw	VF23, VF23, VF00x	nop		; Clamp backface light
+	nop		NOP
+	ADDAx.xyzw	ACC, VF16, VF00x	SQI.xyz	VF25, (VI06++)
+	nop		SQI.xyzw	VF26, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	SQI.xyzw	VF24, (VI06++)	
+	MADDAy.xyzw	ACC, VF18, VF23y	IADDIU	VI06, VI06, 3
+	MADDz.xyzw	VF26, VF19, VF23z	nop		; N . Color
+	MULQ.xyz	VF24, VF22, Q	nop		; Vt / Vt.w
+	MULQ.xyz	VF25, VF27, Q	nop		; ST / Vt.w
+	nop		NOP
+	MINIi.xyzw	VF26, VF26, I	MFIR.w	VF24w, VI00	; Clamp Color <= 255.0
+	FTOI4.xyz	VF24, VF24	ILW.x	VI01, 0(VI12)x	
+	nop		ILW.y	VI02, 0(VI12)y
+	nop		SQ.xyz	VF25, -3(VI06)
+	ftoi0.xyzw	vf26, vf26	ILW.z	VI03, 0(VI12)z
+	nop		SQ.xyzw	VF24, -1(VI06)
+	nop		IADDIU	VI12, VI12, 1
+	nop		JR	VI01
+	nop		SQ.xyzw	VF26, -2(VI06)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+APL_MPTransform_Finish_ADC:
+	FTOI0.xyzw	VF26, VF26	DIV	Q, VF00w, VF22w
+	nop		NOP
+	MAXx.xyzw	VF23, VF23, VF00x	nop		; Clamp backface light
+	nop		NOP
+	ADDAx.xyzw	ACC, VF16, VF00x	SQI.xyz	VF25, (VI06++)
+	nop		SQI.xyzw	VF26, (VI06++)
+	MADDAx.xyzw	ACC, VF17, VF23x	SQI.xyzw	VF24, (VI06++)	
+	MADDAy.xyzw	ACC, VF18, VF23y	IADDIU       	VI06, VI06, 3
+	MADDz.xyzw	VF26, VF19, VF23z	nop		; N . Color
+	MULQ.xyz	VF24, VF22, Q	nop		; Vt / Vt.w
+	MULQ.xyz	VF25, VF27, Q	nop		; ST / Vt.w
+	nop		NOP
+	MINIi.xyzw	VF26, VF26, I	MFIR.w 	VF24w, VI08	; Clamp Color <= 255.0
+	FTOI4.xyz	VF24, VF24	ILW.x	VI01, 0(VI12)x	
+	nop		ILW.y	VI02, 0(VI12)y
+	nop		SQ.xyz	VF25, -3(VI06)
+	FTOI0.xyzw	VF26, VF26	ILW.z	VI03, 0(VI12)z
+	nop		SQ.xyzw	VF24, -1(VI06)
+	nop		IADDIU	VI12, VI12, 1
+	nop		JR	VI01
+	nop		SQ.xyzw	VF26, -2(VI06)
+
+dbAnimPLit_MP_Start:
+	nop		XTOP	VI01
+
+	nop		LQ	VF17, 12(VI01)	; Point light1 color
+	nop		LQ	VF18, 13(VI01)	; Point light2 color
+	nop		SQ	VF17, offPLightColors+0(VI00)
+	nop		SQ	VF18, offPLightColors+1(VI00)
+;
+	nop		LQ	VF09, 0(VI01)	; Common->Screen Mtx 1
+	nop		LQ	VF10, 1(VI01)	; Common->Screen Mtx 2
+	nop		LQ	VF11, 2(VI01)	; Common->Screen Mtx 3
+	nop		LQ	VF12, 3(VI01)	; Common->Screen Mtx 4
+	
+	nop		LQ	VF05, 4(VI01)	; Obj->Common Mtx 1
+	nop		LQ	VF06, 5(VI01)	; Obj->Common Mtx 2
+	nop		LQ	VF07, 6(VI01)	; Obj->Common Mtx 3
+	nop		LQ	VF08, 7(VI01)	; Obj->Common Mtx 4
+	
+	nop		LQ	VF16,11(VI01)	; Light Ambient
+	nop		LQ	VF17, 8(VI01)	; Light Color Mtx
+	nop		LQ	VF18, 9(VI01)
+	nop		LQ	VF19,10(VI01)
+
+	nop		LQ	VF13,15(VI01)	; EVMap Ctrl data
+	nop		LQ	VF01,16(VI01)	; EVMap Mtx r1
+	nop		LQ	VF02,17(VI01)	; EVMap Mtx r2
+	nop		LQ	VF03,18(VI01)	; EVMap Mtx r3
+	nop		LQ	VF04,19(VI01)	; EVMap Mtx r4
+
+	nop		LQ	VF31,20(VI01)	; get First QW of EVMap GIFData	
+	
+	nop		SQ	VF16, offPLightAmbient+0(VI00)	;save ambient light
+
+	nop		SQ	VF13, offEVD1+0(VI00)	; store EVMap D1
+
+	nop		SQ	VF01, offEVMtx+0(VI00)	; EVMap Mtx r1
+	nop		SQ	VF02, offEVMtx+1(VI00)	; EVMap Mtx r2
+	nop		SQ	VF03, offEVMtx+2(VI00)	; EVMap Mtx r3
+	nop		SQ	VF04, offEVMtx+3(VI00)	; EVMap Mtx r4
+
+	nop		MTIR	VI02, VF31x	; get Copy Count from GIFTag
+	nop		IADDIU	VI05, VI02, 1	; add 1 for GIFTag
+	nop		IADDIU	VI02, VI05, 0x7fff	; trick to get EOP Flag set
+	nop		MFIR.x	VF31, VI02	; store back w/ EOP Set
+	
+	nop		IADDIU	VI03, VI01, 21	; src offset (2nd QW)
+	nop		IADDIU	VI04, VI00, offEVTexGIFData	; dst offset
+
+ALFC_MP_CopyLoop:
+	nop		SQI	VF31, (VI04++)
+	nop		ISUBIU	VI05, VI05, 1
+	nop		NOP
+	nop		IBNE	VI05, VI00, ALFC_MP_CopyLoop
+	nop		LQI	VF31, (VI03++)	; <ds> last Load = GIFTag
+	
+	nop		LOI	2048
+
+APL_MP_ConcatMatrices:
+	MULAx.xyzw	ACC, VF09, VF05x	NOP
+	MADDAy.xyzw	ACC, VF10, VF05y	NOP
+	MADDAz.xyzw	ACC, VF11, VF05z	NOP
+	MADDw.xyzw	VF01, VF12, VF05w	NOP
+
+	MULAx.xyzw	ACC, VF09, VF06x	NOP
+	MADDAy.xyzw	ACC, VF10, VF06y	NOP
+	MADDAz.xyzw	ACC, VF11, VF06z	NOP
+	MADDw.xyzw	VF02, VF12, VF06w	NOP
+
+	MULAx.xyzw	ACC, VF09, VF07x	NOP
+	MADDAy.xyzw	ACC, VF10, VF07y	NOP
+	MADDAz.xyzw	ACC, VF11, VF07z	NOP
+	MADDw.xyzw	VF03, VF12, VF07w	NOP
+	
+	MULAx.xyzw	ACC, VF09, VF08x	NOP
+	MADDAy.xyzw	ACC, VF10, VF08y	NOP
+	MADDAz.xyzw ACC, VF11, VF08z	NOP
+	MADDw.xyzw	VF04, VF12, VF08w	NOP
+
+APL_MP_BranchFirstBuffer:
+	nop		SQ	VF01, 0(VI00)
+	nop		SQ	VF02, 1(VI00)
+	nop		SQ	VF03, 2(VI00)
+	NOP[E]	B	APL_MPStart
+	nop		SQ	VF04, 3(VI00)
+
+
+
+; ------------------------------------------------------------------------------
+;
+; Point lighting with 2 lights
+;
+; Assuming:
+;	Light Positions are in VF05, VF06
+;	Light Colors are in VF17, VF18
+;	Light Ambient in VF16
+;	Normal in VF21
+; ------------------------------------------------------------------------------
+PLight:
+	nop			iaddiu	vi15, vi15, offPLight1Cache
+	nop			sq	vf05, offPLightWorkStack+2(vi00)
+	nop			sq	vf06, offPLightWorkStack+3(vi00)
+	nop			lq	vf05, 0(vi15)
+	nop			lq	vf06, 1(vi15)
+	nop			sq	vf21, offPLightWorkStack+9(vi00)
+	nop			sq	vf27, offPLightWorkStack+5(vi00)
+	addw.xyz	vf27, vf00, vf00w	sq	vf29, offPLightWorkStack+7(vi00)
+	addw.x	vf21, vf00, vf20w	sq	vf30, offPLightWorkStack+6(vi00)	;move Nx FROM VF20w to VF21x
+
+	; --- Compute Vectors to Lights
+	sub.xyz	vf29, vf05, vf20	mr32.yz	vf21, vf21	;Light position1 - Vertex
+	sub.xyz	vf30, vf06, vf20	sq	vf24, offPLightWorkStack+8(vi00)	;Light position2 - Vertex
+	nop			sq	vf25, offPLightWorkStack+4(vi00)
+	nop			nop
+	nop			erleng	p, vf29	;start 1/length1 calculation - 24 cycles
+	mul.xyz	vf24, vf30, vf30	nop			;VF30x*VF30x,VF30y*VF30y,VF30z*VF30z
+	mul.xyz	vf29, vf29, vf21	nop			;Light1 * Normal
+	mul.xyz	vf30, vf30, vf21	nop			;Light2 * Normal
+	nop			nop
+	mulax.x	acc, vf27x, vf24x	nop
+	madday.x	acc, vf27x, vf24y	nop
+	maddz.x	vf24, vf27x, vf24z	loi	255.0	;VF24 = 1/length2^2
+	nop			sq	vf17, offPLightWorkStack+0(vi00)
+	nop			nop
+	nop			sq	vf18, offPLightWorkStack+1(vi00)
+	nop			rsqrt	q, vf00w, vf24x	;start 1/length2 calculation - 13 cycles
+	nop			waitq
+	mulq.y	vf24, vf27y, q	nop
+	nop			waitp
+	nop			mfp.x	vf24x, p	;Now have 1/length1, 1/length2
+	nop			nop
+	nop			nop
+	nop			nop
+	mul.xy	vf25, vf24, vf24	nop			;1/lenght1^2, 1/length2^2
+	nop			lq	vf17, offPLightColors+0(vi00)
+	nop			nop
+	nop			lq	vf18, offPLightColors+1(vi00)
+	mul.xy	vf25, vf25, vf24	nop			;1/length1^3, l/length2^3
+	nop			lq	vf16, offPLightAmbient+0(vi00)	;load ambient
+	nop			nop
+	nop			lq	vf27, offPLightWorkStack+5(vi00)
+	mulax.x	acc, vf25x, vf29x	nop
+	madday.x	acc, vf25x, vf29y	nop
+	maddz.x	vf29, vf25x, vf29z	nop			;light1 dotted, normalized, and attenuated
+	mulax.y	acc, vf25y, vf30x	nop
+	madday.y	acc, vf25y, vf30y	nop
+	maddz.y	vf29, vf25y, vf30z	nop			;light2 dotted, normalized, and attenuated
+	nop			lq	vf30, offPLightWorkStack+6(vi00)
+	nop			nop
+	nop			lq	vf25, offPLightWorkStack+4(vi00)
+	mulw.x	vf29, vf29, vf05w	nop			;apply attenuation coefficient
+	mulw.y	vf29, vf29, vf06w	lq	vf05, offPLightWorkStack+2(vi00)
+	nop			nop
+	nop			lq	vf06, offPLightWorkStack+3(vi00)
+	nop			lq	vf21, offPLightWorkStack+9(vi00)
+	maxx.xy	vf29, vf29, vf00x	lq	vf24, offPLightWorkStack+8(vi00)
+	nop			nop
+	nop			nop
+	nop			nop
+	mulax.xyzw	acc, vf17, vf29x	lq	vf17, offPLightWorkStack+0(vi00)	;light1 * color1
+	madday.xyzw	acc, vf18, vf29y	lq	vf18, offPLightWorkStack+1(vi00)	;light2 * color2
+	maddw.xyzw	vf16, vf16, vf00w	jr	vi01	;add in ambient
+	nop			lq	vf29, offPLightWorkStack+7(vi00)
+
+
+setPLights1:
+	nop		LQI	VF29, (VI03++)
+	nop		LQI	VF30, (VI03++)
+	nop		SQ 	VF29, offPLight1Cache+0(VI00)
+	nop		SQ 	VF30, offPLight1Cache+1(VI00)
+	nop		B	APL_MPLoadNextInst
+	nop		NOP
+
+setPLights2:
+	nop		LQI	VF29, (VI03++)
+	nop		LQI	VF30, (VI03++)
+	nop		SQ 	VF29, offPLight2Cache+0(VI00)
+	nop		SQ 	VF30, offPLight2Cache+1(VI00)
+	nop		B	APL_MPLoadNextInst
+	nop		NOP
+
+;--------------------------------------------------------------------------------------------------
+define( 'MatrixSize', eval( 9 ))
+
+define( 'irTemp1', 'VI01')
+define( 'irCurrentBit', 'VI06')
+
+define( 'irMatrixAddr', 'VI02')
+define( 'irDirtyMtxCnt', 'VI03')
+define( 'irDirtyMtxBits1', 'VI04')
+define( 'irDirtyMtxBits2', 'VI05')
+define( 'irReturnAddr', 'VI14')
+
+include( 'AnimMatrixCheck.vm4')
+;--------------------------------------------------------------------------------------------------
+	
+.enddmadata
+dbAnimPLit_MP_CodeEnd:

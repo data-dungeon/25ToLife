@@ -1,0 +1,405 @@
+AnimRip -- Copyright (c) Avalanche Software 2000, 2001, 2002
+ANIMRIP [options] <infile>
+  Where [options] are:
+    -I <path> --> Include path for #include statements
+    -KEY <key> --> Database chunk key (defaults to 1)
+    -N64 --> Output data for N64 (defaults to PSX)
+    -V --> Bytecode Listing as <animscriptname.lst>
+    -L --> Bytecode Listing as <animscriptname.lst>
+    -W --> Wait for a keypress after processing
+    -PC --> Output data for PC (defaults to PSX)
+    -OS <size>
+       -- overrides the default operand stack size (32)
+    -CS <size>
+       -- overrides the default call stack size (16)
+    -D
+       -- Debug mode - outputs a debug version script
+
+  Animation Scripts are now run through the Boland C++ 5.5 preprocessor
+   before being compiled by Animrip.exe.  *NOTE: This preprocessor seems
+   to have trouble with lines longer that about 160 characters in length.
+
+  Animrip now supports expressions as parameters for the OPCODES.  These
+   expressions can be the result of #define's being expanded, or directly
+   written in the script.  In a non-debug version of the script, literal
+   expressions are collapsed.  For example, the following line of script:
+
+      PUSH (1 + 2)
+
+   (in a debug script) results in:
+
+      PUSHI 1
+      PUSHI 2
+      ADD
+
+   (and in an optimized script) results in:
+
+      PUSHI 3
+
+   If a label occurs anywhere between the first parameter, and the
+   associated math function call, this optimization does not occur.
+   In a debug version of the script, the full expression is placed in
+   the bytecode stream.
+   Variables may also be freely used in expressions.  Expressions with
+   variables can not be collapsed.  For example, the following is
+   acceptable:
+
+      PUSH ( (actorPosX + actorPosY) / 2 )
+
+   debug and normal result:
+
+      LOAD actorPosX
+      LOAD actorPosY
+      ADD
+      PUSHI 2
+      DIV
+
+  Animrip has had an Operand Stack, a Call Stack, a Function Lookup Table,
+   and a Variable Lookup Table added to it's structure.  These features are
+   more fully detailed in the OPCODES section below.
+
+  Animrip's verbose (listing) mode has changed.  Now, a bytecode listing
+   file is generated in this mode.  The file is named <animscriptname> with
+   the extension changed to '.lst' from '.scr'.  This file has each line of
+   the original script printed in a comment followed by a recompilable
+   expansion of the line of text.  Following each expansion line, an offset
+   showing where that OPCODE begins in the bytecode is shown as a comment.
+   Immediately following the offset is the hex representation of the
+   OPCODE.
+
+  Debugging support has also been added.  When a script is compiled with
+   the '-D' flag, the script line number index that generated each OPCODE
+   is placed in the bytecode stream immediately following the OPCODE, and
+   before any parameters for the OPCODE.  A char* array is placed at the end
+   of the resulting compiled script. This array uses the index following the
+   OPCODE to reference into a text buffer at the end of the file which
+   contains a null-terminated string for each line of the original script.
+   This information is available to the running application for debug
+   purposes.
+
+  VARIABLE DECLARATION:
+
+   Variables must be declared before they are used in the program.  The
+   variables may be initialized at declaration with an initial value, also
+   There are three known data-types: int, float, and string.  An example
+   follows:
+     int iVarName = 12;
+     float fVarName = 15.4f;
+     string sVarName = "Here's a string constant\n";
+
+  OPCODES:
+   In this section, while referring to the operand stack, stack[0]
+   refers to the top of the operand stack, while stack[1] refers to
+   the value immediately under the top value, and so forth.
+
+   *Note: the math OPCODES do not work on string constants.  No conversion
+      is attempted to make strings into float or int, or back again.
+
+   PUSH <literal>
+      -- Push <literal> onto the top of the operand stack.  This operation
+         records the type (int, float, or C-String constant) of the
+         operand.
+   POP
+      -- Pop top value from the operand stack.
+   PUSHREG
+      -- Push a copy of the value of the internal (old opcode) status register
+   POPREG
+      -- Pop the top operand, and store the value into the internal register
+   SWAP [<index>]
+      -- SWAPs the stack[0] value with the stack[<index>] value.  <index>
+         defaults to 1.
+   DUP [<index>]
+      -- DUPlicates the stack[<index>] value onto the top of the stack.
+   LOAD <variableName>
+      -- PUSHes the value of <variableName> onto the operand stack.
+   STORE <destVarName> [<srcVarName>|<literal>]
+      -- POPs the operand stack, storing the value in <destVarName>.  If
+         an alternate source is included, that source is first PUSHed onto
+         the stack before being STOREd.
+   DEREF_INT
+      -- Interprets the top value on the stack as an int*.  POPs the pointer
+         and PUSHes the dereferenced value.
+   DEREF_FLOAT
+      -- As DEREF_INT, but treats the pointer as a float*.
+
+   MATH OPCODES:
+   ADD
+      -- POPs the top two values from the operand stack, performs:
+         (stack[1] + stack[0]), and PUSHes the result.  If both operands
+         are int, then the result is an int, otherwise, the non-float values
+         are converted to floats, and the result is a float.
+   SUB
+      -- As ADD, but performs:
+         stack[1] - stack[0], and PUSHes the result.
+   MUL
+      -- As ADD, but performs:
+         stack[1] * stack[0], and PUSHes the result.
+   DIV
+      -- As ADD, but performs:
+         stack[1] / stack[0], and PUSHes the result.
+   MOD
+      -- As ADD, but performs: (converting to integers as necessary)
+         stack[1] % stack[0], and PUSHes the result.
+   MIN
+      -- Pops the top 2 operands, and Pushes the smallest value.
+   MAX
+      -- Pops the top 2 operands, and Pushes the largest value.
+   ABS
+      -- Pops the top operand, and Pushes it's absolute value.
+   BIT_AND
+      -- Pops the top 2 operands, treats the bits as unsigned int, performs
+         the bit-wise AND operation (stack[1] & stack[0]) on them,
+         pushing the result as an int.
+   BIT_OR
+      -- As BIT_AND, except performs a bit-wise OR operation.
+   BIT_XOR
+      -- As BIT_AND, except performs a bit-wise XOR operation.
+   BIT_NOT
+      -- As BIT_AND, except only POPs stack[0] and performs a bit-wise
+         NOT operation, PUSHing the result.
+   AND
+      -- Pops the top 2 operands, and performs the logical AND operation:
+         (stack[1] AND stack[0]).  Any value other than 0 is true,
+         and the result is an int 1 for true, and int 0 for false.
+   OR
+      -- Performs the same as AND, except a logical OR operation is
+         performed.
+   NOT
+      -- Performs the same as AND, except that only stack[0] is POPed, and
+         a logical NOT operation is performed, PUSHing the result.
+   INT
+      -- Converts the top value on the operand stack from float to int.
+   FLOAT
+      -- Converts the top value on the operand stack from int to float.
+   INCR
+      -- Increments the top value on the stack by 1.
+   DECR
+      -- Decrements the top value on the stack by 1.
+   SHL
+      -- Shifts left: stack[1] << stack[0].  Use '<<' for this operation
+         in an expression.
+   SHR
+      -- Shifts right with sign: stack[1] >> stack[0].  Use '>>' for this
+         operation in an expression.
+   SHRZ
+      -- Shifts right without sign: stack[1] >> stack[0].  Use '>>>' for
+         this operation in an expression.
+
+   FLOW CONTROL OPCODES:
+
+   CMP
+      -- POPs the top two values from the operand stack, and compares the
+         values.  If (stack[1] > stack[0]), CMP pushes a 1 (int) onto
+         the stack, 0 (int) if (stack[1] == stack[0]), and -1 (int) if
+         (stack[1] < stack[0]).
+   JNE <label>
+      -- POPs the stack, and JUMPs to <label> if CMP pushed a non 0 result.
+   JE <label>
+      -- As JNE, but checks for an equal (0) CMP result.
+   JL <label>
+      -- As JNE, but checks for a less-than (-1) CMP result.
+   JG <label>
+      -- As JNE, but checks for a greater-than (1) CMP result.
+   JLE <label>
+      -- As JNE, but checks for a less-than or equal-to !(1) CMP result.
+   JGE <label>
+      -- As JNE, but checks for a greater-than or equal-to !(-1) CMP result.
+   BNE <label>
+      -- POPs the stack, and CALLs to <label> if CMP pushed a non 0 result.
+   BE <label>
+      -- As BNE, but checks for an equal (0) CMP result.
+   BL <label>
+      -- As BNE, but checks for a less-than (-1) CMP result.
+   BG <label>
+      -- As BNE, but checks for a greater-than (1) CMP result.
+   BLE <label>
+      -- As BNE, but checks for a less-than or equal-to !(1) CMP result.
+   BGE <label>
+      -- As BNE, but checks for a greater-than or equal-to !(-1) CMP result.
+   CALLC <functionName>
+      -- Calls the "C" function registered with the VM passing a pointer
+         to the VM's state machine as the only parameter.
+   CALL <label>
+      -- Jumps to the indicated label in the script - pushing it's current
+         PC onto the call stack.
+   RETURN
+      -- Jumps to the PC most recently pushed onto the call stack with
+         CALL command, popping the call stack in the process.
+   PUSH_CALL <label_name>
+      -- Pushes the address of <label_name> onto the top of the call
+         stack.
+   POP_CALL
+      -- Pops the top address off the call stack.
+
+   ANIMATION OPCODES:
+
+   START_MOTION <nMotionNumber> <iFrame> <iFlags>
+      -- Start motion <nMotionNumber> at frame <iFrame> using
+         motion flags <iFlags>
+   STOP_MOTION
+      -- Pause the motion for this animation
+   KEY_FRAME <iFrame>
+      -- Display frame <iFrame> of the current motion
+   INTERP_FRAME (nFrameOffset, fPercent)
+      -- Interpolate between the current frame of animation and the
+         specified frame.  The interpolation will calculate the new frame
+         fPercent away from the current frame.
+   DELAY (nFrames)
+      -- Delay animation script processing for nFrames number of ticks.
+   END_ANIM
+      -- Stop Anim script processing.
+   FORCE <fX> <fY> <fZ>
+      -- Apply this force vector to the actor.
+   IMPULSE (fX, fY, fZ)
+      -- Directly apply this velocity vector to the actor.
+   IMPULSE_X (fX)
+      -- Directly apply this velocity vector to the actor.
+   IMPULSE_Y (fY)
+      -- Directly apply this velocity vector to the actor.
+   IMPULSE_Z (fZ)
+      -- Directly apply this velocity vector to the actor.
+   OFFSET (fX, fY, fZ)
+      -- DEPRICATED - do not use
+   JUMP <AnimLabel>
+      -- Jump to this offset to perform the next animation script command.
+         The offset will be calculated by the script compiler.
+   NEW_ANIM <nAnimNumber>
+      -- Jump to this animation number and begin processing that script.
+         This is different from the JUMP command in that the actor's
+         animation number will change (for ai purposes).
+   CODE (nFunctionNumber)
+      -- Call function table entry <nFunctionNumber>.
+   IF_SET (nAnimLabel)
+      -- If nAnimVar is true, then jump to the label.
+   IF_NOT_SET (nAnimLabel)
+      -- If nAnimVar is false, then jump to the label.
+   IF_EQ   (nValue, nAnimLabel)
+      -- If nAnimVar is equal to nValue, then jump to the label.
+   IF_LE <animLabel>
+      -- if VM's register is <= 0, jump to <animLabel>
+   IF_LT <animLabel>
+      -- if VM's register is < 0, jump to <animLabel>
+   IF_NE <animLabel>
+      -- if VM's register is != 0, jump to <animLabel>
+   IF_GE <animLabel>
+      -- if VM's register is >= 0, jump to <animLabel>
+   IF_GT <animLabel>
+      -- if VM's register is > 0, jump to <animLabel>
+   ACTION (nAction)
+      -- Set the actor's action to this value.  SET_ACTION is a macro
+         for this opcode.
+   WAIT_HIT_GROUND
+      -- Do not go past this command until the actor has landed on the
+         ground
+   WAIT_TIL_HOLD
+      -- Do not go past this command until the actor is at a hold in his
+         motion process.
+   WAIT_INTERP_DONE
+      -- Do not go past this command until the actor has completed any
+         scripted interpolation commands.
+   WAIT_FOR_FRAME <iFrame>
+      -- Do not go past this command until the actor is at frame <iFrame>
+   PLAY_RANDOM_SOUND <iExpr> <iExpr> <iExpr>
+      -- NOT IMPLEMENTED
+   PLAY_SOUND (iSound)
+      -- NOT IMPLEMENTED
+         Play the sound iSound.
+   PLAY_SOUND_VOLUME (iSound, iVolume)
+      -- NOT IMPLEMENTED
+         Play the sound iSound at volume iVolume.
+   COLLISION_DELAY (nFrames)
+      -- NOT IMPLEMENTED
+         Process collisions during the specified number of frames.
+   SET_FLAG (nBitMask)
+      -- Bitwise OR this value into the actor's flags field
+   CLR_FLAG   (nBitMask)
+      -- Bitwise AND the NEGATED value with the actor's flags field
+   CREATE_PROC   (nProcNumber, nProcID)
+      -- Get the address of the process from the Process Table and create it
+         using ProcID as the process ID
+   KILL_PROC (nProcID)
+      -- Kill all instances of nProcID
+   SOUND   (nSequence)
+      -- Trigger nSequence to play
+   ATTACH_OBJ
+   DETACH_OBJ
+   SLAVE_POS (fX, fY, fZ)
+   SLAVE_FORCE (fX, fY, fZ)
+   SLAVE_IMPULSE (fX, fY, fZ)
+   CHECK_DEAD
+      -- Check to see if this object is dead, if so, run the DIE script
+   COLLISION (nType)
+      -- Check for an offensive collision of nType
+   GET_ACTION
+      -- Loads the current action of the script into the VM's register.
+         Use PUSH_REG/POP_REG to manipulate the VM's register value.
+   GET_FRAME
+      -- Loads the current animation frame into the VM's register.
+   GET_RANDOM <iExpr>
+      -- Loads a random value from [0..<iExpr>] into the VM's register.
+   SET_ANIM_RATE <fExpr>
+      -- Sets the animation rate for primary channel.
+   SET_ANIM_RATE_2 <fExpr>
+      -- Sets the animation rate for the secondary channel.
+   SET_ACTION_LO <iExpr>
+      -- Sets the low word of the action with the low bytes of <iExpr>.
+   GET_ACTION_LO
+      -- Pushes the low word of the action onto the operand stack.
+   SET_ACTION_HI <iExpr>
+      -- Sets the high word of the action with the high bytes of <iExpr>.
+   GET_ACTION_HI
+      -- Pushes the high word of the action onto the operand stack.
+
+
+   The following is a description of the C-API that has been added to
+    Animproc.c/.h:
+
+typedef void (*fpAnimScriptCall)( void* pActor );
+
+fpAnimScriptCall vmScriptRegister( void *vm, fpAnimScriptCall cCall, const char *pFuncName );
+   This function registers a C-callback function that the VM should call in
+   response to a CALLC OPCODE.
+
+int vmScriptPeekType( void *vm );
+   This function returns the type of the value on the top of the stack:
+      INT_TYPE, FLOAT_TYPE, STRING_TYPE, or DYNAMIC_STRING_TYPE.
+
+void vmScriptPush( void *vm, int iValue );
+   Push a float value onto the operand stack.
+
+void vmScriptPush( void *vm, float fValue );
+   Push an int value onto the operand stack.
+
+void vmScriptPush( void *vm, char *sValue, bool bDeleteOnPop = false );
+   Push a string value onto the operand stack.  bDeleteOnPop tells the VM if
+it
+   should delete the character array when it is popped from the opstack by a
+   call to the POP OPCODE.
+
+int vmScriptPopInt( void *vm );
+   Pop an integer from the opstack, and return it.
+
+float vmScriptPopFloat( void *vm );
+   Pop a float from the opstack, and return it.
+
+char *vmScriptPopString( void *vm, bool &bDeleteWhenDone );
+   Pop a char* from the opstack, and return it.  bDeleteWhenDone tells the
+   application if it is now responsible for deleting the character array
+   when it is done processing it, or not.
+
+void vmScriptSwap( void *vm, int iIndex = 1 );
+   Swap the top stack value with iIndex stack value.
+
+void vmScriptDup( void *vm, int iIndex = 0 );
+   Push a copy of stack value at iIndex.
+
+void vmScriptStore( void *vm, const char *pVarName );
+   STORE the stack[0] to variable named pVarName.  ASSERTs if pVarName
+wasn't
+   declared in the script - the C-API can't create new variable names at run
+   time.
+
+void vmScriptLoad( void *vm, const char *pVarName );
+   LOAD from the variable named pVarName to stack[0].  ASSERTs if pVarName
+   wasn't declared in the script - the C-API can't create new variable names
+   at run time.

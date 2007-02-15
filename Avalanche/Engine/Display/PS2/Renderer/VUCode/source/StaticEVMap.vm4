@@ -1,0 +1,165 @@
+.vu
+
+include( `VUDefines.vm4')
+include( 'VUStaticDefines.vm4')
+
+define( 'irCopyCount', 'VI01')
+
+define( 'irBaseVtxPtr', 'VI02')
+define( 'irKickPtr', 'VI03')
+
+define( 'irNormalPtr', 'VI04')
+define( 'irOutDataPtr', 'VI05')
+
+define( 'irOutPtr', 'VI06')
+define( 'irVtxPtr', 'VI07')
+define( 'irZADCPtr', 'VI08')
+
+define( 'irVtxCount', 'VI10')
+define( 'irLoopCount', 'VI11')
+define( 'irOutputPtr', 'VI12')
+define( 'irTemp1', 'VI04')
+
+	.global	dbStaticEVMap_CodeBegin
+	.global	dbStaticEVMap_CodeEnd
+
+.dmadata dbStaticEVMap_CodeBegin
+	NOP		XTOP	irBaseVtxPtr		; get ptr to VUBuffer
+	NOP		ILW.w	irTemp1, 0(irBaseVtxPtr)w		; grab stateFlags
+
+	NOP		IADDIU	VI01, VI00, 0x0002		; EnvMapping flag
+	NOP		IAND	irTemp1, irTemp1, VI01		; mask EnvMapping bit
+	NOP		IBEQ	irTemp1, VI00, dbSC_Return		; skip non-mapped blocks
+	NOP		NOP
+
+	NOP		ILW.x	irOutPtr, offEVD1+0(VI00)
+	NOP		ILW.y	irTemp1, offEVD1+0(VI00)
+	NOP		ILW.z	irOutDataPtr, offEVD1+0(VI00)
+
+	NOP		ISW.y	irOutPtr, offEVD1+0(VI00)
+	NOP		ISW.x	irTemp1, offEVD1+0(VI00)
+
+	NOP		ILW.y	irNormalPtr, 1(irBaseVtxPtr)y	; grab NormalStreamOffset
+	NOP		ILW.w	irOutputPtr, 1(irBaseVtxPtr)w	; grab OutputOffset
+	
+	NOP		ILW.z	irCopyCount, 0(irBaseVtxPtr)z	; grab copyCount
+	NOP		ILW.y	irLoopCount, 0(irBaseVtxPtr)y	; grab loopCount
+
+	NOP	 	IADD	irKickPtr, irOutputPtr, irOutPtr	; calculate OutBuffer base ptr
+	NOP		IADD	irNormalPtr, irNormalPtr, irBaseVtxPtr
+	
+	NOP		IADDIU	irOutPtr, irKickPtr, 0		; <ds> calculate OutBuffer moving ptr
+
+	NOP		LQ.w	VF23, offBaseTexGIFData+1(VI00)
+
+	NOP		LQ	VF09, offEVMtx+0(VI00)
+	NOP		LQ	VF10, offEVMtx+1(VI00)
+	NOP		LQ	VF11, offEVMtx+2(VI00)
+	NOP		LQ	VF12, offEVMtx+3(VI00)
+
+	NOP		SQI	VF31, (irOutPtr++)
+	NOP		ISW.z	irOutPtr, offEVD1+0(VI00)
+
+dbSC_Prolog:
+	NOP		LQI	VF17, (irNormalPtr++)
+	NOP		LQ	VF13,  1(irOutDataPtr)
+	NOP		NOP
+	MULAw.xyzw	ACC, VF12, VF00w	ISUBIU	irLoopCount, irLoopCount, 1
+	ITOF15	VF17, VF17	NOP
+	ITOF0.w	VF13, VF13	NOP
+
+	MADDAx.xyzw	ACC, VF09, VF17x	NOP
+	MADDAy.xyzw	ACC, VF10, VF17y	LQ	VF14,  4(irOutDataPtr)
+	MADDz.xyzw	VF17, VF11, VF17z	LQ	VF19,  0(irOutDataPtr)
+	MULw.w	VF13, VF13, VF23w	LQI	VF18, (irNormalPtr++)
+	MULAw.xyzw	ACC, VF12, VF00w	NOP
+	ITOF0.w	VF14, VF14	NOP
+	MULz.xyz	VF19, VF17, VF19z	LQ	VF20,  3(irOutDataPtr)
+	ITOF15	VF18, VF18	NOP
+	
+dbSC_Loop:
+	FTOI0.w	VF13, VF13	LQ	VF21,  2(irOutDataPtr)
+	MADDAx.xyzw	ACC, VF09, VF18x	LQ	VF15,  7(irOutDataPtr)
+	MADDAy.xyzw	ACC, VF10, VF18y	LQI	VF17, (irNormalPtr++)
+	MADDz.xyzw	VF18, VF11, VF18z	SQI	VF19, (irOutPtr++)
+	MULw.w	VF14, VF14, VF23w	SQI	VF13, (irOutPtr++)
+	MULAw.xyzw	ACC, VF12, VF00w	SQI	VF21, (irOutPtr++)
+	ITOF15	VF17, VF17	NOP
+	ITOF0.w	VF15, VF15	NOP
+	MULz.xyz	VF20, VF18, VF20z	LQ	VF19,  6(irOutDataPtr)
+	FTOI0.w	VF14, VF14	LQ	VF21,  5(irOutDataPtr)
+	MADDAx.xyzw	ACC, VF09, VF17x	LQ	VF16, 10(irOutDataPtr)
+	MADDAy.xyzw	ACC, VF10, VF17y	LQI	VF18, (irNormalPtr++)
+	MADDz.xyzw	VF17, VF11, VF17z	SQI	VF20, (irOutPtr++)
+	MULw.w	VF15, VF15, VF23w	SQI	VF14, (irOutPtr++)
+	MULAw.xyzw	ACC, VF12, VF00w	SQI	VF21, (irOutPtr++)
+	ITOF15	VF18, VF18	NOP
+	ITOF0.w	VF16, VF16	IADDIU	irOutDataPtr, irOutDataPtr, 12
+	MULz.xyz	VF19, VF17, VF19z	LQ	VF20, -3(irOutDataPtr)
+	FTOI0.w	VF15, VF15	LQ	VF21, -4(irOutDataPtr)
+	MADDAx.xyzw	ACC, VF09, VF18x	LQ	VF13,  1(irOutDataPtr)
+	MADDAy.xyzw	ACC, VF10, VF18y	LQI	VF17, (irNormalPtr++)
+	MADDz.xyzw	VF18, VF11, VF18z	SQI	VF19, (irOutPtr++)
+	MULw.w	VF16, VF16, VF23w	SQI	VF15, (irOutPtr++)
+	MULAw.xyzw	ACC, VF12, VF00w	SQI	VF21, (irOutPtr++)
+	ITOF15	VF17, VF17	NOP
+	ITOF0.w	VF13, VF13	ISUBIU	irLoopCount, irLoopCount, 1
+	MULz.xyz	VF20, VF18, VF20z	LQ	VF19,  0(irOutDataPtr)
+	FTOI0.w	VF16, VF16	LQ	VF21, -1(irOutDataPtr)
+	MADDAx.xyzw	ACC, VF09, VF17x	LQ	VF14,  4(irOutDataPtr)
+	MADDAy.xyzw	ACC, VF10, VF17y	LQI	VF18, (irNormalPtr++)
+	MADDz.xyzw	VF17, VF11, VF17z	SQI	VF20, (irOutPtr++)
+	MULw.w	VF13, VF13, VF23w	SQI	VF16, (irOutPtr++)
+	MULAw.xyzw	ACC, VF12, VF00w	SQI	VF21, (irOutPtr++)
+	ITOF15	VF18, VF18	NOP
+	ITOF0.w	VF14, VF14	IBNE	irLoopCount, VI00, dbSC_Loop
+	MULz.xyz	VF19, VF17, VF19	LQ	VF20, 3(irOutDataPtr)
+
+dbSC_Epilog:	
+	FTOI0.w	VF13, VF13	LQ	VF21,  2(irOutDataPtr)
+	MADDAx.xyzw	ACC, VF09, VF18x	LQ	VF15,  7(irOutDataPtr)
+	MADDAy.xyzw	ACC, VF10, VF18y	LQI	VF17, (irNormalPtr++)
+	MADDz.xyzw	VF18, VF11, VF18z	SQI	VF19, (irOutPtr++)
+	MULw.w	VF14, VF14, VF23w	SQI	VF13, (irOutPtr++)
+	MULAw.xyzw	ACC, VF12, VF00w	SQI	VF21, (irOutPtr++)
+	ITOF15	VF17, VF17	NOP
+	ITOF0.w	VF15, VF15	NOP
+	MULz.xyz	VF20, VF18, VF20z	LQ	VF19,  6(irOutDataPtr)
+	FTOI0.w	VF14, VF14	LQ	VF21,  5(irOutDataPtr)
+	MADDAx.xyzw	ACC, VF09, VF17x	LQ	VF16, 10(irOutDataPtr)
+	MADDAy.xyzw	ACC, VF10, VF17y	LQI	VF18, (irNormalPtr++)
+	MADDz.xyzw	VF17, VF11, VF17z	SQI	VF20, (irOutPtr++)
+	MULw.w	VF15, VF15, VF23w	SQI	VF14, (irOutPtr++)
+	MULAw.xyzw	ACC, VF12, VF00w	SQI	VF21, (irOutPtr++)
+	ITOF15	VF18, VF18	NOP
+	ITOF0.w	VF16, VF16	NOP
+	MULz.xyz	VF19, VF17, VF19z	LQ	VF20,  9(irOutDataPtr)
+	FTOI0.w	VF15, VF15	LQ	VF21,  8(irOutDataPtr)
+	MADDAx.xyzw	ACC, VF09, VF18x	NOP
+	MADDAy.xyzw	ACC, VF10, VF18y	NOP
+	MADDz.xyzw	VF18, VF11, VF18z	SQI	VF19, (irOutPtr++)
+	MULw.w	VF16, VF16, VF23w	SQI	VF15, (irOutPtr++)
+	NOP		SQI	VF21, (irOutPtr++)
+	NOP		NOP
+	MULz.xyz	VF20, VF18, VF20z	NOP
+	FTOI0.w	VF16, VF16	LQ	VF21, 11(irOutDataPtr)
+	NOP		NOP
+	NOP		NOP
+	NOP		SQI	VF20, (irOutPtr++)
+	NOP		SQI	VF16, (irOutPtr++)
+	NOP		SQI	VF21, (irOutPtr++)
+	
+dbSC_Kick:
+	NOP		IADDIU	VI01, VI00, offEVTexGIFData
+	NOP		NOP
+	NOP		XGKICK	VI01
+	NOP		NOP
+	NOP		XGKICK	irKickPtr
+
+dbSC_Return:
+	NOP		JR	VI15
+	NOP		NOP
+
+.enddmadata
+dbStaticEVMap_CodeEnd:
+

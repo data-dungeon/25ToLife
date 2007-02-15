@@ -1,0 +1,9 @@
+create "SNPS2Consumer\WatchClient.lib"
+addmod "SNPS2Consumer/MessageQueue.obj"
+addmod "SNPS2Consumer/WatchClient.obj"
+addmod "SNPS2Consumer/WatchClientGCN.obj"
+addmod "SNPS2Consumer/WatchClientPS2.obj"
+addmod "SNPS2Consumer/WatchClientWin32.obj"
+addmod "SNPS2Consumer/watchclientxbox.obj"
+save
+end

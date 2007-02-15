@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameClient", "GameClient.vcproj", "{BF82EA3F-A733-4319-95D4-9FA2D0743600}"
+	ProjectSection(ProjectDependencies) = postProject
+		{537969DD-BD07-43D7-9BF9-D414C210CA24} = {537969DD-BD07-43D7-9BF9-D414C210CA24}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IMMDLL", "..\..\..\IMMDLL\IMMDLL\IMMDLL.vcproj", "{537969DD-BD07-43D7-9BF9-D414C210CA24}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SolutionUniqueID = {BB173C4C-52E3-4F1B-8826-2BB9347E2822}
+		SccProjectUniqueName1 = GameClient.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\..\\IMMDLL\\IMMDLL\\IMMDLL.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/IMMDLL/IMMDLL\u0022
+		SccLocalPath2 = ..\\..\\..\\Immdll\\Immdll
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BF82EA3F-A733-4319-95D4-9FA2D0743600}.Debug.ActiveCfg = Debug|Win32
+		{BF82EA3F-A733-4319-95D4-9FA2D0743600}.Debug.Build.0 = Debug|Win32
+		{BF82EA3F-A733-4319-95D4-9FA2D0743600}.Release.ActiveCfg = Release|Win32
+		{BF82EA3F-A733-4319-95D4-9FA2D0743600}.Release.Build.0 = Release|Win32
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Debug.ActiveCfg = Debug|Win32
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Debug.Build.0 = Debug|Win32
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Release.ActiveCfg = Release|Win32
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,230 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Display"=..\..\EngineNew\Display\Display.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/EngineNew/Display", ETAAAAAA
+    ..\..\enginenew\display
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EngineHelper"=..\..\GameLibNew\EngineHelper\EngineHelper.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLibNew/EngineHelper", JJKAAAAA
+    ..\..\gamelibnew\enginehelper
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Game"=..\..\EngineNew\Game\Game.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/EngineNew/Game", FAAAAAAA
+    ..\..\enginenew\game
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Layers"=..\..\EngineNew\Layers\Layers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/EngineNew/Layers", AAAAAAAA
+    ..\..\enginenew\layers
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Math"=..\..\EngineNew\Math\Math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/EngineNew/Math", WEAAAAAA
+    ..\..\enginenew\math
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Pigpen"=.\Pigpen.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Pigpen", UDCAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Display
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Layers
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Processor
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EngineHelper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name geomUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name container
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name hud
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name tupperware
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mathUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "container"=..\..\GameLibNew\container\container.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLibNew/container", QIKAAAAA
+    ..\..\gamelibnew\container
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "geomUtil"=..\..\GameLibNew\geomUtil\geomUtil.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLibNew/geomUtil", XKKAAAAA
+    ..\..\gamelibnew\geomutil
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "hud"=..\..\GameLibNew\hud\hud.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLibNew/hud", RIRAAAAA
+    ..\..\gamelibnew\hud
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mathUtil"=..\..\GameLibNew\mathUtil\mathUtil.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/mathUtil", ZJKAAAAA
+    ..\..\gamelibnew\mathutil
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "tupperware"=..\..\GameLibNew\Tupperware\tupperware.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Tupperware", MROAAAAA
+    ..\..\gamelibnew\tupperware
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Pigpen", UDCAAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,379 @@
+define( 'DL_Setup', myPrefix'_DL_Setup')
+define( 'DLight_Entry', myPrefix'_DL_Entry')
+
+define( 'PL_Setup', myPrefix'_PL_Setup')
+define( 'PLight_Entry', myPrefix'_PL_Entry')
+
+define( 'AL_Setup', myPrefix'_AL_Setup')
+define( 'ALight_Entry', myPrefix'_AL_Entry')
+
+define( 'irLightRGBAWork', 'VI01')
+define( 'irLightRGBAMask', irLightTemp1)
+
+	.global	DL_Setup
+	.global	PL_Setup
+	.global	AL_Setup
+
+DL_Setup:
+	NOP		LQI	VF01, (VI01++)
+	NOP		LQI	VF02, (VI01++)
+	NOP		LQI	VF03, (VI01++)
+
+	NOP		LQI	VF04, (VI01++)
+	NOP		LQI	VF05, (VI01++)
+	MULx.w	VF04, VF00, VF00	LQI	VF06, (VI01++)
+	
+	MULx.w	VF05, VF00, VF00	LQI.xyz	VF07, (VI01++)
+
+	NOP		LOI	255.0	
+	MULx.w	VF06, VF00, VF00	SQ	VF01, offDLightVecs+0(VI00)
+	MULi.w	VF07, VF00, I	SQ	VF02, offDLightVecs+1(VI00)
+	NOP		SQ	VF03, offDLightVecs+2(VI00)
+	
+	NOP		LQI	VF01, (VI01++)
+	NOP		SQ	VF04, offDLightClrs+0(VI00)
+	NOP		SQ	VF05, offDLightClrs+1(VI00)
+	NOP		SQ	VF06, offDLightClrs+2(VI00)
+	NOP		SQ	VF07, offALightClr+0(VI00)
+
+	NOP		BAL	VI02, DL_RefAddr
+	NOP		SQ	VF01, offLightBlendData+0(VI00)
+
+DL_RefAddr:
+	NOP		ISUBIU	VI02, VI02, DL_RefAddr
+	NOP		JR	VI15
+	NOP		IADDIU	VI02, VI02, DLight_Entry
+	
+;------------------------------------------------------------------------------------------
+DLight_Entry:
+	NOP		IADDIU	irLightRGBAMask, VI00, 0x00ff
+	NOP		MTIR	irLightRGBAWork, VF28x
+	NOP		IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	NOP		MFIR.x	VF28, irLightRGBAWork
+	NOP		MTIR	irLightRGBAWork, VF28y
+	NOP		IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	NOP		MFIR.y	VF28, irLightRGBAWork
+	NOP		MTIR	irLightRGBAWork, VF28z
+	NOP		IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	NOP		MFIR.z	VF28, irLightRGBAWork
+	NOP		MTIR	irLightRGBAWork, VF28w
+	NOP		IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	NOP		MFIR.w	VF28, irLightRGBAWork
+	
+	ITOF15.xyz	VF27, VF27	LQ	VF18, offDLightVecs+0(VI00)
+	NOP		LQ	VF19, offDLightVecs+1(VI00)
+	NOP		LQ	VF20, offDLightVecs+2(VI00)
+	ITOF0	VF28, VF28	LQ	VF26, offLightBlendData+0(VI00)
+	
+	MULAx.xyz	ACC, VF18, VF27x	LQ	VF21, offDLightClrs+0(VI00)
+	MADDAy.xyz	ACC, VF19, VF27y	LQ	VF22, offDLightClrs+1(VI00)
+	MADDz.xyz	VF25, VF20, VF27z	LQ	VF23, offDLightClrs+2(VI00)
+
+	ADDAw.w	ACC, VF26w, VF28w	LQ	VF24, offALightClr+0(VI00)
+	MULAx.xyz	ACC, VF28, VF26x	NOP
+
+	MULy.xyz	VF28, VF28, VF26y	NOP	
+
+	MAXx.xyz	VF25, VF25, VF00x	NOP
+	NOP		NOP
+	NOP		IADDIU	irLightTemp1, VI00, 0x0E
+	MULAw.xyz	ACC, VF24, VF00w	FMAND	VI01, irLightTemp1
+
+	MADDAx.xyzw	ACC, VF21, VF25x	NOP
+	MADDAy.xyzw	ACC, VF22, VF25y	IBEQ	VI01, irLightTemp1, DL_NoVertexMul
+	MADDz.xyzw	VF25, VF23, VF25z	NOP
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	MUL.xyz	VF25, VF25, VF28	NOP
+	
+DL_NoVertexMul:
+	NOP		LQ	VF18, offLitRGBAs+1(irLitRGBAs)
+	NOP		LQ	VF19, offLitRGBAs+2(irLitRGBAs)
+	NOP		NOP
+	
+	MINIw.xyzw	VF28, VF25, VF24w	NOP
+	
+	NOP		SQ	VF18, offLitRGBAs+0(irLitRGBAs)
+	NOP		SQ	VF19, offLitRGBAs+1(irLitRGBAs)
+	NOP		JR	VI15
+	NOP		SQ	VF28, offLitRGBAs+2(irLitRGBAs)
+
+
+PL_Setup:
+	NOP		LQI	VF01, (VI01++)	; Load PLight1 Position
+	NOP		LQI	VF02, (VI01++)	; Load PLight2 Position
+	
+	NOP		LQI	VF03, (VI01++)	; Load PLight1 Color
+	NOP		LQI	VF04, (VI01++)	; Load PLight2 Color
+
+	MULx.w	VF03, VF00, VF00	LQI	VF05, (VI01++)	; Load PLight InvScale
+	MULx.w	VF04, VF00, VF00	LQI	VF06, (VI01++)	; Load Ambient Color
+	NOP		LQI	VF07, (VI01++)	; Load Blend Data	
+	NOP		LOI	255.0	
+	NOP		SQ	VF01, offPLightPositions+0(VI00)
+	MULi.w	VF06, VF00, I	SQ	VF02, offPLightPositions+1(VI00)
+
+	NOP		SQ	VF03, offPLightClrs+0(VI00)
+	NOP		SQ	VF04, offPLightClrs+1(VI00)
+
+	NOP		SQ	VF05, offPLightScale+0(VI00)
+	NOP		SQ	VF06, offALightClr+0(VI00)
+	
+	NOP		BAL	VI02, PL_RefAddr
+	NOP		SQ	VF07, offLightBlendData+0(VI00)
+	
+PL_RefAddr:
+	NOP		ISUBIU	VI02, VI02, PL_RefAddr
+	NOP		JR	VI15
+	NOP		IADDIU	VI02, VI02, PLight_Entry
+	
+;
+; vertex xyz in vf26
+;	
+PLight_Entry:
+	ITOF15.xyz	VF27, VF27				LQ	VF18, offPLightPositions+0(VI00)
+	NOP									LQ	VF19, offPLightPositions+1(VI00)
+	NOP									LQ	VF24, offPLightScale+0(VI00)
+	NOP									IADDIU	irLightRGBAMask, VI00, 0x00ff
+	SUB.xyz	VF20, VF18, VF26			MTIR	irLightRGBAWork, VF28x
+	SUB.xyz	VF21, VF19, VF26			IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	ADDw.xyz	VF23, VF00, VF00w		MFIR.x	VF28, irLightRGBAWork
+	NOP									MTIR	irLightRGBAWork, VF28y
+	MUL.xyz	VF20, VF20, VF24			IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	MUL.xyz	VF21, VF21, VF24			MFIR.y	VF28, irLightRGBAWork
+	NOP									MTIR	irLightRGBAWork, VF28z
+	NOP									IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	mul.xyz vf24, vf20, vf20			ERLENG	P, VF20
+	MUL.xyz	VF22, VF21, VF21			MFIR.z	VF28, irLightRGBAWork
+	MUL.xyz	VF20, VF20, VF27			MTIR	irLightRGBAWork, VF28w
+	MUL.xyz	VF21, VF21, VF27			IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	NOP									MFIR.w	VF28, irLightRGBAWork
+	MULAx.x	ACC, VF23, VF22x			NOP
+	MADDAy.x	ACC, VF23, VF22y		NOP
+	MADDz.x	VF22, VF23, VF22z			NOP
+	mulax.x acc, vf23, vf24x			NOP
+	ITOF0	VF28, VF28					NOP
+	madday.x acc, vf23, vf24y			loi		200.0
+	maddz.x vf24, vf23, vf24z			RSQRT	Q, VF00w, VF22x
+	
+	; --- see if the lights are far enough away from this vertex to disregard point lighting
+	subi.x vf00x, vf22x, i				iaddiu	irLightTemp1, vi00, 128
+	nop									nop
+	nop									nop
+	subi.x vf00x, vf24x, i				nop
+	nop									fmand	irLightTemp1, irLightTemp1
+	nop									ibne	irLightTemp1, vi00, PL_Light1OK
+	nop									iaddiu	irLightTemp1, vi00, 128
+	nop									fmand	irLightTemp1, irLightTemp1
+	nop									ibeq	irLightTemp1, vi00, PL_NoLight
+	nop									nop
+	nop									b		PL_GetLengths
+	nop									nop
+	
+PL_Light1OK:
+	nop									nop
+	nop									nop
+	nop									nop
+	nop									nop
+	nop									nop
+	
+PL_GetLengths:
+	nop									mfp.x	vf22, p
+	addq.y	vf22, vf00, q				nop
+	
+	NOP									NOP
+	NOP									LQ.xyz	VF18, offPLightClrs+0(VI00)
+	NOP									LQ.xyz	VF19, offPLightClrs+1(VI00)
+	MUL.xy	VF23, VF22, VF22			LQ.xyzw	VF24, offALightClr+0(VI00)
+	NOP									LQ	VF26, offLightBlendData+0(VI00)
+	NOP									NOP
+	NOP									NOP
+	MUL.xy	VF23, VF23, VF22			NOP
+	NOP									NOP
+	NOP									NOP
+	NOP									NOP
+	MULAx.x	ACC, VF23, VF20x			NOP
+	MADDAy.x	ACC, VF23, VF20y		NOP
+	MADDz.x	VF20, VF23, VF20z			NOP
+	MULAx.y	ACC, VF23, VF21x			NOP
+	MADDAy.y	ACC, VF23, VF21y		NOP
+	MADDz.y	VF20, VF23, VF21z			NOP
+	
+	ADDAw.w	ACC, VF26, VF28w			NOP
+	NOP									NOP
+	MULAx.xyz	ACC, VF28, VF26x		NOP
+	
+	MULw.x	VF20, VF20, VF18w			NOP
+	MULw.y	VF20, VF20, VF19w			NOP
+	NOP									NOP
+	MULx.w	VF19, VF00, VF00			NOP
+	MULy.xyz	VF28, VF28, VF26y		NOP
+	MAXx.xy	VF20, VF20, VF00x			NOP
+	NOP									NOP
+	NOP									IADDIU	irLightTemp1, VI00, 0x0E
+	MADDAw.xyz	ACC, VF24, VF00w		FMAND	VI01, irLightTemp1
+	MADDAx.xyz	ACC, VF18, VF20x		IBEQ	VI01, irLightTemp1, PL_NoVertexMul
+	MADDy.xyzw	VF25, VF19, VF20y		NOP
+	
+	NOP									NOP
+	NOP									NOP
+	NOP									NOP
+	MUL.xyz	VF25, VF25, VF28			NOP
+
+PL_NoVertexMul:
+	NOP		LQ	VF18, offLitRGBAs+1(irLitRGBAs)
+	NOP		LQ	VF19, offLitRGBAs+2(irLitRGBAs)
+	NOP		NOP
+	
+	MINIw.xyzw	VF28, VF25, VF24w	NOP
+
+PL_NoOperation:	
+	NOP		SQ	VF18, offLitRGBAs+0(irLitRGBAs)
+	NOP		SQ	VF19, offLitRGBAs+1(irLitRGBAs)
+	NOP		JR	VI15
+	NOP		SQ	VF28, offLitRGBAs+2(irLitRGBAs)
+
+PL_NoLight:
+	nop									lq		vf18, offLitRGBAs+1(irLitRGBAs)
+	nop									lq		vf19, offLitRGBAs+2(irLitRGBAs)
+	nop									b		PL_NoOperation
+	nop									nop
+	
+AL_Setup:
+	NOP		LQI	VF01, (VI01++)	; Load PLight1 Position
+	NOP		LQI	VF02, (VI01++)	; Load PLight2 Position
+	
+	NOP		LQI	VF03, (VI01++)	; Load PLight1 Color
+	NOP		LQI	VF04, (VI01++)	; Load PLight2 Color
+
+	NOP		LQI	VF05, (VI01++)	; Load PLight InvScale
+	
+	NOP		SQ	VF01, offPLightPositions+0(VI00)
+	NOP		SQ	VF02, offPLightPositions+1(VI00)
+
+	NOP		SQ	VF03, offPLightClrs+0(VI00)
+	NOP		SQ	VF04, offPLightClrs+1(VI00)
+
+	NOP		SQ	VF05, offPLightScale+0(VI00)
+	
+	
+	NOP		LQI	VF01, (VI01++)
+	NOP		LQI	VF02, (VI01++)
+	NOP		LQI	VF03, (VI01++)
+
+	NOP		LQI	VF04, (VI01++)
+	NOP		LQI	VF05, (VI01++)
+	MULx.w	VF04, VF00, VF00	LQI	VF06, (VI01++)
+	
+	MULx.w	VF05, VF00, VF00	LQI.xyz	VF07, (VI01++)
+
+	NOP		LOI	255.0	
+	MULx.w	VF06, VF00, VF00	SQ	VF01, offDLightVecs+0(VI00)
+	MULi.w	VF07, VF00, I	SQ	VF02, offDLightVecs+1(VI00)
+	NOP		SQ	VF03, offDLightVecs+2(VI00)
+	
+	NOP		LQI	VF01, (VI01++)
+	NOP		SQ	VF04, offDLightClrs+0(VI00)
+	NOP		SQ	VF05, offDLightClrs+1(VI00)
+	NOP		SQ	VF06, offDLightClrs+2(VI00)
+	NOP		SQ	VF07, offALightClr+0(VI00)
+
+	NOP		BAL	VI02, AL_RefAddr
+	NOP		SQ	VF01, offLightBlendData+0(VI00)
+	
+AL_RefAddr:
+	NOP		ISUBIU	VI02, VI02, AL_RefAddr
+	NOP		JR	VI15
+	NOP		IADDIU	VI02, VI02, ALight_Entry
+
+	NOP		IADDIU	irLightRGBAMask, VI00, 0x00ff
+	NOP		MTIR	irLightRGBAWork, VF28x
+	NOP		IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	NOP		MFIR.x	VF28, irLightRGBAWork
+	
+ALight_Entry:
+	ITOF15.xyz	VF27, VF27	LQ	VF18, offPLightPositions+0(VI00)
+	NOP		LQ	VF19, offPLightPositions+1(VI00)
+	NOP		LQ.xyz	VF24, offPLightScale+0(VI00)
+	NOP		IADDIU	irLightRGBAMask, VI00, 0x00ff
+	SUB.xyz	VF20, VF18, VF26	MTIR	irLightRGBAWork, VF28x
+	SUB.xyz	VF21, VF19, VF26	IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	ADDw.xyz	VF23, VF00, VF00w	MFIR.x	VF28, irLightRGBAWork
+	NOP		MTIR	irLightRGBAWork, VF28y
+	MUL.xyz	VF20, VF20, VF24	IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	MUL.xyz	VF21, VF21, VF24	MFIR.y	VF28, irLightRGBAWork
+	NOP		MTIR	irLightRGBAWork, VF28z
+	NOP		IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	NOP		ERLENG	P, VF20
+	MUL.xyz	VF22, VF21, VF21	LQ.xyz	VF18, offDLightVecs+0(VI00)
+	MUL.xyz	VF20, VF20, VF27	LQ.xyz	VF19, offDLightVecs+1(VI00)
+	MUL.xyz	VF21, VF21, VF27	LQ.xyz	VF24, offDLightVecs+2(VI00)
+	NOP		MFIR.z	VF28, irLightRGBAWork
+	MULAx.x	ACC, VF23, VF22x	MTIR	irLightRGBAWork, VF28w
+	MADDAy.x	ACC, VF23, VF22y	IAND	irLightRGBAWork, irLightRGBAWork, irLightRGBAMask
+	MADDz.x	VF22, VF23, VF22z	MFIR.w	VF28, irLightRGBAWork
+	NOP		NOP
+	MULAx.xyz	ACC, VF18, VF27x	NOP
+	MADDAy.xyz	ACC, VF19, VF27y	NOP
+	MADDz.xyz	VF25, VF24, VF27z	RSQRT	Q, VF00w, VF22x
+	NOP		WAITQ
+	ADDq.y	VF22, VF00, Q	NOP
+	ITOF0	VF28, VF28	WAITP
+	NOP		MFP.x	VF22, P
+	MAXx.xyz	VF25, VF25, VF00x	NOP
+	NOP		LQ.xyz	VF18, offPLightClrs+0(VI00)
+	NOP		LQ.xyz	VF19, offPLightClrs+1(VI00)
+	MUL.xy	VF23, VF22, VF22	LQ.xyzw	VF24, offALightClr+0(VI00)
+	NOP		LQ	VF26, offLightBlendData+0(VI00)
+	NOP		NOP
+	NOP		NOP
+	MUL.xy	VF23, VF23, VF22	NOP
+	NOP		NOP
+	NOP		NOP
+	SUBy.w	VF20, VF00, VF26y	NOP
+	MULAx.x	ACC, VF23, VF20x	NOP
+	MADDAy.x	ACC, VF23, VF20y	NOP
+	MADDz.x	VF20, VF23, VF20z	NOP
+	MULAx.y	ACC, VF23, VF21x	NOP
+	MADDAy.y	ACC, VF23, VF21y	NOP
+	MADDz.y	VF20, VF23, VF21z	NOP
+	
+	ADDAw.w	ACC, VF26, VF28w	LQ.xyz	VF21, offDLightClrs+0(VI00)	; add in ConstantAlpha
+	NOP		LQ.xyz	VF22, offDLightClrs+1(VI00)	; add in VertexAlpha * VertexAlphaBlend
+	MULAx.xyz	ACC, VF28, VF26x	LQ.xyz	VF23, offDLightClrs+2(VI00)	; add in VertexRGB * VertexRGBBlend
+
+	MULw.x	VF20, VF20, VF18w	NOP
+	MULw.y	VF20, VF20, VF19w	NOP
+	
+	MADDAw.xyz	ACC, VF24, VF00w	NOP
+
+	MULx.w	VF19, VF00, VF00	NOP
+	MULy.xyz	VF28, VF28, VF26y	NOP
+	MAXx.xy	VF20, VF20, VF00x	NOP
+; Add in DLights	
+	MADDAx.xyz	ACC, VF21, VF25x	NOP
+	MADDAy.xyz	ACC, VF22, VF25y	IADDIU	VI10, VI00, 0x0E
+	MADDAz.xyz	ACC, VF23, VF25z	FMAND	VI01, VI10
+
+; Add in PLights	
+	MADDAx.xyz	ACC, VF18, VF20x	IBEQ	VI01, VI10, AL_NoVertexMul
+	MADDy.xyzw	VF25, VF19, VF20y	NOP
+	
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	MUL.xyz	VF25, VF25, VF28	NOP
+
+AL_NoVertexMul:	
+	NOP		LQ	VF18, offLitRGBAs+1(irLitRGBAs)
+	NOP		LQ	VF19, offLitRGBAs+2(irLitRGBAs)
+	NOP		NOP
+	
+	MINIw.xyzw	VF28, VF25, VF24w	NOP
+	
+	NOP		SQ	VF18, offLitRGBAs+0(irLitRGBAs)
+	NOP		SQ	VF19, offLitRGBAs+1(irLitRGBAs)
+	NOP		JR	VI15
+	NOP		SQ	VF28, offLitRGBAs+2(irLitRGBAs)

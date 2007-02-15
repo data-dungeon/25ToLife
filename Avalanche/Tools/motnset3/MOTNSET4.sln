@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MOTNSET4", "MOTNSET4.vcproj", "{239EA6D5-FF73-466C-971E-5AFA8E457AD7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{8FF7D7CD-4A59-4964-B6D7-F062E3F56624} = {8FF7D7CD-4A59-4964-B6D7-F062E3F56624}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Layers", "..\..\Engine\Layers\Layers.vcproj", "{8FF7D7CD-4A59-4964-B6D7-F062E3F56624}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "..\..\Engine\Math\Math.vcproj", "{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {B07D0D72-1AEC-4218-A71D-C5EA5058EB85}
+		SccProjectUniqueName1 = MOTNSET4.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\Engine\\Layers\\Layers.vcproj
+		SccLocalPath2 = ..\\..\\Engine\\Layers
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\Engine\\Math\\Math.vcproj
+		SccLocalPath3 = ..\\..\\Engine\\Math
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{239EA6D5-FF73-466C-971E-5AFA8E457AD7}.Debug.ActiveCfg = Debug|Win32
+		{239EA6D5-FF73-466C-971E-5AFA8E457AD7}.Debug.Build.0 = Debug|Win32
+		{239EA6D5-FF73-466C-971E-5AFA8E457AD7}.Release.ActiveCfg = Release|Win32
+		{239EA6D5-FF73-466C-971E-5AFA8E457AD7}.Release.Build.0 = Release|Win32
+		{8FF7D7CD-4A59-4964-B6D7-F062E3F56624}.Debug.ActiveCfg = Tools Debug|Win32
+		{8FF7D7CD-4A59-4964-B6D7-F062E3F56624}.Debug.Build.0 = Tools Debug|Win32
+		{8FF7D7CD-4A59-4964-B6D7-F062E3F56624}.Release.ActiveCfg = Tools Release|Win32
+		{8FF7D7CD-4A59-4964-B6D7-F062E3F56624}.Release.Build.0 = Tools Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Debug.ActiveCfg = Tools Debug|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Debug.Build.0 = Tools Debug|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Release.ActiveCfg = Tools Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,237 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SELECTION DIALOG DISCARDABLE  0, 0, 108, 143
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_SEL_TOOLBAR,"CustToolbar",WS_TABSTOP,37,1,32,16
+    GROUPBOX        "Selection filters",IDC_STATIC,7,34,94,102
+    LTEXT           "Points",IDC_STATIC,12,44,20,8
+    LTEXT           "Connections",IDC_STATIC,12,95,40,8
+    CONTROL         "Front",IDC_FLTPNT_FRONT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,52,32,10
+    CONTROL         "Back",IDC_FLTPNT_BACK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,63,33,10
+    CONTROL         "Attached",IDC_FLTPNT_ATTACHED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,73,45,10
+    CONTROL         "Inactive",IDC_FLTPNT_INACTIVE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,82,41,10
+    CONTROL         "Front",IDC_FLTCNN_FRONT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,105,32,10
+    CONTROL         "Front-Back",IDC_FLTCNN_FRONTBACK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,114,51,10
+    CONTROL         "Invalid",IDC_FLTCNN_INVALID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,124,37,10
+    LTEXT           "Brush size:",IDC_STATIC,18,20,35,8
+    CONTROL         "",IDC_BRUSH_SIZE,"CustEdit",WS_TABSTOP,58,20,25,9
+    CONTROL         "",IDC_BRUSH_SIZE_SPINNER,"SpinnerControl",WS_TABSTOP,82,
+                    20,7,9
+END
+
+IDD_POINTS DIALOG DISCARDABLE  0, 0, 108, 126
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Link to...",IDC_CMD_LINK,"CustButton",WS_TABSTOP,19,89,
+                    69,9
+    GROUPBOX        "Point Properties",IDC_STATIC,7,7,94,53
+    CONTROL         "Inactive",IDC_POINTPROP_INACTIVE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,13,18,41,10
+    CONTROL         "Front",IDC_POINTPROP_FRONT,"Button",BS_AUTORADIOBUTTON,
+                    13,28,32,10
+    CONTROL         "Attached",IDC_POINTPROP_ATTACHED,"Button",
+                    BS_AUTORADIOBUTTON,13,38,45,10
+    CONTROL         "Back",IDC_POINTPROP_BACK,"Button",BS_AUTORADIOBUTTON,13,
+                    47,33,10
+    GROUPBOX        "Build Connections",IDC_STATIC,7,62,94,57
+    CONTROL         "Custom1",IDC_LINK_DISTANCE,"CustEdit",WS_TABSTOP,63,71,
+                    25,9
+    PUSHBUTTON      "Link Edges",IDC_CMD_LINK_EDGES,13,71,49,9
+    CONTROL         "",IDC_LINKDIST_SPINNER,"SpinnerControl",WS_TABSTOP,88,
+                    71,7,9
+    PUSHBUTTON      "Create back-front conns",IDC_B2F_CREATE,13,103,81,9
+END
+
+IDD_CONNECTIONS DIALOG DISCARDABLE  0, 0, 108, 63
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_EXTEND,"CustEdit",WS_TABSTOP,26,47,50,9
+    CONTROL         "",IDC_EXTEND_SPINNER,"SpinnerControl",WS_TABSTOP,76,47,
+                    7,9
+    LTEXT           "Extend connections",IDC_STATIC,22,36,64,8
+    PUSHBUTTON      "Delete selected",IDC_CMD_DELETE_CONN,23,7,61,9
+    PUSHBUTTON      "Delete invalid",IDC_CMD_DELETE_INVALID,28,20,53,9
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SELECTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 101
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_POINTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 101
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_CONNECTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 101
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,0,0
+ PRODUCTVERSION 3,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileVersion", "4.0.0.0\0"
+            VALUE "InternalName", "Cloth\0"
+            VALUE "LegalCopyright", "\0"
+            VALUE "OriginalFilename", "Cloth.dlm\0"
+            VALUE "ProductName", "3ds max\0"
+            VALUE "ProductVersion", "4.0.0.0\0"
+            VALUE "FileDescription", "Cloth modifier\0"
+            VALUE "Comments", "TECH: \0"
+            VALUE "LegalTrademarks", "3D Studio MAX, Biped, Character Studio, Heidi, Kinetix and Physique are registered trademarks and 3ds max, combustion, Discreet, DWG Unplugged, DXF, FLI and FLC are trademarks of Autodesk, Inc.\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SEL_TOOLBAR         BITMAP  DISCARDABLE     "sel_tool.bmp"
+IDB_SEL_TOOLBAR_MASK    BITMAP  DISCARDABLE     "sel_mask.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LIBDESCRIPTION      "Cloth modifier"
+    IDS_CATEGORY            "Avalanche Plugins"
+    IDS_CLASS_NAME          "Cloth"
+    IDS_SELECTION           "Selection"
+    IDS_SPIN                "Spin"
+    IDS_POINTS              "Points"
+    IDS_CONNECTIONS         "Connections"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

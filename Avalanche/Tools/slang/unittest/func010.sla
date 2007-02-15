@@ -1,0 +1,16 @@
+int FuncA(float f);
+void FuncB(int i1, int i2);
+
+void FuncB(int i1, int i2)
+{
+	print 2;
+}
+
+int FuncA(float f)
+{
+	return 1;
+}
+
+print FuncA(1.0); // result: 1
+FuncB(1,2);			// result: 2
+

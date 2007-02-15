@@ -1,0 +1,8 @@
+; Utility.def : declares the module parameters for the DLL.
+
+LIBRARY	     "UtilityD"
+
+EXPORTS
+	HttpExtensionProc
+	GetExtensionVersion
+	TerminateExtension

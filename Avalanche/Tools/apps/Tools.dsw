@@ -1,0 +1,203 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "BuildDBL"=.\BuildDBL\BuildDBL.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/apps/BuildDBL", SSKAAAAA
+    .\builddbl
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name DBWriter
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "DBWriter"=.\DBWriter\DBWriter.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/apps/DBWriter", JXTBAAAA
+    .\DBWriter
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DBuilderLIB"=.\dbuilder.lib\DBuilderLIB.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/apps/dbuilder.lib", NACAAAAA
+    .\dbuilder.lib
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "HashDLL"=..\..\..\hash\apps\hash.dll\HashDLL.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name av2readl
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ImageReadDLL"=.\ireader.dll\ImageReadDLL.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ImageReadLIB"=.\ireader.lib\ImageReadLIB.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ModelLIB"=.\som.lib\ModelLIB.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name mathlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "N64TexSet"=.\N64TexSet\N64TexSet.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "av2readl"=..\..\..\hash\apps\av2readl\av2readl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "av2tosom"=.\av2tosom\av2tosom.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name DBuilderLIB
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name HashDLL
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ModelLIB
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name K2ADLL
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mathlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "cvtmotn"=.\cvtmotn\cvtmotn.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name DBuilderLIB
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mathlib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test"=.\test\test.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

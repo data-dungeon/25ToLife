@@ -1,0 +1,26 @@
+// void function test
+
+void func( int i )
+{
+   print i;
+   return;
+}
+
+func( 100 );	// result: 100
+func( 101 );	// result: 101
+
+int i;
+for ( i = 0 ; i < 10 ; func(i) )
+   i += 1;
+// result: 1
+// result: 2
+// result: 3
+// result: 4
+// result: 5
+// result: 6
+// result: 7
+// result: 8
+// result: 9
+// result: 10
+
+

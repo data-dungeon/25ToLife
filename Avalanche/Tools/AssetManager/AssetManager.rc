@@ -1,0 +1,858 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "toolkit\secres.h"    // Objective Toolkit Resource Symbols
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""toolkit\\secres.h""    // Objective Toolkit Resource Symbols\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\AssetManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\r\n"
+    "#include ""toolkit\\secres.rc""    // Objective Toolkit Resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\AssetManager.ico"
+IDI_BROWSE              ICON                    "res\\browse.ico"
+IDI_SORT                ICON                    "res\\sort.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 70
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About AssetManager"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,24,20,20
+    LTEXT           "AssetManager Version 1.0",IDC_STATIC_VERSION,40,10,119,
+                    8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002-2005",IDC_STATIC,42,37,119,8
+    DEFPUSHBUTTON   "OK",IDOK,169,13,50,14,WS_GROUP
+    LTEXT           "Avalanche Software",IDC_STATIC,40,46,119,8
+    LTEXT           "Build 12/13/2002",IDC_STATIC_DATE,40,20,119,8,
+                    SS_NOPREFIX
+END
+
+IDD_ASSETMANAGER_DIALOG DIALOGEX 0, 0, 760, 411
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Asset Manager"
+MENU IDR_MENU_MAINAPP
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "",IDC_SYNCBUTTON,365,384,25,25,BS_BITMAP
+    COMBOBOX        IDC_FOLDER_SETS,19,16,122,345,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Tree1",IDC_TREE_LEFT,"SysTreeView32",WS_BORDER | 
+                    WS_TABSTOP,0,82,358,298,WS_EX_LEFTSCROLLBAR
+    CONTROL         "Tree2",IDC_TREE_RIGHT,"SysTreeView32",WS_BORDER | 
+                    WS_TABSTOP,397,82,361,298
+    PUSHBUTTON      "",IDC_LR_COPY_BUTTON,344,383,14,13,BS_BITMAP | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "",IDC_L_DELETE,344,398,14,13,BS_BITMAP | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_RL_COPY_BUTTON,397,383,14,13,BS_BITMAP | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "",IDC_R_DELETE,397,398,14,13,BS_BITMAP | NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_ALL,41,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_REFRESH,4,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_CPY_RIGHT,128,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_CPY_LEFT,154,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_DLT_LEFT,180,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_DLT_RIGHT,206,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_DLT_BOTH,232,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_FROZEN,93,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_NEWER_LEFT,270,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_NEWER_RIGHT,296,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_ORPHAN_LEFT,322,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_ORPHAN_RIGHT,348,43,25,25,BS_BITMAP
+    PUSHBUTTON      "",IDC_BTTN_VIEW_EQUAL,374,43,25,25,BS_BITMAP
+    CONTROL         "Tree3",IDC_TREE_SYNC_INDICATORS,"SysTreeView32",
+                    TVS_NOSCROLL | WS_BORDER | WS_TABSTOP,360,82,35,298
+    LTEXT           "Folder Set",IDC_FOLDER_SETS_TITLE,58,6,36,8
+    LTEXT           "Files: 26  Folders: 5",IDC_LEFT_STATS_TEXT1,5,385,105,8
+    RTEXT           "Files: 5 Folders 2",IDC_RIGHT_STATS_TEXT1,633,385,120,8
+    RTEXT           "Files/Folders Copied: 15 (13,234 Bytes)",
+                    IDC_LEFT_STATS_TEXT3,129,385,210,8
+    LTEXT           "Files/Folders Copied: 4 (15,324 Bytes)",
+                    IDC_RIGHT_STATS_TEXT3,415,385,210,8
+    LTEXT           "Total Size: 15,123,232",IDC_LEFT_STATS_TEXT2,5,398,110,
+                    8
+    RTEXT           "Total Size: 12,234,543",IDC_RIGHT_STATS_TEXT2,633,398,
+                    120,8
+    RTEXT           "Files/Folders Deleted: 5",IDC_LEFT_STATS_TEXT4,128,398,
+                    210,8
+    LTEXT           "Files/Folders Deleted: 3",IDC_RIGHT_STATS_TEXT4,415,398,
+                    210,8
+    PUSHBUTTON      "",IDC_BTTN_VIEW_EXCLUDED,67,43,25,25,BS_BITMAP
+    LTEXT           "View by Status",IDC_STATIC,306,33,55,9
+    LTEXT           "View by Action",IDC_STATIC,165,33,55,9
+    CONTROL         "",IDC_LOCK_EXCLUDED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,81,34,9,8
+    CONTROL         "",IDC_LOCK_FROZEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    107,34,9,8
+    CONTROL         "",IDC_LOCK_EXCLUDED_BITMAP,"Static",SS_BITMAP,68,33,15,
+                    13
+    CONTROL         "",IDC_LOCK_FROZEN_BITMAP,"Static",SS_BITMAP,95,33,15,13
+    LTEXT           "Folder Path Left",IDC_FOLDER_PATH_LEFT,4,71,364,8
+    LTEXT           "Folder Path Right",IDC_FOLDER_PATH_RIGHT,389,71,364,8
+    PUSHBUTTON      "",IDC_BUTTON_FOLDER_SETS_BROWSE,144,16,15,13,BS_ICON | 
+                    NOT WS_TABSTOP
+    COMBOBOX        IDC_SYNC_STYLE,167,16,98,117,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    LTEXT           "Sync Style",IDC_SYNC_STYLE_TITLE,193,5,34,8
+    CONTROL         "",IDC_FRAME1,"Static",SS_BLACKFRAME,269,4,488,26
+    PUSHBUTTON      "",IDC_BUTTON_FOLDER_SETS_SORT,1,16,15,13,BS_ICON | NOT 
+                    WS_TABSTOP
+END
+
+IDD_LOADDB_DIALOG DIALOGEX 0, 0, 238, 62
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Scanning..."
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDB_CANCEL,93,41,50,14
+    LTEXT           "Static Text 1",IDC_LOADDB_TEXT1,7,7,224,8
+    LTEXT           "Static Text 2",IDC_LOADDB_TEXT2,7,18,224,8
+    LTEXT           "Static Text 3",IDC_LOADDB_TEXT3,7,29,224,8
+END
+
+IDD_SYNC_DIALOG DIALOGEX 0, 0, 366, 206
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Synchronizing..."
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDB_DONE,305,185,50,14
+    LTEXT           "Copying:",IDC_SYNC_TEXT1A,5,6,29,8
+    LTEXT           "To:",IDC_SYNC_TEXT2A,5,17,12,8
+    LTEXT           "Source Filename",IDC_SYNC_TEXT1B,40,6,319,8
+    LTEXT           "Destination Filename",IDC_SYNC_TEXT2B,40,17,319,8
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    7,29,309,10
+    LTEXT           "(Current File)",IDC_STATIC,321,29,44,8
+    CONTROL         "Progress1",IDC_PROGRESS2,"msctls_progress32",WS_BORDER,
+                    7,44,309,10
+    LTEXT           "(Total)",IDC_STATIC,321,45,25,8
+    LTEXT           "Estimated Time:",IDC_SYNC_TEXT3,5,58,354,8
+    LTEXT           "Transfer Rate:",IDC_SYNC_TEXT4,5,69,301,8
+    LTEXT           "Errors:",IDC_SYNC_TEXT5,309,69,45,8
+    CONTROL         "",IDC_LOGWINDOW,"RICHEDIT",TCS_RAGGEDRIGHT | 
+                    TCS_MULTISELECT | WS_BORDER | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP,7,82,352,101
+    CONTROL         "Close this dialog when completed",IDC_CLOSE_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,187,121,10
+    CONTROL         "Exit application when closed",IDC_EXIT_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,154,187,105,10
+END
+
+IDD_SYNC_CONFIRM DIALOG  0, 0, 267, 92
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm Synchronization"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "No",IDCANCEL,140,74,50,14
+    PUSHBUTTON      "Yes",IDOK,80,74,50,14
+    LTEXT           "Synchronizing will result in:",IDC_STATIC,14,5,88,8
+    LTEXT           "Status 1",IDC_CONFIRM1,5,15,255,8
+    CTEXT           "Are you sure?",IDC_STATIC,80,59,110,8
+    LTEXT           "Status 1",IDC_CONFIRM2,5,25,255,8
+    LTEXT           "Status 1",IDC_CONFIRM3,5,35,255,8
+    LTEXT           "Status 1",IDC_CONFIRM4,5,45,255,8
+END
+
+IDD_DEFAULT_AUTO_FREEZE_OPTIONS DIALOG  0, 0, 277, 142
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Auto Freeze Extensions"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_FILE_EXTENSIONS,9,20,261,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILE_PREFIXES,9,45,261,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FOLDER_PREFIXES,9,75,261,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Load",IDC_BUTTON2,160,90,50,14
+    PUSHBUTTON      "Save",IDC_BUTTON3,215,90,50,14
+    PUSHBUTTON      "Reset",IDC_BUTTON1,10,90,50,14
+    LTEXT           "File Extensions:",IDC_STATIC,9,10,50,8
+    LTEXT           "File Prefixes:",IDC_STATIC,9,35,40,8
+    LTEXT           "Folder Prefixes:",IDC_STATIC,9,65,49,8
+END
+
+IDD_OPEN_DATABASE DIALOG  0, 0, 357, 210
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Folder Sets"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",ID_OK_BUTTON,300,3,50,14
+    PUSHBUTTON      "New",ID_NEW_DATABASE,300,21,50,14
+    PUSHBUTTON      "Edit",ID_EDIT_DATABASE,300,35,50,14
+    PUSHBUTTON      "Delete",ID_DELETE_DATABASE,300,50,50,14
+    PUSHBUTTON      "Accept",ID_ACCEPT_DATABASE,300,69,50,14
+    PUSHBUTTON      "Cancel",ID_CANCEL_BUTTON,300,84,50,14
+    LISTBOX         IDC_FOLDER_SETS,42,3,254,137,LBS_SORT | LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_DATABASE_NAME,42,143,254,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DATABASE_DESCRIPTION,42,159,254,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_LEFT,42,176,237,98,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON_LEFT_BROWSE,281,176,15,13,BS_ICON
+    COMBOBOX        IDC_COMBO_RIGHT,42,193,237,98,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON_RIGHT_BROWSE,281,192,15,13,BS_ICON
+    RTEXT           "Description",IDC_STATIC,3,161,36,8
+    RTEXT           "Name",IDC_STATIC,19,145,20,8
+    RTEXT           "Left Folder",IDC_STATIC,5,179,34,8
+    RTEXT           "Right Folder",IDC_STATIC,0,195,39,8
+    CTEXT           "Folder Sets",IDC_STATIC,1,67,40,13
+END
+
+IDD_UPDATE_DUPLICATES DIALOGEX 0, 0, 411, 215
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+CAPTION "Update Duplicates"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Update",ID_UPDATE,297,194,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,354,194,50,14
+    CONTROL         "Tree1",IDC_DUP_TREE,"SysTreeView32",WS_BORDER | 
+                    WS_TABSTOP,7,7,397,184,WS_EX_LEFTSCROLLBAR
+    LTEXT           "Files Copied 1024 bytes",IDC_DUP_TEXT_1,7,193,287,8
+    LTEXT           "24 Files Deleted",IDC_DUP_TEXT_2,7,204,287,8
+END
+
+IDD_UPDATE_DUPLICATES_OPTIONS DIALOG  0, 0, 277, 142
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Update Duplicates"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Include Parent Directory",IDC_INCLUDE_PARENT_DIRECTORY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,15,92,10
+    CONTROL         "Include Frozen Duplicates",
+                    IDC_INCLUDE_FROZEN_DUPLICATES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,28,98,10
+END
+
+IDD_FOLDER_SET_AUTO_FREEZE_OPTIONS DIALOG  0, 0, 277, 142
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Auto Freeze Extensions"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Use Global Auto Freeze Extensions",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,10,127,10
+    EDITTEXT        IDC_FILE_EXTENSIONS,5,40,263,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILE_PREFIXES,5,65,263,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FOLDER_PREFIXES,5,95,263,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Load",IDC_BUTTON2,165,120,50,14
+    PUSHBUTTON      "Save",IDC_BUTTON3,220,120,50,14
+    PUSHBUTTON      "Reset",IDC_BUTTON1,5,120,50,14
+    LTEXT           "File Extensions:",IDC_TEXT1,5,30,50,8
+    LTEXT           "File Prefixes:",IDC_TEXT2,5,55,40,8
+    LTEXT           "Folder Prefixes:",IDC_TEXT3,5,85,49,8
+END
+
+IDD_AUTO_FREEZE_LIST DIALOG  0, 0, 277, 142
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Auto Freeze Paths"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST1,5,5,265,110,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Load",IDC_BUTTON3,165,120,50,14
+    PUSHBUTTON      "Save",IDC_BUTTON4,220,120,50,14
+    PUSHBUTTON      "Clear Unused",IDC_BUTTON2,60,120,50,14
+    PUSHBUTTON      "Clear All",IDC_BUTTON1,5,120,50,14
+END
+
+IDD_SCAN_SETTINGS DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scan Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Do CRC check (slow)",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,15,84,10
+    COMBOBOX        IDC_COMBO1,62,26,55,70,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Thread priority:",IDC_STATIC,12,27,48,8
+END
+
+IDD_SYNC_SETTINGS DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sync Settings"
+FONT 8, "MS Sans Serif", 400, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_COMBO1,62,66,55,70,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Thread Priority:",IDC_STATIC,12,67,48,8
+    CONTROL         "Update copied file time to time of sync",IDC_CHECK1,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,15,144,10
+    CONTROL         "Verify copied files",IDC_CHECK2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,27,76,10
+    CONTROL         "Close dialog when completed",IDC_CHECK3,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,40,122,10
+    CONTROL         "Exit application when dialog closed",IDC_CHECK4,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,53,122,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,4,0,0
+ PRODUCTVERSION 1,4,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Avalanche Software"
+            VALUE "FileDescription", "AssetManager MFC Application"
+            VALUE "FileVersion", "1, 4, 0, 0"
+            VALUE "InternalName", "AssetManager"
+            VALUE "LegalCopyright", "Copyright (C) 2003"
+            VALUE "OriginalFilename", "AssetManager.EXE"
+            VALUE "ProductName", "AssetManager Application"
+            VALUE "ProductVersion", "1, 4, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_ASSETMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 753
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 404
+    END
+
+    IDD_LOADDB_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_SYNC_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_SYNC_CONFIRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 85
+    END
+
+    IDD_DEFAULT_AUTO_FREEZE_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_OPEN_DATABASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 350
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_UPDATE_DUPLICATES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 404
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_UPDATE_DUPLICATES_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_FOLDER_SET_AUTO_FREEZE_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_AUTO_FREEZE_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_SCAN_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_SYNC_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAINAPP MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Folder Sets",                ID_FOLDER_SETS
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Global Options",             ID_DEFAULT_OPTIONS
+        MENUITEM "Current &Folder Set Options", ID_FOLDER_SET_OPTIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents",                   ID_HELP_CONTENTS
+        MENUITEM SEPARATOR
+        MENUITEM "&About Asset Manager",        ID_ABOUT
+    END
+END
+
+IDR_MENU_INDICATOR MENU 
+BEGIN
+    POPUP "Main"
+    BEGIN
+        MENUITEM "Set Default\tCtrl+D",         ID_SET_DEFAULT
+        MENUITEM "Exclude\tCtrl+E",             ID_EXCLUDE
+        MENUITEM "Copy To Left\tCtrl+L",        ID_COPY_TO_LEFT
+        MENUITEM "Copy To Right\tCtrl+R",       ID_COPY_TO_RIGHT
+        MENUITEM SEPARATOR
+        MENUITEM "Freeze\tCtrl+F",              ID_FREEZE
+        POPUP "Auto Freeze Paths"
+        BEGIN
+            MENUITEM "Add to List\tShift+Ctrl+F",   ID_AUTO_FREEZE_ADD
+            MENUITEM "Remove from List",            ID_AUTO_FREEZE_REMOVE
+            MENUITEM "Remove From List (Including Children)", 
+                                                    ID_AUTO_FREEZE_REMOVE_INCLUDE_CHILDREN
+
+        END
+        MENUITEM "UnFreeze\tCtrl+U",            ID_UNFREEZE
+        MENUITEM "UnFreeze Only\tCtrl+O",       ID_UNFREEZE_ONLY
+        MENUITEM SEPARATOR
+        MENUITEM "Delete From Left\tShift+Ctrl+L", ID_DELETE_FROM_LEFT
+        MENUITEM "Delete From Right\tShift+Ctrl+R", ID_DELETE_FROM_RIGHT
+        MENUITEM "Delete From Both\tShift+Ctrl+B", ID_DELETE_FROM_BOTH
+        MENUITEM SEPARATOR
+        MENUITEM "Select All\tCtrl+A",          ID_SELECT_ALL
+        MENUITEM "Select None\tCtrl+N",         ID_SELECT_NONE
+        MENUITEM "Invert Selection\tCtrl+I",    ID_INVERT_SELECTION
+        MENUITEM SEPARATOR
+        MENUITEM "Explore\tShift+Ctrl+X",       ID_EXPLORE
+        MENUITEM SEPARATOR
+        MENUITEM "Expand All\tCtrl+X",          ID_EXPAND_ALL
+        MENUITEM "Collapse All\tCtrl+C",        ID_COLLAPSE_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "Rename\tCtrl+R",              ID_RENAME
+        MENUITEM "Add Prefix\tCtrl+P",          ID_ADD_PREFIX
+        MENUITEM "Remove Prefix\tShift+Ctrl+P", ID_REMOVE_PREFIX
+        MENUITEM SEPARATOR
+        MENUITEM "Update Duplicates\tShift+Ctrl+D", ID_UPDATE_DUPLICATES
+    END
+    POPUP "Duplicates"
+    BEGIN
+        MENUITEM "Set Default",                 ID_SET_DEFAULT
+        MENUITEM "Exclude",                     ID_EXCLUDE
+        MENUITEM "Source File",                 ID_SOURCE_FILE
+        MENUITEM "Destination File",            ID_DEST_FILE
+        MENUITEM "Delete File",                 ID_DELETE_FILE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_BROWSE       BITMAP                  "res\\Browse.bmp"
+IDB_TREENORMAL          BITMAP                  "res\\TreeNormal.bmp"
+IDB_SYNC                BITMAP                  "res\\SyncButton.bmp"
+IDB_COPYTOLEFT          BITMAP                  "res\\CopyToLeft.bmp"
+IDB_COPYTORIGHT         BITMAP                  "res\\CopyToRight.bmp"
+IDB_DELETELEFT          BITMAP                  "res\\DeleteLeft.bmp"
+IDB_DELETERIGHT         BITMAP                  "res\\DeleteRight.bmp"
+IDB_SYNC_DISABLED       BITMAP                  "res\\SyncButtonDisabled.bmp"
+IDB_COPYTOLEFT_DISABLED BITMAP                  "res\\CopyToLeftDisabled.bmp"
+IDB_COPYTORIGHT_DISABLED BITMAP                  "res\\CopyToRightDisabled.bmp"
+IDB_DELETELEFT_DISABLED BITMAP                  "res\\DeleteLeftDisabled.bmp"
+IDB_DELETERIGHT_DISABLED BITMAP                  "res\\DeleteRightDisabled.bmp"
+IDB_BTTN_REFRESH        BITMAP                  "res\\BttnRefresh.bmp"
+IDB_BTTN_VIEW_ALL       BITMAP                  "res\\BttnViewAll.bmp"
+IDB_BTTN_VIEW_CPY_LEFT  BITMAP                  "res\\BttnViewCpyLeft.bmp"
+IDB_BTTN_VIEW_CPY_RIGHT BITMAP                  "res\\BttnViewCpyRight.bmp"
+IDB_BTTN_VIEW_DLT_BOTH  BITMAP                  "res\\BttnViewDltBoth.bmp"
+IDB_BTTN_VIEW_DLT_LEFT  BITMAP                  "res\\BttnViewDltLeft.bmp"
+IDB_BTTN_VIEW_DLT_RIGHT BITMAP                  "res\\BttnViewDltRight.bmp"
+IDB_BTTN_VIEW_EQUAL     BITMAP                  "res\\BttnViewEqual.bmp"
+IDB_BTTN_VIEW_NEWER_LEFT BITMAP                  "res\\BttnViewNewerLeft.bmp"
+IDB_BTTN_VIEW_NEWER_RIGHT BITMAP                  "res\\BttnViewNewerRight.bmp"
+IDB_BTTN_VIEW_ORPHAN_LEFT BITMAP                  "res\\BttnViewOrphanLeft.bmp"
+IDB_BTTN_VIEW_ORPHAN_RIGHT BITMAP                  "res\\BttnViewOrphanRight.bmp"
+IDB_BTTN_VIEW_EXCLUDED  BITMAP                  "res\\BttnViewExcluded.bmp"
+IDB_BTTN_VIEW_FROZEN    BITMAP                  "res\\BttnViewFrozen.bmp"
+IDB_LOCK                BITMAP                  "res\\Lock.bmp"
+IDB_BTTN_VIEW_FROZEN_DISABLED BITMAP                  "res\\BttnViewFrozenDisabled.bmp"
+IDB_BTTN_VIEW_EXCLUDED_DISABLED BITMAP                  "res\\BttnViewExcludedDisabled.bmp"
+IDB_UPDATE_DUPLICATES   BITMAP                  "res\\UpdateDuplicates.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+ID_MANIFEST             RT_MANIFEST             "manifest.txt"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAIN ACCELERATORS 
+BEGIN
+    "P",            ID_ADD_PREFIX,          VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_COLLAPSE_ALL,        VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_COPY_TO_LEFT,        VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_COPY_TO_RIGHT,       VIRTKEY, CONTROL, NOINVERT
+    "B",            ID_DELETE_FROM_BOTH,    VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "E",            ID_DELETE_FROM_LEFT,    VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "R",            ID_DELETE_FROM_RIGHT,   VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "W",            ID_EXCLUDE,             VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EXPAND_ALL,          VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_FREEZE,              VIRTKEY, CONTROL, NOINVERT
+    "I",            ID_INVERT_SELECTION,    VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_REMOVE_PREFIX,       VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "A",            ID_SELECT_ALL,          VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_SELECT_NONE,         VIRTKEY, CONTROL, NOINVERT
+    "Q",            ID_SET_DEFAULT,         VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_UNFREEZE,            VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "G",            ID_UNFREEZE_ONLY,       VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "D",            ID_UPDATE_DUPLICATES,   VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          IDC_BTTN_REFRESH,       VIRTKEY, NOINVERT
+    "S",            IDC_SYNCBUTTON,         VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EXPLORE,             VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+END
+
+IDR_UPDATE_DUPLICATES ACCELERATORS 
+BEGIN
+    "D",            ID_DELETE_FILE,         VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "E",            ID_DEST_FILE,           VIRTKEY, CONTROL, NOINVERT
+    "Q",            ID_SET_DEFAULT,         VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_SOURCE_FILE,         VIRTKEY, CONTROL, NOINVERT
+    "W",            ID_EXCLUDE,             VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ASSETMANAGER_DIALOG DLGINIT
+BEGIN
+    IDC_SYNC_STYLE, 0x403, 12, 0
+0x6f4e, 0x6d72, 0x6c61, 0x5320, 0x6e79, 0x0063, 
+    IDC_SYNC_STYLE, 0x403, 13, 0
+0x7541, 0x6d67, 0x6e65, 0x2074, 0x654c, 0x7466, "\000" 
+    IDC_SYNC_STYLE, 0x403, 14, 0
+0x7541, 0x6d67, 0x6e65, 0x2074, 0x6952, 0x6867, 0x0074, 
+    IDC_SYNC_STYLE, 0x403, 13, 0
+0x6552, 0x7266, 0x7365, 0x2068, 0x654c, 0x7466, "\000" 
+    IDC_SYNC_STYLE, 0x403, 14, 0
+0x6552, 0x7266, 0x7365, 0x2068, 0x6952, 0x6867, 0x0074, 
+    IDC_SYNC_STYLE, 0x403, 12, 0
+0x7055, 0x6164, 0x6574, 0x4c20, 0x6665, 0x0074, 
+    IDC_SYNC_STYLE, 0x403, 13, 0
+0x7055, 0x6164, 0x6574, 0x5220, 0x6769, 0x7468, "\000" 
+    IDC_SYNC_STYLE, 0x403, 22, 0
+0x7055, 0x6164, 0x6574, 0x6120, 0x646e, 0x5020, 0x7572, 0x656e, 0x4c20, 
+0x6665, 0x0074, 
+    IDC_SYNC_STYLE, 0x403, 23, 0
+0x7055, 0x6164, 0x6574, 0x6120, 0x646e, 0x5020, 0x7572, 0x656e, 0x5220, 
+0x6769, 0x7468, "\000" 
+    IDC_SYNC_STYLE, 0x403, 11, 0
+0x6f46, 0x6372, 0x2065, 0x654c, 0x7466, "\000" 
+    IDC_SYNC_STYLE, 0x403, 12, 0
+0x6f46, 0x6372, 0x2065, 0x6952, 0x6867, 0x0074, 
+    0
+END
+
+IDD_SCAN_SETTINGS DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 10, 0
+0x6552, 0x6c61, 0x5420, 0x6d69, 0x0065, 
+    IDC_COMBO1, 0x403, 5, 0
+0x6948, 0x6867, "\000" 
+    IDC_COMBO1, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_COMBO1, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_COMBO1, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_COMBO1, 0x403, 4, 0
+0x6f4c, 0x0077, 
+    0
+END
+
+IDD_SYNC_SETTINGS DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 10, 0
+0x6552, 0x6c61, 0x5420, 0x6d69, 0x0065, 
+    IDC_COMBO1, 0x403, 5, 0
+0x6948, 0x6867, "\000" 
+    IDC_COMBO1, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_COMBO1, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_COMBO1, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_COMBO1, 0x403, 4, 0
+0x6f4c, 0x0077, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About AssetManager..."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_EXIT             "Quits the application"
+    IDS_SPECIFY_LEFT_FOLDER "Specify left folder:"
+    IDS_SPECIFY_RIGHT_FOLDER "Specify right folder:"
+    IDS_LEFT_FOLDER_DOESNT_EXIST "The left folder does not exist"
+    IDS_PICK_ANOTHER        "Please pick another folder"
+    IDS_FOLDER_DOESNT_EXIST_LEFT 
+                            "The path previously chosen for the left folder no longer exists.\n%s"
+    IDS_FOLDER_DOESNT_EXIST_RIGHT 
+                            "The path previously chosen for the right folder no longer exists.\n%s"
+    IDS_PICK_FOLDERS        "Please pick a new set of folders"
+    IDS_NAME_CANNOT_BE_EMPTY "Name cannot be empty"
+    IDS_NAME_NEEDS_TO_BE_UNIQUE "Name needs to be unique"
+    IDS_RIGHT_FOLDER_DOESNT_EXIST "The right folder does not exist"
+    IDS_FOLDER_RENAME_ERROR "Cannot rename: %s A folder with the same name already exists. Specify a different folder name."
+    IDS_FILE_RENAME_ERROR   "Cannot rename: %s A file with the same name already exists. Specify a different file name."
+    IDS_FOLDER_ADD_PREFIX_ERROR "Cannot add prefix to folder %s."
+    IDS_FILE_ADD_PREFIX_ERROR "Cannot add prefix to file %s."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_SYNCBUTTON          "Sync"
+    IDC_LR_COPY_BUTTON      "Copy Left to Right Enable "
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_L_DELETE            "Delete Left Enable"
+    IDC_RL_COPY_BUTTON      "Copy Right to Left Enable"
+    IDC_R_DELETE            "Delete Right Enable"
+    IDC_BTTN_VIEW_CPY_LEFT  "View Copy Right to Left"
+    IDC_BTTN_VIEW_CPY_RIGHT "View Copy Left to Right"
+    IDC_BTTN_VIEW_DLT_LEFT  "View Delete Left"
+    IDC_BTTN_VIEW_DLT_RIGHT "View Delete Right"
+    IDC_BTTN_VIEW_DLT_BOTH  "View Delete Both"
+    IDC_BTTN_VIEW_FROZEN    "View Frozen"
+    IDC_BTTN_VIEW_NEWER_LEFT "View Newer Left"
+    IDC_BTTN_VIEW_NEWER_RIGHT "View Newer Right"
+    IDC_BTTN_VIEW_ORPHAN_LEFT "View Orphan Left"
+    IDC_BTTN_VIEW_ORPHAN_RIGHT "View Orphan Right"
+    IDC_BTTN_VIEW_EQUAL     "View Equal"
+    IDC_BTTN_VIEW_ALL       "View All"
+    IDC_BTTN_REFRESH        "Refresh"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_BTTN_VIEW_EXCLUDED  "View Excluded"
+    IDC_LOCK_EXCLUDED       "Lock/Unlock View Excluded Button"
+    IDC_LOCK_FROZEN         "Lock/Unlock View Frozen Button"
+    IDC_FOLDER_SETS         "Pick a Folder Set"
+    IDC_BUTTON_FOLDER_SETS_BROWSE "Folder Sets"
+    IDC_BUTTON_FOLDER_SETS_SORT "Sort Folder Sets"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FOLDER_REMOVE_PREFIX_ERROR "Cannot remove prefix from folder %s."
+    IDS_FILE_REMOVE_PREFIX_ERROR "Cannot remove prefis from file %s."
+    IDS_TIP_FILE            "Path: %s\nDate Modified: %s\nSize: %s Bytes"
+    IDS_TIP_FOLDER          "Path: %s\nTotal Size: %s Bytes"
+    IDS_CANNOT_PICK_FOLDER_SET 
+                            "Cannot select folder set.  Path may not exist."
+    IDS_FOLDER_DOESNT_EXIST_BOTH 
+                            "The paths previously chosen for the left and right folders do not exist.\n%s\n%s"
+    IDS_TIP_FILE_SYNC       "Path: %s\nDate Modified: %s\nSync Date: %s\nSize: %s Bytes"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_SYNC_STYLE          "Change Sync Style"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\AssetManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+#include "toolkit\secres.rc"    // Objective Toolkit Resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

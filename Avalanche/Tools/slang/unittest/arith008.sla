@@ -1,0 +1,78 @@
+// test conditional expressions
+
+print 1 > 2 ? "lo" : "hi"; // result: hi
+print 1 < 2 ? "LO" : "HI"; // result: LO
+
+int i;
+for ( i = 0 ; i < 5 ; i++ )
+{
+   print ( i == 1 ) ? 10 :
+         ( i == 2 ) ? 20 :
+         ( i == 3 ) ? 30 : 100;
+}
+
+// result: 100
+// result: 10
+// result: 20
+// result: 30
+// result: 100
+
+int a, b;
+
+a = 3;
+b = 3;
+
+( a, b ) = ( a == b ) ? ( 10, 11 ) : ( 15, 16 );
+print a;  // result: 10
+print b;  // result: 11
+
+( a, b ) = ( a != 10 ) ? ( 20, 21 ) : ( 25, 26 );
+print a;  // result: 25
+print b;  // result: 26
+
+float v1[ 3 ] = ( 11, 12, 13 );
+float v2[ 3 ] = ( 21, 22, 23 );
+float v3[ 3 ] = ( 31, 32, 33 );
+float r[ 3 ];
+
+a = 10;
+b = 11;
+r = ( a == b ) ? v1 : v2;
+print r[0]; // result: 21.000000
+print r[1]; // result: 22.000000
+print r[2]; // result: 23.000000
+
+r = ( a != b ) ? v1 : v3;
+print r[0]; // result: 11.000000
+print r[1]; // result: 12.000000
+print r[2]; // result: 13.000000
+
+r = ( a == b ) ? v1 : ( a < b ) ? v3 : v2;
+print r[0]; // result: 31.000000
+print r[1]; // result: 32.000000
+print r[2]; // result: 33.000000
+
+r = ( a == b ) ? v1 : ( a > b ) ? v3 : v2;
+print r[0]; // result: 21.000000
+print r[1]; // result: 22.000000
+print r[2]; // result: 23.000000
+
+int m[ 4 ];
+
+m = ( a < b ) ? ( 1, v1 ) : ( 2, v2 );
+print m[0]; // result: 1
+print m[1]; // result: 11
+print m[2]; // result: 12
+print m[3]; // result: 13
+
+m = ( a > b ) ? ( 1, v1 ) : ( v2, 2 );
+print m[0]; // result: 21
+print m[1]; // result: 22
+print m[2]; // result: 23
+print m[3]; // result: 2
+
+
+
+
+
+

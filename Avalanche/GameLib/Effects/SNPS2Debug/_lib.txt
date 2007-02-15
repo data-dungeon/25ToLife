@@ -1,0 +1,7 @@
+create SNPS2Debug/effects.lib
+addmod SNPS2Debug/WaterPS2.obj
+addmod SNPS2Debug/EffectsPCH_SN.obj
+addmod SNPS2Debug/fsdfx.obj
+addmod SNPS2Debug/fsdsys.obj
+save
+end

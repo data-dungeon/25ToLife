@@ -1,0 +1,16 @@
+////////////////////////////////////////////////////////////////////////////
+//
+// Process
+//
+// header to define the prototype of the process function
+//
+////////////////////////////////////////////////////////////////////////////
+
+#ifndef PROCESS_H
+#define PROCESS_H
+
+class TupperwareAggregate;
+
+extern bool Process(TupperwareAggregate *pInitialData, int argc, char** argv );
+
+#endif

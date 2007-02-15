@@ -1,0 +1,86 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SevenUp", "SevenUp.vcproj", "{3DBBB4D5-852D-47F5-8353-2EF9CBD8FCC2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A} = {A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}
+		{3CD38D58-F35D-4BC9-8300-706DE9FFA76D} = {3CD38D58-F35D-4BC9-8300-706DE9FFA76D}
+		{0C2D7F80-0647-4856-962D-3EC4884D5723} = {0C2D7F80-0647-4856-962D-3EC4884D5723}
+		{737082DB-7E44-442C-99A3-4A3E1F6CAB92} = {737082DB-7E44-442C-99A3-4A3E1F6CAB92}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmfc", "..\libmfc\libmfc.vcproj", "{3CD38D58-F35D-4BC9-8300-706DE9FFA76D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libwin32", "..\libwin32\libwin32.vcproj", "{737082DB-7E44-442C-99A3-4A3E1F6CAB92}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hud", "..\..\GameLib\hud\hud.vcproj", "{0C2D7F80-0647-4856-962D-3EC4884D5723}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "..\..\Engine\Math\Math.vcproj", "{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccProjectName0 = \u0022//depot/Avalanche/Tools\u0022
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = SevenUp\\
+		SolutionUniqueID = {3A5A0293-9E78-4DEB-AB86-E8FD2A756497}
+		SccProjectUniqueName1 = ..\\libmfc\\libmfc.vcproj
+		SccLocalPath1 = ..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = libmfc\\
+		SccProjectUniqueName2 = SevenUp.vcproj
+		SccLocalPath2 = ..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection2 = SevenUp\\
+		SccProjectUniqueName3 = ..\\libwin32\\libwin32.vcproj
+		SccLocalPath3 = ..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection3 = libwin32\\
+		SccProjectUniqueName4 = ..\\..\\GameLib\\hud\\hud.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/GameLib/hud\u0022
+		SccLocalPath4 = ..\\..\\GameLib\\hud
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\..\\Engine\\Math\\Math.vcproj
+		SccProjectName5 = \u0022//depot/Avalanche/Engine/Math\u0022
+		SccLocalPath5 = ..\\..\\Engine\\Math
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3DBBB4D5-852D-47F5-8353-2EF9CBD8FCC2}.Debug.ActiveCfg = Debug|Win32
+		{3DBBB4D5-852D-47F5-8353-2EF9CBD8FCC2}.Debug.Build.0 = Debug|Win32
+		{3DBBB4D5-852D-47F5-8353-2EF9CBD8FCC2}.Release.ActiveCfg = Release|Win32
+		{3DBBB4D5-852D-47F5-8353-2EF9CBD8FCC2}.Release.Build.0 = Release|Win32
+		{3CD38D58-F35D-4BC9-8300-706DE9FFA76D}.Debug.ActiveCfg = Debug|Win32
+		{3CD38D58-F35D-4BC9-8300-706DE9FFA76D}.Debug.Build.0 = Debug|Win32
+		{3CD38D58-F35D-4BC9-8300-706DE9FFA76D}.Release.ActiveCfg = Release|Win32
+		{3CD38D58-F35D-4BC9-8300-706DE9FFA76D}.Release.Build.0 = Release|Win32
+		{737082DB-7E44-442C-99A3-4A3E1F6CAB92}.Debug.ActiveCfg = Debug|Win32
+		{737082DB-7E44-442C-99A3-4A3E1F6CAB92}.Debug.Build.0 = Debug|Win32
+		{737082DB-7E44-442C-99A3-4A3E1F6CAB92}.Release.ActiveCfg = Release|Win32
+		{737082DB-7E44-442C-99A3-4A3E1F6CAB92}.Release.Build.0 = Release|Win32
+		{0C2D7F80-0647-4856-962D-3EC4884D5723}.Debug.ActiveCfg = DX Debug|Win32
+		{0C2D7F80-0647-4856-962D-3EC4884D5723}.Debug.Build.0 = DX Debug|Win32
+		{0C2D7F80-0647-4856-962D-3EC4884D5723}.Release.ActiveCfg = DX Release|Win32
+		{0C2D7F80-0647-4856-962D-3EC4884D5723}.Release.Build.0 = DX Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Debug.ActiveCfg = DX Debug|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Debug.Build.0 = DX Debug|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Release.ActiveCfg = DX Release|Win32
+		{A288272A-D45B-4A77-BCE8-FDC4FFCE4F5A}.Release.Build.0 = DX Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

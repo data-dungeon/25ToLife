@@ -1,0 +1,36 @@
+
+; This directive tells ps2dlllk that the module being built is the main program rather than a relocatable DLL.
+; .main
+
+; These directives control which symbols are exported from the module (DLL or main program) for other modules to use. By default, all global symbol names are exported.
+; The patterns specified by .export and .noexport directives are applied in the order they are listed in the script file. The pattern can be an explicit name, e.g.
+; .export start   ; exports the symbol start
+; or can end with a * to match any sequence of characters, e.g.
+; .noexport *     ; don't export any symbols
+; .export   X*    ; export all symbols beginning with X
+.export tearDown__10CVoiceChat
+.export create__10CVoiceChatP8DOTalker
+.export enableChatChannel__10CVoiceChatQ210CVoiceChat13eChatChannelsb
+.export enable__10CVoiceChatb
+.export g_CVoiceChat
+.export updateHeadSet__10CVoiceChat
+.export openHeadSet__10CVoiceChat
+.export closeHeadSet__10CVoiceChat
+.export enableVoiceMasking__10CVoiceChatbi
+.export update__10CVoiceChat
+.export lgAudInit
+
+; .reference symbol-name
+; This tells the linker to act as if the specified symbol name had been referenced in the code being linked and so to include the module defining the symbol from one of the specified libraries in the output file even if there is no other use of the symbol in the program. This allows you to force particular library routines into either the main program or particular DLLs where they can then be shared by all the other DLLs.
+
+; .resolve dll-file-name
+; This directive specifies that ps2dlllk should search the specified relocatable DLL file (.rel extension) for any symbol names that it makes use of but does not define and then to ensure that these symbols are defined in the main program or relocatable DLL being created. This would typically be used in the main program's script file to make sure that all required libraries are available but could be used in a relocatable DLL too.
+
+; .nodebug
+; This directive specifies that debug information should not be generated for this program / DLL.
+
+; .index symbol-name index-number
+; This directive is used to build a table of pointers to functions in the module being created which will allow access to these functions by indexing into the table rather than by name. This can be used to avoid the situation where more than one module defines the same name but only one of them can be accessed.
+; The index number can be any integer >= 0. The table will be of a size as defined by the highest index number used so using unnecessarily large numbers will lead to a large table being created.
+; A pointer to the index table for a relocatable DLL is returned from the call to the function snDllLoaded(). 
+

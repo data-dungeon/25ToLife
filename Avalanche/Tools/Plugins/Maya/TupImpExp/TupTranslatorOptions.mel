@@ -1,0 +1,72 @@
+global proc int TupTranslatorOptions ( string $parent,
+								   string $action,
+								   string $initialSettings,
+								   string $resultCallback )
+
+{
+	int		$bResult;
+	string	$currentOptions;
+	string	$optionList[];
+	string	$optionBreakDown[];
+	int		$index;
+	int		$flag;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	POSTS OPTIONS
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	if ($action == "post")
+	{
+		setParent $parent;
+
+		checkBoxGrp -label "Consolidate Shapes" -ncb 1 -value1 off -l1 "" consolshapes;
+		checkBoxGrp -label "Binary File Output" -ncb 1 -value1 off -l1 "" binaryoutput;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	SET CURRENT OPTION SETTINGS
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		$currentOptions = $initialSettings;
+		if (size($currentOptions) > 0)
+		{
+			tokenize($currentOptions, ";", $optionList);
+			for ($index = 0; $index < size($optionList); $index++)
+			{
+				tokenize($optionList[$index], "=", $optionBreakDown);
+
+				if ($optionBreakDown[0] == "consolshapes")
+				{
+					$flag = $optionBreakDown[1];
+					checkBoxGrp -e -value1 $flag consolshapes;
+				}
+				else if ($optionBreakDown[0] == "binaryoutput")
+				{
+					$flag = $optionBreakDown[1];
+					checkBoxGrp -e -value1 $flag binaryoutput;
+				}
+			}
+		}
+		$result = 1;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	QUERY OPTION SETTINGS
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	}
+	else if ($action == "query")
+	{
+		$currentOptions += ("consolshapes="+ `checkBoxGrp -q -value1 consolshapes`);
+		$currentOptions += (";");
+		$currentOptions += ("binaryoutput="+ `checkBoxGrp -q -value1 binaryoutput`);
+
+		eval($resultCallback+" \""+$currentOptions+"\"");
+		$result = 1;
+	}
+	else
+	{
+		$bResult = 0;
+	}
+
+	return $bResult;
+}

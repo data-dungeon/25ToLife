@@ -1,0 +1,16 @@
+ps.1.0
+
+tex	t0
+tex	t1
+tex	t2
+
+lrp r0.rgb, t1.a, t1, t0
+lrp r0.rgb, t2.a, t2, r0
+mul r0.rgb, v0, r0
+mov r0.a, t0.a
+
+
+
+
+
+

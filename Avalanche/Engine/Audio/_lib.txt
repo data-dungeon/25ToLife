@@ -1,0 +1,4 @@
+create "SNPS2Consumer\audio.lib"
+addmod "SNPS2Consumer/AudioPCH_SN.obj"
+save
+end

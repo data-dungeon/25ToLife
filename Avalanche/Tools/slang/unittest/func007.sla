@@ -1,0 +1,90 @@
+// arrays into functions
+
+void func( int a[3] )
+{
+   print a[0];
+   print a[1];
+   print a[2];
+}
+
+func( 2,3,4 );
+// result: 2
+// result: 3
+// result: 4
+
+void func2( int count, int arr[ 3 ] )
+{
+   int i;
+   for ( i = 0 ; i < count ; i++ )
+      print arr[ i ];
+}
+
+func2( 1, 5, 6, 7 );
+// result: 5
+
+func2( 2, 50, 60, 70 );
+// result: 50
+// result: 60
+
+func2( 3, 500, 600, 700 );
+// result: 500
+// result: 600
+// result: 700
+
+int v[ 4 ] = ( 3, 11, 22, 33 );
+func2( v );
+// result: 11
+// result: 22
+// result: 33
+
+int x[ 3 ] = ( 44, 55, 66 );
+func2( 3, x );
+// result: 44
+// result: 55
+// result: 66
+
+float dotproduct( float a[3], float b[3] )
+{
+   return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+}
+
+print dotproduct( ( 1, 2, 3 ), ( 4, 5, 6 ) ); // result: 32.000000
+print dotproduct( ( 0, 1, 2 ), ( 3, 4, 5 ) ); // result: 14.000000
+
+float aa[ 3 ] = ( 10, 20, 30 ), bb[ 3 ] = ( 11, 21, 31 );
+print dotproduct( aa, bb );  // result: 1460.000000
+
+( float result[3] ) crossproduct( float a[3], float b[3] )
+{
+  return ( a[1]*b[2] - a[2]*b[1],
+           a[2]*b[0] - a[0]*b[2],
+           a[0]*b[1] - a[1]*b[0] );
+}
+
+float xx[ 3 ] = crossproduct( ( 1, 0, 0 ), ( 0, 1, 0 ) );
+print xx[ 0 ]; // result: 0.000000
+print xx[ 1 ]; // result: 0.000000
+print xx[ 2 ]; // result: 1.000000
+
+xx = crossproduct( ( 1, 2, 3 ), ( 7, 5, 3 ) );
+print xx[ 0 ]; // result: -9.000000
+print xx[ 1 ]; // result: 18.000000
+print xx[ 2 ]; // result: -9.000000
+
+float z1[ 3 ] = ( 1, 2, 3 );
+float z2[ 3 ] = ( 7, 5, 3 );
+xx = crossproduct( z2, z1 );
+print xx[ 0 ]; // result: 9.000000
+print xx[ 1 ]; // result: -18.000000
+print xx[ 2 ]; // result: 9.000000
+
+
+
+
+
+
+
+
+
+
+

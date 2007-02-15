@@ -1,0 +1,342 @@
+/***********************************/
+/*                                 */
+/* Sprites.vsm                     */
+/* new engine          04/9/01     */
+/* ned martin  avalanche software  */
+/* ps2 renderer                    */
+/*                                 */
+/***********************************/
+
+/* this VU1 microcode handles sprite processing
+
+each sprite is a screen-aligned quad, each vertex is st/rgba/xyz. there are (sprite count * 4) vertices in the data,
+processed 4 at a time for ease
+
+this file needs to go through the m4 macro preprocessor before it gets assembled by dvpasm */
+
+; vu ram layout- first single-buffered stuff
+
+	; world-to-screen matrix (4 words)
+	; giftag for sending some registers to gs before sprites are rendered (e.g. tex0)
+; if there are any registers in 4, leave rom for them, 1 qw each
+	; nop giftag for gs sync control (see notes at bottom of this file)
+	; end of single buffer, start of double buffers (6 value). should match SPRITE_VIF1_BASE_QWC
+
+; then doubly-buffered stuff. offsets are from itop register
+
+	; x is loop count (vertex count)
+	; correct giftag for dma'd data (i.e. nloop count is correct)
+	; sprite data starts after header
+
+; each set of sprite is tex0/st/rgb/xyz/nop/st/rgb/xyz/nop/st/rgb/xyz/nop/st/rgb/xyz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; float registers
+
+	; point to vf00.w
+
+
+
+
+	; world-to-screen matrix
+
+
+
+
+
+
+
+
+
+	; a+d value for vf15 register
+; available: vf16--vf31
+
+; integer registers
+
+	; always 0
+ 	; *** vi01 MUST be vi01-- vi01 is special for some instructions (like fcand)
+	; start of input buffer, loaded from itop register at start of processing
+	; start of input buffer, loaded from itop register at start of processing
+	; vertex count
+	; blend function to use
+	; last blend function used (controls whether we need to update gs register)
+	; address of nop giftag for gs sync purposes
+	; integer 1
+; available: vi09--vi15
+
+/* DMA setup-- this label can be used to dma the code to the vu1 */
+
+.global SpriteVU1CodeDMA
+.global SpritesEnd
+.global SpritesVUMemStart
+.global SpritesVUMemEnd
+
+
+.data
+
+SpriteVU1CodeDMA:
+.DMAPackVif 1	; enable TTE (packs vif codes into extra space in dma tag)
+
+/* VIF Initialization */
+DMAcnt *
+STCYCL 4, 4
+STMASK 0
+STMOD 0
+.EndDmaData
+
+/* VU1 MicroCode */
+DMAcnt *
+MPG 0, *
+
+SpritesVUMemStart:
+
+SpritesSetup:
+
+	; load world-to-screen matrix
+
+	nop										lq.xyzw	vf05, 0(vi00)
+	nop										lq.xyzw	vf06, 1(vi00)
+	nop										lq.xyzw	vf07, 2(vi00)
+	nop										lq.xyzw	vf08, 3(vi00)
+
+	; set adc bit in w component of 1st and 2nd vertices of each set of 4 to break tri strip up into quads
+
+	addw.z		vf14,vf00,vf00w		iaddiu	vi01,vi00,0x4000							; vf14.z = 1.0
+	nop										iaddiu	vi01,vi01,0x4000
+	nop										mfir.w	vf01,vi01
+	nop										mfir.w	vf02,vi01
+	nop										mfir.w	vf03,vi00
+	nop										mfir.w	vf04,vi00
+
+	; load address of "nop" giftag
+
+	nop										iaddiu	vi07,vi00,5
+
+	; load default value for vf15 register
+
+	sub.w vf15,vf15,vf15			iaddiu vi01,vi00,0x42	; 0x42 is vf15 register
+	nop										mfir.z vf15,vi01
+	nop										iaddiu vi01,vi00,0x80	; 0x80 is a good default FIX value
+	nop										mfir.y vf15,vi01
+	nop										iaddiu vi01,vi00,0x44	; 0x44 is default blend function
+	nop										mfir.x vf15,vi01
+
+	; set up handy values
+
+	nop										iaddiu	vi08,vi00,1
+
+SpritesWaitForDMA:
+
+	; wait for a dma to finish and say we've got something to do, then continue
+
+	nop										nop														; necessary?
+	nop[e]									nop	
+	nop										nop														; necessary? i think this one is necessary to give vu time to copy itops into itop before loading below
+
+SpritesProcess:
+
+	; point to input buffer-- we use the itop register to double buffer as described in ee user's manual 4.3.8
+
+	nop										xtop		vi02
+
+	; copy gs register values into gs giftag output buffer and kick to update gs register status. this is to allow
+	; sprite packet to send 1 or more gs registers that common to all sprites in the packet, if necessary
+
+; currently no gs registers to be sent at start of each sprite group, though (empty) gs giftag is still there if we need to resurrect this
+;	nop										lq.xyzw	vf09,TEX0_VALUE (vi02)					; load vf09 register value for texture state
+;	nop										sq.xyzw	vf09,5(vi00)		; save into gs register output buffer
+;	nop										iaddiu	vi01,vi00,4						; address of output buffer
+;	nop										xgkick	vi01
+
+	; point to giftag for xgkick (the giftag is the word before the sprite vertex data)
+
+	nop										iaddiu	vi03,vi02,1
+	
+	; load control word data
+
+	nop										ilw.x		vi04,0 (vi02)		; load loop count (vertex count)
+	nop										iaddiu	vi02,vi02,2					; increment past header (including output giftag)
+
+	; load 4 vertices to transform. sprite data goes st/rgba/xyz, 4 vertices per sprite
+
+	nop										lq.xyz	vf10,3 (vi02)
+	nop										lq.xyz	vf11,7 (vi02)
+	nop										lq.xyz	vf12,11 (vi02)
+	nop										lq.xyz	vf13,15 (vi02)
+
+	; transform each one
+
+	mulax.xyzw	acc,vf05,vf10	ilw.x		vi05,1 (vi02)								; load first s (u-coord) value-- it has blend func flags in it
+	madday.xyzw	acc,vf06,vf10	nop
+	maddaz.xyzw	acc,vf07,vf10	nop
+	maddw.xyz	vf01,vf08,vf00w		lq.xyz	vf10,19(vi02)	; don't overwrite vf01.w, which has adc bit set
+	mulax.xyzw	acc,vf05,vf11	iand		vi05,vi05,vi08									; mask off vi05 flags
+	madday.xyzw	acc,vf06,vf11	nop
+	maddaz.xyzw	acc,vf07,vf11	nop
+
+SpriteLoop:
+
+	; do we need to change blend functions? this hardly ever happens, so the cost is typically 2 instructions per sprite
+
+	nop										ibeq		vi05,vi06,TransformSprite
+	nop										iadd		vi06,vi05,vi00								; vi06 = vi05
+	nop										ibeq		vi05,vi08,UpdateAlpha1
+	nop										iaddiu	vi01,vi00,0x48													; additive blend function
+
+	; default blend mode
+	; if we need it, subtractive is 0xa1
+
+	nop										iaddiu	vi01,vi00,0x44													; default blend function
+
+UpdateAlpha1:
+
+	; update the part of vf15 (which is a 128-bit a+d value) that sets the blend function
+
+	nop										mfir.x	vf15,vi01
+
+TransformSprite:
+
+	maddw.xyz	vf02,vf08,vf00w		lq.xyz	vf11,23(vi02)	; don't overwrite vf02.w, which has adc bit set
+	mulax.xyzw	acc,vf05,vf12	isubiu	vi04,vi04,4										; each time through the loop is 4 vertices
+	madday.xyzw	acc,vf06,vf12	ilw.x		vi05,17(vi02)		; load next sprite's u-coord value
+	maddaz.xyzw	acc,vf07,vf12	sq.xyzw	vf15,4 (vi02)								; write out current blend func value
+	maddw.xyz	vf03,vf08,vf00w		lq.xyz	vf12,27(vi02)	; don't overwrite vf03.w, which is 0
+	mulax.xyzw	acc,vf05,vf13	nop
+	madday.xyzw	acc,vf06,vf13	iand		vi05,vi05,vi08									; mask off vi05 flags
+	maddaz.xyzw	acc,vf07,vf13	nop
+	maddw.xyz	vf04,vf08,vf00w		lq.xyz	vf13,31(vi02)	; don't overwrite vf04.w, which is 0
+
+	; convert to 12.4 integer-- x, y, z only. and set q value in st data to 1 (no perspective correction neeeded for sprites).
+	; z-value is 32 bit integer. ftoi4 does an effective multiply by 16, but the world-to-screen matrix has a factor of
+	; 1/16 baked into the z-buffer range transform
+	
+	ftoi4.xyz	vf01,vf01						sq.z		vf14,1 (vi02)
+	ftoi4.xyz	vf02,vf02						sq.z		vf14,5 (vi02)
+	ftoi4.xyz	vf03,vf03						sq.z		vf14,9 (vi02)
+	ftoi4.xyz	vf04,vf04						sq.z		vf14,13 (vi02)
+
+	; write back to output buffer-- write w-component, too, which has adc bit set for first 2 vertices, and start
+	; next transform
+
+	mulax.xyzw	acc,vf05,vf10	sq.xyzw	vf01,3 (vi02)
+	madday.xyzw	acc,vf06,vf10	sq.xyzw	vf02,7 (vi02)
+	maddaz.xyzw	acc,vf07,vf10	sq.xyzw	vf03,11 (vi02)
+	maddw.xyz	vf01,vf08,vf00w		lq.xyz	vf10,35(vi02)	; don't overwrite vf01.w, which has adc bit set
+	mulax.xyzw	acc,vf05,vf11	sq.xyzw	vf04,15 (vi02)
+
+	; update input buffer, check loop counter
+
+	madday.xyzw	acc,vf06,vf11	ibgtz		vi04,SpriteLoop						; test loop counter
+	maddaz.xyzw	acc,vf07,vf11	iaddiu	vi02,vi02,16					; we just did 4 vertices-- one sprite
+
+	; all sprites transformed, kick to gs as a big list
+
+	nop										xgkick	vi03
+
+	; and kick a nop giftag, too. this will stall until the previous xgkick is ready to start processing. this fixes a bug
+	; in the sprite display code. vu ram is double-buffered, and sprites are transformed in place-- that is, there is not
+	; an "input" and "output" portion of each half-buffer. in fluff screens, sprites are often a large portion of the screen,
+	; so they take a significant time to render. we have this situation: buffer 1 contains some sprites that are being rendered
+	; by an xgkick. buffer 2 gets processed and xgkick'd. there is no stall because the gs has a 2-deep xgkick stack. so we
+	; loop back to SpritesWaitForDMA and tell the dma controller that we are ready for more data. this data gets sent to
+	; buffer 1, writing over data that is still waiting to be rendered by the first xgkick.
+	;
+	; using a "nop" xgkick makes sure that the buffer 1 has finished rendering before we loop back to SpritesWaitForDMA,
+	; since the gs's xgkick stack will be full. actually, what will happen is that the xgkick to render buffer 2's
+	; sprites will stall, since buffer 1 will have issued 2 xgkicks (one real, one nop). but that's fine, and the result
+	; is that we will never branch to SpritesWaitForDMA before the other buffer is done rendering, so we won't have to
+	; worry about writing over the data.
+
+	nop										xgkick	vi07
+
+	; done, back to top and wait for more sprites to process
+
+	nop										b	SpritesWaitForDMA
+	nop										nop
+
+/* end DMA setup */
+
+SpritesVUMemEnd:
+
+.EndMPG
+.EndDMAData
+
+DMAEnd
+
+SpritesEnd:
+
+/* clean up m4 defines */
+
+
+
+
+
+
+; then doubly-buffered stuff. offsets are from itop register
+
+
+
+
+
+
+; each set of sprite is vf09/st/rgb/xyz/nop/st/rgb/xyz/nop/st/rgb/xyz/nop/st/rgb/xyz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; float registers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			  
+; integer registers
+
+
+
+
+
+
+
+
+

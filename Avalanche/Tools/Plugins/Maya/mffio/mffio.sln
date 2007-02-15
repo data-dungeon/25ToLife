@@ -1,0 +1,49 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mffTools", "..\..\Libraries\mffTools\mffTools.vcproj", "{5085361D-254A-4C80-90CB-4C180F1EC75F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mffio", "mffio.vcproj", "{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = ..\\..\\Libraries\\mffTools\\mffTools.vcproj
+		SccProjectName0 = \u0022$/Avalanche/tools/Plugins/Max/mffio\u0020export\u0022,\u0020DXXBAAAA
+		SccLocalPath0 = ..\\..\\max\\mffio\u0020export
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = ..\\..\\Libraries\\mffTools\\
+		SccProjectUniqueName1 = mffio.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectName2 = \u0022$/Avalanche/tools/Plugins/Maya/mffio\u0022,\u0020EXXBAAAA
+		SccLocalPath2 = .
+		SccProvider2 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SolutionUniqueID = {46503959-9A60-4D99-B05F-8AC81549C1B0}
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Hybrid
+		ConfigName.2 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}.0 = {5085361D-254A-4C80-90CB-4C180F1EC75F}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5085361D-254A-4C80-90CB-4C180F1EC75F}.Debug.ActiveCfg = Debug|Win32
+		{5085361D-254A-4C80-90CB-4C180F1EC75F}.Debug.Build.0 = Debug|Win32
+		{5085361D-254A-4C80-90CB-4C180F1EC75F}.Hybrid.ActiveCfg = Hybrid|Win32
+		{5085361D-254A-4C80-90CB-4C180F1EC75F}.Hybrid.Build.0 = Hybrid|Win32
+		{5085361D-254A-4C80-90CB-4C180F1EC75F}.Release.ActiveCfg = Release|Win32
+		{5085361D-254A-4C80-90CB-4C180F1EC75F}.Release.Build.0 = Release|Win32
+		{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}.Debug.ActiveCfg = Debug|Win32
+		{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}.Debug.Build.0 = Debug|Win32
+		{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}.Hybrid.ActiveCfg = Debug|Win32
+		{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}.Hybrid.Build.0 = Debug|Win32
+		{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}.Release.ActiveCfg = Release|Win32
+		{ACACCF8A-3D66-4FDA-A5B5-44771A9A361A}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

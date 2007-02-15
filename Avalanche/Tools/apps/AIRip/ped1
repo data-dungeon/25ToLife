@@ -1,0 +1,144 @@
+xAI_TABLE PEDESTRIAN
+	DW INITIALIZE
+	DW MOVELOOP
+
+INITIALIZE:
+	ORIGIN	-54367.2 0.0 -18529.4
+	DELTA	25.0			;define tick movement(based on 1/60 of a second)
+
+MOVELOOP:
+	MOVETO	-50000.0 0.0 -10000.0
+	MOVETO	-30000.0 0.0 -20000.0
+	MOVETO	-54367.2 0.0 -18529.4
+	JUMP	MOVELOOP
+
+;#include include\prince_m.h
+;#include include\action.h
+
+;---------------------------------------------------------------------
+;NOTE:  The include files must begin on the first line of the file!!!!
+;---------------------------------------------------------------------
+
+;ANIM_TABLE PRINCE
+;	DW STANCE					;00 Stance
+;	DW WALK						;01 Walk
+;	DW TURN_RIGHT				;02 Turn Right
+;	DW TURN_LEFT				;03 Turn Left
+;	DW RUN						;04 Run
+;	DW WALK_BACK				;05 Walk Backwards
+;	DW WALK						;06
+;	DW WALK						;07
+;	DW WALK						;08
+;	DW WALK						;09
+;	DW WALK						;10
+;	DW WALK						;11
+;	DW WALK						;12
+;	DW WALK						;13
+;	DW WALK						;14
+;	DW WALK						;15
+;	DW WALK						;16
+;	DW WALK						;17
+;	DW WALK						;18
+;	DW WALK						;19
+;	DW WALK						;20
+;	DW WALK						;21
+;	DW WALK						;22
+;	DW WALK						;23
+;	DW WALK						;24
+;	DW WALK						;25
+;	DW WALK						;26
+;	DW WALK						;27
+;	DW WALK						;28
+;	DW WALK						;29
+;	DW STEP_RIGHT				;30
+;	DW STEP_LEFT				;31
+;	DW JUMP_UP					;32
+;	DW JUMP_FORWARD			;33
+;	DW JUMP_LEDGE				;34
+;	DW WALK						;35
+;	DW WALK						;36
+;	DW WALK						;37
+;	DW WALK						;38
+;	DW WALK						;39
+;	DW WALK						;40
+
+;------------------------------------------
+;STANCE:
+;	START_MOTION PRINCE_BASEPOSE
+;	IMPULSE 0.0 0.0 0.0
+;	DELAY	60
+;   JUMP	STANCE
+
+;------------------------------------------
+;WALK:
+;	START_MOTION PRINCE_WALK
+;	IMPULSE 0.0 0.0 -14.0
+;WALKLP:
+;	DELAY	10
+;	JUMP 	WALKLP
+
+;------------------------------------------
+;TURN_RIGHT:
+;	START_MOTION PRINCE_STEP_RIGHT
+;	DELAY	30
+;	ROTATE 0.0 45.0 0.0
+;   JUMP	STANCE
+
+;------------------------------------------
+;TURN_LEFT:
+;	START_MOTION PRINCE_STEP_LEFT
+;	IMPULSE 0.0 0.0 0.0
+;	DELAY	60
+;   JUMP	STANCE
+
+;------------------------------------------
+;RUN:
+;	START_MOTION PRINCE_RUN
+;	IMPULSE 0.0 0.0 -12.0
+;RUNLP:
+;	DELAY	10
+;	JUMP 	RUNLP
+
+;------------------------------------------
+;WALK_BACK:
+;	START_MOTION PRINCE_WALK_BACKWARDS
+;	IMPULSE 0.0 0.0 12.0
+;WALKBKLP:
+;	DELAY	10
+;	JUMP 	WALKBKLP
+
+;------------------------------------------
+;STEP_RIGHT:
+;	START_MOTION PRINCE_SIDE_STEP_RIGHT
+;	IMPULSE 0.0 0.0 0.0
+;	DELAY	60
+;   JUMP	STANCE
+
+;------------------------------------------
+;STEP_LEFT:
+;	START_MOTION PRINCE_SIDE_STEP_LEFT
+;	IMPULSE 0.0 0.0 0.0
+;	DELAY	60
+;   JUMP	STANCE
+
+;------------------------------------------
+;JUMP_UP:
+;	START_MOTION PRINCE_JUMP
+;	IMPULSE 0.0 0.0 0.0
+;	DELAY	60
+;   JUMP	STANCE
+
+;------------------------------------------
+;JUMP_FORWARD:
+;	START_MOTION PRINCE_JUMP
+;	IMPULSE 0.0 0.0 0.0
+;	DELAY	60
+;   JUMP	STANCE
+
+;------------------------------------------
+;JUMP_LEDGE:
+;	START_MOTION PRINCE_JUMP
+;	IMPULSE 0.0 0.0 0.0
+;	DELAY	60
+;   JUMP	STANCE
+

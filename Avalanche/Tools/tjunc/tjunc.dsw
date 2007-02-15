@@ -1,0 +1,246 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Display"=..\..\Engine\Display\Display.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Display", ETAAAAAA
+    ..\..\engine\display
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EngineHelper"=..\..\GameLib\EngineHelper\EngineHelper.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/EngineHelper", JJKAAAAA
+    ..\..\gamelib\enginehelper
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Game"=..\..\Engine\Game\Game.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Game", FAAAAAAA
+    ..\..\engine\game
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Layers"=..\..\Engine\Layers\Layers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Layers", AAAAAAAA
+    ..\..\engine\layers
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Math"=..\..\Engine\Math\Math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Math", WEAAAAAA
+    ..\..\engine\math
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ToolHelper"=..\..\GameLib\ToolHelper\ToolHelper.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/ToolHelper", ITKAAAAA
+    ..\..\gamelib\toolhelper
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "collide"=..\..\GameLib\collide\collide.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/collide", NDGAAAAA
+    ..\..\gamelib\collide
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "container"=..\..\GameLib\container\container.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/container", QIKAAAAA
+    ..\..\gamelib\container
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "geomUtil"=..\..\GameLib\geomUtil\geomUtil.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/geomUtil", XKKAAAAA
+    ..\..\gamelib\geomutil
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mathUtil"=..\..\GameLib\mathUtil\mathUtil.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/mathUtil", ZJKAAAAA
+    ..\..\gamelib\mathutil
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "platform"=..\..\GameLib\platform\platform.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/platform", ODGAAAAA
+    ..\..\gamelib\platform
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "tjunc"=.\tjunc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/tjunc", RODBAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name collide
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name container
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Display
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EngineHelper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Game
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name geomUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Layers
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mathUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name platform
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ToolHelper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/tjunc", RODBAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

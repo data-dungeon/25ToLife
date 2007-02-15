@@ -1,0 +1,10 @@
+
+define( 'baseAnimPLitData', eval( baseFree))
+include( 'VUAnimPLit.vm4')
+
+define( 'baseAnimEVMapData', eval( baseAnimPLitData + szeAnimPLitData))
+include( 'VUAnimEV.vm4')
+dumpdef( 'offEVD1')
+
+define( 'endAnimVUData', eval( baseAnimEVMapData + szeAnimEVMapData))
+dumpdef( 'endAnimVUData')

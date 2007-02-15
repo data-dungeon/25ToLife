@@ -1,0 +1,33 @@
+// test of sizeof and abs
+
+int arr[ 3 ];
+int v[ 5 ];
+
+print sizeof arr;	// result: 3
+print sizeof v;		// result: 5
+
+print sizeof arr[ 0 ];	// result: 1
+print sizeof v[ 0 ];	// result: 1
+
+print ( sizeof( arr ) / sizeof( arr[0] ) );	// result: 3
+print ( sizeof( v ) / sizeof( v[0] ) );		// result: 5
+
+print abs( 10 );	// result: 10
+print abs( -11 );	// result: 11
+print abs( 12.0 );	// result: 12.000000
+print abs( -13.0 );	// result: 13.000000
+
+int a = 5;
+print a;		// result: 5
+print abs( a );		// result: 5
+a *= -1;
+print a;		// result: -5
+print abs( a );		// result: 5
+
+float f = 7;
+print f;		// result: 7.000000
+print abs( f );		// result: 7.000000
+f *= -1;
+print f;		// result: -7.000000
+print abs( f );		// result: 7.000000
+

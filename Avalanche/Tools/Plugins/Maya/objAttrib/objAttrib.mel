@@ -1,0 +1,53 @@
+// define callbacks for this type and make it a unique type
+// as we don't want two panels sharing the same global data.
+
+string $type = `scriptedPanelType
+     -ccb sampleCreateCallback
+	 -icb sampleInitCallback
+     -acb sampleAddCallback
+     -rcb sampleRemoveCallback
+     -dcb sampleDeleteCallback
+     -unique true "ObjectAttributes"`;
+
+
+ global proc sampleCreateCallback(string $panelName) 
+{	 //
+	 //  Description:
+	 //      Create any editors unparented here and do
+	 //      any other initialization required.
+} 
+
+
+ global proc sampleInitCallback(string $panelName) 
+ {	 //
+	 //  Description:
+	 //      Re-initialize the panel on file -new or file -open.
+
+	 scriptedPanel -edit -label "ObjectAttributes" $panelName;
+ } 
+
+ global proc sampleAddCallback(string $panelName) 
+ {	 //
+	 //  Description:  Create UI and parent any editors.
+	 //
+
+	 scriptedPanel -edit -label "ObjectAttributes" $panelName;
+	 text -label "dummy control";
+	 objAttrib -a;
+ } 
+
+ global proc sampleRemoveCallback(string $panelName) 
+ {	 //
+	 //  Description:
+	 //		Unparent any editors and save state if required.
+	 //
+		objAttrib -d;
+    	string $control = `scriptedPanel -q -control $panelName`;
+    	setParent $control;
+ } 
+
+ global proc sampleDeleteCallback(string $panelName) 
+ {	 //
+	 //  Description:
+	 //		Delete any editors and do any other cleanup required.
+ } 

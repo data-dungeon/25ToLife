@@ -1,0 +1,317 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Display", "..\..\Engine\Display\Display.vcproj", "{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineHelper", "..\..\GameLib\EngineHelper\EngineHelper.vcproj", "{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "..\..\Engine\Game\Game.vcproj", "{033455E4-7494-439C-B837-7145513DCF7E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Layers", "..\..\Engine\Layers\Layers.vcproj", "{7C2F3C2F-4032-4738-9896-46928828BC94}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Math", "..\..\Engine\Math\Math.vcproj", "{988ACCF9-BAE3-485E-A343-8D8110EB3389}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pigpen", "Pigpen.vcproj", "{4A489480-D421-47B9-A2DA-FEE0BB203D2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2} = {7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}
+		{7C2F3C2F-4032-4738-9896-46928828BC94} = {7C2F3C2F-4032-4738-9896-46928828BC94}
+		{9C62D037-60F8-497C-86EA-03B1508E71FC} = {9C62D037-60F8-497C-86EA-03B1508E71FC}
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD} = {AEED4C53-453D-4AF8-874B-1E54F24E66DD}
+		{AF0F9684-FC6A-491B-A3D4-716908C63785} = {AF0F9684-FC6A-491B-A3D4-716908C63785}
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80} = {0828CF92-E610-4CE6-87F0-5D4B1FA46D80}
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6} = {D64DC7AA-8404-4992-985A-DD80E8BFF2E6}
+		{589CB5AC-5463-4106-9A01-C235747F27E4} = {589CB5AC-5463-4106-9A01-C235747F27E4}
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40} = {2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F} = {2669B9B0-0C63-40BD-A8CE-801E75415F2F}
+		{033455E4-7494-439C-B837-7145513DCF7E} = {033455E4-7494-439C-B837-7145513DCF7E}
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2} = {D89C10EF-AE19-4217-922B-CD30E30F14E2}
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389} = {988ACCF9-BAE3-485E-A343-8D8110EB3389}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "container", "..\..\GameLib\container\container.vcproj", "{589CB5AC-5463-4106-9A01-C235747F27E4}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "geomUtil", "..\..\GameLib\geomUtil\geomUtil.vcproj", "{2669B9B0-0C63-40BD-A8CE-801E75415F2F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hud", "..\..\GameLib\hud\hud.vcproj", "{D89C10EF-AE19-4217-922B-CD30E30F14E2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\GameLib\Tupperware\tupperware.vcproj", "{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mathUtil", "..\..\GameLib\mathUtil\mathUtil.vcproj", "{11698D28-AB87-4A9B-B81E-DE7AD461E47B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "path", "..\..\GAMELIB\path\path.vcproj", "{AF0F9684-FC6A-491B-A3D4-716908C63785}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "collide", "..\..\GAMELIB\COLLIDE\collide.vcproj", "{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CollideHelper", "..\..\GAMELIB\CollideHelper\CollideHelper.vcproj", "{AEED4C53-453D-4AF8-874B-1E54F24E66DD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stage", "..\..\GAMELIB\stage\stage.vcproj", "{9C62D037-60F8-497C-86EA-03B1508E71FC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 15
+		SccProjectUniqueName0 = ..\\..\\Engine\\Display\\Display.vcproj
+		SccProjectName0 = \u0022$/Avalanche/Engine/Display\u0022,\u0020EHDCAAAA
+		SccLocalPath0 = ..\\..\\Engine\\Display
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = ..\\..\\GameLib\\EngineHelper\\EngineHelper.vcproj
+		SccProjectName1 = \u0022$/Avalanche/GameLib/EngineHelper\u0022,\u0020DHECAAAA
+		SccLocalPath1 = ..\\..\\GameLib\\EngineHelper
+		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\Engine\\Game\\Game.vcproj
+		SccProjectName2 = \u0022$/Avalanche/Engine/Game\u0022,\u0020EODCAAAA
+		SccLocalPath2 = ..\\..\\Engine\\Game
+		SccProvider2 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\Engine\\Layers\\Layers.vcproj
+		SccProjectName3 = \u0022$/Avalanche/Engine/Layers\u0022,\u0020ESDCAAAA
+		SccLocalPath3 = ..\\..\\Engine\\Layers
+		SccProvider3 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\..\\Engine\\Math\\Math.vcproj
+		SccProjectName4 = \u0022$/Avalanche/Engine/Math\u0022,\u0020XTDCAAAA
+		SccLocalPath4 = ..\\..\\Engine\\Math
+		SccProvider4 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = Pigpen.vcproj
+		SccProjectName5 = \u0022$/Avalanche/Tools/Pigpen\u0022,\u0020UDCAAAAA
+		SccLocalPath5 = .
+		SccProvider5 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName6 = ..\\..\\GameLib\\container\\container.vcproj
+		SccProjectName6 = \u0022$/Avalanche/GameLib/container\u0022,\u0020ICECAAAA
+		SccLocalPath6 = ..\\..\\GameLib\\container
+		SccProvider6 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName7 = ..\\..\\GameLib\\geomUtil\\geomUtil.vcproj
+		SccProjectName7 = \u0022$/Avalanche/GameLib/geomUtil\u0022,\u0020NNECAAAA
+		SccLocalPath7 = ..\\..\\GameLib\\geomUtil
+		SccProvider7 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName8 = ..\\..\\GameLib\\hud\\hud.vcproj
+		SccProjectName8 = \u0022$/Avalanche/GameLib/hud\u0022,\u0020EOECAAAA
+		SccLocalPath8 = ..\\..\\GameLib\\hud
+		SccProvider8 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName9 = ..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName9 = \u0022$/Avalanche/GameLib/Tupperware\u0022,\u0020GDFCAAAA
+		SccLocalPath9 = ..\\..\\GameLib\\Tupperware
+		SccProvider9 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName10 = ..\\..\\GameLib\\mathUtil\\mathUtil.vcproj
+		SccProjectName10 = \u0022$/Avalanche/GameLib/mathUtil\u0022,\u0020NQECAAAA
+		SccLocalPath10 = ..\\..\\GameLib\\mathUtil
+		SccProvider10 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName11 = ..\\..\\GAMELIB\\path\\path.vcproj
+		SccProjectName11 = \u0022$/Avalanche/GameLib/path\u0022,\u0020SRECAAAA
+		SccLocalPath11 = ..\\..\\GAMELIB\\path
+		SccProvider11 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName12 = ..\\..\\GAMELIB\\COLLIDE\\collide.vcproj
+		SccProjectName12 = \u0022$/Avalanche/GameLib/collide\u0022,\u0020PFXCAAAA
+		SccLocalPath12 = ..\\..\\GAMELIB\\COLLIDE
+		SccProvider12 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName13 = ..\\..\\GAMELIB\\CollideHelper\\CollideHelper.vcproj
+		SccProjectName13 = \u0022$/Avalanche/GameLib/CollideHelper\u0022,\u0020CDZCAAAA
+		SccLocalPath13 = ..\\..\\GAMELIB\\CollideHelper
+		SccProvider13 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+		SccProjectUniqueName14 = ..\\..\\GAMELIB\\stage\\stage.vcproj
+		SccProjectName14 = \u0022$/Avalanche/GameLib/stage\u0022,\u0020XXECAAAA
+		SccLocalPath14 = ..\\..\\GAMELIB\\stage
+		SccProvider14 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		DX Debug = DX Debug
+		DX Release = DX Release
+		SN PS2 CDROM Release = SN PS2 CDROM Release
+		SN PS2 Debug = SN PS2 Debug
+		SN PS2 Release = SN PS2 Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.DX Debug.ActiveCfg = DX Debug|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.DX Debug.Build.0 = DX Debug|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.DX Release.ActiveCfg = DX Release|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.DX Release.Build.0 = DX Release|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{2C0E8AAD-E8D5-4926-AAEC-81DE426BAB40}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.DX Debug.ActiveCfg = DX Debug|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.DX Debug.Build.0 = DX Debug|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.DX Release.ActiveCfg = DX Release|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.DX Release.Build.0 = DX Release|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{7BF59418-CD3B-4C85-9B38-CE6097D0FFF2}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.DX Debug.ActiveCfg = DX Debug|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.DX Debug.Build.0 = DX Debug|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.DX Release.ActiveCfg = DX Release|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.DX Release.Build.0 = DX Release|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{033455E4-7494-439C-B837-7145513DCF7E}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.DX Debug.ActiveCfg = DX Debug|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.DX Debug.Build.0 = DX Debug|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.DX Release.ActiveCfg = DX Release|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.DX Release.Build.0 = DX Release|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{7C2F3C2F-4032-4738-9896-46928828BC94}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.DX Debug.ActiveCfg = DX Debug|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.DX Debug.Build.0 = DX Debug|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.DX Release.ActiveCfg = DX Release|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.DX Release.Build.0 = DX Release|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{988ACCF9-BAE3-485E-A343-8D8110EB3389}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.DX Debug.ActiveCfg = DX Debug|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.DX Debug.Build.0 = DX Debug|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.DX Release.ActiveCfg = DX Release|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.DX Release.Build.0 = DX Release|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.SN PS2 CDROM Release.ActiveCfg = DX Debug|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.SN PS2 CDROM Release.Build.0 = DX Debug|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.SN PS2 Debug.ActiveCfg = DX Debug|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.SN PS2 Debug.Build.0 = DX Debug|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.SN PS2 Release.ActiveCfg = DX Debug|Win32
+		{4A489480-D421-47B9-A2DA-FEE0BB203D2C}.SN PS2 Release.Build.0 = DX Debug|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.DX Debug.ActiveCfg = DX Debug|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.DX Debug.Build.0 = DX Debug|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.DX Release.ActiveCfg = DX Release|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.DX Release.Build.0 = DX Release|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{589CB5AC-5463-4106-9A01-C235747F27E4}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.DX Debug.ActiveCfg = DX Debug|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.DX Debug.Build.0 = DX Debug|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.DX Release.ActiveCfg = DX Release|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.DX Release.Build.0 = DX Release|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{2669B9B0-0C63-40BD-A8CE-801E75415F2F}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.DX Debug.ActiveCfg = DX Debug|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.DX Debug.Build.0 = DX Debug|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.DX Release.ActiveCfg = DX Release|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.DX Release.Build.0 = DX Release|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{D89C10EF-AE19-4217-922B-CD30E30F14E2}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.DX Debug.ActiveCfg = DX Debug|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.DX Debug.Build.0 = DX Debug|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.DX Release.ActiveCfg = DX Release|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.DX Release.Build.0 = DX Release|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{D64DC7AA-8404-4992-985A-DD80E8BFF2E6}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.DX Debug.ActiveCfg = DX Debug|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.DX Debug.Build.0 = DX Debug|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.DX Release.ActiveCfg = DX Release|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.DX Release.Build.0 = DX Release|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{11698D28-AB87-4A9B-B81E-DE7AD461E47B}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.DX Debug.ActiveCfg = DX Debug|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.DX Debug.Build.0 = DX Debug|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.DX Release.ActiveCfg = DX Release|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.DX Release.Build.0 = DX Release|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{AF0F9684-FC6A-491B-A3D4-716908C63785}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.DX Debug.ActiveCfg = DX Debug|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.DX Debug.Build.0 = DX Debug|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.DX Release.ActiveCfg = DX Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.DX Release.Build.0 = DX Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{0828CF92-E610-4CE6-87F0-5D4B1FA46D80}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.DX Debug.ActiveCfg = DX Debug|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.DX Debug.Build.0 = DX Debug|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.DX Release.ActiveCfg = DX Release|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.DX Release.Build.0 = DX Release|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{AEED4C53-453D-4AF8-874B-1E54F24E66DD}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.DX Debug.ActiveCfg = DX Debug|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.DX Debug.Build.0 = DX Debug|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.DX Release.ActiveCfg = DX Release|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.DX Release.Build.0 = DX Release|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.SN PS2 CDROM Release.ActiveCfg = SN PS2 CDROM Release|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.SN PS2 CDROM Release.Build.0 = SN PS2 CDROM Release|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.SN PS2 Debug.ActiveCfg = SN PS2 Debug|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.SN PS2 Debug.Build.0 = SN PS2 Debug|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.SN PS2 Release.ActiveCfg = SN PS2 Release|Win32
+		{9C62D037-60F8-497C-86EA-03B1508E71FC}.SN PS2 Release.Build.0 = SN PS2 Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

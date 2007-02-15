@@ -1,0 +1,70 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Snipe", "Snipe.vcproj", "{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "..\Utility\Utility.vcproj", "{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Snipe\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {D7B20391-9663-4E2D-8F34-6421E1F0E4F3}
+		SccProjectUniqueName1 = Snipe.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\Utility\\Utility.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/Utility\u0022
+		SccLocalPath2 = ..\\Utility
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Hybrid = Hybrid
+		Release = Release
+		Tools Debug = Tools Debug
+		Tools Release = Tools Release
+		Unicode Debug = Unicode Debug
+		Unicode Release = Unicode Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Debug.ActiveCfg = Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Debug.Build.0 = Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Hybrid.ActiveCfg = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Hybrid.Build.0 = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Release.ActiveCfg = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Release.Build.0 = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Tools Debug.ActiveCfg = Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Tools Debug.Build.0 = Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Tools Release.ActiveCfg = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Tools Release.Build.0 = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Unicode Debug.ActiveCfg = Unicode Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Unicode Debug.Build.0 = Unicode Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Unicode Release.ActiveCfg = Unicode Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Unicode Release.Build.0 = Unicode Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Debug.ActiveCfg = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Debug.Build.0 = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Hybrid.ActiveCfg = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Hybrid.Build.0 = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Release.ActiveCfg = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Release.Build.0 = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Tools Debug.ActiveCfg = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Tools Debug.Build.0 = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Tools Release.ActiveCfg = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Tools Release.Build.0 = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Unicode Debug.ActiveCfg = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Unicode Debug.Build.0 = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Unicode Release.ActiveCfg = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Unicode Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

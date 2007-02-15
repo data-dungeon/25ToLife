@@ -1,0 +1,81 @@
+;--------------------------------------------------------------------------------------------------
+A_UpdateDirtyMatrices:
+	NOP		LQ	VF01, 0(VI00)	; Load Projection Matrix
+	NOP		LQ	VF02, 1(VI00)
+	NOP		LQ	VF03, 2(VI00)
+	NOP		LQ	VF04, 3(VI00)
+	
+	NOP		IADDIU	irCurrentBit, VI00, 1
+
+	NOP		IAND	irTemp1, irDirtyMtxBits1, irCurrentBit	; check if dirty bit set
+;--------------------------------------------------------------------------------------------------
+A_DirtyCheckLoop1:	
+	NOP		IADD	irCurrentBit, irCurrentBit, irCurrentBit	; shift current bit left
+	NOP		IBEQ	irTemp1, VI00, A_MatrixNotDirty1
+	NOP		IADDIU	irMatrixAddr, irMatrixAddr, MatrixSize	; pre-increment Matrix Addr
+
+
+	NOP		BAL	VI15, A_UpdateDirtyMatrix	; update 
+	NOP		ISUBIU	irDirtyMtxCnt, irDirtyMtxCnt, 1	; decrement dirty Matrix count
+
+A_MatrixNotDirty1:
+	NOP		IBNE	irCurrentBit, VI00, A_DirtyCheckLoop1
+	NOP		IAND	irTemp1, irDirtyMtxBits1, irCurrentBit	; check if dirty bit set
+
+
+;--------------------------------------------------------------------------------------------------
+A_CheckDirtyBits2:
+	NOP		IADDIU	irCurrentBit, VI00, 1
+
+	NOP		IAND	irTemp1, irDirtyMtxBits2, irCurrentBit	; check if dirty bit set
+A_DirtyCheckLoop2:	
+	NOP		IADD	irCurrentBit, irCurrentBit, irCurrentBit	; shift current bit left
+	NOP		IBEQ	irTemp1, VI00, A_MatrixNotDirty2
+	NOP		IADDIU	irMatrixAddr, irMatrixAddr, MatrixSize	; pre-increment Matrix Addr
+
+
+	NOP		BAL	VI15, A_UpdateDirtyMatrix	; update 
+	NOP		ISUBIU	irDirtyMtxCnt, irDirtyMtxCnt, 1	; <ds> decrement dirty Matrix count
+
+A_MatrixNotDirty2:
+	NOP		IBNE	irCurrentBit, VI00, A_DirtyCheckLoop2
+	NOP		IAND	irTemp1, irDirtyMtxBits2, irCurrentBit	; <ds> check if dirty bit set
+
+	NOP		JR	irReturnAddr	; return
+	NOP		NOP
+
+;--------------------------------------------------------------------------------------------------
+
+A_UpdateDirtyMatrix:
+;--------------------------------------------------------------------------------------------------
+	NOP		LQ	VF26, -MatrixSize+0(irMatrixAddr)	; load matrix to transform
+	NOP		LQ	VF27, -MatrixSize+1(irMatrixAddr)
+	NOP		LQ	VF28, -MatrixSize+2(irMatrixAddr)
+	NOP		LQ	VF29, -MatrixSize+3(irMatrixAddr)
+	
+	MULAx.xyzw	ACC, VF01, VF26x	NOP		; transform Matrix
+	MADDAy.xyzw	ACC, VF02, VF26y	NOP
+	MADDAz.xyzw	ACC, VF03, VF26z	NOP
+	MADDw.xyzw	VF26, VF04, VF26w	NOP
+
+	MULAx.xyzw	ACC, VF01, VF27x	NOP
+	MADDAy.xyzw	ACC, VF02, VF27y	NOP
+	MADDAz.xyzw	ACC, VF03, VF27z	NOP
+	MADDw.xyzw	VF27, VF04, VF27w	NOP
+
+	MULAx.xyzw	ACC, VF01, VF28x	NOP
+	MADDAy.xyzw	ACC, VF02, VF28y	NOP
+	MADDAz.xyzw	ACC, VF03, VF28z	NOP
+	MADDw.xyzw	VF28, VF04, VF28w	NOP
+	
+	MULAx.xyzw	ACC, VF01, VF29x	NOP
+	MADDAy.xyzw	ACC, VF02, VF29y	NOP
+	MADDAz.xyzw 	ACC, VF03, VF29z	NOP
+	MADDw.xyzw	VF29, VF04, VF29w	NOP
+
+	NOP		SQ	VF26, -MatrixSize+0(irMatrixAddr)	; store transformed Matrix
+	NOP		SQ	VF27, -MatrixSize+1(irMatrixAddr)
+	NOP		SQ	VF28, -MatrixSize+2(irMatrixAddr)
+	
+	NOP		JR	VI15
+	NOP		SQ	VF29, -MatrixSize+3(irMatrixAddr)

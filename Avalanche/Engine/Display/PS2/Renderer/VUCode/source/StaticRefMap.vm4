@@ -1,0 +1,322 @@
+.vu
+
+include( `VUDefines.vm4')
+include( 'VUStaticDefines.vm4')
+
+define( 'irCopyCount', 'VI01')
+
+define( 'irBaseVtxPtr', 'VI02')
+define( 'irKickPtr', 'VI03')
+
+define( 'irNormalPtr', 'VI04')
+define( 'irOutDataPtr', 'VI05')
+
+define( 'irOutPtr', 'VI06')
+define( 'irVtxPtr', 'VI07')
+define( 'irZADCPtr', 'VI08')
+
+define( 'irVtxCount', 'VI10')
+define( 'irLoopCount', 'VI11')
+define( 'irOutputPtr', 'VI12')
+define( 'irTemp1', 'VI04')
+
+	.global	dbStaticRefMap_CodeBegin
+	.global	dbStaticRefMap_CodeEnd
+
+.dmadata dbStaticRefMap_CodeBegin
+	NOP		XTOP	irBaseVtxPtr		; get ptr to VUBuffer
+	NOP		ILW.w	irTemp1, 0(irBaseVtxPtr)w		; grab stateFlags
+
+	NOP		IADDIU	VI01, VI00, 0x0002		; EnvMapping flag
+	NOP		IAND	irTemp1, irTemp1, VI01		; mask EnvMapping bit
+	NOP		IBEQ	irTemp1, VI00, dbSC_Return		; skip non-mapped blocks
+	NOP		NOP
+
+	NOP		ILW.x	irOutPtr, offEVD1+0(VI00)
+	NOP		ILW.y	irTemp1, offEVD1+0(VI00)
+	NOP		ILW.z	irOutDataPtr, offEVD1+0(VI00)
+
+	NOP		ISW.y	irOutPtr, offEVD1+0(VI00)
+	NOP		ISW.x	irTemp1, offEVD1+0(VI00)
+
+	NOP		ILW.y	irNormalPtr, 1(irBaseVtxPtr)y                 	; grab NormalStreamOffset
+	NOP		ILW.w	irOutputPtr, 1(irBaseVtxPtr)w                 	; grab OutputOffset
+	
+	NOP		ILW.x	irVtxCount, 0(irBaseVtxPtr)x                  	; grab vertexCount
+	NOP		ILW.z	irCopyCount, 0(irBaseVtxPtr)z                 	; grab copyCount
+	NOP		ILW.y	irLoopCount, 0(irBaseVtxPtr)y                 	; grab loopCount
+
+	NOP	 	IADD	irKickPtr, irOutputPtr, irOutPtr              	; calculate OutBuffer base ptr
+	NOP		IADD	irNormalPtr, irNormalPtr, irBaseVtxPtr        	
+	NOP		IADDIU	irOutPtr, irKickPtr, 0		; calculate OutBuffer moving ptr
+
+	NOP		IADDIU	irBaseVtxPtr, irBaseVtxPtr, 2                 	; skip header
+	NOP		IADD	irVtxPtr, irBaseVtxPtr, irCopyCount           	; skip texture packet to get to packed vertices
+	NOP		IADD	irZADCPtr, irVtxPtr, irVtxCount               	; skip packed vertices to get z data
+
+	NOP		LQ.w	VF23, offBaseTexGIFData+1(VI00)	; alpha scale
+	NOP		LQ.xyz	VF23, offEVMiscData+0(VI00)                   	; eye in local space
+
+	NOP		LQ	VF09, offEVMtx+0(VI00)
+	NOP		LQ	VF10, offEVMtx+1(VI00)
+	NOP		LQ	VF11, offEVMtx+2(VI00)
+	NOP		LQ	VF12, offEVMtx+3(VI00)
+
+	NOP		SQI	VF31, (irOutPtr++)
+	NOP		ISW.z	irOutPtr, offEVD1+0(VI00)
+dbSC_Prolog:
+
+	NOP		LQI	VF22, (irZADCPtr++)		; 		load ZADC for 4 vertices
+	NOP		LQI.zw	VF13, (irVtxPtr++)		; 		load Vertex1
+	NOP		LQI	VF17, (irNormalPtr++)		; 		load Normal1
+	NOP		NOP
+	NOP		NOP
+	ADDz.x	VF13, VF00, VF13	NOP			; VF13.x = Vertex1.X
+	ADDw.y	VF13, VF00, VF13	NOP			; VF13.y = Vertex1.Z
+	ADDx.z	VF13, VF00 ,VF22	NOP			; VF13 = v1 = uncompress( Vertex1 )
+	ITOF15.xyz	VF17, VF17	NOP			; VF17 = n1 = float15( Normal1 )
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+	SUB.xyz	VF13, VF23, VF13	NOP			; VF13 = e1 = ( e - v1 )
+
+	ADDw.x	VF21, VF00, VF00w	NOP			; VF21x = 1.0
+	NOP		LQI.zw	VF20, (irVtxPtr++)		;		load Vertex2 (VF20.zw = Vertex2.xy)
+	NOP		NOP
+
+	MUL.xyz	VF15, VF17, VF13	NOP			; multiply components for dot
+
+	SUB.xyz	VF13, VF00, VF13	NOP			; VF13 = -e1
+
+	NOP		MR32.yz	VF20, VF20		; 		VF20.yz = Vertex2.XY
+
+	ADD.xyz	VF17, VF17, VF17	NOP			; VF17 = 2n1
+
+	ADDAz.x	ACC, VF15, VF15z	NOP			; first add of dot components
+	MADDy.x	VF15, VF21, VF15y	MR32.xy	VF20, VF20		; VF15x = n1.e1		VF20.xy = Vertex2.XY
+
+	NOP		NOP
+	NOP		NOP
+
+	MULAw.xyz	ACC, VF13, VF00w	NOP			; ACC = -e1
+	MADDx.xyz	VF15, VF17, VF15x	NOP			; VF15 = 2n1(n1.e1) - e1
+	ADDy.z	VF20, VF00, VF22	NOP			; uncompress( Vertex 2 )
+
+	ADDAx.xy	ACC, VF00, VF00x	NOP
+	ADDAw.z	ACC, VF00, VF00w	NOP			; ACC = { 0.0, 0.0, 1.0 }
+
+	MADDAx.xyz	ACC, VF09, VF15x	NOP
+	MADDAy.xyz	ACC, VF10, VF15y	LQI	VF21, (irNormalPtr++)		; 		load Normal2
+	MADDz.xyz	VF15, VF11, VF15z	NOP			; VF15 = { rx, ry, rz + 1.0 }
+
+	NOP		NOP
+	SUB.xyz	VF14, VF23, VF20	NOP			; VF14 = e2 = ( e - v2 )
+	ITOF15	VF18, VF21	LOI	0.5		; int15tofloat( n2 )
+
+; V1 - calc m + V2 - reflect
+	NOP		ERLENG	P, VF15		; 		start P = 1 / len( r1 )
+	NOP		NOP
+	NOP		MOVE.xy	VF17, VF15		; 		VF17.xy = VF15.xy = r1.xy
+
+	ADDw.x	VF21, VF00, VF00w	NOP	
+
+	MUL.xyz	VF15, VF14, VF18	NOP			; multiply components for dot (v2)
+
+	SUB.xyz	VF14, VF00, VF14	LQI.zw	VF20, (irVtxPtr++)		; VF14 = -e2		load Vertex3 (VF20zw = Vertex3.xy)
+
+	NOP		NOP
+
+	ADD.xyz	VF18, VF18, VF18	NOP			; VF18 = 2n2
+
+	ADDAz.x	ACC, VF15, VF15z	NOP			; first add of dot components
+	MADDy.x	VF15, VF21, VF15y	MR32.yz	VF20, VF20		; VF14x = n2.e2		VF20.yz = Vertex3.XY
+
+	NOP		NOP
+	NOP		NOP
+
+	MULAw.xyz	ACC, VF14, VF00w	NOP			; ACC = -e2
+	MADDx.xyz	VF15, VF18, VF15x	MR32.xy	VF20, VF20		; VF15 = 2n2(n2.e2) - e2	VF20.xy = Vertex3.XY
+
+	ADDz.z	VF20, VF00, VF22	NOP			; uncompress( Vertex3 )
+
+	ADDAx.xy	ACC, VF00, VF00x	NOP
+	ADDAw.z	ACC, VF00, VF00w	LQ	VF13, 1(irOutDataPtr)		; ACC = { 0.0, 0.0, 1.0 }	load RGBA1
+
+	MADDAx.xyz	ACC, VF09, VF15x	LQI	VF21, (irNormalPtr++)		;		load Normal3
+	MADDAy.xyz	ACC, VF10, VF15y	NOP
+	MADDz.xyz	VF16, VF11, VF15z	NOP			; VF16 = { rx, ry, rz + 1.0 }
+
+	ITOF0.w	VF13, VF13	NOP			; float( RGBA1.a )
+
+	SUB.xyz	VF15, VF23, VF20	NOP			; VF15 = e3 = ( e - v3 )
+	ITOF15	VF19, VF21	WAITP			; int15tofloat( n3 )	
+
+; loop point
+dbSC_Loop:
+; block 1
+; V1 - finish + V2 - calc m + v3 - reflect
+	MULi.xy	VF17, VF17, I	ERLENG	P, VF16		; r1xy = r1xy / 2		start P = 1 / len( r2 )
+
+	ADDw.x	VF21, VF00, VF00w	MFP.w	VF17, P		; VF21x = 1.0		VF17w = 1 / m1 = 1 / len( r1 )
+	ADDAi.xy	ACC, VF00, I	MOVE.xy	VF18, VF16   		; ACC = { 0.5, 0.5 }	VF18xy = r2.xy
+
+	MUL.xyz	VF16, VF15, VF19	NOP			; multiply components for dot (v3)
+	SUB.xyz	VF15, VF00, VF15	LQI.zw	VF20, (irVtxPtr++)		; VF15 = -e3		load Vertex4 (VF20zw = Vertex4.xy)
+
+	MADDw.xy	VF17, VF17, VF17w	NOP			; VF17 = ((r1xy / 2) * 1 / m) + .5
+	MULw.w	VF13, VF13, VF23	LQ.z	VF17, 0(irOutDataPtr)		; scale RGBA1.a		load STQ1.q
+
+	ADD.xyz	VF19, VF19, VF19	NOP			; VF19 = 2n3
+
+	ADDAz.x	ACC, VF16x, VF16z	MR32.yz	VF20, VF20		; first add of dot components	VF20yz = Vertex4.xy
+	MADDy.x	VF16, VF21, VF16y	NOP			; VF15x = n1.e1 		
+
+	MULz.xy	VF17, VF17, VF17	NOP			; r1xy = r1xy * STQ1.q	
+	FTOI0.w	VF13, VF13	LQ	VF21, 2(irOutDataPtr)		; int( RGBA1.a )		load XYZ1
+
+	MULAw.xyz	ACC, VF15, VF00w	MR32.xy	VF20, VF20		; ACC = -e3		VF20xy = Vertex4.xy
+	MADDx.xyz	VF16, VF19, VF16x	LQ	VF14, 4(irOutDataPtr)		; VF16 = 2n3(n3.e3) - e3	load RGBA2
+
+	ADDw.z	VF20, VF00, VF22	SQI	VF17, (irOutPtr++)		; uncompress( Vertex4 )	store STQ1
+
+	ADDAx.xy	ACC, VF00, VF00x	SQI	VF13, (irOutPtr++)		; 		store RGBA1
+	ADDAw.z	ACC, VF00, VF00w	SQI	VF21, (irOutPtr++)		; ACC = { 0.0, 0.0, 1.0 }	store XYZ1
+
+	MADDAx.xyz	ACC, VF09, VF16x	LQI	VF21, (irNormalPtr++)		;		load Normal4
+	MADDAy.xyz	ACC, VF10, VF16y	LQI	VF22, (irZADCPtr++)		;		load ZADCData
+	MADDz.xyz	VF17, VF11, VF16z	NOP			; VF17 = r3 = { rx, ry, rz + 1.0 }
+
+	ITOF0.w	VF14, VF14	NOP			; float( RGBA2.a )
+
+	SUB.xyz	VF16, VF23, VF20	NOP			; VF16 = e4 = ( e - v4 )
+	ITOF15	VF20, VF21	WAITP			; int15tofloat( n4 )	
+
+; block 2
+; V2 - finish + V3 - calc m + v4 - reflect
+	MULi.xy	VF18, VF18, I	ERLENG	P, VF17		; r1xy = r1xy / 2		start P = 1 / len( r3 )
+
+	ADDw.x	VF21, VF00, VF00w	MFP.w	VF18, P		; VF21x = 1.0		VF18w = 1 / m2 = 1 / len( r2 )
+	ADDAi.xy	ACC, VF00, I	MOVE.xy	VF19, VF17   		; ACC = { 0.5, 0.5 }	VF19xy = r3.xy
+
+	MUL.xyz	VF13, VF16, VF20	NOP			; multiply components for dot (v4)
+	SUB.xyz	VF16, VF00, VF16	LQI.zw	VF17, (irVtxPtr++)		; VF16 = -e4		load Vertex1 (VF17zw = Vertex1.xy)
+
+	MADDw.xy	VF18, VF18, VF18w	NOP			; VF18 = r2xy / (2 * m) + .5
+	MULw.w	VF14, VF14, VF23	LQ.z	VF18, 3(irOutDataPtr)		; scale RGBA2.a		load STQ2.q
+
+	ADD.xyz	VF20, VF20, VF20	NOP			; VF20 = 2n4
+
+	ADDAz.x	ACC, VF13x, VF13z	MR32.yz	VF17, VF17		; first add of dot components	VF17yz = Vertex1.xy
+	MADDy.x	VF13, VF21, VF13y	NOP			; VF13x = n1.e1 		
+
+	MULz.xy	VF18, VF18, VF18	NOP			; r2xy = r2xy * STQ1.q	
+	FTOI0.w	VF14, VF14	LQ	VF21, 5(irOutDataPtr)		; int( RGBA2.a )		load XYZ2
+
+	MULAw.xyz	ACC, VF16, VF00w	MR32.xy	VF17, VF17		; ACC = -e4		VF17xy = Vertex1.xy
+	MADDx.xyz	VF13, VF20, VF13x	LQ	VF15, 7(irOutDataPtr)		; VF15 = 2n4(n4.e4) - e4	load RGBA3
+
+	ADDx.z	VF17, VF00, VF22	SQI	VF18, (irOutPtr++)		; uncompress( Vertex1 )	store STQ2
+
+	ADDAx.xy	ACC, VF00, VF00x	SQI	VF14, (irOutPtr++)		; 		store RGBA2
+	ADDAw.z	ACC, VF00, VF00w	SQI	VF21, (irOutPtr++)		; ACC = { 0.0, 0.0, 1.0 }	store XYZ2
+
+	MADDAx.xyz	ACC, VF09, VF13x	LQI	VF21, (irNormalPtr++)		;		load Normal1
+	MADDAy.xyz	ACC, VF10, VF13y	NOP
+	MADDz.xyz	VF18, VF11, VF13z	NOP			; VF18 = r4 = { rx, ry, rz + 1.0 }
+
+	ITOF0.w	VF15, VF15	NOP			; float( RGBA3.a )
+
+	SUB.xyz	VF13, VF23, VF17	NOP			; VF13 = e1 = ( e - v1 )
+	ITOF15	VF17, VF21	WAITP			; int15tofloat( n1 )
+
+; block 3
+; V3 - finish + V4 - calc m + v1 - reflect
+	MULi.xy	VF19, VF19, I	ERLENG	P, VF18		; r2xy = r2xy / 2		start P = 1 / len( r4 )
+
+	ADDw.x	VF21, VF00, VF00w	MFP.w	VF19, P		; VF21x = 1.0		VF19w = 1 / m3 = 1 / len( r3 )
+	ADDAi.xy	ACC, VF00, I	MOVE.xy	VF20, VF18   		; ACC = { 0.5, 0.5 }	VF20xy = r4.xy
+
+	MUL.xyz	VF14, VF13, VF17	NOP			; multiply components for dot (v1)
+	SUB.xyz	VF13, VF00, VF13	LQI.zw	VF18, (irVtxPtr++)		; VF13 = -e1		load Vertex2 (VF18zw = Vertex2.xy)
+
+	MADDw.xy	VF19, VF19, VF19w	NOP			; VF19 = r2xy / (2 * m) + .5
+	MULw.w	VF15, VF15, VF23	LQ.z	VF19, 6(irOutDataPtr)		; scale RGBA3.a		load STQ3.q
+
+	ADD.xyz	VF17, VF17, VF17	NOP			; VF17 = 2n1
+
+	ADDAz.x	ACC, VF14x, VF14z	MR32.yz	VF18, VF18		; first add of dot components	VF18yz = Vertex2.xy
+	MADDy.x	VF14, VF21, VF14y	NOP			; VF14x = n1.e1 
+
+	MULz.xy	VF19, VF19, VF19	NOP			; r2xy = r2xy * STQ2.q	
+	FTOI0.w	VF15, VF15	LQ	VF21, 8(irOutDataPtr)		; int( RGBA3.a )		load XYZ3
+
+	MULAw.xyz	ACC, VF13, VF00w	MR32.xy	VF18, VF18		; ACC = -e1		VF18xy = Vertex2.xy
+	MADDx.xyz	VF14, VF17, VF14x	LQ	VF16, 10(irOutDataPtr)		; VF14 = 2n1(n1.e1) - e1	load RGBA4
+
+	ADDy.z	VF18, VF00, VF22	SQI	VF19, (irOutPtr++)		; uncompress( Vertex2 )	store STQ3
+
+	ADDAx.xy	ACC, VF00, VF00x	SQI	VF15, (irOutPtr++)		; 		store RGBA3
+	ADDAw.z	ACC, VF00, VF00w	SQI	VF21, (irOutPtr++)		; ACC = { 0.0, 0.0, 1.0 }	store XYZ3
+
+	MADDAx.xyz	ACC, VF09, VF14x	LQI	VF21, (irNormalPtr++)		;		load Normal2
+	MADDAy.xyz	ACC, VF10, VF14y	NOP
+	MADDz.xyz	VF19, VF11, VF14z	NOP			; VF19 = r1 = { rx, ry, rz + 1.0 }
+
+	ITOF0.w	VF16, VF16	NOP			; float( RGBA3.a )
+
+	SUB.xyz	VF14, VF23, VF18	NOP			; VF14 = e2 = ( e - v2 )
+	ITOF15	VF18, VF21	WAITP			; int15tofloat( n2 )
+
+; block 4
+; V4 - finish + V1 - calc m + v2 - reflect
+	MULi.xy	VF20, VF20, I	ERLENG	P, VF19		; r3xy = r3xy / 2		start P = 1 / len( r1 )
+
+	ADDw.x	VF21, VF00, VF00w	MFP.w	VF20, P		; VF21x = 1.0		VF20w = 1 / m4 = 1 / len( r4 )
+	ADDAi.xy	ACC, VF00, I	MOVE.xy	VF17, VF19   		; ACC = { 0.5, 0.5 }	VF17xy = r1.xy
+
+	MUL.xyz	VF15, VF14, VF18	NOP			; multiply components for dot (v2)
+	SUB.xyz	VF14, VF00, VF14	LQI.zw	VF19, (irVtxPtr++)		; VF14 = -e2		load Vertex3 (VF19zw = Vertex3.xy)
+
+	MADDw.xy	VF20, VF20, VF20w	NOP			; VF20 = r3xy / (2 * m) + .5
+	MULw.w	VF16, VF16, VF23	LQ.z	VF20, 9(irOutDataPtr)		; scale RGBA4.a		load STQ4.q
+
+	ADD.xyz	VF18, VF18, VF18	NOP			; VF18 = 2n2
+
+	ADDAz.x	ACC, VF15x, VF15z	MR32.yz	VF19, VF19		; first add of dot components	VF19yz = Vertex3.xy
+	MADDy.x	VF15, VF21, VF15y	NOP			; VF15x = n2.e2 
+
+	MULz.xy	VF20, VF20, VF20	LQ	VF21,11(irOutDataPtr)		; r3xy = r3xy * STQ3.q	load XYZ4
+	FTOI0.w	VF16, VF16	IADDIU	irOutDataPtr, irOutDataPtr, 12	; int( RGBA4.a )		
+
+	MULAw.xyz	ACC, VF14, VF00w	MR32.xy	VF19, VF19		; ACC = -e2		VF19xy = Vertex3.xy
+	MADDx.xyz	VF15, VF18, VF15x	LQ	VF13, 1(irOutDataPtr)		; VF15 = 2n2(n2.e2) - e2	load RGBA1
+
+	ADDz.z	VF19, VF00, VF22	SQI	VF20, (irOutPtr++)		; uncompress( Vertex3 )	store STQ4
+
+	ADDAx.xy	ACC, VF00, VF00x	SQI	VF16, (irOutPtr++)		; 		store RGBA4
+	ADDAw.z	ACC, VF00, VF00w	SQI	VF21, (irOutPtr++)		; ACC = { 0.0, 0.0, 1.0 }	store XYZ4
+
+	MADDAx.xyz	ACC, VF09, VF15x	LQI	VF21, (irNormalPtr++)		;		load Normal3
+	MADDAy.xyz	ACC, VF10, VF15y	NOP
+	MADDz.xyz	VF16, VF11, VF15z	ISUBIU	irLoopCount, irLoopCount, 1	; VF18 = r2 = { rx, ry, rz + 1.0 }
+
+	ITOF0.w	VF13, VF13	NOP			; float( RGBA1.a )
+
+	SUB.xyz	VF15, VF23, VF19	IBNE	irLoopCount, VI00, dbSC_Loop	; VF15 = e3 = ( e - v3 )
+	ITOF15	VF19, VF21	WAITP			; int15tofloat( n3 )
+
+dbSC_Kick:
+	NOP		IADDIU	VI01, VI00, offEVTexGIFData
+	NOP		NOP
+	NOP		XGKICK	VI01
+	NOP		NOP
+	NOP		XGKICK	irKickPtr
+
+dbSC_Return:
+	NOP		JR	VI15
+	NOP		NOP
+
+.enddmadata
+dbStaticRefMap_CodeEnd:

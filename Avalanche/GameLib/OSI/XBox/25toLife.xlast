@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<XboxLiveSubmissionProject Version="1.0">
+	<Statsv3Project clsid="{27470528-071B-49AB-8728-5876DA0CBA64}" ProjectName="25toLife" TitleID="45530018" WebEnabled="true" Default_Locale="13160" EnabledLocales="13160," LargestLeaderboardID="3" DecayDays="0">
+		<IndividualLeaderboardContainer clsid="{4AAC0619-9B1A-415D-A62C-E4CDB73BC7D5}">
+			<IndividualLeaderboard clsid="{718B40F7-B594-4CB9-A108-515D9BB1D520}" LeaderboardName="Leaderboard 1" ID="1" ResetType="0" MaxAttachments="0" MaxAttachmentSize="0" EntryExpiration="0" OnlyTopEntries="false" Arbitrate="false" UsesELO="false" TeamsLeaderboard="false" InitialPlayerRating="32000" RatingScaleFactor="1000" ExponentialBase="0" RatingRangeWeights="0,500;" WebVisibleAttributeIndices="" AttributeIndicesContainingPUIDs="" NamesForLocales="13160=Players1&amp;&amp;&amp;" WebEnabled="true" LargestAttributeID="68">
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[0]!=null?attr[0]:0" NameID="65" LocaleSpecificNames="13160=stats_rank&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[1]!=null?attr[1]:0" NameID="66" LocaleSpecificNames="13160=stats_copWins&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[2]!=null?attr[2]:0" NameID="67" LocaleSpecificNames="13160=stats_copLosses&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[3]!=null?attr[3]:0" NameID="68" LocaleSpecificNames="13160=stats_copTies&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[4]!=null?attr[4]:0" NameID="69" LocaleSpecificNames="13160=stats_gangWins&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[5]!=null?attr[5]:0" NameID="70" LocaleSpecificNames="13160=stats_gangLosses&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[6]!=null?attr[6]:0" NameID="71" LocaleSpecificNames="13160=stats_gangTies&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[7]!=null?attr[7]:0" NameID="72" LocaleSpecificNames="13160=stats_copKills&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[8]!=null?attr[8]:0" NameID="73" LocaleSpecificNames="13160=stats_gangKills&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[9]!=null?attr[9]:0" NameID="74" LocaleSpecificNames="13160=stats_copDeaths&amp;&amp;&amp;"/>
+			</IndividualLeaderboard>
+			<IndividualLeaderboard clsid="{718B40F7-B594-4CB9-A108-515D9BB1D520}" LeaderboardName="Leaderboard 2" ID="2" ResetType="0" MaxAttachments="0" MaxAttachmentSize="0" EntryExpiration="0" OnlyTopEntries="false" Arbitrate="false" UsesELO="false" TeamsLeaderboard="false" InitialPlayerRating="32000" RatingScaleFactor="1000" ExponentialBase="0" RatingRangeWeights="0,500;" WebVisibleAttributeIndices="" AttributeIndicesContainingPUIDs="" NamesForLocales="13160=Players2&amp;&amp;&amp;" WebEnabled="true" LargestAttributeID="68">
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[0]!=null?attr[0]:0" NameID="65" LocaleSpecificNames="13160=lb2stat0&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[1]!=null?attr[1]:0" NameID="66" LocaleSpecificNames="13160=lb2stat1&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[2]!=null?attr[2]:0" NameID="67" LocaleSpecificNames="13160=lb2stat2&amp;&amp;&amp;"/>
+				<FormattedAttribute clsid="{AC48B683-978E-4C30-82EA-4384D8D8FC53}" Name="Formatted Attribute" ReturnType="0" Formula="attr[3]!=null?attr[3]:0" NameID="68" LocaleSpecificNames="13160=lb2stat3&amp;&amp;&amp;"/>
+			</IndividualLeaderboard>
+			<IndividualLeaderboard clsid="{718B40F7-B594-4CB9-A108-515D9BB1D520}" LeaderboardName="Leaderboard 3" ID="3" ResetType="0" MaxAttachments="0" MaxAttachmentSize="0" EntryExpiration="0" OnlyTopEntries="false" Arbitrate="false" UsesELO="false" TeamsLeaderboard="true" InitialPlayerRating="32000" RatingScaleFactor="1000" ExponentialBase="0" RatingRangeWeights="0,500;" WebVisibleAttributeIndices="" AttributeIndicesContainingPUIDs="" NamesForLocales="13160=Clans1&amp;&amp;&amp;" WebEnabled="true" LargestAttributeID="64"/>
+		</IndividualLeaderboardContainer>
+		<UnitLeaderboardContainer clsid="{6A3AB7C2-CFC1-4219-99D7-269F6B15C959}"/>
+		<CompetitionLeaderboardContainer clsid="{8A6BC689-B203-4C1B-9EBD-3725BE673E42}"/>
+	</Statsv3Project>
+</XboxLiveSubmissionProject>

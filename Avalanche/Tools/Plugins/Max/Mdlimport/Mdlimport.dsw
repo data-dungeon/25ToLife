@@ -1,0 +1,74 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Mdlimport"=.\Mdlimport.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Max/Mdlimport", KKSAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name mdllib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name cholib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "cholib"=..\..\Libraries\cholib\cholib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Libraries/cholib", BHTAAAAA
+    ..\..\libraries\cholib
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name mdllib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "mdllib"=..\..\Libraries\mdllib\mdllib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Libraries/mdllib", XCSAAAAA
+    ..\..\libraries\mdllib
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

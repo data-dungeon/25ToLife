@@ -1,0 +1,41 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XPRviewer", "XPRviewer.vcproj", "{D83026B7-794A-4DE1-BB26-436A42C012DF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/XPRviewer\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {72E768B0-BCB6-4EA5-B8B7-2A718C045C3F}
+		SccProjectUniqueName1 = XPRviewer.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Profile = Profile
+		Profile_FastCap = Profile_FastCap
+		Release = Release
+		Release_LTCG = Release_LTCG
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Debug.ActiveCfg = Debug|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Debug.Build.0 = Debug|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Profile.ActiveCfg = Profile|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Profile.Build.0 = Profile|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Profile_FastCap.ActiveCfg = Profile_FastCap|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Profile_FastCap.Build.0 = Profile_FastCap|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Release.ActiveCfg = Release|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Release.Build.0 = Release|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Release_LTCG.ActiveCfg = Release_LTCG|Xbox
+		{D83026B7-794A-4DE1-BB26-436A42C012DF}.Release_LTCG.Build.0 = Release_LTCG|Xbox
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+create "SNPS2Consumer\XML.lib"
+addmod "SNPS2Consumer/xmlParse.obj"
+addmod "SNPS2Consumer/xmlUtil.obj"
+addmod "SNPS2Consumer/xmlWrite.obj"
+save
+end

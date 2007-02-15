@@ -1,0 +1,75 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "Layers"=..\..\EngineNew\Layers\Layers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/Engine/Layers", AAAAAAAA
+    ..\..\enginenew\layers
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MOTNSET4"=.\MOTNSET4.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/motnset3", FRBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Layers
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Math"=..\..\enginenew\Math\Math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/enginenew/Math", WEAAAAAA
+    ..\..\enginenew\math
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/motnset3", FRBAAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

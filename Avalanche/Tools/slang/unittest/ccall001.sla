@@ -1,0 +1,42 @@
+// test c functionality into scripts
+//   ( this is sort of magic, our C test app looks for the
+//     function "ctestfunction", and if it exists tries to fill in
+//     default values, and retrieve those values )
+
+
+int    intOne;
+float  floatTwo;
+string stringThree;
+
+int onesquared;
+int twosquared;
+int threesquared;
+int foursquared;
+
+print intOne;		// result: 1
+print floatTwo;		// result: 2.000000
+print stringThree;	// result: three
+
+// let control be passed to C
+print "pass to c";	// result: pass to c
+sleep 0;
+
+// c will run us again, so the print our vars
+print "return from c";	// result: return from c
+print onesquared;	// result: 1
+print twosquared;	// result: 4
+print threesquared;	// result: 9
+print foursquared;	// result: 16
+
+
+int ctestfunction( int x )
+{
+   int result = x * x;
+
+   if      ( x == 1 ) onesquared   = result;
+   else if ( x == 2 ) twosquared   = result;
+   else if ( x == 3 ) threesquared = result;
+   else if ( x == 4 ) foursquared  = result;
+
+   return result;
+}

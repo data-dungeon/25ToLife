@@ -1,0 +1,46 @@
+
+class InstanceObject
+{
+   InstancableObject *m_pParent;
+   Property          *m_pPropertyHead;
+
+   InstancableObject *m_pCache;
+   InstancableObject *m_pInstanceHead;
+   InstancableObject *m_pNextInstance;
+   InstancableObject *m_pPrevInstance;
+}
+
+class Property : public InstancableObject
+{
+   Property *m_pNextProperty;
+   Property *m_pPrevProperty;
+}
+
+class HierObject : public InstancableObject
+{
+   HierObject *m_pChild;
+   HierObject *m_pNextHierObject;
+   HierObject *m_pPrevHier;
+}
+
+class TransformableObject : public HierObject
+{
+   TransformProperty m_transform;
+}
+
+class Camera : public TransformableObject
+{
+   FloatProperty m_focallength;
+}
+
+class Model : public TransformableObject
+{
+   BaseObject *m_pGeometry;
+}
+
+class INode
+{
+   InstancableObject *m_pObject;
+   INode *m_pNext;
+   INode *m_pPrev;
+}

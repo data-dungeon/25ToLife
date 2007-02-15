@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="TupperChainApp"
+	SccProjectName="&quot;//depot/Avalanche/Tools/TupperChain/TupperChainApp&quot;"
+	SccAuxPath=""
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Tools Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				OptimizeForProcessor="3"
+				AdditionalIncludeDirectories="$(TTLLIB)\Tools,$(TTLLIB)\Engine,$(TTLLIB)\GameLib"
+				PreprocessorDefinitions="_CONSOLE;_DEBUG;WIN32;WIN32_TOOLS_DEBUG;$(AVUSER)"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Copying $(TargetFileName) to FilterChainDebug Directory"
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(FILTER_CHAIN)&quot;Debug\&quot;$(TargetFileName)&quot;
+"
+				Outputs="$(FILTER_CHAIN)Debug\$(TargetFileName)"/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="Tools_Debug\FilterChainCmd.exe"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\Tools_Debug\FilterChainCmd.pdb"
+				SubSystem="1"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\Tools_Debug/TupperChainApp.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG;$(AVUSER)"
+				Culture="1033"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Tools Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				OptimizeForProcessor="3"
+				AdditionalIncludeDirectories="$(TTLLIB)\Tools,$(TTLLIB)\Engine,$(TTLLIB)\GameLib"
+				PreprocessorDefinitions="NDEBUG;_CONSOLE;WIN32;WIN32_TOOLS_RELEASE;$(AVUSER)"
+				StringPooling="TRUE"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="3"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Copying $(TargetFileName) to FilterChain Directory"
+				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(FILTER_CHAIN)&quot;\&quot;$(TargetFileName)&quot;
+"
+				Outputs="$(FILTER_CHAIN)\$(TargetFileName)"/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="Tools_Release/FilterChainCmd.exe"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\Tools_Release/FilterChainCmd.pdb"
+				SubSystem="1"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\Tools_Release/TupperChainApp.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG;$(AVUSER)"
+				Culture="1033"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath="main.cpp">
+			<FileConfiguration
+				Name="Tools Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Tools Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="SimpleLog.cpp">
+			<FileConfiguration
+				Name="Tools Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Tools Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="SimpleLog.h">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

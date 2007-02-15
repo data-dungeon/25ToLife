@@ -1,0 +1,27 @@
+// test the compiler arithmetic
+
+print 1+2+3+4+5;	// result: 15
+print 1+2*3;		// result: 7
+print (1+2)*3;		// result: 9
+print 1 << 8;		// result: 256
+print 5 - 8;		// result: -3
+print 0xff;			// result: 255
+print 0x80 | 0x0f;	// result: 143
+print 0xff & 3;		// result: 3
+print 0xf1 & 3;		// result: 1
+print 1.5 + 2.5;	// result: 4.000000
+print 243 % 2;		// result: 1
+print 24 % 5;		// result: 4
+
+print 11111111;		// result: 11111111
+print 3 < 4;		// result: 1
+print 4 < 4;		// result: 0
+print 5 < 4;		// result: 0
+
+print 22222222;		// result: 22222222
+print 3 <= 4;		// result: 1
+print 4 <= 4;		// result: 1
+print 5 <= 4;		// result: 0
+
+print 33333333;		// result: 33333333
+	

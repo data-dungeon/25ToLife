@@ -1,0 +1,116 @@
+########################################################
+# PS2 Makefile generated for GNU Make by ProDG VSI.NET #
+########################################################
+
+.SILENT:
+.SUFFIXES:
+.SUFFIXES: .c .cpp .cxx .cc .s .asm .dsm
+
+OUTDIR = SNPS2Debug
+INTDIR = SNPS2Debug
+
+LCFILE = "c:/dev/Avalanche/GameLib/Patcher/PatchLib/rel.cmd"
+LIBS=\
+	 "dnas_mc.a"\
+
+AS=ps2cc
+AS_FLAGS=\
+	-Wa,-g\
+	-DSN_TARGET_PS2_DLL\
+	-D_DEBUG\
+	-DPS2\
+	-DSN\
+	-I"C:/Dev/Avalanche/Engine"\
+	-I"C:/Dev/Avalanche/GameLib"\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scee/ee/include"\
+	-I"C:/dev/PS2/SN/ProDG for PlayStation2/ee-include"\
+	-I"../share"\
+	-I. -c\
+	-fdevstudio\
+	-g\
+	-Wa,-sn\
+
+DVP=ps2cc
+DVP_FLAGS=\
+	-Wd,-g\
+	-DSN_TARGET_PS2_DLL\
+	-D_DEBUG\
+	-DPS2\
+	-DSN\
+	-I"C:/Dev/Avalanche/Engine"\
+	-I"C:/Dev/Avalanche/GameLib"\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scee/ee/include"\
+	-I"C:/dev/PS2/SN/ProDG for PlayStation2/ee-include"\
+	-I"../share"\
+	-I. -fdevstudio -c\
+	-g\
+
+CC=ps2cc
+CC_FLAGS=\
+	-g\
+	-DSN_TARGET_PS2_DLL\
+	-D_DEBUG\
+	-DPS2\
+	-DSN\
+	-I"C:/Dev/Avalanche/Engine"\
+	-I"C:/Dev/Avalanche/GameLib"\
+	-I"C:/Dev/PS2/Sony/sce-302/ee/include"\
+	-I"C:/Dev/PS2/Sony/sce-302/common/include"\
+	-I"C:/Dev/PS2/Sony/DNAS/libdnas_mc_300_scee/ee/include"\
+	-I"C:/dev/PS2/SN/ProDG for PlayStation2/ee-include"\
+	-I"../share"\
+	-I. -c\
+	-fdevstudio\
+	-MMD\
+	-g\
+	-O0\
+	-Wno-inline-static-semantics\
+	-Wa,-sn\
+	-fno-rtti\
+	-fno-exceptions\
+	-mno-check-zero-division\
+	-ffast-math\
+	-mvu0-use-vf0-vf15\
+	-G0\
+
+CXX_FLAGS=$(CC_FLAGS)
+
+LD=ps2dlllk
+LD_FLAGS=\
+	"c:\dev\Avalanche\GameLib\Patcher\PatchLib\rel.lk" ps2cc.exe @_ps2cc.txt-pal
+
+LD_OBJS=\
+	"SNPS2Debug/HttpMgr.obj"\
+	"SNPS2Debug/HttpMgr_ps2.obj"\
+	"SNPS2Debug/PatchCommandThread_ps2.obj"\
+	"SNPS2Debug/Patcher.obj"\
+	"SNPS2Debug/PatchHelper.obj"\
+
+COMPILE: $(LD_OBJS)
+
+"SNPS2Debug/HttpMgr.obj":
+
+"SNPS2Debug/HttpMgr_ps2.obj":
+
+"SNPS2Debug/PatchCommandThread_ps2.obj":
+
+"SNPS2Debug/Patcher.obj":
+
+"SNPS2Debug/PatchHelper.obj":
+
+LINK: "SNPS2Debug/PatchLibPAL.elf"
+
+"SNPS2Debug/PatchLibPAL.elf" : $(LD_OBJS)
+	@echo ProDG Linking $@
+	$(LD) $(LD_FLAGS) $(LD_OBJS) -o $@
+
+include "SNPS2Debug/HttpMgr.d"
+include "SNPS2Debug/HttpMgr_ps2.d"
+include "SNPS2Debug/PatchCommandThread_ps2.d"
+include "SNPS2Debug/Patcher.d"
+include "SNPS2Debug/PatchHelper.d"
+

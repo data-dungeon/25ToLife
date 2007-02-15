@@ -1,0 +1,14 @@
+-L"d:/ttl/NetZ/PlayStation2/lib/SN"
+
+-L"d:/ttl/PS2/Logitech"
+
+-L"d:/ttl/NellyMoser/Lib"
+
+-T "d:\Ttl\Avalanche\GameLib\Voice\rel.cmd" -nostartfiles
+--start-group
+"liblgaud.a"
+"SaseCodec3200_G0_v163b.a"
+--end-group
+
+-Wl,-G0,-Map,SNPS2Debug\Voice.map,-sn-full-map
+

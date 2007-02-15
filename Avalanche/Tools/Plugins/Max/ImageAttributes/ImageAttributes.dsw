@@ -1,0 +1,97 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ImageAttributes"=.\ImageAttributes.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Max/ImageAttributes", EPSBAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name KeyVal
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name tupperware
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name UIDisplay
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "KeyVal"=..\KeyVal\KeyVal.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Max/KeyVal", EJPBAAAA
+    ..\keyval
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "UIDisplay"=..\UIDisplay\UIDisplay.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Max/UIDisplay", ZGVAAAAA
+    ..\uidisplay
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name tupperware
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "tupperware"=..\..\..\Tupperware\tupperware.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/GameLib/Tupperware", MROAAAAA
+    ..\..\..\tupperware
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Max/ImageAttributes", EPSBAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

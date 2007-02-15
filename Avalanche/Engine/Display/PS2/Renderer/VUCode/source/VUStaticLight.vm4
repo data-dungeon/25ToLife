@@ -1,0 +1,38 @@
+
+define( 'szePLightData', eval( 1))
+define( 'szePLightClrs', eval( 3))
+define( 'szePLightPositions', eval( 3))
+define( 'szePLightScale', eval( 1))
+define( 'szePLightData', eval( szePLightData + szePLightScale + szePLightClrs + szePLightPositions))
+
+
+define( 'szeDLightVecs', eval( 3))
+define( 'szeDLightClrs', eval( 3))
+define( 'szeDLightData', eval( szeDLightVecs + szeDLightClrs))
+
+
+define( 'szeALightClr', eval( 1))
+
+
+define( 'szeLightWorkStack', eval( 4))
+define( 'szeLightBlendData', eval( 1))
+
+define( 'szeStaticLightingData', eval( szePLightData + szeDLightData + szeALightClr + szeLightWorkStack + szeLightBlendData))
+
+define( 'offStaticLightingData', eval( baseStaticLightingData))
+
+define( 'offPLightD1', eval( offStaticLightingData))
+define( 'offPLightPositions', eval( offPLightD1 + 1))
+define( 'offPLightScale', eval( offPLightPositions + szePLightPositions))
+define( 'offPLightClrs', eval( offPLightScale + 1))
+
+define( 'offDLightVecs', eval( offPLightClrs + szePLightClrs))
+define( 'offDLightClrs', eval( offDLightVecs + szeDLightVecs))
+
+define( 'offALightClr', eval( offDLightClrs + szeDLightClrs))
+
+define( 'offLightBlendData', eval( offALightClr + 1))
+
+define( 'offLightWorkStack', eval( offLightBlendData + 1))
+
+

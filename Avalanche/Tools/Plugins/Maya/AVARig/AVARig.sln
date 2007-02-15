@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AVARig", "AVARig.vcproj", "{CE53BA1D-B33A-408F-9FE2-82B694145CA0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D} = {FAF27AB7-B622-4B9C-B562-83AC0D28950D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\..\..\GameLib\Tupperware\tupperware.vcproj", "{FAF27AB7-B622-4B9C-B562-83AC0D28950D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SolutionUniqueID = {E8CD04E1-A5FD-4C36-80E3-5F527CD51805}
+		SccProjectUniqueName1 = ..\\..\\..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName1 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath1 = ..\\..\\..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = AVARig.vcproj
+		SccLocalPath2 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CE53BA1D-B33A-408F-9FE2-82B694145CA0}.Debug.ActiveCfg = Debug|Win32
+		{CE53BA1D-B33A-408F-9FE2-82B694145CA0}.Debug.Build.0 = Debug|Win32
+		{CE53BA1D-B33A-408F-9FE2-82B694145CA0}.Release.ActiveCfg = Release|Win32
+		{CE53BA1D-B33A-408F-9FE2-82B694145CA0}.Release.Build.0 = Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.Build.0 = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.ActiveCfg = Tools Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

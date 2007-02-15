@@ -1,0 +1,16 @@
+define( 'szeEVData', eval( 3))
+define( 'szeEVMtx', eval( 4))
+define( 'szeEVTexGIFData', eval( 8))
+define( 'szeEVBaseGIFData', eval( 8))
+
+define( 'szeAnimEVMapData', eval( szeEVData + szeEVMtx + szeEVTexGIFData + szeEVBaseGIFData))
+
+define( 'offEVD1', eval( baseAnimEVMapData))
+define( 'offEVD2', eval( offEVD1 + 1))
+define( 'offEVD3', eval( offEVD2 + 1))
+
+define( 'offEVMtx', eval( offEVD3 + 1))
+
+define( 'offEVTexGIFData', eval( offEVMtx + szeEVMtx))
+define( 'offBaseTexGIFData', eval( offEVTexGIFData + szeEVTexGIFData))
+

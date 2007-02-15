@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cloth", "Cloth.vcproj", "{BDECF0FF-AAC6-43A6-8E58-40AAE065EFDE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Plugins/Max/Cloth\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {B9A94732-0835-4CD4-A47F-701C4EC5AD3E}
+		SccProjectUniqueName1 = Cloth.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Hybrid = Hybrid
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BDECF0FF-AAC6-43A6-8E58-40AAE065EFDE}.Debug.ActiveCfg = Debug|Win32
+		{BDECF0FF-AAC6-43A6-8E58-40AAE065EFDE}.Debug.Build.0 = Debug|Win32
+		{BDECF0FF-AAC6-43A6-8E58-40AAE065EFDE}.Hybrid.ActiveCfg = Hybrid|Win32
+		{BDECF0FF-AAC6-43A6-8E58-40AAE065EFDE}.Hybrid.Build.0 = Hybrid|Win32
+		{BDECF0FF-AAC6-43A6-8E58-40AAE065EFDE}.Release.ActiveCfg = Release|Win32
+		{BDECF0FF-AAC6-43A6-8E58-40AAE065EFDE}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

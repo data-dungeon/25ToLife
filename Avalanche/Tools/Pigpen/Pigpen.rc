@@ -1,0 +1,1753 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Pigpen.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Pigpen.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "SFX.h",                       ID_VIEW_SFX
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Pigpen...",            ID_APP_ABOUT
+    END
+END
+
+IDR_VIEW MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Export PC DBL...",            ID_FILE_EXPORT_PC
+        MENUITEM "Export PS2 DBL...",           ID_FILE_EXPORT_PS2
+        MENUITEM "Export GameCube DBL...",      ID_FILE_EXPORT_GCN
+        MENUITEM "Analyze Data Use",            ID_FILE_ANALYZE
+        MENUITEM "Analyze Texture Use",         ID_TEXTURE_ANALYZE
+        MENUITEM "Merge",                       ID_FILE_MERGE
+        MENUITEM "Set Associate Log File...",   ID_FILE_SETASSOCIATELOGFILE
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Effects",                     ID_VIEW_EFFECTS
+        MENUITEM "Particles",                   ID_VIEW_PARTICLES
+        MENUITEM "Graphics",                    ID_VIEW_GRAPHICS
+        MENUITEM "Emitters",                    ID_VIEW_EMITTERS
+        MENUITEM "Swooshes",                    ID_VIEW_SWOOSHES
+        MENUITEM "Swoosh emitters",             ID_VIEW_SWOOSH_EMITTERS
+        POPUP "Close"
+        BEGIN
+            MENUITEM "All but Effects",             ID_CLOSE_ALLBUTEFFECTS
+            MENUITEM "All but Particles",           ID_CLOSE_ALLBUTPARTICLES
+            MENUITEM "All but Graphics",            ID_CLOSE_ALLBUTGRAPHICS
+            MENUITEM "All but Emitters",            ID_CLOSE_ALLBUTEMITTERS
+            MENUITEM "All but Swooshes",            ID_CLOSE_ALLBUTSWOOSHES
+            MENUITEM "All but Swoosh emitters",     ID_CLOSE_ALLBUTSWOOSHEMITTERS
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "SFX.h",                       ID_VIEW_SFX
+        MENUITEM "Export log",                  ID_VIEW_EXPORT_LOG
+    END
+    POPUP "Repair"
+    BEGIN
+        MENUITEM "Clear stage",                 ID_REPAIR_CLEARSTAGE
+        MENUITEM "Clear emitter model",         ID_REPAIR_CLEAREMITTERMODEL
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Pigpen...",            ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_MENUS MENU 
+BEGIN
+    POPUP "Effect View"
+    BEGIN
+        MENUITEM "New Effect",                  ID_NEW_EFFECT
+        MENUITEM "Delete (Shift+Del)",          ID_DELETE
+        MENUITEM "Rename",                      ID_RENAME
+        MENUITEM "Move to Top",                 ID_MOVE_TO_TOP
+        MENUITEM "Move to Bottom",              ID_MOVE_TO_BOTTOM
+        MENUITEM SEPARATOR
+        MENUITEM "Cut",                         ID_EDIT_CUT
+        MENUITEM "Copy",                        ID_EDIT_COPY
+        MENUITEM "Paste",                       ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Effect Dialog...",            ID_EFFECT_DIALOG
+        MENUITEM "Preview",                     ID_PREVIEW
+        MENUITEM "Find Associates",             ID_FINDASSOCIATES
+        MENUITEM SEPARATOR
+        MENUITEM "Effects",                     ID_VIEW_EFFECTS
+        MENUITEM "Particles",                   ID_VIEW_PARTICLES
+        MENUITEM "Graphics",                    ID_VIEW_GRAPHICS
+        MENUITEM "Emitters",                    ID_VIEW_EMITTERS
+        MENUITEM "Swooshes",                    ID_VIEW_SWOOSHES
+        MENUITEM "Swoosh emitters",             ID_VIEW_SWOOSH_EMITTERS
+    END
+    POPUP "Particle View"
+    BEGIN
+        MENUITEM "New Particle",                ID_NEW_PARTICLE
+        MENUITEM "Delete (Shift+Del)",          ID_DELETE
+        MENUITEM "Rename",                      ID_RENAME
+        MENUITEM "Move to Top",                 ID_MOVE_TO_TOP
+        MENUITEM "Move to Bottom",              ID_MOVE_TO_BOTTOM
+        MENUITEM SEPARATOR
+        MENUITEM "Cut",                         ID_EDIT_CUT
+        MENUITEM "Copy",                        ID_EDIT_COPY
+        MENUITEM "Paste",                       ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Particle Dialog...",          ID_PARTICLE_DIALOG
+        MENUITEM "Preview",                     ID_PREVIEW
+        MENUITEM "Find Associates",             ID_FINDASSOCIATES
+        MENUITEM SEPARATOR
+        MENUITEM "Effects",                     ID_VIEW_EFFECTS
+        MENUITEM "Particles",                   ID_VIEW_PARTICLES
+        MENUITEM "Graphics",                    ID_VIEW_GRAPHICS
+        MENUITEM "Emitters",                    ID_VIEW_EMITTERS
+        MENUITEM "Swooshes",                    ID_VIEW_SWOOSHES
+        MENUITEM "Swoosh emitters",             ID_VIEW_SWOOSH_EMITTERS
+    END
+    POPUP "Graphic View"
+    BEGIN
+        MENUITEM "New Graphic",                 ID_NEW_GRAPHIC
+        MENUITEM "Delete (Shift+Del)",          ID_DELETE
+        MENUITEM "Rename",                      ID_RENAME
+        MENUITEM "Move to Top",                 ID_MOVE_TO_TOP
+        MENUITEM "Move to Bottom",              ID_MOVE_TO_BOTTOM
+        MENUITEM SEPARATOR
+        MENUITEM "Graphic Dialog...",           ID_GRAPHIC_DIALOG
+        MENUITEM "Find Associates",             ID_FINDASSOCIATES
+        MENUITEM SEPARATOR
+        MENUITEM "Effects",                     ID_VIEW_EFFECTS
+        MENUITEM "Particles",                   ID_VIEW_PARTICLES
+        MENUITEM "Graphics",                    ID_VIEW_GRAPHICS
+        MENUITEM "Emitters",                    ID_VIEW_EMITTERS
+        MENUITEM "Swooshes",                    ID_VIEW_SWOOSHES
+        MENUITEM "Swoosh emitters",             ID_VIEW_SWOOSH_EMITTERS
+    END
+    POPUP "Emitter View"
+    BEGIN
+        MENUITEM "New Emitter",                 ID_NEW_EMITTER
+        MENUITEM "Delete (Shift+Del)",          ID_DELETE
+        MENUITEM "Rename",                      ID_RENAME
+        MENUITEM "Move to Top",                 ID_MOVE_TO_TOP
+        MENUITEM "Move to Bottom",              ID_MOVE_TO_BOTTOM
+        MENUITEM SEPARATOR
+        MENUITEM "Cut",                         ID_EDIT_CUT
+        MENUITEM "Copy",                        ID_EDIT_COPY
+        MENUITEM "Paste",                       ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Emitter Dialog...",           ID_EMITTER_DIALOG
+        MENUITEM "Preview",                     ID_PREVIEW
+        MENUITEM "Find Associates",             ID_FINDASSOCIATES
+        MENUITEM SEPARATOR
+        MENUITEM "Effects",                     ID_VIEW_EFFECTS
+        MENUITEM "Particles",                   ID_VIEW_PARTICLES
+        MENUITEM "Graphics",                    ID_VIEW_GRAPHICS
+        MENUITEM "Emitters",                    ID_VIEW_EMITTERS
+        MENUITEM "Swooshes",                    ID_VIEW_SWOOSHES
+        MENUITEM "Swoosh emitters",             ID_VIEW_SWOOSH_EMITTERS
+    END
+    POPUP "Swoosh View"
+    BEGIN
+        MENUITEM "New Swoosh",                  ID_NEW_SWOOSH
+        MENUITEM "Delete (Shift+Del)",          ID_DELETE
+        MENUITEM "Rename",                      ID_RENAME
+        MENUITEM "Move to Top",                 ID_MOVE_TO_TOP
+        MENUITEM "Move to Bottom",              ID_MOVE_TO_BOTTOM
+        MENUITEM SEPARATOR
+        MENUITEM "Cut",                         ID_EDIT_CUT
+        MENUITEM "Copy",                        ID_EDIT_COPY
+        MENUITEM "Paste",                       ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Swoosh Dialog...",            ID_SWOOSH_DIALOG
+        MENUITEM "Preview",                     ID_PREVIEW
+        MENUITEM "Find Associates",             ID_FINDASSOCIATES
+        MENUITEM SEPARATOR
+        MENUITEM "Effects",                     ID_VIEW_EFFECTS
+        MENUITEM "Particles",                   ID_VIEW_PARTICLES
+        MENUITEM "Graphics",                    ID_VIEW_GRAPHICS
+        MENUITEM "Emitters",                    ID_VIEW_EMITTERS
+        MENUITEM "Swooshes",                    ID_VIEW_SWOOSHES
+        MENUITEM "Swoosh emitters",             ID_VIEW_SWOOSH_EMITTERS
+    END
+    POPUP "Swoosh Emitter View"
+    BEGIN
+        MENUITEM "New Swoosh Emitter",          ID_NEW_SWOOSH_EMITTER
+        MENUITEM "Delete (Shift+Del)",          ID_DELETE
+        MENUITEM "Rename",                      ID_RENAME
+        MENUITEM "Move to Top",                 ID_MOVE_TO_TOP
+        MENUITEM "Move to Bottom",              ID_MOVE_TO_BOTTOM
+        MENUITEM SEPARATOR
+        MENUITEM "Cut",                         ID_EDIT_CUT
+        MENUITEM "Copy",                        ID_EDIT_COPY
+        MENUITEM "Paste",                       ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Swoosh Emitter Dialog...",    ID_SWOOSH_EMITTER_DIALOG
+        MENUITEM "Preview",                     ID_PREVIEW
+        MENUITEM "Find Associates",             ID_FINDASSOCIATES
+        MENUITEM SEPARATOR
+        MENUITEM "Effects",                     ID_VIEW_EFFECTS
+        MENUITEM "Particles",                   ID_VIEW_PARTICLES
+        MENUITEM "Graphics",                    ID_VIEW_GRAPHICS
+        MENUITEM "Emitters",                    ID_VIEW_EMITTERS
+        MENUITEM "Swooshes",                    ID_VIEW_SWOOSHES
+        MENUITEM "Swoosh emitters",             ID_VIEW_SWOOSH_EMITTERS
+    END
+    POPUP "Graphic Dialog"
+    BEGIN
+        MENUITEM "Mark as Icon",                ID_MARK_ICON
+        MENUITEM "Delete",                      ID_DELETE
+        MENUITEM "Delete All",                  ID_DELETE_ALL
+    END
+    POPUP "Effect Dialog"
+    BEGIN
+        MENUITEM "Copy Channel",                IDC_COPY_CHANNEL
+        MENUITEM "Paste Channel",               IDC_PASTE_CHANNEL
+        MENUITEM "Clear Channel",               IDC_CLEAR_CHANNEL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_VIEW ACCELERATORS 
+BEGIN
+    VK_DELETE,      ID_DELETE,              VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pigpen"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Pigpen version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2000",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_EFFECT_DIALOG DIALOG  0, 0, 130, 307
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_PARTICLE_C1,11,45,105,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL
+    LTEXT           "Count",IDC_STATIC,11,60,20,8
+    EDITTEXT        IDC_COUNT_E1,11,68,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_COUNT_S1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,37,61,9,14
+    LTEXT           "(+/-)",IDC_STATIC,53,60,14,8
+    EDITTEXT        IDC_COUNT_RANDOM_E1,53,68,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_COUNT_RANDOM_S1,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,77,61,9,
+                    14
+    LTEXT           "Emit delay",IDC_STATIC,11,84,33,8
+    EDITTEXT        IDC_DELAY_E1,11,93,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_DELAY1_S1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,35,85,9,14
+    LTEXT           "(+/-)",IDC_STATIC,55,84,14,8
+    EDITTEXT        IDC_DELAY_RANDOM_E1,55,93,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_DELAY1_RANDOM_S1,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,79,85,9,
+                    14
+    LTEXT           "Emit time",IDC_STATIC,11,109,29,8
+    EDITTEXT        IDC_TIME_E1,11,118,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_DELAY2_S1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,35,111,9,14
+    LTEXT           "(+/-)",IDC_STATIC,55,109,14,8
+    EDITTEXT        IDC_TIME_RANDOM_E1,55,118,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_DELAY2_RANDOM_S1,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,79,111,9,
+                    14
+    GROUPBOX        "Channel",IDC_STATIC,7,7,114,140,WS_GROUP
+    PUSHBUTTON      "Preview",IDC_PREVIEW,71,284,50,14
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B1,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,151,105,10
+    CONTROL         "(Cont. random)",IDC_TIME_RANDOM_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,134,62,10
+    CONTROL         "",IDC_IMAGE_B1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,91,69,24,22
+    LTEXT           "1:",IDC_STATIC,6,152,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B2,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,164,105,10
+    LTEXT           "2:",IDC_STATIC,6,165,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B3,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,177,105,10
+    LTEXT           "3:",IDC_STATIC,6,178,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B4,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,190,105,10
+    LTEXT           "4:",IDC_STATIC,6,191,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B5,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,203,105,10
+    LTEXT           "5:",IDC_STATIC,6,204,8,8
+    CONTROL         "Sound",IDC_SOUND1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    80,134,37,10
+    CONTROL         "1",IDC_CHANNEL1,"Button",BS_AUTORADIOBUTTON,11,18,18,10
+    CONTROL         "2",IDC_CHANNEL2,"Button",BS_AUTORADIOBUTTON,32,18,18,10
+    CONTROL         "3",IDC_CHANNEL3,"Button",BS_AUTORADIOBUTTON,53,18,18,10
+    CONTROL         "4",IDC_CHANNEL4,"Button",BS_AUTORADIOBUTTON,74,18,18,10
+    CONTROL         "5",IDC_CHANNEL5,"Button",BS_AUTORADIOBUTTON,95,18,18,10
+    CONTROL         "6",IDC_CHANNEL6,"Button",BS_AUTORADIOBUTTON,11,30,18,10
+    CONTROL         "7",IDC_CHANNEL7,"Button",BS_AUTORADIOBUTTON,32,30,18,10
+    CONTROL         "8",IDC_CHANNEL8,"Button",BS_AUTORADIOBUTTON,53,30,18,10
+    CONTROL         "9",IDC_CHANNEL9,"Button",BS_AUTORADIOBUTTON,74,30,18,10
+    CONTROL         "10",IDC_CHANNEL10,"Button",BS_AUTORADIOBUTTON,95,30,30,
+                    10
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B6,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,216,105,10
+    LTEXT           "6:",IDC_STATIC,5,217,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B7,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,229,105,10
+    LTEXT           "7:",IDC_STATIC,5,230,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B8,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,242,105,10
+    LTEXT           "8:",IDC_STATIC,5,243,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B9,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,255,105,10
+    LTEXT           "9:",IDC_STATIC,5,256,8,8
+    CONTROL         "Channel diagram goes here",IDC_DIAGRAM_B10,"Button",
+                    BS_OWNERDRAW | BS_FLAT,15,268,105,10
+    LTEXT           "10:",IDC_STATIC,5,269,10,8
+END
+
+IDD_PAGE_DISPLAY DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_CONTEXTHELP | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Display"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Graphic:",IDC_STATIC,7,7,28,8
+    COMBOBOX        IDC_GRAPHIC_COMBO,7,19,92,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "FPS:",IDC_STATIC,7,37,16,8
+    EDITTEXT        IDC_PART_FPS_EDIT,8,47,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_FPS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,39,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,60,37,22,8
+    EDITTEXT        IDC_PART_FPS_RANDOM_EDIT,59,47,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_FPS_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,39,9,
+                    14
+    CONTROL         "Continuously random",IDC_PART_FPS_RANDOM_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,63,81,10
+    CONTROL         "",IDC_IMAGE_BUTTON,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,19,45,42
+    GROUPBOX        "Orientation",IDC_STATIC,7,122,92,56
+    CONTROL         "Screen",IDC_ORIENT_SCREEN_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,16,132,39,10
+    CONTROL         "Free",IDC_ORIENT_FREE_RADIO,"Button",BS_AUTORADIOBUTTON,
+                    16,142,30,10
+    CONTROL         "Ground",IDC_ORIENT_GROUND_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,58,132,39,10
+    CONTROL         "Wall",IDC_ORIENT_WALL_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,58,142,30,10
+    GROUPBOX        "Animation",IDC_STATIC,114,122,82,56
+    CONTROL         "Loop",IDC_ANIM_LOOP_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,123,132,32,10
+    CONTROL         "Ping-pong",IDC_ANIM_PING_PONG_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,123,142,48,10
+    CONTROL         "One-shot",IDC_ANIM_ONE_SHOT_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,123,152,45,10
+    CONTROL         "Random start frame",IDC_PART_RANDOM_FRAME_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,164,74,10
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+    CONTROL         "Real-time lighting",IDC_PART_LIGHTED_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,114,108,69,10
+    CONTROL         "No distortions (e.g. wind)",
+                    IDC_PART_NO_DISTORTION_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,79,93,10
+    CONTROL         "Write to z-buffer",IDC_PART_ZBUFFER_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,98,66,10
+    CONTROL         "Forcefields affect",IDC_PART_FORCEFIELD_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,88,70,10
+    CONTROL         "Additive render",IDC_PART_ADDITIVE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,108,63,10
+    CONTROL         "Align to velocity",IDC_ALIGN_TO_VEL_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,153,65,10
+    LTEXT           "Z-bias:",IDC_STATIC,114,70,22,8
+    EDITTEXT        IDC_PART_ZBIAS_EDIT,114,79,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ZBIAS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,144,71,9,
+                    14
+    CONTROL         "Perpendicular to vel.",IDC_PERPENDICULAR_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,165,81,10
+    CONTROL         "Floats on water",IDC_PART_FLOATS_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,114,98,64,10
+END
+
+IDD_GRAPHIC_DIALOG DIALOG  0, 0, 249, 193
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Import path:",IDC_STATIC,7,110,38,8
+    LTEXT           "Current file:",IDC_STATIC,7,97,36,8
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS,7,62,237,15
+    CTEXT           "###",IDC_INDEX_TEXT1,7,49,45,8
+    CTEXT           "###",IDC_INDEX_TEXT2,55,49,45,8
+    CTEXT           "###",IDC_INDEX_TEXT3,103,49,45,8
+    CTEXT           "###",IDC_INDEX_TEXT4,151,49,45,8
+    CTEXT           "###",IDC_INDEX_TEXT5,199,49,45,8
+    LTEXT           "Frames:",IDC_STATIC,7,85,26,8
+    LTEXT           "Graphic's base image filename goes here",IDC_BASE_FILE,
+                    57,110,187,8
+    LTEXT           "Graphic's current image filename goes here",
+                    IDC_CURRENT_FILE,57,97,187,8
+    LTEXT           "###",IDC_IMAGE_COUNT,36,85,20,8
+    CONTROL         "",IDC_IMAGE_BUTTON1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,7,7,45,42
+    CONTROL         "",IDC_IMAGE_BUTTON2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,55,7,45,42
+    CONTROL         "",IDC_IMAGE_BUTTON3,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,103,7,45,42
+    CONTROL         "",IDC_IMAGE_BUTTON4,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,151,7,45,42
+    CONTROL         "",IDC_IMAGE_BUTTON5,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,199,7,45,42
+    PUSHBUTTON      "Import image(s)...",IDC_IMPORT_IMAGE,7,172,68,14
+    LTEXT           "Size:",IDC_STATIC,57,85,16,8
+    LTEXT           "### x ###",IDC_IMAGE_SIZE,77,85,38,8
+    LTEXT           "Type:",IDC_STATIC,121,85,19,8
+    LTEXT           "Image type goes here",IDC_IMAGE_TYPE,144,85,100,8
+    LTEXT           "Default FPS:",IDC_STATIC,7,124,41,8
+    EDITTEXT        IDC_GR_FPS_EDIT,7,134,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_GR_FPS_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,43,127,9,14
+    LTEXT           "Default X-Size:",IDC_STATIC,91,125,48,8
+    EDITTEXT        IDC_GR_XSIZE_EDIT,91,135,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_GR_XSIZE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,130,129,9,
+                    14
+    LTEXT           "Default Y-Size:",IDC_STATIC,176,125,48,8
+    EDITTEXT        IDC_GR_YSIZE_EDIT,176,135,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_GR_YSIZE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,212,130,9,
+                    14
+    CONTROL         "Maintain aspect ratio",IDC_GR_ASPECT_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,154,81,10
+    CONTROL         "Show alpha mask",IDC_ALPHA_MASK_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,154,72,10
+    PUSHBUTTON      "Replace image(s)...",IDC_REPLACE_IMAGE,91,172,68,14
+    PUSHBUTTON      "Update image(s)...",IDC_UPDATE_IMAGE,176,172,68,14
+END
+
+IDD_IMPORT_DIALOG DIALOG  0, 0, 190, 138
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Import Images"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Import All",ID_IMPORT_ALL,7,117,50,14
+    PUSHBUTTON      "Import Single",ID_IMPORT_SINGLE,70,117,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,133,117,50,14
+    CONTROL         "Replace Existing Images",IDC_REPLACE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,53,94,93,10
+    LTEXT           "Frames:",IDC_STATIC,7,56,26,8
+    LTEXT           "###",IDC_IMPORT_IMAGE_COUNT,36,56,20,8
+    LTEXT           "Size:",IDC_STATIC,57,56,16,8
+    LTEXT           "### x ###",IDC_IMPORT_IMAGE_SIZE,77,56,42,8
+    LTEXT           "Selected file:",IDC_STATIC,7,67,42,8
+    LTEXT           "Selected filename goes here",IDC_IMPORT_FILE,57,67,126,
+                    8
+    LTEXT           "The information below shows how many image files",
+                    IDC_STATIC,7,7,176,8
+    LTEXT           "Import path:",IDC_STATIC,7,78,38,8
+    LTEXT           "Import path (wildcard) goes here",
+                    IDC_IMPORT_WILDCARD_FILE,57,78,126,8
+    LTEXT           "match your selection. To import all of them, choose",
+                    IDC_STATIC,7,15,176,8
+    LTEXT           "Import All. To import just your original selection, choose",
+                    IDC_STATIC,7,23,176,8
+    LTEXT           "Import Single. To replace the graphic's existing image",
+                    IDC_STATIC,7,31,176,8
+    LTEXT           "files, if any, check Replace Existing Images.",
+                    IDC_STATIC,7,39,176,8
+END
+
+IDD_PAGE_MOVEMENT DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Move"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Position +/-",IDC_STATIC,163,7,37,8
+    EDITTEXT        IDC_PART_POS_RAND_EDIT,163,18,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_POS_RAND_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,194,9,9,
+                    14
+    LTEXT           "X-velocity",IDC_STATIC,7,38,32,8
+    EDITTEXT        IDC_PART_XVEL_EDIT,7,49,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_XVEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,41,9,
+                    14
+    LTEXT           "Y-velocity",IDC_STATIC,59,38,32,8
+    EDITTEXT        IDC_PART_YVEL_EDIT,59,49,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_YVEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,90,41,9,
+                    14
+    LTEXT           "Z-velocity",IDC_STATIC,112,38,32,8
+    EDITTEXT        IDC_PART_ZVEL_EDIT,111,49,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ZVEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,40,9,
+                    14
+    LTEXT           "Gravity",IDC_STATIC,163,102,23,8
+    EDITTEXT        IDC_PART_GRAVITY_EDIT,163,113,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_GRAVITY_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,194,104,9,
+                    14
+    LTEXT           "Acceleration",IDC_STATIC,163,70,40,8
+    EDITTEXT        IDC_PART_ACCEL_EDIT,163,81,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ACCEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,194,72,9,
+                    14
+    LTEXT           "Vel. +/- (%)",IDC_STATIC,7,70,36,8
+    EDITTEXT        IDC_PART_VEL_RAND_EDIT,7,81,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_VEL_RAND_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,72,9,
+                    14
+    LTEXT           "Vel. cone 1",IDC_STATIC,59,70,37,8
+    EDITTEXT        IDC_PART_VEL_CONE_EDIT,59,81,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_VEL_CONE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,90,72,9,
+                    14
+    LTEXT           "X-rot. speed",IDC_STATIC,7,103,39,8
+    EDITTEXT        IDC_PART_XROT_EDIT,7,113,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_XROT_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,105,9,
+                    14
+    LTEXT           "Y-rot. speed",IDC_STATIC,59,103,39,8
+    EDITTEXT        IDC_PART_YROT_EDIT,59,113,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_YROT_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,90,105,9,
+                    14
+    LTEXT           "Z-rot. speed",IDC_STATIC,111,103,39,8
+    EDITTEXT        IDC_PART_ZROT_EDIT,111,113,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ZROT_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,105,9,
+                    14
+    LTEXT           "Rot. +/- (%)",IDC_STATIC,7,134,37,8
+    EDITTEXT        IDC_PART_ROT_RAND_EDIT,7,145,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ROT_RAND_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,136,9,
+                    14
+    LTEXT           "Rot. accel.",IDC_STATIC,59,134,36,8
+    EDITTEXT        IDC_PART_ROT_ACCEL_EDIT,59,145,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ROT_ACCEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,90,136,9,
+                    14
+    CONTROL         "Bullet",IDC_BULLET_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,51,33,10
+    CONTROL         "Standard",IDC_STANDARD_GRAVITY_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,163,129,44,10
+    CONTROL         "Random initial rotation",IDC_INIT_ROT_RAND_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,111,162,85,10
+    LTEXT           "X-position",IDC_STATIC,7,7,32,8
+    EDITTEXT        IDC_PART_XPOS_EDIT,7,18,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_XPOS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,10,9,
+                    14
+    LTEXT           "Y-position",IDC_STATIC,59,7,32,8
+    EDITTEXT        IDC_PART_YPOS_EDIT,59,18,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_YPOS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,10,9,
+                    14
+    LTEXT           "Z-position",IDC_STATIC,111,7,32,8
+    EDITTEXT        IDC_PART_ZPOS_EDIT,111,18,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ZPOS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,9,9,
+                    14
+    CONTROL         "Align to velocity",IDC_ALIGN_TO_VEL_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,111,140,65,10
+    LTEXT           "Vel. cone 2",IDC_STATIC,111,70,37,8
+    EDITTEXT        IDC_PART_VEL_CONE2_EDIT,111,81,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_VEL_CONE2_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,72,9,
+                    14
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+    CONTROL         "Restrict to plane",IDC_RANDOM_POS_PLANE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,163,34,67,10
+    CONTROL         "Perpendicular to vel.",IDC_PERPENDICULAR_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,111,151,81,10
+END
+
+IDD_PAGE_COLLIDE DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Collide"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Particle collides",IDC_PART_COLLIDES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,6,65,10
+    CONTROL         "Continue",IDC_COLLIDE_CONTINUE,"Button",
+                    BS_AUTORADIOBUTTON,69,73,44,10
+    CONTROL         "Die",IDC_COLLIDE_DIE,"Button",BS_AUTORADIOBUTTON,25,63,
+                    27,10
+    CONTROL         "Stick",IDC_COLLIDE_STICK,"Button",BS_AUTORADIOBUTTON,25,
+                    73,32,10
+    CONTROL         "Bounce",IDC_COLLIDE_BOUNCE,"Button",BS_AUTORADIOBUTTON,
+                    69,63,41,10
+    GROUPBOX        "When particle collides it should",IDC_STATIC,15,52,210,
+                    50
+    CONTROL         "Spawns new effect",IDC_COLLIDE_SPAWN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,108,77,10
+    CONTROL         "Continue",IDC_SPAWN_CONTINUE,"Button",
+                    BS_AUTORADIOBUTTON,72,141,44,10
+    CONTROL         "Default",IDC_SPAWN_DEFAULT,"Button",BS_AUTORADIOBUTTON,
+                    25,131,39,10
+    CONTROL         "Stop",IDC_SPAWN_STICK,"Button",BS_AUTORADIOBUTTON,25,
+                    141,31,10
+    CONTROL         "Bounce",IDC_SPAWN_BOUNCE,"Button",BS_AUTORADIOBUTTON,72,
+                    131,41,10
+    GROUPBOX        "Spawned effect's velocity should",IDC_STATIC,15,120,210,
+                    35
+    LTEXT           "Bounce/\ncontinue energy",IDC_STATIC,168,65,53,19
+    EDITTEXT        IDC_COLLIDE_BOUNCE_EDIT,119,65,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_COLLIDE_BOUNCE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,152,58,11,
+                    14
+    LTEXT           "Bounce/\ncontinue energy",IDC_STATIC,168,133,54,20
+    EDITTEXT        IDC_SPAWN_BOUNCE_EDIT,119,133,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPAWN_BOUNCE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,153,131,
+                    11,14
+    COMBOBOX        IDC_SPAWN_COMBO,114,107,111,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+    COMBOBOX        IDC_SURFACE_COMBO,14,33,111,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Manage surface type list",IDC_SURFACE_LIST,7,164,88,13
+    GROUPBOX        "Collision surface type",IDC_STATIC,7,24,226,136
+    CONTROL         "Use default",IDC_SURFACE_USE_DEFAULT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,136,35,52,10
+    CONTROL         "Stop rotating",IDC_COLLIDE_STOP_ROTATING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,56,87,56,10
+    CONTROL         "Stop animating",IDC_COLLIDE_STOP_ANIMATING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,126,87,63,10
+    CONTROL         "World",IDC_PART_COLLIDES_WORLD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,96,6,35,10
+    CONTROL         "Actors",IDC_PART_COLLIDES_ACTORS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,96,16,36,10
+    CONTROL         "Water",IDC_PART_COLLIDES_WATER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,6,35,10
+    CONTROL         "Create water sprite",IDC_COLLIDE_CREATE_WATER_SPRITE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,141,16,75,10
+END
+
+IDD_PAGE_SIZE DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Size"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "X-Size at 100%",IDC_STATIC,7,7,48,8
+    EDITTEXT        IDC_PART_XSIZE_EDIT,7,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_XSIZE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,9,9,14
+    LTEXT           "+/- (%)",IDC_STATIC,60,7,22,8
+    EDITTEXT        IDC_PART_XSIZE_RANDOM_EDIT,59,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_XSIZE_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,9,9,14
+    LTEXT           "Y-Size at 100%",IDC_STATIC,115,7,48,8
+    EDITTEXT        IDC_PART_YSIZE_EDIT,115,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_YSIZE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,146,9,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,168,7,22,8
+    EDITTEXT        IDC_PART_YSIZE_RANDOM_EDIT,167,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_YSIZE_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,197,9,9,
+                    14
+    CONTROL         "Maintain aspect ratio",IDC_PART_ASPECT_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,38,81,10
+    CONTROL         "Maintain aspect ratio during randomness",
+                    IDC_PART_RANDOM_ASPECT_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,49,143,10
+    LTEXT           "Note: Size is in meters",IDC_STATIC,114,39,70,8
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+    LTEXT           "Orbit radius",IDC_STATIC,7,73,36,8
+    EDITTEXT        IDC_PART_ORBIT_RADIUS_EDIT,7,84,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ORBIT_RADIUS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,76,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,60,74,22,8
+    EDITTEXT        IDC_PART_ORBIT_RADIUS_RANDOM_EDIT,59,84,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ORBIT_RADIUS_RANDOM_SPIN,
+                    "msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,89,76,11,14
+    LTEXT           "Orbit speed",IDC_STATIC,7,103,37,8
+    EDITTEXT        IDC_PART_ORBIT_ROTVEL_EDIT,7,114,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ORBIT_ROTVEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,106,11,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,60,104,22,8
+    EDITTEXT        IDC_PART_ORBIT_ROTVEL_RANDOM_EDIT,59,114,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ORBIT_ROTVEL_RANDOM_SPIN,
+                    "msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,89,106,11,14
+    CONTROL         "Random initial rotation",IDC_ORBIT_INIT_ROT_RAND_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,114,117,85,10
+    CONTROL         "Screen",IDC_ORBIT_PLANE_SCREEN,"Button",
+                    BS_AUTORADIOBUTTON,23,144,39,10
+    CONTROL         "Ground",IDC_ORBIT_PLANE_GROUND,"Button",
+                    BS_AUTORADIOBUTTON,77,144,39,10
+    GROUPBOX        "Orbit plane",IDC_STATIC,7,134,202,25
+    CONTROL         "Align to velocity",IDC_ORBIT_PLANE_ALIGN_TO_VEL,"Button",
+                    BS_AUTORADIOBUTTON,130,144,65,10
+    LTEXT           "Radius vel.",IDC_STATIC,115,73,36,8
+    EDITTEXT        IDC_PART_ORBIT_RADIUS_VEL_EDIT,115,84,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ORBIT_RADIUS_VEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,145,76,11,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,168,74,22,8
+    EDITTEXT        IDC_PART_ORBIT_RADIUS_VEL_RANDOM_EDIT,167,84,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_ORBIT_RADIUS_VEL_RANDOM_SPIN,
+                    "msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,197,76,11,14
+END
+
+IDD_PAGE_ENVELOPE DIALOGEX 0, 0, 244, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Envelopes"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Spline",IDC_SPLINE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,153,35,10
+    CONTROL         "ADSR",IDC_ADSR,"Button",BS_AUTORADIOBUTTON,54,153,36,10
+    CONTROL         "Straight",IDC_STRAIGHT,"Button",BS_AUTORADIOBUTTON,95,
+                    153,40,10
+    CONTROL         "Flatline",IDC_FLAT,"Button",BS_AUTORADIOBUTTON,141,153,
+                    36,10
+    CONTROL         "X-Size",IDC_X_SIZE_ENVELOPE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,200,7,36,10
+    CONTROL         "Y-Size",IDC_Y_SIZE_ENVELOPE,"Button",BS_AUTORADIOBUTTON,
+                    200,31,36,10
+    CONTROL         "Red",IDC_RED_ENVELOPE,"Button",BS_AUTORADIOBUTTON,200,
+                    55,29,10
+    CONTROL         "Green",IDC_GREEN_ENVELOPE,"Button",BS_AUTORADIOBUTTON,
+                    200,78,35,10
+    CONTROL         "Blue",IDC_BLUE_ENVELOPE,"Button",BS_AUTORADIOBUTTON,200,
+                    103,30,10
+    CONTROL         "Alpha",IDC_ALPHA_ENVELOPE,"Button",BS_AUTORADIOBUTTON,
+                    200,127,34,10
+    LTEXT           "100",IDC_STATIC,0,39,13,8
+    LTEXT           "0",IDC_STATIC,5,107,8,8
+    CONTROL         "Hide",IDC_X_SIZE_HIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,16,31,10
+    CONTROL         "Hide",IDC_Y_SIZE_HIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,40,31,10
+    CONTROL         "Hide",IDC_RED_HIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,64,31,10
+    CONTROL         "Hide",IDC_GREEN_HIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,88,31,10
+    CONTROL         "Hide",IDC_BLUE_HIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,112,31,10
+    CONTROL         "Hide",IDC_ALPHA_HIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,137,31,10
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+END
+
+IDD_PREVIEW_DIALOG DIALOGEX 0, 0, 565, 78
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Preview preferences"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Emitter delay",IDC_STATIC,72,7,41,8
+    EDITTEXT        IDC_PREVIEW_DELAY_EDIT,72,18,41,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PREVIEW_DELAY_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,106,10,9,
+                    14
+    CONTROL         "Bkg color",IDC_BKG_COLOR,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,11,18,50,24
+    LTEXT           "Background color",IDC_STATIC,7,7,57,8
+    LTEXT           "Default camera",IDC_STATIC,418,13,49,8
+    LTEXT           "(xx.x, yy.y, zz.z)",IDC_CAMERA_POS,418,23,58,8
+    PUSHBUTTON      "Use current",IDC_CURRENT_CAMERA_POS,418,37,50,14
+    EDITTEXT        IDC_PREVIEW_MPH_EDIT,182,18,41,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PREVIEW_MPH_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,214,10,9,
+                    14
+    CONTROL         "Camera follows",IDC_PREVIEW_FOLLOW_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,231,4,63,10
+    CONTROL         "Standard gravity",IDC_PREVIEW_GRAVITY_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,231,14,67,10
+    PUSHBUTTON      "Stop emitter",IDC_PREVIEW_STOP,300,36,50,14
+    PUSHBUTTON      "Reset emitter",IDC_PREVIEW_RESET_EMITTER,241,37,50,14
+    PUSHBUTTON      "Reset all",IDC_PREVIEW_RESET_ALL,122,37,50,14
+    PUSHBUTTON      "Reset camera",IDC_PREVIEW_RESET_CAMERA,182,37,50,14
+    LTEXT           "Click to change",IDC_STATIC,11,43,50,8
+    PUSHBUTTON      "Stage",IDC_PREVIEW_UPDATE_STAGE,7,54,284,10,BS_LEFT | 
+                    BS_FLAT
+    PUSHBUTTON      "Emitter model",IDC_PREVIEW_UPDATE_EMITTER_MODEL,7,65,
+                    284,10,BS_LEFT | BS_FLAT
+    PUSHBUTTON      "Clear model",IDC_PREVIEW_CLEAR_EMITTER_MODEL,300,57,50,
+                    14
+    EDITTEXT        IDC_PREVIEW_MODEL_XPOS_EDIT,369,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PREVIEW_MODEL_XPOS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,404,13,9,
+                    14
+    LTEXT           "X",IDC_STATIC,360,20,8,8
+    EDITTEXT        IDC_PREVIEW_MODEL_YPOS_EDIT,369,37,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PREVIEW_MODEL_YPOS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,404,33,9,
+                    14
+    LTEXT           "Y",IDC_STATIC,360,40,8,8
+    EDITTEXT        IDC_PREVIEW_MODEL_ZPOS_EDIT,369,57,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PREVIEW_MODEL_ZPOS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,403,53,9,
+                    14
+    LTEXT           "Z",IDC_STATIC,359,60,8,8
+    EDITTEXT        IDC_PREVIEW_MODEL_YROT_EDIT,428,57,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PREVIEW_MODEL_YROT_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,462,53,9,
+                    14
+    LTEXT           "YR",IDC_STATIC,416,60,10,8
+    LTEXT           "Emitter y-pos",IDC_STATIC,122,7,41,8
+    EDITTEXT        IDC_PREVIEW_YPOS_EDIT,122,18,41,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PREVIEW_YPOS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,154,10,9,
+                    14
+    LTEXT           "Wind mph",IDC_STATIC,300,7,33,8
+    EDITTEXT        IDC_WIND_MPH_EDIT,300,18,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WIND_MPH_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,332,10,9,
+                    14
+    COMBOBOX        IDC_PREVIEW_SURFACE_COMBO,482,17,71,54,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Collision surface",IDC_STATIC,482,7,52,8
+    LTEXT           "Emitter pos.",IDC_STATIC,369,7,38,8
+    COMBOBOX        IDC_PREVIEW_TIMER_COMBO,482,47,71,54,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Timer speed",IDC_STATIC,482,37,40,8
+    CONTROL         "Particle path",IDC_PREVIEW_PARTICLE_PATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,231,24,55,10
+    PUSHBUTTON      "Emitter mph",IDC_PREVIEW_EMITTER_VEL,182,7,41,10,
+                    BS_LEFT | BS_FLAT
+END
+
+IDD_PAGE_COLOR DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Color"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Color pair",IDC_COLOR_PAIR,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,21,20,45,10
+    CONTROL         "RGB",IDC_COLOR_RGB,"Button",BS_AUTORADIOBUTTON,75,20,31,
+                    10
+    CONTROL         "Color 1",IDC_COLOR1,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,7,60,50,40
+    CONTROL         "Color 2",IDC_COLOR2,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,67,60,50,40
+    GROUPBOX        "Envelope control",IDC_STATIC,7,7,110,33
+    LTEXT           "Color at 100%",IDC_STATIC,10,49,44,8
+    LTEXT           "Color at 0%",IDC_STATIC,73,49,36,8
+    LTEXT           "Click to change",IDC_PICK_COLOR1,7,103,50,8
+    LTEXT           "Click to change",IDC_PICK_COLOR2,67,103,50,8
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+END
+
+IDD_EMITTER_DIALOG DIALOG  0, 0, 165, 299
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Effect",IDC_STATIC,7,7,20,8
+    COMBOBOX        IDC_EFFECT_COMBO,7,17,92,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Type",IDC_STATIC,7,36,17,8
+    COMBOBOX        IDC_EMIT_TYPE_COMBO,7,46,92,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_EMIT_IMAGE_BUTTON,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,111,17,45,42
+    LTEXT           "Delay",IDC_STATIC,7,65,19,8
+    EDITTEXT        IDC_EMIT_DELAY_EDIT,7,75,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_DELAY_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,67,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,59,65,22,8
+    EDITTEXT        IDC_EMIT_DELAY_RANDOM_EDIT,59,75,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_DELAY_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,67,9,
+                    14
+    CONTROL         "Cont.\nrandom",IDC_EMIT_DELAY_RANDOM_CHECK,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,111,68,42,25
+    LTEXT           "Scale",IDC_STATIC,7,94,19,8
+    EDITTEXT        IDC_EMIT_SCALE_EDIT,7,104,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_SCALE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,96,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,59,94,22,8
+    EDITTEXT        IDC_EMIT_SCALE_RANDOM_EDIT,59,104,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_SCALE_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,96,9,
+                    14
+    CONTROL         "Cont.\nrandom",IDC_EMIT_SCALE_RANDOM_CHECK,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,111,97,42,25
+    LTEXT           "Add. vel. %",IDC_STATIC,7,123,36,8
+    EDITTEXT        IDC_EMIT_ADD_VEL_PCT_EDIT,7,133,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_ADD_VEL_PCT_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,125,9,
+                    14
+    LTEXT           "Velocity %",IDC_STATIC,59,123,33,8
+    EDITTEXT        IDC_EMIT_VEL_PCT_EDIT,59,133,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_VEL_PCT_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,125,9,
+                    14
+    LTEXT           "Min. distance",IDC_STATIC,111,123,43,8
+    EDITTEXT        IDC_EMIT_MIN_DIST_EDIT,111,133,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_MIN_DIST_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,125,9,
+                    14
+    CONTROL         "Enable",IDC_EMIT_MIN_DIST_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,111,149,38,10
+    LTEXT           "Radius",IDC_STATIC,7,152,23,8
+    EDITTEXT        IDC_EMIT_RADIUS_EDIT,7,162,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_RADIUS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,154,9,
+                    14
+    LTEXT           "Ang. velocity",IDC_STATIC,59,152,42,8
+    EDITTEXT        IDC_EMIT_ANG_VEL_EDIT,59,162,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_ANG_VEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,154,9,
+                    14
+    CONTROL         "Only when\nmoving",IDC_EMIT_MOVE_ONLY_CHECK,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,111,156,47,
+                    25
+    LTEXT           "Lifetime",IDC_STATIC,7,181,25,8
+    EDITTEXT        IDC_EMIT_LIFE_EDIT,7,191,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_LIFE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,183,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,60,181,22,8
+    EDITTEXT        IDC_EMIT_LIFE_RANDOM_EDIT,59,191,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_LIFE_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,183,9,
+                    14
+    LTEXT           "Flux size",IDC_STATIC,111,182,28,8
+    EDITTEXT        IDC_EMIT_FLUX_SIZE_EDIT,111,191,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_FLUX_SIZE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,183,9,
+                    14
+    LTEXT           "LOD radius 1",IDC_STATIC,7,210,42,8
+    EDITTEXT        IDC_EMIT_LOD1_RADIUS_EDIT,7,220,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_LOD1_RADIUS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,212,11,
+                    14
+    LTEXT           "LOD radius 2",IDC_STATIC,59,210,42,8
+    EDITTEXT        IDC_EMIT_LOD2_RADIUS_EDIT,59,220,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_LOD2_RADIUS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,212,11,
+                    14
+    LTEXT           "Active radius",IDC_STATIC,111,210,42,8
+    EDITTEXT        IDC_EMIT_GO_RADIUS_EDIT,111,220,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_GO_RADIUS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,212,9,
+                    14
+    LTEXT           "Invis. distance",IDC_STATIC,7,238,46,8
+    EDITTEXT        IDC_EMIT_INVIS_DISTANCE_EDIT,7,249,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_INVIS_DISTANCE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,241,11,
+                    14
+    LTEXT           "Near distance",IDC_STATIC,59,238,45,8
+    EDITTEXT        IDC_EMIT_NEAR_DISTANCE_EDIT,59,249,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_NEAR_DISTANCE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,241,11,
+                    14
+    LTEXT           "Near scale",IDC_STATIC,111,238,35,8
+    EDITTEXT        IDC_EMIT_NEAR_SCALE_EDIT,111,249,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_NEAR_SCALE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,241,
+                    11,14
+    LTEXT           "Far distance",IDC_STATIC,7,267,40,8
+    EDITTEXT        IDC_EMIT_FAR_DISTANCE_EDIT,7,278,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_FAR_DISTANCE_SPINx,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,37,270,11,
+                    14
+    LTEXT           "Far scale",IDC_STATIC,59,267,30,8
+    EDITTEXT        IDC_EMIT_FAR_SCALE_EDIT,59,278,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_EMIT_FAR_SCALE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,270,11,
+                    14
+    PUSHBUTTON      "Preview",IDC_PREVIEW,111,277,45,15
+END
+
+IDD_EMITTER_MODEL_DIALOG DIALOG  0, 0, 239, 89
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Emitter model"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,68,50,14
+    CONTROL         "Emitter model:",IDC_PREVIEW_EMITTER_MODEL,"Static",
+                    SS_LEFTNOWORDWRAP | WS_GROUP,7,7,225,8
+    DEFPUSHBUTTON   "Load model",IDC_MODEL_LOAD,7,23,50,14
+    DEFPUSHBUTTON   "Clear model",IDC_MODEL_CLEAR,68,23,50,14
+END
+
+IDD_PROGRESS DIALOG  200, 100, 186, 53
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,129,32,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_BAR,"msctls_progress32",
+                    WS_BORDER,7,32,111,14
+    LTEXT           "Info goes here...",IDC_PROGRESS_INFO,7,18,172,8
+    LTEXT           "File name goes here...",IDC_PROGRESS_FILE,7,7,172,8
+END
+
+IDD_PAGE_LIFETIME DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_CONTEXTHELP | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Lifetime"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Lifetime",IDC_STATIC,7,8,25,8
+    EDITTEXT        IDC_PART_LIFE_EDIT,7,18,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_LIFE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,10,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,60,8,22,8
+    EDITTEXT        IDC_PART_LIFE_RANDOM_EDIT,59,18,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_LIFE_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,10,9,
+                    14
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+    CONTROL         "Die at end of leash",IDC_PART_LEASH_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,70,75,10
+    LTEXT           "Leash",IDC_STATIC,7,42,20,8
+    EDITTEXT        IDC_PART_LEASH_EDIT,7,52,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_LEASH_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,44,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,60,42,22,8
+    EDITTEXT        IDC_PART_LEASH_RANDOM_EDIT,59,52,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_LEASH_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,44,9,
+                    14
+    CONTROL         "Don't die when out of view",IDC_PART_NO_VIEW_CULL_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,92,100,10
+END
+
+IDD_SURFACE_LIST DIALOG  0, 0, 185, 86
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Surface Types"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Add Surface",IDC_ADD_SURFACE,118,64,60,14
+    PUSHBUTTON      "OK",IDOK,118,16,60,14
+    COMBOBOX        IDC_SURFACE_LIST_COMBO,6,17,100,62,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Surface types",IDC_STATIC,6,7,44,8
+    PUSHBUTTON      "Delete Surface",IDC_DELETE_SURFACE,118,40,60,14
+    EDITTEXT        IDC_SURFACE_NAME_EDIT,6,64,99,14,ES_AUTOHSCROLL
+    LTEXT           "To add a new surface type,",IDC_STATIC,7,44,88,8
+    LTEXT           "enter a name and click ""Add""",IDC_STATIC,7,53,94,8
+END
+
+IDD_PAGE_PIGGYBACK DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Emitter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,193,163,40,14
+    COMBOBOX        IDC_EMITTER,7,45,111,108,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Emitter piggybacks on particle",IDC_PIGGYBACK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,17,110,10
+    LTEXT           "Emitter",IDC_STATIC,7,33,22,8
+    CONTROL         "",IDC_EMITTER_BUTTON,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,138,16,45,42
+    GROUPBOX        "Emitter ejection velocity",IDC_STATIC,7,69,111,41
+    CONTROL         "Use particle's velocity",IDC_EJECT_PARTICLE_RADIO,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,17,81,84,10
+    CONTROL         "Default",IDC_EJECT_DEFAULT_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,17,94,39,10
+END
+
+IDD_PAGE_SWOOSH_DISPLAY DIALOG  0, 0, 240, 185
+STYLE DS_SETFONT | DS_CONTEXTHELP | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Display"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Graphic:",IDC_STATIC,7,7,28,8
+    COMBOBOX        IDC_GRAPHIC_COMBO,7,19,92,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "FPS:",IDC_STATIC,7,37,16,8
+    EDITTEXT        IDC_PART_FPS_EDIT,8,47,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_FPS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,38,39,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,60,37,22,8
+    EDITTEXT        IDC_PART_FPS_RANDOM_EDIT,59,47,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PART_FPS_RANDOM_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,89,39,9,
+                    14
+    CONTROL         "Continuously random",IDC_PART_FPS_RANDOM_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,63,81,10
+    CONTROL         "",IDC_IMAGE_BUTTON,"Button",BS_OWNERDRAW | BS_FLAT | 
+                    WS_TABSTOP,113,8,45,42
+    GROUPBOX        "Animation",IDC_STATIC,112,98,97,61
+    CONTROL         "Loop",IDC_ANIM_LOOP_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,121,110,32,10
+    CONTROL         "Ping-pong",IDC_ANIM_PING_PONG_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,121,120,48,10
+    CONTROL         "One-shot",IDC_ANIM_ONE_SHOT_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,121,130,45,10
+    CONTROL         "Random start frame",IDC_PART_RANDOM_FRAME_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,119,144,74,10
+    PUSHBUTTON      "Preview",IDC_PREVIEW_PARTICLE,200,163,40,14
+    CONTROL         "Additive render",IDC_PART_ADDITIVE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,165,41,63,10
+    LTEXT           "Color",IDC_STATIC,29,94,17,8
+    EDITTEXT        IDC_SWOOSH_EDGE_COLOR_EDIT,31,105,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EDGE_COLOR_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,61,97,11,
+                    14
+    GROUPBOX        "Edge 2 Multipliers",IDC_STATIC,17,81,69,78
+    LTEXT           "Alpha",IDC_STATIC,31,125,19,8
+    EDITTEXT        IDC_SWOOSH_EDGE_ALPHA_EDIT,32,136,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EDGE_ALPHA_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,62,128,11,
+                    14
+    LTEXT           "Point lifetime:",IDC_STATIC,111,62,42,8
+    EDITTEXT        IDC_SWOOSH_LIFETIME_EDIT,112,72,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_LIFETIME_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,64,11,
+                    14
+    LTEXT           "LOD distance:",IDC_STATIC,167,62,46,8
+    EDITTEXT        IDC_SWOOSH_LOD_EDIT,168,72,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_LOD_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,64,11,
+                    14
+END
+
+IDD_SWOOSH_EMITTER_DIALOG DIALOG  0, 0, 263, 228
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Swoosh",IDC_STATIC,7,7,26,8
+    COMBOBOX        IDC_SWOOSH_COMBO,7,17,92,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Type",IDC_STATIC,7,36,17,8
+    COMBOBOX        IDC_SWOOSH_EMIT_TYPE_COMBO,7,46,92,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_SWOOSH_EMIT_IMAGE_BUTTON,"Button",BS_OWNERDRAW | 
+                    BS_FLAT | WS_TABSTOP,111,17,45,42
+    PUSHBUTTON      "Preview",IDC_PREVIEW,211,206,45,15
+    LTEXT           "Radius",IDC_STATIC,13,86,23,8
+    EDITTEXT        IDC_SWOOSH_EMIT_RADIUS_EDIT,13,95,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_RADIUS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,44,87,9,
+                    14
+    GROUPBOX        "Cylinder",IDC_STATIC,7,77,249,100
+    LTEXT           "Height",IDC_STATIC,111,86,22,8
+    EDITTEXT        IDC_SWOOSH_EMIT_HEIGHT_EDIT,111,95,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_HEIGHT_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,87,9,
+                    14
+    LTEXT           "Y-velocity",IDC_STATIC,14,138,32,8
+    EDITTEXT        IDC_SWOOSH_EMIT_YVEL_EDIT,14,147,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_YVEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,44,139,11,
+                    14
+    LTEXT           "Rot. vel.",IDC_STATIC,111,138,28,8
+    EDITTEXT        IDC_SWOOSH_EMIT_ROTVEL_EDIT,111,147,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_ROTVEL_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,139,
+                    11,14
+    LTEXT           "Circle points",IDC_STATIC,13,112,39,8
+    EDITTEXT        IDC_SWOOSH_EMIT_POINTS_EDIT,13,121,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_POINTS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,43,113,9,
+                    14
+    LTEXT           "Delta angle",IDC_STATIC,62,112,37,8
+    EDITTEXT        IDC_SWOOSH_EMIT_ANGLE_EDIT,62,121,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_ANGLE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,93,113,9,
+                    14
+    LTEXT           "Delta time",IDC_STATIC,111,112,32,8
+    EDITTEXT        IDC_SWOOSH_EMIT_TIME_EDIT,111,121,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_TIME_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,113,9,
+                    14
+    LTEXT           "Swoosh width",IDC_STATIC,160,86,45,8
+    EDITTEXT        IDC_SWOOSH_EMIT_WIDTH_EDIT,160,95,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_WIDTH_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,190,87,9,
+                    14
+    LTEXT           "+/- (%)",IDC_STATIC,62,87,22,8
+    EDITTEXT        IDC_SWOOSH_EMIT_RADIUS_RANDOM_PCT_EDIT,62,95,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_RADIUS_RANDOM_PCT_SPIN,
+                    "msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,92,87,9,14
+    LTEXT           "+/- (%)",IDC_STATIC,209,87,22,8
+    EDITTEXT        IDC_SWOOSH_EMIT_WIDTH_RANDOM_PCT_EDIT,209,95,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_WIDTH_RANDOM_PCT_SPIN,
+                    "msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,239,87,9,14
+    LTEXT           "+/- (%)",IDC_STATIC,62,139,22,8
+    EDITTEXT        IDC_SWOOSH_EMIT_YVEL_RANDOM_PCT_EDIT,62,147,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_YVEL_RANDOM_PCT_SPIN,
+                    "msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,92,139,9,14
+    CONTROL         "Sparse",IDC_SWOOSH_EMIT_SPARSE_CYLINDER_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,160,126,38,10
+    LTEXT           "Lifetime",IDC_STATIC,160,137,25,8
+    EDITTEXT        IDC_SWOOSH_EMIT_LIFE_EDIT,160,147,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_LIFE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,190,139,
+                    11,14
+    LTEXT           "+/- (%)",IDC_STATIC,209,139,22,8
+    EDITTEXT        IDC_SWOOSH_EMIT_LIFE_RANDOM_PCT_EDIT,209,147,40,14,
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SWOOSH_EMIT_LIFE_RANDOM_PCT_SPIN,
+                    "msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,239,139,9,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "Particles MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Particles"
+            VALUE "LegalCopyright", "Copyright (C) 1999"
+            VALUE "OriginalFilename", "Particles.EXE"
+            VALUE "ProductName", "Particles Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_EFFECT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 298
+    END
+
+    IDD_PAGE_DISPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_GRAPHIC_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_IMPORT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 183
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_PAGE_MOVEMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_PAGE_COLLIDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_PAGE_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_PAGE_ENVELOPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_PREVIEW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 553
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+
+    IDD_PAGE_COLOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_EMITTER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 158
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 292
+    END
+
+    IDD_EMITTER_MODEL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_PAGE_LIFETIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_SURFACE_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_PAGE_PIGGYBACK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_PAGE_SWOOSH_DISPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_SWOOSH_EMITTER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Pigpen"
+    IDR_VIEW                "\nDust\nPigpen\nPigpen files (*.pig)\n.pig\nPigpen.Document\nPigpen Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Pigpen"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_ELEMENTS        "Show elements view"
+    ID_VIEW_EFFECTS         "Show effects view"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_IMPORTIMAGE          "Import image files for current graphic"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_EXPORT          "Export a .DBL file for use with Avalanche engine"
+    ID_FILE_ANALYZE         "Analyze use count for data items"
+    ID_VIEW_PARTICLES       "Show particles view"
+    ID_VIEW_SFX             "View SFX.h file used to enumerate sound ID's"
+    ID_VIEW_EXPORT_LOG      "View most recent export .log file"
+    ID_FILE_MERGE           "Merge another .PIG file into current document"
+    ID_VIEW_EMITTERS        "Show emitters view"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Pigpen.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

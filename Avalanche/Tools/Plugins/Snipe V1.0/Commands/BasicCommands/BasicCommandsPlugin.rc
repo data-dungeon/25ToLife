@@ -1,0 +1,347 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "Snipe Plugin DLL"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Hash Model Plugin"
+            VALUE "LegalCopyright", "Copyright (C) 2004"
+            VALUE "OriginalFilename", "Hash.snipeplugin"
+            VALUE "ProductName", "Snipe Plugin Dynamic Link Library"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SELECT              BITMAP                  "res\\Select.bmp"
+IDB_POLYLASSOSELECT     BITMAP                  "res\\PolyLassoSelect.bmp"
+IDB_BOUNDSELECT         BITMAP                  "res\\BoundSelect.bmp"
+IDB_LASSOSELECT         BITMAP                  "res\\LassoSelect.bmp"
+IDB_DELETE              BITMAP                  "res\\Delete.bmp"
+IDB_DESELECTALL         BITMAP                  "res\\DeselectAll.bmp"
+IDB_SELECTALL           BITMAP                  "res\\SelectAll.bmp"
+IDB_HIDE                BITMAP                  "res\\Hide.bmp"
+IDB_SPLITPOLY           BITMAP                  "res\\SplitPoly.bmp"
+IDB_SHOWSELECTION       BITMAP                  "res\\ShowSelection.bmp"
+IDB_HIDESELECTION       BITMAP                  "res\\HideSelection.bmp"
+IDB_SHOWALL             BITMAP                  "res\\ShowAll.bmp"
+IDB_SELECTINVERSE       BITMAP                  "res\\SelectInverse.bmp"
+IDB_ROTATE              BITMAP                  "res\\Rotate.bmp"
+IDB_TRANSLATE           BITMAP                  "res\\Translate.bmp"
+IDB_SCALE               BITMAP                  "res\\Scale.bmp"
+IDB_SINGLESELECT        BITMAP                  "res\\SingleSelect.bmp"
+IDB_PAINTSELECT         BITMAP                  "res\\PaintSelect.bmp"
+IDB_SUBDIVIDEUP         BITMAP                  "res\\SubdivideUp.bmp"
+IDB_SUBDIVIDEDOWN       BITMAP                  "res\\SubdivideDown.bmp"
+IDB_STOREVALUE          BITMAP                  "res\\StoreValue.bmp"
+IDB_SELECTCONTINUOUS    BITMAP                  "res\\SelectContinuous.bmp"
+IDB_SELECTCONNECTED     BITMAP                  "res\\SelectConnected.bmp"
+IDB_ROTATEFOCUSPREV     BITMAP                  "res\\RotateFocusPrev.bmp"
+IDB_ROTATEFOCUSNEXT     BITMAP                  "res\\RotateFocusNext.bmp"
+IDB_CONSTRAINVERTEX     BITMAP                  "res\\ConstrainVertex.bmp"
+IDB_SHRINKSELECTION     BITMAP                  "res\\ShrinkSelection.bmp"
+IDB_GROWSELECTION       BITMAP                  "res\\GrowSelection.bmp"
+IDB_VERTEX              BITMAP                  "res\\Vertices.bmp"
+IDB_EDGE                BITMAP                  "res\\Edges.bmp"
+IDB_FACE                BITMAP                  "res\\Faces.bmp"
+IDB_REDIRECT            BITMAP                  "res\\Redirect.bmp"
+IDB_COLLAPSE            BITMAP                  "res\\Collapse.bmp"
+IDB_ADDVERTEX           BITMAP                  "res\\AddVertex.bmp"
+IDB_ATTACH              BITMAP                  "res\\Attach.bmp"
+IDB_CONVERT             BITMAP                  "res\\convert.bmp"
+IDB_DEFAULT             BITMAP                  "res\\question.bmp"
+IDB_TERMINATE           BITMAP                  "res\\Terminate.bmp"
+IDB_CREATEFACE          BITMAP                  "res\\CreateFace.bmp"
+IDB_DELETEFACE          BITMAP                  "res\\DeleteFace.bmp"
+IDB_FLIPNORMAL          BITMAP                  "res\\FlipNormals.bmp"
+IDB_ASSIGNVERTEX        BITMAP                  "res\\assignvertex.bmp"
+IDB_CONNECT             BITMAP                  "res\\Connect.bmp"
+IDB_SELECTRING          BITMAP                  "res\\Ring.bmp"
+IDB_SHOWONLY            BITMAP                  "res\\ShowOnly.bmp"
+IDB_ADDBONE             BITMAP                  "res\\addbone.bmp"
+IDB_LOCK                BITMAP                  "res\\Lock.bmp"
+IDB_UNLOCKSELECTED      BITMAP                  "res\\UnlockSelected.bmp"
+IDB_LOCKSELECTED        BITMAP                  "res\\LockSelected.bmp"
+IDB_LOCKUNSELECTED      BITMAP                  "res\\LockUnselected.bmp"
+IDB_UNLOCKALL           BITMAP                  "res\\UnlockAll.bmp"
+IDB_CREATEMODEL         BITMAP                  "res\\CreateModel.bmp"
+IDB_PEAK                BITMAP                  "res\\Peak.bmp"
+IDB_SMOOTH              BITMAP                  "res\\Smooth.bmp"
+IDB_TOOGLE_PEAK_SMOOTH  BITMAP                  "res\\TogglePeakSmooth.bmp"
+IDB_SPLITEDGE           BITMAP                  "res\\SplitEdge.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GEOMETRY
+//
+
+IDR_TRANSLATEMANIPULATORZ_GEO GEOMETRY                "res\\TranslateManipulatorZ.geo"
+IDR_SCALEMANIPULATORKNOB_GEO GEOMETRY                "res\\ScaleManipulatorKnob.geo"
+IDR_ROTATEMANIPULATORALL_GEO GEOMETRY                "res\\RotateManipulatorAll.geo"
+IDR_ROTATEMANIPULATORSCREEN_GEO GEOMETRY                "res\\RotateManipulatorScreen.geo"
+IDR_ROTATEMANIPULATORZ_GEO GEOMETRY                "res\\RotateManipulatorZ.geo"
+IDR_PIVOTMANIPULATORROTATE_GEO GEOMETRY                "res\\PivotManipulatorRotate.geo"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SAVESELECTION_DIALOG DIALOGEX 0, 0, 288, 145
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Save Selection"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Destination",IDC_STATIC,7,7,215,56
+    RTEXT           "Selection:",IDC_STATIC,16,23,32,8
+    COMBOBOX        IDC_SELECTION_COMBO,55,20,157,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Name:",IDC_NAME_STATIC,16,41,32,8
+    EDITTEXT        IDC_NAME_EDIT,55,38,157,14,ES_AUTOHSCROLL
+    GROUPBOX        "Operation",IDC_STATIC,7,68,215,70
+    CONTROL         "New Selection",IDC_NEW_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,15,82,100,10
+    CONTROL         "Add to Selection",IDC_ADD_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,15,95,96,10
+    CONTROL         "Subtract from Selection",IDC_SUBTRACT_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,15,108,96,10
+    CONTROL         "Toggle with Selection",IDC_TOGGLE_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,15,121,97,10
+    DEFPUSHBUTTON   "OK",IDOK,231,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,231,24,50,14
+END
+
+IDD_CREATESURFACE_DIALOG DIALOGEX 0, 0, 288, 145
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Create Surface"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Destination",IDC_STATIC,7,7,215,56
+    RTEXT           "Surface:",IDC_STATIC,16,23,32,8
+    COMBOBOX        IDC_SURFACE_COMBO,55,20,157,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Name:",IDC_NAME_STATIC,16,41,32,8
+    EDITTEXT        IDC_NAME_EDIT,55,38,157,14,ES_AUTOHSCROLL
+    GROUPBOX        "Operation",IDC_STATIC,7,68,215,70
+    CONTROL         "New Surface",IDC_NEW_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,15,82,100,10
+    CONTROL         "Add to Surface",IDC_ADD_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,15,95,96,10
+    CONTROL         "Subtract from Surface",IDC_SUBTRACT_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,15,108,96,10
+    CONTROL         "Toggle with Surface",IDC_TOGGLE_RADIO,"Button",
+                    BS_AUTORADIOBUTTON,15,121,97,10
+    DEFPUSHBUTTON   "OK",IDOK,231,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,231,24,50,14
+END
+
+IDD_CONVERTMODEL_DIALOG DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Model Conversion"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,52,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,69,50,14
+    COMBOBOX        IDC_TOMODELTYPE_COMBO,7,20,172,18,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Convert To:",IDC_CONVERTTOSTATIC,7,7,172,12
+END
+
+IDD_REDUCEMOTIONKEYS_DIALOG DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Reduce Motion Keys"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_TOLERANCE_EDIT,12,23,29,12,ES_AUTOHSCROLL
+    LTEXT           "Tolerance",IDC_TOLERANCE_STATIC,16,10,33,9
+    CONTROL         "",IDC_TOLERANCE_SPIN,"msctls_updown32",UDS_ARROWKEYS,41,
+                    23,13,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SAVESELECTION_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_CREATESURFACE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_CONVERTMODEL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_REDUCEMOTIONKEYS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ADD                 CURSOR                  "res\\arrowcop.cur"
+IDC_ADD_ALONGEDGE       CURSOR                  "res\\add1.cur"
+IDC_NOADD_ALONGEDGE     CURSOR                  "res\\add_alon.cur"
+IDC_LASSO               CURSOR                  "res\\Lasso.cur"
+IDC_POLYLASSO           CURSOR                  "res\\PolyLasso.cur"
+IDC_LASSO_ADD           CURSOR                  "res\\lasso_add.cur"
+IDC_LASSO_SUBTRACT      CURSOR                  "res\\lasso_Sub.cur"
+IDC_LASSO_TOGGLE        CURSOR                  "res\\lasso_toggle.cur"
+IDC_SUBTRACT            CURSOR                  "res\\Subtract.cur"
+IDC_TOGGLE              CURSOR                  "res\\toogle.cur"
+IDC_POLYLASSO_ADD       CURSOR                  "res\\polylass_add.cur"
+IDC_POLYLASSO_SUBTRACT  CURSOR                  "res\\polylasso_subract.cur"
+IDC_POLYLASSO_TOGGLE    CURSOR                  "res\\polylasso_toggle.cur"
+IDC_SINGLEPICK          CURSOR                  "res\\singlepick.cur"
+IDC_BOUND               CURSOR                  "res\\Bound.cur"
+IDC_BOUND_ADD           CURSOR                  "res\\bound_add.cur"
+IDC_BOUND_SUBTRACT      CURSOR                  "res\\BOUND_SUBTRACT.cur"
+IDC_BOUND_TOGGLE        CURSOR                  "res\\bound_toggle.cur"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

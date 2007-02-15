@@ -1,0 +1,7 @@
+; faceAttribWin32.def : Declares the module parameters for the DLL.
+
+LIBRARY      "faceAttribWin32"
+DESCRIPTION  'faceAttribWin32 Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

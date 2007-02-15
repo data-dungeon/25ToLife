@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IMMDLL", "IMMDLL\IMMDLL.vcproj", "{537969DD-BD07-43D7-9BF9-D414C210CA24}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testapp", "testapp\testapp.vcproj", "{549A9180-B542-4B48-8D65-08F453D45A26}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testgame", "testgame\testgame.vcproj", "{74C4F278-AEE5-416A-BDE9-E612D6DAF797}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Debug.ActiveCfg = Debug|Win32
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Debug.Build.0 = Debug|Win32
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Release.ActiveCfg = Release|Win32
+		{537969DD-BD07-43D7-9BF9-D414C210CA24}.Release.Build.0 = Release|Win32
+		{549A9180-B542-4B48-8D65-08F453D45A26}.Debug.ActiveCfg = Debug|Win32
+		{549A9180-B542-4B48-8D65-08F453D45A26}.Debug.Build.0 = Debug|Win32
+		{549A9180-B542-4B48-8D65-08F453D45A26}.Release.ActiveCfg = Release|Win32
+		{549A9180-B542-4B48-8D65-08F453D45A26}.Release.Build.0 = Release|Win32
+		{74C4F278-AEE5-416A-BDE9-E612D6DAF797}.Debug.ActiveCfg = Debug|Win32
+		{74C4F278-AEE5-416A-BDE9-E612D6DAF797}.Debug.Build.0 = Debug|Win32
+		{74C4F278-AEE5-416A-BDE9-E612D6DAF797}.Release.ActiveCfg = Release|Win32
+		{74C4F278-AEE5-416A-BDE9-E612D6DAF797}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

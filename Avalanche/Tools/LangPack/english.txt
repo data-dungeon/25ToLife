@@ -1,0 +1,4944 @@
+#01_apartment_mp
+<01 Apartment MP>
+
+#01_warehouse
+<01 Warehouse>
+
+#02_apartment
+<02 Apartment>
+
+#02_downtown_mp
+<02 Downtown MP>
+
+#03_culdesac_mp
+<03 Culdesac MP>
+
+#03_downtown
+<03 Downtown>
+
+#04_club_mp
+<04 Club MP>
+
+#04_culdesac
+<04 Culdesac>
+
+#05_club
+<05 Club>
+
+#05_subway_mp
+<05 Subway MP>
+
+#06_subway
+<06 Subway>
+
+#06_tijuana_mp
+<06 Tijuana MP>
+
+#07_casino_mp
+<07 Casino MP>
+
+#07_tijuana
+<07 Tijuana>
+
+#08_casino
+<08 Casino>
+
+#08_penthouse_mp
+<08 Penthouse MP>
+
+#09_penthouse
+<09 Penthouse>
+
+#09_prison_mp
+<09 Prison MP>
+
+#100_points
+<100 Points>
+
+#10_mall_mp
+<10 Mall MP>
+
+#10_minutes
+<10 minutes>
+
+#10_prison
+<10 Prison>
+
+#10_seconds
+<10 seconds>
+
+#10_tags
+<10 Tags>
+
+#11_hacienda_mp
+<11 Hacienda MP>
+
+#11_mall
+<11 Mall>
+
+#12_gauge
+<12 Gauge>
+
+#12_hacienda
+<12 Hacienda>
+
+#12_players
+<12 Players>
+
+#12_urbandecay_mp
+<12 UrbanDecay MP>
+
+#12ga
+<12GA>
+
+#13_trainyard_mp
+<13 Trainyard MP>
+
+#14_bordello_mp
+<14 Bordello MP>
+
+#150_points
+<150 Points>
+
+#15_points
+<15 Points>
+
+#15_tags
+<15 Tags>
+
+#15_villas_mp
+<15 Villas MP>
+
+#16_players
+<16 Players>
+
+#16_prototype_mp
+<16 Prototype MP>
+
+#1_match
+<1 Match>
+
+#20_tags
+<20 Tags>
+
+#21_character_map_name
+<21 Character Map Name>
+
+#223_fmj
+<223 FMJ>
+
+#25_blue
+<25 Blue>
+
+#25_red
+<25 Red>
+
+#25_tags
+<25 Tags>
+
+#25_to_life
+<25 to Life>
+
+#25_to_life_black
+<25 to Life Black>
+
+#25_to_life_white
+<25 to Life White>
+
+#2_left_bracelets
+<2 Left bracelets>
+
+#2_players
+<2 Players>
+
+#2_right_bracelets
+<2 Right Bracelets>
+
+#30_points
+<30 Points>
+
+#357_mag
+<.357 MAG>
+
+#3_left_bracelets
+<3 Left Bracelets>
+
+#3_matches
+<3 Matches>
+
+#3_minutes
+<3 minutes>
+
+#3_right_bracelets
+<3 Right Bracelets>
+
+#44_auto
+<44 Auto>
+
+#44_mag
+<.44 MAG>
+
+#45_cal
+<45 CAL>
+
+#45_compact
+<45 Compact>
+
+#45_compact_sd
+<45 Compact SD>
+
+#4_players
+<4 Players>
+
+#50_cal
+<50 cal>
+
+#50_points
+<50 Points>
+
+#5_matches
+<5 Matches>
+
+#5_minutes
+<5 minutes>
+
+#75_points
+<75 Points>
+
+#7_matches
+<7 Matches>
+
+#7_minutes
+<7 minutes>
+
+#8_players
+<8 Players>
+
+#9_matches
+<9 Matches>
+
+#9mm
+<9MM>
+
+#_buttoned_top_long_
+< Buttoned Top Long >
+
+#_login
+<     Login>
+
+#_settings_changed_
+<!!! SETTINGS CHANGED !!!>
+
+#a_button
+<A Button>
+
+#a_memory_card_8mb_for_playstation2_has_been_inserted_in_memory_card_slot_s_do_you_wish_to_enable_autosave
+<A Memory Card (8MB) (for PlayStation®2) has been inserted in MEMORY CARD slot %s. Do you wish to enable autosave?>
+
+#a_memory_unit_has_been_inserted_into_controller_s_slot_s_do_you_wish_to_enable_autosave
+<A memory unit has been inserted into controller %s, slot %s. Do you wish to enable autosave?>
+
+#a_network_adapter_is_required_for_multiplayer_games_power_down_install_your_network_adapter_and_try_again
+<A Network Adapter is required for multiplayer games. Power down, install your Network Adapter, and try again.>
+
+#a_network_authentication_system_error_has_occured_please_write_down_the_error_code_number_and_contact_scea_at_18664665333_or_via_sceas_website_wwwusplaystationcom
+<A network authentication system error has occured.  Please write down the error code number, and contact SCEA at 1-866-466-5333 or via SCEA's website, www.us.playstation.com.>
+
+#a_playstation_2_disc_information_error_has_occured_please_write_down_the_error_code_number_and_contact_scea_at_18664665333_or_via_sceas_website_wwwusplaystationcom
+<A PlayStation 2 disc information error has occured.  Please write down the error code number, and contact SCEA at 1-866-466-5333 or via SCEA's website, www.us.playstation.com.>
+
+#a_playstation_2_hardware_information_error_has_occured_please_write_down_the_error_code_number_and_contact_scea_at_18664665333_or_via_sceas_website_wwwusplaystationcom
+<A PlayStation 2 hardware information error has occured.  Please write down the error code number, and contact SCEA at 1-866-466-5333 or via SCEA's website, www.us.playstation.com.>
+
+#a_problem_occured_when_trying_to_offer_friendship
+<A problem occured when trying to offer friendship.>
+
+#a_problem_occured_when_trying_to_unblock_the_friend_request
+<A problem occured when trying to unblock the friend request.>
+
+#abbreviation
+<Abbreviation:>
+
+#acceleration
+<Acceleration>
+
+#accent
+<Accent>
+
+#accents
+<Accents>
+
+#accept
+<Accept>
+
+#accessing_memory_card_8mb_for_playstation2_do_not_remove_the_memory_card_8mb_for_playstation2_in_memory_card_slot_s_reset_or_turn_off_power_to_the_console
+<Accessing memory card (8MB) (for PlayStation®2)
+Do not remove the memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s, reset, or turn off power to the console.>
+
+#activating_hardware
+<Activating Hardware...>
+
+#afro
+<Afro>
+
+#afro_hair_color_
+<Afro Hair Color >
+
+#afro_small
+<Afro Small>
+
+#aim
+<Aim>
+
+#aiming
+<Aiming>
+
+#ak74
+<AK74>
+
+#alien_black
+<Alien Black>
+
+#alien_green
+<Alien Green>
+
+#alien_minivan
+<Alien Minivan>
+
+#all_fire
+<All Fire>
+
+#alternating_teams
+<Alternating Teams>
+
+#american_flag
+<American Flag>
+
+#an_account_with_that_name_already_exists_on_the_memory_card_8mb_for_playstation2_please_recover_a_different_account
+<An account with that name already exists on the memory card (8MB) (for PlayStation®2).  Please recover a different account.>
+
+#an_authentication_error_has_occured_please_write_down_the_error_code_number_and_contact_scea_at_18664665333_or_via_sceas_website_wwwusplaystationcom
+<An authentication error has occured.  Please write down the error code number, and contact SCEA at 1-866-466-5333 or via SCEA's website, www.us.playstation.com.>
+
+#an_email_has_been_sent_to_the_email_address_used_when_creating_your_online_name
+<An email has been sent to the email address used when creating your online name.>
+
+#an_unspecified_error_has_occurred
+<An unspecified error has occurred>
+
+#an_update_for_twentyfive_to_life_is_now_
+<An update for Twenty-Five to Life is now >
+
+#analog_stick_settings
+<Analog Stick Settings>
+
+#anchor
+<Anchor>
+
+#angry_eyes
+<Angry Eyes>
+
+#antler_fire
+<Antler Fire>
+
+#apprehension
+<Apprehension>
+
+#are_you_sure_you_want_to_delete_the_s_all_data_will_be_lost
+<Are you sure you want to delete the %s? All data will be lost.>
+
+#are_you_sure_you_want_to_delete_the_saved_s_all_data_will_be_lost
+<Are you sure you want to delete the saved %s? All data will be lost.>
+
+#are_you_sure_you_want_to_format_the_memory_card_8mb_for_playstation2_in_slot_s
+<Are you sure you want to format the memory card (8MB) (for PlayStation®2) in slot %s>
+
+#are_you_sure_you_want_to_load_the_saved_s
+<Are you sure you want to load the saved %s?>
+
+#are_you_sure_you_want_to_overwrite_the_saved_s
+<Are you sure you want to overwrite the saved %s?>
+
+#are_you_sure_you_want_to_save_the_s
+<Are you sure you want to save the %s?>
+
+#are_you_sure_you_want_to_sign_out
+<Are you sure you want to sign out?>
+
+#arm_wear
+<Arm Wear>
+
+#arms
+<-Arms>
+
+#asian
+<Asian>
+
+#asian_1
+<Asian 1>
+
+#asian_2
+<Asian 2>
+
+#asian_3
+<Asian 3>
+
+#asian_gloves
+<asian_gloves>
+
+#asp
+<Asp>
+
+#ass_backwards
+<Ass Backwards>
+
+#ass_backwards_southpaw
+<Ass Backwards Southpaw>
+
+#atf
+<A.T.F.>
+
+#atf_badass1_with_bpv
+<ATF Badass1 with BPV>
+
+#atf_badass2_with_bpv
+<ATF Badass2 with BPV>
+
+#atf_badass3_with_bpv
+<ATF Badass3 with BPV>
+
+#atf_badass4_with_bpv
+<ATF Badass4 with BPV>
+
+#atf_badass5_with_bpv
+<ATF Badass5 with BPV>
+
+#atf_badass6_with_bpv
+<ATF Badass6 with BPV>
+
+#atf_badass7_with_bpv
+<ATF Badass7 with BPV>
+
+#atf_lieutenant_1
+<ATF Lieutenant 1>
+
+#atf_lieutenant_2
+<ATF Lieutenant 2>
+
+#atf_lieutenant_3
+<ATF Lieutenant 3>
+
+#atf_lieutenant_4
+<ATF Lieutenant 4>
+
+#atf_lieutenant_5
+<ATF Lieutenant 5>
+
+#atf_lieutenant_6
+<ATF Lieutenant 6>
+
+#atf_rookie_1
+<ATF Rookie 1>
+
+#atf_rookie_2
+<ATF Rookie 2>
+
+#atf_rookie_3
+<ATF Rookie 3>
+
+#atf_rookie_4
+<ATF Rookie 4>
+
+#atf_rookie_5
+<ATF Rookie 5>
+
+#atf_rookie_6
+<ATF Rookie 6>
+
+#atf_rookie_7
+<ATF Rookie 7>
+
+#attack
+<Attack>
+
+#atwinmon_detected_press_x
+<ATWINMON detected, press X>
+
+#aug
+<aug>
+
+#authenticating_dnas_data
+<Authenticating DNAS data...>
+
+#autosave
+<Autosave>
+
+#autosaving
+<Autosaving...>
+
+#available_levels
+<Available Levels>
+
+#available_profiles
+<Available Profiles:>
+
+#avatar_name
+<Avatar Name>
+
+#b_button
+<B Button>
+
+#back
+<Back>
+
+#back_packs
+<Back Packs>
+
+#back_tattoo
+<Back Tattoo>
+
+#badge
+<Badge>
+
+#badge_1
+<Badge 1>
+
+#badge_2
+<Badge 2>
+
+#badge_3
+<Badge 3>
+
+#badge_4
+<Badge 4>
+
+#badge_5
+<Badge 5>
+
+#badge_belt_1
+<Badge Belt 1>
+
+#badge_belt_2
+<Badge Belt 2>
+
+#badge_belt_3
+<Badge Belt 3>
+
+#badge_belt_4
+<Badge Belt 4>
+
+#badge_belt_5
+<Badge Belt 5>
+
+#badge_necklace_1
+<Badge Necklace 1>
+
+#badge_necklace_2
+<Badge Necklace 2>
+
+#badge_necklace_3
+<Badge Necklace 3>
+
+#badge_necklace_4
+<Badge Necklace 4>
+
+#badge_necklace_5
+<Badge Necklace 5>
+
+#baggy_beanie
+<Baggy Beanie>
+
+#balding
+<Balding>
+
+#balding_hair_color_
+<Balding Hair Color >
+
+#bandana
+<Bandana>
+
+#bandana_band
+<Bandana Band>
+
+#bandana_color
+<Bandana Color>
+
+#bandana_face
+<Bandana face>
+
+#bandana_open_
+<Bandana Open >
+
+#barbed_wire
+<Barbed Wire>
+
+#baseball_cap
+<Baseball Cap>
+
+#baseball_cap_back_skew
+<Baseball Cap back skew>
+
+#baseball_cap_backwards
+<Baseball Cap Backwards>
+
+#baseball_cap_skewed
+<Baseball Cap Skewed>
+
+#baseball_hat_color
+<Baseball Hat Color>
+
+#bat
+<Bat>
+
+#baton
+<Baton>
+
+#beanie
+<Beanie>
+
+#beanie_hat_color_
+<Beanie Hat Color >
+
+#beige
+<Beige>
+
+#belt_color
+<Belt Color>
+
+#belts
+<Belts>
+
+#beret
+<Beret>
+
+#beret_hat_color_
+<Beret Hat Color >
+
+#beretta
+<Beretta>
+
+#beretta_sd
+<Beretta SD>
+
+#bestof_series
+<Best-of Series>
+
+#big_dawg
+<Big Dawg>
+
+#bign_tasty
+<Big'n Tasty>
+
+#birthday
+<Birthday>
+
+#black
+<black>
+
+#black_1
+<Black 1>
+
+#black_2
+<Black 2>
+
+#black_and_purple
+<Black and Purple>
+
+#black_leather
+<Black Leather>
+
+#black_leather_
+<Black Leather >
+
+#black_red
+<Black Red>
+
+#black_stripe
+<Black Stripe>
+
+#black_yellowstripes
+<Black Yellowstripes>
+
+#block_friends_request
+<Block Friends Request>
+
+#blonde
+<Blonde>
+
+#blonde_1
+<Blonde 1>
+
+#blonde_2
+<Blonde 2>
+
+#blue
+<Blue>
+
+#blue_black
+<Blue Black>
+
+#blue_patches
+<Blue Patches>
+
+#blue_red_stripes
+<Blue Red Stripes>
+
+#blue_sleeves
+<Blue Sleeves>
+
+#blue_stripes
+<Blue Stripes>
+
+#blue_tan
+<Blue Tan>
+
+#bomba
+<Bomba>
+
+#both_wristbands
+<Both Wristbands>
+
+#bottle
+<Bottle>
+
+#bowie
+<Bowie>
+
+#bracelet_color
+<Bracelet Color>
+
+#bracelet_double
+<Bracelet Double>
+
+#bracelet_gold_1
+<Bracelet Gold 1>
+
+#bracelet_gold_2
+<Bracelet Gold 2>
+
+#bracelet_gold_3
+<Bracelet Gold 3>
+
+#bracelet_gold_4
+<Bracelet Gold 4>
+
+#bracelet_silver_1
+<Bracelet Silver 1>
+
+#bracelet_silver_2
+<Bracelet Silver 2>
+
+#bracelet_silver_3
+<Bracelet Silver 3>
+
+#bracelet_silver_4
+<Bracelet Silver 4>
+
+#braclets_and_bands
+<Braclets and Bands>
+
+#break_dance
+<Break Dance>
+
+#breakdance
+<breakdance>
+
+#broccolihead
+<Broccolihead>
+
+#brocolli_head
+<Brocolli Head>
+
+#brown
+<brown>
+
+#brown_1
+<Brown 1>
+
+#brown_2
+<Brown 2>
+
+#brown_leather
+<Brown Leather>
+
+#brown_sleeves
+<Brown Sleeves>
+
+#brown_yellow
+<Brown Yellow>
+
+#buck_toof
+<Buck Toof>
+
+#buck_tooth
+<Buck tooth>
+
+#buffalo
+<Buffalo>
+
+#build_s
+<Build %s>
+
+#build_version
+<Build Version>
+
+#bulldog
+<Bulldog>
+
+#bullpup
+<Bullpup>
+
+#burning_e
+<Burning E>
+
+#burning_symbol
+<Burning Symbol>
+
+#butterfly
+<Butterfly>
+
+#button_layout
+<Button Layout>
+
+#button_up_open_shirt
+<Button up open shirt>
+
+#buttoned_long_
+<Buttoned Long >
+
+#buttoned_open_long_
+<Buttoned Open Long >
+
+#buttoned_short
+<Buttoned Short>
+
+#buttoned_short_long
+<Buttoned Short Long>
+
+#buttoned_short_tee
+<Buttoned Short Tee>
+
+#buttoned_tucked_shirt
+<Buttoned tucked shirt>
+
+#buttonup_shirt_colors
+<Button-Up Shirt Colors>
+
+#buzzcut
+<Buzzcut>
+
+#buzzcut_hair_color
+<Buzzcut Hair Color>
+
+#by_player
+<By Player>
+
+#camo
+<camo>
+
+#camo_mixed
+<Camo Mixed>
+
+#camo_trucker
+<Camo Trucker>
+
+#cancel
+<Cancel>
+
+#cancel_changes
+<Cancel Changes?>
+
+#cannot_launch_session
+<Cannot launch session.>
+
+#cannot_request_session_launch
+<Cannot request session launch.>
+
+#caps
+<Caps>
+
+#cargo_black
+<Cargo Black>
+
+#cargo_blue
+<Cargo Blue>
+
+#cargo_camo
+<Cargo camo>
+
+#cargo_grey
+<cargo grey>
+
+#celtic_wristband
+<Celtic Wristband>
+
+#chain
+<Chain>
+
+#chain_color
+<Chain Color>
+
+#chain_gang
+<Chain Gang>
+
+#chain_long
+<Chain Long>
+
+#chain_medium
+<Chain Medium>
+
+#chain_short
+<Chain Short>
+
+#change
+<Change>
+
+#change_profile
+<Change Profile>
+
+#change_team
+<Change Team>
+
+#chapter_selection
+<Chapter Selection>
+
+#character
+<Character>
+
+#character_name
+<Character Name>
+
+#character_select
+<Character Select>
+
+#charselect
+<CharSelect>
+
+#chat
+<Chat>
+
+#chat_room
+<Chat Room>
+
+#chat_yes
+<Chat: Yes>
+
+#checking_for_invitation
+<Checking for invitation...>
+
+#checking_for_patch
+<Checking for Patch...>
+
+#checking_space
+<Checking Space>
+
+#chest_tattoo
+<Chest Tattoo>
+
+#chicken
+<Chicken>
+
+#chicken_trucker
+<Chicken Trucker>
+
+#chilly_aardvark
+<Chilly Aardvark>
+
+#chinese_fire
+<Chinese Fire>
+
+#chinese_pain
+<Chinese Pain>
+
+#choose_existing_file
+<Choose existing file>
+
+#circle
+<Circle>
+
+#circle_w
+<Circle W>
+
+#clan
+<Clan>
+
+#clan_abbreviation_invalid
+<Clan abbreviation invalid.>
+
+#clan_leader
+<Clan Leader:>
+
+#clan_members
+<Clan members>
+
+#clan_name
+<Clan Name:>
+
+#clan_name_invalid
+<Clan name invalid.>
+
+#clan_necrosis
+<Clan Necrosis>
+
+#clear
+<Clear>
+
+#climb
+<Climb>
+
+#colors
+<Colors>
+
+#completed_successfully
+<Completed Successfully.>
+
+#conc
+<Conc>
+
+#concurrent_login_error
+<Concurrent login error.>
+
+#confederate_flag
+<Confederate Flag>
+
+#config1
+<Config1>
+
+#config2
+<Config2>
+
+#config3
+<Config3>
+
+#config4
+<Config4>
+
+#config5
+<Config5>
+
+#configuration
+<Configuration>
+
+#confirm
+<Confirm>
+
+#confirm_password
+<Confirm Password:>
+
+#confirmed
+<Confirmed>
+
+#confirmed_friend_name
+<Confirmed Friend Name>
+
+#confirming_the_friends_list_is_connected
+<Confirming the Friends List is Connected...>
+
+#connecting
+<Connecting>
+
+#connecting_to_account_serivce
+<Connecting to Account Serivce...>
+
+#connecting_to_authentication_service
+<Connecting to Authentication Service...>
+
+#connecting_to_competition_service
+<Connecting to Competition Service...>
+
+#connecting_to_eidos_game_servers
+<Connecting to Eidos Game Servers>
+
+#connecting_to_friends_service
+<Connecting to Friends Service...>
+
+#connecting_to_match_making_service
+<Connecting to Match Making Service...>
+
+#connecting_to_network_please_wait
+<Connecting to network, please wait...>
+
+#connection
+<Connection>
+
+#connection_failure
+<Connection failure.>
+
+#connection_time_out_please_try_connecting_again_at_a_later_time
+<Connection time out.  Please try connecting again at a later time.>
+
+#connection_to_dnas_server_failed
+<Connection to DNAS server failed.>
+
+#connection_to_hardware_failed
+<Connection to hardware failed.>
+
+#connection_to_the_network_authentication_server_has_timed_out_please_try_again_later
+<Connection to the network authentication server has timed out.  Please try again later.>
+
+#continue
+<Continue>
+
+#continue_without_loading
+<Continue without loading>
+
+#continue_without_save
+<Continue Without Save>
+
+#continue_without_saving
+<Continue Without Saving>
+
+#cool_sunglasses_1
+<Cool Sunglasses 1>
+
+#cool_sunglasses_2
+<Cool Sunglasses 2>
+
+#cop
+<Cop>
+
+#cop_1
+<Cop 1>
+
+#cop_2
+<Cop 2>
+
+#cop_3
+<Cop 3>
+
+#cop_4
+<Cop 4>
+
+#cop_5
+<Cop 5>
+
+#cop_6
+<Cop 6>
+
+#cop_7
+<Cop 7>
+
+#cop_8
+<Cop 8>
+
+#cop_hat_color_
+<Cop Hat Color >
+
+#cop_long_sleeve
+<Cop Long Sleeve>
+
+#cop_pants
+<Cop Pants>
+
+#cop_radio
+<Cop Radio>
+
+#cop_shirt_color_
+<Cop Shirt Color >
+
+#cop_short_sleeve
+<Cop Short Sleeve>
+
+#cop_sleeve_decals
+<Cop Sleeve Decals>
+
+#cop_tee
+<Cop Tee>
+
+#cop_tee_decal
+<Cop_Tee_Decal>
+
+#cop_tee_shirt_color
+<Cop Tee Shirt Color>
+
+#cops
+<Cops>
+
+#corn_row_a_hair_color_
+<Corn Row A Hair Color >
+
+#corn_row_b_hair_color_
+<Corn Row B Hair Color >
+
+#cornrows_1
+<Cornrows 1>
+
+#cornrows_2
+<Cornrows 2>
+
+#could_not_authenticate_with_the_service
+<Could not authenticate with the service.>
+
+#could_not_connect_to_authenticationservice
+<Could not connect to AuthenticationService.>
+
+#country
+<Country:>
+
+#crab_blood_life
+<Crab Blood Life>
+
+#create
+<Create>
+
+#create_account
+<Create Account>
+
+#create_clan
+<Create Clan>
+
+#create_eidos_online_account
+<Create Eidos Online Account>
+
+#create_eidos_online_account_12
+<Create Eidos Online Account (1/2)>
+
+#create_eidos_online_account_22
+<Create Eidos Online Account (2/2)>
+
+#create_match
+<Create Match>
+
+#create_new_profile
+<Create New Profile>
+
+#create_profile
+<Create Profile>
+
+#creating_account
+<Creating Account...>
+
+#creating_gathering
+<Creating Gathering...>
+
+#cross
+<Cross>
+
+#cross_1
+<Cross 1>
+
+#cross_2
+<Cross 2>
+
+#crouch
+<Crouch>
+
+#current_password
+<Current Password:>
+
+#customization
+<Customization>
+
+#customize
+<Customize>
+
+#cyclops
+<Cyclops>
+
+#d_min_d_sec
+<%d Min %d Sec>
+
+#d_minutes
+<%d Minutes>
+
+#d_points
+<%d Points>
+
+#damon
+<Damon>
+
+#damon_hair_color_
+<Damon Hair Color >
+
+#dark_blue
+<Dark Blue>
+
+#dark_brown_
+<Dark Brown >
+
+#dark_gray
+<Dark Gray>
+
+#dark_green
+<Dark Green>
+
+#day
+<Day:>
+
+#dboy_loaded_bpv1
+<Dboy Loaded BPV1>
+
+#dboy_loaded_bpv2
+<Dboy Loaded BPV2>
+
+#dboy_loaded_camo_1
+<Dboy loaded camo 1>
+
+#dboy_loaded_camo_2
+<Dboy loaded camo 2>
+
+#dboyhigh1
+<DboyHigh1>
+
+#dboyhigh2
+<DboyHigh2>
+
+#dboyhigh3
+<DboyHigh3>
+
+#dboylow1
+<DboyLow1>
+
+#dboylow2
+<DboyLow2>
+
+#dboymid1
+<DboyMid1>
+
+#dboymid2
+<DboyMid2>
+
+#deathmatch
+<Deathmatch>
+
+#deaths
+<Deaths>
+
+#decline
+<Decline>
+
+#default
+<Default>
+
+#default_setting
+<Default Setting>
+
+#default_settings
+<Default Settings>
+
+#defeat_gang_lord
+<Defeat gang lord.>
+
+#delete
+<Delete>
+
+#delete_account_from_memory_card
+<Delete Account from Memory Card>
+
+#delete_cancelled
+<Delete Cancelled.>
+
+#delete_completed_successfully
+<Delete Completed Successfully.>
+
+#delete_saved_eidos_online_account_profile
+<Delete Saved Eidos Online Account Profile>
+
+#deleting_account
+<Deleting account>
+
+#deleting_cancelled
+<Deleting Cancelled.>
+
+#denim
+<Denim>
+
+#denim_black
+<Denim Black>
+
+#denim_dark_blue
+<Denim Dark Blue>
+
+#denim_faded_blue
+<Denim  Faded Blue>
+
+#denim_grey
+<Denim  Grey>
+
+#denim_jacket
+<Denim Jacket>
+
+#denim_jacket_color_
+<Denim Jacket Color >
+
+#denim_rugged
+<Denim Rugged>
+
+#denim_tan
+<Denim Tan>
+
+#derby
+<Derby>
+
+#derby_hat_color_
+<Derby Hat Color >
+
+#description
+<Description>
+
+#description_of_the_current_game_setting_update_this_string_when_the_option_changes
+<Description of the current game setting.  Update this string when the option changes.>
+
+#dev
+<DEV>
+
+#developer_menu
+<Developer Menu>
+
+#dialog_title
+<Dialog Title>
+
+#difficulty
+<Difficulty>
+
+#disabled
+<Disabled>
+
+#disabled_color
+<Disabled Color>
+
+#disconnect
+<Disconnect>
+
+#dnas_authentication
+<DNAS Authentication...>
+
+#dnas_logotype_is_a_trademark_of_sony_computer_entertainment_inc
+<DNAS logotype is a trademark of Sony Computer Entertainment Inc.>
+
+#do_not_remove_the_memory_card_8mb_for_playstation2_reset_or_turn_off_power_to_the_console
+<Do not remove the memory card (8MB) (for PlayStation®2), reset or turn off power to the console.>
+
+#do_not_turn_off_your_pc
+<Do not turn off your PC.>
+
+#do_not_turn_off_your_xbox_console
+<Do not turn off your Xbox console.>
+
+#do_somethin_about_it
+<Do somethin' about it>
+
+#doc
+<D.O.C>
+
+#dogtag
+<DogTag>
+
+#dollar_big
+<Dollar Big>
+
+#dollar_pent
+<Dollar Pent>
+
+#done
+<Done>
+
+#done_making_changes
+<Done making changes?>
+
+#doo_rag_color_
+<Doo Rag Color >
+
+#doorag
+<Doorag>
+
+#dopey
+<Dopey>
+
+#double_1
+<Double 1>
+
+#double_2
+<Double 2>
+
+#down
+<Down>
+
+#downloading
+<Downloading...>
+
+#dragon
+<Dragon>
+
+#dreadlocks
+<Dreadlocks>
+
+#drive_by
+<Drive By>
+
+#duck
+<Duck>
+
+#dummy
+<-Dummy>
+
+#eagle
+<Eagle>
+
+#eagle_50
+<Eagle .50>
+
+#eagle_flag
+<Eagle Flag>
+
+#ear_rings
+<Ear Rings>
+
+#easy
+<Easy>
+
+#edit_account
+<Edit Account>
+
+#edit_eidos_online_account
+<Edit Eidos Online Account>
+
+#edit_eidos_online_account_12
+<Edit Eidos Online Account (1/2)>
+
+#edit_eidos_online_account_22
+<Edit Eidos Online Account (2/2)>
+
+#edit_tag
+<Edit Tag>
+
+#eidos_online_account_login
+<Eidos Online Account Login>
+
+#eidos_online_agreement
+<Eidos Online Agreement>
+
+#elbow_pads
+<Elbow Pads>
+
+#elephant_band
+<Elephant Band>
+
+#elephant_chain
+<Elephant Chain>
+
+#email_address
+<Email Address:>
+
+#ememy_respawn
+<Ememy Respawn>
+
+#enable_autosave
+<Enable Autosave>
+
+#enabled
+<Enabled>
+
+#encryption_error
+<Encryption error.>
+
+#enter
+<Enter>
+
+#enter_password
+<Enter Password>
+
+#environment
+<Environment>
+
+#erabeet
+<Erabeet>
+
+#error
+<Error>
+
+#error_in_proxy_setting
+<Error in proxy setting.>
+
+#excellent
+<Excellent>
+
+#excluded
+<-Excluded->
+
+#eyelids
+<Eyelids>
+
+#eyelids_asian
+<eyelids_asian>
+
+#eyelids_black
+<eyelids_black>
+
+#eyelids_standard
+<eyelids_standard>
+
+#eyelids_white
+<eyelids_white>
+
+#eyes
+<Eyes>
+
+#f_medalleon
+<F Medalleon>
+
+#fa37
+<FA37>
+
+#fa37tear
+<FA37Tear>
+
+#facial_hair
+<Facial Hair>
+
+#facial_hair_color
+<Facial Hair Color>
+
+#failed_to_participate
+<Failed to participate.>
+
+#failed_to_register_gathering_with_rendezvous
+<Failed to register gathering with RendezVous.>
+
+#failed_to_request_participation
+<Failed to request participation.>
+
+#failed_while_waiting_for_finish_round
+<Failed while waiting for finish round.>
+
+#failed_while_waiting_for_finish_session
+<Failed while waiting for finish session.>
+
+#failed_while_waiting_for_start_round
+<Failed while waiting for start round.>
+
+#failed_while_waiting_to_report_stats
+<Failed while waiting to report stats.>
+
+#failed_while_waiting_to_unregister_the_round
+<Failed while waiting to unregister the round.>
+
+#failed_while_waiting_to_unregister_the_session
+<Failed while waiting to unregister the session.>
+
+#federal
+<Federal>
+
+#federale_captain
+<Federale Captain>
+
+#federale_captain1
+<Federale Captain1>
+
+#federale_captain2
+<Federale Captain2>
+
+#federale_captain3
+<Federale Captain3>
+
+#federale_captain4
+<Federale Captain4>
+
+#federale_leutenant
+<Federale Leutenant>
+
+#federale_leutenant_1
+<Federale Leutenant 1>
+
+#federale_leutenant_2
+<Federale Leutenant 2>
+
+#federale_leutenant_3
+<Federale Leutenant 3>
+
+#federale_leutenant_4
+<Federale Leutenant 4>
+
+#federale_leutenant_5
+<Federale Leutenant 5>
+
+#federale_rookie1
+<Federale Rookie1>
+
+#federale_rookie2
+<Federale Rookie2>
+
+#federale_rookie3
+<Federale Rookie3>
+
+#federale_rookie4
+<Federale Rookie4>
+
+#federale_rookie5
+<Federale Rookie5>
+
+#fedora
+<Fedora>
+
+#feet
+<-Feet>
+
+#fight_your_way_to_the_warehouse
+<Fight your way to the warehouse!>
+
+#figure
+<Figure>
+
+#filter
+<Filter>
+
+#find_match
+<Find Match>
+
+#find_the_security_room_to_gain_access_to_the_vault
+<Find the Security Room to gain access to the Vault.>
+
+#finding_files
+<Finding Files>
+
+#fingerless_gloves
+<Fingerless Gloves>
+
+#finish_single_player_downtown
+<Finish single player Downtown.>
+
+#finishing_round
+<Finishing Round...>
+
+#finishing_the_session
+<Finishing the session...>
+
+#fire_wings
+<Fire Wings>
+
+#fish_bones
+<Fish Bones>
+
+#flag
+<Flag>
+
+#flame
+<Flame>
+
+#flames
+<Flames>
+
+#flaming_skull
+<Flaming Skull>
+
+#flash
+<Flash>
+
+#footwear
+<Footwear>
+
+#forearm_tattoo_left
+<Forearm Tattoo Left>
+
+#forearm_tattoo_right
+<Forearm Tattoo Right>
+
+#format
+<Format>
+
+#format_cancelled
+<Format Cancelled.>
+
+#format_completed_successfully
+<Format Completed Successfully.>
+
+#format_failed
+<Format Failed.>
+
+#formatting_memory_card_8mb_for_playstation2_in_memory_card_slot_s_do_not_remove_memory_card_8mb_for_playstation2_analog_controller_dualshock2_or_resetswitch_off_console
+<Formatting memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s. Do not remove memory card (8MB) (for PlayStation®2), analog controller (dualshock®2), or reset/switch off console.>
+
+#found_some_new_firepower
+<Found some new firepower!>
+
+#frame
+<Frame>
+
+#freeze_warehouse_outfit
+<Freeze Warehouse Outfit>
+
+#freezedowntown
+<FreezeDowntown>
+
+#freezedowntownmask
+<FreezeDowntownmask>
+
+#freezehacienda
+<FreezeHacienda>
+
+#freezemall
+<FreezeMall>
+
+#freezeprison
+<FreezePrison>
+
+#freezewarehouse
+<FreezeWarehouse>
+
+#friendly_fire
+<Friendly Fire>
+
+#friends
+<Friends>
+
+#friends_client_is_not_connected
+<Friends client is not connected.>
+
+#friends_menu
+<FRIENDS MENU>
+
+#frizzy
+<Frizzy>
+
+#frizzy_hair_color_
+<Frizzy Hair Color >
+
+#front_flames
+<Front Flames>
+
+#frontend
+<frontend>
+
+#full_beard
+<Full Beard>
+
+#full_beard_short_black
+<Full Beard Short Black>
+
+#full_beard_short_standard
+<Full Beard Short Standard>
+
+#fumanchu
+<Fumanchu>
+
+#fumanchu_black
+<Fumanchu Black>
+
+#fumanchu_standard
+<Fumanchu Standard>
+
+#game
+<Game>
+
+#game_experience_may_change_during_online_play
+<Game Experience May Change During Online Play>
+
+#game_mode
+<Game Mode>
+
+#game_options
+<Game Options>
+
+#game_settings
+<Game Settings>
+
+#game_type
+<Game type:>
+
+#gamma
+<Gamma>
+
+#gang_1
+<Gang 1>
+
+#gang_2
+<Gang 2>
+
+#gang_3
+<Gang 3>
+
+#gang_4
+<Gang 4>
+
+#gang_5
+<Gang 5>
+
+#gang_6
+<Gang 6>
+
+#gang_7
+<Gang 7>
+
+#gang_8
+<Gang 8>
+
+#gang_tee_shirt_color_
+<Gang Tee Shirt Color >
+
+#gangsta
+<Gangsta>
+
+#gangster_hats
+<Gangster Hats>
+
+#gangsters
+<Gangsters>
+
+#gender
+<Gender:>
+
+#generic_rendezvous_call
+<Generic Rendezvous Call...>
+
+#get_5_headshots_in_warehouse
+<Get 5 headshots in Warehouse>
+
+#get_out_the_back_exit_
+<Get out the back exit !>
+
+#get_the_loot_from_the_vault
+<Get the loot from the vault!>
+
+#get_to_your_car_down_the_alley_outside_the_back_of_the_warehouse
+<Get to your car, down the alley outside the back of the warehouse!>
+
+#getting_connection_info
+<Getting Connection Info...>
+
+#glasses
+<Glasses>
+
+#glock
+<Glock>
+
+#gloves
+<Gloves>
+
+#go_to_xbox_dashboard
+<Go to Xbox Dashboard>
+
+#goatee
+<Goatee>
+
+#goatee_black
+<Goatee Black>
+
+#goatee_standard
+<Goatee Standard>
+
+#goggles_face
+<Goggles Face>
+
+#goggles_helmet
+<Goggles Helmet>
+
+#gold
+<Gold>
+
+#gold_1
+<Gold 1>
+
+#gold_2
+<Gold 2>
+
+#gold_3
+<Gold 3>
+
+#gold_4
+<Gold 4>
+
+#gold_purple
+<Gold Purple>
+
+#golf
+<Golf>
+
+#golf_hat_color_
+<Golf Hat Color >
+
+#good
+<Good>
+
+#gray
+<Gray>
+
+#green
+<Green>
+
+#green_head
+<Green Head>
+
+#green_norte
+<Green Norte>
+
+#greenthumb
+<Greenthumb>
+
+#grey
+<Grey>
+
+#grey_black_stripes
+<Grey Black Stripes>
+
+#grey_blue
+<Grey Blue>
+
+#guns_crossed
+<Guns Crossed>
+
+#hair
+<Hair>
+
+#hammer
+<Hammer>
+
+#hand_geometry
+<Hand Geometry>
+
+#handcuffs
+<HandCuffs>
+
+#handguns_only
+<Handguns Only>
+
+#hands
+<hands>
+
+#hard
+<Hard>
+
+#harley
+<Harley>
+
+#harley_flag
+<Harley Flag>
+
+#hat
+<Hat>
+
+#head
+<-Head>
+
+#head_jewelry
+<Head Jewelry>
+
+#head_jewelry_color
+<Head Jewelry Color>
+
+#head_shape
+<Head Shape>
+
+#helicopter
+<Helicopter>
+
+#hide_that_you_are_online_no
+<Hide that you are online: No>
+
+#highlight_color
+<Highlight Color>
+
+#hightop_color
+<Hightop Color>
+
+#hightops
+<Hightops>
+
+#hodge_podge
+<Hodge Podge>
+
+#holes
+<Holes>
+
+#hollar_base_arbies_long_tour_bus
+<hollar base arbies long tour bus>
+
+#holo
+<Holo>
+
+#holobri
+<HoloBri>
+
+#holobryant
+<HoloBryant>
+
+#holobryce
+<HoloBryce>
+
+#holodan
+<HoloDan>
+
+#holodwain
+<HoloDwain>
+
+#holofood
+<HoloFood>
+
+#holohurdles
+<HoloHurdles>
+
+#holojoe
+<HoloJoe>
+
+#holoken
+<HoloKen>
+
+#hololott
+<HoloLott>
+
+#holomatt
+<HoloMatt>
+
+#holonpc
+<HoloNPC>
+
+#holopaul
+<HoloPaul>
+
+#holoritual
+<HoloRitual>
+
+#holorob
+<HoloRob>
+
+#holoshon
+<HoloShon>
+
+#holotravis
+<HoloTravis>
+
+#holster
+<Holster>
+
+#hoodie_1
+<Hoodie 1>
+
+#hoodie_2
+<Hoodie 2>
+
+#hoodie_jacket_color_
+<Hoodie Jacket Color >
+
+#hooxplow
+<HOOXPLOW>
+
+#host
+<Host:>
+
+#host_match
+<Host Match>
+
+#idle
+<Idle>
+
+#idling
+<Idling...>
+
+#if_type
+<I/F Type:>
+
+#incoming
+<Incoming>
+
+#inside
+<Inside>
+
+#insufficient_free_space_on_the_memory_card_8mb_for_playstation2_in_memory_card_slot_s_insert_a_memory_card_8mb_for_playstation2_with_at_least_skb_of_free_space_or_create_some_space_using_the_consoles_internal_browser_do_you_want_to_start_the_game_anyway
+<Insufficient free space on the memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s.  Insert a memory card (8MB) (for PlayStation®2) with at least %sKB of free space, or create some space using the console's internal browser. Do you want to start the game anyway?>
+
+#insufficient_free_space_on_the_memory_card_8mb_for_playstation2_in_memory_card_slot_s_s_requires_skb_of_free_space_to_save_data
+<Insufficient free space on the memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s.  %s requires %sKB of free space to save data.>
+
+#insufficient_free_space_on_the_memory_card_8mb_for_playstation2_in_memory_card_slot_s_s_requires_skb_of_free_space_to_save_data_up_to_skb_of_free_space_may_be_needed_to_save_all_files
+<Insufficient free space on the memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s.  %s requires %sKB of free space to save data.  Up to %sKB of free space may be needed to save all files.>
+
+#intro
+<intro>
+
+#introvert
+<Introvert>
+
+#invalid_account_name_or_account_disabled
+<Invalid account name, or account disabled.>
+
+#invalid_ammotype_d
+<Invalid AmmoType: %d>
+
+#invalid_input
+<Invalid input>
+
+#invalid_name
+<Invalid Name>
+
+#invalid_password
+<Invalid password.>
+
+#invalid_user_name
+<Invalid user name.>
+
+#invalid_user_name_filtered
+<Invalid user name (filtered).>
+
+#inverted
+<Inverted>
+
+#invitating_opponent_to_round
+<Invitating opponent to round>
+
+#invitations
+<Invitations>
+
+#invite_to_game
+<Invite to Game>
+
+#invited_you_to_match
+<Invited you to match>
+
+#jacket
+<Jacket>
+
+#jersey
+<Jersey>
+
+#jersey_long_sleeve
+<Jersey Long Sleeve>
+
+#jersey_longsleeve_color
+<Jersey Longsleeve Color>
+
+#jersey_mid_sleeve
+<Jersey Mid Sleeve>
+
+#jesus
+<Jesus>
+
+#jesus_said_no_to_pork_chops
+<Jesus said "no" to pork chops.>
+
+#join
+<Join>
+
+#join_match
+<Join Match>
+
+#join_session
+<Join Session>
+
+#joining_the_gathering
+<Joining the Gathering...>
+
+#jump
+<Jump>
+
+#kanji
+<Kanji>
+
+#key_entry
+<Key Entry>
+
+#kills
+<Kills>
+
+#knee_pads
+<Knee Pads>
+
+#knife
+<Knife>
+
+#kungfu
+<kungfu>
+
+#l1_button
+<L1 BUTTON>
+
+#l2_button
+<L2 BUTTON>
+
+#la_bomba
+<La Bomba>
+
+#la_fire
+<L.A. Fire>
+
+#la_migra
+<La Migra>
+
+#lapd_sheriff1
+<LAPD Sheriff1>
+
+#lapd_sheriff2
+<LAPD Sheriff2>
+
+#launching_session
+<Launching Session...>
+
+#law
+<LAW>
+
+#leave_clan
+<Leave Clan>
+
+#leaving_game_please_wait
+<Leaving game, please wait...>
+
+#left
+<Left>
+
+#left_1_ear_ring
+<Left 1 Ear Ring>
+
+#left_2_ear_rings
+<Left 2 Ear Rings>
+
+#left_3_ear_rings
+<Left 3 Ear Rings>
+
+#left_bracelet
+<Left Bracelet>
+
+#left_stick
+<Left Stick>
+
+#left_wrist_band
+<Left Wrist band>
+
+#legs
+<-Legs>
+
+#lennon
+<Lennon>
+
+#leopard
+<Leopard>
+
+#level
+<Level>
+
+#level_name
+<Level Name>
+
+#level_select
+<Level Select>
+
+#light_1
+<Light 1>
+
+#light_2
+<Light 2>
+
+#light_3
+<Light 3>
+
+#light_blue
+<Light Blue>
+
+#light_brown
+<Light Brown>
+
+#light_gloves
+<light_gloves>
+
+#link
+<LINK>
+
+#load
+<Load>
+
+#load_completed_successfully
+<Load Completed Successfully.>
+
+#loading
+<Loading>
+
+#loading_cancelled
+<Loading Cancelled.>
+
+#loading_failed_the_data_was_not_read_correctly
+<Loading failed. The data was not read correctly.>
+
+#loading_saved_s
+<Loading saved %s.>
+
+#loadout
+<Loadout>
+
+#loadout_limit
+<Load-out Limit>
+
+#locorose
+<Locorose>
+
+#logged_in_with
+<Logged in with:>
+
+#logging_in
+<Logging in...>
+
+#logging_in_to_the_twentyfive_to_life_online_game_servers
+<Logging in to the Twenty-Five to Life Online Game Servers...>
+
+#logging_out
+<Logging out...>
+
+#login
+<Login>
+
+#login_error
+<Login error>
+
+#logout
+<Logout>
+
+#long_feather_hair_color_
+<Long Feather Hair Color >
+
+#long_feathered
+<Long Feathered>
+
+#long_flame
+<Long Flame>
+
+#look_sensitivity
+<Look Sensitivity>
+
+#look_speed
+<Look Speed>
+
+#losing
+<Losing>
+
+#lotr_band
+<LOTR Band>
+
+#low_rider
+<Low Rider>
+
+#low_riders
+<Low Riders>
+
+#m1a
+<M1A>
+
+#m4a1
+<M4A1>
+
+#mac10
+<Mac10>
+
+#main_menu
+<Main Menu>
+
+#making_netz_connection
+<Making NetZ Connection...>
+
+#manage_files
+<Manage Files>
+
+#map
+<Map>
+
+#maryjane
+<Maryjane>
+
+#match
+<Match:>
+
+#match_not_found_while_attempting_to_join
+<Match not found while attempting to join.>
+
+#mauve
+<Mauve>
+
+#max_players
+<Max Players>
+
+#maxican
+<Maxican>
+
+#maximum_number_of_files_has_been_for_reached_for_s_select_a_preexisting_saved_s_or_continue_without_saving
+<Maximum number of files has been for reached for 
+%s. Select a pre-existing saved %s, or continue without saving.>
+
+#mean_guy
+<Mean Guy>
+
+#med_gloves
+<med_gloves>
+
+#medallion
+<Medallion>
+
+#meddrk_gloves
+<meddrk_gloves>
+
+#medium_1
+<Medium 1>
+
+#medium_2
+<Medium 2>
+
+#medium_3
+<Medium 3>
+
+#medium_4
+<Medium 4>
+
+#medium_dark_1
+<Medium Dark 1>
+
+#medium_dark_2
+<Medium Dark 2>
+
+#medium_dark_3
+<Medium Dark 3>
+
+#medium_dark_4
+<Medium Dark 4>
+
+#medium_dark_5
+<Medium Dark 5>
+
+#medium_dark_6
+<Medium Dark 6>
+
+#member_list
+<Member List>
+
+#member_name
+<Member Name>
+
+#members
+<Members>
+
+#mendoza_boss_fight
+<Mendoza Boss Fight>
+
+#mendoza_street
+<Mendoza Street>
+
+#mendoza_tactical
+<Mendoza Tactical>
+
+#menu_item_1
+<Menu Item 1>
+
+#menu_item_2
+<Menu Item 2>
+
+#menu_item_3
+<Menu Item 3>
+
+#menu_item_4
+<Menu Item 4>
+
+#menu_item_5
+<Menu Item 5>
+
+#mexican_flag
+<Mexican Flag>
+
+#mexican_standardcop1
+<mexican_StandardCop1>
+
+#mexican_standardcop2
+<mexican_StandardCop2>
+
+#mexican_standardcop3
+<mexican_StandardCop3>
+
+#midlength_feather_hair_color_
+<Mid-Length Feather Hair Color >
+
+#midlength_feathered
+<Mid-length Feathered>
+
+#mode
+<Mode>
+
+#molotov
+<Molotov>
+
+#money_sun
+<Money Sun>
+
+#moneybag
+<moneybag>
+
+#mono
+<Mono>
+
+#month
+<Month:>
+
+#more
+<More>
+
+#moss90
+<Moss90>
+
+#move
+<Move>
+
+#mp5
+<MP5>
+
+#mp5k
+<MP5K>
+
+#mp5sd
+<MP5SD>
+
+#mp9
+<MP9>
+
+#mullet
+<Mullet>
+
+#mullet_hair_color
+<Mullet Hair Color>
+
+#multiplayer_chat_messages
+<multiplayer chat messages>
+
+#multiplayer_online
+<Multiplayer Online>
+
+#multiplayer_system_link
+<Multiplayer System Link>
+
+#murder_oozie
+<Murder Oozie>
+
+#muscle
+<Muscle>
+
+#music
+<Music>
+
+#must_enter_a_password
+<Must enter a password!>
+
+#must_enter_a_valid_email_address
+<Must enter a valid email address!>
+
+#must_enter_an_online_name
+<Must enter an Online Name!>
+
+#must_enter_password_confirmation
+<Must enter password confirmation!>
+
+#mustache_big
+<Mustache Big>
+
+#mustache_big_black
+<Mustache Big Black>
+
+#mustache_big_standard
+<Mustache Big Standard>
+
+#mustache_small
+<Mustache Small>
+
+#mustache_small_black
+<Mustache Small Black>
+
+#mustache_small_standard
+<Mustache Small Standard>
+
+#my_character
+<My Character>
+
+#my_clan
+<My Clan>
+
+#my_settings
+<My Settings>
+
+#my_tag
+<My Tag>
+
+#my_weapons
+<My Weapons>
+
+#name_of_session
+<Name of Session>
+
+#nanerbeet
+<nanerbeet>
+
+#navy_boat
+<Navy Boat>
+
+#neck_tie
+<Neck Tie>
+
+#necktie
+<NeckTie>
+
+#network
+<NETWORK>
+
+#network_adapter
+<Network Adapter>
+
+#network_configuration
+<Network Configuration>
+
+#network_connection_has_been_aborted
+<Network connection has been aborted.>
+
+#network_multiplayer
+<Network Multiplayer>
+
+#network_request_timed_out_after_10_seconds
+<Network request timed out after 10 seconds.>
+
+#new_profile
+<New Profile>
+
+#next
+<Next>
+
+#next_weapon
+<Next Weapon>
+
+#nice_brown
+<Nice Brown>
+
+#no
+<No>
+
+#no_abbreviation_specified
+<No abbreviation specified>
+
+#no_active_account
+<No active account.>
+
+#no_assault
+<No Assault>
+
+#no_error
+<No error.>
+
+#no_games_found_would_you_like_to_create_one
+<No games found.  Would you like to create one?>
+
+#no_grenade
+<No Grenade>
+
+#no_memory_card_8mb_for_playstation2_is_inserted_in_memory_card_slot_s_at_least_skb_of_free_space_is_required_to_save
+<No memory card (8MB) (for PlayStation®2) is inserted in MEMORY CARD slot %s.  At least %sKB of free space is required to save.>
+
+#no_memory_card_8mb_for_playstation2_is_inserted_in_memory_card_slot_s_at_least_skb_of_free_space_is_required_to_save_please_insert_a_memory_card_8mb_for_playstation2
+<No memory card (8MB) (for PlayStation®2) is inserted in MEMORY CARD slot %s.  At least %sKB of free space is required to save. Please insert a memory card (8MB) (for PlayStation®2).>
+
+#no_memory_card_8mb_for_playstation2_is_inserted_in_memory_card_slot_s_please_insert_a_memory_card_8mb_for_playstation2
+<No memory card (8MB) (for PlayStation®2) is inserted in MEMORY CARD slot %s.  Please insert a memory card (8MB) (for PlayStation®2).>
+
+#no_name_specified
+<No name specified>
+
+#no_parole
+<No Parole>
+
+#no_profiles_found
+<No Profiles Found>
+
+#no_score_limit
+<No score limit>
+
+#no_tag_limit
+<No Tag limit>
+
+#no_time_limit
+<No time limit>
+
+#no_valid_saved_s_found
+<No valid saved %s found.>
+
+#none
+<None>
+
+#normal
+<Normal>
+
+#normal_color
+<Normal Color>
+
+#not_ready
+<Not Ready>
+
+#ns
+<NS>
+
+#objective_get_back_to_your_car_and_get_money_for_shawn
+<OBJECTIVE: Get back to your car and get money for Shawn>
+
+#objective_get_to_bld_4_apt_25
+<OBJECTIVE: Get to bld. 4 apt. 25>
+
+#ocho
+<Ocho>
+
+#offline
+<Offline>
+
+#ok
+<OK>
+
+#olive
+<Olive>
+
+#omfg
+<OMFG!>
+
+#one_slick_truck
+<One Slick Truck>
+
+#online
+<online>
+
+#online_name
+<Online Name:>
+
+#oozie
+<Oozie>
+
+#open
+<open>
+
+#operation_failed
+<Operation Failed.>
+
+#option1
+<Option1>
+
+#option10
+<Option10>
+
+#option11
+<Option11>
+
+#option12
+<Option12>
+
+#option13
+<Option13>
+
+#option14
+<Option14>
+
+#option15
+<Option15>
+
+#option16
+<Option16>
+
+#option2
+<Option2>
+
+#option3
+<Option3>
+
+#option4
+<Option4>
+
+#option5
+<Option5>
+
+#option6
+<Option6>
+
+#option7
+<Option7>
+
+#option8
+<Option8>
+
+#option9
+<Option9>
+
+#options
+<Options>
+
+#orange
+<Orange>
+
+#orange_sun
+<Orange Sun>
+
+#outgoing
+<Outgoing>
+
+#oversized
+<Oversized>
+
+#overwriting_existing_saved_s
+<Overwriting existing saved %s.>
+
+#overwriting_saved_s_do_not_turn_off_your_xbox_console
+<Overwriting saved %s. Do not turn off your Xbox console.>
+
+#pants
+<Pants>
+
+#pants_color
+<Pants Color>
+
+#participant
+<Participant>
+
+#password
+<Password:>
+
+#password_confirmation_did_not_match_password
+<Password confirmation did not match password.>
+
+#password_needed
+<Password Needed>
+
+#patch_check
+<Patch Check>
+
+#paused
+<PAUSED>
+
+#pd_lieutenant5
+<PD lieutenant5>
+
+#pd_lieutenant6
+<PD lieutenant6>
+
+#pd_lieutenant7
+<PD lieutenant7>
+
+#pd_lieutenant8
+<PD lieutenant8>
+
+#pd_lieutenant_1
+<PD lieutenant 1>
+
+#pd_lieutenant_10
+<PD lieutenant 10>
+
+#pd_lieutenant_2
+<PD lieutenant 2>
+
+#pd_lieutenant_3
+<PD lieutenant 3>
+
+#pd_lieutenant_4
+<PD lieutenant 4>
+
+#pd_lieutenant_9
+<PD lieutenant 9>
+
+#pd_plainclothes_cop
+<PD plainclothes cop>
+
+#pd_plainclothes_cop2
+<PD plainclothes cop2>
+
+#pd_plainclothes_cop3
+<PD plainclothes cop3>
+
+#pd_plainclothes_cop4
+<PD plainclothes cop4>
+
+#pd_rookie1
+<PD rookie1>
+
+#pd_rookie2
+<PD rookie2>
+
+#pd_rookie3
+<PD rookie3>
+
+#pd_rookie4
+<PD rookie4>
+
+#pd_rookie5
+<PD rookie5>
+
+#pd_rookie6
+<PD rookie6>
+
+#pd_rookie7
+<PD rookie7>
+
+#pd_rookie8
+<PD rookie8>
+
+#pd_rookie9
+<PD rookie9>
+
+#pd_sheriff_
+<PD Sheriff >
+
+#pd_sheriff_2
+<PD Sheriff 2>
+
+#pd_sheriff_3
+<PD Sheriff 3>
+
+#pd_sheriff_4
+<PD Sheriff 4>
+
+#pd_sheriff_with_bpv
+<PD Sheriff with BPV>
+
+#pd_sheriff_with_bpv2
+<PD Sheriff with BPV2>
+
+#pd_sheriff_with_bpv3
+<PD Sheriff with BPV3>
+
+#pd_sheriff_with_bpv4
+<PD Sheriff with BPV4>
+
+#peek_left
+<Peek Left>
+
+#peek_right
+<Peek Right>
+
+#pepper
+<Pepper>
+
+#performing_dnas_authorization
+<Performing DNAS Authorization...>
+
+#picked_up_a_key
+<Picked up a key>
+
+#picked_up_moss590
+<Picked Up Moss590>
+
+#pilot
+<Pilot>
+
+#pimp
+<Pimp>
+
+#pimp_jacket_color
+<Pimp Jacket Color>
+
+#pimped_blue
+<Pimped Blue>
+
+#pimped_yellow
+<Pimped Yellow>
+
+#ping
+<Ping>
+
+#pipebomb
+<Pipebomb>
+
+#pitch_offset
+<Pitch Offset>
+
+#pitch_warp
+<Pitch Warp>
+
+#plain_tan
+<Plain Tan>
+
+#plane_rocket
+<Plane Rocket>
+
+#player
+<Player>
+
+#player_name_1
+<Player Name 1>
+
+#players
+<Players>
+
+#players_respawn
+<Players Respawn>
+
+#please_choose_someone_other_then_yourself_to_send_a_request_to
+<Please choose someone other then yourself to send a request to.>
+
+#please_inform_me_about_the_latest_eidos_game_info_news_and_promotions
+<Please inform me about the latest Eidos game info, news, and promotions>
+
+#please_reinsert_memory_unit_into_controller_s_slot_s
+<Please re-insert memory unit into controller %s, slot %s.>
+
+#please_wait
+<Please wait...>
+
+#please_wait_
+<Please wait...
+>
+
+#please_wait_do_not_remove_the_memory_card_8mb_for_playstation2_in_memory_card_slot_s_reset_or_turn_off_power_to_the_console
+<Please wait...
+Do not remove the memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s, reset or turn off power to the console.>
+
+#please_wait_do_not_turn_off_power_to_the_xbox_console
+<Please wait.
+Do not turn off power to the Xbox console.>
+
+#please_wait_retrieving_friends_list
+<Please wait, retrieving friends list.>
+
+#please_wait_the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_is_being_formatted_do_not_remove_the_memory_card_reset_or_turn_off_power_to_the_console
+<Please wait...
+The memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s is being formatted. Do not remove the MEMORY CARD, reset or turn off power to the console.>
+
+#points
+<Points>
+
+#police
+<Police>
+
+#police_cap
+<Police Cap>
+
+#police_cap_color
+<Police Cap Color>
+
+#police_radio
+<Police Radio>
+
+#police_vest
+<Police Vest>
+
+#policia
+<Policia>
+
+#poodle
+<Poodle>
+
+#popup_title
+<Popup Title>
+
+#post_notice
+<Post Notice>
+
+#power
+<POWER>
+
+#press_start_button
+<Press START Button>
+
+#press_the_use_button_to_turn_off_power
+<Press the &Use button to turn off power>
+
+#previous
+<Previous>
+
+#prison_guard_captain
+<Prison Guard Captain>
+
+#prison_guard_captain1
+<Prison Guard Captain1>
+
+#prison_guard_captain2
+<Prison Guard Captain2>
+
+#prison_guard_captain3
+<Prison Guard Captain3>
+
+#prison_guard_captain4
+<Prison Guard Captain4>
+
+#prison_guard_rookie1
+<Prison Guard Rookie1>
+
+#prison_guard_rookie2
+<Prison Guard Rookie2>
+
+#prison_guard_rookie3
+<Prison Guard Rookie3>
+
+#prison_guard_rookie4
+<Prison Guard Rookie4>
+
+#prison_guard_rookie5
+<Prison Guard Rookie5>
+
+#prison_guard_rookie6
+<Prison Guard Rookie6>
+
+#prison_guard_rookie7
+<Prison Guard Rookie7>
+
+#prison_guard_rookie8
+<Prison Guard Rookie8>
+
+#prison_orange
+<Prison Orange>
+
+#prisoner1
+<prisoner1>
+
+#prisoner10
+<prisoner10>
+
+#prisoner2
+<prisoner2>
+
+#prisoner3
+<prisoner3>
+
+#prisoner4
+<prisoner4>
+
+#prisoner5
+<prisoner5>
+
+#prisoner6
+<prisoner6>
+
+#prisoner7
+<prisoner7>
+
+#prisoner8
+<prisoner8>
+
+#prisoner9
+<prisoner9>
+
+#prisoner_gp_1_enemy
+<prisoner GP  1 (enemy)>
+
+#prisoner_gp_1_neutral
+<prisoner GP 1 (neutral)>
+
+#prisoner_gp_2_enemy
+<prisoner GP 2 (enemy)>
+
+#prisoner_gp_2_neutral
+<prisoner GP 2 (neutral)>
+
+#prisoner_orange
+<Prisoner Orange>
+
+#prisoner_restricted1_n
+<prisoner restricted1 (n)>
+
+#prisoner_restricted1_neutral
+<prisoner restricted1 (neutral)>
+
+#prisoner_restricted1e
+<prisoner Restricted1(e)>
+
+#prisoner_restricted1enemy
+<prisoner Restricted1(enemy)>
+
+#prisoner_restricted2_e
+<prisoner Restricted2 (e)>
+
+#prisoner_restricted2_enemy
+<prisoner Restricted2 (enemy)>
+
+#prisoner_restricted2_n
+<prisoner restricted2 (n)>
+
+#prisoner_restricted2neutral
+<prisoner restricted2(neutral)>
+
+#prisonergp_1_neutral
+<prisonerGP 1 (neutral)>
+
+#prisonguard1
+<PrisonGuard1>
+
+#prisonguard2
+<PrisonGuard2>
+
+#prisonguard3
+<PrisonGuard3>
+
+#processing_account_list
+<Processing account list...>
+
+#processing_find_match
+<Processing Find Match...>
+
+#processing_friends_list
+<Processing Friends List...>
+
+#processing_host_match
+<Processing Host Match...>
+
+#processing_rendezvous_login
+<Processing rendezvous login...>
+
+#product
+<Product:>
+
+#profilename
+<ProfileName>
+
+#psg1
+<PSG1>
+
+#puerto_rico
+<Puerto Rico>
+
+#purple
+<Purple>
+
+#quick_match
+<Quick Match>
+
+#quickmatch
+<Quickmatch>
+
+#quit
+<Quit>
+
+#r1_button
+<R1 BUTTON>
+
+#r2_button
+<R2 BUTTON>
+
+#raid
+<Raid>
+
+#ram
+<Ram>
+
+#rank
+<Rank>
+
+#ranked_match
+<Ranked Match>
+
+#rasta
+<Rasta>
+
+#rasta_hat_color_
+<Rasta Hat Color >
+
+#rating
+<Rating>
+
+#rdark_gloves
+<rdark_gloves>
+
+#ready
+<Ready>
+
+#ready_up
+<READY UP!>
+
+#real_dark_1
+<Real Dark 1>
+
+#real_dark_2
+<Real Dark 2>
+
+#real_dark_3
+<Real Dark 3>
+
+#recent_players
+<Recent Players>
+
+#recent_players_list
+<Recent Players List>
+
+#recover
+<Recover>
+
+#recover_account
+<Recover Account>
+
+#recover_eidos_online_account
+<Recover Eidos Online Account>
+
+#red
+<Red>
+
+#red_blue
+<Red Blue>
+
+#red_blue_stripes
+<Red Blue Stripes>
+
+#red_jacket
+<Red Jacket>
+
+#red_norte
+<Red Norte>
+
+#red_stripe
+<Red Stripe>
+
+#red_yellow
+<Red Yellow>
+
+#registering_gathering
+<Registering Gathering...>
+
+#registering_ladder_game
+<Registering Ladder Game...>
+
+#reload
+<Reload>
+
+#reminder_get_to_bld_4_apt_25
+<REMINDER: Get to bld. 4 apt. 25>
+
+#remove
+<Remove>
+
+#reporting_stats
+<Reporting Stats...>
+
+#request_failed
+<Request Failed>
+
+#request_for_invalid_string_in_the_string_table
+<REQUEST FOR INVALID STRING IN THE STRING TABLE>
+
+#requesting_a_custom_query
+<Requesting a Custom Query...>
+
+#requesting_a_default_query
+<Requesting a Default Query...>
+
+#requesting_a_ladder_query
+<Requesting a Ladder Query...>
+
+#requesting_account_creation
+<Requesting Account Creation...>
+
+#requesting_account_username_and_eorpassword
+<Requesting account username and EORPassword...>
+
+#requesting_current_friends
+<Requesting Current Friends...>
+
+#requesting_incoming_match_offers
+<Requesting Incoming Match Offers...>
+
+#requesting_invitation_status_update
+<Requesting invitation status update...>
+
+#requesting_login
+<Requesting Login...>
+
+#requesting_match_participation
+<Requesting Match Participation...>
+
+#requesting_outgoing_match_offers
+<Requesting Outgoing Match Offers...>
+
+#requesting_session_url
+<Requesting Session URL...>
+
+#reserved_slots
+<Reserved Slots>
+
+#retry
+<Retry>
+
+#reversed_stereo
+<Reversed Stereo>
+
+#right
+<Right>
+
+#right_1_ear_ring
+<Right 1 Ear Ring>
+
+#right_2_ear_rings
+<Right 2 Ear Rings>
+
+#right_3_ear_rings
+<Right 3 Ear Rings>
+
+#right_bracelet
+<Right Bracelet>
+
+#right_stick
+<Right Stick>
+
+#right_wrist_band
+<Right Wrist Band>
+
+#riot
+<Riot>
+
+#robbery
+<Robbery>
+
+#robot
+<Robot>
+
+#role
+<Role:>
+
+#roon
+<Roon>
+
+#root
+<root>
+
+#roswell
+<Roswell>
+
+#s_c
+<S C>
+
+#salamander
+<Salamander>
+
+#sandbox
+<SANDBOX>
+
+#sandbox_selection
+<Sandbox Selection>
+
+#santa_andy
+<Santa Andy>
+
+#saragosa
+<Saragosa>
+
+#saragosatemporary
+<SaragosaTemporary>
+
+#sass
+<Sass>
+
+#save
+<Save>
+
+#save_account
+<Save Account>
+
+#save_and_exit
+<Save and Exit>
+
+#save_completed_successfully
+<Save Completed Successfully.>
+
+#save_password
+<Save Password:>
+
+#saved_profiles
+<Saved Profiles>
+
+#saving_account
+<Saving Account...>
+
+#saving_cancelled
+<Saving Cancelled.>
+
+#saving_failed_the_data_was_not_written_correctly
+<Saving failed. The data was not written correctly.>
+
+#saving_game
+<Saving game...>
+
+#saving_s
+<Saving %s.>
+
+#saving_s_do_not_remove_the_memory_card_8mb_for_playstation2_reset_or_turn_off_power_to_the_console
+<Saving %s. Do not remove the memory card (8MB) (for PlayStation®2), reset or turn off power to the console.>
+
+#saving_s_do_not_turn_off_your_xbox_console
+<Saving %s. Do not turn off your Xbox console.>
+
+#sawedoff
+<Sawed-off>
+
+#score_limit
+<Score Limit>
+
+#scoreboard
+<Scoreboard>
+
+#scorpion
+<Scorpion>
+
+#scorpion_skull
+<Scorpion Skull>
+
+#scottish
+<Scottish>
+
+#scruf
+<Scruf>
+
+#scruf_black
+<Scruf Black>
+
+#scruf_standard
+<Scruf Standard>
+
+#search_result
+<Search Result>
+
+#security
+<Security>
+
+#select
+<Select>
+
+#select_a_loadout
+<Select a loadout>
+
+#select_account_to_delete
+<Select Account to Delete>
+
+#select_profile
+<Select Profile>
+
+#self_damage
+<Self Damage>
+
+#semisawed
+<SemiSawed>
+
+#send_friend_request
+<Send Friend Request>
+
+#send_invite
+<Send Invite>
+
+#sensitivity
+<Sensitivity>
+
+#server
+<Server>
+
+#session
+<Session>
+
+#session_details
+<Session Details>
+
+#session_id
+<Session Id>
+
+#setting1
+<Setting1>
+
+#setting2
+<Setting2>
+
+#setting3
+<Setting3>
+
+#setting4
+<Setting4>
+
+#setting5
+<Setting5>
+
+#setting6
+<Setting6>
+
+#settings
+<Settings>
+
+#share_my_info_with_preferred_partners_of_eidos
+<Share my info with preferred partners of Eidos>
+
+#shawnhacienda
+<ShawnHacienda>
+
+#shawnpenthouse
+<ShawnPenthouse>
+
+#shawnsubway_club
+<ShawnSubway_Club>
+
+#shawntijuana
+<ShawnTijuana>
+
+#shawnwarehouse
+<ShawnWarehouse>
+
+#sheriff
+<Sheriff>
+
+#shes_gotta_a_ticket_to_ride_now_show_her_the_key
+<She's gotta a ticket to ride, now show her the key.>
+
+#shift
+<Shift>
+
+#shirt
+<Shirt>
+
+#shirt_decals
+<Shirt Decals>
+
+#shizzlebeet
+<Shizzlebeet>
+
+#shorts
+<Shorts>
+
+#shorts_long
+<Shorts (Long)>
+
+#shotgun_only
+<Shotgun only>
+
+#shoulder_tattoo_left
+<Shoulder Tattoo Left>
+
+#shoulder_tattoo_right
+<Shoulder Tattoo Right>
+
+#sideburns
+<Sideburns>
+
+#sideburns_and_stache
+<Sideburns and  Stache>
+
+#sideburns_and_stache_black
+<Sideburns  and stache Black>
+
+#sideburns_and_stache_standard
+<Sideburns and stache Standard>
+
+#sideburns_black
+<Sideburns Black>
+
+#sign_off
+<Sign Off>
+
+#sign_out
+<Sign out?>
+
+#silver
+<Silver>
+
+#silver_1
+<Silver 1>
+
+#silver_2
+<Silver 2>
+
+#silver_3
+<Silver 3>
+
+#single_player
+<Single Player>
+
+#singleplayer
+<Single-Player>
+
+#ski_mask
+<Ski Mask>
+
+#skin
+<Skin>
+
+#skull
+<Skull>
+
+#slacks
+<Slacks>
+
+#slacks_black
+<Slacks Black>
+
+#slacks_blue
+<Slacks Blue>
+
+#slacks_grey
+<Slacks Grey>
+
+#slacks_olive
+<Slacks Olive>
+
+#slacks_red
+<Slacks Red>
+
+#slacks_tan
+<Slacks Tan>
+
+#slacks_white
+<Slacks White>
+
+#slick_hair_color
+<Slick Hair Color>
+
+#slick_truck
+<Slick Truck>
+
+#slicked_hair
+<Slicked Hair>
+
+#slicked_pony_tail
+<Slicked Pony Tail>
+
+#small_afro_hair_color_
+<Small Afro Hair Color >
+
+#smoke
+<Smoke>
+
+#snagged_a_pistol
+<Snagged a pistol!>
+
+#sniper
+<Sniper>
+
+#snowman
+<Snowman>
+
+#sound
+<Sound>
+
+#southpaw
+<Southpaw>
+
+#space
+<Space>
+
+#spartan
+<Spartan>
+
+#spas12
+<SPAS12>
+
+#speakername
+<speakername>
+
+#spectrum_ledge
+<Spectrum Ledge>
+
+#spectrum_offset
+<Spectrum Offset>
+
+#spectrum_warp
+<Spectrum Warp>
+
+#square
+<Square>
+
+#standard
+<Standard>
+
+#start
+<Start>
+
+#start_game
+<Start Game>
+
+#start_menu
+<Start Menu>
+
+#starting_round
+<Starting Round...>
+
+#stat
+<Stat>
+
+#state_trooper
+<State Trooper>
+
+#stats_and_rankings
+<Stats and Rankings>
+
+#status
+<Status>
+
+#stereo
+<Stereo>
+
+#stereo_mode
+<Stereo Mode>
+
+#studs
+<Studs>
+
+#stump
+<Stump>
+
+#stun_gun
+<Stun Gun>
+
+#suit_jacked_closed
+<Suit Jacked Closed>
+
+#suit_jacket
+<Suit Jacket>
+
+#suit_jacket_color_
+<Suit Jacket Color >
+
+#suit_jacket_open_shirt
+<Suit Jacket open shirt>
+
+#sun_mosaic
+<Sun Mosaic>
+
+#sunglasses
+<Sunglasses>
+
+#swat
+<SWAT>
+
+#swat2
+<SWAT2>
+
+#swat3
+<SWAT3>
+
+#swat4
+<SWAT4>
+
+#swat_sniper
+<SWAT Sniper>
+
+#swat_sniper2
+<SWAT Sniper2>
+
+#swat_sniper3
+<SWAT Sniper3>
+
+#swat_sniper4
+<SWAT Sniper4>
+
+#sweat_band_color
+<Sweat Band Color>
+
+#sweatband
+<Sweatband>
+
+#switch
+<Switch>
+
+#switch_weapon
+<Switch Weapon>
+
+#sword
+<Sword>
+
+#symbols
+<Symbols>
+
+#tactical
+<Tactical>
+
+#tactical_harness
+<Tactical Harness>
+
+#tactical_kneed_pads
+<Tactical Kneed Pads>
+
+#tactical_mask
+<Tactical Mask>
+
+#tag
+<Tag>
+
+#tag_limit
+<Tag Limit>
+
+#talk
+<Talk>
+
+#tall_boot
+<Tall Boot>
+
+#tall_boot_color
+<Tall Boot Color>
+
+#tall_fire
+<Tall Fire>
+
+#tan
+<Tan>
+
+#tan_stripes
+<Tan Stripes>
+
+#tarantula
+<Tarantula>
+
+#tattoos
+<Tattoos>
+
+#team_respawn
+<Team Respawn>
+
+#team_totals
+<Team Totals>
+
+#teargas
+<Teargas>
+
+#temp
+<temp>
+
+#text
+<Text>
+
+#text_chat
+<Text Chat>
+
+#that_clan_abbreviation_is_already_taken_please_try_a_different_abbreviation
+<That clan abbreviation is already taken, please try a different abbreviation.>
+
+#that_clan_name_is_already_taken_please_try_a_different_name
+<That clan name is already taken, please try a different name.>
+
+#that_clan_name_is_not_allowed_please_try_a_different_name
+<That clan name is not allowed, please try a different name.>
+
+#that_friendship_request_no_longer_exists
+<That friendship request no longer exists.>
+
+#that_player_is_already_in_your_clan
+<That player is already in your clan.>
+
+#that_player_is_no_longer_in_a_match
+<That player is no longer in a match>
+
+#that_player_is_no_longer_in_the_clan
+<That player is no longer in the clan.>
+
+#that_player_no_longer_has_a_friends_request_offered
+<That player no longer has a friends request offered.>
+
+#that_players_friend_request_was_not_available_to_block
+<That player's friend request was not available to block.>
+
+#that_players_friendship_offer_no_longer_exists
+<That player's friendship offer no longer exists.>
+
+#the_clan_is_currently_full
+<The clan is currently full.>
+
+#the_clan_is_currently_not_empty
+<The clan is currently not empty.>
+
+#the_clan_specified_for_the_request_is_invalid
+<The clan specified for the request is invalid.>
+
+#the_email_address_you_entered_is_invalid_please_check_your_email_address_and_try_again_address_should_be_of_the_format_exampleexamplecom
+<The e-mail address you entered is invalid. Please check your e-mail address and try again. (address should be of the format example@example.com)>
+
+#the_invitation_is_invalid
+<The invitation is invalid.>
+
+#the_key_to_success_is_finishing_what_you_started_biatch
+<The key to success is finishing what you started biatch!>
+
+#the_memory_card_8mb_for_playstation2_has_been_removed_from_memory_card_slot_s_the_autosave_function_has_been_disabled
+<The memory card (8MB) (for PlayStation®2) has been removed from MEMORY CARD slot %s.  The autosave function has been disabled.>
+
+#the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_does_not_have_a_valid_saved_s
+<The memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s does not have a valid saved %s.>
+
+#the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_does_not_have_a_valid_your_network_configuration_file_on_it_network_settings_can_be_created_using_the_network_adaptor_access_disc_scee
+<The memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s does not have a valid 'Your Network Configuration' file on it. Network setting(s) can be created using the Network Adaptor Access Disc (SCEE)>
+
+#the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_does_not_have_a_valid_your_network_configuration_file_on_it_network_settings_can_be_created_using_the_network_adaptor_startup_disc_scea
+<The memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s does not have a valid 'Your Network Configuration' file on it. Network setting(s) can be created using the Network Adaptor Start-Up Disc (SCEA)>
+
+#the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_is_damaged_and_cannot_be_used
+<The memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s is damaged and cannot be used.>
+
+#the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_is_unformatted
+<The memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s is unformatted.>
+
+#the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_is_unformatted_do_you_want_to_format
+<The memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s is unformatted.  Do you want to format?>
+
+#the_memory_card_hd_is_not_inserted_into_slot_s_at_least_skb_of_free_space_is_required_to_save_continue_without_saving
+<The memory card (HD) is not inserted into slot %s.  At least %sKB of free space is required to save.  Continue without saving?>
+
+#the_memory_card_hd_is_not_inserted_into_slot_s_at_least_skb_of_free_space_is_required_to_save_please_reinsert_the_card_f1
+<The memory card (HD) is not inserted into slot %s.  At least %sKB of free space is required to save. Please re-insert the card (F1).>
+
+#the_memory_card_hd_is_not_inserted_into_slot_s_please_reinsert_the_card_f1
+<The memory card (HD) is not inserted into slot %s.  Please re-insert the card (F1).>
+
+#the_memory_card_inserted_in_memory_card_slot_s_is_not_supported_please_insert_the_memory_card_8mb_for_playstation2
+<The memory card inserted in MEMORY CARD slot %s is not supported. Please insert the memory card (8MB) (for PlayStation®2).>
+
+#the_memory_unit_in_controller_s_slot_s_has_been_removed_autosave_has_been_disabled
+<The memory unit in controller %s, slot %s has been removed. Autosave has been disabled.>
+
+#the_memory_unit_in_controller_s_slot_s_is_unrecognized_and_cannot_be_used
+<The memory unit in controller %s, slot %s is unrecognized and cannot be used.>
+
+#the_memory_unit_is_not_inserted_in_controller_s_slot_s_continue_without_saving
+<The memory unit is not inserted in controller %s, slot %s. Continue without saving>
+
+#the_memory_unit_is_not_inserted_in_controller_s_slot_s_please_reinsert_the_memory_unit
+<The memory unit is not inserted in controller %s, slot %s. Please re-insert the memory unit.>
+
+#the_name_can_not_contain_two_or_more_nonalphanumeric_characters_in_a_row
+<The name can not contain two or more non-alphanumeric characters in a row.>
+
+#the_name_must_be_between_4_and_15_characters_please_check_the_name_and_try_again
+<The name must be between 4 and 15 characters. Please check the name and try again.>
+
+#the_network_authentication_server_is_busy_please_try_again_later
+<The network authentication server is busy.  Please try again later.>
+
+#the_network_authentication_server_is_not_in_service_please_write_down_the_error_code_number_and_contact_scea_at_18664665333_or_via_sceas_website_wwwusplaystationcom
+<The network authentication server is not in service.  Please write down the error code number, and contact SCEA at 1-866-466-5333 or via SCEA's website, www.us.playstation.com.>
+
+#the_online_name_you_entered_has_been_rejected_please_enter_a_different_online_name
+<The online name you entered has been rejected. Please enter a different online name.>
+
+#the_online_name_you_entered_is_already_in_use_please_enter_a_different_online_name
+<The online name you entered is already in use. Please enter a different online name.>
+
+#the_online_name_you_entered_is_invalid_please_enter_a_different_online_name
+<The online name you entered is invalid. Please enter a different online name.>
+
+#the_password_must_be_between_4_and_15_characters_please_check_your_password_and_try_again
+<The password must be between 4 and 15 characters. Please check your password and try again.>
+
+#the_person_you_are_trying_to_offer_friendship_too_has_reached_there_friend_limit_of_100
+<The person you are trying to offer friendship too has reached there friend limit of 100.>
+
+#the_player_associated_with_the_request_is_invalid
+<The player associated with the request is invalid.>
+
+#the_saved_s_is_being_deleted
+<The saved %s is being deleted>
+
+#the_saved_s_is_being_deleted_and_recreated_do_not_remove_the_memory_card_8mb_for_playstation2_in_memory_card_slot_s_reset_or_turn_off_power_to_the_console
+<The saved %s is being deleted and recreated. Do not remove the memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s, reset, or turn off power to the console.>
+
+#the_saved_s_is_being_deleted_do_not_remove_the_memory_card_8mb_for_playstation2_in_memory_card_slot_s_reset_or_turn_off_power_to_the_console
+<The saved %s is being deleted. Do not remove the memory card (8MB) (for PlayStation®2) in MEMORY CARD slot %s, reset, or turn off power to the console.>
+
+#the_saved_s_is_being_deleted_do_not_turn_off_your_xbox_console
+<The saved %s is being deleted. Do not turn off your Xbox console.>
+
+#the_saved_s_is_corrupted
+<The saved %s is corrupted.>
+
+#the_year_you_entered_is_invalidbirth_year_must_be_after_1900
+<The year you entered is invalid--birth year must be after 1900.>
+
+#the_your_network_configuration_file_on_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_is_corrupt_and_cannot_be_used
+<The 'Your Network Configuration' file on memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s is corrupt and cannot be used.>
+
+#the_your_network_configuration_file_on_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_was_created_on_another_console_and_cannot_be_used
+<The 'Your Network Configuration' file on memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s was created on another console and cannot be used.>
+
+#the_zip_code_you_entered_is_invalid_please_check_your_zip_code_and_try_again
+<The zip code you entered is invalid.  Please check your zip code and try again.>
+
+#there_are_no_recent_players
+<There are no recent players.>
+
+#there_is_insufficient_free_space_on_the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_a_minimum_of_skb_of_free_space_is_required_to_save
+<There is insufficient free space on the memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s.  A minimum of %sKB of free space is required to save.>
+
+#there_is_insufficient_free_space_on_the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_a_minimum_of_skb_of_free_space_is_required_to_save_up_to_skb_of_free_space_may_be_needed_to_save_all_files
+<There is insufficient free space on the memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s.  A minimum of %sKB of free space is required to save.  Up to %sKB of free space may be needed to save all files.>
+
+#there_is_not_enough_space_to_save_the_s_a_minimum_of_skb_of_free_space_is_required_to_save
+<There is not enough space to save the %s.  A minimum of %sKB of free space is required to save.>
+
+#there_is_not_enough_space_to_save_the_s_a_minimum_of_skb_of_free_space_is_required_to_save_up_to_skb_of_free_space_may_be_needed_to_save_all_files
+<There is not enough space to save the %s.  A minimum of %sKB of free space is required to save.  Up to %sKB of free space may be needed to save all files.>
+
+#there_was_a_connection_error
+<There was a connection error.>
+
+#there_was_a_dns_error_please_check_your_network_configuration
+<There was a DNS error.  Please check your network configuration.>
+
+#there_was_an_error_in_the_response_from_the_dns_server_please_check_your_network_connection
+<There was an error in the response from the DNS server.  Please check your network connection.>
+
+#there_was_no_repsone_from_the_dns_sever_please_check_your_network_configuration
+<There was no repsone from the DNS sever.  Please check your network configuration.>
+
+#this_configuration_is_invalid_for_broadband_play
+<This configuration is invalid for broadband play.>
+
+#this_door_is_locked
+<This door is locked.>
+
+#this_player_is_already_invited_to_your_clan
+<This player is already invited to your clan.>
+
+#this_player_is_currently_not_accepting_clan_invites
+<This player is currently not accepting clan invites.>
+
+#this_screen_is_temporary_and_needs_to_be_removed_for_the_closed_beta
+<This screen is temporary and needs to be removed for the closed beta.>
+
+#this_software_title_is_not_in_service_please_write_down_the_error_code_number_and_contact_scea_at_18664665333_or_via_sceas_website_wwwusplaystationcom
+<This software title is not in service.  Please write down the error code number, and contact SCEA at 1-866-466-5333 or via SCEA's website, www.us.playstation.com.>
+
+#this_will_be_grenade_pickup
+<This will be grenade pickup>
+
+#thorn_band
+<Thorn Band>
+
+#throwing_star
+<Throwing Star>
+
+#thumbstick_settings
+<Thumbstick Settings>
+
+#tie_color
+<Tie Color>
+
+#time_limit
+<Time Limit>
+
+#timeout_while_requesting_connection_info
+<Timeout while requesting connection info.>
+
+#timeout_while_trying_to_process_rendezvous_request
+<Timeout while trying to process RendezVous request.>
+
+#timeout_while_waiting_for_custom_match_query
+<Timeout while waiting for custom match query.>
+
+#timeout_while_waiting_for_default_match_query
+<Timeout while waiting for default match query.>
+
+#timeout_while_waiting_for_gathering_registration
+<Timeout while waiting for gathering registration.>
+
+#timeout_while_waiting_for_ladder_match_query
+<Timeout while waiting for ladder match query.>
+
+#timeout_while_waiting_for_ladder_registration
+<Timeout while waiting for ladder registration.>
+
+#timeout_while_waiting_for_match_ip_address
+<Timeout while waiting for match IP address.>
+
+#timeout_while_waiting_for_match_participation
+<Timeout while waiting for match participation.>
+
+#timeout_while_waiting_to_join_match
+<Timeout while waiting to join match.>
+
+#timeout_while_waiting_to_launch_the_session
+<Timeout while waiting to launch the session.>
+
+#tireiron
+<Tireiron>
+
+#tj_body_mid_1
+<TJ body mid 1>
+
+#tj_body_mid_2
+<TJ body Mid 2>
+
+#tj_bodyguard_low_1
+<TJ bodyguard Low 1>
+
+#tj_bodyguard_low_2
+<TJ bodyguard Low 2>
+
+#tj_gang1
+<TJ Gang1>
+
+#tj_gang10
+<TJ Gang10>
+
+#tj_gang2
+<TJ Gang2>
+
+#tj_gang3
+<TJ Gang3>
+
+#tj_gang4
+<TJ Gang4>
+
+#tj_gang5
+<TJ Gang5>
+
+#tj_gang6
+<TJ Gang6>
+
+#tj_gang7
+<TJ Gang7>
+
+#tj_gang8
+<TJ Gang8>
+
+#tj_gang9
+<TJ Gang9>
+
+#tj_streetlow1
+<TJ StreetLow1>
+
+#tj_streetlow2
+<TJ StreetLow2>
+
+#tj_streetlow3
+<TJ StreetLow3>
+
+#tj_streetmid1
+<TJ StreetMid1>
+
+#tj_streetmid2
+<TJ StreetMid2>
+
+#tj_suit_low_1
+<TJ Suit Low 1>
+
+#tj_suit_low_2
+<TJ Suit low 2>
+
+#tj_suit_mid_1
+<TJ Suit Mid 1>
+
+#tj_suit_mid_2
+<TJ Suit Mid 2>
+
+#to_climb_or_vault_a_wall_press_the_use_button_when_near_an_object
+<To climb or vault a wall, press the &Use button when near an object>
+
+#to_continue_you_must_accept_the_eidos_online_agreement
+<To continue, you must accept the Eidos Online Agreement.>
+
+#to_open_a_door_or_gate_press_the_use_button_when_near_an_object
+<To open a door or gate, press the &Use button when near an object>
+
+#to_shoot_or_swing_a_weapon_press_the_attack_button
+<To shoot or swing a weapon, press the &Attack button>
+
+#tongue_hightops
+<Tongue Hightops>
+
+#top_10
+<Top 10>
+
+#top_10_clans
+<Top 10 Clans>
+
+#torpedo
+<Torpedo>
+
+#torso
+<-Torso>
+
+#total
+<Total>
+
+#triangle
+<Triangle>
+
+#tribal
+<Tribal>
+
+#tribal_goobers
+<Tribal Goobers>
+
+#trooper
+<Trooper>
+
+#trooper_hat_color_
+<Trooper Hat Color >
+
+#trooper_wide_brim_hat_color_
+<Trooper Wide Brim Hat Color >
+
+#troopers
+<Troopers>
+
+#try_again
+<Try Again>
+
+#ttl1_eidos_closed_testing
+<TTL1 (Eidos closed testing)>
+
+#ttl2_everyone_open_testing
+<TTL2 (Everyone open testing)>
+
+#ttl3_ritual_programmers_only
+<TTL3 (Ritual programmers only)>
+
+#two_hours_later
+<Two hours later...>
+
+#ultimate
+<Ultimate>
+
+#unable_to_begin_finding_the_ranking_gathering
+<Unable to begin finding the ranking gathering.>
+
+#unable_to_connect_to_account_management_service
+<Unable to connect to Account Management service.>
+
+#unable_to_connect_to_competition_client
+<Unable to connect to Competition Client.>
+
+#unable_to_connect_to_friends_service
+<Unable to connect to Friends service.>
+
+#unable_to_connect_to_match_ip_address
+<Unable to connect to match IP address.>
+
+#unable_to_connect_to_matchmaking_service
+<Unable to connect to MatchMaking service.>
+
+#unable_to_connect_to_secure_connection_service
+<Unable to connect to Secure connection service.>
+
+#unable_to_create_new_account
+<Unable to create new account.>
+
+#unable_to_create_new_calling_context
+<Unable to create new Calling Context.>
+
+#unable_to_create_ranking
+<Unable to create ranking.>
+
+#unable_to_create_rendezvous
+<Unable to create RendezVous.>
+
+#unable_to_find_account
+<Unable to find account!>
+
+#unable_to_find_round_invitation
+<Unable to find round invitation.>
+
+#unable_to_find_the_match_specified
+<Unable to find the match specified.>
+
+#unable_to_finish_round
+<Unable to finish round.>
+
+#unable_to_finish_session
+<Unable to finish session.>
+
+#unable_to_host_newly_created_ranking_please_try_again_later
+<Unable to host newly created ranking.  Please try again later.>
+
+#unable_to_initiate_request_for_custom_matches
+<Unable to initiate request for custom matches.>
+
+#unable_to_initiate_request_for_default_matches
+<Unable to initiate request for default matches.>
+
+#unable_to_invite_opponents_to_round
+<Unable to invite opponents to round.>
+
+#unable_to_invite_player_to_match
+<Unable to invite player to match.>
+
+#unable_to_load_patcher
+<Unable to load patcher.>
+
+#unable_to_load_saved_s
+<Unable to load saved %s.>
+
+#unable_to_load_saved_s_save_game_may_be_corrupted
+<Unable to load saved %s. Save game may be corrupted.>
+
+#unable_to_participate_in_match
+<Unable to participate in match.>
+
+#unable_to_process_request_for_authorizing_friendship
+<Unable to process request for authorizing friendship.>
+
+#unable_to_process_request_for_blocking_friendship
+<Unable to process request for blocking friendship.>
+
+#unable_to_process_request_for_blocking_sender_of_clan_invitation
+<Unable to process request for blocking sender of clan invitation.>
+
+#unable_to_process_request_for_canceling_friendship_offer
+<Unable to process request for canceling friendship offer.>
+
+#unable_to_process_request_for_clan_id_list
+<Unable to process request for clan ID list.>
+
+#unable_to_process_request_for_clan_information_list
+<Unable to process request for clan information list.>
+
+#unable_to_process_request_for_clan_invitation_list
+<Unable to process request for clan invitation list.>
+
+#unable_to_process_request_for_clan_membership_list
+<Unable to process request for clan membership list.>
+
+#unable_to_process_request_for_clan_notice_list
+<Unable to process request for clan notice list.>
+
+#unable_to_process_request_for_creating_clan
+<Unable to process request for creating clan.>
+
+#unable_to_process_request_for_demoting_clan_member
+<Unable to process request for demoting clan member.>
+
+#unable_to_process_request_for_denying_friendship
+<Unable to process request for denying friendship.>
+
+#unable_to_process_request_for_denying_the_clan_invitation
+<Unable to process request for denying the clan invitation.>
+
+#unable_to_process_request_for_ending_friendship
+<Unable to process request for ending friendship.>
+
+#unable_to_process_request_for_finding_the_match
+<Unable to process request for finding the match.>
+
+#unable_to_process_request_for_friends_list
+<Unable to process request for friends list.>
+
+#unable_to_process_request_for_joining_clan_by_invitation
+<Unable to process request for joining clan by invitation.>
+
+#unable_to_process_request_for_kicking_clan_member
+<Unable to process request for kicking clan member.>
+
+#unable_to_process_request_for_leaving_current_clan
+<Unable to process request for leaving current clan.>
+
+#unable_to_process_request_for_offering_friendship
+<Unable to process request for offering friendship.>
+
+#unable_to_process_request_for_posting_clan_notice
+<Unable to process request for posting clan notice.>
+
+#unable_to_process_request_for_promoting_clan_member
+<Unable to process request for promoting clan member.>
+
+#unable_to_process_request_for_retrieving_clan_information
+<Unable to process request for retrieving clan information.>
+
+#unable_to_process_request_for_sending_clan_invitation
+<Unable to process request for sending clan invitation.>
+
+#unable_to_process_request_for_unblocking_friendship
+<Unable to process request for unblocking friendship.>
+
+#unable_to_process_your_request_please_try_again
+<Unable to process your request.  Please try again.>
+
+#unable_to_register_competition_event
+<Unable to register competition event.>
+
+#unable_to_register_event
+<Unable to register event.>
+
+#unable_to_report_stats
+<Unable to report stats.>
+
+#unable_to_request_connection_info
+<Unable to request connection info.>
+
+#unable_to_request_match_ip_address
+<Unable to request match IP address.>
+
+#unable_to_request_match_participation
+<Unable to request match participation.>
+
+#unable_to_retrieve_match_ip_address
+<Unable to retrieve match IP address.>
+
+#unable_to_retrieve_match_participation
+<Unable to retrieve match participation.>
+
+#unable_to_retrieve_player_ladder_ranking
+<Unable to retrieve player ladder ranking.>
+
+#unable_to_retrieve_player_stats_for_the_ttl_ladder
+<Unable to retrieve player stats for the TTL Ladder.>
+
+#unable_to_retrieve_player_stats_outside_the_ttl_ladder
+<Unable to retrieve player stats outside the TTL Ladder.>
+
+#unable_to_start_nat_traversal_please_try_again_later
+<Unable to start NAT Traversal.  Please try again later.>
+
+#unable_to_start_new_request_previous_request_still_in_progress
+<Unable to start new request, previous request still in progress.>
+
+#unable_to_start_patcher
+<Unable to start patcher.>
+
+#unable_to_start_round
+<Unable to start round.>
+
+#unable_to_start_the_peertopeer_manager_service_please_try_again_later
+<Unable to start the Peer-to-Peer Manager Service.  Please try again later.>
+
+#unable_to_unregister_the_round
+<Unable to unregister the round.>
+
+#unable_to_unregister_the_session
+<Unable to unregister the session.>
+
+#unable_to_update_status_please_try_again_later
+<Unable to update status.  Please try again later.>
+
+#unable_to_verify_credentials
+<Unable to verify credentials.>
+
+#unabled_to_begin_login
+<Unabled to begin login>
+
+#unregistering_the_round
+<Unregistering the round...>
+
+#unregistering_the_session
+<Unregistering the session...>
+
+#up
+<Up>
+
+#update_available
+<Update Available>
+
+#update_successful
+<Update successful.>
+
+#urban_boot
+<Urban Boot>
+
+#urban_boot_color
+<Urban Boot Color>
+
+#us_army
+<U.S. Army>
+
+#us_navy
+<U.S. Navy>
+
+#usas12
+<USAS12>
+
+#use
+<Use>
+
+#use_crouch_button_to_crouch
+<Use &Crouch button to crouch>
+
+#use_the_d_pad_to_lean_around_corners
+<Use the D pad to lean around corners>
+
+#user_name
+<User Name>
+
+#user_name_already_exists
+<User name already exists.>
+
+#usmc
+<USMC>
+
+#uzi
+<Uzi>
+
+#vault
+<VAULT>
+
+#vendor
+<Vendor:>
+
+#vest
+<Vest>
+
+#vibration
+<Vibration>
+
+#vince_dunk
+<Vince Dunk>
+
+#visor
+<Visor>
+
+#visor_backwards
+<Visor Backwards>
+
+#viva
+<Viva>
+
+#voice_channels
+<Voice Channels>
+
+#voice_chat
+<Voice Chat>
+
+#voice_come_out_with_your_hands_up
+<Voice: Come out with your hands up!>
+
+#voice_comm
+<Voice Comm>
+
+#voice_settings
+<Voice Settings>
+
+#voice_setup
+<Voice Setup>
+
+#waiting_for_account_creation
+<Waiting for Account Creation...>
+
+#waiting_for_current_friends_list
+<Waiting for Current Friends List...>
+
+#waiting_for_custom_query
+<Waiting for Custom Query...>
+
+#waiting_for_default_query
+<Waiting for Default Query...>
+
+#waiting_for_gathering_registration
+<Waiting for Gathering Registration...>
+
+#waiting_for_incoming_match_offers
+<Waiting for Incoming Match Offers...>
+
+#waiting_for_invitation
+<Waiting for invitation...>
+
+#waiting_for_invitation_status_update
+<Waiting for invitation status update...>
+
+#waiting_for_ladder_query
+<Waiting for Ladder Query...>
+
+#waiting_for_ladder_registration
+<Waiting for Ladder Registration...>
+
+#waiting_for_login
+<Waiting for Login...>
+
+#waiting_for_match_participation
+<Waiting for Match Participation...>
+
+#waiting_for_outgoing_match_offers
+<Waiting for Outgoing Match Offers...>
+
+#waiting_for_round_start
+<Waiting for Round Start...>
+
+#waiting_for_session_url
+<Waiting for Session URL...>
+
+#waiting_for_the_session_to_finish
+<Waiting for the session to finish...>
+
+#waiting_for_the_session_to_unregister
+<Waiting for the session to unregister...>
+
+#waiting_on_competition_registration
+<Waiting on competition registration...>
+
+#waiting_on_connection_info
+<Waiting on Connection Info...>
+
+#waiting_on_finish_round
+<Waiting on Finish Round...>
+
+#waiting_on_invitation
+<Waiting on invitation...>
+
+#waiting_on_report_stats
+<Waiting on Report Stats...>
+
+#waiting_on_unregistering_the_round
+<Waiting on Unregistering the round...>
+
+#waiting_to_join
+<Waiting to Join...>
+
+#waiting_to_launch_session
+<Waiting to Launch Session...>
+
+#war
+<War>
+
+#warning
+<Warning>
+
+#watch
+<Watch>
+
+#watch_color
+<Watch Color>
+
+#watch_shiney
+<Watch Shiney>
+
+#watch_sport
+<Watch Sport>
+
+#watches
+<Watches>
+
+#wavebattle
+<WaveBattle>
+
+#we_are_very_sorry_to_inform_you_that_online_registration_is_not_for_your_age_group_please_see_the_eidos_online_agreement_pertaining_to_age_restrictions_for_the_online_portion_of_this_game
+<We are very sorry to inform you that online registration is not for your age group. Please see the Eidos Online Agreement pertaining to age restrictions for the online portion of this game.>
+
+#weapon1
+<Weapon1>
+
+#weapon2
+<Weapon2>
+
+#weapon3
+<Weapon3>
+
+#weapon4
+<Weapon4>
+
+#weapon_name
+<Weapon Name>
+
+#weapons
+<Weapons>
+
+#welcome_to_the_universal_self_destruct_program_the_following_program_is_designed_to_terminate_after_30_seconds_would_you_like_to_terminate_now
+<Welcome to the universal self destruct program. The following program is designed to terminate after 30 seconds.  Would you like to terminate now?>
+
+#west_coast_cross
+<West Coast Cross>
+
+#west_side
+<West Side>
+
+#west_side_knife
+<West Side Knife>
+
+#whisper
+<Whisper>
+
+#white
+<White>
+
+#white_jacket
+<White Jacket>
+
+#white_red
+<White Red>
+
+#wide_brim
+<Wide Brim>
+
+#wife_beater_1
+<Wife Beater 1>
+
+#wife_beater_2
+<Wife Beater 2>
+
+#wifebeater_shirt_color
+<Wifebeater Shirt Color>
+
+#williams1
+<Williams1>
+
+#williams2
+<Williams2>
+
+#wind_breaker
+<Wind Breaker>
+
+#windbreaker_color_
+<Windbreaker Color >
+
+#winning
+<Winning>
+
+#wipeout
+<Wipe-Out>
+
+#workout_blue_white
+<workout blue white>
+
+#workout_brown
+<workout brown>
+
+#workout_green
+<Workout Green>
+
+#workout_navy
+<Workout Navy>
+
+#workout_red_white
+<Workout red White>
+
+#wrist_fire
+<Wrist Fire>
+
+#x_button
+<X Button>
+
+#y_button
+<Y Button>
+
+#year
+<Year:>
+
+#yellow_green
+<Yellow Green>
+
+#yellow_stripe
+<Yellow Stripe>
+
+#yes
+<Yes>
+
+#yo_blue
+<Yo Blue>
+
+#yo_red
+<Yo Red>
+
+#you_are_about_to_send_this_information_over_
+<You are about to send this information over >
+
+#you_are_currently_already_in_a_clan_please_leave_your_clan_before_attempting_this_action
+<You are currently already in a clan.  Please leave your clan before attempting this action.>
+
+#you_do_not_have_permission_to_perform_this_action
+<You do not have permission to perform this action.>
+
+#you_got_the_key_now_what_the_fuck_you_gonna_do
+<You got the key.  Now what the fuck you gonna do?>
+
+#you_have_been_invited_to_join_these_clans
+<You have been invited to join these clans:>
+
+#you_have_reached_your_friend_limit_of_100
+<You have reached your friend limit of 100.>
+
+#you_have_received_a_friends_request_from_username_do_you_want_to_accept_the_request
+<You have received a Friends Request from <username>.  Do you want to accept the request?>
+
+#you_have_the_evidenceget_to_mendoza_
+<You have the Evidence...Get to Mendoza !>
+
+#you_have_the_loot_get_out_the_back_
+<You have the Loot,  get out the back !>
+
+#you_have_the_vault_key_
+<You have the vault key !>
+
+#you_made_it_head_down_the_stairs
+<You made it ! Head down the stairs.>
+
+#you_must_create_a_new_profile_to_save_your_progress
+<You must create a new profile to save your progress.>
+
+#you_must_have_a_memory_card_8_mb_for_playstation_2_inserted_to_delete_accounts
+<You must have a Memory Card 8 MB (for Playstation® 2) inserted to delete accounts.>
+
+#you_must_specify_a_name_before_creating_a_clan
+<You must specify a name before creating a clan.>
+
+#you_must_specify_an_abbreviation_before_creating_a_clan
+<You must specify an abbreviation before creating a clan.>
+
+#you_will_not_be_able_to_save_your_progress_to_the_memory_card_8mb_for_playstation2_inserted_in_memory_card_slot_s_continue_without_saving
+<You will not be able to save your progress to the memory card (8MB) (for PlayStation®2) inserted in MEMORY CARD slot %s. Continue without saving?>
+
+#your_xbox_doesnt_have_enough_free_blocks_to_save_the_s_you_need_to_free_s_more_blocks_continue_without_saving_or_use_xbox_dashboard_to_free_more_blocks
+<Your Xbox doesn't have enough free blocks to save the %s.  You need to free %s more blocks.  Continue without saving or use Xbox Dashboard to free more blocks.>
+
+#zip_postal_code
+<Zip / Postal Code:>
+
+#zoom
+<Zoom>
+

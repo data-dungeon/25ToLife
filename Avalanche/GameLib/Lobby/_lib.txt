@@ -1,0 +1,11 @@
+create "SNPS2Release\Lobby.lib"
+addmod "SNPS2Release/LANLobby.obj"
+addmod "SNPS2Release/LANLobbyAsyncJobs.obj"
+addmod "SNPS2Release/RendezVousLobby.obj"
+addmod "SNPS2Release/XboxLobby.obj"
+addmod "SNPS2Release/AccountManagerPS2.obj"
+addmod "SNPS2Release/AccountManager.obj"
+addmod "SNPS2Release/Lobby.obj"
+addmod "SNPS2Release/LobbyPCH.obj"
+save
+end

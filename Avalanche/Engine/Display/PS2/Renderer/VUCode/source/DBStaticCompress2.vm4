@@ -1,0 +1,193 @@
+.vu
+
+include( `VUDefines.vm4')
+
+
+define( 'szeDblBuffer', eval( (szeVUMemAvailable) / 2))
+
+define( 'irCopyCount', 'VI01')
+define( 'irBaseVtxPtr', 'VI02')
+define( 'irKickPtr', 'VI03')
+define( 'irEndPtr', 'VI04')
+
+define( 'irOutPtr', 'VI05')
+define( 'irVtxPtr', 'VI07')
+define( 'irZADCPtr', 'VI08')
+
+define( 'irVtxCount', 'VI10')
+define( 'irLoopCount', 'VI11')
+define( 'irADCMask', 'VI12')
+
+	.global	dbStaticCompress2_CodeBegin
+	.global	dbStaticCompress2_CodeEnd
+
+.dmadata dbStaticCompress2_CodeBegin
+	MULx.xyzw	VF30, VF30, VF00	LOI	256
+	NOP		XTOP	irBaseVtxPtr	; get ptr to VUBuffer_1
+
+	NOP		LQ	VF05, 4(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF09, 0(irBaseVtxPtr)	; Load CommonToScreenMtx row 1
+	ADDI.xw	VF30, VF30, I	LQ	VF10, 1(irBaseVtxPtr)	; Load CommonToScreenMtx row 2
+	NOP		LQ	VF11, 2(irBaseVtxPtr)	; Load CommonToScreenMtx row 3
+	NOP		LQ	VF12, 3(irBaseVtxPtr)	; Load CommonToScreenMtx row 4
+	MULAx.xyzw	ACC, VF09, VF05x	LQ	VF06, 5(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	MADDAy.xyzw	ACC, VF10, VF05y	LQ	VF07, 6(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	MADDAz.xyzw	ACC, VF11, VF05z	LQ	VF08, 7(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	MADDw[E].xyzw	VF01, VF12, VF05w	LQ	VF31, 8(irBaseVtxPtr)	; Load GIFTag
+	ADD.w	VF30, VF30, VF30	NOP
+dbSC_ConcatMatrices:
+
+	MULAx.xyzw	ACC, VF09, VF06x	IADDIU	VI01, VI00, 0x7fff	; create dummy GIFTag
+	MADDAy.xyzw	ACC, VF10, VF06y	IADDIU	VI01, VI01, 0x0001	; nLoops = EOP | 0
+	MADDAz.xyzw	ACC, VF11, VF06z	NOP
+	MADDw.xyzw	VF02, VF12, VF06w	NOP
+	ADD.xw	VF29, VF30, VF30	NOP
+	
+	MULAx.xyzw	ACC, VF09, VF07x	ISW.x	VI01, 0(VI00)x
+	MADDAy.xyzw	ACC, VF10, VF07y	NOP
+	MADDAz.xyzw	ACC, VF11, VF07z	NOP
+	MADDw.xyzw	VF03, VF12, VF07w	NOP
+	ADD.xw	VF29, VF29, VF29	NOP
+	
+	MULAx.xyzw	ACC, VF09, VF08x	NOP
+	MADDAy.xyzw	ACC, VF10, VF08y	NOP
+	MADDAz.xyzw  ACC, VF11, VF08z	NOP
+	MADDw.xyzw	VF04, VF12, VF08w	XGKICK	VI00
+	
+	NOP[E]		LOI	256
+	NOP		IADDIU	irADCMask, VI00, 0x0f
+	
+dbSC_Start:
+	NOP		XTOP	irBaseVtxPtr	; get ptr to VUBuffer
+
+	NOP		ILW.w	irKickPtr, 1(irBaseVtxPtr)w	; grab offsetOutputBuffer
+
+	NOP		ILW.x	irVtxCount, 0(irBaseVtxPtr)x	; grab vertexCount
+	NOP		ILW.y	irLoopCount, 0(irBaseVtxPtr)y	; grab loopCount
+	NOP		ILW.z	irCopyCount, 0(irBaseVtxPtr)z	; grab copyCount
+
+	
+	NOP	 	IADD	irKickPtr, irBaseVtxPtr, irKickPtr	; calculate OutBuffer base ptr
+	NOP		IADDIU	irBaseVtxPtr, irBaseVtxPtr, 2	; skip LocalHdr
+	
+	NOP		IBEQ	irCopyCount, VI00, dbSC_Prolog	; skip GIFPacket copy if count == 0
+	NOP		IADDIU	irOutPtr, irKickPtr, 0	; <ds> calculate OutBuffer moving ptr
+dbSC_CopyGIFDataSetup:
+	NOP		IADD	irEndPtr, irBaseVtxPtr, irCopyCount	; calculate CopyEnd ptr
+
+dbSC_CopyGIFData:
+	NOP		LQI	VF28, (irBaseVtxPtr++)	; load QW of GIFPacketData
+	NOP		NOP
+	NOP		NOP
+	NOP		IBNE	irBaseVtxPtr, irEndPtr, dbSC_CopyGIFData
+	NOP	  	SQI	VF28, (irOutPtr++)		; store GIFPacketData to OutBuffer
+
+undefine( 'irCopyCount')
+
+define( 'irTemp', 'VI01')
+define( 'irADCVal', 'VI06')
+
+dbSC_Prolog:
+	NOP		IADD	irZADCPtr, irBaseVtxPtr, irVtxCount
+	ADDw.z	VF09, VF00, VF00	LQ	VF05, 0(irBaseVtxPtr)
+	ADDw.z	VF10, VF00, VF00	LQ	VF28, 0(irZADCPtr)
+	ADDw.z	VF11, VF00, VF00	IADDIU	irTemp, irVtxCount, 0x7fff
+	
+	MULAw.xyzw	ACC, VF04, VF00w	IADDIU	irTemp, irTemp, 0x0001
+	MADDAz.xyzw	ACC, VF01, VF05z	LQ	VF06, 1(irBaseVtxPtr)
+	MADDAw.xyzw	ACC, VF02, VF05w	MTIR	irADCVal, VF28x
+	MADDx.xyzw	VF13, VF03, VF28x	IAND	irADCVal, irADCVal, irADCMask
+	MULAw.xyzw	ACC, VF04, VF00w	MFIR.y	VF29, irADCVal
+	MADDAz.xyzw	ACC, VF01, VF06z	IADDIU	irVtxPtr, irBaseVtxPtr, 2
+	MADDAw.xyzw	ACC, VF02, VF06w	LQI	VF07, (irVtxPtr++)
+	MADDy.xyzw	VF14, VF03, VF28y	DIV	Q, VF00w, VF13w
+	MULAw.xyzw	ACC, VF04, VF00w	IADD	irEndPtr, irZADCPtr, irLoopCount
+	ITOF0.y	VF29, VF29	MFIR.x	VF31x, irTemp
+	MADDAz.xyzw	ACC, VF01, VF07z	MOVE.xy	VF09, VF05
+	MADDAw.xyzw	ACC, VF02, VF07w	LQI	VF08, (irVtxPtr++)
+	MADDz.xyzw	VF15, VF03, VF28z	IADDIU	irZADCPtr, irZADCPtr, 1
+	MULy.xw	VF17, VF29, VF29	SQI	VF31, (irOutPtr++)
+	MULy.xw	VF19, VF30, VF29	DIV	Q, VF00w, VF14w
+	ADDx.xyzw	VF12, VF08, VF00x	SQ	VF05,  1(irOutPtr)
+	ADDx.xy	VF10, VF06, VF00x	NOP
+	MULx.w	VF18, VF00, VF17	SQ	VF06,  4(irOutPtr)
+	MULq.xyz	VF17, VF13, Q	NOP
+	MULq.xyz	VF21, VF09, Q	SQ	VF07,  7(irOutPtr)
+	MULAw.xyzw	ACC, VF04, VF00w	MOVE.w	VF16, VF28
+	ADDx.xy	VF11, VF07, VF00	SQ	VF08, 10(irOutPtr)
+
+dbSC_Loop:
+	FTOI4.xyzw	VF17, VF17	LQI	VF28, (irZADCPtr++)
+	MULq.xyz	VF18, VF14, Q	DIV	Q, VF00w, VF15w
+	MADDAz.xyzw	ACC, VF01, VF12z	MR32.w	VF20, VF19
+	MADDAw.xyzw	ACC, VF02, VF12w	LQI	VF09, (irVtxPtr++)
+	MADDw.xyzw	VF16, VF03, VF16w	MTIR	irADCVal, VF28x
+	MULq.xyz	VF22, VF10, Q	IAND	irADCVal, irADCVal, irADCMask
+	MULAw.xyzw	ACC, VF04, VF00w	SQ	VF21,  0(irOutPtr)
+	FTOI4.xyzw	VF18, VF18	MFIR.y	VF29y, irADCVal
+	MADDAz.xyzw	ACC, VF01, VF09z	SQ	VF09, 13(irOutPtr)
+	MADDAw.xyzw	ACC, VF02, VF09w	DIV	Q, VF00w, VF16w
+	MULq.xyz	VF19, VF15, Q	LQI	VF10, (irVtxPtr++)
+	MADDx.xyzw	VF13, VF03, VF28x	SQ	VF17,  2(irOutPtr)
+	ITOF0.y	VF29, VF29	MR32.z	VF12, VF00
+	MULq.xyz	VF23, VF11, Q	SQ	VF22,  3(irOutPtr)
+	MULAw.xyzw	ACC, VF04, VF00w	SQ	VF10, 16(irOutPtr)
+	FTOI4.xyzw	VF19, VF19	SQ	VF18,  5(irOutPtr)
+	MADDAz.xyzw	ACC, VF01, VF10z	DIV	Q, VF00w, VF13w
+	MADDAw.xyzw	ACC, VF02, VF10w	LQI	VF11, (irVtxPtr++)
+	MADDy.xyzw	VF14, VF03, VF28y	MR32.z	VF09, VF00
+	MULq.xyz	VF20, VF16, Q	SQ	VF23,  6(irOutPtr)
+	MULy.xw	VF17, VF29, VF29	MR32.z	VF10, VF00
+	MULq.xyz	VF24, VF12, Q	SQ	VF11, 19(irOutPtr)
+	MULAw.xyzw	ACC, VF04, VF00w	SQ	VF19,  8(irOutPtr)
+	FTOI4.xyzw	VF20, VF20	LQI	VF12, (irVtxPtr++)
+	MADDAz.xyzw	ACC, VF01, VF11z	DIV	Q, VF00w, VF14w
+	MADDAw.xyzw	ACC, VF02, VF11w	SQ	VF24,  9(irOutPtr)
+	MADDz.xyzw	VF15, VF03, VF28z	MR32.w	VF18, VF17
+	MULw.w	VF16, VF28, VF00	IADDIU	irOutPtr, irOutPtr, 12
+	MULq.xyz	VF17, VF13, Q	SQ	VF12, 10(irOutPtr)
+	MULy.xw	VF19, VF30, VF29	MR32.z	VF11, VF00
+	MULq.xyz	VF21, VF09, Q	IBNE	irEndPtr, irZADCPtr, dbSC_Loop
+	MULAw.xyzw	ACC, VF04, VF00w	SQ	VF20, -1(irOutPtr)
+
+dbSC_Epilog:
+	FTOI4.xyzw	VF17, VF17	NOP
+	MULq.xyz	VF18, VF14, Q	DIV	Q, VF00w, VF15w
+	MADDAz.xyzw	ACC, VF01, VF12z	MR32.w	VF20, VF19
+	MADDAw.xyzw	ACC, VF02, VF12w	NOP
+	MADDw.xyzw	VF16, VF03, VF16w	NOP
+	MULq.xyz	VF22, VF10, Q	NOP
+	FTOI4.xyzw	VF18, VF18	SQ	VF21,  0(irOutPtr)
+	NOP		NOP
+	NOP		DIV	Q, VF00w, VF16w
+	MULq.xyz	VF19, VF15, Q	NOP
+	NOP		SQ	VF17,  2(irOutPtr)
+	NOP		MR32.z	VF12, VF00
+	MULq.xyz	VF23, VF11, Q	SQ	VF22,  3(irOutPtr)
+	NOP		NOP
+	FTOI4.xyzw	VF19, VF19	SQ	VF18,  5(irOutPtr)
+	MULq.xyz	VF20, VF16, Q	NOP
+	MULq.xyz	VF24, VF12, Q	SQ	VF23,  6(irOutPtr)
+	NOP		NOP
+	NOP		SQ 	VF19,  8(irOutPtr)
+	FTOI4.xyzw	VF20, VF20	NOP
+	NOP		NOP
+	NOP		SQ	VF24,  9(irOutPtr)
+	NOP		NOP
+	NOP		SQ	VF20, 11(irOutPtr)
+
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+	NOP		XGKICK	irKickPtr
+	NOP[E]		NOP
+	NOP		NOP
+	NOP		B	dbSC_Start
+	NOP		NOP
+	NOP		NOP
+
+.enddmadata
+dbStaticCompress2_CodeEnd:
+	
+

@@ -1,0 +1,13 @@
+////////////////////////////////////////////////////////////////////////////
+//
+// MotionSetPch
+//
+// File to handle creation of precompiled header
+//
+////////////////////////////////////////////////////////////////////////////
+
+#include "MotionSetPch.h"
+
+const char *g_pMotionSetDate = __DATE__;
+const char *g_pMotionSetTime = __TIME__;
+const char *g_pMotionSetVersion = "1.0.45";

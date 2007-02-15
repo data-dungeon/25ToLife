@@ -1,0 +1,49 @@
+// post increment tests
+
+int i;
+int a[ 3 ];
+
+a[ 0 ] = 1;
+a[ 1 ] = 10;
+a[ 2 ] = 100;
+
+i = 0;
+i++;		print i;   	 // result: 1
+i++;		print i;   	 // result: 2
+a[i]++;		print a[i];	 // result: 101
+i--;		print i;	 // result: 1
+a[i]--;         print a[i];      // result: 9
+
+a[i++]++;
+print a[0];			// result: 1
+print a[1];			// result: 10
+print a[2];			// result: 101
+print i;			// result: 2
+
+i = 0;
+a[i++]--;	print a[0];	// result: 0
+a[i++]--;	print a[1];	// result: 9
+a[i++]--;	print a[2];	// result: 100
+print i;			// result: 3
+
+i = 0;
+print a[i++];			// result: 0
+print a[i++];			// result: 9
+print a[i++];			// result: 100
+print i;			// result: 3
+
+i = 0;
+print a[i++]++;			// result: 0
+print a[i++]++;			// result: 9
+print a[i++]++;                 // result: 100
+print i;                        // result: 3
+
+i = 0;
+print a[i++];			// result: 1
+print a[i++];			// result: 10
+print a[i++];			// result: 101
+print i;			// result: 3
+
+
+
+

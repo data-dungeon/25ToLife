@@ -1,0 +1,1130 @@
+; flowMon::Emit() vcl 1.3.2 produced this code:
+		.align 4
+		.global	VUStripBuffer6x2CD_CodeStart
+		.global	VUStripBuffer6x2CD_CodeEnd
+		.global	VUStripBuffer6x2CD_DmaTag
+		.global	VUStripBuffer6x2CD_DmaEnd
+
+VUStripBuffer6x2CD_DmaTag:
+		DMAret	*
+		vifnop	
+		vifnop	
+		vifnop	
+		MPG	0,*
+		.global	VUStripBuffer6x2CD
+		.global	EndVUStripBuffer6x2CD
+VUStripBuffer6x2CD_CodeStart:
+__v_VUStripBuffer6x2CD_gasp_4:
+; [0,5) size=4 nU=2 nL=4 ic=6 [lin=5 lp=0] cycles?=5
+         NOP                                                        lq.y          VF03,0(VI00)                        
+         NOP                                                        fcset         262143                              
+         max           VF01,VF00,VF00                               iaddiu        VI03,VI00,0x00000400                
+         max           VF02,VF00,VF00                               mtir          VI02,VF03y                                 ;	STALL_LATENCY ?1
+BufferLoopVUStripBuffer6x2CD:
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,3) size=3 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=3
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,3) size=3 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=3
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+; [0,29) size=29 nU=0 nL=29 ic=29 [lin=29 lp=0] cycles?=29
+         NOP                                                        xtop          VI01                                
+         NOP                                                        xitop         VI05                                
+         NOP                                                        lq            VF03,1(VI00)                        
+         NOP                                                        lq.xy         VF04,2(VI00)                        
+         NOP                                                        lq.x          VF05,0(VI01)                        
+         NOP                                                        iadd          VI05,VI01,VI05                      
+         NOP                                                        mtir          VI07,VF03w                          
+         NOP                                                        mtir          VI06,VF04x                          
+         NOP                                                        mtir          VI04,VF05x                          
+         NOP                                                        iadd          VI10,VI04,VI04                      
+         NOP                                                        iadd          VI10,VI10,VI04                      
+         NOP                                                        mtir          VI08,VF04y                          
+         NOP                                                        isub          VI05,VI05,VI10                      
+         NOP                                                        isub          VI05,VI05,VI08                      
+         NOP                                                        isub          VI08,VI05,VI10                      
+         NOP                                                        isub          VI06,VI08,VI06                      
+         NOP                                                        isub          VI08,VI06,VI10                      
+         NOP                                                        isub          VI07,VI08,VI07                      
+         NOP                                                        mtir          VI08,VF03z                          
+         NOP                                                        isub          VI09,VI07,VI10                      
+         NOP                                                        isub          VI08,VI09,VI08                      
+         NOP                                                        mtir          VI09,VF03y                          
+         NOP                                                        isub          VI11,VI08,VI10                      
+         NOP                                                        isub          VI09,VI11,VI09                      
+         NOP                                                        mtir          VI11,VF03x                          
+         NOP                                                        isub          VI10,VI09,VI10                      
+         NOP                                                        isub          VI10,VI10,VI11                      
+         NOP                                                        iaddiu        VI11,VI00,0x00000023                
+         NOP                                                        mtir          VI12,VF03x                          
+CopyDataLoop17:
+; [0,5) size=5 nU=0 nL=4 ic=4 [lin=5 lp=4] cycles?=5
+         NOP                                                        lqi           VF05,(VI11++)                       
+         NOP                                                        isubiu        VI12,VI12,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI12,VI00,CopyDataLoop17            
+         NOP                                                        sqi           VF05,(VI10++)                       
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        mtir          VI12,VF03y                          
+CopyDataLoop18:
+; [0,5) size=5 nU=0 nL=4 ic=4 [lin=5 lp=4] cycles?=5
+         NOP                                                        lqi           VF05,(VI11++)                       
+         NOP                                                        isubiu        VI12,VI12,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI12,VI00,CopyDataLoop18            
+         NOP                                                        sqi           VF05,(VI09++)                       
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        mtir          VI12,VF03z                          
+CopyDataLoop19:
+; [0,5) size=5 nU=0 nL=4 ic=4 [lin=5 lp=4] cycles?=5
+         NOP                                                        lqi           VF05,(VI11++)                       
+         NOP                                                        isubiu        VI12,VI12,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI12,VI00,CopyDataLoop19            
+         NOP                                                        sqi           VF05,(VI08++)                       
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        mtir          VI12,VF03w                          
+CopyDataLoop20:
+; [0,5) size=5 nU=0 nL=4 ic=4 [lin=5 lp=4] cycles?=5
+         NOP                                                        lqi           VF03,(VI11++)                       
+         NOP                                                        isubiu        VI12,VI12,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI12,VI00,CopyDataLoop20            
+         NOP                                                        sqi           VF03,(VI07++)                       
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        mtir          VI12,VF04x                          
+CopyDataLoop21:
+; [0,5) size=5 nU=0 nL=4 ic=4 [lin=5 lp=4] cycles?=5
+         NOP                                                        lqi           VF03,(VI11++)                       
+         NOP                                                        isubiu        VI12,VI12,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI12,VI00,CopyDataLoop21            
+         NOP                                                        sqi           VF03,(VI06++)                       
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        mtir          VI12,VF04y                          
+CopyDataLoop22:
+; [0,5) size=5 nU=0 nL=4 ic=4 [lin=5 lp=4] cycles?=5
+         NOP                                                        lqi           VF03,(VI11++)                       
+         NOP                                                        isubiu        VI12,VI12,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI12,VI00,CopyDataLoop22            
+         NOP                                                        sqi           VF03,(VI05++)                       
+; [0,11) size=11 nU=0 nL=11 ic=11 [lin=11 lp=0] cycles?=11
+         NOP                                                        isw.x         VI04,-1(VI10)                       
+         NOP                                                        iaddiu        VI11,VI00,0x00007fff                
+         NOP                                                        iaddiu        VI11,VI11,0x00000001                
+         NOP                                                        ior           VI11,VI04,VI11                      
+         NOP                                                        isw.x         VI04,-1(VI09)                       
+         NOP                                                        isw.x         VI04,-1(VI08)                       
+         NOP                                                        isw.x         VI04,-1(VI07)                       
+         NOP                                                        isw.x         VI04,-1(VI06)                       
+         NOP                                                        isw.x         VI11,-1(VI05)                       
+         NOP                                                        iaddiu        VI11,VI01,0x00000001                
+         NOP                                                        iaddiu        VI12,VI00,0                         
+loopVUStripBuffer6x2CD:
+; [1,46) size=45 nU=25 nL=45 ic=70 [lin=45 lp=0] cycles?=45
+         NOP                                                        lq            VF03,0(VI11)                        
+         NOP                                                        lq            VF13,1(VI11)                        
+         NOP                                                        lq            VF15,2(VI11)                        
+         NOP                                                        lq.xyz        VF08,3(VI11)                        
+         NOP                                                        lq            VF04,3(VI00)                        
+         NOP                                                        lq            VF05,4(VI00)                        
+         NOP                                                        lq            VF06,5(VI00)                        
+         NOP                                                        lq            VF07,6(VI00)                        
+         NOP                                                        lq.xy         VF11,19(VI00)                       
+         NOP                                                        lq.xy         VF09,20(VI00)                       
+         NOP                                                        lq.xy         VF14,22(VI00)                       
+         NOP                                                        lq.xy         VF10,21(VI00)                       
+         NOP                                                        lq.xy         VF16,23(VI00)                       
+         NOP                                                        lq.xy         VF12,24(VI00)                       
+         mulaw.xy      ACC,VF14,VF00w                               lq.xy         VF19,26(VI00)                       
+         maddaw.xy     ACC,VF11,VF13w                               lq.xy         VF17,25(VI00)                       
+         maddax.xy     ACC,VF09,VF15x                               lq.xy         VF11,27(VI00)                       
+         maddz.xy      VF14,VF10,VF00z                              lq.xy         VF09,28(VI00)                       
+         mulaw.xy      ACC,VF19,VF00w                               lq.xy         VF20,30(VI00)                       
+         madday.xy     ACC,VF16,VF15y                               lq.xy         VF10,29(VI00)                       
+         maddaz.xy     ACC,VF12,VF15z                               lq.xy         VF19,31(VI00)                       
+         maddz.xy      VF15,VF17,VF00z                              lq.xy         VF12,32(VI00)                       
+         mulaw.xy      ACC,VF20,VF00w                               lq.xy         VF20,34(VI00)                       
+         maddaw.xy     ACC,VF11,VF15w                               lq.xy         VF17,33(VI00)                       
+         maddax.xy     ACC,VF09,VF08x                               lq.xy         VF11,11(VI00)                       
+         maddz.xy      VF16,VF10,VF00z                              lq.xy         VF09,12(VI00)                       
+         mulaw.xy      ACC,VF20,VF00w                               lq.xy         VF22,14(VI00)                       
+         madday.xy     ACC,VF19,VF08y                               lq.xy         VF10,13(VI00)                       
+         maddaz.xy     ACC,VF12,VF08z                               lq.xy         VF21,15(VI00)                       
+         maddz.xy      VF17,VF17,VF00z                              lq.xy         VF20,16(VI00)                       
+         mulaw.xy      ACC,VF22,VF00w                               lq.xy         VF22,18(VI00)                       
+         NOP                                                        lq.xy         VF19,17(VI00)                       
+         maddaw.xy     ACC,VF11,VF03w                               lq            VF08,7(VI00)                        
+         maddax.xy     ACC,VF09,VF13x                               lq            VF09,8(VI00)                        
+         maddz.xy      VF12,VF10,VF00z                              lq            VF10,9(VI00)                        
+         mulaw.xy      ACC,VF22,VF00w                               lq            VF11,10(VI00)                       
+         madday.xy     ACC,VF21,VF13y                               mr32.z        VF12,VF00                           
+         maddaz.xy     ACC,VF20,VF13z                               mr32.z        VF13,VF00                           
+         NOP                                                        mr32.z        VF14,VF00                           
+         NOP                                                        mr32.z        VF15,VF00                           
+         NOP                                                        iaddiu        VI01,VI00,0x00000003                
+         NOP                                                        iand          VI01,VI01,VI02                      
+         NOP                                                        mr32.z        VF16,VF00                           
+         max           VF18,VF03,VF03                               iblez         VI01,CullVtx                        
+         maddz.xy      VF13,VF19,VF00z                              mr32.z        VF17,VF00                           
+; [0,4) size=4 nU=0 nL=2 ic=2 [lin=4 lp=0] cycles?=4
+         NOP                                                        isubiu        VI01,VI01,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        iblez         VI01,AlwaysVtx                      
+         NOP                                                        NOP                                               
+; [0,16) size=14 nU=7 nL=12 ic=19 [lin=14 lp=0] cycles?=16
+         addax         ACC,VF07,VF00x                               mtir          VI13,VF03x                          
+         maddax        ACC,VF04,VF03x                               iaddiu        VI14,VI00,0x00000001                
+         madday        ACC,VF05,VF03y                               iand          VI13,VI14,VI13                      
+         maddz         VF20,VF06,VF03z                              iaddiu        VI14,VI13,0x00007fff                
+         NOP                                                        mfir.w        VF03,VI14                           
+         clipw.xyz     VF20xyz,VF20w                                iadd          VI12,VI12,VI12                             ;	STALL_LATENCY ?2
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        iaddiu        VI14,VI00,0x00000007                
+         NOP                                                        fcand         VI01,63                             
+         NOP                                                        ior           VI12,VI12,VI01                      
+         NOP                                                        iand          VI12,VI12,VI14                      
+         max           VF19,VF01,VF01                               ibne          VI13,VI00,KickUnscissoredTriangle   
+         max           VF01,VF02,VF02                               move          VF02,VF20                           
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        ibgtz         VI12,ScissorTriangle                
+         NOP                                                        NOP                                               
+KickUnscissoredTriangle:
+; [0,17) size=11 nU=11 nL=3 ic=14 [lin=14 lp=0] cycles?=17
+         addax.xyz     ACC,VF11,VF00x                               div           Q,VF00w,VF20w                       
+         mulq.xyz      VF19,VF12,Q                                  waitq                                                    ;	STALL_LATENCY ?6
+         mulq.xyz      VF21,VF13,Q                                  NOP                                               
+         mulq.xyz      VF20,VF20,Q                                  NOP                                               
+         mulq.xyz      VF22,VF14,Q                                  NOP                                               
+         mulq.xyz      VF23,VF15,Q                                  NOP                                               
+         mulq.xyz      VF24,VF16,Q                                  NOP                                               
+         maddax.xyz    ACC,VF08,VF20x                               NOP                                               
+         madday.xyz    ACC,VF09,VF20y                               NOP                                               
+         mulq.xyz      VF25,VF17,Q                                  b             FinishLoop                          
+         maddz.xyz     VF26,VF10,VF20z                              NOP                                               
+AlwaysVtx:
+; [0,21) size=12 nU=11 nL=8 ic=19 [lin=15 lp=0] cycles?=21
+         addax         ACC,VF07,VF00x                               NOP                                               
+         maddax        ACC,VF04,VF03x                               NOP                                               
+         madday        ACC,VF05,VF03y                               NOP                                               
+         maddz         VF26,VF06,VF03z                              NOP                                               
+         NOP                                                        div           Q,VF00w,VF26w                              ;	STALL_LATENCY ?3
+         mulq.xyz      VF26,VF26,Q                                  waitq                                                    ;	STALL_LATENCY ?6
+         mulq.xyz      VF19,VF12,Q                                  mtir          VI01,VF03x                          
+         mulq.xyz      VF21,VF13,Q                                  iaddiu        VI13,VI00,0x00000001                
+         mulq.xyz      VF22,VF14,Q                                  iand          VI01,VI13,VI01                      
+         mulq.xyz      VF23,VF15,Q                                  iaddiu        VI01,VI01,0x00007fff                
+         mulq.xyz      VF24,VF16,Q                                  b             FinishLoop                          
+         mulq.xyz      VF25,VF17,Q                                  mfir.w        VF03,VI01                           
+CullVtx:
+; [0,21) size=16 nU=16 nL=8 ic=24 [lin=16 lp=0] cycles?=21
+         addax         ACC,VF07,VF00x                               NOP                                               
+         maddax        ACC,VF04,VF03x                               NOP                                               
+         madday        ACC,VF05,VF03y                               NOP                                               
+         maddz         VF26,VF06,VF03z                              NOP                                               
+         addax         ACC,VF11,VF00x                               NOP                                               
+         maddax        ACC,VF08,VF03x                               div           Q,VF00w,VF26w                              ;	STALL_LATENCY ?2
+         madday        ACC,VF09,VF03y                               NOP                                               
+         maddz         VF10,VF10,VF03z                              NOP                                               
+         clipw.xyz     VF10xyz,VF10w                                NOP                                                      ;	STALL_LATENCY ?3
+         mulq.xyz      VF26,VF26,Q                                  mtir          VI13,VF03x                          
+         mulq.xyz      VF19,VF12,Q                                  iaddiu        VI01,VI00,0x00000001                
+         mulq.xyz      VF21,VF13,Q                                  iand          VI13,VI01,VI13                      
+         mulq.xyz      VF22,VF14,Q                                  fcand         VI01,262143                         
+         mulq.xyz      VF23,VF15,Q                                  ior           VI13,VI01,VI13                      
+         mulq.xyz      VF24,VF16,Q                                  iaddiu        VI13,VI13,0x00007fff                
+         mulq.xyz      VF25,VF17,Q                                  mfir.w        VF03,VI13                           
+FinishLoop:
+; [1,28) size=27 nU=1 nL=27 ic=28 [lin=27 lp=0] cycles?=27
+         NOP                                                        sq            VF18,1(VI10)                        
+         NOP                                                        sq            VF18,1(VI09)                        
+         NOP                                                        sq            VF18,1(VI08)                        
+         ftoi4.xyz     VF03,VF26                                    sq            VF18,1(VI07)                        
+         NOP                                                        sq            VF18,1(VI06)                        
+         NOP                                                        sq            VF18,1(VI05)                        
+         NOP                                                        sq.xyz        VF19,0(VI10)                        
+         NOP                                                        sq            VF03,2(VI10)                        
+         NOP                                                        sq            VF03,2(VI09)                        
+         NOP                                                        sq            VF03,2(VI08)                        
+         NOP                                                        sq            VF03,2(VI07)                        
+         NOP                                                        sq            VF03,2(VI06)                        
+         NOP                                                        sq            VF03,2(VI05)                        
+         NOP                                                        sq.xyz        VF21,0(VI09)                        
+         NOP                                                        sq.xyz        VF22,0(VI08)                        
+         NOP                                                        sq.xyz        VF23,0(VI07)                        
+         NOP                                                        sq.xyz        VF24,0(VI06)                        
+         NOP                                                        sq.xyz        VF25,0(VI05)                        
+         NOP                                                        iaddiu        VI10,VI10,0x00000003                
+         NOP                                                        iaddiu        VI09,VI09,0x00000003                
+         NOP                                                        iaddiu        VI08,VI08,0x00000003                
+         NOP                                                        isubiu        VI04,VI04,0x00000001                
+         NOP                                                        iaddiu        VI07,VI07,0x00000003                
+         NOP                                                        iaddiu        VI06,VI06,0x00000003                
+         NOP                                                        iaddiu        VI05,VI05,0x00000003                
+         NOP                                                        ibne          VI04,VI00,loopVUStripBuffer6x2CD    
+         NOP                                                        iaddiu        VI11,VI11,0x00000004                
+; [0,28) size=28 nU=0 nL=28 ic=28 [lin=28 lp=0] cycles?=28
+         NOP                                                        xtop          VI01                                
+         NOP                                                        xitop         VI04                                
+         NOP                                                        lq            VF03,1(VI00)                        
+         NOP                                                        lq.xy         VF04,2(VI00)                        
+         NOP                                                        lq.x          VF05,0(VI01)                        
+         NOP                                                        iadd          VI06,VI01,VI04                      
+         NOP                                                        mtir          VI04,VF03w                          
+         NOP                                                        mtir          VI05,VF04x                          
+         NOP                                                        mtir          VI01,VF05x                          
+         NOP                                                        iadd          VI07,VI01,VI01                      
+         NOP                                                        iadd          VI01,VI07,VI01                      
+         NOP                                                        mtir          VI07,VF04y                          
+         NOP                                                        isub          VI06,VI06,VI01                      
+         NOP                                                        isub          VI06,VI06,VI07                      
+         NOP                                                        isub          VI06,VI06,VI01                      
+         NOP                                                        isub          VI05,VI06,VI05                      
+         NOP                                                        isub          VI05,VI05,VI01                      
+         NOP                                                        isub          VI05,VI05,VI04                      
+         NOP                                                        mtir          VI04,VF03z                          
+         NOP                                                        isub          VI05,VI05,VI01                      
+         NOP                                                        isub          VI05,VI05,VI04                      
+         NOP                                                        mtir          VI04,VF03y                          
+         NOP                                                        isub          VI05,VI05,VI01                      
+         NOP                                                        isub          VI05,VI05,VI04                      
+         NOP                                                        mtir          VI04,VF03x                          
+         NOP                                                        isub          VI01,VI05,VI01                      
+         NOP                                                        isub          VI01,VI01,VI04                      
+         NOP                                                        xgkick        VI01                                
+; [0,2) size=2 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=2
+         NOP[E]                                                     NOP                                               
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        b             BufferLoopVUStripBuffer6x2CD        
+         NOP                                                        NOP                                               
+ScissorTriangle:
+; [5,71) size=66 nU=3 nL=66 ic=69 [lin=66 lp=0] cycles?=66
+         NOP                                                        mfir.x        VF04,VI04                           
+         NOP                                                        mfir.y        VF04,VI11                           
+         NOP                                                        mfir.z        VF04,VI12                           
+         NOP                                                        mfir.x        VF03,VI10                           
+         NOP                                                        mfir.y        VF03,VI09                           
+         NOP                                                        mfir.z        VF03,VI08                           
+         NOP                                                        iaddiu        VI01,VI00,0x000002f5                
+         NOP                                                        mfir.w        VF03,VI07                           
+         NOP                                                        mfir.x        VF05,VI06                           
+         NOP                                                        mfir.y        VF05,VI05                           
+         NOP                                                        sqd.xyz       VF04,(--VI03)                       
+         NOP                                                        sqd           VF03,(--VI03)                       
+         NOP                                                        iaddiu        VI13,VI00,0x000000ff                
+         NOP                                                        sqd.xy        VF05,(--VI03)                       
+         NOP                                                        sqd           VF20,(--VI03)                       
+         NOP                                                        sqd           VF18,(--VI03)                       
+         NOP                                                        sqd.xyz       VF12,(--VI03)                       
+         NOP                                                        sqd.xyz       VF13,(--VI03)                       
+         NOP                                                        sqd.xyz       VF14,(--VI03)                       
+         NOP                                                        sqd.xyz       VF15,(--VI03)                       
+         NOP                                                        sqd.xyz       VF16,(--VI03)                       
+         NOP                                                        sqd.xyz       VF17,(--VI03)                       
+         NOP                                                        sqd           VF19,(--VI03)                       
+         NOP                                                        mtir          VI05,VF18x                          
+         NOP                                                        iand          VI05,VI05,VI13                      
+         NOP                                                        mfir.x        VF18,VI05                           
+         NOP                                                        mtir          VI05,VF18y                          
+         NOP                                                        iand          VI05,VI05,VI13                      
+         NOP                                                        mfir.y        VF18,VI05                           
+         NOP                                                        mtir          VI05,VF18z                          
+         NOP                                                        iand          VI05,VI05,VI13                      
+         NOP                                                        mfir.z        VF18,VI05                           
+         NOP                                                        mtir          VI05,VF18w                          
+         NOP                                                        iand          VI13,VI05,VI13                      
+         NOP                                                        mfir.w        VF18,VI13                           
+         NOP                                                        sqd           VF01,(--VI03)                       
+         NOP                                                        sqd           VF02,(--VI03)                       
+         NOP                                                        sq            VF02,0(VI01)                        
+         itof0         VF02,VF18                                    lq            VF03,-4(VI11)                       
+         NOP                                                        iaddiu        VI13,VI00,0x000001f5                
+         NOP                                                        sq            VF19,16(VI01)                       
+         NOP                                                        sq            VF01,8(VI01)                        
+         max           VF02,VF03,VF03                               sq            VF02,1(VI01)                        
+         NOP                                                        sq.xy         VF12,2(VI01)                        
+         NOP                                                        sq.xy         VF13,3(VI01)                        
+         NOP                                                        iaddiu        VI05,VI00,0x000000ff                
+         NOP                                                        mtir          VI06,VF02x                          
+         NOP                                                        iand          VI06,VI06,VI05                      
+         NOP                                                        mfir.x        VF02,VI06                           
+         NOP                                                        mtir          VI06,VF02y                          
+         NOP                                                        iand          VI06,VI06,VI05                      
+         NOP                                                        mfir.y        VF02,VI06                           
+         NOP                                                        mtir          VI06,VF02z                          
+         NOP                                                        iand          VI06,VI06,VI05                      
+         NOP                                                        mfir.z        VF02,VI06                           
+         NOP                                                        mtir          VI06,VF02w                          
+         NOP                                                        iand          VI05,VI06,VI05                      
+         NOP                                                        mfir.w        VF02,VI05                           
+         NOP                                                        sq.xy         VF14,4(VI01)                        
+         NOP                                                        sq.xy         VF15,5(VI01)                        
+         NOP                                                        sq.xy         VF16,6(VI01)                        
+         itof0         VF02,VF02                                    sq.xy         VF17,7(VI01)                        
+         NOP                                                        lq            VF04,-3(VI11)                       
+         NOP                                                        lq            VF05,-2(VI11)                       
+         NOP                                                        lq.xyz        VF06,-1(VI11)                       
+         NOP                                                        sq            VF02,9(VI01)                        
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF07,14(VI00)                       
+         NOP                                                        lq.xy         VF02,11(VI00)                       
+         NOP                                                        lq.xy         VF01,12(VI00)                       
+         NOP                                                        lq.xy         VF03,13(VI00)                       
+         mulaw.xy      ACC,VF07,VF00w                               NOP                                               
+         maddaw.xy     ACC,VF02,VF03w                               NOP                                               
+         maddax.xy     ACC,VF01,VF04x                               NOP                                               
+         maddz.xy      VF03,VF03,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF03,10(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF07,18(VI00)                       
+         NOP                                                        lq.xy         VF03,15(VI00)                       
+         NOP                                                        lq.xy         VF02,16(VI00)                       
+         NOP                                                        lq.xy         VF01,17(VI00)                       
+         mulaw.xy      ACC,VF07,VF00w                               NOP                                               
+         madday.xy     ACC,VF03,VF04y                               NOP                                               
+         maddaz.xy     ACC,VF02,VF04z                               NOP                                               
+         maddz.xy      VF04,VF01,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF04,11(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF03,22(VI00)                       
+         NOP                                                        lq.xy         VF02,19(VI00)                       
+         NOP                                                        lq.xy         VF01,20(VI00)                       
+         NOP                                                        lq.xy         VF04,21(VI00)                       
+         mulaw.xy      ACC,VF03,VF00w                               NOP                                               
+         maddaw.xy     ACC,VF02,VF04w                               NOP                                               
+         maddax.xy     ACC,VF01,VF05x                               NOP                                               
+         maddz.xy      VF04,VF04,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF04,12(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF04,26(VI00)                       
+         NOP                                                        lq.xy         VF03,23(VI00)                       
+         NOP                                                        lq.xy         VF02,24(VI00)                       
+         NOP                                                        lq.xy         VF01,25(VI00)                       
+         mulaw.xy      ACC,VF04,VF00w                               NOP                                               
+         madday.xy     ACC,VF03,VF05y                               NOP                                               
+         maddaz.xy     ACC,VF02,VF05z                               NOP                                               
+         maddz.xy      VF05,VF01,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF05,13(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF03,30(VI00)                       
+         NOP                                                        lq.xy         VF02,27(VI00)                       
+         NOP                                                        lq.xy         VF01,28(VI00)                       
+         NOP                                                        lq.xy         VF05,29(VI00)                       
+         mulaw.xy      ACC,VF03,VF00w                               NOP                                               
+         maddaw.xy     ACC,VF02,VF05w                               NOP                                               
+         maddax.xy     ACC,VF01,VF06x                               NOP                                               
+         maddz.xy      VF05,VF05,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF05,14(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF04,34(VI00)                       
+         NOP                                                        lq.xy         VF03,31(VI00)                       
+         NOP                                                        lq.xy         VF02,32(VI00)                       
+         NOP                                                        lq.xy         VF01,33(VI00)                       
+         mulaw.xy      ACC,VF04,VF00w                               NOP                                               
+         madday.xy     ACC,VF03,VF06y                               NOP                                               
+         maddaz.xy     ACC,VF02,VF06z                               NOP                                               
+         maddz.xy      VF06,VF01,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF06,15(VI01)                              ;	STALL_LATENCY ?3
+; [0,28) size=19 nU=2 nL=18 ic=20 [lin=19 lp=0] cycles?=28
+         NOP                                                        lq            VF01,-8(VI11)                       
+         max           VF05,VF01,VF01                               lq            VF02,-7(VI11)                              ;	STALL_LATENCY ?3
+         NOP                                                        lq            VF03,-6(VI11)                       
+         NOP                                                        lq.xyz        VF04,-5(VI11)                       
+         NOP                                                        iaddiu        VI11,VI00,0x000000ff                
+         NOP                                                        mtir          VI04,VF05x                          
+         NOP                                                        mtir          VI05,VF05y                          
+         NOP                                                        iand          VI04,VI04,VI11                      
+         NOP                                                        iand          VI05,VI05,VI11                      
+         NOP                                                        mfir.x        VF05,VI04                           
+         NOP                                                        mtir          VI04,VF05z                          
+         NOP                                                        iand          VI04,VI04,VI11                      
+         NOP                                                        mfir.y        VF05,VI05                           
+         NOP                                                        mtir          VI05,VF05w                          
+         NOP                                                        iand          VI11,VI05,VI11                      
+         NOP                                                        mfir.z        VF05,VI04                           
+         NOP                                                        mfir.w        VF05,VI11                           
+         itof0         VF05,VF05                                    NOP                                                      ;	STALL_LATENCY ?3
+         NOP                                                        sq            VF05,17(VI01)                              ;	STALL_LATENCY ?3
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF07,14(VI00)                       
+         NOP                                                        lq.xy         VF06,11(VI00)                       
+         NOP                                                        lq.xy         VF05,12(VI00)                       
+         NOP                                                        lq.xy         VF01,13(VI00)                       
+         mulaw.xy      ACC,VF07,VF00w                               NOP                                               
+         maddaw.xy     ACC,VF06,VF01w                               NOP                                               
+         maddax.xy     ACC,VF05,VF02x                               NOP                                               
+         maddz.xy      VF01,VF01,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF01,18(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF07,18(VI00)                       
+         NOP                                                        lq.xy         VF06,15(VI00)                       
+         NOP                                                        lq.xy         VF05,16(VI00)                       
+         NOP                                                        lq.xy         VF01,17(VI00)                       
+         mulaw.xy      ACC,VF07,VF00w                               NOP                                               
+         madday.xy     ACC,VF06,VF02y                               NOP                                               
+         maddaz.xy     ACC,VF05,VF02z                               NOP                                               
+         maddz.xy      VF02,VF01,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF02,19(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF06,22(VI00)                       
+         NOP                                                        lq.xy         VF05,19(VI00)                       
+         NOP                                                        lq.xy         VF01,20(VI00)                       
+         NOP                                                        lq.xy         VF02,21(VI00)                       
+         mulaw.xy      ACC,VF06,VF00w                               NOP                                               
+         maddaw.xy     ACC,VF05,VF02w                               NOP                                               
+         maddax.xy     ACC,VF01,VF03x                               NOP                                               
+         maddz.xy      VF02,VF02,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF02,20(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF06,26(VI00)                       
+         NOP                                                        lq.xy         VF05,23(VI00)                       
+         NOP                                                        lq.xy         VF02,24(VI00)                       
+         NOP                                                        lq.xy         VF01,25(VI00)                       
+         mulaw.xy      ACC,VF06,VF00w                               NOP                                               
+         madday.xy     ACC,VF05,VF03y                               NOP                                               
+         maddaz.xy     ACC,VF02,VF03z                               NOP                                               
+         maddz.xy      VF03,VF01,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF03,21(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF05,30(VI00)                       
+         NOP                                                        lq.xy         VF02,27(VI00)                       
+         NOP                                                        lq.xy         VF01,28(VI00)                       
+         NOP                                                        lq.xy         VF03,29(VI00)                       
+         mulaw.xy      ACC,VF05,VF00w                               NOP                                               
+         maddaw.xy     ACC,VF02,VF03w                               NOP                                               
+         maddax.xy     ACC,VF01,VF04x                               NOP                                               
+         maddz.xy      VF03,VF03,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF03,22(VI01)                              ;	STALL_LATENCY ?3
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,12) size=9 nU=4 nL=5 ic=9 [lin=12 lp=0] cycles?=12
+         NOP                                                        lq.xy         VF05,34(VI00)                       
+         NOP                                                        lq.xy         VF03,31(VI00)                       
+         NOP                                                        lq.xy         VF02,32(VI00)                       
+         NOP                                                        lq.xy         VF01,33(VI00)                       
+         mulaw.xy      ACC,VF05,VF00w                               NOP                                               
+         madday.xy     ACC,VF03,VF04y                               NOP                                               
+         maddaz.xy     ACC,VF02,VF04z                               NOP                                               
+         maddz.xy      VF04,VF01,VF00z                              NOP                                               
+         NOP                                                        sq.xy         VF04,23(VI01)                              ;	STALL_LATENCY ?3
+; [0,33) size=33 nU=4 nL=33 ic=37 [lin=33 lp=0] cycles?=33
+         NOP                                                        lq            VF07,0(VI01)                        
+         NOP                                                        lq            VF05,1(VI01)                        
+         NOP                                                        lq            VF06,2(VI01)                        
+         NOP                                                        lq            VF09,3(VI01)                        
+         NOP                                                        lq            VF08,4(VI01)                        
+         NOP                                                        sq            VF07,24(VI01)                       
+         NOP                                                        lq            VF07,5(VI01)                        
+         NOP                                                        sq            VF05,25(VI01)                       
+         NOP                                                        lq            VF05,6(VI01)                        
+         NOP                                                        sq            VF06,26(VI01)                       
+         NOP                                                        lq            VF06,7(VI01)                        
+         NOP                                                        sq            VF09,27(VI01)                       
+         NOP                                                        sq            VF08,28(VI01)                       
+         NOP                                                        iaddiu        VI05,VI01,0                         
+         NOP                                                        sq            VF07,29(VI01)                       
+         NOP                                                        mfir.x        VF07,VI01                           
+         NOP                                                        mfir.y        VF07,VI13                           
+         NOP                                                        sq            VF05,30(VI01)                       
+         NOP                                                        sq            VF06,31(VI01)                       
+         NOP                                                        iaddiu        VI04,VI00,0x00000003                
+         NOP                                                        iaddiu        VI06,VI13,0                         
+         NOP                                                        sqd.xy        VF07,(--VI03)                       
+         NOP                                                        lqi           VF05,(VI05++)                       
+         NOP                                                        lqi           VF06,(VI05++)                       
+         NOP                                                        lqi           VF07,(VI05++)                       
+         NOP                                                        lqi           VF08,(VI05++)                       
+         NOP                                                        lqi           VF09,(VI05++)                       
+         NOP                                                        lqi           VF10,(VI05++)                       
+         NOP                                                        lqi           VF11,(VI05++)                       
+         minix.x       VF01,VF00,VF00x                              iaddiu        VI07,VI00,0x00000800                
+         minix.x       VF02,VF00,VF00x                              iaddiu        VI08,VI00,0x00000020                
+         maxw.x        VF03,VF00,VF00w                              iaddiu        VI09,VI00,0                         
+         subw.x        VF04,VF00,VF00w                              lqi           VF12,(VI05++)                       
+ScissorLoop235:
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        isubiu        VI04,VI04,0x00000001                
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        bal           VI10,_ScissorInterpolation7         
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        ibgtz         VI04,ScissorLoop235                 
+         NOP                                                        NOP                                               
+; [1,8) size=6 nU=0 nL=6 ic=6 [lin=6 lp=0] cycles?=7
+         NOP                                                        lqi.xy        VF01,(VI03++)                       
+         NOP                                                        iaddiu        VI04,VI09,0                         
+         NOP                                                        isubiu        VI09,VI04,0x00000002                
+         NOP                                                        mtir          VI01,VF01x                                 ;	STALL_LATENCY ?1
+         NOP                                                        iblez         VI09,ScissorEnd                     
+         NOP                                                        mtir          VI10,VF01y                          
+; [0,32) size=32 nU=4 nL=32 ic=36 [lin=32 lp=0] cycles?=32
+         NOP                                                        lq            VF06,0(VI10)                        
+         NOP                                                        lq            VF07,1(VI10)                        
+         NOP                                                        lq            VF08,2(VI10)                        
+         NOP                                                        lq            VF09,3(VI10)                        
+         NOP                                                        lq            VF05,4(VI10)                        
+         NOP                                                        sq            VF06,0(VI06)                        
+         NOP                                                        lq            VF06,5(VI10)                        
+         NOP                                                        sq            VF07,1(VI06)                        
+         NOP                                                        lq            VF07,6(VI10)                        
+         NOP                                                        sq            VF08,2(VI06)                        
+         NOP                                                        lq            VF08,7(VI10)                        
+         NOP                                                        sq            VF09,3(VI06)                        
+         NOP                                                        iaddiu        VI05,VI10,0                         
+         NOP                                                        mfir.x        VF09,VI10                           
+         NOP                                                        mfir.y        VF09,VI01                           
+         NOP                                                        sq            VF05,4(VI06)                        
+         NOP                                                        sq            VF06,5(VI06)                        
+         NOP                                                        sq            VF07,6(VI06)                        
+         NOP                                                        sq            VF08,7(VI06)                        
+         NOP                                                        iaddiu        VI06,VI01,0                         
+         NOP                                                        sqd.xy        VF09,(--VI03)                       
+         NOP                                                        lqi           VF05,(VI05++)                       
+         NOP                                                        lqi           VF06,(VI05++)                       
+         NOP                                                        lqi           VF07,(VI05++)                       
+         NOP                                                        lqi           VF08,(VI05++)                       
+         NOP                                                        lqi           VF09,(VI05++)                       
+         NOP                                                        lqi           VF10,(VI05++)                       
+         NOP                                                        lqi           VF11,(VI05++)                       
+         minix.x       VF01,VF00,VF00x                              iaddiu        VI07,VI00,0x00000400                
+         minix.x       VF02,VF00,VF00x                              iaddiu        VI08,VI00,0x00000010                
+         maxw.x        VF03,VF00,VF00w                              iaddiu        VI09,VI00,0                         
+         maxw.x        VF04,VF00,VF00w                              lqi           VF12,(VI05++)                       
+ScissorLoop253:
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        isubiu        VI04,VI04,0x00000001                
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        bal           VI10,_ScissorInterpolation7         
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        ibgtz         VI04,ScissorLoop253                 
+         NOP                                                        NOP                                               
+; [1,8) size=6 nU=0 nL=6 ic=6 [lin=6 lp=0] cycles?=7
+         NOP                                                        lqi.xy        VF01,(VI03++)                       
+         NOP                                                        iaddiu        VI04,VI09,0                         
+         NOP                                                        isubiu        VI09,VI04,0x00000002                
+         NOP                                                        mtir          VI01,VF01x                                 ;	STALL_LATENCY ?1
+         NOP                                                        iblez         VI09,ScissorEnd                     
+         NOP                                                        mtir          VI10,VF01y                          
+; [0,32) size=32 nU=4 nL=32 ic=36 [lin=32 lp=0] cycles?=32
+         NOP                                                        lq            VF06,0(VI10)                        
+         NOP                                                        lq            VF07,1(VI10)                        
+         NOP                                                        lq            VF08,2(VI10)                        
+         NOP                                                        lq            VF09,3(VI10)                        
+         NOP                                                        lq            VF05,4(VI10)                        
+         NOP                                                        sq            VF06,0(VI06)                        
+         NOP                                                        lq            VF06,5(VI10)                        
+         NOP                                                        sq            VF07,1(VI06)                        
+         NOP                                                        lq            VF07,6(VI10)                        
+         NOP                                                        sq            VF08,2(VI06)                        
+         NOP                                                        lq            VF08,7(VI10)                        
+         NOP                                                        sq            VF09,3(VI06)                        
+         NOP                                                        iaddiu        VI05,VI10,0                         
+         NOP                                                        mfir.x        VF09,VI10                           
+         NOP                                                        mfir.y        VF09,VI01                           
+         NOP                                                        sq            VF05,4(VI06)                        
+         NOP                                                        sq            VF06,5(VI06)                        
+         NOP                                                        sq            VF07,6(VI06)                        
+         NOP                                                        sq            VF08,7(VI06)                        
+         NOP                                                        iaddiu        VI06,VI01,0                         
+         NOP                                                        sqd.xy        VF09,(--VI03)                       
+         NOP                                                        lqi           VF05,(VI05++)                       
+         NOP                                                        lqi           VF06,(VI05++)                       
+         NOP                                                        lqi           VF07,(VI05++)                       
+         NOP                                                        lqi           VF08,(VI05++)                       
+         NOP                                                        lqi           VF09,(VI05++)                       
+         NOP                                                        lqi           VF10,(VI05++)                       
+         NOP                                                        lqi           VF11,(VI05++)                       
+         maxw.x        VF01,VF00,VF00w                              iaddiu        VI07,VI00,0x00000080                
+         minix.x       VF02,VF00,VF00x                              iaddiu        VI08,VI00,0x00000002                
+         minix.x       VF03,VF00,VF00x                              iaddiu        VI09,VI00,0                         
+         subw.x        VF04,VF00,VF00w                              lqi           VF12,(VI05++)                       
+ScissorLoop270:
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        isubiu        VI04,VI04,0x00000001                
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        bal           VI10,_ScissorInterpolation7         
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        ibgtz         VI04,ScissorLoop270                 
+         NOP                                                        NOP                                               
+; [1,8) size=6 nU=0 nL=6 ic=6 [lin=6 lp=0] cycles?=7
+         NOP                                                        lqi.xy        VF01,(VI03++)                       
+         NOP                                                        iaddiu        VI04,VI09,0                         
+         NOP                                                        isubiu        VI09,VI04,0x00000002                
+         NOP                                                        mtir          VI01,VF01x                                 ;	STALL_LATENCY ?1
+         NOP                                                        iblez         VI09,ScissorEnd                     
+         NOP                                                        mtir          VI10,VF01y                          
+; [0,32) size=32 nU=4 nL=32 ic=36 [lin=32 lp=0] cycles?=32
+         NOP                                                        lq            VF06,0(VI10)                        
+         NOP                                                        lq            VF07,1(VI10)                        
+         NOP                                                        lq            VF08,2(VI10)                        
+         NOP                                                        lq            VF09,3(VI10)                        
+         NOP                                                        lq            VF05,4(VI10)                        
+         NOP                                                        sq            VF06,0(VI06)                        
+         NOP                                                        lq            VF06,5(VI10)                        
+         NOP                                                        sq            VF07,1(VI06)                        
+         NOP                                                        lq            VF07,6(VI10)                        
+         NOP                                                        sq            VF08,2(VI06)                        
+         NOP                                                        lq            VF08,7(VI10)                        
+         NOP                                                        sq            VF09,3(VI06)                        
+         NOP                                                        iaddiu        VI05,VI10,0                         
+         NOP                                                        mfir.x        VF09,VI10                           
+         NOP                                                        mfir.y        VF09,VI01                           
+         NOP                                                        sq            VF05,4(VI06)                        
+         NOP                                                        sq            VF06,5(VI06)                        
+         NOP                                                        sq            VF07,6(VI06)                        
+         NOP                                                        sq            VF08,7(VI06)                        
+         NOP                                                        iaddiu        VI06,VI01,0                         
+         NOP                                                        sqd.xy        VF09,(--VI03)                       
+         NOP                                                        lqi           VF05,(VI05++)                       
+         NOP                                                        lqi           VF06,(VI05++)                       
+         NOP                                                        lqi           VF07,(VI05++)                       
+         NOP                                                        lqi           VF08,(VI05++)                       
+         NOP                                                        lqi           VF09,(VI05++)                       
+         NOP                                                        lqi           VF10,(VI05++)                       
+         NOP                                                        lqi           VF11,(VI05++)                       
+         maxw.x        VF01,VF00,VF00w                              iaddiu        VI07,VI00,0x00000040                
+         minix.x       VF02,VF00,VF00x                              iaddiu        VI08,VI00,0x00000001                
+         minix.x       VF03,VF00,VF00x                              iaddiu        VI09,VI00,0                         
+         maxw.x        VF04,VF00,VF00w                              lqi           VF12,(VI05++)                       
+ScissorLoop288:
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        isubiu        VI04,VI04,0x00000001                
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        bal           VI10,_ScissorInterpolation7         
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        ibgtz         VI04,ScissorLoop288                 
+         NOP                                                        NOP                                               
+; [1,8) size=6 nU=0 nL=6 ic=6 [lin=6 lp=0] cycles?=7
+         NOP                                                        lqi.xy        VF01,(VI03++)                       
+         NOP                                                        iaddiu        VI04,VI09,0                         
+         NOP                                                        isubiu        VI09,VI04,0x00000002                
+         NOP                                                        mtir          VI01,VF01x                                 ;	STALL_LATENCY ?1
+         NOP                                                        iblez         VI09,ScissorEnd                     
+         NOP                                                        mtir          VI10,VF01y                          
+; [0,32) size=32 nU=4 nL=32 ic=36 [lin=32 lp=0] cycles?=32
+         NOP                                                        lq            VF06,0(VI10)                        
+         NOP                                                        lq            VF07,1(VI10)                        
+         NOP                                                        lq            VF08,2(VI10)                        
+         NOP                                                        lq            VF09,3(VI10)                        
+         NOP                                                        lq            VF05,4(VI10)                        
+         NOP                                                        sq            VF06,0(VI06)                        
+         NOP                                                        lq            VF06,5(VI10)                        
+         NOP                                                        sq            VF07,1(VI06)                        
+         NOP                                                        lq            VF07,6(VI10)                        
+         NOP                                                        sq            VF08,2(VI06)                        
+         NOP                                                        lq            VF08,7(VI10)                        
+         NOP                                                        sq            VF09,3(VI06)                        
+         NOP                                                        iaddiu        VI05,VI10,0                         
+         NOP                                                        mfir.x        VF09,VI10                           
+         NOP                                                        mfir.y        VF09,VI01                           
+         NOP                                                        sq            VF05,4(VI06)                        
+         NOP                                                        sq            VF06,5(VI06)                        
+         NOP                                                        sq            VF07,6(VI06)                        
+         NOP                                                        sq            VF08,7(VI06)                        
+         NOP                                                        iaddiu        VI06,VI01,0                         
+         NOP                                                        sqd.xy        VF09,(--VI03)                       
+         NOP                                                        lqi           VF05,(VI05++)                       
+         NOP                                                        lqi           VF06,(VI05++)                       
+         NOP                                                        lqi           VF07,(VI05++)                       
+         NOP                                                        lqi           VF08,(VI05++)                       
+         NOP                                                        lqi           VF09,(VI05++)                       
+         NOP                                                        lqi           VF10,(VI05++)                       
+         NOP                                                        lqi           VF11,(VI05++)                       
+         minix.x       VF01,VF00,VF00x                              iaddiu        VI07,VI00,0x00000200                
+         maxw.x        VF02,VF00,VF00w                              iaddiu        VI08,VI00,0x00000008                
+         minix.x       VF03,VF00,VF00x                              iaddiu        VI09,VI00,0                         
+         subw.x        VF04,VF00,VF00w                              lqi           VF12,(VI05++)                       
+ScissorLoop305:
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        isubiu        VI04,VI04,0x00000001                
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        bal           VI10,_ScissorInterpolation7         
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        ibgtz         VI04,ScissorLoop305                 
+         NOP                                                        NOP                                               
+; [1,8) size=6 nU=0 nL=6 ic=6 [lin=6 lp=0] cycles?=7
+         NOP                                                        lqi.xy        VF01,(VI03++)                       
+         NOP                                                        iaddiu        VI04,VI09,0                         
+         NOP                                                        isubiu        VI09,VI04,0x00000002                
+         NOP                                                        mtir          VI01,VF01x                                 ;	STALL_LATENCY ?1
+         NOP                                                        iblez         VI09,ScissorEnd                     
+         NOP                                                        mtir          VI10,VF01y                          
+; [0,32) size=32 nU=4 nL=32 ic=36 [lin=32 lp=0] cycles?=32
+         NOP                                                        lq            VF06,0(VI10)                        
+         NOP                                                        lq            VF07,1(VI10)                        
+         NOP                                                        lq            VF08,2(VI10)                        
+         NOP                                                        lq            VF09,3(VI10)                        
+         NOP                                                        lq            VF05,4(VI10)                        
+         NOP                                                        sq            VF06,0(VI06)                        
+         NOP                                                        lq            VF06,5(VI10)                        
+         NOP                                                        sq            VF07,1(VI06)                        
+         NOP                                                        lq            VF07,6(VI10)                        
+         NOP                                                        sq            VF08,2(VI06)                        
+         NOP                                                        lq            VF08,7(VI10)                        
+         NOP                                                        sq            VF09,3(VI06)                        
+         NOP                                                        iaddiu        VI05,VI10,0                         
+         NOP                                                        mfir.x        VF09,VI10                           
+         NOP                                                        mfir.y        VF09,VI01                           
+         NOP                                                        sq            VF05,4(VI06)                        
+         NOP                                                        sq            VF06,5(VI06)                        
+         NOP                                                        sq            VF07,6(VI06)                        
+         NOP                                                        sq            VF08,7(VI06)                        
+         NOP                                                        iaddiu        VI06,VI01,0                         
+         NOP                                                        sqd.xy        VF09,(--VI03)                       
+         NOP                                                        lqi           VF05,(VI05++)                       
+         NOP                                                        lqi           VF06,(VI05++)                       
+         NOP                                                        lqi           VF07,(VI05++)                       
+         NOP                                                        lqi           VF08,(VI05++)                       
+         NOP                                                        lqi           VF09,(VI05++)                       
+         NOP                                                        lqi           VF10,(VI05++)                       
+         NOP                                                        lqi           VF11,(VI05++)                       
+         minix.x       VF01,VF00,VF00x                              iaddiu        VI07,VI00,0x00000100                
+         maxw.x        VF02,VF00,VF00w                              iaddiu        VI08,VI00,0x00000004                
+         minix.x       VF03,VF00,VF00x                              iaddiu        VI09,VI00,0                         
+         maxw.x        VF04,VF00,VF00w                              lqi           VF12,(VI05++)                       
+ScissorLoop323:
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        isubiu        VI04,VI04,0x00000001                
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        bal           VI10,_ScissorInterpolation7         
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        ibgtz         VI04,ScissorLoop323                 
+         NOP                                                        NOP                                               
+; [1,8) size=6 nU=0 nL=6 ic=6 [lin=6 lp=0] cycles?=7
+         NOP                                                        lqi.xy        VF01,(VI03++)                       
+         NOP                                                        iaddiu        VI01,VI09,0                         
+         NOP                                                        isubiu        VI09,VI01,0x00000002                
+         NOP                                                        mtir          VI04,VF01x                                 ;	STALL_LATENCY ?1
+         NOP                                                        iblez         VI09,ScissorEnd                     
+         NOP                                                        mtir          VI05,VF01y                          
+; [0,17) size=17 nU=2 nL=17 ic=19 [lin=17 lp=0] cycles?=17
+         NOP                                                        iaddiu        VI06,VI00,0x00007fff                
+         NOP                                                        iaddiu        VI08,VI00,0x00000001                
+         max.zw        VF02,VF00,VF00                               loi           0x10000000                          
+         maxi.y        VF02,VF00,I                                  iaddiu        VI07,VI00,0x0000005d                
+         NOP                                                        mfir.x        VF02,VI08                           
+         NOP                                                        iaddiu        VI06,VI06,0x00000001                
+         NOP                                                        isw.x         VI07,1(VI04)                        
+         NOP                                                        lq            VF01,1(VI00)                        
+         NOP                                                        sq            VF02,0(VI04)                        
+         NOP                                                        lq            VF02,2(VI00)                        
+         NOP                                                        lq.xyz        VF03,7(VI00)                        
+         NOP                                                        lq.xyz        VF04,8(VI00)                        
+         NOP                                                        lq.xyz        VF05,9(VI00)                        
+         NOP                                                        lq.xyz        VF06,10(VI00)                       
+         NOP                                                        iaddiu        VI07,VI00,0x00000023                
+         NOP                                                        iaddiu        VI08,VI00,0                         
+         NOP                                                        iaddiu        VI09,VI00,0x00000006                
+FanPassLoop:
+; [0,5) size=5 nU=0 nL=5 ic=5 [lin=5 lp=0] cycles?=5
+         NOP                                                        iaddiu        VI10,VI04,0x00000002                
+         NOP                                                        mtir          VI11,VF01x                          
+         NOP                                                        mr32.xyz      VF01,VF01                           
+         NOP                                                        mr32.w        VF01,VF02                           
+         NOP                                                        mr32.xyz      VF02,VF02                           
+CopyDataLoop343:
+; [0,5) size=5 nU=0 nL=4 ic=4 [lin=5 lp=4] cycles?=5
+         NOP                                                        lqi           VF07,(VI07++)                       
+         NOP                                                        isubiu        VI11,VI11,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI11,VI00,CopyDataLoop343           
+         NOP                                                        sqi           VF07,(VI10++)                       
+; [0,10) size=10 nU=0 nL=10 ic=10 [lin=10 lp=0] cycles?=10
+         NOP                                                        ilw.x         VI12,2(VI04)                        
+         NOP                                                        isubiu        VI11,VI10,0x00000001                
+         NOP                                                        iaddiu        VI10,VI06,0x00000001                
+         NOP                                                        lq.yzw        VF07,0(VI11)                        
+         NOP                                                        mfir.x        VF07,VI10                           
+         NOP                                                        iadd          VI10,VI12,VI06                      
+         NOP                                                        iaddiu        VI12,VI11,0x00000004                
+         NOP                                                        isw.x         VI10,2(VI04)                        
+         NOP                                                        sq            VF07,0(VI11)                        
+         NOP                                                        sq            VF07,0(VI12)                        
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,3) size=3 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=3
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+; [0,27) size=16 nU=9 nL=13 ic=22 [lin=27 lp=0] cycles?=27
+         NOP                                                        iaddiu        VI10,VI05,0                         
+         NOP                                                        lq            VF07,0(VI10)                        
+         minix.w       VF07,VF00,VF00x                              div           Q,VF00w,VF07w                              ;	STALL_LATENCY ?3
+         NOP                                                        waitq                                                    ;	STALL_LATENCY ?6
+         mulq.xyz      VF07,VF07,Q                                  iaddiu        VI13,VI10,0x00000002                
+         NOP                                                        iadd          VI13,VI13,VI08                      
+         addax.xyz     ACC,VF06,VF00x                               lq            VF09,1(VI10)                        
+         maddax.xyz    ACC,VF03,VF07x                               mr32.z        VF08,VF00                                  ;	STALL_LATENCY ?1
+         madday.xyz    ACC,VF04,VF07y                               lq.xy         VF08,0(VI13)                        
+         maddz.xyz     VF07,VF05,VF07z                              xgkick        VI04                                
+         ftoi0         VF09,VF09                                    NOP                                               
+         mulq.xyz      VF08,VF08,Q                                  NOP                                                      ;	STALL_LATENCY ?1
+         ftoi4.xyz     VF07,VF07                                    NOP                                               
+         NOP                                                        sq            VF09,2(VI11)                        
+         NOP                                                        sq.xyz        VF08,1(VI11)                               ;	STALL_LATENCY ?1
+         NOP                                                        sq            VF07,3(VI11)                        
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,3) size=3 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=3
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+; [0,27) size=15 nU=9 nL=12 ic=21 [lin=27 lp=0] cycles?=27
+         NOP                                                        iaddiu        VI14,VI10,0x00000008                
+         NOP                                                        lq            VF07,0(VI14)                        
+         minix.w       VF07,VF00,VF00x                              div           Q,VF00w,VF07w                              ;	STALL_LATENCY ?3
+         NOP                                                        lq            VF08,1(VI14)                        
+         NOP                                                        waitq                                                    ;	STALL_LATENCY ?5
+         mulq.xyz      VF07,VF07,Q                                  xgkick        VI11                                
+         ftoi0         VF09,VF08                                    NOP                                               
+         addax.xyz     ACC,VF06,VF00x                               iaddiu        VI15,VI13,0x00000008                
+         maddax.xyz    ACC,VF03,VF07x                               mr32.z        VF08,VF00                                  ;	STALL_LATENCY ?1
+         madday.xyz    ACC,VF04,VF07y                               lq.xy         VF08,0(VI15)                        
+         maddz.xyz     VF07,VF05,VF07z                              sq            VF09,2(VI12)                        
+         mulq.xyz      VF08,VF08,Q                                  NOP                                                      ;	STALL_LATENCY ?2
+         ftoi4.xyz     VF07,VF07                                    NOP                                               
+         NOP                                                        sq.xyz        VF08,1(VI12)                               ;	STALL_LATENCY ?2
+         NOP                                                        sq            VF07,3(VI12)                        
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,3) size=3 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=3
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=2 ic=2 [lin=2 lp=0] cycles?=2
+         NOP                                                        xgkick        VI12                                
+         NOP                                                        isubiu        VI10,VI01,0x00000002                
+FanLoop:
+; [1,27) size=13 nU=9 nL=11 ic=20 [lin=26 lp=0] cycles?=26
+         addax.xyz     ACC,VF06,VF00x                               lq            VF07,8(VI14)                        
+         minix.w       VF07,VF00,VF00x                              div           Q,VF00w,VF07w                              ;	STALL_LATENCY ?3
+         NOP                                                        lq            VF08,9(VI14)                        
+         NOP                                                        waitq                                                    ;	STALL_LATENCY ?5
+         mulq.xyz      VF07,VF07,Q                                  iaddiu        VI15,VI15,0x00000008                
+         ftoi0         VF09,VF08                                    NOP                                               
+         maddax.xyz    ACC,VF03,VF07x                               mr32.z        VF08,VF00                                  ;	STALL_LATENCY ?2
+         madday.xyz    ACC,VF04,VF07y                               lq.xy         VF08,0(VI15)                        
+         maddz.xyz     VF07,VF05,VF07z                              sq            VF09,2(VI11)                        
+         mulq.xyz      VF08,VF08,Q                                  NOP                                                      ;	STALL_LATENCY ?2
+         ftoi4.xyz     VF07,VF07                                    iaddiu        VI14,VI14,0x00000008                
+         NOP                                                        sq.xyz        VF08,1(VI11)                               ;	STALL_LATENCY ?2
+         NOP                                                        sq            VF07,3(VI11)                        
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,3) size=3 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=3
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+; [1,7) size=6 nU=0 nL=6 ic=6 [lin=6 lp=0] cycles?=6
+         NOP                                                        iadd          VI13,VI00,VI12                      
+         NOP                                                        isubiu        VI10,VI10,0x00000001                
+         NOP                                                        xgkick        VI11                                
+         NOP                                                        iadd          VI12,VI00,VI11                      
+         NOP                                                        ibgtz         VI10,FanLoop                        
+         NOP                                                        iadd          VI11,VI00,VI13                      
+; [0,4) size=4 nU=0 nL=2 ic=2 [lin=4 lp=0] cycles?=4
+         NOP                                                        iaddiu        VI08,VI08,0x00000001                
+         NOP                                                        NOP                                               
+         NOP                                                        ibne          VI08,VI09,FanPassLoop               
+         NOP                                                        NOP                                               
+; [0,4) size=4 nU=0 nL=4 ic=4 [lin=4 lp=0] cycles?=4
+         NOP                                                        iaddiu        VI01,VI00,0x0000005c                
+         NOP                                                        iaddiu        VI06,VI06,0x00000001                
+         NOP                                                        isw.x         VI01,1(VI04)                        
+         NOP                                                        isw.x         VI06,0(VI04)                        
+; [0,0) size=0 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=0
+; [0,3) size=3 nU=0 nL=0 ic=0 [lin=0 lp=0] cycles?=3
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=2 ic=2 [lin=2 lp=0] cycles?=2
+         NOP                                                        xgkick        VI04                                
+         NOP                                                        xgkick        VI00                                
+ScissorEnd:
+; [1,32) size=31 nU=0 nL=31 ic=31 [lin=31 lp=0] cycles?=31
+         NOP                                                        lqi           VF02,(VI03++)                       
+         NOP                                                        lqi           VF01,(VI03++)                       
+         NOP                                                        lqi           VF00,(VI03++)                       
+         NOP                                                        lqi.xyz       VF17,(VI03++)                       
+         NOP                                                        lqi.xyz       VF16,(VI03++)                       
+         NOP                                                        lqi.xyz       VF15,(VI03++)                       
+         NOP                                                        lqi.xyz       VF14,(VI03++)                       
+         NOP                                                        lqi.xyz       VF13,(VI03++)                       
+         NOP                                                        lqi.xyz       VF12,(VI03++)                       
+         NOP                                                        lqi           VF18,(VI03++)                       
+         NOP                                                        lqi           VF20,(VI03++)                       
+         NOP                                                        lqi           VF10,(VI03++)                       
+         NOP                                                        lqi.xy        VF09,(VI03++)                       
+         NOP                                                        lqi.xyz       VF03,(VI03++)                       
+         NOP                                                        lq.xyz        VF08,7(VI00)                        
+         NOP                                                        mtir          VI10,VF10x                          
+         NOP                                                        mtir          VI09,VF10y                          
+         NOP                                                        mtir          VI08,VF10z                          
+         NOP                                                        mtir          VI07,VF10w                          
+         NOP                                                        mtir          VI06,VF09x                          
+         NOP                                                        mtir          VI05,VF09y                          
+         NOP                                                        lq.xyz        VF09,8(VI00)                        
+         NOP                                                        lq.xyz        VF10,9(VI00)                        
+         NOP                                                        iaddiu        VI04,VI00,0x00007fff                
+         NOP                                                        iaddiu        VI01,VI04,0x00000001                
+         NOP                                                        lq.xyz        VF11,10(VI00)                       
+         NOP                                                        mtir          VI04,VF03x                          
+         NOP                                                        mtir          VI11,VF03y                          
+         NOP                                                        mtir          VI12,VF03z                          
+         NOP                                                        b             KickUnscissoredTriangle             
+         NOP                                                        mfir.w        VF03,VI01                           
+_ScissorInterpolation7:
+; [1,15) size=13 nU=8 nL=13 ic=21 [lin=14 lp=0] cycles?=14
+         max           VF13,VF05,VF05                               lqi           VF05,(VI05++)                       
+         NOP                                                        move          VF14,VF06                           
+         max           VF15,VF07,VF07                               move          VF16,VF08                           
+         clipw.xyz     VF13xyz,VF13w                                lqi           VF06,(VI05++)                              ;	STALL_LATENCY ?1
+         clipw.xyz     VF05xyz,VF05w                                lqi           VF07,(VI05++)                       
+         NOP                                                        lqi           VF08,(VI05++)                       
+         max           VF17,VF09,VF09                               lqi           VF09,(VI05++)                       
+         max           VF18,VF10,VF10                               lqi           VF10,(VI05++)                       
+         NOP                                                        fcget         VI01                                
+         NOP                                                        iand          VI11,VI01,VI07                      
+         max           VF19,VF11,VF11                               lqi           VF11,(VI05++)                       
+         NOP                                                        ibeq          VI11,VI00,CurrInside412             
+         max           VF20,VF12,VF12                               lqi           VF12,(VI05++)                       
+; [0,4) size=4 nU=0 nL=2 ic=2 [lin=4 lp=0] cycles?=4
+         NOP                                                        iand          VI01,VI01,VI08                      
+         NOP                                                        NOP                                               
+         NOP                                                        ibeq          VI01,VI00,CONextIn412               
+         NOP                                                        NOP                                               
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        b             ScissorInterpolationEnd412          
+         NOP                                                        NOP                                               
+CONextIn412:
+; [1,58) size=42 nU=37 nL=12 ic=49 [lin=49 lp=0] cycles?=57
+         mulx.w        VF23,VF13,VF04x                              NOP                                               
+         mulx.w        VF24,VF05,VF04x                              NOP                                               
+         subw.xyz      VF26,VF13,VF23w                              NOP                                                      ;	STALL_LATENCY ?2
+         subw.xyz      VF25,VF05,VF24w                              NOP                                               
+         mulax.x       ACC,VF01,VF26x                               NOP                                                      ;	STALL_LATENCY ?2
+         madday.x      ACC,VF02,VF26y                               NOP                                               
+         maddz.x       VF29,VF03,VF26z                              NOP                                               
+         mulax.x       ACC,VF01,VF25x                               NOP                                               
+         madday.x      ACC,VF02,VF25y                               NOP                                               
+         maddz.x       VF25,VF03,VF25z                              NOP                                               
+         sub.x         VF30,VF25,VF29                               NOP                                                      ;	STALL_LATENCY ?3
+         sub           VF22,VF05,VF13                               div           Q,VF29x,VF30x                              ;	STALL_LATENCY ?3
+         sub           VF21,VF06,VF14                               NOP                                               
+         addq.x        VF29,VF00,Q                                  waitq                                                    ;	STALL_LATENCY ?5
+         sub           VF24,VF07,VF15                               NOP                                               
+         sub           VF23,VF08,VF16                               NOP                                               
+         sub           VF28,VF09,VF17                               NOP                                               
+         abs.x         VF29,VF29                                    NOP                                               
+         sub           VF27,VF10,VF18                               NOP                                               
+         sub           VF26,VF11,VF19                               NOP                                               
+         sub           VF25,VF12,VF20                               NOP                                               
+         mulx          VF31,VF22,VF29x                              NOP                                               
+         mulx          VF30,VF21,VF29x                              NOP                                               
+         mulx          VF24,VF24,VF29x                              NOP                                               
+         mulx          VF22,VF23,VF29x                              NOP                                               
+         mulx          VF21,VF28,VF29x                              NOP                                               
+         add           VF28,VF31,VF13                               NOP                                               
+         mulx          VF13,VF27,VF29x                              NOP                                               
+         add           VF23,VF30,VF14                               NOP                                               
+         mulx          VF14,VF26,VF29x                              NOP                                               
+         add           VF24,VF24,VF15                               NOP                                               
+         mulx          VF15,VF25,VF29x                              NOP                                               
+         add           VF16,VF22,VF16                               iaddiu        VI09,VI09,0x00000001                
+         add           VF17,VF21,VF17                               sqi           VF28,(VI06++)                       
+         add           VF18,VF13,VF18                               sqi           VF23,(VI06++)                       
+         add           VF19,VF14,VF19                               sqi           VF24,(VI06++)                       
+         NOP                                                        sqi           VF16,(VI06++)                       
+         add           VF20,VF15,VF20                               sqi           VF17,(VI06++)                       
+         NOP                                                        sqi           VF18,(VI06++)                       
+         NOP                                                        sqi           VF19,(VI06++)                       
+         NOP                                                        b             ScissorInterpolationEnd412          
+         NOP                                                        sqi           VF20,(VI06++)                       
+CurrInside412:
+; [1,11) size=10 nU=0 nL=10 ic=10 [lin=10 lp=0] cycles?=10
+         NOP                                                        sqi           VF13,(VI06++)                       
+         NOP                                                        iand          VI01,VI01,VI08                      
+         NOP                                                        sqi           VF14,(VI06++)                       
+         NOP                                                        sqi           VF15,(VI06++)                       
+         NOP                                                        sqi           VF16,(VI06++)                       
+         NOP                                                        sqi           VF17,(VI06++)                       
+         NOP                                                        sqi           VF18,(VI06++)                       
+         NOP                                                        sqi           VF19,(VI06++)                       
+         NOP                                                        ibeq          VI01,VI00,CINextIn412               
+         NOP                                                        sqi           VF20,(VI06++)                       
+; [1,58) size=42 nU=37 nL=12 ic=49 [lin=49 lp=0] cycles?=57
+         mulx.w        VF02,VF05,VF04x                              NOP                                               
+         mulx.w        VF01,VF13,VF04x                              NOP                                               
+         subw.xyz      VF23,VF05,VF02w                              NOP                                                      ;	STALL_LATENCY ?2
+         sub           VF21,VF13,VF05                               NOP                                               
+         subw.xyz      VF22,VF13,VF01w                              NOP                                               
+         mulax.x       ACC,VF01,VF23x                               NOP                                                      ;	STALL_LATENCY ?1
+         madday.x      ACC,VF02,VF23y                               NOP                                               
+         maddz.x       VF13,VF03,VF23z                              NOP                                               
+         mulax.x       ACC,VF01,VF22x                               NOP                                               
+         madday.x      ACC,VF02,VF22y                               NOP                                               
+         maddz.x       VF22,VF03,VF22z                              NOP                                               
+         sub.x         VF22,VF22,VF13                               NOP                                                      ;	STALL_LATENCY ?3
+         sub           VF14,VF14,VF06                               div           Q,VF13x,VF22x                              ;	STALL_LATENCY ?3
+         addq.x        VF13,VF00,Q                                  waitq                                                    ;	STALL_LATENCY ?6
+         sub           VF15,VF15,VF07                               NOP                                               
+         sub           VF16,VF16,VF08                               NOP                                               
+         sub           VF17,VF17,VF09                               NOP                                               
+         abs.x         VF13,VF13                                    NOP                                               
+         sub           VF18,VF18,VF10                               NOP                                               
+         sub           VF19,VF19,VF11                               NOP                                               
+         sub           VF20,VF20,VF12                               NOP                                               
+         mulx          VF21,VF21,VF13x                              NOP                                               
+         mulx          VF14,VF14,VF13x                              NOP                                               
+         mulx          VF15,VF15,VF13x                              NOP                                               
+         mulx          VF16,VF16,VF13x                              NOP                                               
+         mulx          VF17,VF17,VF13x                              NOP                                               
+         add           VF21,VF21,VF05                               NOP                                               
+         mulx          VF18,VF18,VF13x                              NOP                                               
+         add           VF14,VF14,VF06                               NOP                                               
+         mulx          VF19,VF19,VF13x                              NOP                                               
+         add           VF15,VF15,VF07                               NOP                                               
+         mulx          VF20,VF20,VF13x                              NOP                                               
+         add           VF16,VF16,VF08                               iaddiu        VI09,VI09,0x00000002                
+         add           VF17,VF17,VF09                               sqi           VF21,(VI06++)                       
+         add           VF18,VF18,VF10                               sqi           VF14,(VI06++)                       
+         add           VF19,VF19,VF11                               sqi           VF15,(VI06++)                       
+         NOP                                                        sqi           VF16,(VI06++)                       
+         add           VF20,VF20,VF12                               sqi           VF17,(VI06++)                       
+         NOP                                                        sqi           VF18,(VI06++)                       
+         NOP                                                        sqi           VF19,(VI06++)                       
+         NOP                                                        b             ScissorInterpolationEnd412          
+         NOP                                                        sqi           VF20,(VI06++)                       
+CINextIn412:
+; [0,1) size=1 nU=0 nL=1 ic=1 [lin=1 lp=0] cycles?=1
+         NOP                                                        iaddiu        VI09,VI09,0x00000001                
+ScissorInterpolationEnd412:
+; [0,2) size=2 nU=0 nL=1 ic=1 [lin=2 lp=0] cycles?=2
+         NOP                                                        jr            VI10                                
+         NOP                                                        NOP                                               
+		.align 4
+VUStripBuffer6x2CD_CodeEnd:
+EndVUStripBuffer6x2CD:
+	.EndMPG
+	.EndDmaData
+VUStripBuffer6x2CD_DmaEnd:
+;	iCount=961
+; register stats:
+;  15 VU User integer registers
+;  31 VU User floating point registers

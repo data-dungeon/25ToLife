@@ -1,0 +1,1077 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: libjpeg - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPAC.tmp" with contents
+[
+/nologo /G5 /MDd /W3 /GX /Z7 /Od /I "." /I "..\..\..\otherlib\libjpeg" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /FR"..\..\..\obj\Debug/" /Fp"..\..\..\obj\Debug/libjpeg.pch" /YX /Fo"..\..\..\obj\Debug/" /c 
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcapimin.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcapistd.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jccoefct.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jccolor.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcdctmgr.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jchuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcinit.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcmainct.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcmarker.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcmaster.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jcomapi.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcparam.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcphuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcprepct.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcsample.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jctrans.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdapimin.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdapistd.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdatadst.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdatasrc.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdcoefct.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdcolor.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jddctmgr.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdhuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdinput.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmainct.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmarker.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmaster.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmerge.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdphuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdpostct.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdsample.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdtrans.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jerror.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jfdctflt.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctflt.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctfst.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctint.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctred.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jmemmgr.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jmemnobs.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jquant1.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jquant2.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jutils.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPAC.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPAE.tmp" with contents
+[
+/nologo /out:"..\..\..\lib\Debug\libjpeg.lib" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcapimin.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcapistd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jccoefct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jccolor.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcdctmgr.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jchuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcinit.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcmainct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcmarker.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcmaster.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jcomapi.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcparam.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcphuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcprepct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jcsample.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jctrans.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdapimin.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdapistd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdatadst.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdatasrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdcoefct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdcolor.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jddctmgr.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdhuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdinput.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdmainct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdmarker.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdmaster.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdmerge.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdphuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdpostct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdsample.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jdtrans.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jerror.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\Jfdctflt.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jidctflt.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jidctfst.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jidctint.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jidctred.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jmemmgr.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jmemnobs.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jquant1.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jquant2.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jutils.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPAE.tmp"
+<h3>Output Window</h3>
+Compiling...
+Jcapimin.c
+Jcapistd.c
+Jccoefct.c
+Jccolor.c
+Jcdctmgr.c
+E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcdctmgr.c(60) : warning C4101: 'dtbl' : unreferenced local variable
+Jchuff.c
+Jcinit.c
+Jcmainct.c
+Jcmarker.c
+Jcmaster.c
+jcomapi.c
+Jcparam.c
+Jcphuff.c
+Jcprepct.c
+Jcsample.c
+Jctrans.c
+jdapimin.c
+jdapistd.c
+jdatadst.c
+jdatasrc.c
+jdcoefct.c
+jdcolor.c
+jddctmgr.c
+jdhuff.c
+jdinput.c
+jdmainct.c
+jdmarker.c
+jdmaster.c
+jdmerge.c
+jdphuff.c
+jdpostct.c
+jdsample.c
+jdtrans.c
+jerror.c
+Jfdctflt.c
+jidctflt.c
+jidctfst.c
+jidctint.c
+jidctred.c
+jmemmgr.c
+jmemnobs.c
+jquant1.c
+jquant2.c
+jutils.c
+Creating library...
+<h3>
+--------------------Configuration: paintlib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB0.tmp" with contents
+[
+/nologo /G5 /MDd /W3 /Gi /GR /GX /ZI /Od /I "." /I "..\..\common" /I "..\..\common\filter" /I "..\libtiff" /I "..\..\..\otherlib\libtiff\libtiff" /I "..\libjpeg" /I "..\..\..\otherlib\libjpeg" /I "..\..\..\otherlib\libpng" /I "..\..\..\otherlib\zlib" /I "..\..\..\otherlib\libungif\lib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"..\..\..\obj\Debug/" /Fp"..\..\..\obj\Debug/paintlib.pch" /Yu"plstdpch.h" /Fo"..\..\..\obj\Debug/" /Fd"..\..\..\obj\Debug/" /Yd /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\jmemdest.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\jmemsrc.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\planydec.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\pljpegdec.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\pljpegenc.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\plpictdec.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB0.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB1.tmp" with contents
+[
+/nologo /G5 /MDd /W3 /Gi /GR /GX /ZI /Od /I "." /I "..\..\common" /I "..\..\common\filter" /I "..\libtiff" /I "..\..\..\otherlib\libtiff\libtiff" /I "..\libjpeg" /I "..\..\..\otherlib\libjpeg" /I "..\..\..\otherlib\libpng" /I "..\..\..\otherlib\zlib" /I "..\..\..\otherlib\libungif\lib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"..\..\..\obj\Debug/" /Fo"..\..\..\obj\Debug/" /Fd"..\..\..\obj\Debug/" /Yd /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\Common\tif_msrc.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB1.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB2.tmp" with contents
+[
+/nologo /out:"..\..\..\lib\Debug\paintlib.lib" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilter.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterContrast.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterCrop.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterFill.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterFlip.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterGetAlpha.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterGrayscale.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterIntensity.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterLightness.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterMirror.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterQuantize.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterResize.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterResizeBilinear.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterResizeBox.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterResizeGaussian.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterResizeHamming.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLFilterThreshold.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plfiltervideoinvert.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plhsvconvert.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plddhelper.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plddrawbmp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pldibsect.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plressrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plStreamSink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plwemfdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plwinbmp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jmemdest.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\jmemsrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\planybmp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\planydec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plbitmap.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plbmpdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plbmpenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pldatasink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pldatasrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plexcept.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plfilesink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plfilesrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plgifdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pljpegdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pljpegenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plmemsink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plmemsrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\PLObject.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpcxdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpgmdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpicdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpicenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpictdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpngdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpngenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plppmdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plpsddec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\plstdpch.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pltgadec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pltiffdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pltiffdecex.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pltiffenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pltiffencex.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pltrace.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\tif_msrc.obj
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB2.tmp"
+<h3>Output Window</h3>
+Compiling...
+jmemdest.cpp
+jmemsrc.cpp
+planydec.cpp
+pljpegdec.cpp
+pljpegenc.cpp
+plpictdec.cpp
+Generating Code...
+Compiling...
+tif_msrc.c
+Creating library...
+<h3>
+--------------------Configuration: PaintX - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB5.bat" with contents
+[
+@echo off
+midl /Oicf /h "PaintX.h" /iid "PaintX_i.c" "PaintX.idl"
+]
+Creating command line "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPB5.bat"
+Creating command line "rc.exe /l 0x407 /fo"..\..\..\obj\Debug\paintX/PaintX.res" /d "_DEBUG" /d "_AFXDLL" "E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PaintX.rc"" 
+Performing MIDL step
+Microsoft (R) 32b/64b MIDL Compiler Version 6.00.0347 
+Copyright (c) Microsoft Corp 1991-2000. All rights reserved.
+Processing .\PaintX.idl
+PaintX.idl
+Processing D:\Microsoft SDK\include\oaidl.idl
+oaidl.idl
+Processing D:\Microsoft SDK\include\objidl.idl
+objidl.idl
+Processing D:\Microsoft SDK\include\unknwn.idl
+unknwn.idl
+Processing D:\Microsoft SDK\include\wtypes.idl
+wtypes.idl
+Processing D:\Microsoft SDK\include\basetsd.h
+basetsd.h
+Processing D:\Microsoft SDK\include\guiddef.h
+guiddef.h
+Processing D:\Microsoft SDK\include\ocidl.idl
+ocidl.idl
+Processing D:\Microsoft SDK\include\oleidl.idl
+oleidl.idl
+Processing D:\Microsoft SDK\include\servprov.idl
+servprov.idl
+Processing D:\Microsoft SDK\include\urlmon.idl
+urlmon.idl
+Processing D:\Microsoft SDK\include\msxml.idl
+msxml.idl
+Processing D:\Microsoft SDK\include\oaidl.acf
+oaidl.acf
+Processing D:\Microsoft SDK\include\ocidl.acf
+ocidl.acf
+64 bit Processing .\PaintX.idl
+PaintX.idl
+64 bit Processing D:\Microsoft SDK\include\oaidl.idl
+oaidl.idl
+64 bit Processing D:\Microsoft SDK\include\objidl.idl
+objidl.idl
+64 bit Processing D:\Microsoft SDK\include\unknwn.idl
+unknwn.idl
+64 bit Processing D:\Microsoft SDK\include\wtypes.idl
+wtypes.idl
+64 bit Processing D:\Microsoft SDK\include\basetsd.h
+basetsd.h
+64 bit Processing D:\Microsoft SDK\include\guiddef.h
+guiddef.h
+64 bit Processing D:\Microsoft SDK\include\ocidl.idl
+ocidl.idl
+64 bit Processing D:\Microsoft SDK\include\oleidl.idl
+oleidl.idl
+64 bit Processing D:\Microsoft SDK\include\servprov.idl
+servprov.idl
+64 bit Processing D:\Microsoft SDK\include\urlmon.idl
+urlmon.idl
+64 bit Processing D:\Microsoft SDK\include\msxml.idl
+msxml.idl
+64 bit Processing D:\Microsoft SDK\include\oaidl.acf
+oaidl.acf
+64 bit Processing D:\Microsoft SDK\include\ocidl.acf
+ocidl.acf
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD3.tmp" with contents
+[
+/nologo /G5 /MDd /W3 /Gm /GX /ZI /Od /I "..\..\common" /I "..\paintlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_USRDLL" /FR"..\..\..\obj\Debug\paintX/" /Fp"..\..\..\obj\Debug\paintX/PaintX.pch" /YX /Fo"..\..\..\obj\Debug\paintX/" /Fd"..\..\..\obj\Debug\paintX/" /FD /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PaintX.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PictureDecoder.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD3.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD4.tmp" with contents
+[
+/nologo /G5 /MDd /W3 /Gm /GX /ZI /Od /I "..\..\common" /I "..\paintlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_USRDLL" /FR"..\..\..\obj\Debug\paintX/" /Fp"..\..\..\obj\Debug\paintX/PaintX.pch" /Yc"stdafx.h" /Fo"..\..\..\obj\Debug\paintX/" /Fd"..\..\..\obj\Debug\paintX/" /FD /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD4.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD5.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib libungif.lib kernel32.lib user32.lib gdi32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"..\..\..\bin\Debug/PaintX.pdb" /debug /machine:I386 /def:".\PaintX.def" /out:"..\..\..\bin\Debug/PaintX.dll" /implib:"..\..\..\bin\Debug/PaintX.lib" /pdbtype:sept /libpath:"..\..\..\lib\debug" /libpath:"d:\projects\lib\giflib-4.1.0\bin\debug" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\PaintX.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\PictureDecoder.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\StdAfx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\PaintX.res
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD5.tmp"
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD6.bat" with contents
+[
+@echo off
+regsvr32 /s /c "\DEV\Avalanche\tools\Paintlib\bin\Debug\PaintX.dll"
+echo regsvr32 exec. time > ".\..\..\..\bin\Debug\regsvr32.trg"
+]
+Creating command line "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD6.bat"
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+PaintX.cpp
+PictureDecoder.cpp
+e:\dev\avalanche\tools\paintlib\paintlib\win\paintx\picturedecoder.cpp(30) : error C2668: 'InlineIsEqualGUID' : ambiguous call to overloaded function
+Error executing cl.exe.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+PaintX.dll - 1 error(s), 1 warning(s)
+<h3>
+--------------------Configuration: libjpeg - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD9.tmp" with contents
+[
+/nologo /G5 /MD /W3 /GX /O2 /Ob2 /I "." /I "..\..\..\otherlib\libjpeg" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"..\..\..\obj\Release/libjpeg.pch" /YX /Fo"..\..\..\obj\Release/" /c 
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcapimin.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcapistd.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jccoefct.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jccolor.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcdctmgr.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jchuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcinit.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcmainct.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcmarker.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcmaster.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jcomapi.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcparam.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcphuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcprepct.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcsample.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jctrans.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdapimin.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdapistd.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdatadst.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdatasrc.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdcoefct.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdcolor.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jddctmgr.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdhuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdinput.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmainct.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmarker.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmaster.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdmerge.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdphuff.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdpostct.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdsample.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jdtrans.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jerror.c"
+"E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jfdctflt.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctflt.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctfst.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctint.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jidctred.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jmemmgr.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jmemnobs.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jquant1.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jquant2.c"
+"E:\DEV\Avalanche\tools\Paintlib\Otherlib\libjpeg\jutils.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPD9.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDA.tmp" with contents
+[
+/nologo /out:"..\..\..\lib\Release\libjpeg.lib" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcapimin.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcapistd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jccoefct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jccolor.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcdctmgr.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jchuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcinit.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcmainct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcmarker.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcmaster.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jcomapi.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcparam.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcphuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcprepct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jcsample.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jctrans.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdapimin.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdapistd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdatadst.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdatasrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdcoefct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdcolor.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jddctmgr.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdhuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdinput.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdmainct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdmarker.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdmaster.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdmerge.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdphuff.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdpostct.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdsample.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jdtrans.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jerror.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\Jfdctflt.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jidctflt.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jidctfst.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jidctint.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jidctred.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jmemmgr.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jmemnobs.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jquant1.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jquant2.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jutils.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDA.tmp"
+<h3>Output Window</h3>
+Compiling...
+Jcapimin.c
+Jcapistd.c
+Jccoefct.c
+Jccolor.c
+Jcdctmgr.c
+E:\DEV\Avalanche\tools\Paintlib\otherlib\libjpeg\Jcdctmgr.c(60) : warning C4101: 'dtbl' : unreferenced local variable
+Jchuff.c
+Jcinit.c
+Jcmainct.c
+Jcmarker.c
+Jcmaster.c
+jcomapi.c
+Jcparam.c
+Jcphuff.c
+Jcprepct.c
+Jcsample.c
+Jctrans.c
+jdapimin.c
+jdapistd.c
+jdatadst.c
+jdatasrc.c
+jdcoefct.c
+jdcolor.c
+jddctmgr.c
+jdhuff.c
+jdinput.c
+jdmainct.c
+jdmarker.c
+jdmaster.c
+jdmerge.c
+jdphuff.c
+jdpostct.c
+jdsample.c
+jdtrans.c
+jerror.c
+Jfdctflt.c
+jidctflt.c
+jidctfst.c
+jidctint.c
+jidctred.c
+jmemmgr.c
+jmemnobs.c
+jquant1.c
+jquant2.c
+jutils.c
+Creating library...
+<h3>
+--------------------Configuration: paintlib - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDD.tmp" with contents
+[
+/nologo /G5 /MD /W3 /GX /O2 /Ob2 /I "." /I "..\..\common" /I "..\..\common\filter" /I "..\libtiff" /I "..\..\..\otherlib\libtiff\libtiff" /I "..\libjpeg" /I "..\..\..\otherlib\libjpeg" /I "..\..\..\otherlib\libpng" /I "..\..\..\otherlib\zlib" /I "..\..\..\otherlib\libungif\lib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"..\..\..\obj\Release/paintlib.pch" /Yu"plstdpch.h" /Fo"..\..\..\obj\Release/" /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\jmemdest.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\jmemsrc.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\planydec.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\pljpegdec.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\pljpegenc.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\plpictdec.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDD.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDE.tmp" with contents
+[
+/nologo /G5 /MD /W3 /GX /O2 /Ob2 /I "." /I "..\..\common" /I "..\..\common\filter" /I "..\libtiff" /I "..\..\..\otherlib\libtiff\libtiff" /I "..\libjpeg" /I "..\..\..\otherlib\libjpeg" /I "..\..\..\otherlib\libpng" /I "..\..\..\otherlib\zlib" /I "..\..\..\otherlib\libungif\lib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fo"..\..\..\obj\Release/" /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\Common\tif_msrc.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDE.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDF.tmp" with contents
+[
+/nologo /out:"..\..\..\lib\Release\paintlib.lib" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilter.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterContrast.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterCrop.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterFill.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterFlip.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterGetAlpha.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterGrayscale.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterIntensity.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterLightness.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterMirror.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterQuantize.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterResize.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterResizeBilinear.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterResizeBox.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterResizeGaussian.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterResizeHamming.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLFilterThreshold.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plfiltervideoinvert.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plhsvconvert.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plddhelper.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plddrawbmp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pldibsect.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plressrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plStreamSink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plwemfdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plwinbmp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jmemdest.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\jmemsrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\planybmp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\planydec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plbitmap.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plbmpdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plbmpenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pldatasink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pldatasrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plexcept.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plfilesink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plfilesrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plgifdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pljpegdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pljpegenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plmemsink.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plmemsrc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\PLObject.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpcxdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpgmdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpicdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpicenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpictdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpngdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpngenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plppmdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plpsddec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\plstdpch.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pltgadec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pltiffdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pltiffdecex.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pltiffenc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pltiffencex.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\pltrace.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\tif_msrc.obj
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPDF.tmp"
+<h3>Output Window</h3>
+Compiling...
+jmemdest.cpp
+jmemsrc.cpp
+planydec.cpp
+pljpegdec.cpp
+pljpegenc.cpp
+plpictdec.cpp
+Generating Code...
+Compiling...
+tif_msrc.c
+Creating library...
+<h3>
+--------------------Configuration: PaintX - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x407 /fo"..\..\..\obj\Release\paintX/PaintX.res" /d "NDEBUG" /d "_AFXDLL" "E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PaintX.rc"" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE2.tmp" with contents
+[
+/nologo /MD /W3 /GX /O1 /I "..\..\src" /I "..\paintlib" /I "..\..\common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_USRDLL" /D "_ATL_STATIC_REGISTRY" /Fp"..\..\..\obj\Release\paintX/PaintX.pch" /Yu"stdafx.h" /Fo"..\..\..\obj\Release\paintX/" /Fd"..\..\..\obj\Release\paintX/" /FD /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PaintX.cpp"
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PictureDecoder.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE2.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE3.tmp" with contents
+[
+/nologo /MD /W3 /GX /O1 /I "..\..\src" /I "..\paintlib" /I "..\..\common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_USRDLL" /D "_ATL_STATIC_REGISTRY" /Fp"..\..\..\obj\Release\paintX/PaintX.pch" /Yc"stdafx.h" /Fo"..\..\..\obj\Release\paintX/" /Fd"..\..\..\obj\Release\paintX/" /FD /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE3.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE4.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib libungif.lib kernel32.lib user32.lib gdi32.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"..\..\..\bin\Release/PaintX.pdb" /machine:I386 /def:".\PaintX.def" /out:"..\..\..\bin\Release/PaintX.dll" /implib:"..\..\..\bin\Release/PaintX.lib" /libpath:"..\..\..\lib\release" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\PaintX.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\PictureDecoder.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\StdAfx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\PaintX.res
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE4.tmp"
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE5.bat" with contents
+[
+@echo off
+regsvr32 /s /c "\DEV\Avalanche\tools\Paintlib\bin\Release\PaintX.dll"
+echo regsvr32 exec. time > ".\..\..\..\bin\Release\regsvr32.trg"
+]
+Creating command line "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE5.bat"
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+PaintX.cpp
+PictureDecoder.cpp
+E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PictureDecoder.cpp(30) : error C2668: 'InlineIsEqualGUID' : ambiguous call to overloaded function
+Generating Code...
+Error executing cl.exe.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+PaintX.dll - 1 error(s), 1 warning(s)
+<h3>
+--------------------Configuration: PaintX - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE8.tmp" with contents
+[
+/nologo /MD /W3 /GX /O1 /I "..\..\src" /I "..\paintlib" /I "..\..\common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_USRDLL" /D "_ATL_STATIC_REGISTRY" /Fp"..\..\..\obj\Release\paintX/PaintX.pch" /Yu"stdafx.h" /Fo"..\..\..\obj\Release\paintX/" /Fd"..\..\..\obj\Release\paintX/" /FD /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PictureDecoder.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE8.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE9.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib libungif.lib kernel32.lib user32.lib gdi32.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"..\..\..\bin\Release/PaintX.pdb" /machine:I386 /def:".\PaintX.def" /out:"..\..\..\bin\Release/PaintX.dll" /implib:"..\..\..\bin\Release/PaintX.lib" /libpath:"..\..\..\lib\release" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\PaintX.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\PictureDecoder.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\StdAfx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\paintX\PaintX.res
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPE9.tmp"
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPEA.bat" with contents
+[
+@echo off
+regsvr32 /s /c "\DEV\Avalanche\tools\Paintlib\bin\Release\PaintX.dll"
+echo regsvr32 exec. time > ".\..\..\..\bin\Release\regsvr32.trg"
+]
+Creating command line "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPEA.bat"
+Compiling...
+PictureDecoder.cpp
+E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PictureDecoder.cpp(30) : error C2668: 'InlineIsEqualGUID' : ambiguous call to overloaded function
+Error executing cl.exe.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+VCPaintXDemo.exe - 1 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: PaintX - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPEC.tmp" with contents
+[
+/nologo /G5 /MDd /W3 /Gm /GX /ZI /Od /I "..\..\common" /I "..\paintlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_USRDLL" /FR"..\..\..\obj\Debug\paintX/" /Fp"..\..\..\obj\Debug\paintX/PaintX.pch" /YX /Fo"..\..\..\obj\Debug\paintX/" /Fd"..\..\..\obj\Debug\paintX/" /FD /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PictureDecoder.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPEC.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPED.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib libungif.lib kernel32.lib user32.lib gdi32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"..\..\..\bin\Debug/PaintX.pdb" /debug /machine:I386 /def:".\PaintX.def" /out:"..\..\..\bin\Debug/PaintX.dll" /implib:"..\..\..\bin\Debug/PaintX.lib" /pdbtype:sept /libpath:"..\..\..\lib\debug" /libpath:"d:\projects\lib\giflib-4.1.0\bin\debug" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\PaintX.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\PictureDecoder.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\StdAfx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\paintX\PaintX.res
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPED.tmp"
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPEE.bat" with contents
+[
+@echo off
+regsvr32 /s /c "\DEV\Avalanche\tools\Paintlib\bin\Debug\PaintX.dll"
+echo regsvr32 exec. time > ".\..\..\..\bin\Debug\regsvr32.trg"
+]
+Creating command line "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPEE.bat"
+Compiling...
+PictureDecoder.cpp
+E:\DEV\Avalanche\tools\Paintlib\paintlib\win\PaintX\PictureDecoder.cpp(30) : error C2668: 'InlineIsEqualGUID' : ambiguous call to overloaded function
+Error executing cl.exe.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+VCPaintXDemo.exe - 1 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: piclook - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF0.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib vfw32.lib /nologo /subsystem:windows /incremental:no /pdb:"..\..\..\bin\Release/PicLook.pdb" /machine:I386 /out:"..\..\..\bin\Release/PicLook.exe" /libpath:"../bin/release" /libpath:"..\..\..\lib\release" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\ContrastDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\CropFilterDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\DibCtl.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\DitherDialog.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\Doc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\DocMan.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\FilterDialog.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\IntensityDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\LightnessDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\MainFrm.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\PalViewDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\piclook.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\PreView.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\StdAfx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\ThresholdDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\View.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\WinBmpEx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\ZoomView.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\piclook\piclook.res
+\DEV\Avalanche\tools\Paintlib\lib\Release\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF0.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+PicLook.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: piclook - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF2.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib vfw32.lib /nologo /subsystem:windows /incremental:yes /pdb:"..\..\..\bin\Debug/PicLook.pdb" /debug /machine:I386 /out:"..\..\..\bin\Debug/PicLook.exe" /pdbtype:sept /libpath:"../bin/debug" /libpath:"..\..\..\lib\debug" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\ContrastDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\CropFilterDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\DibCtl.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\DitherDialog.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\Doc.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\DocMan.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\FilterDialog.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\IntensityDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\LightnessDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\MainFrm.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\PalViewDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\piclook.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\PreView.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\StdAfx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\ThresholdDlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\View.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\WinBmpEx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\ZoomView.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\piclook\piclook.res
+\DEV\Avalanche\tools\Paintlib\lib\Debug\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF2.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+PicLook.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: test - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF4.tmp" with contents
+[
+/nologo /MD /W3 /GR /GX /O2 /I "..\..\common" /I "..\paintlib" /I "..\..\common\filter" /I "..\libtiff" /I "..\..\..\otherlib\libtiff\libtiff" /I "..\libjpeg" /I "..\..\..\otherlib\libjpeg" /I "..\..\..\otherlib\libpng" /I "..\..\..\otherlib\zlib" /D "NDEBUG" /D "WIN32" /D "_CONSOLE" /D "_WINDOWS" /Fo"..\..\..\obj\Release/" /Fd"..\..\..\obj\Release/" /FD /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\test\pltester.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF4.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF5.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib ole32.lib oleaut32.lib advapi32.lib shell32.lib /nologo /subsystem:console /pdb:none /machine:I386 /out:"..\..\..\bin\Release/test.exe" /libpath:"../bin/release" /libpath:"..\..\..\lib\release" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\pltester.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testfilterresizebilinear.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testpaintlib.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testpsddecoder.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\test\test.res
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF5.tmp"
+<h3>Output Window</h3>
+Compiling...
+pltester.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+test.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: test - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF8.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "..\..\common" /I "..\paintlib" /I "..\..\common\filter" /I "..\libtiff" /I "..\..\..\otherlib\libtiff\libtiff" /I "..\libjpeg" /I "..\..\..\otherlib\libjpeg" /I "..\..\..\otherlib\libpng" /I "..\..\..\otherlib\zlib" /D "_DEBUG" /D "WIN32" /D "_CONSOLE" /D "_WINDOWS" /Fo"..\..\..\obj\Debug/" /Fd"..\..\..\obj\Debug/" /FD /GZ /c 
+"E:\DEV\Avalanche\tools\Paintlib\paintlib\common\test\pltester.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF8.tmp" 
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF9.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libpng.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib ole32.lib oleaut32.lib advapi32.lib shell32.lib /nologo /subsystem:console /incremental:yes /pdb:"..\..\..\bin\Debug/test.pdb" /debug /machine:I386 /out:"..\..\..\bin\Debug/test.exe" /pdbtype:sept /libpath:"../bin/debug" /libpath:"..\..\..\lib\debug" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\pltester.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testfilterresizebilinear.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testpaintlib.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testpsddecoder.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\test\test.res
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPF9.tmp"
+<h3>Output Window</h3>
+Compiling...
+pltester.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+test.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: testdec - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPFC.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib libungif.lib /nologo /subsystem:windows /incremental:no /pdb:"..\..\..\bin\Release/testdec.pdb" /machine:I386 /out:"..\..\..\bin\Release/testdec.exe" /libpath:"..\..\..\lib\release" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdec\Dibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdec\Maindlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdec\mtdibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdec\stdafx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdec\testdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdec\testdec.res
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPFC.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+testdec.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: testdec - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPFE.tmp" with contents
+[
+libungif.lib paintlib.lib libjpeg.lib libtiff.lib /nologo /subsystem:windows /incremental:yes /pdb:"..\..\..\bin\Debug/testdec.pdb" /debug /machine:I386 /out:"..\..\..\bin\Debug/testdec.exe" /libpath:"..\..\..\lib\debug" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdec\Dibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdec\Maindlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdec\mtdibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdec\stdafx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdec\testdec.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdec\testdec.res
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSPFE.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+testdec.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: testdib - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP100.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib winmm.lib ddraw.lib libungif.lib /nologo /subsystem:windows /incremental:no /pdb:"..\..\..\bin\Release/testdib.pdb" /machine:I386 /out:"..\..\..\bin\Release/testdib.exe" /libpath:"..\..\..\lib\release" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\dibgrit.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\Dibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\drawhelp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\grarray.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\Gritem.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\Maindlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\mtdibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\shadow.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\stdafx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\testdib.obj
+\DEV\Avalanche\tools\Paintlib\obj\Release\testdib\testdib.res
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP100.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+testdib.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: testdib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP102.tmp" with contents
+[
+paintlib.lib libjpeg.lib libtiff.lib winmm.lib ddraw.lib libungif.lib /nologo /subsystem:windows /incremental:yes /pdb:"..\..\..\bin\Debug/testdib.pdb" /debug /machine:I386 /out:"..\..\..\bin\Debug/testdib.exe" /libpath:"..\..\..\lib\debug" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\dibgrit.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\Dibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\drawhelp.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\grarray.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\Gritem.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\Maindlg.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\mtdibwnd.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\shadow.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\stdafx.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\testdib.obj
+\DEV\Avalanche\tools\Paintlib\obj\Debug\testdib\testdib.res
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP102.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+testdib.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: tiffex - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP104.tmp" with contents
+[
+paintlib.lib libtiff.lib /nologo /subsystem:console /incremental:no /pdb:"..\..\..\bin\Release/tiffex.pdb" /machine:I386 /out:"..\..\..\bin\Release/tiffex.exe" /libpath:"..\..\..\lib\release" 
+\DEV\Avalanche\tools\Paintlib\obj\Release\tiffex\tiffex.obj
+\DEV\Avalanche\tools\Paintlib\lib\Release\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Release\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP104.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+tiffex.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: tiffex - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP106.tmp" with contents
+[
+paintlib.lib libtiff.lib /nologo /subsystem:console /incremental:yes /pdb:"..\..\..\bin\Debug/tiffex.pdb" /debug /machine:I386 /out:"..\..\..\bin\Debug/tiffex.exe" /libpath:"..\..\..\lib\debug" 
+\DEV\Avalanche\tools\Paintlib\obj\Debug\tiffex\tiffex.obj
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libjpeg.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libpng.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libtiff.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\paintlib.lib
+\DEV\Avalanche\tools\Paintlib\lib\Debug\libungif.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADAMCL~1\LOCALS~1\Temp\RSP106.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+tiffex.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

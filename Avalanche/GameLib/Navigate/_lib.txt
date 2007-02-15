@@ -1,0 +1,4 @@
+create "SNPS2Consumer/Navigate.lib"
+addmod "SNPS2Consumer/NavigatePCH_SN.obj"
+save
+end

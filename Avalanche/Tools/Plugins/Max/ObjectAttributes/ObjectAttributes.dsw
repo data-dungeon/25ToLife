@@ -1,0 +1,116 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "AttrControls"=..\..\Libraries\AttrControls\AttrControls.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Libraries/AttrControls", FJHCAAAA
+    ..\..\libraries\attrcontrols
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "KeyVal"=..\..\Libraries\KeyVal\KeyVal.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Libraries/KeyVal", EJPBAAAA
+    ..\..\libraries\keyval
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ObjectAttributes"=.\ObjectAttributes.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Max/ObjectAttributes", PWSAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name UIDisplay
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name tupperware
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name KeyVal
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AttrControls
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "UIDisplay"=..\..\Libraries\UIDisplay\UIDisplay.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Libraries/UIDisplay", ZGVAAAAA
+    ..\..\libraries\uidisplay
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name tupperware
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "tupperware"=..\..\..\tupperware\tupperware.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Tupperware", MROAAAAA
+    ..\..\..\tupperware
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/Avalanche/tools/Plugins/Max/ObjectAttributes", EXSAAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,7 @@
+Environmental Variables
+
+
+1. AVALANCHE - avalanche directory
+2. IMAGETITAN - avalanche\imagetitan directory
+3. SNIPESDK - avalanche\tools\snipe\sdk
+4. SNIPETOOLS - avalanche\tools\snipe\directory

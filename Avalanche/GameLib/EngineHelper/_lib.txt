@@ -1,0 +1,18 @@
+create "SNPS2Consumer\EngineHelper.lib"
+addmod "SNPS2Consumer/crc.obj"
+addmod "SNPS2Consumer/EngineHelperPCH_SN.obj"
+addmod "SNPS2Consumer/EngineHelperScriptFunc.obj"
+addmod "SNPS2Consumer/filestress.obj"
+addmod "SNPS2Consumer/Hash.obj"
+addmod "SNPS2Consumer/LoadScreen.obj"
+addmod "SNPS2Consumer/lsspin.obj"
+addmod "SNPS2Consumer/occtable.obj"
+addmod "SNPS2Consumer/sfparse.obj"
+addmod "SNPS2Consumer/sfx.obj"
+addmod "SNPS2Consumer/simpleinst.obj"
+addmod "SNPS2Consumer/soundcollide.obj"
+addmod "SNPS2Consumer/streamtest.obj"
+addmod "SNPS2Consumer/stringpool.obj"
+addmod "SNPS2Consumer/texlib.obj"
+save
+end

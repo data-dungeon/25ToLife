@@ -1,0 +1,14 @@
+create "SNPS2Consumer/collide.lib"
+addmod "SNPS2Consumer/Capsule.obj"
+addmod "SNPS2Consumer/CapsuleToAabb.obj"
+addmod "SNPS2Consumer/CapsuleToCapsule.obj"
+addmod "SNPS2Consumer/CapsuleToObb.obj"
+addmod "SNPS2Consumer/CapsuleToTerrain.obj"
+addmod "SNPS2Consumer/CollidePCH_SN.obj"
+addmod "SNPS2Consumer/LineToCapsule.obj"
+addmod "SNPS2Consumer/LineToTriangleList.obj"
+addmod "SNPS2Consumer/Object.obj"
+addmod "SNPS2Consumer/Pair.obj"
+addmod "SNPS2Consumer/SphereToCapsule.obj"
+save
+end

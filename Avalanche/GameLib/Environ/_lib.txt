@@ -1,0 +1,7 @@
+create "SNPS2Consumer\Environ.lib"
+addmod "SNPS2Consumer/ActorInitializer.obj"
+addmod "SNPS2Consumer/EnvironPCH_SN.obj"
+addmod "SNPS2Consumer/Munition.obj"
+addmod "SNPS2Consumer/World.obj"
+save
+end

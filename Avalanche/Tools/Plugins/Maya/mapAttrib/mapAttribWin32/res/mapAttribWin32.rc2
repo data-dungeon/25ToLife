@@ -1,0 +1,15 @@
+//
+// OBJATTRIBWIN32.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+// Comment the following 2 lines of code to get the xp controls to work
+#define XT_MANIFEST_ID						 2
+XT_MANIFEST_ID          RT_MANIFEST             "manifest.txt"

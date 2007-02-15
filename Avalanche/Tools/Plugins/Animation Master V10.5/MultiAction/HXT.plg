@@ -1,0 +1,53 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HXT - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo".\Release/HXT.res" /d "NDEBUG" /d "_AFXDLL" "C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MultiAction\HXT.rc"" 
+Creating temporary file "C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP121.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "c:\danlp110\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp".\Release/HXT.pch" /Yu"StdAfx.h" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MultiAction\Export.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP121.tmp" 
+Creating temporary file "C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP122.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "c:\danlp110\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MultiAction\ExportMultiActionDialog.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP122.tmp" 
+Creating temporary file "C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP123.tmp" with contents
+[
+..\..\..\lib\pc\Plugin.lib ..\..\..\lib\pc\Fileio.lib /nologo /subsystem:windows /dll /pdb:none /machine:I386 /out:"..\KFMBak.hxt" /implib:".\Release/KFMBak.lib" 
+.\Release\Entry.obj
+.\Release\Export.obj
+.\Release\ExportActionDialog.obj
+.\Release\ExportActionsDialog.obj
+.\Release\Hxt.obj
+.\Release\Import.obj
+.\Release\StdAfx.obj
+.\Release\HXT.res
+.\Release\ExportMultiActionDialog.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\Dan\LOCALS~1\Temp\RSP123.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+Export.cpp
+Compiling...
+ExportMultiActionDialog.cpp
+C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MultiAction\ExportMultiActionDialog.cpp(42) : error C2065: 'OnExportKFM' : undeclared identifier
+C:\DanLP110\Plugin\HXT\Avalanche\AnimationMaster\MultiAction\ExportMultiActionDialog.cpp(42) : error C2440: 'type cast' : cannot convert from 'int *' to 'void (__thiscall CCmdTarget::*)(void)'
+        There is no context in which this conversion is possible
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+KFMBak.hxt - 2 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

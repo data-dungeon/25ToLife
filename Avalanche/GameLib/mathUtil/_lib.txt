@@ -1,0 +1,5 @@
+create "SNPS2Consumer\mathUtil.lib"
+addmod "SNPS2Consumer/Kalman.obj"
+addmod "SNPS2Consumer/MathUtilPCH_SN.obj"
+save
+end

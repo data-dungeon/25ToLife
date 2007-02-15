@@ -1,0 +1,331 @@
+/* --------------------------------------------------
+ * File    : SOM_UTIL.C
+ * Created : Fri Sep 25 15:13:11 1998
+ * Descript:
+ * --------------------------------------------------*/
+/* --------------------------------------------------
+ * Includes
+ * --------------------------------------------------*/
+#include <float.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <mathlib.h>
+#include <t_macros.h>
+#include <t_struct.h>
+#include <t_som.h>
+
+/* --------------------------------------------------
+ * Local Defines
+ * --------------------------------------------------*/
+
+/* --------------------------------------------------
+ * Local Prototypes
+ * --------------------------------------------------*/
+void					somBoundingSphere( ts_SOMUP *pSOM, ts_Sphere *pSphere);
+void					somCenter( ts_SOMUP *pSOM, ts_f3DCoord *pCenter);
+void					somCenterBB( ts_SOMUP *pSOM, ts_f3DCoord *pCenter);
+void					somRadius( ts_SOMUP *pSOM, ts_f3DCoord *pCenter, float *pRadius);
+
+void					somDupeFaceData( ts_SOMFaceUP *pIn, ts_SOMFaceUP *pOut);
+void					somFreeSOMFaceUP( ts_SOMFaceUP *pFace);
+
+/* --------------------------------------------------
+ * Local Data
+ * --------------------------------------------------*/
+
+/* --------------------------------------------------
+ * Exported Functions
+ * --------------------------------------------------*/
+
+/* --------------------------------------------------
+ * Local Functions
+ * --------------------------------------------------*/
+
+void somSetup( ts_SOMUP *pSOM)
+{
+	somBoundingSphere( pSOM, &(pSOM->BoundingSphere));
+}
+
+void somBoundingBox( ts_SOMUP *pSOM, t_AABB *pBoundingBox)
+{
+unsigned long	i;
+
+ts_f3DCoord		Max = { -1000000, -1000000, -1000000 };
+ts_f3DCoord		Min = {  1000000,  1000000,  1000000 };
+
+ts_f3DCoord		*pVtxList = pSOM->pVtxBuffer;
+
+	for( i = 0; i < pSOM->ulVtxCount; i++)
+   {
+   	if( pVtxList[i].X < Min.X)
+      	Min.X = pVtxList[i].X;
+   	else if( pVtxList[i].X > Max.X)
+      	Max.X = pVtxList[i].X;
+
+   	if( pVtxList[i].Y < Min.Y)
+      	Min.Y = pVtxList[i].Y;
+   	else if( pVtxList[i].Y > Max.Y)
+      	Max.Y = pVtxList[i].Y;
+
+   	if( pVtxList[i].Z < Min.Z)
+      	Min.Z = pVtxList[i].Z;
+   	else if( pVtxList[i].Z > Max.Z)
+      	Max.Z = pVtxList[i].Z;
+   }
+
+	(*pBoundingBox)[0] = Min;
+	(*pBoundingBox)[1] = Max;
+
+}
+
+void somBoundingSphere( ts_SOMUP *pSOM, ts_Sphere *pSphere)
+{
+ts_f3DCoord			Center;
+
+	somCenterBB( pSOM, &Center);
+
+	somCenter( pSOM, &(pSphere->C));
+	somRadius( pSOM, &(pSphere->C), &(pSphere->R));
+}
+
+void somCenter( ts_SOMUP *pSOM, ts_f3DCoord *pCenter)
+{
+unsigned long		ul;
+
+ts_f3DCoord			*pVtxList;
+ts_d3DCoord			Sum;
+
+	Sum.X = 0.0;
+	Sum.Y = 0.0;
+	Sum.Z = 0.0;
+
+	ul = pSOM->ulVtxCount;
+	pVtxList = pSOM->pVtxBuffer;
+
+	while( ul--)
+	{
+		Sum.X += pVtxList->X;
+		Sum.Y += pVtxList->Y;
+		Sum.Z += pVtxList->Z;
+
+		pVtxList++;
+	}
+
+	pCenter->X = (float) (Sum.X / pSOM->ulVtxCount);
+	pCenter->Y = (float) (Sum.Y / pSOM->ulVtxCount);
+	pCenter->Z = (float) (Sum.Z / pSOM->ulVtxCount);
+
+}
+
+void somCenterBB( ts_SOMUP *pSOM, ts_f3DCoord *pCenter)
+{
+t_AABB				BBox;
+
+	somBoundingBox( pSOM, &BBox);
+
+	pCenter->X = (BBox[0].X + BBox[1].X) / 2;
+	pCenter->Y = (BBox[0].Y + BBox[1].Y) / 2;
+	pCenter->Z = (BBox[0].Z + BBox[1].Z) / 2;
+}
+
+void somRadius( ts_SOMUP *pSOM, ts_f3DCoord *pCenter, float *pRadius)
+{
+unsigned long		ul;
+
+float					fRadius;
+
+l_Vct3f				Diff;
+
+ts_f3DCoord			Temp = { 0, 0, 0 };
+
+ts_f3DCoord			*pVtxs;
+
+	if( pCenter == NULL)
+		pCenter = &Temp;
+
+	ul = pSOM->ulVtxCount;
+	pVtxs = pSOM->pVtxBuffer;
+
+	*pRadius = 0;
+
+	while( ul--)
+	{
+		vctSub3f( (l_Vct3f *) pVtxs, (l_Vct3f *) pCenter, &Diff);
+		fRadius = vctLength3f( (l_Vct3f *) &Diff);
+
+		if( fRadius > *pRadius)
+			*pRadius = fRadius;
+
+		pVtxs++;
+	}
+
+}
+
+ts_SOMUP *somCopySOMUP( ts_SOMUP *pModel)
+{
+unsigned long		i;
+ts_SOMFaceUP		*pFace;
+ts_SOMUP				*pNew;
+
+	pNew = (ts_SOMUP *) malloc( sizeof( ts_SOMUP));
+
+	// Copy Everything temporarily
+	*pNew = *pModel;
+
+	// Alloc and Copy VtxBuffer
+	pNew->pVtxBuffer = (ts_f3DCoord *) malloc( pNew->ulVtxCount * sizeof( ts_f3DCoord));
+	memcpy( pNew->pVtxBuffer, pModel->pVtxBuffer, pNew->ulVtxCount * sizeof( ts_f3DCoord));
+
+	// Alloc and Copy Vtx Normals
+	if( pModel->pNormals)
+	{
+		pNew->pNormals = (ts_f3DCoord *) malloc( pNew->ulVtxCount * sizeof( ts_f3DCoord));
+		memcpy( pNew->pNormals, pModel->pNormals, pNew->ulVtxCount * sizeof( ts_f3DCoord));
+	}
+
+	// Alloc and Copy FaceBuffer
+	pNew->pFaceBuffer = (ts_SOMFaceUP *) malloc( pNew->ulFaceCount * sizeof( ts_SOMFaceUP));
+	memcpy( pNew->pFaceBuffer, pModel->pFaceBuffer, pNew->ulFaceCount * sizeof( ts_SOMFaceUP));
+
+	pFace = pNew->pFaceBuffer;
+
+	for( i = 0; i < pNew->ulFaceCount; i++)
+	{
+		somDupeFaceData( pModel->pFaceBuffer + i, pFace);
+		pFace++;
+	}
+
+
+	return pNew;
+}
+
+void somDupeFaceData( ts_SOMFaceUP *pIn, ts_SOMFaceUP *pOut)
+{
+	if( pIn->ulTexCount)
+	{
+		pOut->pTextures = (ts_SOMMultTex *) malloc( pIn->ulTexCount * sizeof( ts_SOMMultTex));
+		memcpy( pOut->pTextures, pIn->pTextures, pIn->ulTexCount * sizeof( ts_SOMMultTex));
+	}
+}
+
+void somFreeSOM( ts_SOM *pModel)
+{
+	SFREE( pModel->pFaceBuffer);
+	SFREE( pModel->pVtxBuffer);
+	SFREE( pModel->pNormals);
+
+	SFREE( pModel);
+}
+
+void somFreeSOMUP( ts_SOMUP *pModel)
+{
+unsigned long		l;
+
+ts_SOMFaceUP		*pFace;
+
+	pFace = pModel->pFaceBuffer;
+
+	for( l = 0; l < pModel->ulFaceCount; l++)
+		somFreeSOMFaceUP( pFace++);
+
+	SFREE( pModel->pFaceBuffer);
+	SFREE( pModel->pVtxBuffer);
+	SFREE( pModel->pNormals);
+
+	SFREE( pModel);
+
+}
+
+void somFreeSOMFaceUP( ts_SOMFaceUP *pFace)
+{
+	if( pFace->ulTexCount)
+		free( pFace->pTextures);
+}
+
+void somSwapTexID( ts_SOMUP *pModel, unsigned short *pIDs, unsigned short usIDCount)
+{
+unsigned short	us;
+
+unsigned long	l, m;
+
+ts_SOMFaceUP	*pFace;
+
+
+	for( us = 0; us < usIDCount; us++)
+		pIDs[us] += usIDCount;
+
+	pFace = pModel->pFaceBuffer;
+
+	for( l = 0; l < pModel->ulFaceCount; l++)
+	{
+		for( m = 0; m < pFace->ulTexCount; m++)
+			pFace->pTextures[m].TexID = pIDs[pFace->pTextures[m].TexID];
+
+		pFace++;
+	}
+
+	pFace = pModel->pFaceBuffer;
+
+	for( l = 0; l < pModel->ulFaceCount; l++)
+	{
+		for( m = 0; m < pFace->ulTexCount; m++)
+			pFace->pTextures[m].TexID -= usIDCount;
+		pFace++;
+	}
+
+	for( us = 0; us < usIDCount; us++)
+		pIDs[us] -= usIDCount;
+
+}
+
+long CompTextures( ts_RBImage *pL, ts_RBImage *pR)
+{
+	if( pL->IFlags & RB_IMG_RGBA  &&  !(pR->IFlags & RB_IMG_RGBA))
+		return -1;
+	else if( !(pL->IFlags & RB_IMG_RGBA)  &&  pR->IFlags & RB_IMG_RGBA)
+		return 1;
+	else
+		return 0;
+}
+
+unsigned short *SortTextures( ts_RBImage *pTextures, unsigned short usTexCount)
+{
+unsigned short		us;
+unsigned short		usTemp;
+unsigned short		*pSorted;
+
+long					l, m;
+
+ts_RBImage			Temp;
+
+	pSorted = (unsigned short *) malloc( usTexCount * sizeof( unsigned short));
+
+	for( us = 0; us < (long) usTexCount; us++)
+		pSorted[us] = (unsigned short) us;
+
+	for( l = (long) usTexCount - 1; l > 0; l--)
+	{
+		for( m = 0; m < l; m++)
+		{
+			if( CompTextures( pTextures + pSorted[m], pTextures + pSorted[m + 1]) == -1)
+			{
+				//swap ID's
+				usTemp = pSorted[m];
+				pSorted[m] = pSorted[m + 1];
+				pSorted[m + 1] = usTemp;
+
+				// swap Images
+				memcpy( &Temp, pTextures + pSorted[m], sizeof( ts_RBImage));
+				memcpy( pTextures + pSorted[m], pTextures + pSorted[m + 1], sizeof( ts_RBImage));
+				memcpy( pTextures + pSorted[m + 1], &Temp, sizeof( ts_RBImage));
+			}
+		}
+	}
+
+	return pSorted;
+}
+
+
+
+

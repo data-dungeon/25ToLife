@@ -1,0 +1,69 @@
+////////////////////////////////////////////////////////////////////////////
+//
+// CompositeSubMap
+//
+// Class to the sub maps for a composite map
+//
+////////////////////////////////////////////////////////////////////////////
+
+/*
+ * $History: compositemapsubmap.h $
+ * 
+ * *****************  Version 4  *****************
+ * User: Adam Clayton Date: 3/21/02    Time: 1:13p
+ * Updated in $/Avalanche/tools/Tupper3d
+ * Precompiled Headers
+ * 
+ * *****************  Version 3  *****************
+ * User: Adam Clayton Date: 12/17/01   Time: 11:06a
+ * Updated in $/Avalanche/tools/Tupper3d
+ * 
+ * *****************  Version 2  *****************
+ * User: Adam Clayton Date: 12/12/01   Time: 4:34p
+ * Updated in $/Avalanche/tools/Tupper3d
+ * Material - Map stuff
+ */
+
+////////////////////////////////////////////////////////////////////////////
+
+#ifndef TUPPER3D_COMPOSITE_SUB_MAP_H
+#define TUPPER3D_COMPOSITE_SUB_MAP_H
+
+class TupCompositeMapSubMap
+{
+	// Private Default constructor so no one can use it
+	TupCompositeMapSubMap(void);
+
+	TupperwareAggregate *m_pObject; // aggregate that holds all the mesh atoms
+
+	enum ChildrenAtoms 
+	{
+		MAP_REFERENCE,
+		FLAGS,
+		NUM_CHILDREN_ATOMS, // last entry
+	};
+// cached atom pointers
+	TupperwareAtom *m_cachedAtoms[NUM_CHILDREN_ATOMS];
+	static char *m_keyNames[NUM_CHILDREN_ATOMS]; // names for the children atoms
+
+public:
+	enum Flags
+	{
+		ENABLED				= 1<<0,
+	};
+
+	TupCompositeMapSubMap(TupperwareAggregate *pObject);
+
+	void BuildAtomCache(void);
+
+// add methods
+	TupperwareScalar *AddMapReference(int value);
+	TupperwareScalar *AddFlags(int value);
+
+// get methods
+	int GetSubMapIndex(void);
+	TupperwareScalar *GetMapReference(int &value);
+	TupperwareScalar *GetFlags(int &value);
+};
+
+#endif

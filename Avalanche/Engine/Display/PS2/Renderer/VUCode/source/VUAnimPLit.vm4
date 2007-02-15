@@ -1,0 +1,23 @@
+
+define( 'szePLightData', eval( 1))
+define( 'szePLightAmbient', eval( 1))
+define( 'szePLightColors', eval( 2))
+define( 'szePLight1Cache', eval( 2))
+define( 'szePLight2Cache', eval( 2))
+define( 'szePLightWorkStack', eval( 11))
+
+define( 'szeAnimPLitData', eval( szePLightData + szePLightAmbient + szePLightColors + szePLight1Cache + szePLight2Cache + szePLightWorkStack))
+
+define( 'offAnimPLitData', eval( baseAnimPLitData))
+
+define( 'offPLightD1', eval( offAnimPLitData))
+define( 'offPLightAmbient', eval( offPLightD1 + 1))
+define( 'offPLightColors', eval( offPLightAmbient + 1))
+define( 'offPLight1Cache', eval( offPLightColors + szePLightColors))
+define( 'offPLight2Cache', eval( offPLight1Cache + szePLight1Cache))
+define( 'offPLightWorkStack', eval(offPLight2Cache + szePLight2Cache))
+
+dumpdef( 'offPLightD1')
+dumpdef( 'offAnimPLitData');
+
+

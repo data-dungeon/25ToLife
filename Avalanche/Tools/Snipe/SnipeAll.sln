@@ -1,0 +1,196 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicImagePlugin", "..\Plugins\ImageTitan\BasicImage\BasicImagePlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{B44F62EE-5E34-4E84-B715-EEA48A3AAE7C} = {B44F62EE-5E34-4E84-B715-EEA48A3AAE7C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicCommandsPlugin", "..\Plugins\Snipe V1.0\Commands\BasicCommands\BasicCommandsPlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0} = {010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeoPlugin", "..\Plugins\Snipe V1.0\Model Translators\GEO\GeoPlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0} = {010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HashPlugin", "..\Plugins\Snipe V1.0\Model Translators\Hash\HashPlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0} = {010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LWPlugin", "..\Plugins\Snipe V1.0\Model Translators\LightWave\LWPlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0} = {010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}
+		{3DD675FF-C349-470F-A652-8FE4CAADE4E1} = {3DD675FF-C349-470F-A652-8FE4CAADE4E1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupPlugin", "..\Plugins\Snipe V1.0\Model Translators\Tup\TupPlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0} = {010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImageTitan", "..\ImageTitan\ImageTitan.vcproj", "{B44F62EE-5E34-4E84-B715-EEA48A3AAE7C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Snipe", "Snipe.vcproj", "{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{B44F62EE-5E34-4E84-B715-EEA48A3AAE7C} = {B44F62EE-5E34-4E84-B715-EEA48A3AAE7C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "..\Utility\Utility.vcproj", "{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicNavigatorPlugin", "..\Plugins\Snipe V1.0\Navigators\BasicNavigator\BasicNavigatorPlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0} = {010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LWObject", "..\Plugins\Snipe V1.0\Model Translators\LightWave\LWObject\LWObject.vcproj", "{3DD675FF-C349-470F-A652-8FE4CAADE4E1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnipeEEAddIn", "Debugging_EEaddin\eeaddin.vcproj", "{E751CED3-8C09-4792-BFC2-99BF50D835C0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JoystickNavigator", "..\Plugins\Snipe V1.0\Navigators\JoystickNavigator\JoystickNavigatorPlugin.vcproj", "{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187} = {5D9B56CC-59B9-4B44-B2AD-329FD3E11187}
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0} = {010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 14
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Snipe\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {15C0E2A1-8060-4629-8180-CBCAF4937123}
+		SccProjectUniqueName1 = ..\\Plugins\\ImageTitan\\BasicImage\\BasicImagePlugin.vcproj
+		SccProjectName1 = \u0022//depot/Avalanche/Tools/Plugins/ImageTitan/BasicImage\u0022
+		SccLocalPath1 = ..\\Plugins\\ImageTitan\\BasicImage
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\Plugins\\Snipe\u0020V1.0\\Commands\\BasicCommands\\BasicCommandsPlugin.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Commands/BasicCommands\u0022
+		SccLocalPath2 = ..\\Plugins\\Snipe\u0020V1.0\\Commands\\BasicCommands
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\GEO\\GeoPlugin.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Model\u0020Translators/GEO\u0022
+		SccLocalPath3 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\GEO
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\ImageTitan\\ImageTitan.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/ImageTitan\u0022
+		SccLocalPath4 = ..\\ImageTitan
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = Snipe.vcproj
+		SccLocalPath5 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName6 = ..\\Utility\\Utility.vcproj
+		SccProjectName6 = \u0022//depot/Avalanche/Tools/Utility\u0022
+		SccLocalPath6 = ..\\Utility
+		CanCheckoutShared = true
+		SccProjectUniqueName7 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\LightWave\\LWObject\\LWObject.vcproj
+		SccProjectName7 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Model\u0020Translators/LightWave/LWObject\u0022
+		SccLocalPath7 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\LightWave\\LWObject
+		CanCheckoutShared = true
+		SccProjectUniqueName8 = ..\\Plugins\\Snipe\u0020V1.0\\Navigators\\JoystickNavigator\\JoystickNavigatorPlugin.vcproj
+		SccProjectName8 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Navigators/JoystickNavigator\u0022
+		SccLocalPath8 = ..\\Plugins\\Snipe\u0020V1.0\\Navigators\\JoystickNavigator
+		CanCheckoutShared = true
+		SccProjectUniqueName9 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\Hash\\HashPlugin.vcproj
+		SccProjectName9 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Model\u0020Translators/Hash\u0022
+		SccLocalPath9 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\Hash
+		CanCheckoutShared = true
+		SccProjectUniqueName10 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\LightWave\\LWPlugin.vcproj
+		SccProjectName10 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Model\u0020Translators/LightWave\u0022
+		SccLocalPath10 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\LightWave
+		CanCheckoutShared = true
+		SccProjectUniqueName11 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\Tup\\TupPlugin.vcproj
+		SccProjectName11 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Model\u0020Translators/Tup\u0022
+		SccLocalPath11 = ..\\Plugins\\Snipe\u0020V1.0\\Model\u0020Translators\\Tup
+		CanCheckoutShared = true
+		SccProjectUniqueName12 = ..\\Plugins\\Snipe\u0020V1.0\\Navigators\\BasicNavigator\\BasicNavigatorPlugin.vcproj
+		SccProjectName12 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Navigators/BasicNavigator\u0022
+		SccLocalPath12 = ..\\Plugins\\Snipe\u0020V1.0\\Navigators\\BasicNavigator
+		CanCheckoutShared = true
+		SccProjectUniqueName13 = Debugging_EEaddin\\eeaddin.vcproj
+		SccProjectName13 = \u0022//depot/Avalanche/Tools/Snipe/Debugging_EEAddin\u0022
+		SccLocalPath13 = Debugging_EEaddin
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+		{B44F62EE-5E34-4E84-B715-EEA48A3AAE7C}.Debug.ActiveCfg = Debug|Win32
+		{B44F62EE-5E34-4E84-B715-EEA48A3AAE7C}.Debug.Build.0 = Debug|Win32
+		{B44F62EE-5E34-4E84-B715-EEA48A3AAE7C}.Release.ActiveCfg = Release|Win32
+		{B44F62EE-5E34-4E84-B715-EEA48A3AAE7C}.Release.Build.0 = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Debug.ActiveCfg = Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Debug.Build.0 = Debug|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Release.ActiveCfg = Release|Win32
+		{010FF9F2-D0F8-4E34-A6DE-F2B58D9B1AA0}.Release.Build.0 = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Debug.ActiveCfg = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Debug.Build.0 = Debug|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Release.ActiveCfg = Release|Win32
+		{5D9B56CC-59B9-4B44-B2AD-329FD3E11187}.Release.Build.0 = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+		{3DD675FF-C349-470F-A652-8FE4CAADE4E1}.Debug.ActiveCfg = Debug|Win32
+		{3DD675FF-C349-470F-A652-8FE4CAADE4E1}.Debug.Build.0 = Debug|Win32
+		{3DD675FF-C349-470F-A652-8FE4CAADE4E1}.Release.ActiveCfg = Release|Win32
+		{3DD675FF-C349-470F-A652-8FE4CAADE4E1}.Release.Build.0 = Release|Win32
+		{E751CED3-8C09-4792-BFC2-99BF50D835C0}.Debug.ActiveCfg = Debug|Win32
+		{E751CED3-8C09-4792-BFC2-99BF50D835C0}.Debug.Build.0 = Debug|Win32
+		{E751CED3-8C09-4792-BFC2-99BF50D835C0}.Release.ActiveCfg = Release|Win32
+		{E751CED3-8C09-4792-BFC2-99BF50D835C0}.Release.Build.0 = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.ActiveCfg = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Debug.Build.0 = Debug|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.ActiveCfg = Release|Win32
+		{BC83C930-EEEC-4925-BFFD-0A3D7BB7E5FD}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

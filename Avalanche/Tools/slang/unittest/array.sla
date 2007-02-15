@@ -1,0 +1,57 @@
+// array unit test
+
+int a[ 10 ];
+
+int i;
+for ( i = 0 ; i < 10 ; ++i )
+   a[ i ] = ( 90 - i * 10 );
+
+// result: 90
+// result: 80
+// result: 70
+// result: 60
+// result: 50
+// result: 40
+// result: 30
+// result: 20
+// result: 10
+// result: 0
+for ( i = 0 ; i < 10 ; ++i )
+   print a[ i ];
+
+//====
+
+// sort it using selection sort
+
+for ( i = 0 ; i < 10 - 1 ; ++i )
+{
+   int lowest = i;
+   int j;
+   for ( j = i + 1 ; j < 10 ; ++j )
+   {
+      if ( a[j] < a[lowest] ) lowest = j;
+   }
+   if ( lowest != i )
+   {
+      ( a[lowest], a[i] ) = ( a[i], a[lowest] );
+   }
+}
+
+print "sorted";	// result: sorted
+// result: 0
+// result: 10
+// result: 20
+// result: 30
+// result: 40
+// result: 50
+// result: 60
+// result: 70
+// result: 80
+// result: 90
+// print out the new results
+for ( i = 0 ; i < 10 ; ++i )
+   print a[ i ];
+
+
+
+

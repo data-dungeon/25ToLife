@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="dnasdll"
+	ProjectGUID="{2E82CE43-677E-4FB6-9CDF-E8A30B022EB6}"
+	RootNamespace="dnasdll"
+	SccProjectName="&quot;//depot/Avalanche&quot;"
+	SccAuxPath=""
+	SccLocalPath="..\.."
+	SccProvider="MSSCCI:Perforce SCM">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="SN PS2 Debug|Win32"
+			OutputDirectory="SNPS2Debug"
+			IntermediateDirectory="SNPS2Debug"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -g -Wall -fno-exceptions"
+				AdditionalIncludeDirectories="&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;_DEBUG"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\dnasdll.map,-sn-full-map"
+				AdditionalDependencies="dnas_net.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories="&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib&quot;;&quot;$(TTLDEV)\PS2\Sony\sce-302\ee\lib&quot;"
+				ProgramDatabaseFile=""
+				MapFileName="dnasdll.map"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2Debug
+copy $(OutDir)\dnasdll*.elf $(TTLPATH)\code\SNPS2Debug\
+copy $(OutDir)\dnasdll*.map $(TTLPATH)\code\SNPS2Debug\
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\code\SNPS2Debug\
+md $(TTLPATH)\Data_PS2\Rel\debug
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\Data_PS2\Rel\debug\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Release|Win32"
+			OutputDirectory="SNPS2Release"
+			IntermediateDirectory="SNPS2Release"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -Wall -fno-exceptions -O2"
+				AdditionalIncludeDirectories="&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;NDEBUG"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\dnasdll.map,-sn-full-map"
+				AdditionalDependencies="dnas_net.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories="&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib&quot;;&quot;$(TTLDEV)\PS2\Sony\sce-302\ee\lib&quot;"
+				ProgramDatabaseFile=""
+				MapFileName="dnasdll_release.map"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2Release
+copy $(OutDir)\dnasdll*.elf $(TTLPATH)\code\SNPS2Release
+copy $(OutDir)\dnasdll*.map $(TTLPATH)\code\SNPS2Release
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\code\SNPS2Release
+md $(TTLPATH)\Data_PS2\Rel\release
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\Data_PS2\Rel\release\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 CDROM|Win32"
+			OutputDirectory="SNPS2CDRom"
+			IntermediateDirectory="SNPS2CDRom"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -Wall -fno-exceptions -O2"
+				AdditionalIncludeDirectories="&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;NDEBUG;CDROM;PS2"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\dnasdll.map,-sn-full-map"
+				AdditionalDependencies="dnas_net.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories="&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib&quot;;&quot;$(TTLDEV)\PS2\Sony\sce-302\ee\lib&quot;"
+				ProgramDatabaseFile=""
+				MapFileName="dnasdll_release.map"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2CDRom
+copy $(OutDir)\dnasdll*.elf $(TTLPATH)\code\SNPS2CDRom\
+copy $(OutDir)\dnasdll*.map $(TTLPATH)\code\SNPS2CDRom\
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\code\SNPS2CDRom\
+md $(TTLPATH)\Data_PS2\Rel\cdrom
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\Data_PS2\Rel\cdrom\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Debug CDROM|Win32"
+			OutputDirectory="SNPS2DebugCD"
+			IntermediateDirectory="SNPS2DebugCD"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -g -Wall -fno-exceptions"
+				AdditionalIncludeDirectories="&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;_DEBUG;CDROM"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\dnasdll.map,-sn-full-map"
+				AdditionalDependencies="dnas_net.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories="&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib&quot;;&quot;$(TTLDEV)\PS2\Sony\sce-302\ee\lib&quot;"
+				ProgramDatabaseFile=""
+				MapFileName="dnasdll.map"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2DebugCD
+copy $(OutDir)\dnasdll*.elf $(TTLPATH)\code\SNPS2DebugCD\
+copy $(OutDir)\dnasdll*.map $(TTLPATH)\code\SNPS2DebugCD\
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\code\SNPS2DebugCD\
+md $(TTLPATH)\Data_PS2\Rel\debugcdrom
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\Data_PS2\Rel\debugcdrom\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerBuild|Win32"
+			OutputDirectory="SNPS2Consumer"
+			IntermediateDirectory="SNPS2Consumer"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -Wall -fno-exceptions -O2"
+				AdditionalIncludeDirectories="&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;NDEBUG;CDROM;PS2;CONSUMER_BUILD"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\dnasdll.map,-sn-full-map"
+				AdditionalDependencies="dnas_net.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories="&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib&quot;;&quot;$(TTLDEV)\PS2\Sony\sce-302\ee\lib&quot;"
+				ProgramDatabaseFile=""
+				MapFileName="dnasdll_release.map"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2Consumer
+copy $(OutDir)\dnasdll*.elf $(TTLPATH)\code\SNPS2Consumer\
+copy $(OutDir)\dnasdll*.map $(TTLPATH)\code\SNPS2Consumer\
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\code\SNPS2Consumer\
+md $(TTLPATH)\Data_PS2\Rel\consumer
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\Data_PS2\Rel\consumer\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Consumer DVD|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.rel;*.pdf;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -Wall -fno-exceptions -O2"
+				AdditionalIncludeDirectories="&quot;$(SCE_ROOT)\ee\include&quot;;&quot;$(SCE_ROOT)\common\include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;NDEBUG;CONSUMER_BUILD"
+				ObjectFile="$(IntDir)/"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-G0,-Map,$(IntDir)\dnasdll.map,-sn-full-map"
+				AdditionalDependencies="dnas_net.a"
+				OutputFile="$(OutDir)/$(ProjectName).elf"
+				AdditionalLibraryDirectories="&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\lib&quot;;&quot;$(TTLDEV)\PS2\Sony\sce-302\ee\lib&quot;"
+				ProgramDatabaseFile=""
+				MapFileName="dnasdll_release.map"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="$(TTLPATH)\bin\perl.exe $(TTLPATH)\bin\ps2pallink.pl $(OutDir)
+md $(TTLPATH)\code\SNPS2Release
+copy $(OutDir)\dnasdll*.elf $(TTLPATH)\code\SNPS2Release
+copy $(OutDir)\dnasdll*.map $(TTLPATH)\code\SNPS2Release
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\code\SNPS2Release
+md $(TTLPATH)\Data_PS2\Rel\release
+copy $(OutDir)\dnasdll*.rel $(TTLPATH)\Data_PS2\Rel\release\
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;cc;s;asm;dsm;vcl">
+			<File
+				RelativePath="..\Osi\Ps2\do_netstart_dll.c">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;vsm">
+			<File
+				RelativePath="..\Osi\Ps2\auth_data.h">
+			</File>
+			<File
+				RelativePath="..\Osi\Ps2\do_netstart_dll.h">
+			</File>
+			<File
+				RelativePath="..\Osi\Ps2\pass_phrase.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Compiler Files"
+			Filter="">
+			<File
+				RelativePath=".\rel.cmd">
+			</File>
+			<File
+				RelativePath="..\Osi\Ps2\rel.lk">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

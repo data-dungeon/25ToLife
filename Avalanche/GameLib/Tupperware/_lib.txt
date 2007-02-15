@@ -1,0 +1,4 @@
+create "SNPS2Consumer\tupperware.lib"
+addmod "SNPS2Consumer/TupperwarePch_SN.obj"
+save
+end

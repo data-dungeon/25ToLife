@@ -1,0 +1,23 @@
+// enum unit test
+
+enum {
+   SYMBOL_ZERO,
+   SYMBOL_ONE,
+   SYMBOL_TWO
+};
+
+print SYMBOL_ZERO;  // result: 0
+print SYMBOL_ONE;   // result: 1
+print SYMBOL_TWO;   // result: 2
+
+enum Blah {
+   SYMBOL_FIVE = 5,
+   SYMBOL_SEVEN = SYMBOL_FIVE + SYMBOL_TWO,
+   SYMBOL_EIGHT,
+   SYMBOL_TEN = SYMBOL_FIVE * SYMBOL_TWO,
+};
+
+print SYMBOL_FIVE;  // result: 5
+print SYMBOL_SEVEN; // result: 7
+print SYMBOL_EIGHT; // result: 8
+print SYMBOL_TEN;   // result: 10

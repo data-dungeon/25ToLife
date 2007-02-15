@@ -1,0 +1,84 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AttrControls", "..\..\..\Libraries\AttrControls\AttrControls.vcproj", "{F4858A71-DA46-4147-B79D-AB949A21032B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KeyVal", "..\..\..\Libraries\KeyVal\KeyVal.vcproj", "{58EA4BA6-BFEE-4EB6-8D8B-C7CADD5611F8}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIDisplay", "..\..\..\Libraries\UIDisplay\UIDisplay.vcproj", "{285BA718-2071-46FA-B83C-B14E717D1B87}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MotionAttributes", "MotionAttributes.vcproj", "{8DEB8D1F-AE0F-4877-805A-D7BA3EF0639F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{285BA718-2071-46FA-B83C-B14E717D1B87} = {285BA718-2071-46FA-B83C-B14E717D1B87}
+		{F4858A71-DA46-4147-B79D-AB949A21032B} = {F4858A71-DA46-4147-B79D-AB949A21032B}
+		{58EA4BA6-BFEE-4EB6-8D8B-C7CADD5611F8} = {58EA4BA6-BFEE-4EB6-8D8B-C7CADD5611F8}
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D} = {FAF27AB7-B622-4B9C-B562-83AC0D28950D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\..\..\..\GameLib\Tupperware\tupperware.vcproj", "{FAF27AB7-B622-4B9C-B562-83AC0D28950D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Plugins/Snipe\u0020V1.0/Commands/MotionAttributes\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {2377DB3A-06F3-4420-B385-8DA50C54EE6E}
+		SccProjectUniqueName1 = ..\\..\\..\\Libraries\\AttrControls\\AttrControls.vcproj
+		SccProjectName1 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/AttrControls\u0022
+		SccLocalPath1 = ..\\..\\..\\Libraries\\AttrControls
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\..\\Libraries\\KeyVal\\KeyVal.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/KeyVal\u0022
+		SccLocalPath2 = ..\\..\\..\\Libraries\\KeyVal
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\..\\..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath3 = ..\\..\\..\\..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\..\\..\\Libraries\\UIDisplay\\UIDisplay.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/UIDisplay\u0022
+		SccLocalPath4 = ..\\..\\..\\Libraries\\UIDisplay
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = MotionAttributes.vcproj
+		SccLocalPath5 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F4858A71-DA46-4147-B79D-AB949A21032B}.Debug.ActiveCfg = Tools Debug|Win32
+		{F4858A71-DA46-4147-B79D-AB949A21032B}.Debug.Build.0 = Tools Debug|Win32
+		{F4858A71-DA46-4147-B79D-AB949A21032B}.Release.ActiveCfg = Tools Release|Win32
+		{F4858A71-DA46-4147-B79D-AB949A21032B}.Release.Build.0 = Tools Release|Win32
+		{58EA4BA6-BFEE-4EB6-8D8B-C7CADD5611F8}.Debug.ActiveCfg = Tools Debug|Win32
+		{58EA4BA6-BFEE-4EB6-8D8B-C7CADD5611F8}.Debug.Build.0 = Tools Debug|Win32
+		{58EA4BA6-BFEE-4EB6-8D8B-C7CADD5611F8}.Release.ActiveCfg = Tools Release|Win32
+		{58EA4BA6-BFEE-4EB6-8D8B-C7CADD5611F8}.Release.Build.0 = Tools Release|Win32
+		{285BA718-2071-46FA-B83C-B14E717D1B87}.Debug.ActiveCfg = Tools Debug|Win32
+		{285BA718-2071-46FA-B83C-B14E717D1B87}.Debug.Build.0 = Tools Debug|Win32
+		{285BA718-2071-46FA-B83C-B14E717D1B87}.Release.ActiveCfg = Tools Release|Win32
+		{285BA718-2071-46FA-B83C-B14E717D1B87}.Release.Build.0 = Tools Release|Win32
+		{8DEB8D1F-AE0F-4877-805A-D7BA3EF0639F}.Debug.ActiveCfg = Debug|Win32
+		{8DEB8D1F-AE0F-4877-805A-D7BA3EF0639F}.Debug.Build.0 = Debug|Win32
+		{8DEB8D1F-AE0F-4877-805A-D7BA3EF0639F}.Release.ActiveCfg = Release|Win32
+		{8DEB8D1F-AE0F-4877-805A-D7BA3EF0639F}.Release.Build.0 = Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.ActiveCfg = Tools Debug|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.Build.0 = Tools Debug|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.ActiveCfg = Tools Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

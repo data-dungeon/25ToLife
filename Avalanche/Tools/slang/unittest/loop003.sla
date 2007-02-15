@@ -1,0 +1,88 @@
+// unit test for loops testing break/continue
+
+int i;
+
+for ( i = 0 ; i < 5 ; i++ )
+{
+   if ( i == 2 )
+      break;
+   print i;
+}
+// result: 0
+// result: 1
+
+for ( i = 0 ; i < 5 ; i++ )
+{
+   if ( i == 2 )
+      continue;
+   print i;
+}
+// result: 0
+// result: 1
+// result: 3
+// result: 4
+
+int j;
+for ( i = 10 ; i < 15 ; i++ )
+{
+   print i;
+   for ( j = 0 ; j < 5 ; j++ )
+   {
+      if ( j == 2 )
+         break;
+      print j;
+   }
+   if ( i == 12 )
+      break;
+}
+// result: 10
+// result: 0
+// result: 1
+// result: 11
+// result: 0
+// result: 1
+// result: 12
+// result: 0
+// result: 1
+
+i = 0;
+while ( i < 5 )
+{
+   i++;
+   print i;
+   if ( i == 3 ) break;
+}
+// result: 1
+// result: 2
+// result: 3
+
+i = 10;
+while ( i < 14 )
+{
+   i++;
+   if ( i == 12 ) continue;
+   print i;
+}
+// result: 11
+// result: 13
+// result: 14
+
+i = 20;
+do {
+   if ( i == 23 ) break;
+   print i;
+} while ( i++ < 25 );
+// result: 20
+// result: 21
+// result: 22
+
+i = 30;
+do {
+   if ( i == 33 ) continue;
+   print i;
+} while ( i++ < 35 );
+// result: 30
+// result: 31
+// result: 32
+// result: 34
+// result: 35

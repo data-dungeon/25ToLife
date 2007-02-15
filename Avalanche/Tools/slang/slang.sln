@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Slang", "Slang.vcproj", "{A4B33D27-69D2-48D2-9C19-441C943B8C30}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234} = {B5FF543F-BE51-4B0F-9528-A7CEBC48A234}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Script", "..\..\GameLib\Script\Script.vcproj", "{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectName0 = \u0022//depot/Avalanche\u0022
+		SccLocalPath0 = ..\\..
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = Tools\\slang\\
+		SolutionUniqueID = {FEDA5BD0-CCE9-457B-82EA-22756C9CA0D3}
+		SccProjectUniqueName1 = ..\\..\\GameLib\\Script\\Script.vcproj
+		SccProjectName1 = \u0022//depot/Avalanche/GameLib/Script\u0022
+		SccLocalPath1 = ..\\..\\GameLib\\Script
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = Slang.vcproj
+		SccLocalPath2 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection2 = Tools\\slang\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		Tools Debug = Tools Debug
+		Tools Release = Tools Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Debug.ActiveCfg = Debug|Win32
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Debug.Build.0 = Debug|Win32
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Release.ActiveCfg = Release|Win32
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Release.Build.0 = Release|Win32
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Tools Debug.ActiveCfg = Debug|Win32
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Tools Debug.Build.0 = Debug|Win32
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Tools Release.ActiveCfg = Release|Win32
+		{A4B33D27-69D2-48D2-9C19-441C943B8C30}.Tools Release.Build.0 = Release|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Debug.ActiveCfg = Tools Debug|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Debug.Build.0 = Tools Debug|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Release.ActiveCfg = Tools Release|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Release.Build.0 = Tools Release|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Tools Debug.ActiveCfg = Tools Debug|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Tools Debug.Build.0 = Tools Debug|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Tools Release.ActiveCfg = Tools Release|Win32
+		{B5FF543F-BE51-4B0F-9528-A7CEBC48A234}.Tools Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

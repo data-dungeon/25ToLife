@@ -1,0 +1,89 @@
+// conditionals
+
+if ( 1 < 2 ) { print 123; } else { print 321; }		// result: 123
+if ( 2 < 1 ) { print 123; } else { print 321; }		// result: 321
+
+if ( 0 ) { print 999; } else if ( 0 ) { print 888; } else { print 111; }	// result: 111
+if ( 0 ) { print 999; } else if ( 1 ) { print 888; } else { print 111; }	// result: 888
+if ( 1 ) { print 999; } else if ( 1 ) { print 888; } else { print 111; }	// result: 999
+if ( 1 ) { print 995; } else if ( 0 ) { print 885; } else { print 115; }	// result: 995
+
+// result: 300
+if ( 1 )
+   print 300;
+else
+   if ( 1 )
+      print 301;
+   else
+      print 302;
+
+// result: 401
+if ( 0 )
+   print 400;
+else
+   if ( 1 )
+      print 401;
+   else
+      print 402;
+
+// result: 502
+if ( 0 )
+   print 500;
+else
+   if ( 0 )
+      print 501;
+   else
+      print 502;
+
+// result: 600
+if ( 1 )
+   if ( 1 )
+      print 600;
+   else
+      print 601;
+else
+   print 602;
+
+// result: 701
+if ( 1 )
+   if ( 0 )
+      print 700;
+   else
+      print 701;
+else
+   print 702;
+
+// result: 802
+if ( 0 )
+   if ( 0 )
+      print 800;
+   else
+      print 801;
+else
+   print 802;
+
+// result: 9020
+if ( 0 )
+   if ( 0 )
+      print 900;
+   else
+      print 901;
+print 9020;
+
+// result: 1002
+// result: 1003
+if ( 1 )
+   if ( 0 )
+      print 1001;
+   else
+      print 1002;
+print 1003;
+
+// result: 2001
+// result: 2003
+if ( 1 )
+   if ( 1 )
+      print 2001;
+   else
+      print 2002;
+print 2003;

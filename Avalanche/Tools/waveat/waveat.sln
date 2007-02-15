@@ -1,0 +1,44 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "waveat", "waveat.vcproj", "{67146737-4BC6-479B-A604-C0982F6515BF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6C36A4CA-1B71-4B7E-BE16-A5EE604815AF} = {6C36A4CA-1B71-4B7E-BE16-A5EE604815AF}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToolHelper", "..\..\GameLib\ToolHelper\ToolHelper.vcproj", "{6C36A4CA-1B71-4B7E-BE16-A5EE604815AF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {696F85DC-EE73-4879-8AA6-FF84B60DC11A}
+		SccProjectUniqueName1 = ..\\..\\GameLib\\ToolHelper\\ToolHelper.vcproj
+		SccLocalPath1 = ..\\..\\GameLib\\ToolHelper
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = waveat.vcproj
+		SccLocalPath2 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{67146737-4BC6-479B-A604-C0982F6515BF}.Debug.ActiveCfg = Debug|Win32
+		{67146737-4BC6-479B-A604-C0982F6515BF}.Debug.Build.0 = Debug|Win32
+		{67146737-4BC6-479B-A604-C0982F6515BF}.Release.ActiveCfg = Release|Win32
+		{67146737-4BC6-479B-A604-C0982F6515BF}.Release.Build.0 = Release|Win32
+		{6C36A4CA-1B71-4B7E-BE16-A5EE604815AF}.Debug.ActiveCfg = Debug|Win32
+		{6C36A4CA-1B71-4B7E-BE16-A5EE604815AF}.Debug.Build.0 = Debug|Win32
+		{6C36A4CA-1B71-4B7E-BE16-A5EE604815AF}.Release.ActiveCfg = Release|Win32
+		{6C36A4CA-1B71-4B7E-BE16-A5EE604815AF}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

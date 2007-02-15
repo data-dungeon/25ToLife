@@ -1,0 +1,6 @@
+; Utility.def : declares the module parameters for the DLL.
+
+LIBRARY	     "Utility"
+
+EXPORTS
+    ; Explicit exports can go here

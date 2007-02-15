@@ -1,0 +1,28 @@
+// function unit test
+
+int a()
+{
+   print "a called";
+}
+
+a();	// result: a called
+a();	// result: a called
+
+int b( int a )
+{
+   print "b called";
+   print a;
+}
+
+b(3);   // result: b called
+        // result: 3
+b(7);   // result: b called
+        // result: 7
+
+int c( int a, int b )
+{
+   print a - b;
+}
+
+c( 7, 3 );	// result: 4
+c( 5, -5 );	// result: 10

@@ -1,0 +1,17 @@
+Title Rugrats Backyard
+LF 7
+Trans 100
+ULColor 255,0,0
+URColor 255,0,0
+LLColor 255,0,0
+LRColor 255,0,0
+L1Dir 1.0,0.0,0.0
+L2Dir 0.0,1.0,0.0
+L3Dir 1.0,0.0,1.0
+L1Color 128,0,0
+L2Color 0,128,0
+L3Color 0,0,255
+AColor 0,0,255
+ViewIcon rrlogo.ico
+CopyIcon rrlogo.ico
+DelIcon rrlogo.ico

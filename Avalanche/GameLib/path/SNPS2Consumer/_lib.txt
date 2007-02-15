@@ -1,0 +1,4 @@
+create SNPS2Consumer/path.lib
+addmod SNPS2Consumer/PathPCH_SN.obj
+save
+end

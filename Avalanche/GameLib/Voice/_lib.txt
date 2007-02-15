@@ -1,0 +1,18 @@
+create "SNPS2Debug/Voice.lib"
+addmod "SNPS2Debug/gsm_decode.obj"
+addmod "SNPS2Debug/gsm_encode.obj"
+addmod "SNPS2Debug/gsm_state.obj"
+addmod "SNPS2Debug/openlpc.obj"
+addmod "SNPS2Debug/CTimer.obj"
+addmod "SNPS2Debug/GSMCodec.obj"
+addmod "SNPS2Debug/nellymoser_wrapper.obj"
+addmod "SNPS2Debug/NellyMoserCodec.obj"
+addmod "SNPS2Debug/OpenLPCCodec.obj"
+addmod "SNPS2Debug/PS2LogitechDevices.obj"
+addmod "SNPS2Debug/PS2LogitechSink.obj"
+addmod "SNPS2Debug/PS2LogitechSource.obj"
+addmod "SNPS2Debug/VoiceChat.obj"
+addmod "SNPS2Debug/VoiceChatManager.obj"
+addlib "c:/dev/Avalanche/GameLib/Network/SNPS2Debug/Network.lib"
+save
+end

@@ -1,0 +1,6 @@
+-T "c:\dev\Avalanche\GameLib\Patcher\PatchExt\rel.cmd" -nostartfiles
+--start-group
+--end-group
+
+-Wl,-G0,-Map,SNPS2Consumer/PatchExt.map,-sn-full-map
+

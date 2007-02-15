@@ -1,0 +1,783 @@
+	.vu
+include( `VUDefines.vm4')
+
+	.global	dbAnimShadower_CodeBegin
+	.global	dbAnimShadower_CodeEnd
+
+	.global	dbAnimShadower_Start
+	
+	tableentry(ASFinish)
+	
+	tableentry(ASLoadStreamToCache)
+	
+	tableentry(ASLoadCacheToMtx1)
+	tableentry(ASLoadCacheToMtx2)
+	
+	tableentry(ASLoadStreamToMtx1)
+	tableentry(ASLoadStreamToMtx2)
+
+	tableentry(ASLoadNextInst)
+	tableentry(ASTransform_ProcessInst)
+
+	tableentry(ASTransform1_Start)	
+	tableentry(ASTransform1_ContinueNW)
+	tableentry(ASTransform1_ContinueNW_ADC)
+	tableentry(ASTransform1_Continue)
+	tableentry(ASTransform1_Continue_ADC)
+	tableentry(ASTransform1_ContinueNR)
+	tableentry(ASTransform1_ContinueNR_ADC)
+
+
+	tableentry(ASTransform2_Start)	
+	tableentry(ASTransform2_ContinueNW)
+	tableentry(ASTransform2_ContinueNW_ADC)
+	tableentry(ASTransform2_Continue)
+	tableentry(ASTransform2_Continue_ADC)
+	tableentry(ASTransform2_ContinueNR)
+	tableentry(ASTransform2_ContinueNR_ADC)
+
+	tableentry(ASTransform_Finish)
+	tableentry(ASTransform_Finish_ADC)
+		
+.dmadata dbAnimShadower_CodeBegin
+ASStart:
+	NOP		BAL	VI09, AS_RefAddress
+	NOP		NOP
+AS_RefAddress:
+	NOP		XTOP	VI10	; Grab Buffer Base
+
+ASContinue:
+	NOP		IADDIU	VI12, VI10, 2	; Base GIFData Ptr
+
+; load first header QWord
+	NOP		ILW.y	VI03, 0(VI10)y	; DirtyMatrix Count
+	NOP		ILW.x	VI02, 0(VI10)x	; MatrixCacheBase Offset
+	NOP		ILW.z	VI04, 0(VI10)z	; DirtyMatrixBits1
+	NOP		ILW.w	VI05, 0(VI10)w	; DirtyMatrixBits2
+	
+	NOP		IBEQ	VI03, VI00, AL_LoadHdr2
+	NOP		NOP
+	
+	NOP		BAL	VI14, A_UpdateDirtyMatrices
+	NOP		NOP
+	
+AL_LoadHdr2:
+; load second header QWord
+	NOP		ILW.y	VI04, 1(VI10)y	; InputBuffer Offset
+	NOP		ILW.z	VI11, 1(VI10)z	; XGKICK Offset
+	NOP		ILW.w	VI02, 1(VI10)w	; Flags | StatePacketSize
+	NOP		ILW.x	VI01, 1(VI10)x	; Vertex Count
+
+	NOP		IADDIU	VI15, VI00, 0x00ff	; mask out StatePacketSize
+	NOP		IAND	VI02, VI02, VI15
+
+	NOP		IADD	VI04, VI04, VI10	; InputBuffer Ptr - Vertices
+	NOP		IADD	VI11, VI11, VI10	; XGKICK Ptr
+	NOP		IBEQ	VI02, VI00, ASPreProcessSetup
+	NOP		IADD	VI06, VI11, VI00	; VertexOutput Ptr
+
+ASCopyGIFData:
+	NOP		IADD	VI12, VI12, VI02
+
+ASPreProcessSetup:
+	NOP		IADDIU	VI01, VI01, 0x7fff
+	NOP		IADDIU	VI01, VI01, 0x0001
+	NOP		MFIR.x	VF31x, VI01
+
+	NOP		IADDIU	VI08, VI00, 0x7fff
+	NOP		IADDIU	VI08, VI08, 0x0001	; VI08 = ADC bit - 0x8000
+	NOP		IADDIU	VI07, VI00, 0x00ff	; VI07 = Instruction mask	
+
+	NOP		B	ASLoadNextInst
+	NOP		SQI	VF31, (VI06++)	; store GIFTag to OutGIFBuffer	
+
+; ----------------------------------------------------------------------------------------------------------
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+ASLoadNextInst:
+	NOP		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	NOP		ILW.y	VI02, 0(VI12)y
+	NOP		ILW.z	VI03, 0(VI12)z
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		JR	VI01	; Branch to InstructionRoutine
+	NOP		IADD	VI13, VI02, VI10	; <ds>
+	
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) FinishUp
+;
+; ----------------------------------------------------------------------------------------------------------
+ASFinish:
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		XGKICK	VI11
+	NOP		NOP
+	NOP[E]		NOP
+	NOP		NOP
+	NOP		B	ASContinue
+	NOP		XTOP	VI10	; Grab Buffer Base
+	NOP		NOP
+; ----------------------------------------------------------------------------------------------------------
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+
+; ----------------------------------------------------------------------------------------------------------
+; Instruction Data
+; VI01 	: Instruction Addr
+; VI02 	: Data1
+; VI03 	: Data2
+; VI12 	: Next Instruction
+; VI13	: Data1 Buffer Adjusted
+; ----------------------------------------------------------------------------------------------------------
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load MatrixCache from Matrix Stream
+; VI02	: MatrixStream Offset
+; VI03	: MatrixCache Offset
+; VI13	: MatrixStream Ptr
+; ----------------------------------------------------------------------------------------------------------
+ASLoadStreamToCache:
+	NOP		LQI	VF28, (VI13++)	; load matrix from IS
+	NOP		LQI	VF29, (VI13++)
+	NOP		LQI	VF30, (VI13++)
+	NOP		NOP
+	NOP		SQI	VF28, (VI03++)	; store matrix in MatrixCache
+	NOP		LQI	VF28, (VI13++)
+	NOP		SQI	VF29, (VI03++)
+	NOP		SQI	VF30, (VI03++)
+	NOP		B	ASLoadNextInst	; fetch next Instruction
+	NOP		SQI	VF28, (VI03++)	; <ds>
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load Matrix From InstructionStream or MatrixCache
+; VI12	: InstructionStreamPtr
+;
+; ----------------------------------------------------------------------------------------------------------
+ASLoadStreamToMtx1:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+ASLoadCacheToMtx1:
+	NOP		LQI	VF01, (VI03++)
+	NOP		LQI	VF02, (VI03++)
+	NOP		LQI	VF03, (VI03++)
+	NOP		B	ASLoadNextInst	; fetch next Instruction
+	NOP		LQI	VF04, (VI03++)	; <ds>
+; ----------------------------------------------------------------------------------------------------------
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+			
+ASLoadStreamToMtx2:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+ASLoadCacheToMtx2:
+	NOP		LQI	VF08, (VI03++)
+	NOP		LQI	VF09, (VI03++)
+	NOP		LQI	VF10, (VI03++)
+	NOP		B	ASLoadNextInst
+	NOP		LQI	VF11, (VI03++)
+; ----------------------------------------------------------------------------------------------------------
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+;---------------------------------------------------------------------------------------------------------------					       
+
+;---------------------------------------------------------------------------------------------------------------					       
+; The following code is ordered to minimize in-Vertex instruction space requirements.
+;---------------------------------------------------------------------------------------------------------------					       
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Start the Vertex Pipeline - Matrix 1
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform1_Start:
+	NOP		LQ	VF20, 0(VI04)	; load Vertex 1
+	NOP		NOP
+	NOP		IADDIU	VI04, VI04, 2	; next Vertex/Normal pair
+	MULAw.xyzw	ACC, VF04, VF00w	IADDIU	VI05, VI09, ASTransform_ProcessInst - AS_RefAddress
+	MADDAx.xyzw	ACC, VF01, VF20x	MTIR	VI01, VF20w
+	MADDAy.xyzw	ACC, VF02, VF20y	IADDIU	VI02, VI09, ASTransform1_ContinueNW - AS_RefAddress
+	MADDz.xyzw	VF22, VF03, VF20z	IAND	VI01, VI01, VI07
+	NOP		IADD	VI01, VI01, VI02
+	NOP		LQI	VF20, (VI04++)	; load Vertex 2
+	NOP	 	JR	VI01	
+	NOP		NOP
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform2_Start:
+	NOP		LQ	VF20, 0(VI04)	; load Vertex 1
+	NOP		NOP
+	NOP		IADDIU	VI04, VI04, 2	; next Vertex/Normal pair
+	MULAw.xyzw	ACC, VF11, VF00w	IADDIU	VI05, VI09, ASTransform_ProcessInst - AS_RefAddress
+	MADDAx.xyzw	ACC, VF08, VF20x	MTIR	VI01, VF20w
+	MADDAy.xyzw	ACC, VF09, VF20y	IADDIU	VI02, VI09, ASTransform1_ContinueNW - AS_RefAddress
+	MADDz.xyzw	VF22, VF10, VF20z	IAND	VI01, VI01, VI07
+	NOP		IADD	VI01, VI01, VI02
+	NOP		LQI	VF20, (VI04++)	; load Vertex 2
+	NOP	 	JR	VI01	
+	NOP		NOP
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue Pipeline - No Data Write - Matrix 1
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform1_ContinueNW:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00x	NOP
+	NOP		MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF01, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF02, VF20y	IADDIU	VI04, VI04, 1
+	MADDz.xyzw	VF22, VF03, VF20z	IADD	VI01, VI01, VI05
+	NOP		LQI	VF20, (VI04++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI00
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+ASTransform1_ContinueNW_ADC:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	NOP
+	NOP		MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF01, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF02, VF20y	IADDIU	VI04, VI04, 1
+	MADDz.xyzw	VF22, VF03, VF20z	IADD	VI01, VI01, VI05
+	NOP		LQI	VF20, (VI04++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI08
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue Pipeline - No Data Write - Matrix 2
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform2_ContinueNW:	
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	NOP
+	NOP		MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF08, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF09, VF20y	IADDIU	VI04, VI04, 1
+	MADDz.xyzw	VF22, VF10, VF20z	IADD	VI01, VI01, VI05
+	NOP		LQI	VF20, (VI04++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI00
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+ASTransform2_ContinueNW_ADC:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	NOP
+	NOP		MTIR	VI01, VF20w	; Move inst to IR
+	MADDAx.xyzw	ACC, VF08, VF20x	IAND	VI01, VI01, VI07	; Mask inst lower bits
+	MADDAy.xyzw	ACC, VF09, VF20y	IADDIU	VI04, VI04, 1	; Inc Src past normal
+	MADDz.xyzw	VF22, VF10, VF20z	IADD	VI01, VI01, VI05	; Add offset
+	NOP		LQI	VF20, (VI04++)	; Load next Vtx
+	MULq.xyz	VF24, VF28, Q	JR	VI01	; Jump to next
+	NOP		MFIR.w	VF24w, VI08	; <ds> store ADC bit
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Transform Loop Process Instruction
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform_ProcessInst:
+	NOP		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	NOP		ILW.y	VI02, 0(VI12)y
+	NOP		ILW.z	VI03, 0(VI12)z
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		JR	VI01	; Branch to InstructionRoutine
+	NOP		IADD	VI13, VI02, VI10	; <ds>
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue Pipeline - Matrix 1
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform1_Continue:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI04, VI04, 1
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF01, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF02, VF20y	IADD	VI01, VI01, VI05
+	MADDz.xyzw	VF22, VF03, VF20z	LQI	VF20, (VI04++)
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI00
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+ASTransform1_Continue_ADC:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI04, VI04, 1
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF01, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF02, VF20y	IADD	VI01, VI01, VI05
+	MADDz.xyzw	VF22, VF03, VF20z	LQI	VF20, (VI04++)
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI08
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue Pipeline - Matrix 2
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform2_Continue:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI04, VI04, 1
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF08, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF09, VF20y	IADD	VI01, VI01, VI05
+	MADDz.xyzw	VF22, VF10, VF20z	LQI	VF20, (VI04++)
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI00
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+ASTransform2_Continue_ADC:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI04, VI04, 1
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF08, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF09, VF20y	IADD	VI01, VI01, VI05
+	MADDz.xyzw	VF22, VF10, VF20z	LQI	VF20, (VI04++)
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI08
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue Pipeline - No Data Read - Matrix 1
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform1_ContinueNR:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI02, VI09, ASTransform_Finish - AS_RefAddress
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF01, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF02, VF20y	IADD	VI01, VI01, VI02
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI00
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+ASTransform1_ContinueNR_ADC:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI02, VI09, ASTransform_Finish - AS_RefAddress
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF01, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF02, VF20y	IADD	VI01, VI01, VI02
+	MADDz.xyzw	VF22, VF03, VF20z	NOP
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI08
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Continue Pipeline - No Data Read - Matrix 2
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform2_ContinueNR:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI02, VI09, ASTransform_Finish - AS_RefAddress
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF08, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF09, VF20y	IADD	VI01, VI01, VI02
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI00
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	
+ASTransform2_ContinueNR_ADC:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF22w
+
+	ADDx.xyz	VF28, VF22, VF00	IADDIU	VI02, VI09, ASTransform_Finish - AS_RefAddress
+	FTOI4.xyz	VF24, VF24	MTIR	VI01, VF20w
+	MADDAx.xyzw	ACC, VF08, VF20x	IAND	VI01, VI01, VI07
+	MADDAy.xyzw	ACC, VF09, VF20y	IADD	VI01, VI01, VI02
+	MADDz.xyzw	VF22, VF10, VF20z	NOP
+	NOP		SQI	VF24, (VI06++)
+	MULq.xyz	VF24, VF28, Q	JR	VI01
+	NOP		MFIR.w	VF24w, VI08
+
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+;---------------------------------------------------------------------------------------------------------------					       
+
+;---------------------------------------------------------------------------------------------------------------					       
+; Finish Transformation Pipeline 
+;---------------------------------------------------------------------------------------------------------------					       
+ASTransform_Finish:
+	FTOI4.xyz	VF24, VF24	DIV	Q, VF00w, VF22w
+	NOP		NOP
+	NOP		NOP		
+	NOP		NOP
+	NOP		SQI.xyzw	VF24, (VI06++)	
+	NOP		NOP
+	NOP		NOP
+	MULq.xyz	VF24, VF22, Q	NOP		
+	NOP		MFIR.w	VF24w, VI00	
+	NOP		NOP
+	NOP		ILW.x	VI01, 0(VI12)x
+	FTOI4.xyz	VF24, VF24	ILW.y	VI02, 0(VI12)y	
+	NOP		ILW.z	VI03, 0(VI12)z
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		JR	VI01
+	NOP		SQI.xyzw	VF24, (VI06++)
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+ASTransform_Finish_ADC:
+	FTOI4.xyz	VF24, VF28	DIV	Q, VF00w, VF22w
+	NOP		NOP
+	NOP		NOP		
+	NOP		NOP
+	NOP		SQI.xyzw	VF24, (VI06++)	
+	NOP		NOP
+	NOP		NOP
+	MULq.xyz	VF24, VF22, Q	NOP		
+	NOP		MFIR.w	VF24w, VI08
+	NOP		NOP
+	NOP		ILW.x	VI01, 0(VI12)x
+	FTOI4.xyz	VF24, VF24	ILW.y	VI02, 0(VI12)y	
+	NOP		ILW.z	VI03, 0(VI12)z
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		JR	VI01
+	NOP		SQI.xyzw	VF24, (VI06++)
+;---------------------------------------------------------------------------------------------------------------					       
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		NOP
+
+dbAnimShadower_Start:
+	NOP		XTOP	VI01
+
+	NOP		LQ	VF09, 0(VI01)	; Common->Screen Mtx 1
+	NOP		LQ	VF10, 1(VI01)	; Common->Screen Mtx 2
+	NOP		LQ	VF11, 2(VI01)	; Common->Screen Mtx 3
+	NOP		LQ	VF12, 3(VI01)	; Common->Screen Mtx 4
+	
+	NOP		LQ	VF05, 4(VI01)	; Obj->Common Mtx 1
+	NOP		LQ	VF06, 5(VI01)	; Obj->Common Mtx 2
+	NOP		LQ	VF07, 6(VI01)	; Obj->Common Mtx 3
+	NOP		LQ	VF08, 7(VI01)	; Obj->Common Mtx 4
+
+	NOP		LQ	VF31, 8(VI01)	; Load GIFTag
+
+
+AS_ConcatMatrices:
+	MULAx.xyzw	ACC, VF09, VF05x	NOP
+	MADDAy.xyzw	ACC, VF10, VF05y	NOP
+	MADDAz.xyzw	ACC, VF11, VF05z	NOP
+	MADDw.xyzw	VF01, VF12, VF05w	NOP
+
+	MULAx.xyzw	ACC, VF09, VF06x	NOP
+	MADDAy.xyzw	ACC, VF10, VF06y	NOP
+	MADDAz.xyzw	ACC, VF11, VF06z	NOP
+	MADDw.xyzw	VF02, VF12, VF06w	NOP
+
+	MULAx.xyzw	ACC, VF09, VF07x	NOP
+	MADDAy.xyzw	ACC, VF10, VF07y	NOP
+	MADDAz.xyzw	ACC, VF11, VF07z	NOP
+	MADDw.xyzw	VF03, VF12, VF07w	NOP
+	
+	MULAx.xyzw	ACC, VF09, VF08x	NOP
+	MADDAy.xyzw	ACC, VF10, VF08y	NOP
+	MADDAz.xyzw 	ACC, VF11, VF08z	NOP
+	MADDw.xyzw	VF04, VF12, VF08w	NOP
+
+AS_BranchFirstBuffer:
+	NOP		SQ	VF01, 0(VI00)
+	NOP		SQ	VF02, 1(VI00)
+	NOP		SQ	VF03, 2(VI00)
+	NOP[E]		B	ASStart
+	NOP		SQ	VF04, 3(VI00)
+
+
+
+;--------------------------------------------------------------------------------------------------
+define( 'MatrixSize', eval( 9))
+
+define( 'irTemp1', 'VI01')
+define( 'irCurrentBit', 'VI06')
+
+define( 'irMatrixAddr', 'VI02')
+define( 'irDirtyMtxCnt', 'VI03')
+define( 'irDirtyMtxBits1', 'VI04')
+define( 'irDirtyMtxBits2', 'VI05')
+define( 'irReturnAddr', 'VI14')
+
+include( 'AnimMatrixCheck.vm4')
+;--------------------------------------------------------------------------------------------------
+
+.enddmadata
+dbAnimShadower_CodeEnd:

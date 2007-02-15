@@ -1,0 +1,897 @@
+	.vu
+include( `VUDefines.vm4')
+
+ 	.global dbAnimLCPLit_CodeBegin
+	.global	dbAnimLCPLit_CodeEnd
+
+	.global	dbAnimLCPLit_Start
+
+	tableentry(ALCPLitFinish)
+	
+	tableentry(ALCPLitLoadStreamToCache)
+	
+	tableentry(ALCPLitLoadCacheToMtx1)
+	tableentry(ALCPLitLoadCacheToMtx2)
+
+	tableentry(ALCPLitLoadStreamToMtx1)
+	tableentry(ALCPLitLoadStreamToMtx2)
+	
+	tableentry(ALCPLitLoadNextInst)
+	tableentry(ALCPLitTransform_ProcessInst)
+	
+	tableentry(ALCPLitTransform1_Start)
+	tableentry(ALCPLitTransform1_ContinueNW)
+	tableentry(ALCPLitTransform1_ContinueNW_ADC)
+	tableentry(ALCPLitTransform1_Continue)
+	tableentry(ALCPLitTransform1_Continue_ADC)
+	tableentry(ALCPLitTransform1_ContinueNR)
+	tableentry(ALCPLitTransform1_ContinueNR_ADC)
+
+	tableentry(ALCPLitTransform2_Start)
+	tableentry(ALCPLitTransform2_ContinueNW)
+	tableentry(ALCPLitTransform2_ContinueNW_ADC)
+	tableentry(ALCPLitTransform2_Continue)
+	tableentry(ALCPLitTransform2_Continue_ADC)
+	tableentry(ALCPLitTransform2_ContinueNR)
+	tableentry(ALCPLitTransform2_ContinueNR_ADC)
+	
+	tableentry(ALCPLitTransform_Finish)
+	tableentry(ALCPLitTransform_Finish_ADC)
+	
+.dmadata dbAnimLCPLit_CodeBegin
+
+ALCStart:
+	nop		BAL	VI09, ALC_RefAddress
+	nop		NOP
+ALC_RefAddress:
+	nop		XTOP	VI10	; Grab Buffer Base
+
+ALCContinue:
+	nop		IADDIU	VI12, VI10, 2	; Base GIFData Ptr
+
+; load first header QWord
+	nop		ILW.y	VI03, 0(VI10)y	; DirtyMatrix Count
+	nop		ILW.x	VI02, 0(VI10)x	; MatrixCacheBase Offset
+	nop		ILW.z	VI04, 0(VI10)z	; DirtyMatrixBits1
+	nop		ILW.w	VI05, 0(VI10)w	; DirtyMatrixBits2
+	
+	nop		IBEQ	VI03, VI00, ALC_LoadHdr2
+	nop		NOP
+	
+	nop		BAL	VI14, A_UpdateDirtyMatrices
+	nop		NOP
+	
+ALC_LoadHdr2:
+; load second header QWord
+	nop		ILW.y	VI04, 1(VI10)y	; InputBuffer Offset
+	nop		ILW.z	VI11, 1(VI10)z	; XGKICK Offset
+	nop		ILW.w	VI02, 1(VI10)w	; Flags | StatePacketSize
+	nop		ILW.x	VI01, 1(VI10)x	; Vertex Count
+
+	NOP		IADDIU	VI15, VI00, 0x00ff	; mask out StatePacketSize
+	NOP		IAND	VI02, VI02, VI15
+
+	nop		IADD	VI04, VI04, VI10	; InGeomBuffer Ptr
+	nop		IADD	VI11, VI11, VI10	; XGKICK Ptr
+	nop		IBEQ	VI02, VI00, ALCPreProcessSetup
+	nop		IADD	VI06, VI11, VI00	; Active OutGIFBuffer Ptr
+
+ALCCopyGIFData:
+	nop		IADD	VI03, VI12, VI02
+
+ALCCopyLoop:	
+	nop		LQI	VF01, (VI12++)
+	nop		NOP
+	nop		IBNE	VI03, VI12, ALCCopyLoop
+	nop		SQI	VF01, (VI06++)
+
+ALCPreProcessSetup:
+	nop		IADDIU	VI01, VI01, 0x7fff
+	nop		IADDIU	VI01, VI01, 0x0001
+	nop		MFIR.x	VF31x, VI01
+
+	nop		IADDIU	VI08, VI00, 0x7fff
+	nop		IADDIU	VI08, VI08, 0x0001	; VI08 = ADC bit - 0x8000
+	nop		IADDIU	VI07, VI00, 0x00ff	; VI07 = Instruction mask	
+
+	nop		IADDIU	VI14, VI06, 0	; temporary GIFTag addr
+	nop		B	ALCPLitLoadNextInst
+	nop		SQI	VF31, (VI06++)	; store GIFTag to OutGIFBuffer	
+
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+ALCPLitLoadNextInst:
+	nop		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	nop		ILW.y	VI02, 0(VI12)y
+	nop		ILW.z	VI03, 0(VI12)z
+	nop		IADDIU	VI12, VI12, 1
+	nop		JR	VI01	; Branch to InstructionRoutine
+	nop		IADD	VI13, VI02, VI10	; <ds>
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) FinishUp
+;
+; ----------------------------------------------------------------------------------------------------------
+ALCPLitFinish:
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		XGKICK	VI11
+	nop		NOP
+	NOP[E]	NOP
+	nop		NOP
+	nop		B	ALCContinue
+	nop		XTOP	VI10	; Grab Buffer Base
+	nop		NOP
+
+; ----------------------------------------------------------------------------------------------------------
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+
+; ----------------------------------------------------------------------------------------------------------
+; Instruction Data
+; VI01 	: Instruction Addr
+; VI02 	: Data1
+; VI03 	: Data2
+; VI12 	: Next Instruction
+; VI13	: Data1 Buffer Adjusted
+; ----------------------------------------------------------------------------------------------------------
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load MatrixCache from Matrix Stream
+; VI02	: MatrixStream Offset
+; VI03	: MatrixCache Offset
+; VI13	: MatrixStream Ptr
+; ----------------------------------------------------------------------------------------------------------
+ALCPLitLoadStreamToCache:
+	nop		LQI	VF30, (VI13++)	; load matrix from IS
+	nop		SQI	VF30, (VI03++)	; <ds>
+	nop		LQI	VF30, (VI13++)	; load matrix from IS
+	nop		SQI	VF30, (VI03++)	; <ds>
+	nop		LQI	VF30, (VI13++)	; load matrix from IS
+	nop		SQI	VF30, (VI03++)	; <ds>
+	nop		LQI	VF30, (VI13++)	; load matrix from IS
+	nop		B	ALCPLitLoadNextInst	; fetch next Instruction
+	nop		SQI	VF30, (VI03++)	; <ds>
+	nop		nop		; <pad>
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load Matrix From InstructionStream or MatrixCache
+; VI12	: InstructionStreamPtr
+;
+; ----------------------------------------------------------------------------------------------------------
+ALCPLitLoadStreamToMtx1:
+	nop		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+ALCPLitLoadCacheToMtx1:
+	nop		LQI	VF01, (VI03++)
+	nop		LQI	VF02, (VI03++)
+	nop		LQI	VF03, (VI03++)
+	nop		LQI	VF04, (VI03++)
+	nop		LQI.xyz	VF05, (VI03++)
+	nop		LQI.xyz	VF06, (VI03++)
+	nop		B	ALCSetPLights1	; fetch next Instruction
+	nop		LQI.xyz	VF07, (VI03++)	; <ds>
+	
+ALCPLitLoadStreamToMtx2:
+	nop		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+ALCPLitLoadCacheToMtx2:
+	nop		LQI	VF08, (VI03++)
+	nop		LQI	VF09, (VI03++)
+	nop		LQI	VF10, (VI03++)
+	nop		LQI	VF11, (VI03++)
+	nop		LQI.xyz	VF12, (VI03++)
+	nop		LQI.xyz	VF13, (VI03++)
+	nop		B	ALCSetPLights2
+	nop		LQI.xyz	VF14, (VI03++)
+	
+;---------------------------------------------------------------------------------------------------------------	       
+;---------------------------------------------------------------------------------------------------------------	       
+
+;---------------------------------------------------------------------------------------------------------------	       
+; The following code is ordered to minimize in-Vertex instruction space requirements.
+;---------------------------------------------------------------------------------------------------------------	       
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Start the Vertex Pipeline - Matrix 1
+;---------------------------------------------------------------------------------------------------------------	       
+ALCPLitTransform1_Start:
+	ADDw.z	VF27, VF00, VF00w	LQ	VF23, 0(VI04)	; load Vertex 1
+	nop		LQ	VF24, 1(VI04)	; load Normal 1
+	nop		LOI	255.0	; load ColorClamp
+	MULAw.xyzw	ACC, VF04, VF00w	nop
+	MADDAx.xyzw	ACC, VF01, VF23x	iaddiu	vi15, vi00, 0
+	MADDAy.xyzw	ACC, VF02, VF23y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF25, VF03, VF23z	IADDIU	VI04, VI04, 2	; inc Vertex/Normal pair ptr
+	MULAw.xyz	ACC, VF05, VF23w	MTIR	VI01, VF23w
+	MADDAz.xyz	ACC, VF06, VF24z	NOP
+	MADDw.xyz	VF26, VF07, VF24w	IADDIU	VI02, VI09, ALCPLitTransform1_ContinueNW - ALC_RefAddress
+	CLIPw.xyz	VF25, VF25	IAND	VI01, VI01, VI07
+	MULAx.xyzw	ACC, VF15, VF25x	IADD	VI01, VI01, VI02
+	MADDAy.xyzw	ACC, VF16, VF25y	LQI	VF23, (VI04++)
+	MADDAz.xyzw	ACC, VF17, VF25z	JR	VI01
+	MADDw.xyzw	VF25, VF18, VF25w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+ALCPLitTransform2_Start:
+	ADDw.z	VF27, VF00, VF00w	LQ	VF23, 0(VI04)	; load Vertex 1
+	nop		LQ	VF24, 1(VI04)	; load Normal 1
+	nop		LOI	255.0	; load ColorClamp
+	MULAw.xyzw	ACC, VF11, VF00w	nop
+	MADDAx.xyzw	ACC, VF08, VF23x	iaddiu	vi15, vi00, 2
+	MADDAy.xyzw	ACC, VF09, VF23y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF25, VF10, VF23z	IADDIU	VI04, VI04, 2	; inc Vertex/Normal pair ptr
+	MULAw.xyz	ACC, VF12, VF23w	MTIR	VI01, VF23w
+	MADDAz.xyz	ACC, VF13, VF24z	NOP
+	MADDw.xyz	VF26, VF14, VF24w	IADDIU	VI02, VI09, ALCPLitTransform1_ContinueNW - ALC_RefAddress
+	CLIPw.xyz	VF25, VF25	IAND	VI01, VI01, VI07
+	MULAx.xyzw	ACC, VF15, VF25x	IADD	VI01, VI01, VI02
+	MADDAy.xyzw	ACC, VF16, VF25y	LQI	VF23, (VI04++)
+	MADDAz.xyzw	ACC, VF17, VF25z	JR	VI01
+	MADDw.xyzw	VF25, VF18, VF25w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue the Vertex Pipeline w/o Write - Matrix 1
+;---------------------------------------------------------------------------------------------------------------	       
+ALCPLitTransform1_ContinueNW:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF01, VF23x	FCAND	VI01, 0x3ffff
+	MADDAy.xyzw	ACC, VF02, VF23y	IADDIU	VI02, VI01, 0x7fff
+	MADDz.xyzw	VF30, VF03, VF23z	NOP
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MAXx.xyz	VF26, VF26, VF00	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	CLIPw.xyz	VF30, VF30	IADD	VI01, VI01, VI09
+	MULAx.xyzw	ACC, VF15, VF30x	MR32.z	VF24, VF00
+	MADDAy.xyzw	ACC, VF16, VF30y	MOVE	VF29, VF25	; copy xfrmed XYZ
+	MADDAz.xyzw	ACC, VF17, VF30z	isw.x	vi01, 6(vi00)x
+	MADDw.xyzw	VF25, VF18, VF30w	NOP
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	NOP
+	MADDAx.xyzw	ACC, VF20, VF26x	NOP
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 0
+	MULq.xyz	VF29, VF29, Q	ilw.x	vi01, 6(vi00)x
+	MULAw.xyz	ACC, VF05, VF23w	NOP
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF06, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF07, VF24w	MFIR.w	VF29w, VI02
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform1_ContinueNW_ADC:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF01, VF23x	NOP
+	MADDAy.xyzw	ACC, VF02, VF23y	NOP
+	MADDz.xyzw	VF30, VF03, VF23z	NOP
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MAXx.xyz	VF26, VF26, VF00	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	CLIPw.xyz	VF30, VF30	IADD	VI01, VI01, VI09
+	MULAx.xyzw	ACC, VF15, VF30x	MR32.z	VF24, VF00	; set 1.0
+	MADDAy.xyzw	ACC, VF16, VF30y	MOVE	VF29, VF25	; copy xfrmed XYZ
+	MADDAz.xyzw	ACC, VF17, VF30z	isw.x	vi01, 6(vi00)x
+	MADDw.xyzw	VF25, VF18, VF30w	NOP
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	NOP
+	MADDAx.xyzw	ACC, VF20, VF26x	NOP
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 0
+	MULq.xyz	VF29, VF29, Q	ilw.x	vi01, 6(vi00)x
+	MULAw.xyz	ACC, VF05, VF23w	NOP
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF06, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF07, VF24w	MFIR.w	VF29w, VI08
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue the Vertex Pipeline w/o Write - Matrix 2
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform2_ContinueNW:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF08, VF23x	FCAND	VI01, 0x3ffff
+	MADDAy.xyzw	ACC, VF09, VF23y	IADDIU	VI02, VI01, 0x7fff
+	MADDz.xyzw	VF30, VF10, VF23z	NOP
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MAXx.xyz	VF26, VF26, VF00	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	CLIPw.xyz	VF30, VF30	IADD	VI01, VI01, VI09
+	MULAx.xyzw	ACC, VF15, VF30x	MR32.z	VF24, VF00
+	MADDAy.xyzw	ACC, VF16, VF30y	MOVE	VF29, VF25	; copy xfrmed XYZ
+	MADDAz.xyzw	ACC, VF17, VF30z	isw.x	vi01, 6(vi00)x
+	MADDw.xyzw	VF25, VF18, VF30w	NOP
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	NOP
+	MADDAx.xyzw	ACC, VF20, VF26x	NOP
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 2
+	MULq.xyz	VF29, VF29, Q	ilw.x	vi01, 6(vi00)x
+	MULAw.xyz	ACC, VF12, VF23w	NOP
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF14, VF24w	MFIR.w	VF29w, VI02
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform2_ContinueNW_ADC:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF08, VF23x	NOP
+	MADDAy.xyzw	ACC, VF09, VF23y	NOP
+	MADDz.xyzw	VF30, VF10, VF23z	NOP
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MAXx.xyz	VF26, VF26, VF00	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	CLIPw.xyz	VF30, VF30	IADD	VI01, VI01, VI09
+	MULAx.xyzw	ACC, VF15, VF30x	MR32.z	VF24, VF00	; set 1.0
+	MADDAy.xyzw	ACC, VF16, VF30y	MOVE	VF29, VF25	; copy xfrmed XYZ
+	MADDAz.xyzw	ACC, VF17, VF30z	isw.x	vi01, 6(vi00)x
+	MADDw.xyzw	VF25, VF18, VF30w	NOP
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	NOP
+	MADDAx.xyzw	ACC, VF20, VF26x	NOP
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 2
+	MULq.xyz	VF29, VF29, Q	ilw.x	vi01, 6(vi00)x
+	MULAw.xyz	ACC, VF12, VF23w	NOP
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF14, VF24w	MFIR.w	VF29w, VI08
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Transform Loop Process Instruction
+;---------------------------------------------------------------------------------------------------------------	       
+ALCPLitTransform_ProcessInst:
+	nop		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	nop		ILW.y	VI02, 0(VI12)y
+	nop		ILW.z	VI03, 0(VI12)z
+	nop		IADDIU	VI12, VI12, 1
+	nop		JR	VI01	; Branch to InstructionRoutine
+	nop		IADD	VI13, VI02, VI10	; <ds>
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue the Vertex Pipeline - Matrix 1
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform1_Continue:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF01, VF23x	FCAND	VI01, 0x3ffff
+	MADDAy.xyzw	ACC, VF02, VF23y	IADDIU	VI02, VI01, 0x7fff
+	MADDz.xyzw	VF30, VF03, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)	; store STQ
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00x	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)	; set 1.0
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 0
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	MULAw.xyz	ACC, VF05, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF06, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF07, VF24w	MFIR.w	VF29w, VI02
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform1_Continue_ADC:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF01, VF23x	NOP
+	MADDAy.xyzw	ACC, VF02, VF23y	NOP
+	MADDz.xyzw	VF30, VF03, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)	; set 1.0
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 0
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	MULAw.xyz	ACC, VF05, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF06, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF07, VF24w	MFIR.w	VF29w, VI08
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue the Vertex Pipeline - Matrix 2
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform2_Continue:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF08, VF23x	FCAND	VI01, 0x3ffff
+	MADDAy.xyzw	ACC, VF09, VF23y	IADDIU	VI02, VI01, 0x7fff
+	MADDz.xyzw	VF30, VF10, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)	; store STQ
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00x	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)	; set 1.0
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 2
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	MULAw.xyz	ACC, VF12, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF14, VF24w	MFIR.w	VF29w, VI02
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform2_Continue_ADC:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF08, VF23x	NOP
+	MADDAy.xyzw	ACC, VF09, VF23y	NOP
+	MADDz.xyzw	VF30, VF10, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 2
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_ProcessInst - ALC_RefAddress
+	MULAw.xyz	ACC, VF12, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	LQI	VF23, (VI04++)
+	MADDAz.xyz	ACC, VF13, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF14, VF24w	MFIR.w	VF29w, VI08
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue the Vertex Pipeline w/o Read - Matrix 1
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform1_ContinueNR:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF01, VF23x	FCAND	VI01, 0x3ffff
+	MADDAy.xyzw	ACC, VF02, VF23y	IADDIU	VI02, VI01, 0x7fff
+	MADDz.xyzw	VF30, VF03, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)	; store STQ
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00x	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 0
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_Finish - ALC_RefAddress
+	MULAw.xyz	ACC, VF05, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	MFIR.w	VF29w, VI02
+	MADDAz.xyz	ACC, VF06, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF07, VF24w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform1_ContinueNR_ADC:
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF01, VF23x	NOP
+	MADDAy.xyzw	ACC, VF02, VF23y	NOP
+	MADDz.xyzw	VF30, VF03, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 0
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_Finish - ALC_RefAddress
+	MULAw.xyz	ACC, VF05, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	MFIR.w	VF29w, VI08
+	MADDAz.xyz	ACC, VF06, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF07, VF24w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Continue the Vertex Pipeline w/o Read - Matrix 2
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform2_ContinueNR:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF08, VF23x	FCAND	VI01, 0x3ffff
+	MADDAy.xyzw	ACC, VF09, VF23y	IADDIU	VI02, VI01, 0x7fff
+	MADDz.xyzw	VF30, VF10, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)	; store STQ
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00x	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 2
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_Finish - ALC_RefAddress
+	MULAw.xyz	ACC, VF12, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	MFIR.w	VF29w, VI02
+	MADDAz.xyz	ACC, VF13, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF14, VF24w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform2_ContinueNR_ADC:
+	MULAw.xyzw	ACC, VF11, VF00w	DIV	Q, VF00w, VF25w
+	MADDAx.xyzw	ACC, VF08, VF23x	NOP
+	MADDAy.xyzw	ACC, VF09, VF23y	NOP
+	MADDz.xyzw	VF30, VF10, VF23z	NOP
+	FTOI0.xyzw	VF28, VF28	SQI	VF27, (VI06++)
+	FTOI4.xyz	VF29, VF29	NOP
+	MAXx.xyz	VF26, VF26, VF00	NOP
+	CLIPw.xyz	VF30, VF30	NOP
+	MULAx.xyzw	ACC, VF15, VF30x	SQI	VF28, (VI06++)
+	MADDAy.xyzw	ACC, VF16, VF30y	MR32.z	VF24, VF00
+	MADDAz.xyzw	ACC, VF17, VF30z	SQI	VF29, (VI06++)
+	MADDw.xyzw	VF25, VF18, VF30w	MOVE	VF29, VF25
+	MULq.xyz	VF27, VF24, Q	LQI	VF24, (VI04++)
+	ADDAx.xyzw	ACC, VF19, VF00x	nop
+	MADDAx.xyzw	ACC, VF20, VF26x	nop
+	MADDAy.xyzw	ACC, VF21, VF26y	bal	vi01, ALCPlight
+	MADDz.xyzw	VF28, VF22, VF26z	iaddiu	vi15, vi00, 2
+	nop		MTIR	VI01, VF23w
+	nop		IAND	VI01, VI01, VI07
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI01, VI01, ALCPLitTransform_Finish - ALC_RefAddress
+	MULAw.xyz	ACC, VF12, VF23w	IADD	VI01, VI01, VI09
+	MINIi.xyzw	VF28, VF28, I	MFIR.w	VF29w, VI08
+	MADDAz.xyz	ACC, VF13, VF24z	JR	VI01
+	MADDw.xyz	VF26, VF14, VF24w	NOP
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+;	nop		NOP
+;	nop		NOP
+
+;---------------------------------------------------------------------------------------------------------------	       
+; Finish the Pipeline - Matrix 1
+;---------------------------------------------------------------------------------------------------------------	       
+
+ALCPLitTransform_Finish:
+	FTOI4.xyz	VF29, VF29	FCAND	VI01, 0x3ffff
+	FTOI0.xyzw	VF28, VF28	IADDIU	VI02, VI01, 0x7fff
+	nop		SQI	VF27, (VI06++)
+	MAXx.xyz	VF26, VF26, VF00	DIV	Q, VF00w, VF25w
+	nop		MR32.z	VF24, VF00
+	nop		SQI	VF28, (VI06++)
+	nop		SQI	VF29, (VI06++)
+	nop		MOVE.xyz	VF29, VF25
+	ADDAx.xyzw	ACC, VF19, VF00x	MFIR.w	VF29w, VI02
+	MADDAx.xyzw	ACC, VF20, VF26x	ILW.x	VI01, 0(VI12)x
+	MADDAy.xyzw	ACC, VF21, VF26y	ILW.y	VI02, 0(VI12)y
+	MADDz.xyzw	VF28, VF22, VF26z	ILW.z	VI03, 0(VI12)z
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI12, VI12, 1
+	MULq.xyz	VF27, VF24, Q	NOP
+	MINIi.xyzw	VF28, VF28, I	NOP
+	FTOI0.xyzw	VF28, VF28	NOP
+	FTOI4.xyz	VF29, VF29	NOP
+	nop		NOP
+	nop		SQI	VF27, (VI06++)
+	nop		SQI	VF28, (VI06++)
+	nop		JR	VI01
+	nop		SQI	VF29, (VI06++)
+;---------------------------------------------------------------------------------------------------------------	       
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+	nop		NOP
+
+ALCPLitTransform_Finish_ADC:
+	FTOI4.xyz	VF29, VF29	DIV	Q, VF00w, VF25w
+	FTOI0.xyzw	VF28, VF28	MR32.z	VF24, VF00
+	nop		SQI	VF27, (VI06++)
+	MAXx.xyz	VF26, VF26, VF00	NOP
+	nop		NOP
+	nop		SQI	VF28, (VI06++)
+	nop		SQI	VF29, (VI06++)
+	nop		MOVE.xyz	VF29, VF25
+	ADDAx.xyzw	ACC, VF19, VF00x	MFIR.w	VF29, VI08
+	MADDAx.xyzw	ACC, VF20, VF26x	ILW.x	VI01, 0(VI12)x
+	MADDAy.xyzw	ACC, VF21, VF26y	ILW.y	VI02, 0(VI12)y
+	MADDz.xyzw	VF28, VF22, VF26z	ILW.z	VI03, 0(VI12)z
+	MULq.xyz	VF29, VF29, Q	IADDIU	VI12, VI12, 1
+	MULq.xyz	VF27, VF24, Q	NOP
+	MINIi.xyzw	VF28, VF28, I	NOP
+	FTOI0.xyzw	VF28, VF28	NOP
+	FTOI4.xyz	VF29, VF29	NOP
+	nop		NOP
+	nop		SQI	VF27, (VI06++)
+	nop		SQI	VF28, (VI06++)
+	nop		JR	VI01
+	nop		SQI	VF29, (VI06++)
+
+;---------------------------------------------------------------------------------------------------------------	       
+
+dbAnimLCPLit_Start:
+	nop		XTOP	VI01
+	nop		lq	vf09, 12(vi01)	;point light color 1
+	nop		lq	vf10, 13(vi01)	;point light color 2
+	nop		sq	vf09, 19(vi00)	;save point light color 1
+	nop		sq	vf10, 20(vi00)	;save point light color 2	
+	nop		LQ	VF09, 0(VI01)	; Common->Screen Mtx 1
+	nop		LQ	VF10, 1(VI01)	; Common->Screen Mtx 2
+	nop		LQ	VF11, 2(VI01)	; Common->Screen Mtx 3
+	nop		LQ	VF12, 3(VI01)	; Common->Screen Mtx 4
+	
+	nop		LQ	VF05, 4(VI01)	; Obj->Common Mtx 1
+	nop		LQ	VF06, 5(VI01)	; Obj->Common Mtx 2
+	nop		LQ	VF07, 6(VI01)	; Obj->Common Mtx 3
+	nop		LQ	VF08, 7(VI01)	; Obj->Common Mtx 4
+	
+	
+	nop		LQ	VF19,11(VI01)	; Light Ambient
+	nop		LQ	VF20, 8(VI01)	; Light Color Mtx
+	nop		LQ	VF21, 9(VI01)
+	nop		LQ	VF22,10(VI01)
+	MULx.xyzw	VF04, VF00, VF00	LQ	VF02,15(VI01)	; Load Cull-Screen Mtx
+	nop		LQ	VF03,16(VI01)
+	nop		LQ	VF31,17(VI01)	; Load GIFTag
+	nop		sq	vf19, 5(vi00)	; save ambient for point light code
+
+ALC_ConcatMatrices:
+	MULAx.xyzw	ACC, VF09, VF05x	NOP
+	MADDAy.xyzw	ACC, VF10, VF05y	NOP
+	MADDAz.xyzw	ACC, VF11, VF05z	NOP
+	MADDw.xyzw	VF26, VF12, VF05w	NOP
+
+	MULAx.xyzw	ACC, VF09, VF06x	NOP
+	MADDAy.xyzw	ACC, VF10, VF06y	NOP
+	MADDAz.xyzw	ACC, VF11, VF06z	NOP
+	MADDw.xyzw	VF27, VF12, VF06w	NOP
+
+	MULAx.xyzw	ACC, VF09, VF07x	NOP
+	MADDAy.xyzw	ACC, VF10, VF07y	NOP
+	MADDAz.xyzw	ACC, VF11, VF07z	NOP
+	MADDw.xyzw	VF28, VF12, VF07w	NOP
+	
+	MULAx.xyzw	ACC, VF09, VF08x	NOP
+	MADDAy.xyzw	ACC, VF10, VF08y	NOP
+	MADDAz.xyzw 	ACC, VF11, VF08z	NOP
+	MADDw.xyzw	VF29, VF12, VF08w	NOP
+
+ALC_BranchFirstBuffer:
+	nop		SQ	VF26, 0(VI00)
+	nop		SQ	VF27, 1(VI00)
+	nop		SQ	VF28, 2(VI00)
+	nop		SQ	VF29, 3(VI00)
+
+ALC_SetupPersistantData:
+	nop		MOVE.x	VF15, VF03
+	nop		MOVE.yzw	VF15, VF04
+
+	nop		MOVE.y	VF16, VF03
+	nop		MOVE.xzw	VF16, VF04
+
+	nop		MOVE.z	VF17, VF03
+	ADDw.z	VF18, VF00, VF03	MOVE.xyw	VF17, VF04
+
+	nop		MOVE.xy	VF18, VF02
+	nop		MOVE.w	VF18, VF00
+
+	NOP[E]	B	ALCStart
+	nop		nop		; Grab Buffer Base
+
+
+; ------------------------------------------------------------------------------
+;
+; Point lighting with 2 lights
+;
+; Assuming:
+;	Point Light Positions are in VF05, VF06
+;	Point Light Colors are in VF17, VF18
+;	Light Ambient at 5(vi00)
+;	Vertex in vf23
+;	Normal in vf24
+; ------------------------------------------------------------------------------
+ALCPlight:
+	nop		iaddiu	vi15, vi15, 15
+	nop		sq	vf05, 23(vi00)
+	nop		sq	vf06, 24(vi00)
+	nop		lq	vf05, 0(vi15)
+	nop		lq	vf06, 1(vi15)
+	nop		sq	vf21, 30(vi00)
+	nop		sq	vf27, 26(vi00)
+	addw.xyz	vf27, vf00, vf00w	sq	vf29, 28(vi00)
+	addw.x	vf21, vf00, vf23w	sq	vf30, 27(vi00)	;move Nx FROM VF24w to VF21x
+
+	; --- Compute Vectors to Lights
+	sub.xyz	vf29, vf05, vf23	mr32.yz	vf21, vf24	;Light position1 - Vertex
+	sub.xyz	vf30, vf06, vf23	sq	vf24, 29(vi00)	;Light position2 - Vertex
+	nop		sq	vf25, 25(vi00)
+	nop		nop
+	addq.y	vf25, vf00, q	erleng	p, vf29	;start 1/length1 calculation - 24 cycles
+	mul.xyz	vf24, vf30, vf30	nop		;VF30x*VF30x,VF30y*VF30y,VF30z*VF30z
+	mul.xyz	vf29, vf29, vf21	nop		;Light1 * Normal
+	mul.xyz	vf30, vf30, vf21	nop		;Light2 * Normal
+	nop		nop
+	mulax.x	acc, vf27x, vf24x	nop
+	madday.x	acc, vf27x, vf24y	nop
+	maddz.x	vf24, vf27x, vf24z	loi	255.0	;VF24 = 1/length2^2
+	nop		sq	vf17, 21(vi00)
+	nop		nop
+	nop		sq	vf18, 22(vi00)
+	nop		rsqrt	q, vf00w, vf24x	;start 1/length2 calculation - 13 cycles
+	nop		waitq
+	mulq.y	vf24, vf27y, q	div	q, vf25y, vf00w	;restore Q register on incoming DIV Q calculation
+	nop		waitp
+	nop		mfp.x	vf24x, p	;Now have 1/length1, 1/length2
+	nop		nop
+	nop		nop
+	nop		nop
+	mul.xy	vf25, vf24, vf24	nop		;1/lenght1^2, 1/length2^2
+	nop		lq	vf17, 19(vi00)
+	nop		nop
+	nop		lq	vf18, 20(vi00)
+	mul.xy	vf25, vf25, vf24	nop		;1/length1^3, l/length2^3
+	nop		lq	vf19, 5(vi00)	;load ambient
+	nop		nop
+	nop		lq	vf27, 26(vi00)
+	mulax.x	acc, vf25x, vf29x	nop
+	madday.x	acc, vf25x, vf29y	nop
+	maddz.x	vf29, vf25x, vf29z	nop		;light1 dotted, normalized, and attenuated
+	mulax.y	acc, vf25y, vf30x	nop
+	madday.y	acc, vf25y, vf30y	nop
+	maddz.y	vf29, vf25y, vf30z	nop		;light2 dotted, normalized, and attenuated
+	nop		lq	vf30, 27(vi00)
+	nop		nop
+	nop		lq	vf25, 25(vi00)
+	mulw.x	vf29, vf29, vf05w	nop		;apply attenuation coefficient
+	mulw.y	vf29, vf29, vf06w	lq	vf05, 23(vi00)
+	nop		nop
+	nop		lq	vf06, 24(vi00)
+	nop		lq	vf21, 30(vi00)
+	maxx.xy	vf29, vf29, vf00x	lq	vf24, 29(vi00)
+	nop		nop
+	nop		nop
+	nop		nop
+	mulax.xyzw	acc, vf17, vf29x	lq	vf17, 21(vi00)	;light1 * color1
+	madday.xyzw	acc, vf18, vf29y	lq	vf18, 22(vi00)	;light2 * color2
+	maddw.xyzw	vf19, vf19, vf00w	jr	vi01	;add in ambient
+	nop		lq	vf29, 28(vi00)
+
+ALCSetPLights1:
+	nop		LQI	VF30, (VI03++)
+	nop		SQ	VF30, 15(VI00)
+	nop		LQI	VF30, (VI03++)
+	nop		B	ALCPLitLoadNextInst	; fetch next Instruction
+	nop		SQ	VF30, 16(VI00)
+
+ALCSetPLights2:
+	nop		LQI	VF30, (VI03++)
+	nop		SQ	VF30, 17(VI00)
+	nop		LQI	VF30, (VI03++)
+	nop		B	ALCPLitLoadNextInst	; fetch next Instruction
+	nop		SQ	VF30, 18(VI00)
+
+;--------------------------------------------------------------------------------------------------
+define( 'MatrixSize', eval( 9))
+
+define( 'irTemp1', 'VI01')
+define( 'irCurrentBit', 'VI06')
+
+define( 'irMatrixAddr', 'VI02')
+define( 'irDirtyMtxCnt', 'VI03')
+define( 'irDirtyMtxBits1', 'VI04')
+define( 'irDirtyMtxBits2', 'VI05')
+define( 'irReturnAddr', 'VI14')
+
+include( 'AnimMatrixCheck.vm4')
+;--------------------------------------------------------------------------------------------------
+
+.enddmadata
+dbAnimLCPLit_CodeEnd:
+
+

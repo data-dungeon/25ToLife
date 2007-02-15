@@ -1,0 +1,488 @@
+// AMViewerDoc.cpp : implementation of the CAMViewerDoc class
+//
+
+#include "stdafx.h"
+#include "AMViewer.h"
+#include "AMViewerDoc.h"
+#include <Direct.h>
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// CAMViewerDoc
+
+IMPLEMENT_DYNCREATE(CAMViewerDoc, CDocument)
+
+BEGIN_MESSAGE_MAP(CAMViewerDoc, CDocument)
+	//{{AFX_MSG_MAP(CAMViewerDoc)
+   ON_UPDATE_COMMAND_UI(ID_PATCHCOUNT, OnUpdatePatchCount)
+	//}}AFX_MSG_MAP
+END_MESSAGE_MAP()
+
+/////////////////////////////////////////////////////////////////////////////
+// CAMViewerDoc construction/destruction
+
+CAMViewerDoc::CAMViewerDoc()
+{
+   m_span = -1;
+   m_bonehead = NULL;
+   GetApp().m_doc = this;
+}
+
+CAMViewerDoc::~CAMViewerDoc()
+{
+   GetApp().m_doc = NULL;
+   DeleteBones(m_bonehead);
+}
+
+void CAMViewerDoc::OnUpdatePatchCount(CCmdUI* pCmdUI) 
+{
+   CString strcount;
+   strcount.Format("%d Patches", m_patchlist.GetSize());
+   pCmdUI->SetText(strcount);
+}
+
+void CAMViewerDoc::DeleteBones(Bone *startbone) 
+{
+   Bone *sibling, *bone;
+   
+   for (bone=startbone; bone; bone=sibling) {
+      sibling = bone->m_sibling;
+      if (bone->m_child)
+         DeleteBones(bone->m_child);
+      delete bone;
+   }   
+}
+
+BOOL CAMViewerDoc::OnNewDocument()
+{
+	if (!CDocument::OnNewDocument())
+		return FALSE;
+
+	return TRUE;
+}
+
+void CAMViewerDoc::DeleteContents()
+{
+   m_span = -1;
+   DeleteBones(m_bonehead);
+   m_bonehead = NULL;
+   m_vertexlist.RemoveAll();
+   m_transformedvertexlist.RemoveAll();
+   m_controlvertexlist.RemoveAll();
+   m_transformedcontrolvertexlist.RemoveAll();
+   m_normalslist.RemoveAll();
+   m_transformednormalslist.RemoveAll();
+   m_patchlist.RemoveAll();
+   m_attrlist.RemoveAll();
+   m_maplist.RemoveAll();
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// CAMViewerDoc serialization
+
+static CString ReadLineToNULL(CArchive &ar)
+{
+   char c;
+   CString line;
+
+   while (ar.Read(&c,1)) {
+      if (c=='\0')
+         break;
+      line+=c;
+   }
+   return line;
+}
+
+void CAMViewerDoc::Serialize(CArchive& ar)
+{
+	if (ar.IsStoring())
+	{
+	}
+	else
+	{
+      float tfloat;
+      int tint;
+      int count;
+      BYTE tbyte;
+      char name[3];
+      CArray<Patch, Patch> transparentpatchlist;
+
+      ar.Read(name, 3);
+      ar >> tint; //Version
+
+// Load Material Attributes List
+      ar >> count; //Num Attr
+      m_attrlist.SetSize(count);
+      for (int i =0; i < count; i++) {
+         Attr &attr = m_attrlist.ElementAt(i);
+         BYTE red, green, blue;
+         ar >> red >> green >> blue;
+         attr.SetDiffuseRed(red/255.0f);
+         attr.SetDiffuseGreen(green/255.0f);
+         attr.SetDiffuseBlue(blue/255.0f);
+         ar >> tfloat;// Diffuse Falloff
+         attr.SetDiffuseFalloff(tfloat);
+         ar >> red >> green >> blue;//spec color
+         attr.SetSpecularRed(red/255.0f);
+         attr.SetSpecularGreen(green/255.0f);
+         attr.SetSpecularBlue(blue/255.0f);
+         ar >> tfloat; // Spec Size
+         attr.SetSpecularSize(tfloat);
+         ar >> tfloat; // Spec Intensity
+         attr.SetSpecularIntensity(tfloat);
+         ar >> tfloat; // Ambiance
+         attr.SetAmbiance(tfloat);
+         ar >> tfloat; // Rough
+         attr.SetRoughness(tfloat);
+         ar >> tfloat; // Rough Scale
+         attr.SetRoughnessScale(tfloat);
+         ar >> tfloat; // Reflect
+         attr.SetReflectivity(tfloat);
+         ar >> tfloat; // Transp
+         attr.SetTransparency(Vector(tfloat));
+         ar >> tfloat; // Refract
+         attr.SetRefraction(tfloat);
+      }
+
+// Load Texture Maps List
+      ar >> count; //Num Textures
+      m_maplist.SetSize(count);
+      for (i =0; i < count; i++) {
+         Map &map = m_maplist.ElementAt(i);
+         CString filename;
+         filename=ReadLineToNULL(ar);
+         strcpy(map.m_filename, filename);
+         ar >> map.m_width;
+         ar >> map.m_height;
+      }
+
+// Load Vertex List
+      ar >> count;
+      m_vertexlist.SetSize(count);
+      m_transformedvertexlist.SetSize(count);
+      for (i =0; i < count; i++) {
+         Vector &vertex = m_vertexlist.ElementAt(i);
+         ar >> vertex.x;
+         ar >> vertex.y;
+         ar >> vertex.z;
+      }
+
+// Load Tangent Control Vertex List
+      ar >> count;
+      m_controlvertexlist.SetSize(count);
+      m_transformedcontrolvertexlist.SetSize(count);
+      for (i =0; i < count; i++) {
+         Vector &vertex = m_controlvertexlist.ElementAt(i);
+         ar >> vertex.x;
+         ar >> vertex.y;
+         ar >> vertex.z;
+      }
+
+// Load Patch List
+      ar >> count;
+      m_patchlist.SetSize(count);
+      int pc=0, tpc=count-1;
+      for (i =0; i < count; i++) {
+         LONG attrid;
+         ar >> attrid;
+
+         Patch *patch;
+         if (m_attrlist.GetSize() && m_attrlist[attrid].GetTransparencyRed()!=0)
+            patch = &m_patchlist[tpc--];
+         else
+            patch = &m_patchlist[pc++];
+
+         patch->m_attrid = attrid;
+         ar >> patch->m_vertexid[0] >> patch->m_vertexid[1] >> patch->m_vertexid[2] >> patch->m_vertexid[3];
+         for (int t = 0; t < 12; t++ )
+            ar >> patch->m_controlvertexid[t];
+         // Load Patches Texture Maps
+         int mapcount;
+         ar >> mapcount;
+         patch->m_mapnodearray.SetSize(mapcount);
+         for (int mc=0; mc < mapcount; mc++) {
+            MapNode *mapnode = new MapNode;
+            patch->m_mapnodearray.SetAt(mc, mapnode);
+            ar >> mapnode->m_mapid;
+            ar >> mapnode->m_percent;
+            ar >> mapnode->m_repeat.x >> mapnode->m_repeat.x;
+            ar >> tbyte; // kind
+            mapnode->m_kind = tbyte;
+            ar >> tbyte; // seamless;
+            mapnode->m_isseamless = tbyte;
+
+            for (int uvcount = 0; uvcount < 4; uvcount++)
+               ar >> mapnode->m_uv[uvcount].x >> mapnode->m_uv[uvcount].y; // UV
+
+            for (uvcount = 0; uvcount < 8; uvcount++)
+               ar >> mapnode->m_controluv[uvcount].x >> mapnode->m_controluv[uvcount].y; // Control UV
+         }
+      }
+
+ //Load Bones
+      LoadBones(ar, &m_bonehead);
+   }
+}
+
+void CAMViewerDoc::LoadBones(CArchive &ar, Bone **parentuplink) 
+{
+   BYTE child, sibling=TRUE;
+   Bone **siblinguplink = NULL;
+
+   while (sibling && ar.Read(&child, 1)==1) {
+      ar >> sibling;
+      Bone *bone = new Bone;
+      
+      if (parentuplink) {
+         *parentuplink = bone;
+         parentuplink = NULL;
+      }
+
+      if (siblinguplink)
+         *siblinguplink = bone;
+      CString name = ReadLineToNULL(ar);
+      bone->m_name = (LPCTSTR)name;
+      ar >> bone->m_pivotpos.x >> bone->m_pivotpos.y >> bone->m_pivotpos.z;
+      ar >> bone->m_endpos.x >> bone->m_endpos.y >> bone->m_endpos.z;
+      ar >> bone->m_rollpos.x >> bone->m_rollpos.y >> bone->m_rollpos.z;
+
+      LONG count;
+      ar >> count;
+      bone->m_vertexidarray.SetSize(count);
+      for (int i =0; i < count; i++) {
+         ar >> (LONG &)bone->m_vertexidarray[i];
+      }
+
+      if (child)
+         LoadBones(ar, &bone->m_child);
+
+      siblinguplink = sibling?&bone->m_sibling:NULL;
+   }
+}
+
+void CAMViewerDoc::SetSpan()
+{
+   for (int i=0; i<m_vertexlist.GetSize(); i++) {
+      Vector &vertex = m_vertexlist.ElementAt(i);
+      float length = vertex.Norm();
+      if (length > m_span)
+         m_span = length;
+   }
+
+   for (i=0; i<m_controlvertexlist.GetSize(); i++) {
+      Vector &vertex = m_controlvertexlist.ElementAt(i);
+      float length = vertex.Norm();
+      if (length > m_span)
+         m_span = length;
+   }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// CAMViewerDoc diagnostics
+
+
+#ifdef _DEBUG
+void CAMViewerDoc::AssertValid() const
+{
+	CDocument::AssertValid();
+}
+
+void CAMViewerDoc::Dump(CDumpContext& dc) const
+{
+	CDocument::Dump(dc);
+}
+#endif //_DEBUG
+
+/////////////////////////////////////////////////////////////////////////////
+// CAMViewerDoc commands
+
+BOOL CAMViewerDoc::OnOpenDocument(LPCTSTR lpszPathName) 
+{
+   String filename = lpszPathName;
+   _chdir(filename.GetPathOnly().Get());
+	if (!CDocument::OnOpenDocument(lpszPathName))
+		return FALSE;
+
+   SetSpan();
+   BuildNormals();
+   FillListIndexesOnBones();
+
+   BuildTextureDisplayLists(filename);
+	return TRUE;
+}
+
+static void FillVertexBoneList(Bone *bone, CArray<Bone *, Bone *> &vertexbonelist)
+{
+   for (;bone;bone=bone->m_sibling) {
+      int count = bone->m_vertexidarray.GetSize();
+      for (int i=0; i<count; i++) {
+         LONG id = bone->m_vertexidarray[i];
+         vertexbonelist[bone->m_vertexidarray[i]]=bone;
+      }
+      if (bone->m_child)
+         FillVertexBoneList(bone->m_child, vertexbonelist);
+   }
+}
+
+static void ShrinkBoneCVLists(Bone *bone)
+{
+   for (;bone;bone=bone->m_sibling) {
+      bone->m_controlvertexidarray.FreeExtra();
+      if (bone->m_child)
+         ShrinkBoneCVLists(bone->m_child);
+   }
+}
+
+void CAMViewerDoc::FillListIndexesOnBones()
+{
+   if (m_bonehead==NULL)
+      return;
+   CArray<Bone *, Bone *> vertexbonelist;// contains bone * for each vertex;
+   vertexbonelist.SetSize(m_vertexlist.GetSize());
+   FillVertexBoneList(m_bonehead, vertexbonelist);
+
+   // Fill Bones ControlVertex Lists IDs
+   CMap<LONG, LONG &, Bone *, Bone *> cvtobonemap;
+   cvtobonemap.InitHashTable(997);
+
+   int count = m_patchlist.GetSize();
+   for (int pi=0; pi<count; pi++) {
+      Patch &patch = m_patchlist[pi];
+      Bone *bone = vertexbonelist[patch.m_vertexid[0]];
+      if (bone) {
+         cvtobonemap.SetAt(patch.m_controlvertexid[2], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[0], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[3], bone);
+      }
+
+      bone = vertexbonelist[patch.m_vertexid[1]];
+      if (bone) {
+         cvtobonemap.SetAt(patch.m_controlvertexid[1], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[5], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[4], bone);
+      }
+
+      bone = vertexbonelist[patch.m_vertexid[2]];
+      if (bone) {
+         cvtobonemap.SetAt(patch.m_controlvertexid[9], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[11], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[8], bone);
+      }
+
+      bone = vertexbonelist[patch.m_vertexid[3]];
+      if (bone) {
+         cvtobonemap.SetAt(patch.m_controlvertexid[10], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[6], bone);
+         cvtobonemap.SetAt(patch.m_controlvertexid[7], bone);
+      }
+   }
+
+   for (POSITION pos = cvtobonemap.GetStartPosition(); pos;) {
+      Bone *bone;
+      LONG cvindex;
+      
+      cvtobonemap.GetNextAssoc(pos, cvindex, bone);
+      bone->m_controlvertexidarray.Add(cvindex);
+   }
+   cvtobonemap.RemoveAll();
+   ShrinkBoneCVLists(m_bonehead);
+}
+   
+void CAMViewerDoc::BuildNormals()
+{
+   CMap <NormalKey, NormalKey &, LONG, LONG &> normaltable;
+
+   normaltable.InitHashTable(997);
+   m_normallist.SetSize(0, 1000);
+
+   for (int patchindex = 0; patchindex < m_patchlist.GetSize(); patchindex++) {
+      Patch &patch = m_patchlist.ElementAt(patchindex);
+      Vector tan1, tan2, vertex, normal;
+      LONG normalid;
+      NormalKey key;
+
+      tan1 = m_controlvertexlist[patch.m_controlvertexid[2]];
+      tan2 = m_controlvertexlist[patch.m_controlvertexid[0]];
+      vertex = m_vertexlist[patch.m_vertexid[0]];
+      tan1-=vertex;
+      tan2-=vertex;
+      normal = tan2^tan1;
+      normal.Normalize();
+
+      key.Set(normal, patch.m_vertexid[0]);
+      if (!normaltable.Lookup(key, normalid)) {
+         normalid = m_normallist.Add(normal);
+         normaltable.SetAt(key, normalid);
+      }
+      patch.m_normalid[0] = normalid;
+
+
+      tan1 = m_controlvertexlist[patch.m_controlvertexid[1]];
+      tan2 = m_controlvertexlist[patch.m_controlvertexid[5]];
+      vertex = m_vertexlist[patch.m_vertexid[1]];
+      tan1-=vertex;
+      tan2-=vertex;
+      normal = tan2^tan1;
+      normal.Normalize();
+
+      key.Set(normal, patch.m_vertexid[1]);
+      if (!normaltable.Lookup(key, normalid)) {
+         normalid = m_normallist.Add(normal);
+         normaltable.SetAt(key, normalid);
+      }
+      patch.m_normalid[1] = normalid;
+
+
+      tan1 = m_controlvertexlist[patch.m_controlvertexid[9]];
+      tan2 = m_controlvertexlist[patch.m_controlvertexid[11]];
+      vertex = m_vertexlist[patch.m_vertexid[2]];
+      tan1-=vertex;
+      tan2-=vertex;
+      normal = tan2^tan1;
+      normal.Normalize();
+      
+      key.Set(normal, patch.m_vertexid[2]);
+      if (!normaltable.Lookup(key, normalid)) {
+         normalid = m_normallist.Add(normal);
+         normaltable.SetAt(key, normalid);
+      }
+      patch.m_normalid[2] = normalid;
+
+
+      tan1 = m_controlvertexlist[patch.m_controlvertexid[10]];
+      tan2 = m_controlvertexlist[patch.m_controlvertexid[6]];
+      vertex = m_vertexlist[patch.m_vertexid[3]];
+      tan1-=vertex;
+      tan2-=vertex;
+      normal = tan2^tan1;
+      normal.Normalize();
+
+      key.Set(normal, patch.m_vertexid[3]);
+      if (!normaltable.Lookup(key, normalid)) {
+         normalid = m_normallist.Add(normal);
+         normaltable.SetAt(key, normalid);
+      }
+      patch.m_normalid[3] = normalid;
+   }
+   m_normallist.FreeExtra();
+   m_transformednormallist.SetSize(m_normallist.GetSize());
+}
+
+void CAMViewerDoc::BuildTextureDisplayLists(const String &filename)
+{
+   String modelmapfilename = filename.GetNameOnlyWithoutSuffix()+".BMP";
+
+   int i;
+   for (i=0; i<m_maplist.GetSize(); i++) {
+      Map &map = m_maplist.ElementAt(i);
+      if (modelmapfilename == (LPCTSTR)map.m_filename)
+         BuildModelMaps(i, map); // cuts up the model map and stores a separate texture display list for each patch
+      else
+         map.BuildTextureDisplayList();
+   }
+}

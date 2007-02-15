@@ -1,0 +1,83 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrashTest", "CrashTest\CrashTest.vcproj", "{F46DDE5F-153F-4F12-BCE0-37065A583DA6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProcessWatchDog", "ProcessWatchDog\ProcessWatchDog.vcproj", "{85DE1278-3F59-485F-8D47-551D70939648}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1E1D6A7-4994-4A3C-85AD-E7058E2E3295} = {F1E1D6A7-4994-4A3C-85AD-E7058E2E3295}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\GameLib\Tupperware\tupperware.vcproj", "{F1E1D6A7-4994-4A3C-85AD-E7058E2E3295}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TouchFiles", "TouchFiles\TouchFiles.vcproj", "{126D39A5-AFE3-4BC5-B98C-D46204F305FA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloseProcess", "CloseProcess\CloseProcess.vcproj", "{D4DCE1B6-4EB0-40AB-A8AA-E5556CAF9FF8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1E1D6A7-4994-4A3C-85AD-E7058E2E3295} = {F1E1D6A7-4994-4A3C-85AD-E7058E2E3295}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/ProcessWatchdog\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {51E3A2DD-6D74-4355-AFAF-0338E10A5849}
+		SccProjectUniqueName1 = TouchFiles\\TouchFiles.vcproj
+		SccProjectName1 = \u0022//depot/Avalanche/Tools/ProcessWatchdog/TouchFiles\u0022
+		SccLocalPath1 = TouchFiles
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = CloseProcess\\CloseProcess.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/ProcessWatchdog/CloseProcess\u0022
+		SccLocalPath2 = CloseProcess
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath3 = ..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = CrashTest\\CrashTest.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/ProcessWatchdog/CrashTest\u0022
+		SccLocalPath4 = CrashTest
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ProcessWatchDog\\ProcessWatchDog.vcproj
+		SccProjectName5 = \u0022//depot/Avalanche/Tools/ProcessWatchdog/ProcessWatchdog\u0022
+		SccLocalPath5 = ProcessWatchdog
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F46DDE5F-153F-4F12-BCE0-37065A583DA6}.Debug.ActiveCfg = Debug|Win32
+		{F46DDE5F-153F-4F12-BCE0-37065A583DA6}.Debug.Build.0 = Debug|Win32
+		{F46DDE5F-153F-4F12-BCE0-37065A583DA6}.Release.ActiveCfg = Release|Win32
+		{F46DDE5F-153F-4F12-BCE0-37065A583DA6}.Release.Build.0 = Release|Win32
+		{85DE1278-3F59-485F-8D47-551D70939648}.Debug.ActiveCfg = Debug|Win32
+		{85DE1278-3F59-485F-8D47-551D70939648}.Debug.Build.0 = Debug|Win32
+		{85DE1278-3F59-485F-8D47-551D70939648}.Release.ActiveCfg = Release|Win32
+		{85DE1278-3F59-485F-8D47-551D70939648}.Release.Build.0 = Release|Win32
+		{F1E1D6A7-4994-4A3C-85AD-E7058E2E3295}.Debug.ActiveCfg = Tools Debug|Win32
+		{F1E1D6A7-4994-4A3C-85AD-E7058E2E3295}.Debug.Build.0 = Tools Debug|Win32
+		{F1E1D6A7-4994-4A3C-85AD-E7058E2E3295}.Release.ActiveCfg = Tools Release|Win32
+		{F1E1D6A7-4994-4A3C-85AD-E7058E2E3295}.Release.Build.0 = Tools Release|Win32
+		{126D39A5-AFE3-4BC5-B98C-D46204F305FA}.Debug.ActiveCfg = Debug|Win32
+		{126D39A5-AFE3-4BC5-B98C-D46204F305FA}.Debug.Build.0 = Debug|Win32
+		{126D39A5-AFE3-4BC5-B98C-D46204F305FA}.Release.ActiveCfg = Release|Win32
+		{126D39A5-AFE3-4BC5-B98C-D46204F305FA}.Release.Build.0 = Release|Win32
+		{D4DCE1B6-4EB0-40AB-A8AA-E5556CAF9FF8}.Debug.ActiveCfg = Debug|Win32
+		{D4DCE1B6-4EB0-40AB-A8AA-E5556CAF9FF8}.Debug.Build.0 = Debug|Win32
+		{D4DCE1B6-4EB0-40AB-A8AA-E5556CAF9FF8}.Release.ActiveCfg = Release|Win32
+		{D4DCE1B6-4EB0-40AB-A8AA-E5556CAF9FF8}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

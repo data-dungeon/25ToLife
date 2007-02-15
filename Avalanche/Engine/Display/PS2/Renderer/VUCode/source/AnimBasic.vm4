@@ -1,0 +1,513 @@
+	.vu
+include( `VUDefines.vm4')
+
+	.global	dbAnimBasic_CodeBegin
+	.global	dbAnimBasic_CodeEnd
+	.global	dbAnimBasic_Start
+
+	tableentry(AnimationFinish)
+
+	tableentry(LoadStreamToCache)
+
+	tableentry(LoadCacheToMtx1)
+	tableentry(LoadCacheToMtx2)
+	tableentry(LoadCacheToMtx3)
+	tableentry(LoadCacheToMtx4)
+
+	tableentry(LoadStreamToMtx1)
+	tableentry(LoadStreamToMtx2)
+	tableentry(LoadStreamToMtx3)
+	tableentry(LoadStreamToMtx4)
+
+	tableentry(LoadNextInst)
+
+	tableentry(Transform1_Start)
+	tableentry(Transform2_Start)
+	tableentry(Transform3_Start)
+	tableentry(Transform4_Start)
+
+	tableentry(Transform1_ContinueNW)
+	tableentry(Transform2_ContinueNW)
+	tableentry(Transform3_ContinueNW)
+	tableentry(Transform4_ContinueNW)
+
+	tableentry(Transform1_Continue)
+	tableentry(Transform2_Continue)
+	tableentry(Transform3_Continue)
+	tableentry(Transform4_Continue)
+
+	tableentry(Transform1_ContinueNR)
+	tableentry(Transform2_ContinueNR)
+	tableentry(Transform3_ContinueNR)
+	tableentry(Transform4_ContinueNR)
+
+	tableentry(Transform_Finish)
+
+	tableentry(AnimationStart)
+
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) FinishUp
+;
+; ----------------------------------------------------------------------------------------------------------
+.dmadata dbAnimBasic_CodeBegin
+
+AnimationFinish:
+	NOP		XGKICK	VI11	; kick resulting triangle strip
+	NOP[E]	NOP
+	NOP		NOP
+
+AnimationStart:
+	NOP		XTOP	VI10	; Grab Buffer Base
+
+AnimationContinue:
+
+	NOP		IADDIU	VI12, VI10, 1	; Base Data Ptr
+	NOP		ILW.y	VI04, 0(VI10)y	; InputGeom ptr offset
+	NOP		ILW.z	VI11, 0(VI10)z	; XGKICK Ptr offset
+	NOP		ILW.w	VI02, 0(VI10)w	; Flags | StatePacketSize
+	NOP		ILW.x	VI01, 0(VI10)x	; vtxCount
+
+	NOP		IADDIU	VI15, VI00, 0x00ff	; mask out StatePacketSize
+	NOP		IAND	VI02, VI02, VI15
+
+	NOP		IADD	VI04, VI04, VI10	; InputBuffer Ptr - Vertices
+	NOP		IADD	VI11, VI11, VI10	; XGKICK Ptr
+	NOP		IADD	VI06, VI11, VI00	; GIFData Output Ptr
+
+	NOP		IADDIU	VI01, VI01, 0x7fff	; set EOP bit
+	NOP		IADDIU	VI01, VI01, 0x0001	; set EOP bit
+	NOP		IBEQ	VI02, VI00, ALBasicProcessSetup
+	NOP		MFIR.x	VF31x, VI01	; move vtxCount to GIFTag
+
+CopyGIFData:
+	NOP		IADD	VI03, VI12, VI02	; set EndPtr
+
+CopyLoop:
+	NOP		LQI	VF30, (VI12++)
+	NOP		NOP
+	NOP		IBNE	VI03, VI12, CopyLoop
+	NOP		SQI	VF30, (VI06++)
+
+ALBasicProcessSetup:
+	NOP		SQI	VF31, (VI06++)	; store GIFTag to OutGIFBuffer	
+
+LoadNextInst:
+	NOP		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	NOP		ILW.y	VI02, 0(VI12)y
+	NOP		ILW.z	VI03, 0(VI12)z
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		JR	VI01	; Branch to InstructionRoutine
+	NOP		IADD	VI13, VI02, VI10	; <ds>
+
+
+; ----------------------------------------------------------------------------------------------------------
+; Instruction Data
+; VI01 	: Instruction Addr
+; VI02 	: Data1
+; VI03 	: Data2
+; VI12 	: Next Instruction
+; VI13	: Data1 Buffer Adjusted
+; ----------------------------------------------------------------------------------------------------------
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load MatrixCache from Matrix Stream
+; VI02	: MatrixStream Offset
+; VI03	: MatrixCache Offset
+; VI13	: MatrixStream Ptr
+; ----------------------------------------------------------------------------------------------------------
+LoadStreamToCache:
+	NOP		LQI	VF28, (VI13++)	; load matrix from IS
+	NOP		LQI	VF29, (VI13++)
+	NOP		LQI	VF30, (VI13++)
+	NOP		NOP
+	NOP		SQI	VF28, (VI03++)	; store matrix in MatrixCache
+	NOP		LQI	VF28, (VI13++)	; load matrix from IS
+	NOP		SQI	VF29, (VI03++)
+	NOP		SQI	VF30, (VI03++)
+	NOP		NOP
+	NOP		B	LoadNextInst	; fetch next Instruction
+	NOP		SQI	VF28, (VI03++)	; store matrix in MatrixCache
+
+; ----------------------------------------------------------------------------------------------------------
+; (InstructionRoutine) Load Matrix From InstructionStream or MatrixCache
+; VI12	: InstructionStreamPtr
+;
+; ----------------------------------------------------------------------------------------------------------
+LoadStreamToMtx1:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+LoadCacheToMtx1:
+	NOP		LQI	VF01, (VI03++)
+	NOP		LQI	VF02, (VI03++)
+	NOP		LQI	VF03, (VI03++)
+	NOP		B	LoadNextInst	; fetch next Instruction
+	NOP		LQI	VF04, (VI03++)	; <ds>
+
+LoadStreamToMtx2:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+LoadCacheToMtx2:
+	NOP		LQI	VF05, (VI03++)
+	NOP		LQI	VF06, (VI03++)
+	NOP		LQI	VF07, (VI03++)
+	NOP		B	LoadNextInst
+	NOP		LQI	VF08, (VI03++)
+
+LoadStreamToMtx3:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+LoadCacheToMtx3:
+	NOP		LQI	VF09, (VI03++)
+	NOP		LQI	VF10, (VI03++)
+	NOP		LQI	VF11, (VI03++)
+	NOP		B	LoadNextInst
+	NOP		LQI	VF12, (VI03++)
+
+LoadStreamToMtx4:
+	NOP		IADDIU	VI03, VI13, 0	; replace ptr with IS ptr
+LoadCacheToMtx4:
+	NOP		LQI	VF13, (VI03++)
+	NOP		LQI	VF14, (VI03++)
+	NOP		LQI	VF15, (VI03++)
+	NOP		B	LoadNextInst
+	NOP		LQI	VF16, (VI03++)
+
+
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+; Start the Vertex Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform1_Start:
+	MULx.w	VF25w, VF00w, VF00x	LQI	VF17, (VI04++)	; load Vertex 1
+	ADDw.z	VF18z, VF00z, VF00w	NOP
+	NOP		NOP
+	MULAw.xyzw	ACC, VF04, VF00w	NOP
+	MADDax.xyzw	ACC, VF01, VF17x	MTIR	VI01, VF17w	; grab next inst.
+	MADDAy.xyzw	ACC, VF02, VF17y	NOP
+	MADDz.xyzw	VF20, VF03, VF17z	LQI	VF17, (VI04++)	; load Vertex 2
+	NOP		NOP
+	NOP		JR	VI01
+	NOP		NOP		; Vertex 1 Transformed
+					; Vertex 2 Loaded
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Write
+;---------------------------------------------------------------------------------------------------------------
+Transform1_ContinueNW:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF01, VF17x	MTIR	VI01, VF17w
+	NOP		LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF02, VF17y	NOP
+	MADDAz.xyzw	ACC, VF03, VF17z	NOP
+	MADDw.xyzw	VF20, VF04, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	NOP
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform1_Continue:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF01, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF02, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF03, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF04, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read
+;---------------------------------------------------------------------------------------------------------------
+Transform1_ContinueNR:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF01, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF02, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF03, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF04, VF00w	NOP
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read or Write
+;---------------------------------------------------------------------------------------------------------------
+;Transform1_ContinueNRW:
+;	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+;	MULAx.xyzw	ACC, VF01, VF17x	MTIR	VI01, VF17w
+;	NOP		LQI	VF18, (VI05++)
+;	MADDAy.xyzw	ACC, VF02, VF17y	NOP
+;	MADDAz.xyzw	ACC, VF03, VF17z	NOP
+;	MADDw.xyzw	VF20, VF04, VF00w	NOP
+;	ADDx.w	VF25, VF18, VF00x	NOP
+;	MULq.xyz	VF25, VF15, Q	JR	VI01
+;	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+; Start the Vertex Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform2_Start:
+	MULx.w	VF25w, VF00w, VF00x	LQI	VF17, (VI04++)	; load Vertex 1
+	ADDw.z	VF18z, VF00z, VF00w	NOP
+	NOP		NOP
+	MULAw.xyzw	ACC, VF08, VF00w	NOP
+	MADDax.xyzw	ACC, VF05, VF17x	MTIR	VI01, VF17w	; grab next inst.
+	MADDAy.xyzw	ACC, VF06, VF17y	NOP
+	MADDz.xyzw	VF20, VF07, VF17z	LQI	VF17, (VI04++)	; load Vertex 2
+	NOP		NOP
+	NOP		JR	VI01
+	NOP		NOP		; Vertex 1 Transformed
+					; Vertex 2 Loaded
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Write
+;---------------------------------------------------------------------------------------------------------------
+Transform2_ContinueNW:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF05, VF17x	MTIR	VI01, VF17w
+	NOP		LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF06, VF17y	NOP
+	MADDAz.xyzw	ACC, VF07, VF17z	NOP
+	MADDw.xyzw	VF20, VF08, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	NOP
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform2_Continue:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF05, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF06, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF07, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF08, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read
+;---------------------------------------------------------------------------------------------------------------
+Transform2_ContinueNR:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF05, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF06, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF07, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF08, VF00w	NOP
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read or Write
+;---------------------------------------------------------------------------------------------------------------
+;Transform2_ContinueNRW:
+;	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+;	MULAx.xyzw	ACC, VF05, VF17x	MTIR	VI01, VF17w
+;	NOP		LQI	VF18, (VI05++)
+;	MADDAy.xyzw	ACC, VF06, VF17y	NOP
+;	MADDAz.xyzw	ACC, VF07, VF17z	NOP
+;	MADDw.xyzw	VF20, VF08, VF00w	NOP
+;	ADDx.w	VF25, VF18, VF00x	NOP
+;	MULq.xyz	VF25, VF21, Q	JR	VI01
+;	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+; Start the Vertex Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform3_Start:
+	MULx.w	VF25w, VF00w, VF00x	LQI	VF17, (VI04++)	; load Vertex 1
+	ADDw.z	VF18z, VF00z, VF00w	NOP
+	NOP		NOP
+	MULAw.xyzw	ACC, VF12, VF00w	NOP
+	MADDax.xyzw	ACC, VF09, VF17x	MTIR	VI01, VF17w	; grab next inst.
+	MADDAy.xyzw	ACC, VF10, VF17y	NOP
+	MADDz.xyzw	VF20, VF11, VF17z	LQI	VF17, (VI04++)	; load Vertex 2
+	NOP		NOP
+	NOP		JR	VI01
+	NOP		NOP		; Vertex 1 Transformed
+					; Vertex 2 Loaded
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Write
+;---------------------------------------------------------------------------------------------------------------
+Transform3_ContinueNW:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF09, VF17x	MTIR	VI01, VF17w
+	NOP		LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF10, VF17y	NOP
+	MADDAz.xyzw	ACC, VF11, VF17z	NOP
+	MADDw.xyzw	VF20, VF12, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	NOP
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform3_Continue:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF09, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF10, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF11, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF12, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read
+;---------------------------------------------------------------------------------------------------------------
+Transform3_ContinueNR:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF09, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF10, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF11, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF12, VF00w	NOP
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read or Write
+;---------------------------------------------------------------------------------------------------------------
+;Transform3_ContinueNRW:
+;	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+;	MULAx.xyzw	ACC, VF09, VF17x	MTIR	VI01, VF17w
+;	NOP		LQI	VF18, (VI05++)
+;	MADDAy.xyzw	ACC, VF10, VF17y	NOP
+;	MADDAz.xyzw	ACC, VF11, VF17z	NOP
+;	MADDw.xyzw	VF20, VF12, VF00w	NOP
+;	ADDx.w	VF25, VF18, VF00x	NOP
+;	MULq.xyz	VF25, VF21, Q	JR	VI01
+;	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+; Start the Vertex Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform4_Start:
+	MULx.w	VF25w, VF00w, VF00x	LQI	VF17, (VI04++)	; load Vertex 1
+	ADDw.z	VF18z, VF00z, VF00w	NOP
+	NOP		NOP
+	MULAw.xyzw	ACC, VF16, VF00w	NOP
+	MADDax.xyzw	ACC, VF13, VF17x	MTIR	VI01, VF17w	; grab next inst.
+	MADDAy.xyzw	ACC, VF14, VF17y	NOP
+	MADDz.xyzw	VF20, VF15, VF17z	LQI	VF17, (VI04++)	; load Vertex 2
+	NOP		NOP
+	NOP		JR	VI01
+	NOP		NOP		; Vertex 1 Transformed
+					; Vertex 2 Loaded
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Write
+;---------------------------------------------------------------------------------------------------------------
+Transform4_ContinueNW:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF13, VF17x	MTIR	VI01, VF17w
+	NOP		LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF14, VF17y	NOP
+	MADDAz.xyzw	ACC, VF15, VF17z	NOP
+	MADDw.xyzw	VF20, VF16, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	NOP
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline
+;---------------------------------------------------------------------------------------------------------------
+Transform4_Continue:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF13, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF14, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF15, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF16, VF00w	LQI	VF17, (VI04++)	; load next XYZW
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read
+;---------------------------------------------------------------------------------------------------------------
+Transform4_ContinueNR:
+	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+	MULAx.xyzw	ACC, VF13, VF17x	MTIR	VI01, VF17w
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	MADDAy.xyzw	ACC, VF14, VF17y	SQI.xyz	VF23, (VI06++)	; store ST
+	MADDAz.xyzw	ACC, VF15, VF17z	SQI	VF24, (VI06++)	; store RGBA
+	MADDw.xyzw	VF20, VF16, VF00w	NOP
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)	; store XYZW
+	MULq.xyz	VF25, VF21, Q	JR	VI01
+	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+					; Vertex 1
+;---------------------------------------------------------------------------------------------------------------
+; Continue Pipeline - No Data Read or Write
+;---------------------------------------------------------------------------------------------------------------
+;Transform4_ContinueNRW:
+;	ADDx.xyzw	VF21, VF20, VF00x	DIV	Q, VF00w, VF20w
+;	MULAx.xyzw	ACC, VF13, VF17x	MTIR	VI01, VF17w
+;	NOP		LQI	VF18, (VI05++)
+;	MADDAy.xyzw	ACC, VF14, VF17y	NOP
+;	MADDAz.xyzw	ACC, VF15, VF17z	NOP
+;	MADDw.xyzw	VF20, VF16, VF00w	NOP
+;	ADDx.w	VF25, VF18, VF00x	NOP
+;	MULq.xyz	VF25, VF21, Q	JR	VI01
+;	MULq.xyz	VF23, VF18, Q	MOVE.xyzw	VF24, VF18	; copy RGBA
+;---------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------------------------
+; Finish
+;---------------------------------------------------------------------------------------------------------------
+Transform_Finish:
+	NOP		DIV	Q, VF00w, VF20w
+	NOP		NOP
+	FTOI4.xyzw	VF25, VF25	LQI	VF18, (VI05++)
+	NOP		SQI.xyz	VF23, (VI06++)
+	NOP		SQI	VF24, (VI06++)
+	NOP		NOP
+	ADDx.w	VF25, VF18, VF00x	SQI	VF25, (VI06++)
+	MULq.xyz	VF25, VF20, Q	MOVE.xyzw	VF24, VF18
+	MULq.xyz	VF23, VF18, Q	NOP
+
+	NOP		ILW.x	VI01, 0(VI12)x	; Load InstructionRoutine Offset
+	NOP		ILW.y	VI02, 0(VI12)y
+	FTOI4.xyzw	VF25, VF25	ILW.z	VI03, 0(VI12)z
+	NOP		SQI.xyz	VF23, (VI06++)	; store ST
+	NOP		SQI	VF24, (VI06++)	; store RGBA
+	NOP		IADDIU	VI12, VI12, 1
+	NOP		JR	VI01	; Branch to InstructionRoutine
+	NOP		SQI	VF25, (VI06++)	; store XYZW
+
+	NOP		NOP
+
+dbAnimBasic_Start:
+	NOP		XTOP	VI01
+	NOP[E]		LQ	VF31, 0(VI01)	; load GIFTag
+	NOP		NOP
+
+.enddmadata
+dbAnimBasic_CodeEnd:

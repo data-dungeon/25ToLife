@@ -1,0 +1,38 @@
+//
+// ASSETMANAGER.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+
+IDR_SYNC_STYLE_PATTERN01   RCDATA                      "res\\SyncPattern01.bmp"
+IDR_SYNC_STYLE_PATTERN01T  RCDATA                       "res\\SyncPattern01T.bmp"
+IDR_SYNC_STYLE_PATTERN02   RCDATA                      "res\\SyncPattern02.bmp"
+IDR_SYNC_STYLE_PATTERN02T  RCDATA                       "res\\SyncPattern02T.bmp"
+IDR_SYNC_STYLE_PATTERN03   RCDATA                      "res\\SyncPattern03.bmp"
+IDR_SYNC_STYLE_PATTERN03T  RCDATA                       "res\\SyncPattern03T.bmp"
+IDR_SYNC_STYLE_PATTERN04   RCDATA                      "res\\SyncPattern04.bmp"
+IDR_SYNC_STYLE_PATTERN04T  RCDATA                       "res\\SyncPattern04T.bmp"
+IDR_SYNC_STYLE_PATTERN05   RCDATA                      "res\\SyncPattern05.bmp"
+IDR_SYNC_STYLE_PATTERN05T  RCDATA                       "res\\SyncPattern05T.bmp"
+IDR_SYNC_STYLE_PATTERN06   RCDATA                      "res\\SyncPattern06.bmp"
+IDR_SYNC_STYLE_PATTERN06T  RCDATA                       "res\\SyncPattern06T.bmp"
+IDR_SYNC_STYLE_PATTERN07   RCDATA                      "res\\SyncPattern07.bmp"
+IDR_SYNC_STYLE_PATTERN07T  RCDATA                       "res\\SyncPattern07T.bmp"
+IDR_SYNC_STYLE_PATTERN08   RCDATA                      "res\\SyncPattern08.bmp"
+IDR_SYNC_STYLE_PATTERN08T  RCDATA                       "res\\SyncPattern08T.bmp"
+IDR_SYNC_STYLE_PATTERN09   RCDATA                      "res\\SyncPattern09.bmp"
+IDR_SYNC_STYLE_PATTERN09T  RCDATA                       "res\\SyncPattern09T.bmp"
+IDR_SYNC_STYLE_PATTERN10   RCDATA                      "res\\SyncPattern10.bmp"
+IDR_SYNC_STYLE_PATTERN10T  RCDATA                       "res\\SyncPattern10T.bmp"
+IDR_SYNC_STYLE_PATTERN11   RCDATA                      "res\\SyncPattern11.bmp"
+IDR_SYNC_STYLE_PATTERN11T  RCDATA                       "res\\SyncPattern11T.bmp"
+IDR_TREE_INDICATOR         RCDATA                     "res\\TreeIndicator.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////

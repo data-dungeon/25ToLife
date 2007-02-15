@@ -1,0 +1,12 @@
+///////////////////////////////////////////////////////////////////////////////
+// The interior of the CSemaphore class for this platform
+///////////////////////////////////////////////////////////////////////////////
+
+// This looks odd because we are being included inside of the CSemaphore class
+
+private:
+	int semaphoreID;
+	volatile int lockCount;
+	volatile int threadID;
+	volatile int awaitingLock;
+

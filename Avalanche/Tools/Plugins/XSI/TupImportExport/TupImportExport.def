@@ -1,0 +1,16 @@
+EXPORTS
+	XSILoadPlugin		@1 PRIVATE
+	XSIUnloadPlugin     @2 PRIVATE
+	ExportTupFunction_Init	@3 PRIVATE
+	ExportTupFunction_Execute @4 PRIVATE
+	ImportTupFunction_Init		@5 PRIVATE
+	ImportTupFunction_Execute @6 PRIVATE
+	CPPExportTupCommand_Init		@7 PRIVATE
+	OnTupExportMenu				@8 PRIVATE
+	CPPImportTupCommand_Init	@9 PRIVATE
+	OnTupImportMenu				@10 PRIVATE
+	ExportTupOptions_Define		@11 PRIVATE
+	ExportTupOptions_DefineLayout @12 PRIVATE
+	ImportTupOptions_Define		@13 PRIVATE
+	ImportTupOptions_DefineLayout @14 PRIVATE
+	ExportTupOptions_PPGEvent	@15 PRIVATE

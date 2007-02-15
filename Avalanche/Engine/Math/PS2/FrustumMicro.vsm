@@ -1,0 +1,470 @@
+; === (null)
+; =================================================
+; flowMon::Emit() vcl 1.4.beta.3a produced this code:
+		.align 4
+		.global	VU0_Frustum__SetPlanes
+		.global	VU0_Frustum__IntersectsWorldBounds
+		.global	VU0_Frustum__BoxIntersectsWorldBounds
+		.global	VU0_Frustum__SphereIntersectsWorldBounds
+VU0_Frustum__SetPlanes:
+__v_FrustumMicro_gasp_4:
+; _LNOPT_w=[ another ] 8 [7 0] 8   [__v_FrustumMicro_gasp_4]
+;         NOP                                                        sq            Plane6,5(planeoffset)               
+          NOP                                                        sq            VF21,5(VI01)                        
+
+;         NOP                                                        sq            Plane5,4(planeoffset)               
+          NOP                                                        sq            VF20,4(VI01)                        
+
+;         NOP                                                        sq            Plane4,3(planeoffset)               
+          NOP                                                        sq            VF19,3(VI01)                        
+
+;         NOP                                                        sq            Plane3,2(planeoffset)               
+          NOP                                                        sq            VF18,2(VI01)                        
+
+;         NOP                                                        sq            Plane2,1(planeoffset)               
+          NOP                                                        sq            VF17,1(VI01)                        
+
+;         NOP                                                        sq            Plane1,0(planeoffset)               
+          NOP                                                        sq            VF16,0(VI01)                        
+
+;         NOP[E]                                                     sq            Plane7,6(planeoffset)               
+          NOP[E]                                                     sq            VF22,6(VI01)                        
+
+;         NOP                                                        NOP                                               
+          NOP                                                        NOP                                               
+
+VU0_Frustum__IntersectsWorldBounds:
+__v_FrustumMicro_gasp_8:
+; _LNOPT_w=[ ldumb ] 62 [57 0] 65   [__v_FrustumMicro_gasp_8]
+;         NOP                                                        loi           0x3f000000                          
+          NOP                                                        loi           0x3f000000                          
+
+;         mulai.xyz     ACC,BoxMax,I                                 lq            Plane5,4(VI00)                      
+          mulai.xyz     ACC,VF17,I                                   lq            VF20,4(VI00)                        
+
+;         msubi.xyz     halfwidth,BoxMin,I                           lq            Plane4,3(VI00)                      
+          msubi.xyz     VF19,VF16,I                                  lq            VF23,3(VI00)                        
+
+;         NOP                                                        NOP                                               
+          NOP                                                        NOP                                               
+
+;         NOP                                                        lq            Plane6,5(VI00)                      
+          NOP                                                        lq            VF22,5(VI00)                        
+
+;         maddi.xyz     center,BoxMin,I                              lq            Plane7,6(VI00)                      
+          maddi.xyz     VF17,VF16,I                                  lq            VF21,6(VI00)                        
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane1,0(VI00)                      
+          mulax         ACC,VF23,VF19x                               lq            VF23,0(VI00)                        
+
+;         madday        ACC,Plane5,halfwidthy                        lq            Plane2,1(VI00)                      
+          madday        ACC,VF20,VF19y                               lq            VF20,1(VI00)                        
+
+;         maddz         projrad,Plane6,halfwidthz                    lq            Plane3,2(VI00)                      
+          maddz         VF25,VF22,VF19z                              lq            VF22,2(VI00)                        
+
+;         mulaw         ACC,Plane7,VF00w                             NOP                                               
+          mulaw         ACC,VF21,VF00w                               NOP                                               
+
+;         maddax        ACC,Plane1,centerx                           NOP                                               
+          maddax        ACC,VF23,VF17x                               NOP                                               
+
+;         madday        ACC,Plane2,centery                           NOP                                               
+          madday        ACC,VF20,VF17y                               NOP                                               
+
+;         maddaz        ACC,Plane3,centerz                           NOP                                               
+          maddaz        ACC,VF22,VF17z                               NOP                                               
+
+;         msubw         VF00,projrad,VF00w                           NOP                                               
+          msubw         VF00,VF25,VF00w                              NOP                                               
+
+;         maxw          ones,VF00,VF00w                              NOP                                               
+          maxw          VF16,VF00,VF00w                              NOP                                               
+
+;         mulaw         ACC,Plane7,VF00w                             lq            Plane4,10(VI00)                     
+          mulaw         ACC,VF21,VF00w                               lq            VF25,10(VI00)                       
+
+;         maddax        ACC,Plane1,Spherex                           lq            Plane6,12(VI00)                     
+          maddax        ACC,VF23,VF18x                               lq            VF21,12(VI00)                       
+
+;         madday        ACC,Plane2,Spherey                           lq            Plane5,11(VI00)                     
+          madday        ACC,VF20,VF18y                               lq            VF20,11(VI00)                       
+
+;         maddaz        ACC,Plane3,Spherez                           fmor          boxin,VI00                          
+          maddaz        ACC,VF22,VF18z                               fmor          VI05,VI00                           
+
+;         msubw         VF00,ones,Spherew                            lq            Plane7,13(VI00)                     
+          msubw         VF00,VF16,VF18w                              lq            VF24,13(VI00)                       
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane1,7(VI00)                      
+          mulax         ACC,VF25,VF19x                               lq            VF23,7(VI00)                        
+
+;         madday        ACC,Plane5,halfwidthy                        lq            Plane2,8(VI00)                      
+          madday        ACC,VF20,VF19y                               lq            VF22,8(VI00)                        
+
+;         maddz         projrad,Plane6,halfwidthz                    lq            Plane3,9(VI00)                      
+          maddz         VF25,VF21,VF19z                              lq            VF20,9(VI00)                        
+
+;         mulaw         ACC,Plane7,VF00w                             fmand         resultin[0],boxin                   
+          mulaw         ACC,VF24,VF00w                               fmand         VI05,VI05                           
+
+;         maddax        ACC,Plane1,centerx                           NOP                                               
+          maddax        ACC,VF23,VF17x                               NOP                                               
+
+;         madday        ACC,Plane2,centery                           NOP                                               
+          madday        ACC,VF22,VF17y                               NOP                                               
+
+;         maddaz        ACC,Plane3,centerz                           NOP                                               
+          maddaz        ACC,VF20,VF17z                               NOP                                               
+
+;         msubw         VF00,projrad,VF00w                           lq            Plane4,24(VI00)                     
+          msubw         VF00,VF25,VF00w                              lq            VF26,24(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             lq            Plane7,27(VI00)                     
+          mulaw         ACC,VF24,VF00w                               lq            VF21,27(VI00)                       
+
+;         maddax        ACC,Plane1,Spherex                           lq            Plane6,26(VI00)                     
+          maddax        ACC,VF23,VF18x                               lq            VF25,26(VI00)                       
+
+;         madday        ACC,Plane2,Spherey                           lq            Plane5,25(VI00)                     
+          madday        ACC,VF22,VF18y                               lq            VF24,25(VI00)                       
+
+;         maddaz        ACC,Plane3,Spherez                           fmor          boxin,VI00                          
+          maddaz        ACC,VF20,VF18z                               fmor          VI06,VI00                           
+
+;         msubw         VF00,ones,Spherew                            ior           resultin[0],resultin[0],VWPlaneMask0
+          msubw         VF00,VF16,VF18w                              ior           VI01,VI05,VI01                      
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane1,21(VI00)                     
+          mulax         ACC,VF26,VF19x                               lq            VF23,21(VI00)                       
+
+;         madday        ACC,Plane5,halfwidthy                        lq            Plane2,22(VI00)                     
+          madday        ACC,VF24,VF19y                               lq            VF24,22(VI00)                       
+
+;         maddz         projrad,Plane6,halfwidthz                    lq            Plane3,23(VI00)                     
+          maddz         VF25,VF25,VF19z                              lq            VF22,23(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             fmand         resultin[1],boxin                   
+          mulaw         ACC,VF21,VF00w                               fmand         VI06,VI06                           
+
+;         maddax        ACC,Plane1,centerx                           iaddiu        LL0001,VI00,0x00000010              
+          maddax        ACC,VF23,VF17x                               iaddiu        VI05,VI00,0x00000010                
+
+;         madday        ACC,Plane2,centery                           lq            Plane7,20(VI00)                     
+          madday        ACC,VF24,VF17y                               lq            VF20,20(VI00)                       
+
+;         maddaz        ACC,Plane3,centerz                           ior           resultin[1],resultin[1],VWPlaneMask1
+          maddaz        ACC,VF22,VF17z                               ior           VI02,VI06,VI02                      
+
+;         maddw         VF00,projrad,VF00w                           iand          outside,resultin[0],resultin[1]     
+          maddw         VF00,VF25,VF00w                              iand          VI01,VI01,VI02                      
+
+;         mulaw         ACC,Plane7,VF00w                             lq            Plane6,19(VI00)                     
+          mulaw         ACC,VF21,VF00w                               lq            VF25,19(VI00)                       
+
+;         maddax        ACC,Plane1,Spherex                           lq            Plane4,17(VI00)                     
+          maddax        ACC,VF23,VF18x                               lq            VF23,17(VI00)                       
+
+;         madday        ACC,Plane2,Spherey                           lq            Plane5,18(VI00)                     
+          madday        ACC,VF24,VF18y                               lq            VF24,18(VI00)                       
+
+;         maddaz        ACC,Plane3,Spherez                           fmor          boxout,GBPlaneMask[3]               
+          maddaz        ACC,VF22,VF18z                               fmor          VI04,VI04                           
+
+;         maddw         VF00,ones,Spherew                            iand          fog,resultin[1],LL0001              
+          maddw         VF00,VF16,VF18w                              iand          VI02,VI02,VI05                      
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane1,14(VI00)                     
+          mulax         ACC,VF23,VF19x                               lq            VF23,14(VI00)                       
+
+;         madday        ACC,Plane5,halfwidthy                        lq            Plane2,15(VI00)                     
+          madday        ACC,VF24,VF19y                               lq            VF22,15(VI00)                       
+
+;         maddz         projrad,Plane6,halfwidthz                    lq            Plane3,16(VI00)                     
+          maddz         VF19,VF25,VF19z                              lq            VF21,16(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             fmor          resultout[3],boxout                 
+          mulaw         ACC,VF20,VF00w                               fmor          VI05,VI04                           
+
+;         maddax        ACC,Plane1,centerx                           iaddiu        outside,outside,0x00000001          
+          maddax        ACC,VF23,VF17x                               iaddiu        VI01,VI01,0x00000001                
+
+;         madday        ACC,Plane2,centery                           iaddiu        LL0002,VI00,0x00000040              
+          madday        ACC,VF22,VF17y                               iaddiu        VI06,VI00,0x00000040                
+
+;         maddaz        ACC,Plane3,centerz                           iand          farclip,resultout[3],LL0002         
+          maddaz        ACC,VF21,VF17z                               iand          VI04,VI05,VI06                      
+
+;         maddw         VF00,projrad,VF00w                           NOP                                               
+          maddw         VF00,VF19,VF00w                              NOP                                               
+
+;         mulaw         ACC,Plane7,VF00w                             NOP                                               
+          mulaw         ACC,VF20,VF00w                               NOP                                               
+
+;         maddax        ACC,Plane1,Spherex                           NOP                                               
+          maddax        ACC,VF23,VF18x                               NOP                                               
+
+;         madday        ACC,Plane2,Spherey                           NOP                                               
+          madday        ACC,VF22,VF18y                               NOP                                               
+
+;         maddaz        ACC,Plane3,Spherez                           fmor          boxout,GBPlaneMask[2]               
+          maddaz        ACC,VF21,VF18z                               fmor          VI03,VI03                           
+
+;         maddw         VF28,ones,Spherew                            NOP                                               
+          maddw         VF28,VF16,VF18w                              NOP                                               
+
+; 
+; 
+; 
+;         abs.x         VF00,VF28                                    fmor          resultout[2],boxout                        ;	STALL_LATENCY ?3
+          abs.x         VF00,VF28                                    fmor          VI03,VI03                                  ;	STALL_LATENCY ?3
+
+;         NOP[E]                                                     iand          outgaurd,resultout[2],resultout[3]  
+          NOP[E]                                                     iand          VI03,VI03,VI05                      
+
+;         NOP                                                        iaddiu        clipon,outgaurd,0x00000001          
+          NOP                                                        iaddiu        VI03,VI03,0x00000001                
+
+VU0_Frustum__BoxIntersectsWorldBounds:
+__v_FrustumMicro_gasp_12:
+; _LNOPT_w=[ ldumb ] 46 [43 0] 49   [__v_FrustumMicro_gasp_12]
+;         NOP                                                        loi           0x3f000000                          
+          NOP                                                        loi           0x3f000000                          
+
+;         mulai.xyz     ACC,BoxMax,I                                 lq            Plane6,5(VI00)                      
+          mulai.xyz     ACC,VF17,I                                   lq            VF20,5(VI00)                        
+
+;         maddi.xyz     center,BoxMin,I                              lq            Plane4,3(VI00)                      
+          maddi.xyz     VF17,VF16,I                                  lq            VF19,3(VI00)                        
+
+;         msubi.xyz     halfwidth,BoxMin,I                           lq            Plane5,4(VI00)                      
+          msubi.xyz     VF16,VF16,I                                  lq            VF21,4(VI00)                        
+
+;         NOP                                                        NOP                                               
+          NOP                                                        NOP                                               
+
+;         NOP                                                        lq            Plane7,6(VI00)                      
+          NOP                                                        lq            VF22,6(VI00)                        
+
+;         NOP                                                        lq            Plane3,2(VI00)                      
+          NOP                                                        lq            VF18,2(VI00)                        
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane1,0(VI00)                      
+          mulax         ACC,VF19,VF16x                               lq            VF19,0(VI00)                        
+
+;         madday        ACC,Plane5,halfwidthy                        lq            Plane2,1(VI00)                      
+          madday        ACC,VF21,VF16y                               lq            VF21,1(VI00)                        
+
+;         maddz         projrad,Plane6,halfwidthz                    lq            Plane7,13(VI00)                     
+          maddz         VF23,VF20,VF16z                              lq            VF24,13(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             lq            Plane3,9(VI00)                      
+          mulaw         ACC,VF22,VF00w                               lq            VF20,9(VI00)                        
+
+;         maddax        ACC,Plane1,centerx                           lq            Plane4,10(VI00)                     
+          maddax        ACC,VF19,VF17x                               lq            VF22,10(VI00)                       
+
+;         madday        ACC,Plane2,centery                           lq            Plane5,11(VI00)                     
+          madday        ACC,VF21,VF17y                               lq            VF19,11(VI00)                       
+
+;         maddaz        ACC,Plane3,centerz                           lq            Plane6,12(VI00)                     
+          maddaz        ACC,VF18,VF17z                               lq            VF21,12(VI00)                       
+
+;         msubw         VF00,projrad,VF00w                           lq            Plane3,23(VI00)                     
+          msubw         VF00,VF23,VF00w                              lq            VF18,23(VI00)                       
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane1,7(VI00)                      
+          mulax         ACC,VF22,VF16x                               lq            VF23,7(VI00)                        
+
+;         madday        ACC,Plane5,halfwidthy                        lq            Plane2,8(VI00)                      
+          madday        ACC,VF19,VF16y                               lq            VF22,8(VI00)                        
+
+;         maddz         projrad,Plane6,halfwidthz                    lq            Plane2,22(VI00)                     
+          maddz         VF21,VF21,VF16z                              lq            VF19,22(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             fmor          resultin[0],VI00                    
+          mulaw         ACC,VF24,VF00w                               fmor          VI05,VI00                           
+
+;         maddax        ACC,Plane1,centerx                           lq            Plane4,24(VI00)                     
+          maddax        ACC,VF23,VF17x                               lq            VF24,24(VI00)                       
+
+;         madday        ACC,Plane2,centery                           lq            Plane5,25(VI00)                     
+          madday        ACC,VF22,VF17y                               lq            VF23,25(VI00)                       
+
+;         maddaz        ACC,Plane3,centerz                           lq            Plane6,26(VI00)                     
+          maddaz        ACC,VF20,VF17z                               lq            VF20,26(VI00)                       
+
+;         msubw         VF00,projrad,VF00w                           lq            Plane7,27(VI00)                     
+          msubw         VF00,VF21,VF00w                              lq            VF22,27(VI00)                       
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane1,21(VI00)                     
+          mulax         ACC,VF24,VF16x                               lq            VF21,21(VI00)                       
+
+;         madday        ACC,Plane5,halfwidthy                        ior           resultin[0],resultin[0],VWPlaneMask0
+          madday        ACC,VF23,VF16y                               ior           VI01,VI05,VI01                      
+
+;         maddz         projrad,Plane6,halfwidthz                    iaddiu        LL0003,VI00,0x00000010              
+          maddz         VF20,VF20,VF16z                              iaddiu        VI05,VI00,0x00000010                
+
+;         mulaw         ACC,Plane7,VF00w                             fmor          resultin[1],VI00                    
+          mulaw         ACC,VF22,VF00w                               fmor          VI06,VI00                           
+
+;         maddax        ACC,Plane1,centerx                           ior           resultin[1],resultin[1],VWPlaneMask1
+          maddax        ACC,VF21,VF17x                               ior           VI02,VI06,VI02                      
+
+;         madday        ACC,Plane2,centery                           iand          outside,resultin[0],resultin[1]     
+          madday        ACC,VF19,VF17y                               iand          VI01,VI01,VI02                      
+
+;         maddaz        ACC,Plane3,centerz                           lq            Plane4,17(VI00)                     
+          maddaz        ACC,VF18,VF17z                               lq            VF18,17(VI00)                       
+
+;         NOP                                                        iand          fog,resultin[1],LL0003              
+          NOP                                                        iand          VI02,VI02,VI05                      
+
+;         maddw         VF25,projrad,VF00w                           lq            Plane5,18(VI00)                     
+          maddw         VF25,VF20,VF00w                              lq            VF19,18(VI00)                       
+
+;         NOP                                                        lq            Plane7,20(VI00)                     
+          NOP                                                        lq            VF21,20(VI00)                       
+
+;         mulax         ACC,Plane4,halfwidthx                        lq            Plane6,19(VI00)                     
+          mulax         ACC,VF18,VF16x                               lq            VF18,19(VI00)                       
+
+;         NOP                                                        lq            Plane1,14(VI00)                     
+          NOP                                                        lq            VF20,14(VI00)                       
+
+;         abs.x         VF00,VF25                                    fmor          resultout[3],GBPlaneMask[3]         
+          abs.x         VF00,VF25                                    fmor          VI05,VI04                           
+
+;         madday        ACC,Plane5,halfwidthy                        lq            Plane2,15(VI00)                     
+          madday        ACC,VF19,VF16y                               lq            VF19,15(VI00)                       
+
+;         maddz         projrad,Plane6,halfwidthz                    lq            Plane3,16(VI00)                     
+          maddz         VF16,VF18,VF16z                              lq            VF18,16(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             iaddiu        outside,outside,0x00000001          
+          mulaw         ACC,VF21,VF00w                               iaddiu        VI01,VI01,0x00000001                
+
+;         maddax        ACC,Plane1,centerx                           iaddiu        LL0004,VI00,0x00000040              
+          maddax        ACC,VF20,VF17x                               iaddiu        VI06,VI00,0x00000040                
+
+;         madday        ACC,Plane2,centery                           iand          farclip,resultout[3],LL0004         
+          madday        ACC,VF19,VF17y                               iand          VI04,VI05,VI06                      
+
+;         maddaz        ACC,Plane3,centerz                           NOP                                               
+          maddaz        ACC,VF18,VF17z                               NOP                                               
+
+;         maddw         VF26,projrad,VF00w                           NOP                                               
+          maddw         VF26,VF16,VF00w                              NOP                                               
+
+; 
+; 
+; 
+;         abs.x         VF00,VF26                                    fmor          resultout[2],GBPlaneMask[2]                ;	STALL_LATENCY ?3
+          abs.x         VF00,VF26                                    fmor          VI03,VI03                                  ;	STALL_LATENCY ?3
+
+;         NOP[E]                                                     iand          outgaurd,resultout[2],resultout[3]  
+          NOP[E]                                                     iand          VI03,VI03,VI05                      
+
+;         NOP                                                        iaddiu        clipon,outgaurd,0x00000001          
+          NOP                                                        iaddiu        VI03,VI03,0x00000001                
+
+VU0_Frustum__SphereIntersectsWorldBounds:
+__v_FrustumMicro_gasp_16:
+; _LNOPT_w=[ ldumb ] 30 [30 0] 31   [__v_FrustumMicro_gasp_16]
+;         NOP                                                        lq            Plane7,6(VI00)                      
+          NOP                                                        lq            VF24,6(VI00)                        
+
+;         NOP                                                        lq            Plane1,0(VI00)                      
+          NOP                                                        lq            VF20,0(VI00)                        
+
+;         NOP                                                        lq            Plane2,1(VI00)                      
+          NOP                                                        lq            VF21,1(VI00)                        
+
+;         maxw          ones,VF00,VF00w                              lq            Plane3,2(VI00)                      
+          maxw          VF16,VF00,VF00w                              lq            VF19,2(VI00)                        
+
+;         mulaw         ACC,Plane7,VF00w                             lq            Plane1,7(VI00)                      
+          mulaw         ACC,VF24,VF00w                               lq            VF23,7(VI00)                        
+
+;         maddax        ACC,Plane1,Spherex                           lq            Plane7,13(VI00)                     
+          maddax        ACC,VF20,VF18x                               lq            VF24,13(VI00)                       
+
+;         madday        ACC,Plane2,Spherey                           lq            Plane2,8(VI00)                      
+          madday        ACC,VF21,VF18y                               lq            VF17,8(VI00)                        
+
+;         maddaz        ACC,Plane3,Spherez                           lq            Plane3,9(VI00)                      
+          maddaz        ACC,VF19,VF18z                               lq            VF22,9(VI00)                        
+
+;         msubw         VF00,ones,Spherew                            iaddiu        LL0005,VI00,0x00000010              
+          msubw         VF00,VF16,VF18w                              iaddiu        VI05,VI00,0x00000010                
+
+;         mulaw         ACC,Plane7,VF00w                             lq            Plane1,21(VI00)                     
+          mulaw         ACC,VF24,VF00w                               lq            VF21,21(VI00)                       
+
+;         maddax        ACC,Plane1,Spherex                           lq            Plane7,27(VI00)                     
+          maddax        ACC,VF23,VF18x                               lq            VF24,27(VI00)                       
+
+;         madday        ACC,Plane2,Spherey                           lq            Plane2,22(VI00)                     
+          madday        ACC,VF17,VF18y                               lq            VF20,22(VI00)                       
+
+;         maddaz        ACC,Plane3,Spherez                           fmor          resultin[0],VI00                    
+          maddaz        ACC,VF22,VF18z                               fmor          VI07,VI00                           
+
+;         msubw         VF25,ones,Spherew                            lq            Plane3,23(VI00)                     
+          msubw         VF25,VF16,VF18w                              lq            VF19,23(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             lq            Plane1,14(VI00)                     
+          mulaw         ACC,VF24,VF00w                               lq            VF17,14(VI00)                       
+
+;         maddax        ACC,Plane1,Spherex                           ior           resultin[0],resultin[0],VWPlaneMask0
+          maddax        ACC,VF21,VF18x                               ior           VI01,VI07,VI01                      
+
+;         madday        ACC,Plane2,Spherey                           lq            Plane7,20(VI00)                     
+          madday        ACC,VF20,VF18y                               lq            VF20,20(VI00)                       
+
+;         abs.x         VF00,VF25                                    fmor          resultin[1],VI00                    
+          abs.x         VF00,VF25                                    fmor          VI07,VI00                           
+
+;         maddaz        ACC,Plane3,Spherez                           lq            Plane2,15(VI00)                     
+          maddaz        ACC,VF19,VF18z                               lq            VF22,15(VI00)                       
+
+;         maddw         VF00,ones,Spherew                            lq            Plane3,16(VI00)                     
+          maddw         VF00,VF16,VF18w                              lq            VF21,16(VI00)                       
+
+;         mulaw         ACC,Plane7,VF00w                             ior           resultin[1],resultin[1],VWPlaneMask1
+          mulaw         ACC,VF20,VF00w                               ior           VI02,VI07,VI02                      
+
+;         maddax        ACC,Plane1,Spherex                           iand          outside,resultin[0],resultin[1]     
+          maddax        ACC,VF17,VF18x                               iand          VI01,VI01,VI02                      
+
+;         madday        ACC,Plane2,Spherey                           iand          fog,resultin[1],LL0005              
+          madday        ACC,VF22,VF18y                               iand          VI02,VI02,VI05                      
+
+;         maddaz        ACC,Plane3,Spherez                           fmor          resultout[3],GBPlaneMask[3]         
+          maddaz        ACC,VF21,VF18z                               fmor          VI05,VI04                           
+
+;         maddw         VF26,ones,Spherew                            iaddiu        LL0006,VI00,0x00000040              
+          maddw         VF26,VF16,VF18w                              iaddiu        VI06,VI00,0x00000040                
+
+;         NOP                                                        iand          farclip,resultout[3],LL0006         
+          NOP                                                        iand          VI04,VI05,VI06                      
+
+;         NOP                                                        iaddiu        outside,outside,0x00000001          
+          NOP                                                        iaddiu        VI01,VI01,0x00000001                
+
+; 
+;         abs.x         VF00,VF26                                    fmor          resultout[2],GBPlaneMask[2]                ;	STALL_LATENCY ?1
+          abs.x         VF00,VF26                                    fmor          VI03,VI03                                  ;	STALL_LATENCY ?1
+
+;         NOP[E]                                                     iand          outgaurd,resultout[2],resultout[3]  
+          NOP[E]                                                     iand          VI03,VI03,VI05                      
+
+;         NOP                                                        iaddiu        clipon,outgaurd,0x00000001          
+          NOP                                                        iaddiu        VI03,VI03,0x00000001                
+
+		.align 4
+;	iCount=146
+; register stats:
+;   8 VU User integer
+;  13 VU User floating point

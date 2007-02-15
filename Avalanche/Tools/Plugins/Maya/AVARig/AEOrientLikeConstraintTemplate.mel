@@ -1,0 +1,37 @@
+//
+//  Alias|Wavefront Script File
+//
+//  Procedure Name:
+//	AEorientLikeConstraintTemplate
+//
+//  Description Name;
+//	Creates the attribute editor controls for the orientLikeConstraint Node
+//
+//  Input Value:
+//	nodeName 
+//
+//  Output Value:
+//	None
+//
+
+global proc AEorientLikeConstraintTemplate ( string $nodeName )
+{
+	editorTemplate -beginScrollLayout;
+		
+		editorTemplate -beginLayout "Orient Like Constraint Attributes" -collapse 0;
+			editorTemplate -addControl "constraintInitialRotate";
+		editorTemplate -endLayout;
+
+	//suppressed attributes
+	editorTemplate -suppress "target";
+	editorTemplate -suppress "constraintRotate";
+	editorTemplate -suppress "constraintRotateOrder";
+	editorTemplate -suppress "caching";
+	editorTemplate -suppress "nodeState";
+	
+	// include/call base class/node attributes
+	AEtransformNoScroll $nodeName;
+	
+	editorTemplate -addExtraControls;
+	editorTemplate -endScrollLayout;
+}

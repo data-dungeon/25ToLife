@@ -1,0 +1,615 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Watch.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Watch.ico"
+IDR_WATCHTYPE           ICON                    "res\\WatchDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_LEGEND              BITMAP                  "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  15, 15
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    BUTTON      ID_FILE_SAVEALL
+    BUTTON      ID_CONTEXT_REFRESH
+    SEPARATOR
+    BUTTON      ID_CONNECT_PLAYSTATION
+    BUTTON      ID_CONNECT_PC
+    BUTTON      ID_CONNECT_XBOX
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &All\tCtrl+A",           ID_FILE_SAVEALL
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Debug Output",               ID_VIEW_DEBUGOUTPUT
+        MENUITEM "Strip &Chart",                ID_VIEW_STRIPCHART
+        MENUITEM "&Plot Dialog",                ID_VIEW_PLOTDIALOG
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Watch...",             ID_APP_ABOUT
+    END
+END
+
+IDR_POPUPS MENU 
+BEGIN
+    POPUP "Strip Chart"
+    BEGIN
+        MENUITEM "&Properties",                 ID_STRIPCHART_PROPERTIES
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "A",            ID_FILE_SAVEALL,        VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Watch"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,13,20,20
+    LTEXT           "Watch Version 68.0",IDC_STATIC,40,10,72,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2000",IDC_STATIC,40,25,71,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_WATCH_FORM DIALOG  0, 0, 325, 286
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Test Variable",IDC_SLIDER1_NAME,"Static",
+                    SS_LEFTNOWORDWRAP | NOT WS_VISIBLE | WS_GROUP,19,37,42,8
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,121,37,120,10
+    LTEXT           "Slider 1 text",IDC_SLIDER1_VAL,249,37,41,8,NOT 
+                    WS_VISIBLE
+    CONTROL         "Tab2",IDC_TAB,"SysTabControl32",0x0,7,15,311,264
+END
+
+IDD_CONTROL_PAGE DIALOG  0, 0, 292, 206
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD__STRIPCHART_DIALOG DIALOGEX 0, 0, 339, 218
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Strip Chart"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Close",IDOK,143,197,50,14
+    CONTROL         "",IDC_STRIPCTRL,"{0DF75593-1C7B-11D0-A89E-00A024C85C82}",
+                    WS_TABSTOP,7,7,231,179
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_LIST | WS_BORDER | 
+                    WS_TABSTOP,250,7,82,179,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "&Properties",ID_STRIPCHART_PROPERTIES,63,197,50,14
+END
+
+IDD_TEXTOUT_DIALOG DIALOG  0, 0, 308, 269
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Debug Output"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Close",IDOK,123,248,50,14
+    EDITTEXT        IDC_DEBUG_OUT,7,7,294,233,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+IDD_PLOT_DIALOG DIALOG  0, 0, 282, 247
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Plot Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Close",IDOK,154,226,50,14
+    CONTROL         "",IDC_STRIPCTRL,"{0DF75593-1C7B-11D0-A89E-00A024C85C82}",
+                    WS_TABSTOP,7,7,268,207
+    PUSHBUTTON      "&Properties",ID_STRIPCHART_PROPERTIES,86,226,51,14
+END
+
+IDD_CONTEXT_SAVE DIALOG  0, 0, 173, 54
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Save Context As"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_FILENAME,49,7,117,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,35,33,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,33,50,14
+    LTEXT           "Filename",IDC_STATIC,13,9,29,8
+END
+
+IDD_STRING_DIALOG DIALOG  0, 0, 186, 52
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Name"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,93,7,86,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,37,31,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,93,31,50,14
+    LTEXT           "Name of Row or Column",IDC_STATIC,7,10,78,8
+END
+
+IDD_CONTEXT_OPEN DIALOG  0, 0, 173, 54
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Open Context"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_FILENAME,49,7,117,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,35,33,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,33,50,14
+    LTEXT           "Filename",IDC_STATIC,13,9,29,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "Watch MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Watch"
+            VALUE "LegalCopyright", "Copyright (C) 2000"
+            VALUE "OriginalFilename", "Watch.EXE"
+            VALUE "ProductName", "Watch Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_WATCH_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 318
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 279
+    END
+
+    IDD_CONTROL_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD__STRIPCHART_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 332
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 211
+    END
+
+    IDD_TEXTOUT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 262
+    END
+
+    IDD_PLOT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 275
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_CONTEXT_SAVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 166
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
+
+    IDD_STRING_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_CONTEXT_OPEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 166
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD__STRIPCHART_DIALOG DLGINIT
+BEGIN
+    IDC_STRIPCTRL, 0x37a, 549, 0
+0x0013, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0031, 0x0039, 
+0x0039, 0x0037, 0x0020, 0x0023, 0x0000, 0x0001, 0x0000, 0x001b, 0x0000, 
+0x0001, 0x8001, 0x0000, 0x0075, 0x0000, 0x0005, 0x0000, 0x0002, 0x8001, 
+0x0001, 0x0000, 0x0900, 0x0200, 0x0000, 0x0100, 0xdd00, 0x0023, 0x1300, 
+0x001e, 0x4700, 0x0000, 0x0000, 0xd0d4, 0x00c8, 0x01ff, 0x0000, 0x0002, 
+0x0002, 0x0002, 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x9a00, 
+0x9999, 0x9999, 0xb999, 0x9a3f, 0x9999, 0x9999, 0xb999, 0x663f, 0x6666, 
+0x6666, 0xee66, 0x333f, 0x3333, 0x3333, 0xeb33, 0x013f, 0x0000, 0x0000, 
+0xc0c0, 0x00c0, 0x00ff, 0x0000, 0x0300, 0x0000, 0x0000, 0x0000, 0x2400, 
+0x0040, 0x0000, 0x0000, 0x5680, 0x00c0, 0x0300, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x2400, 0x0540, 0x0000, 0x0000, 0x0000, 0x2400, 
+0xc840, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7b00, 0xae14, 0xe147, 0x847a, 0x013f, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x4034, 0x0000, 0x0f01, 
+0x0000, 0x0000, 0x0000, 0x5900, 0x00c0, 0x0000, 0x0000, 0x0000, 0x9a00, 
+0x9999, 0x9999, 0xb999, 0x003f, 0x0000, 0x0000, 0x5900, 0xff40, 0x0000, 
+0x0000, 0x0000, 0x0b00, 0x4925, 0x253a, 0x3a4d, 0x5325, 0x2520, 0x0870, 
+0x4925, 0x253a, 0x204d, 0x7025, 0x2508, 0x3a49, 0x4d25, 0x2520, 0x0870, 
+0x6d25, 0x252f, 0x2f64, 0x7925, 0x2506, 0x2c62, 0x2520, 0x0279, 0x5925, 
+0x2508, 0x2f6d, 0x6425, 0x252f, 0x0179, 0x0101, 0x0000, 0x0002, 0x0000, 
+0x0001, 0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 
+0x0151, 0x0000, 0x9000, 0x4401, 0x0142, 0x0d00, 0x534d, 0x5320, 0x6e61, 
+0x2073, 0x6553, 0x6972, 0x0066, 0x0100, 0xff00, 0xffff, 0x0000, 0x0000, 
+0x0000, 0x2400, 0x0040, 0x0000, 0x0000, 0x2400, 0x05c0, 0x0000, 0x0000, 
+0x0000, 0x2400, 0x0040, 0x0000, 0x0000, 0x2400, 0x01c0, 0x0000, 0x0000, 
+0x0000, 0x0100, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x3ff0, 0x000a, 0x0000, 0x0000, 0x0000, 0x0003, 0x0003, 0x0001, 0x0000, 
+0x00ff, 0x0100, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0000, 
+0x7b00, 0xae14, 0xe147, 0x847a, 0x003f, 0x0000, 0x0000, 0x0000, 0x3ff0, 
+0x0000, 0x0001, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_PLOT_DIALOG DLGINIT
+BEGIN
+    IDC_STRIPCTRL, 0x37a, 546, 0
+0x0013, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0031, 0x0039, 
+0x0039, 0x0037, 0x0020, 0x0023, 0x0000, 0x0001, 0x0000, 0x001b, 0x0000, 
+0x0001, 0x8001, 0x0000, 0x0075, 0x0000, 0x0005, 0x0000, 0x0002, 0x8001, 
+0x0001, 0x0000, 0x0900, 0x0200, 0x0000, 0x0100, 0x8c00, 0x0029, 0xba00, 
+0x0022, 0x4700, 0x0000, 0x0000, 0xd0d4, 0x00c8, 0x01ff, 0x0000, 0x0002, 
+0x0002, 0x0002, 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x9a00, 
+0x9999, 0x9999, 0xb999, 0x9a3f, 0x9999, 0x9999, 0xb999, 0x663f, 0x6666, 
+0x6666, 0xee66, 0x333f, 0x3333, 0x3333, 0xeb33, 0x013f, 0x0000, 0x0000, 
+0xc0c0, 0x00c0, 0x00ff, 0x0000, 0x0300, 0x0000, 0x0000, 0x0000, 0x2400, 
+0x0040, 0x0000, 0x0000, 0x5680, 0x00c0, 0x0300, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x2400, 0x0540, 0x0000, 0x0000, 0x0000, 0x2400, 
+0xc840, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7b00, 0xae14, 0xe147, 0x847a, 0x013f, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x4034, 0x0000, 0x0f01, 
+0x0000, 0x0000, 0x0000, 0x5900, 0x00c0, 0x0000, 0x0000, 0x0000, 0x9a00, 
+0x9999, 0x9999, 0xb999, 0x003f, 0x0000, 0x0000, 0x5900, 0xff40, 0x0000, 
+0x0000, 0x0000, 0x0b00, 0x4925, 0x253a, 0x3a4d, 0x5325, 0x2520, 0x0870, 
+0x4925, 0x253a, 0x204d, 0x7025, 0x2508, 0x3a49, 0x4d25, 0x2520, 0x0870, 
+0x6d25, 0x252f, 0x2f64, 0x7925, 0x2506, 0x2c62, 0x2520, 0x0279, 0x5925, 
+0x2508, 0x2f6d, 0x6425, 0x252f, 0x0179, 0x0101, 0x0000, 0x0002, 0x0000, 
+0x0001, 0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 
+0x0151, 0x0000, 0x9000, 0x4401, 0x0142, 0x0d00, 0x534d, 0x5320, 0x6e61, 
+0x2073, 0x6553, 0x6972, 0x0066, 0x0100, 0xff00, 0xffff, 0x0000, 0x0000, 
+0x0000, 0x2400, 0x0040, 0x0000, 0x0000, 0x2400, 0x05c0, 0x0000, 0x0000, 
+0x0000, 0x2400, 0x0040, 0x0000, 0x0000, 0x2400, 0x01c0, 0x0000, 0x0000, 
+0x0000, 0x0100, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x3ff0, 0x000a, 0x0000, 0x0000, 0x0000, 0x0003, 0x0003, 0x0001, 0x0000, 
+0x00ff, 0x0100, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0000, 
+0x7b00, 0xae14, 0xe147, 0x847a, 0x003f, 0x0000, 0x0000, 0x0000, 0x3ff0, 
+0x0000, 0x0001, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Watch v68.0\n\nWatch\n\n\nWatch.Document\nWatch Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Watch"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing context\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active tab\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_CONNECT_PLAYSTATION  "Connect to the running Playstation application.\nConnect to Playstation"
+    ID_CONNECT_PC           "Connect to the running PC application.\nConnect to PC"
+    ID_STRIPCHART_PROPERTIES 
+                            "Invoke the properties dialog for the stripchart."
+    ID_FILE_SAVEALL         "Save all tabs\nSave All"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_CONNECT_XBOX         "Connect to the running Xbox application.\nConnect to Xbox"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Watch.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

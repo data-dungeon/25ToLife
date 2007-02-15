@@ -1,0 +1,3729 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="Network"
+	ProjectGUID="{DCC51649-4A1C-42D7-977E-FD330700FBF1}"
+	RootNamespace="Network"
+	SccProjectName="&quot;//depot/Avalanche/GameLib/Network&quot;"
+	SccAuxPath=""
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM"
+	Keyword="Win32Proj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+		<Platform
+			Name="Xbox"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="SN PS2 Release|Win32"
+			OutputDirectory="SNPS2Release"
+			IntermediateDirectory="SNPS2Release"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Release|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Debug|Win32"
+			OutputDirectory="SNPS2Debug"
+			IntermediateDirectory="SNPS2Debug"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -G0 -fno-exceptions -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
+				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"
+				ForcedIncludeFiles=""
+				ForcedUsingFiles=""/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"
+				AdditionalLibraryDirectories=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Debug|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Tools Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;"
+				PreprocessorDefinitions="NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Tools Debug|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;"
+				PreprocessorDefinitions="NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Tools Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;"
+				PreprocessorDefinitions="NETZ"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Tools Release|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;"
+				PreprocessorDefinitions="NETZ"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Debug|Xbox"
+			OutputDirectory="XBoxDebug"
+			IntermediateDirectory="XBoxDebug"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="_DEBUG;$(AVUSER);NETZ;_XBOX;WIN32"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="5"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release|Xbox"
+			OutputDirectory="XBoxRelease"
+			IntermediateDirectory="XBoxRelease"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="$(AVUSER);NETZ;_XBOX;WIN32"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 CDROM|Win32"
+			OutputDirectory="SNPS2CDRom"
+			IntermediateDirectory="SNPS2CDRom"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ;CDROM"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 CDROM|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="DX Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\Win32\include&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ;DIRECTX"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="DX Debug|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"/>
+		</Configuration>
+		<Configuration
+			Name="DX Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\Win32\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ;DIRECTX"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="DX Release|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release LTCG|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release LTCG|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/GL"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\Xbox\include&quot;"
+				PreprocessorDefinitions="$(AVUSER);NETZ;_XBOX;WIN32"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release Profile|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release Profile|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Oy-"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="$(AVUSER);NETZ;_XBOX;WIN32;PROFILE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release Profile Fastcap|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release Profile Fastcap|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Oy- /fastcap "
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="$(AVUSER);NETZ;_XBOX;WIN32;PROFILE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release LTCG DVD|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Release LTCG DVD|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/GL"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="$(AVUSER);NETZ;_XBOX;WIN32;CDROM"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Debug DVD|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Debug DVD|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="_DEBUG;$(AVUSER);NETZ;_XBOX;WIN32;CDROM"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="5"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Debug CDROM|Win32"
+			OutputDirectory="SNPS2DebugCD"
+			IntermediateDirectory="SNPS2DebugCD"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
+				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ;CDROM"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"
+				AdditionalLibraryDirectories=""/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 Debug CDROM|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerBuild|Win32"
+			OutputDirectory="SNPS2Consumer"
+			IntermediateDirectory="SNPS2Consumer"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -G0 -fno-exceptions -O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ;CDROM;CONSUMER_BUILD"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"
+				ForcedIncludeFiles=""
+				ForcedUsingFiles=""/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerBuild|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="PC Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\GameLib\OGG\include&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\Win32\include&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ;DIRECTX;DIRECTX_PC"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PC Debug|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"/>
+		</Configuration>
+		<Configuration
+			Name="PC Release|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\GameLib\OGG\include&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\Win32\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ;DIRECTX;DIRECTX_PC"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PC Release|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox DVD Replay|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox DVD Replay|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/GL"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="NDEBUG;$(AVUSER);NETZ;_XBOX;WIN32;CDROM;MMX_OK=1"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox DVD Replay Debug|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="_DEBUG;WIN32;MMX_OK=$(MMX_OK);$(AVUSER);NETZ"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox DVD Replay Debug|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="_DEBUG;$(AVUSER);NETZ;_XBOX;WIN32;CDROM"
+				MinimalRebuild="FALSE"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="5"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Consumer DVD|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="WIN32;_XBOX;DIRECTX;MMX_OK=1;$(AVUSER);NETZ;CDROM;CONSUMER_BUILD"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Xbox Consumer DVD|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/GL"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\XBox\include&quot;"
+				PreprocessorDefinitions="NDEBUG;WIN32;_XBOX;DIRECTX;MMX_OK=1;$(AVUSER);NETZ;CDROM;CONSUMER_BUILD"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="1"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="NetZ"
+			Filter="">
+			<File
+				RelativePath=".\NetZ\Avalanche.ddl">
+				<FileConfiguration
+					Name="SN PS2 Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\PlayStation2\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\PlayStation2\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\PlayStation2\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\PlayStation2\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\PlayStation2\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\PlayStation2\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\Win32\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\Win32\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\Win32\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\Win32\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\xbox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile Fastcap|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile Fastcap|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG DVD|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG DVD|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug DVD|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug DVD|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\PlayStation2\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\PlayStation2\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\PlayStation2\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\PlayStation2\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\Win32\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\Win32\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\Win32\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\Win32\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Consumer DVD|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Consumer DVD|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\XBox\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\XBox\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\NetZ\Avalanche_ddl_rev.cpp">
+				<FileConfiguration
+					Name="SN PS2 Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile Fastcap|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile Fastcap|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG DVD|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG DVD|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug DVD|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug DVD|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Consumer DVD|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Consumer DVD|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\NetZ\AvalancheDDF.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\AvalancheDDF.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\AvalancheProperties.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOActor.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOActor.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOActorDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOActorDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOGeneric.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOGeneric.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOGenericDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOGenericDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOHost.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOHost.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOHostDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOHostDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOMessageOwner.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOMessageOwner.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOMessageOwnerDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOMessageOwnerDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOPathFollower.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOPathFollower.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOPathFollowerDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOPathFollowerDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOTalker.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOTalkerDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOTalkerDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOWorld.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOWorld.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOWorldDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DOWorldDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRGroundFollower.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRGroundFollower.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRModel.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRModel.hpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRPathFollower.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRPathFollower.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRSixDOF.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DRSixDOF.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorInteraction.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorInteraction.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorInteractionDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorInteractionDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorMigrate.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorMigrateDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorMigrateDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorProps.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorPropsDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSActorPropsDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSBuffer.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSBuffer.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSBufferDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSBufferDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSGroundFollower.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSGroundFollowerDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSGroundFollowerDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSHostState.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSHostState.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSHostStateDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSHostStateDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSPathFollower.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSPathFollowerDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSPathFollowerDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSSessionLock.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSSessionLock.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSSessionLockDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSSessionLockDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSSixDOF.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSSixDOFDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSSixDOFDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSStartTime.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSStartTimeDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSStartTimeDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSTalkerProps.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSTalkerPropsDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSTalkerPropsDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSVector.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSVector.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSVectorDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSVectorDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSWorldExtents.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSWorldExtentsDDL.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\DSWorldExtentsDDL.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZCompress.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZCompress.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZConnection.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZConnection.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZEncrypt.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZEncrypt.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZMessage.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZMessage.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZSession.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZSession.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZSessionSearch.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\NetZSessionSearch.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\SessionTime.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\SessionTime.h">
+			</File>
+			<File
+				RelativePath=".\NetZ\Translators.cpp">
+			</File>
+			<File
+				RelativePath=".\NetZ\Translators.h">
+			</File>
+			<File
+				RelativePath="$(TTLDEV)\NetZ\ValidKeys.reg">
+				<FileConfiguration
+					Name="SN PS2 Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Tools Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 CDROM|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DX Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile Fastcap|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release Profile Fastcap|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG DVD|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Release LTCG DVD|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug DVD|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Debug DVD|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 Debug CDROM|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PC Release|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox DVD Replay Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Consumer DVD|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Xbox Consumer DVD|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="PS2"
+				Filter="">
+				<File
+					RelativePath=".\NetZ\Ps2\NetZPlatformConnection.cpp">
+					<FileConfiguration
+						Name="Tools Debug|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Tools Release|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Debug|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Debug|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Release|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Release|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile Fastcap|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile Fastcap|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Debug|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Debug|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Release|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Release|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay Debug|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay Debug|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="Win32"
+				Filter="">
+				<File
+					RelativePath=".\NetZ\Win32\NetZPlatformConnection.cpp">
+					<FileConfiguration
+						Name="SN PS2 Release|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 Release|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 Debug|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 Debug|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Tools Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Tools Debug|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Tools Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Tools Release|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 CDROM|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 CDROM|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Debug|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DX Release|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile Fastcap|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release Profile Fastcap|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG DVD|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Release LTCG DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug DVD|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Debug DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 Debug CDROM|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 Debug CDROM|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerBuild|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerBuild|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Debug|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PC Release|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox DVD Replay Debug|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Consumer DVD|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+		</Filter>
+		<File
+			RelativePath=".\NetZ\AvalancheDefines.h">
+		</File>
+		<File
+			RelativePath=".\Connection.cpp">
+		</File>
+		<File
+			RelativePath=".\Connection.h">
+		</File>
+		<File
+			RelativePath=".\Host.h">
+		</File>
+		<File
+			RelativePath=".\NetActor.cpp">
+		</File>
+		<File
+			RelativePath=".\NetActor.h">
+		</File>
+		<File
+			RelativePath=".\NetworkPCH.cpp">
+			<FileConfiguration
+				Name="Tools Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Tools Debug|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Tools Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Tools Release|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Debug|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DX Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DX Debug|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DX Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DX Release|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release LTCG|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release LTCG|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release Profile|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release Profile|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release Profile Fastcap|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release Profile Fastcap|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release LTCG DVD|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Release LTCG DVD|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Debug DVD|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Debug DVD|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="PC Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="PC Debug|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="PC Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="PC Release|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox DVD Replay|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox DVD Replay|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox DVD Replay Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox DVD Replay Debug|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Consumer DVD|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Xbox Consumer DVD|Xbox">
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\NetworkPCH.h">
+		</File>
+		<File
+			RelativePath=".\OnlineSessionSearch.cpp">
+			<FileConfiguration
+				Name="DX Debug|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DX Release|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\OnlineSessionSearch.h">
+			<FileConfiguration
+				Name="PC Debug|Win32">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="PC Release|Win32">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\Session.cpp">
+		</File>
+		<File
+			RelativePath=".\Session.h">
+		</File>
+		<File
+			RelativePath=".\SessionMgr.cpp">
+		</File>
+		<File
+			RelativePath=".\SessionMgr.h">
+		</File>
+		<File
+			RelativePath=".\SessionSearch.h">
+		</File>
+		<File
+			RelativePath=".\SessionSpec.cpp">
+		</File>
+		<File
+			RelativePath=".\SessionSpec.h">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

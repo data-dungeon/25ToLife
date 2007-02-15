@@ -1,0 +1,97 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mapAttrib", "mapAttrib.vcproj", "{FBDB9700-8CCD-4321-B2FA-34D168D321D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E373597-23DE-462F-9D9A-3ACA52881E2A} = {8E373597-23DE-462F-9D9A-3ACA52881E2A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mapAttribWin32", "mapAttribWin32\mapAttribWin32.vcproj", "{8E373597-23DE-462F-9D9A-3ACA52881E2A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40} = {4E93A073-E9F1-45D4-BC74-DE14F6C21B40}
+		{421C44AF-3606-4090-862C-8E014283C927} = {421C44AF-3606-4090-862C-8E014283C927}
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D} = {FAF27AB7-B622-4B9C-B562-83AC0D28950D}
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233} = {2E17F3EB-52B4-4105-9496-AF131B5FB233}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AttrControls", "..\..\Libraries\AttrControls\AttrControls.vcproj", "{421C44AF-3606-4090-862C-8E014283C927}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KeyVal", "..\..\Libraries\KeyVal\KeyVal.vcproj", "{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIDisplay", "..\..\Libraries\UIDisplay\UIDisplay.vcproj", "{2E17F3EB-52B4-4105-9496-AF131B5FB233}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\..\..\GameLib\Tupperware\tupperware.vcproj", "{FAF27AB7-B622-4B9C-B562-83AC0D28950D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 7
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Plugins/Maya/mapAttrib\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {F97BBC3A-047E-4584-946C-966850605E3D}
+		SccProjectUniqueName1 = mapAttrib.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = mapAttribWin32\\mapAttribWin32.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/Plugins/Maya/mapAttrib/mapAttribWin32\u0022
+		SccLocalPath2 = mapAttribWin32
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\Libraries\\AttrControls\\AttrControls.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/AttrControls\u0022
+		SccLocalPath3 = ..\\..\\Libraries\\AttrControls
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\..\\Libraries\\KeyVal\\KeyVal.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/KeyVal\u0022
+		SccLocalPath4 = ..\\..\\Libraries\\KeyVal
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = ..\\..\\Libraries\\UIDisplay\\UIDisplay.vcproj
+		SccProjectName5 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/UIDisplay\u0022
+		SccLocalPath5 = ..\\..\\Libraries\\UIDisplay
+		CanCheckoutShared = true
+		SccProjectUniqueName6 = ..\\..\\..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName6 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath6 = ..\\..\\..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{FBDB9700-8CCD-4321-B2FA-34D168D321D0}.Debug.ActiveCfg = Debug|Win32
+		{FBDB9700-8CCD-4321-B2FA-34D168D321D0}.Debug.Build.0 = Debug|Win32
+		{FBDB9700-8CCD-4321-B2FA-34D168D321D0}.Release.ActiveCfg = Release|Win32
+		{FBDB9700-8CCD-4321-B2FA-34D168D321D0}.Release.Build.0 = Release|Win32
+		{8E373597-23DE-462F-9D9A-3ACA52881E2A}.Debug.ActiveCfg = Debug|Win32
+		{8E373597-23DE-462F-9D9A-3ACA52881E2A}.Debug.Build.0 = Debug|Win32
+		{8E373597-23DE-462F-9D9A-3ACA52881E2A}.Release.ActiveCfg = Release|Win32
+		{8E373597-23DE-462F-9D9A-3ACA52881E2A}.Release.Build.0 = Release|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Debug.ActiveCfg = Tools Debug|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Debug.Build.0 = Tools Debug|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Release.ActiveCfg = Tools Release|Win32
+		{421C44AF-3606-4090-862C-8E014283C927}.Release.Build.0 = Tools Release|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Debug.ActiveCfg = Tools Debug|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Debug.Build.0 = Tools Debug|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Release.ActiveCfg = Tools Release|Win32
+		{4E93A073-E9F1-45D4-BC74-DE14F6C21B40}.Release.Build.0 = Tools Release|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Debug.ActiveCfg = Tools Debug|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Debug.Build.0 = Tools Debug|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Release.ActiveCfg = Tools Release|Win32
+		{2E17F3EB-52B4-4105-9496-AF131B5FB233}.Release.Build.0 = Tools Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.ActiveCfg = Tools Debug|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.Build.0 = Tools Debug|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.ActiveCfg = Tools Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

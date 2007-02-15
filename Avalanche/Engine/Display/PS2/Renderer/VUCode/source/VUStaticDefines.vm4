@@ -1,0 +1,9 @@
+
+define( 'baseStaticLightingData', eval( baseFree))
+include( 'VUStaticLight.vm4')
+
+define( 'baseStaticEVMapData', eval( baseStaticLightingData + szeStaticLightingData))
+include( 'VUStaticEV.vm4')
+
+define( 'endStaticVUData', eval( baseStaticEVMapData + szeStaticEVMapData))
+dumpdef( 'endStaticVUData')

@@ -1,0 +1,7 @@
+create "SNPS2Consumer\stage.lib"
+addmod "SNPS2Consumer/ActorCreator.obj"
+addmod "SNPS2Consumer/CCompActor.obj"
+addmod "SNPS2Consumer/StagePCH_SN.obj"
+addmod "SNPS2Consumer/StageScriptFunc.obj"
+save
+end

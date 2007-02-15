@@ -1,0 +1,313 @@
+.vu
+
+include( `VUDefines.vm4')
+
+
+define( 'szeDblBuffer', eval( (szeVUMemAvailable) / 2))
+
+
+define( 'numVtxsPerLoop', 4)
+
+define( 'numQWsPerPackIn', 10)
+define( 'numQWsPerPackOut', 12)
+define( 'numQWsPerPack', eval( numQWsPerPackIn + numQWsPerPackOut))
+
+define( 'numPacksPerBuffer', eval( (szeDblBuffer - 1) / numQWsPerPack))
+
+define( 'szeOutBuffer', eval( (numPacksPerBuffer * numQWsPerPackOut) + 1))
+define( 'szeInBuffer', eval( szeDblBuffer - szeOutBuffer))
+
+
+define( 'szePrePacket', 4)
+define( 'offPrePacket', eval( szeInBuffer - szePrePacket))
+define( 'cntPrePacket', 'eval( offPrePacket + $1)')
+
+dumpdef( 'szeInBuffer')
+
+dumpdef( 'szeOutBuffer')
+dumpdef( 'szeDblBuffer')
+dumpdef( 'offPrePacket')
+dumpdef( 'numPacksPerBuffer')
+
+dumpdef( 'offGlobalHeader')
+dumpdef( 'szeGlobalHeader')
+
+define( 'irCopyCount', 'VI01')
+define( 'irBaseVtxPtr', 'VI02')
+define( 'irKickPtr', 'VI03')
+define( 'irEndPtr', 'VI04')
+
+define( 'irOutPtr', 'VI05')
+define( 'irVtxPtr', 'VI07')
+define( 'irSTPtr', 'VI08')
+define( 'irColorPtr', 'VI06')
+
+define( 'irVtxCount', 'VI13')
+define( 'irLoopCount', 'VI14')
+
+	.global	dbVertexColorSetCompressCull_CodeBegin
+	.global	dbVertexColorSetCompressCull_CodeEnd
+
+.dmadata dbVertexColorSetCompressCull_CodeBegin
+	NOP		XTOP	irBaseVtxPtr	; get ptr to VUBuffer_1
+
+	NOP		LQ	VF09, 0(irBaseVtxPtr)	; Load CommonToClipMtx row 1
+	NOP		LQ	VF10, 1(irBaseVtxPtr)	; Load CommonToClipMtx row 2
+	NOP		LQ	VF11, 2(irBaseVtxPtr)	; Load CommonToClipMtx row 3
+	NOP		LQ	VF12, 3(irBaseVtxPtr)	; Load CommonToClipMtx row 4
+	NOP		LQ	VF13, 4(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF14, 5(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF15, 6(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF16, 7(irBaseVtxPtr)	; Load ObjToCommonMtx row1
+	NOP		LQ	VF29, 8(irBaseVtxPtr)	; Load ClipToScreen Values1
+	NOP		LQ	VF30, 9(irBaseVtxPtr)	; Load ClipToScreen Values2
+	NOP[E]		LQ	VF31,10(irBaseVtxPtr)	; Load GIFTag
+	NOP		NOP
+
+dbVSC_ConcatMatrices:
+
+; Concatinate ObjToCommon * CommonToClip and build up ClipToScreen
+	MULAx.xyzw	ACC, VF09, VF13x	IADDIU	irBaseVtxPtr, irBaseVtxPtr, szeInBuffer
+	MADDAy.xyzw	ACC, VF10, VF13y	NOP
+	MADDAz.xyzw	ACC, VF11, VF13z	NOP
+	MADDw.xyzw	VF01, VF12, VF13w	LOI	2048
+
+	MULAx.xyzw	ACC, VF09, VF14x	NOP
+	MADDAy.xyzw	ACC, VF10, VF14y	MOVE.x	VF13, VF30
+	MADDAz.xyzw	ACC, VF11, VF14z	MOVE.yz	VF13, VF00
+	MADDw.xyzw	VF02, VF12, VF14w	MR32.w	VF13, VF00
+
+	MULAx.xyzw	ACC, VF09, VF15x	SQ	VF31, 0(irBaseVtxPtr)
+	MADDAy.xyzw	ACC, VF10, VF15y	MOVE.y	VF14, VF30
+	MADDAz.xyzw	ACC, VF11, VF15z	MOVE.xz	VF14, VF00
+	MADDw.xyzw	VF03, VF12, VF15w	MR32.w	VF14, VF00
+
+	MULAx.xyzw	ACC, VF09, VF16x	NOP
+	MADDAy.xyzw	ACC, VF10, VF16y	MOVE.z	VF15, VF30
+	MADDAz.xyzw	ACC, VF11, VF16z	MOVE.xy	VF15, VF00
+	MADDw.xyzw	VF04, VF12, VF16w	MR32.w	VF15, VF00
+
+	ADDi.xy	VF16, VF00, I	NOP
+	NOP		MR32.z	VF16, VF30
+	NOP		MOVE.w	VF16, VF00
+
+; Concatinate ObjToClip * ClipToScreen
+
+	MULAx.xyzw	ACC, VF13, VF01x	NOP
+	MADDAy.xyzw	ACC, VF14, VF01y	NOP
+	MADDAz.xyzw	ACC, VF15, VF01z	NOP
+	MADDw.xyzw	VF05, VF16, VF01w	NOP
+
+	MULAx.xyzw	ACC, VF13, VF02x	NOP
+	MADDAy.xyzw	ACC, VF14, VF02y	NOP
+	MADDAz.xyzw	ACC, VF15, VF02z	NOP
+	MADDw.xyzw	VF06, VF16, VF02w	NOP
+
+	MULAx.xyzw	ACC, VF13, VF03x	NOP
+	MADDAy.xyzw	ACC, VF14, VF03y	NOP
+	MADDAz.xyzw	ACC, VF15, VF03z	NOP
+	MADDw.xyzw	VF07, VF16, VF03w	NOP
+
+	MULAx.xyzw	ACC, VF13, VF04x	NOP
+	MADDAy.xyzw	ACC, VF14, VF04y	NOP
+	MADDAz.xyzw	ACC, VF15, VF04z	NOP
+	MADDw.xyzw	VF08, VF16, VF04w	NOP
+
+	NOP		NOP
+	NOP		NOP
+
+	NOP[E]		XGKICK	irBaseVtxPtr		; wait for first chunk of Geometry
+	NOP		NOP
+
+dbVSC_Start:
+	NOP		XTOP	irBaseVtxPtr		; get ptr to VUBuffer
+
+	NOP		ILW.x	irVtxCount, 0(irBaseVtxPtr)x	; grab vertexCount
+	NOP		ILW.y	irCopyCount, 0(irBaseVtxPtr)y	; grab copyCount
+	NOP		ILW.z	irLoopCount, 0(irBaseVtxPtr)z	; grab loopCount
+	NOP		ILW.w	irColorPtr, 0(irBaseVtxPtr)w
+	NOP		IADD	irColorPtr, irBaseVtxPtr, irColorPtr	; start of color input data
+	NOP		IADDIU	irKickPtr, irBaseVtxPtr, szeInBuffer	; calculate OutBuffer base ptr
+	NOP		IADDIU	irBaseVtxPtr, irBaseVtxPtr, 1	; skip LocalHdr
+
+	NOP		IBEQ	irCopyCount, VI00, dbVSC_Prolog	; skip GIFPacket copy if count == 0
+	NOP		IADDIU	irOutPtr, irKickPtr, 0		; <ds> calculate OutBuffer moving ptr
+dbVSC_CopyGIFDataSetup:
+	NOP		IADD	irEndPtr, irBaseVtxPtr, irCopyCount	; calculate CopyEnd ptr
+
+dbVSC_CopyGIFData:
+	NOP		LQI	VF30, (irBaseVtxPtr++)		; load QW of GIFPacketData
+	NOP		NOP
+	NOP		NOP
+	NOP		IBNE	irBaseVtxPtr, irEndPtr, dbVSC_CopyGIFData
+	NOP		SQI	VF30, (irOutPtr++)	; store GIFPacketData to OutBuffer
+
+undefine( 'irCopyCount')
+undefine( 'irEndPtr')
+
+dbVSC_Prolog:
+	ADDx.w	VF27w, VF00w, VF00x	LQ	VF09, 0(irBaseVtxPtr)
+	ADDx.w	VF28w, VF00w, VF00x	LQ	VF10, 1(irBaseVtxPtr)
+	NOP		IADDIU	VI01, irVtxCount, 0x7fff
+	MULAw.xyzw	ACC, VF04, VF00w	IADDIU	VI01, VI01, 0x0001
+	MADDAx.xyzw	ACC, VF01, VF09x	MFIR.x	VF31x, VI01
+	MADDAy.xyzw	ACC, VF02, VF09y	IADD	irSTPtr, irBaseVtxPtr, irVtxCount
+	MADDz.xyzw	VF30, VF03, VF09z	IADDIU	irVtxPtr, irBaseVtxPtr, 2
+	MULAw.xyzw	ACC, VF08, VF00w	LQI	VF17, (irSTPtr++)	; load ST2 / ST4
+	MADDAx.xyzw	ACC, VF05, VF09x	LQI	VF18, (irSTPtr++)
+	MADDAy.xyzw	ACC, VF06, VF09y	LQI	VF11, (irVtxPtr++)
+	MADDz.xyzw	VF13, VF07, VF09z	ISUBIU	irLoopCount, irLoopCount, 1	; pre-decrement
+	CLIPw.xyz	VF30, VF30w	MR32.yz	VF27, VF17	; ST1 -> ST3Temp
+	ADDw.z	VF17, VF00, VF00	MR32.yz	VF28, VF18	; 1.0 -> ST1 / ST2 -> ST4Temp
+	ADDw.z	VF18, VF00, VF00	MTIR	VI09, VF09w	; 1.0 -> ST2
+
+; Mul ST1
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF13w
+	MADDAx.xyzw	ACC, VF01, VF10x	MTIR	VI10, VF10w
+	MADDAy.xyzw	ACC, VF02, VF10y	MTIR	VI11, VF11w
+	MADDz.xyzw	VF30, VF03, VF10z	FCAND	VI01, 0x3ffff
+	MULAw.xyzw	ACC, VF08, VF00w	IADDIU	VI01, VI01, 0x7fff
+	MADDAx.xyzw	ACC, VF05, VF10x	IOR	VI09, VI09, VI01
+	MADDAy.xyzw	ACC, VF06, VF10y	LQI	VF12, (irVtxPtr++)
+	MULq.xyz	VF13, VF13, Q	ISUBIU	VI01, irVtxCount, 4		; AdjVtxCount
+	MADDz.xyzw	VF14, VF07, VF10z	IADD	VI15, VI01, VI01		; Loop * 2
+	MULq.xyz	VF21, VF17, Q	IADD	VI15, VI15, VI01		; Loop * 3
+	CLIPw.xyz	VF30, VF30w	MFIR.w	VF13, VI09
+	FTOI4.xyz	VF13, VF13	MTIR	VI12, VF12w
+
+; Mul ST2 
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF14w
+	MADDAx.xyzw	ACC, VF01, VF11x	IADD	VI15, VI15, irOutPtr		; OutPtr + AdjVertCount * 3
+	MADDAy.xyzw	ACC, VF02, VF11y	NOP
+	MADDz.xyzw	VF30, VF03, VF11z	NOP
+	MULAw.xyzw	ACC, VF08, VF00w	FCAND	VI01, 0x3ffff
+	MADDAx.xyzw	ACC, VF05, VF11x	NOP
+	MADDAy.xyzw	ACC, VF06, VF11y	LQI	VF09, (irVtxPtr++)
+	MULq.xyz	VF14, VF14, Q	IADDIU	VI01, VI01, 0x7fff
+	MADDz.xyzw	VF15, VF07, VF11z	IOR	VI10, VI10, VI01
+	MULq.xyz	VF22, VF18, Q	NOP
+	CLIPw.xyz	VF30, VF30w	MFIR.w	VF14, VI10
+	ADDw.z	VF17, VF00z, VF00w	SQI	VF31, (irOutPtr++)
+	FTOI4.xyz	VF14, VF14	MTIR	VI09, VF09w
+
+dbVSC_Loop:
+
+; TJC - ick… deal with colors…
+	NOP		LQI.xyzw	VF25, (irColorPtr++)	; load color 1
+	NOP		LQI.xyzw	VF26, (irColorPtr++)	; load color 2
+	NOP		LQI.xyzw	VF29, (irColorPtr++)	; load color 3
+
+; Mul ST3 - Store ST1
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF15w
+	MADDAx.xyzw	ACC, VF01, VF12x	SQI.xyz	VF21, (irOutPtr++)
+	MADDAy.xyzw	ACC, VF02, VF12y	SQI.xyzw	VF25, (irOutPtr++) 	; store 1
+	MADDz.xyzw	VF30, VF03, VF12z	SQI.xyzw	VF13, (irOutPtr++)
+	MULAw.xyzw	ACC, VF08, VF00w	FCAND	VI01, 0x3ffff
+	MADDAx.xyzw	ACC, VF05, VF12x	MR32.xyz	VF19, VF27	; ST3Temp -> ST3
+	MADDAy.xyzw	ACC, VF06, VF12y	LQI	VF10, (irVtxPtr++)
+	MULq.xyz	VF15, VF15, Q	IADDIU	VI01, VI01, 0x7fff
+	MADDz.xyzw	VF16, VF07, VF12z	IOR	VI11, VI11, VI01
+	MULq.xyz	VF23, VF19, Q	MR32.xyz	VF20, VF28	; ST4Temp -> ST4
+	CLIPw.xyz	VF30, VF30w	MFIR.w	VF15, VI11
+	FTOI4.xyz	VF15, VF15	MTIR	VI10, VF10w
+
+; Mul ST4 - Store ST2
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF16w
+	MADDAx.xyzw	ACC, VF01, VF09x	SQI.xyz	VF22, (irOutPtr++)
+	MADDAy.xyzw	ACC, VF02, VF09y	SQI.xyzw	VF26, (irOutPtr++)
+	MADDz.xyzw	VF30, VF03, VF09z	SQI.xyzw	VF14, (irOutPtr++)
+	MULAw.xyzw	ACC, VF08, VF00w	FCAND	VI01, 0x3ffff
+	MADDAx.xyzw	ACC, VF05, VF09x	LQI	VF17, (irSTPtr++)	; Load ST1 / ST3
+	MADDAy.xyzw	ACC, VF06, VF09y	LQI	VF11, (irVtxPtr++)
+	MULq.xyz	VF16, VF16, Q	IADDIU	VI01, VI01, 0x7fff
+	MADDz.xyzw	VF13, VF07, VF09z	IOR	VI12, VI12, VI01
+	MULq.xyz	VF24, VF20, Q	MR32.yz	VF27, VF17	; ST1 -> ST3 Temp
+	CLIPw.xyz	VF30, VF30w	MFIR.w	VF16, VI12
+	FTOI4.xyz	VF16, VF16	MTIR	VI11, VF11w
+
+; Mul ST1 - Store ST3
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF13w
+	MADDAx.xyzw	ACC, VF01, VF10x	SQI.xyz	VF23, (irOutPtr++)
+	MADDAy.xyzw	ACC, VF02, VF10y	SQI.xyzw	VF29, (irOutPtr++)
+	MADDz.xyzw	VF30, VF03, VF10z	SQI.xyzw	VF15, (irOutPtr++)
+	MULAw.xyzw	ACC, VF08, VF00w	FCAND	VI01, 0x3ffff
+	MADDAx.xyzw	ACC, VF05, VF10x	MR32.z	VF17, VF00	; 1.0 -> ST1
+	MADDAy.xyzw	ACC, VF06, VF10y	LQI	VF12, (irVtxPtr++)
+	MULq.xyz	VF13, VF13, Q	IADDIU	VI01, VI01, 0x7fff
+	MADDz.xyzw	VF14, VF07, VF10z	IOR	VI09, VI09, VI01
+	MULq.xyz	VF21, VF17, Q	ISUBIU	irLoopCount, irLoopCount, 1
+	CLIPw.xyz	VF30, VF30w	MFIR.w	VF13, VI09
+
+	NOP		LQI.xyzw	VF15, (irColorPtr++)	; load color 4
+
+	FTOI4.xyz	VF13, VF13	MTIR	VI12, VF12w
+
+; Mul ST2 - Store ST4
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF14w
+	MADDAx.xyzw	ACC, VF01, VF11x	SQI.xyz	VF24, (irOutPtr++)
+	MADDAy.xyzw	ACC, VF02, VF11y	SQI.xyzw	VF15, (irOutPtr++)
+	MADDz.xyzw	VF30, VF03, VF11z	SQI.xyzw	VF16, (irOutPtr++)
+	MULAw.xyzw	ACC, VF08, VF00w	FCAND	VI01, 0x3ffff
+	MADDAx.xyzw	ACC, VF05, VF11x	LQI	VF18, (irSTPtr++)	; Load ST2 / ST4
+	MADDAy.xyzw	ACC, VF06, VF11y	LQI	VF09, (irVtxPtr++)
+	MULq.xyz	VF14, VF14, Q	IADDIU	VI01, VI01, 0x7fff
+	MADDz.xyzw	VF15, VF07, VF11z	IOR	VI10, VI10, VI01
+	MULq.xy	VF22, VF18, Q	MR32.yz	VF28, VF18	; ST2 -> ST4Temp
+	CLIPw.xyz	VF30, VF30w	MFIR.w	VF14, VI10
+	MULq.z	VF22, VF17, Q	IBNE	irLoopCount, VI00, dbVSC_Loop   ; !! 1.0 -> ST2
+	FTOI4.xyz	VF14, VF14	MTIR	VI09, VF09w
+
+dbVSC_Epilog:
+; TJC - ick… deal with colors…
+	NOP		LQI.xyzw	VF25, (irColorPtr++)	; load color 1
+	NOP		LQI.xyzw	VF26, (irColorPtr++)	; load color 2
+	NOP		LQI.xyzw	VF29, (irColorPtr++)	; load color 3
+
+
+	MULAw.xyzw	ACC, VF04, VF00w	DIV	Q, VF00w, VF15w
+	MADDAx.xyzw	ACC, VF01, VF12x	SQ.xyz	VF21,  0(irOutPtr)
+	MADDAy.xyzw	ACC, VF02, VF12y	SQ.xyzw	VF25, 1(irOutPtr)
+	MADDz.xyzw	VF30, VF03, VF12z	SQ.xyzw	VF13,  2(irOutPtr)
+	MULAw.xyzw	ACC, VF08, VF00w	FCAND	VI01, 0x3ffff
+	MADDAx.xyzw	ACC, VF05, VF12x	MR32.xyz	VF19, VF27	; ST3Temp -> ST3
+	MADDAy.xyzw	ACC, VF06, VF12y	LQ	VF10,  1(irBaseVtxPtr)
+	MULq.xyz	VF15, VF15, Q	IADDIU	VI01, VI01, 0x7fff
+	MADDz.xyzw	VF16, VF07, VF12z	IOR	VI11, VI11, VI01
+	MULq.xyz	VF23, VF19, Q	MR32.xyz	VF20, VF28	; ST4Temp -> ST4
+	CLIPw.xyz	VF30, VF30w	MFIR.w	VF15, VI11
+	FTOI4.xyz	VF15, VF15	LQ	VF11,  2(irBaseVtxPtr)
+
+; Mul ST4 - Store ST2
+	NOP		DIV	Q, VF00w, VF16w
+	NOP		SQ.xyz	VF22,  3(irOutPtr)
+	NOP		SQ.xyzw	VF26, 4(irOutPtr)
+	NOP		SQ.xyzw	VF14,  5(irOutPtr)
+	NOP		FCAND	VI01, 0x3ffff
+	NOP		LQ	VF12,  3(irBaseVtxPtr)
+	NOP		NOP
+	NOP		NOP
+	MULq.xyz	VF16, VF16, Q	IADDIU	VI01, VI01, 0x7fff
+	MULq.xyz	VF24, VF20, Q	IOR	VI12, VI12, VI01
+	NOP		MFIR.w	VF16, VI12
+	NOP		NOP
+
+	NOP		LQI.xyzw	VF14, (irColorPtr++)	; load color 4
+
+	FTOI4.xyz	VF16, VF16	SQ.xyz	VF23,  6(irOutPtr)
+	NOP		SQ.xyzw	VF29, 7 (irOutPtr)
+	NOP		SQ.xyzw	VF15,  8(irOutPtr)
+
+	NOP		SQ.xyz	VF24,  9(irOutPtr)
+	NOP		SQ.xyzw	VF14, 10(irOutPtr)
+	NOP		SQ.xyzw	VF16, 11(irOutPtr)
+
+	NOP		XGKICK	irKickPtr
+	NOP[E]		NOP
+	NOP		NOP
+	NOP		NOP
+	NOP		B	dbVSC_Start
+	NOP		NOP
+	NOP		NOP
+
+.enddmadata
+dbVertexColorSetCompressCull_CodeEnd:

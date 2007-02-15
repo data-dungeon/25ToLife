@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soundmod", "soundmod.vcproj", "{88C59F6E-F29D-419E-A9C3-E2E912A69BCF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/SoundMod\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {97B5C74E-477D-4631-9615-8BAC2EC0AFBB}
+		SccProjectUniqueName1 = soundmod.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{88C59F6E-F29D-419E-A9C3-E2E912A69BCF}.Debug.ActiveCfg = Debug|Win32
+		{88C59F6E-F29D-419E-A9C3-E2E912A69BCF}.Debug.Build.0 = Debug|Win32
+		{88C59F6E-F29D-419E-A9C3-E2E912A69BCF}.Release.ActiveCfg = Release|Win32
+		{88C59F6E-F29D-419E-A9C3-E2E912A69BCF}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

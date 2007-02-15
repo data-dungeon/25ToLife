@@ -1,0 +1,1 @@
+.global Math_DmaTag.data.align 4Math_DmaTag:DMAend	*VIFNOPVIFNOPVIFNOPMPG	0,*.include "Math/PS2/QuaternMicro.vsm".include "Math/PS2/TrigMicro.vsm".include "Math/PS2/CollideMicro.vsm".include "Math/PS2/FrustumMicro.vsm".include "Math/PS2/Invert.vsm".include "Math/PS2/occluder.vsm".EndMPG.EndDmaData

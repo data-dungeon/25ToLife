@@ -1,0 +1,37 @@
+// do/while test
+
+int i;
+
+// result: 0
+// result: 1
+// result: 2
+// result: 3
+i = 0;
+do {
+   print i;
+   i++;
+} while ( i < 4 );
+
+// result: 4
+// result: 5
+do print i++; while ( i <= 5 );
+
+
+// result: 10
+// result: 11
+// result: 12
+// result: 13
+// result: 14
+// result: 15
+// result: 16
+// result: 17
+// result: 18
+// result: 19
+// result: 20
+i = 10;
+int b = 15;
+do
+   while ( i <= b )
+      print i++;
+while ( ++b <= 20 );
+

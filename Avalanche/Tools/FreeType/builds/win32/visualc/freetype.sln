@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "freetype", "freetype.vcproj", "{071C35B3-AAB1-4505-B686-853E55CDB1B5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = freetype.vcproj
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SolutionUniqueID = {1FE5BCDA-C71F-4366-8002-2C9B79EC78B5}
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug Multithreaded = Debug Multithreaded
+		Debug Singlethreaded = Debug Singlethreaded
+		Release = Release
+		Release Multithreaded = Release Multithreaded
+		Release Singlethreaded = Release Singlethreaded
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Debug.ActiveCfg = Debug|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Debug.Build.0 = Debug|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Debug Multithreaded.ActiveCfg = Debug Multithreaded|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Debug Multithreaded.Build.0 = Debug Multithreaded|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Debug Singlethreaded.ActiveCfg = Debug Singlethreaded|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Debug Singlethreaded.Build.0 = Debug Singlethreaded|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Release.ActiveCfg = Release|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Release.Build.0 = Release|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Release Multithreaded.ActiveCfg = Release Multithreaded|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Release Multithreaded.Build.0 = Release Multithreaded|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Release Singlethreaded.ActiveCfg = Release Singlethreaded|Win32
+		{071C35B3-AAB1-4505-B686-853E55CDB1B5}.Release Singlethreaded.Build.0 = Release Singlethreaded|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

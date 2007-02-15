@@ -1,0 +1,71 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TupViewer", "TupViewer.vcproj", "{C56E297C-E5E3-46FA-9BFD-18222BBB9166}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69CCFD45-A335-4A8A-A8AC-74C85F75FCFC} = {69CCFD45-A335-4A8A-A8AC-74C85F75FCFC}
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D} = {FAF27AB7-B622-4B9C-B562-83AC0D28950D}
+		{811E90C5-1A2F-437D-B46A-17616D144E79} = {811E90C5-1A2F-437D-B46A-17616D144E79}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\GameLib\Tupperware\tupperware.vcproj", "{FAF27AB7-B622-4B9C-B562-83AC0D28950D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "COptionTree", "..\MFCControls\COptionTree\COptionTree.vcproj", "{69CCFD45-A335-4A8A-A8AC-74C85F75FCFC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GridControl", "..\MFCControls\GridControl\GridControl.vcproj", "{811E90C5-1A2F-437D-B46A-17616D144E79}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 5
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/TupViewer\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {E6B31859-F07E-452A-8410-1B0BECE43C61}
+		SccProjectUniqueName1 = ..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName1 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath1 = ..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = TupViewer.vcproj
+		SccLocalPath2 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\MFCControls\\COptionTree\\COptionTree.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/Tools/MFCControls/COptionTree\u0022
+		SccLocalPath3 = ..\\MFCControls\\COptionTree
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = ..\\MFCControls\\GridControl\\GridControl.vcproj
+		SccProjectName4 = \u0022//depot/Avalanche/Tools/MFCControls/GridControl\u0022
+		SccLocalPath4 = ..\\MFCControls\\GridControl
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C56E297C-E5E3-46FA-9BFD-18222BBB9166}.Debug.ActiveCfg = Debug|Win32
+		{C56E297C-E5E3-46FA-9BFD-18222BBB9166}.Debug.Build.0 = Debug|Win32
+		{C56E297C-E5E3-46FA-9BFD-18222BBB9166}.Release.ActiveCfg = Release|Win32
+		{C56E297C-E5E3-46FA-9BFD-18222BBB9166}.Release.Build.0 = Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.ActiveCfg = Viewer Debug|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.Build.0 = Viewer Debug|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.ActiveCfg = Viewer Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.Build.0 = Viewer Release|Win32
+		{69CCFD45-A335-4A8A-A8AC-74C85F75FCFC}.Debug.ActiveCfg = Debug|Win32
+		{69CCFD45-A335-4A8A-A8AC-74C85F75FCFC}.Debug.Build.0 = Debug|Win32
+		{69CCFD45-A335-4A8A-A8AC-74C85F75FCFC}.Release.ActiveCfg = Release|Win32
+		{69CCFD45-A335-4A8A-A8AC-74C85F75FCFC}.Release.Build.0 = Release|Win32
+		{811E90C5-1A2F-437D-B46A-17616D144E79}.Debug.ActiveCfg = Debug|Win32
+		{811E90C5-1A2F-437D-B46A-17616D144E79}.Debug.Build.0 = Debug|Win32
+		{811E90C5-1A2F-437D-B46A-17616D144E79}.Release.ActiveCfg = Release|Win32
+		{811E90C5-1A2F-437D-B46A-17616D144E79}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

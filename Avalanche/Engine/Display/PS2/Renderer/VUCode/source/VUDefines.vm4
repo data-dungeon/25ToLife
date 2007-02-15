@@ -1,0 +1,15 @@
+changequote(',')
+
+define( 'szeVUMem', '1024')
+
+define( 'offGlobalHeader', eval( 0))
+define( 'szeGlobalHeader', eval( 32))
+define( 'baseFree', eval( 4))
+
+define( 'szeVUMemAvailable', eval( szeVUMem - szeGlobalHeader))
+
+define( 'defineregister', 'define($1, $2) define($1x, $2x) define($1y, $2y) define($1z, $2z) define($1w, $2w) define($1xy, $2xy) define($1yz, $2yz) define($1zw, $2zw) define($1xz, $2xz) define($1xw, $2xw) define($1yw, $2yw) define($1xyz, $2xyz) define($1xyw, $2xyw) define($1xzw, $2xzw) define($1yzw, $2yzw) define($1xyzw, $2xyzw)')
+
+define( 'export', '.global $1')
+define( 'tableentry', '.global $1')
+

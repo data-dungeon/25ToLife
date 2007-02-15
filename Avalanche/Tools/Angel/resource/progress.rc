@@ -1,0 +1,120 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROGRESS DIALOGEX 0, 0, 257, 266
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Angel"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Current instance",IDC_STATIC,7,45,243,39
+    LTEXT           "Name:",IDC_STATIC,14,57,109,8,0,WS_EX_RIGHT
+    LTEXT           "Static",ID_INSTANCENAME,130,57,114,8
+    LTEXT           "Number:",IDC_STATIC,15,69,108,8,0,WS_EX_RIGHT
+    LTEXT           "Static",ID_INSTANCE,130,69,114,8
+    LTEXT           "Input:",IDC_STATIC,7,12,80,8,0,WS_EX_RIGHT
+    LTEXT           "Static",ID_INPUTFILE,91,12,159,8
+    LTEXT           "Output:",IDC_STATIC,7,23,80,8,0,WS_EX_RIGHT
+    LTEXT           "Static",ID_OUTPUTFILE,91,23,159,8
+    PUSHBUTTON      "Cancel",IDCANCEL,113,246,32,14
+    CONTROL         "Progress1",ID_PROGRESS,"msctls_progress32",WS_BORDER,7,
+                    227,243,14
+    LTEXT           "Total instances:",IDC_STATIC,7,33,80,8,0,WS_EX_RIGHT
+    LTEXT           "Static",ID_TOTALINSTANCES,91,33,159,8
+    EDITTEXT        ID_STATUS,7,90,243,130,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 259
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "icon1.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

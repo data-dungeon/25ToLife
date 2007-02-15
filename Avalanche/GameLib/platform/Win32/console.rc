@@ -1,0 +1,267 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "conrcids.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONSOLE DIALOG DISCARDABLE  0, 0, 411, 243
+STYLE WS_VISIBLE | WS_CAPTION | WS_THICKFRAME
+CAPTION "Console"
+FONT 11, "Lucida Console"
+BEGIN
+    EDITTEXT        IDC_CONSOLEOUT,6,7,397,209,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_OEMCONVERT | ES_READONLY | 
+                    WS_VSCROLL
+    EDITTEXT        IDC_CONSOLEIN,6,224,397,12,ES_AUTOHSCROLL
+END
+
+IDD_POWERTRAIN DIALOG DISCARDABLE  0, 0, 493, 321
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Powertrain Curves"
+CLASS "Powertrain"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Ground Force",IDC_PC_FORCE,248,7,238,11,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "Approximate Full Throttle Velocity",IDC_PC_VELOCITY,248,
+                    154,238,11,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Engine Torque",IDC_PC_TORQUE,7,7,238,11,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    CTEXT           "Engine Power",IDC_PC_POWER,7,154,238,11,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+END
+
+IDD_POWERCURVE DIALOG DISCARDABLE  0, 0, 232, 199
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Power Curve Points"
+CLASS "Powertrain"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider1",IDC_FULL_POWER_0,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,14,15,11,99
+    CONTROL         "Slider1",IDC_FULL_POWER_1,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,28,15,11,99
+    CONTROL         "Slider1",IDC_FULL_SPEED_0,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,113,99,11
+    CONTROL         "Slider1",IDC_FULL_POWER_2,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,42,15,11,99
+    CONTROL         "Slider1",IDC_FULL_POWER_3,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,56,15,11,99
+    CONTROL         "Slider1",IDC_FULL_POWER_4,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,70,15,11,99
+    CONTROL         "Slider1",IDC_FULL_POWER_5,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,84,15,11,99
+    CONTROL         "Slider1",IDC_FULL_SLOPE,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,98,15,11,99
+    CONTROL         "Slider1",IDC_FULL_SPEED_1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,126,99,11
+    CONTROL         "Slider1",IDC_FULL_SPEED_2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,139,99,11
+    CONTROL         "Slider1",IDC_FULL_SPEED_3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,152,99,11
+    CONTROL         "Slider1",IDC_FULL_SPEED_4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,165,99,11
+    CONTROL         "Slider1",IDC_FULL_SPEED_5,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,178,99,11
+    CONTROL         "Slider1",IDC_ZERO_POWER_0,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,125,14,11,99
+    CONTROL         "Slider1",IDC_ZERO_POWER_1,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,139,14,11,99
+    CONTROL         "Slider1",IDC_ZERO_SPEED_0,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,121,113,99,11
+    CONTROL         "Slider1",IDC_ZERO_POWER_2,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,153,14,11,99
+    CONTROL         "Slider1",IDC_ZERO_POWER_3,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,167,14,11,99
+    CONTROL         "Slider1",IDC_ZERO_POWER_4,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,181,14,11,99
+    CONTROL         "Slider1",IDC_ZERO_POWER_5,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,195,14,11,99
+    CONTROL         "Slider1",IDC_ZERO_SLOPE,"msctls_trackbar32",TBS_VERT | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,209,14,11,99
+    CONTROL         "Slider1",IDC_ZERO_SPEED_1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,121,126,99,11
+    CONTROL         "Slider1",IDC_ZERO_SPEED_2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,121,138,99,11
+    CONTROL         "Slider1",IDC_ZERO_SPEED_3,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,121,151,99,11
+    CONTROL         "Slider1",IDC_ZERO_SPEED_4,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,121,164,99,11
+    CONTROL         "Slider1",IDC_ZERO_SPEED_5,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,121,177,99,11
+    GROUPBOX        "Full Throttle",IDC_STATIC,7,7,106,185,BS_CENTER
+    GROUPBOX        "Zero Throttle",IDC_STATIC,119,7,106,185,BS_CENTER
+END
+
+IDD_ASSERTSDLG DIALOG DISCARDABLE  0, 0, 224, 174
+STYLE DS_MODALFRAME | DS_NOIDLEMSG | DS_NOFAILCREATE | DS_CENTER | WS_POPUP | 
+    WS_CAPTION
+CAPTION "Assertion Failure"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Assertion Failure",IDC_STATIC,79,2,64,8
+    DEFPUSHBUTTON   "&Ignore",IDC_IGNORE,7,153,50,14,WS_DISABLED
+    PUSHBUTTON      "Ignore &Always",IDC_IGNORE_ALWAYS,60,153,50,14,
+                    WS_DISABLED
+    PUSHBUTTON      "&Quit",IDC_QUIT,113,153,50,14,WS_DISABLED
+    PUSHBUTTON      "&Debug",IDC_DEBUG,166,153,50,14,WS_DISABLED
+    GROUPBOX        "Hopefully Readable String",IDC_STATIC,7,16,210,46
+    EDITTEXT        IDC_STRING,14,26,196,33,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    LTEXT           "File:",IDC_STATIC,13,106,17,8
+    LTEXT           "Line:",IDC_STATIC,13,132,17,8
+    GROUPBOX        "Expression and Location",IDC_STATIC,7,69,209,79
+    LTEXT           "Expr:",IDC_STATIC,13,80,17,8
+    EDITTEXT        IDC_EXPRESSION,32,80,176,19,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_FILE,32,106,176,19,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_LINE,32,132,176,12,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+END
+
+IDD_ASSERTDLG DIALOG DISCARDABLE  0, 0, 224, 123
+STYLE DS_MODALFRAME | DS_NOIDLEMSG | DS_NOFAILCREATE | DS_CENTER | WS_POPUP | 
+    WS_CAPTION
+CAPTION "Assertion Failure"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "Assertion Failure",IDC_STATIC,80,2,62,8
+    LTEXT           "File:",IDC_STATIC,13,54,17,8
+    LTEXT           "Line:",IDC_STATIC,13,80,17,8
+    DEFPUSHBUTTON   "&Ignore",IDC_IGNORE,7,102,50,14,WS_DISABLED
+    PUSHBUTTON      "Ignore &Always",IDC_IGNORE_ALWAYS,60,102,50,14,
+                    WS_DISABLED
+    PUSHBUTTON      "&Quit",IDC_QUIT,113,102,50,14,WS_DISABLED
+    PUSHBUTTON      "&Debug",IDC_DEBUG,166,102,50,14,WS_DISABLED
+    GROUPBOX        "Expression and Location",IDC_STATIC,7,17,209,80
+    LTEXT           "Expr:",IDC_STATIC,13,28,17,8
+    EDITTEXT        IDC_EXPRESSION,32,28,176,19,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_FILE,32,54,176,19,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_LINE,32,80,176,12,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""conrcids.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON2               ICON    DISCARDABLE     "ttl.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_POWERTRAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 486
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 314
+    END
+
+    IDD_POWERCURVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_ASSERTSDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+
+    IDD_ASSERTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 116
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

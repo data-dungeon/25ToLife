@@ -1,0 +1,58 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KFMTranslator", "KFMTranslator.vcproj", "{CB365905-BF1E-4CE0-B9D7-10B407C35E52}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D} = {FAF27AB7-B622-4B9C-B562-83AC0D28950D}
+		{442F8AE0-639A-4037-ABE9-C2CB55A103C9} = {442F8AE0-639A-4037-ABE9-C2CB55A103C9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mtools", "..\..\Libraries\MTools\MTools.vcproj", "{442F8AE0-639A-4037-ABE9-C2CB55A103C9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tupperware", "..\..\..\..\GameLib\Tupperware\tupperware.vcproj", "{FAF27AB7-B622-4B9C-B562-83AC0D28950D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = \u0022//depot/Avalanche/Tools/Plugins/Maya/KFMTranslator\u0022
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {10AA9016-50AE-4A9E-851D-45AD58C0C69B}
+		SccProjectUniqueName1 = KFMTranslator.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\..\\Libraries\\MTools\\MTools.vcproj
+		SccProjectName2 = \u0022//depot/Avalanche/Tools/Plugins/Libraries/MTools\u0022
+		SccLocalPath2 = ..\\..\\Libraries\\MTools
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\..\\..\\GameLib\\Tupperware\\tupperware.vcproj
+		SccProjectName3 = \u0022//depot/Avalanche/GameLib/Tupperware\u0022
+		SccLocalPath3 = ..\\..\\..\\..\\GameLib\\Tupperware
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CB365905-BF1E-4CE0-B9D7-10B407C35E52}.Debug.ActiveCfg = Debug|Win32
+		{CB365905-BF1E-4CE0-B9D7-10B407C35E52}.Debug.Build.0 = Debug|Win32
+		{CB365905-BF1E-4CE0-B9D7-10B407C35E52}.Release.ActiveCfg = Release|Win32
+		{CB365905-BF1E-4CE0-B9D7-10B407C35E52}.Release.Build.0 = Release|Win32
+		{442F8AE0-639A-4037-ABE9-C2CB55A103C9}.Debug.ActiveCfg = Debug|Win32
+		{442F8AE0-639A-4037-ABE9-C2CB55A103C9}.Debug.Build.0 = Debug|Win32
+		{442F8AE0-639A-4037-ABE9-C2CB55A103C9}.Release.ActiveCfg = Release|Win32
+		{442F8AE0-639A-4037-ABE9-C2CB55A103C9}.Release.Build.0 = Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.ActiveCfg = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Debug.Build.0 = Tools Hybrid|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.ActiveCfg = Tools Release|Win32
+		{FAF27AB7-B622-4B9C-B562-83AC0D28950D}.Release.Build.0 = Tools Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

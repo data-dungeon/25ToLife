@@ -1,0 +1,55 @@
+#pragma once
+
+#include "HCommandUIPluginHelper.h"
+
+class RotateFocusPrevCommandUIPlugin : public HCommandUIPluginHelper
+{
+protected:
+    HCommandPlugin *m_pRotateFocusCommandPlugin;
+
+public:
+   DECLARE_COMMANDUI_PLUGINHELPER(RotateFocusPrevCommandUIPlugin, HCommandUIPluginHelper)
+
+//HCommandUIPluginHelper overrides
+   virtual const char *GetCategory() const;
+   virtual UINT GetBitmapID() const;
+   virtual const char *GetDescription() const;
+   virtual void GetAccelerators( UINT &nCount, CommandUIAccel *&pAccel ) const;
+   //callbacks
+   virtual catch_msg void Place(HCMainFrame *pMainFrame);
+   virtual catch_msg void Init(HCommandPluginManager *pManager);
+
+   // Message Maps
+   virtual SnipeObjectType GetCommandObjectType() { return SOT_Vertex; }
+   virtual catch_msg void OnUpdateCommandUIObject(const HSnipeObject *pSnipeObject, CCmdUI *pCmdUI); 
+   virtual catch_msg void OnCommandObject(const HSnipeObject *pObject, HCommandPlugin *&pOutPlugin, String &strOutParameters);
+
+//HPluginHelper overrides
+   virtual const char *GetTitleName() const;
+};
+
+class RotateFocusNextCommandUIPlugin : public HCommandUIPluginHelper
+{
+protected:
+   HCommandPlugin *m_pRotateFocusCommandPlugin;
+
+public:
+   DECLARE_COMMANDUI_PLUGINHELPER(RotateFocusNextCommandUIPlugin, HCommandUIPluginHelper)
+
+   //HCommandUIPluginHelper overrides
+   virtual const char *GetCategory() const;
+   virtual UINT GetBitmapID() const;
+   virtual const char *GetDescription() const;
+   virtual void GetAccelerators( UINT &nCount, CommandUIAccel *&pAccel ) const;
+   //callbacks
+   virtual catch_msg void Place(HCMainFrame *pMainFrame);
+   virtual catch_msg void Init(HCommandPluginManager *pManager);
+
+   // Message Maps
+   virtual SnipeObjectType GetCommandObjectType() { return SOT_Component; }
+   virtual catch_msg void OnUpdateCommandUIObject(const HSnipeObject *pSnipeObject, CCmdUI *pCmdUI); 
+   virtual catch_msg void OnCommandObject(const HSnipeObject *pObject, HCommandPlugin *&pOutPlugin, String &strOutParameters);
+
+   //HPluginHelper overrides
+   virtual const char *GetTitleName() const;
+};

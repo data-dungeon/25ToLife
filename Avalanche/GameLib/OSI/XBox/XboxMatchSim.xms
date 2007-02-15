@@ -1,0 +1,138 @@
+<matchsim ver="1.0.5849.5" hexver="0x1000016d90005">
+    <title id="0x45530018" name="25 To Life" sessionexpiration="86400">
+        <schema>
+            <attribute id="ConsoleRegion" hexid="0xa" kind="int"/>
+            <attribute id="GameVersion" hexid="0xb" kind="int"/>
+            <attribute id="AdditionalContent" hexid="0xc" kind="int"/>
+            <attribute id="LevelIndex" hexid="0xe" kind="int"/>
+            <attribute id="GameType" hexid="0xf" kind="int"/>
+            <attribute id="TimeLimit" hexid="0x10" kind="int"/>
+            <attribute id="ScoreLimit" hexid="0x11" kind="int"/>
+            <attribute id="TagLimit" hexid="0x12" kind="int"/>
+            <attribute id="BestOfSeries" hexid="0x13" kind="int"/>
+            <attribute id="PlayersRespawn" hexid="0x14" kind="int"/>
+            <attribute id="FriendlyFire" hexid="0x15" kind="int"/>
+            <attribute id="Apprehension" hexid="0x16" kind="int"/>
+            <attribute id="SelfDamage" hexid="0x18" kind="int"/>
+            <attribute id="AlternatingTeams" hexid="0x19" kind="int"/>
+            <attribute id="MaxPlayers" hexid="0x1a" kind="int"/>
+            <attribute id="HostTitle" hexid="0x10001b" kind="string" maxlen="16"/>
+            <attribute id="IsRanked" hexid="0x1c" kind="int"/>
+            <attribute id="TotalConnectedPlayers" hexid="0x1d" kind="int"/>
+            <attribute id="LoadOutLimit" hexid="0x1e" kind="int"/>
+            <attribute id="VoiceCount" hexid="0x1f" kind="int"/>
+        
+            <constant id="FALSE" hexid="0x5000001" kind="int" value="0x0"/>
+            <constant id="TRUE" hexid="0x5000002" kind="int" value="0x1"/>
+        </schema>
+
+        <queries>
+            <query id="0x1" name="CommonMatch" maxresults="25" type="normal" qosprobe="1">
+                <params>
+                    <param id="ConsoleRegion" hexid="0x2000000" order="0" kind="int" nullok="0"/>
+                    <param id="GameVersion" hexid="0x2000001" order="1" kind="int" nullok="0"/>
+                    <param id="AdditionalContent" hexid="0x2000003" order="2" kind="int" nullok="0"/>
+                    <param id="LevelIndex" hexid="0x2000004" order="3" kind="int" nullok="1"/>
+                    <param id="GameType" hexid="0x2000005" order="4" kind="int" nullok="1"/>
+                    <param id="TimeLimit" hexid="0x2000006" order="5" kind="int" nullok="1"/>
+                    <param id="ScoreLimit" hexid="0x2000007" order="6" kind="int" nullok="1"/>
+                    <param id="TagLimit" hexid="0x2000008" order="7" kind="int" nullok="1"/>
+                    <param id="BestOfSeries" hexid="0x2000009" order="8" kind="int" nullok="1"/>
+                    <param id="PlayersRespawn" hexid="0x200000a" order="9" kind="int" nullok="1"/>
+                    <param id="FriendlyFire" hexid="0x200000b" order="10" kind="int" nullok="1"/>
+                    <param id="Apprehension" hexid="0x200000c" order="11" kind="int" nullok="1"/>
+                    <param id="SelfDamage" hexid="0x200000e" order="12" kind="int" nullok="1"/>
+                    <param id="AlternatingTeams" hexid="0x200000f" order="13" kind="int" nullok="1"/>
+                    <param id="MaxPlayers" hexid="0x2000010" order="14" kind="int" nullok="1"/>
+                    <param id="IsRanked" hexid="0x2000012" order="15" kind="int" nullok="1"/>
+                    <param id="TotalConnectedPlayers" hexid="0x2000013" order="16" kind="int" nullok="1"/>
+                    <param id="LoadOutLimit" hexid="0x2000002" order="17" kind="int" nullok="1"/>
+                    <param id="VoiceCount" hexid="0x2000011" order="18" kind="int" nullok="1"/>
+                </params>
+                <filters>
+                    <filter left="0xa" op="==" right="0x2000000"/>
+                    <filter left="0xb" op="==" right="0x2000001"/>
+                    <filter left="0xc" op="==" right="0x2000003"/>
+                    <filter left="0xe" op="==" right="0x2000004"/>
+                    <filter left="0xf" op="==" right="0x2000005"/>
+                    <filter left="0x10" op="==" right="0x2000006"/>
+                    <filter left="0x11" op="==" right="0x2000007"/>
+                    <filter left="0x12" op="==" right="0x2000008"/>
+                    <filter left="0x13" op="==" right="0x2000009"/>
+                    <filter left="0x14" op="==" right="0x200000a"/>
+                    <filter left="0x15" op="==" right="0x200000b"/>
+                    <filter left="0x16" op="==" right="0x200000c"/>
+                    <filter left="0x18" op="==" right="0x200000e"/>
+                    <filter left="0x19" op="==" right="0x200000f"/>
+                    <filter left="0x1a" op="==" right="0x2000010"/>
+                    <filter left="0x1c" op="==" right="0x2000012"/>
+                    <filter left="0x1d" op="==" right="0x2000013"/>
+                    <filter left="0x1e" op="==" right="0x2000002"/>
+                    <filter left="0x1f" op="==" right="0x2000011"/>
+                </filters>
+                <sortops>
+                    <sortop id="0x83000007" type="ascending"/>
+                    <sortop id="0x83000002" type="descending"/>
+                    <sortop id="0x83000006" type="ascending"/>
+                </sortops>
+                <returns>
+                    <return id="0xa" type="normal"/>
+                    <return id="0xb" type="normal"/>
+                    <return id="0xc" type="normal"/>
+                    <return id="0xe" type="normal"/>
+                    <return id="0xf" type="normal"/>
+                    <return id="0x10" type="normal"/>
+                    <return id="0x11" type="normal"/>
+                    <return id="0x12" type="normal"/>
+                    <return id="0x13" type="normal"/>
+                    <return id="0x14" type="normal"/>
+                    <return id="0x15" type="normal"/>
+                    <return id="0x16" type="normal"/>
+                    <return id="0x18" type="normal"/>
+                    <return id="0x19" type="normal"/>
+                    <return id="0x1a" type="normal"/>
+                    <return id="0x10001b" type="normal"/>
+                    <return id="0x1c" type="normal"/>
+                    <return id="0x1d" type="normal"/>
+                    <return id="0x1e" type="normal"/>
+                    <return id="0x1f" type="normal"/>
+                </returns>
+            </query>
+
+            <query id="0x3" name="SpecificMatch" maxresults="1" type="findfromid" qosprobe="0">
+                <params>
+                    <param id="SessionID" hexid="0x2000000" order="0" kind="int" nullok="0"/>
+                </params>
+                <filters>
+                    <filter left="0x2000000" op="==" right="0x83000001"/>
+                </filters>
+                <sortops/>
+                <returns>
+                    <return id="0xa" type="normal"/>
+                    <return id="0xb" type="normal"/>
+                    <return id="0xc" type="normal"/>
+                    <return id="0xe" type="normal"/>
+                    <return id="0xf" type="normal"/>
+                    <return id="0x10" type="normal"/>
+                    <return id="0x11" type="normal"/>
+                    <return id="0x12" type="normal"/>
+                    <return id="0x13" type="normal"/>
+                    <return id="0x14" type="normal"/>
+                    <return id="0x15" type="normal"/>
+                    <return id="0x16" type="normal"/>
+                    <return id="0x18" type="normal"/>
+                    <return id="0x19" type="normal"/>
+                    <return id="0x1a" type="normal"/>
+                    <return id="0x10001b" type="normal"/>
+                    <return id="0x1c" type="normal"/>
+                    <return id="0x1d" type="normal"/>
+                    <return id="0x1e" type="normal"/>
+                    <return id="0x1f" type="normal"/>
+                </returns>
+            </query>
+        </queries></title>
+    
+
+    
+    
+</matchsim>

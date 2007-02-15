@@ -1,0 +1,473 @@
+# Microsoft Developer Studio Generated Dependency File, included by AMViewer.mak
+
+.\Action.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\Archive.h"\
+	".\MainFrm.h"\
+	".\Model.h"\
+	".\Mot.h"\
+	
+
+.\AMViewer.cpp : \
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewer.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\AMViewerView.h"\
+	".\MainFrm.h"\
+	
+
+.\AMViewer.rc : \
+	".\res\AMViewer.ico"\
+	".\res\AMViewer.rc2"\
+	".\res\AMViewerDoc.ico"\
+	".\res\move.cur"\
+	".\res\Toolbar.bmp"\
+	".\res\turn.cur"\
+	".\res\zoom.cur"\
+	
+
+.\AMViewerDoc.cpp : \
+	"..\include\allocate.h"\
+	"..\include\attr.h"\
+	"..\include\datatype.h"\
+	"..\include\exports.h"\
+	"..\include\f_protos.h"\
+	"..\include\filecons.h"\
+	"..\include\hashtime.h"\
+	"..\include\macros.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\messager.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\strclass.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewer.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\AMViewerView.h"\
+	".\MainFrm.h"\
+	".\Model.h"\
+	".\noacceledit.h"\
+	".\ScriptView.h"\
+	
+
+.\AMViewerSplitter.cpp : \
+	".\AMViewer.h"\
+	".\AMViewerSplitter.h"\
+	
+
+.\AMViewerView.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewer.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\AMViewerView.h"\
+	".\MainFrm.h"\
+	".\Model.h"\
+	".\Time.h"\
+	
+
+.\Archive.cpp : \
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	
+
+.\AV2.cpp : \
+	"..\include\allocate.h"\
+	"..\include\attr.h"\
+	"..\include\datatype.h"\
+	"..\include\exports.h"\
+	"..\include\f_protos.h"\
+	"..\include\filecons.h"\
+	"..\include\hashtime.h"\
+	"..\include\macros.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\messager.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\strclass.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\am-gl.h"\
+	".\Archive.h"\
+	".\AV2.h"\
+	".\Model.h"\
+	
+
+.\MainFrm.cpp : \
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewer.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\AMViewerView.h"\
+	".\MainFrm.h"\
+	".\noacceledit.h"\
+	".\ScriptView.h"\
+	
+
+.\map.cpp : \
+	"..\include\allocate.h"\
+	"..\include\attr.h"\
+	"..\include\bitmapno.h"\
+	"..\include\colorbuf.h"\
+	"..\include\datatype.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\hashtime.h"\
+	"..\include\macros.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\strclass.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\am-gl.h"\
+	".\AMViewer.h"\
+	".\Model.h"\
+	
+
+.\Model.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\Archive.h"\
+	".\AV2.h"\
+	".\MainFrm.h"\
+	".\Model.h"\
+	".\noacceledit.h"\
+	".\ply.h"\
+	".\ScriptView.h"\
+	
+
+.\Mot.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\Archive.h"\
+	".\Model.h"\
+	".\Mot.h"\
+	
+
+.\Move.cpp : \
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerView.h"\
+	
+
+.\NoAccelEdit.cpp : \
+	".\AMViewer.h"\
+	".\noacceledit.h"\
+	
+
+.\Options.cpp : \
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerView.h"\
+	".\Options.h"\
+	
+
+.\PatchModel.cpp : \
+	"..\include\allocate.h"\
+	"..\include\attr.h"\
+	"..\include\bitmapno.h"\
+	"..\include\colorbuf.h"\
+	"..\include\datatype.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\hashtime.h"\
+	"..\include\macros.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\strclass.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\am-gl.h"\
+	".\Model.h"\
+	
+
+.\Ply.cpp : \
+	"..\include\allocate.h"\
+	"..\include\attr.h"\
+	"..\include\datatype.h"\
+	"..\include\exports.h"\
+	"..\include\f_protos.h"\
+	"..\include\filecons.h"\
+	"..\include\hashtime.h"\
+	"..\include\macros.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\messager.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\strclass.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\am-gl.h"\
+	".\Archive.h"\
+	".\Model.h"\
+	".\ply.h"\
+	
+
+.\PolyModel.cpp : \
+	"..\include\allocate.h"\
+	"..\include\attr.h"\
+	"..\include\bitmapno.h"\
+	"..\include\colorbuf.h"\
+	"..\include\datatype.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\hashtime.h"\
+	"..\include\macros.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\strclass.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\am-gl.h"\
+	".\Model.h"\
+	
+
+.\Render.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewer.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\AMViewerView.h"\
+	".\MainFrm.h"\
+	".\Model.h"\
+	
+
+.\ScriptView.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewer.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerSplitter.h"\
+	".\AMViewerView.h"\
+	".\MainFrm.h"\
+	".\Model.h"\
+	".\noacceledit.h"\
+	".\ScriptView.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\..\program files\microsoft visual studio\vc98\include\time.h"\
+	".\StdAfx.h"\
+	
+
+.\Time.cpp : \
+	".\Time.h"\
+	
+
+.\Transform.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerView.h"\
+	".\Model.h"\
+	
+
+.\Turn.cpp : \
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerView.h"\
+	
+
+.\Zoom.cpp : \
+	"..\include\attr.h"\
+	"..\include\exports.h"\
+	"..\include\filecons.h"\
+	"..\include\matrix33.h"\
+	"..\include\matrix34.h"\
+	"..\include\matrix44.h"\
+	"..\include\quaterni.h"\
+	"..\include\rotate.h"\
+	"..\include\splitpat.h"\
+	"..\include\vector.h"\
+	"..\include\vector2.h"\
+	"..\include\vector4.h"\
+	".\Action.h"\
+	".\am-gl.h"\
+	".\AMViewerDoc.h"\
+	".\AMViewerView.h"\
+	".\Model.h"\
+	

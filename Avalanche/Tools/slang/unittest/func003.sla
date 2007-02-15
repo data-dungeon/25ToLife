@@ -1,0 +1,15 @@
+// c function unit test -- use build in functions
+
+// prototypes
+extern float sin( float f );
+extern float cos( float f );
+extern float sqrt( float f );
+
+print sin( 0 );		// result: 0.000000
+print cos( 0 );		// result: 1.000000
+print sqrt( 36 );	// result: 6.000000
+
+float pi = 3.1415926;
+
+print sin( pi / 2 );	// result: 1.000000
+print cos( pi / 2 );	// result: 0.000000

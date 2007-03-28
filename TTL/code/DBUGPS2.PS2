@@ -9,8 +9,6 @@ PS2_John
 
 [lastelf]
 d:\Ttl\Ttl\code\SNPS2Debug\TTL.elf
-[lastcmdline]
--noiop
 [config]
 loadflags=02EA
 defradix=16
@@ -21,12 +19,6 @@ matchwholeword=0
 searchdirection=1
 casesens=0
 regexflag=0
-breaks=0,272,c:\dev\Avalanche\GameLib\platform\Xbox\XboxLive.cpp
-breaks=0,3586,D:\TTL\TTL\data\lang\uk_english.log
-breaks=0,255,D:\TTL\TTL\code\frontend\screens\screen_UIX.cpp
-breaks=0,1064,D:\TTL\TTL\CODE\SIM\NETWORKLOOP.CPP
-breaks=0,501,D:\TTL\TTL\CODE\MAIN\TTL.CPP
-breaks=0,51,D:\TTL\AVALANCHE\GAMELIB\PLATFORM\PS2\CDLLLOADER.CPP
 savettyexcapecodes=0
 TTYbuffersizes=10000,8000,8000,10000,10000,8000,8000,8000,8000,8000
 
@@ -85,7 +77,7 @@ unit=0
 flags=4
 logfont=12,8,400,FF,31,Terminal
 cursor=78,8
-ttymode=0
+ttymode=3
 autowrap=1
 [pane]
 paneid=1
@@ -98,7 +90,7 @@ unit=0
 flags=0
 logfont=12,8,400,FF,31,Terminal
 TabPane_ViewCount=3
-TabPane_CurrentViewIndex=2
+TabPane_CurrentViewIndex=0
 TabPane_ViewIndex=0
 columnwidths=250,
 100,
@@ -125,7 +117,7 @@ unit=0
 flags=0
 logfont=12,8,400,FF,31,Terminal
 TabPane_ViewCount=4
-TabPane_CurrentViewIndex=0
+TabPane_CurrentViewIndex=1
 TabPane_ViewIndex=0
 viewname0=Watch1
 watchset0=gData
@@ -138,6 +130,9 @@ columnwidths=250,
 gridlines=1
 TabPane_ViewIndex=1
 viewname1=Watch2
+watchset1=RenderInfo
+watchset1=StripBuffer_Dbg
+watchset1=RenderMgr
 columnwidths=250,
 100,
 10000,
@@ -178,20 +173,20 @@ type=3
 unit=0
 flags=4
 logfont=12,8,400,FF,31,Terminal
-recentfile=d:\ttl\avalanche\engine\layers\mediahal.cpp (EE),79
-recentfile=d:\ttl\avalanche\engine\layers\mhal_ps2.cpp (EE),159
-recentfile=d:\ttl\avalanche\engine\layers\hog.cpp (EE),636
-recentfile=d:\ttl\avalanche\engine\layers\media.cpp (EE),501
-recentfile=d:\ttl\avalanche\gamelib\platform\ps2\cdllloader.cpp (EE),111
-recentfile=d:\ttl\avalanche\gamelib\network\netz\netzconnection.cpp (EE),1706
-recentfile=d:\ttl\ttl\code\main\ttl.cpp (EE),700
-recentfile=d:\ttl\avalanche\gamelib\platform\gameapp.cpp (EE),180
-recentfile=d:\ttl\avalanche\gamelib\platform\ps2\ps2app.cpp (EE),156
-recentfile=d:\ttl\ttl\code\frontend\screens\screen_mainmenu.cpp (EE),1
+recentfile=d:\ttl\ttl\code\main\ttlloop.cpp (EE),404
+recentfile=d:\ttl\ttl\code\sim\setuploop.cpp (EE),470
+recentfile=d:\ttl\avalanche\gamelib\loop\gameloop.cpp (EE),105
+recentfile=d:\ttl\ttl\code\main\ttl.cpp (EE),735
+recentfile=d:\ttl\avalanche\gamelib\platform\gameapp.cpp (EE),373
+recentfile=d:\ttl\ttl\code\frontend\frontend.cpp (EE),556
+recentfile=d:\ttl\avalanche\engine\layers\mstream\streamirx.cpp (EE),5844
+recentfile=d:\ttl\avalanche\gamelib\fmv\ps2\playpss.cpp (EE),487
+recentfile=d:\ttl\avalanche\gamelib\platform\ps2\ps2app.cpp (EE),1
+recentfile=d:\ttl\avalanche\engine\math\ps2\occluder.vsm (EE),1
 showtabbar=1
 
 [txtfile]
-D:\TTL\TTL\CODE\FRONTEND\SCREENS\SCREEN_MAINMENU.CPP
+D:\TTL\AVALANCHE\ENGINE\MATH\PS2\OCCLUDER.VSM
 [pane]
 paneid=5
 referencepane=2
@@ -215,13 +210,17 @@ type=1
 unit=0
 flags=4
 logfont=12,8,400,FF,31,Terminal
-cursor=9,0
+cursor=45,5
 memmodulo=0
 membpl=20
 memmode=0
 addr=83868416
 [lastactivepane]
-paneid=0
+paneid=4
+
+[SearchHistory.EE]
+setcur
+Displaypo
 
 [WatchExpHistory.EE]
 hackit
@@ -230,6 +229,9 @@ gData
 gWantPal
 g_regionUSA
 volume->contents[i].name
+lclDrawFlags
+Stripbuffer_Dbg
+RenderMgr
 
 [MemoryAddressHistory.EE]
 3f2868

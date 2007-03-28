@@ -77,9 +77,11 @@ void CInitialLoop::Initialize(void)
 
 		if (!s_skipFluff)
 		{
+#if 0 // Stop the Pal 60 test
 			if	(!g_regionUSA)
 				g_FrontEnd.GotoScreen("SCREEN_ID_PALMODE");
 			else
+#endif
 			{
 				g_PalModeDone = true;
 				g_FrontEnd.GotoScreen("SCREEN_ID_TITLE");

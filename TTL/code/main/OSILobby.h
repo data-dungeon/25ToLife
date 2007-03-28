@@ -14,7 +14,7 @@
 **    $Author: Brian_Eiserloh $
 **
 */
-
+#if defined(NETWORKING)
 #pragma once
 
 #ifndef OSI_LOBBY_H
@@ -185,3 +185,4 @@ class COSILobby : public CLobby
 };
 
 #endif // OSI_LOBBY_H
+#endif

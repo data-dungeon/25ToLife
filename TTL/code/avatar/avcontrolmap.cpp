@@ -55,13 +55,13 @@ void AvatarControlMapper::SetupFromProfile()
 	SetControllerSpeed(g_GlobalProfile.GetLookSpeed() / 10.0f);
 	InvertAxis(PITCH, g_GlobalProfile.GetInvertedAiming());
 	EnableVibration(g_GlobalProfile.GetVibration());
-
+#if defined(NETWORKING)
 	// --- tell voice about our push to talk button
 	if( ValidSingleton( CSession ) && g_session.IsNetworked() )
 	{
 		g_CVoiceChat.SetPushToTalk( GetButton( PUSHTOTALK ) );
 	}
-
+#endif
 	g_messageDispatcher.SendMessageToAll("UpdateControllerSettings", 0, (ActorHandle)INVALID_OBJECT_HANDLE);
 }
 

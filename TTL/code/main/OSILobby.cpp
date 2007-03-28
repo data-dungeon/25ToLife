@@ -14,7 +14,7 @@
 **    $Author: Brian_Eiserloh $
 **
 */
-
+#if defined(NETWORKING)
 // Precompiled header.
 #include "TTLPCH.h"
 
@@ -127,8 +127,10 @@ bool COSILobby::IsOrphanSession( void )
 //---------------------------------------------------------------------------
 bool COSILobby::IsSafeToMakeAnOSIRequest( void )
 {
+#if defined(NETZ)
 	if ( d_requestType != REQUEST_ERROR && CNetZConnection::GetLinkStatus() )
 		return true ;
+#endif
 	return false ;
 }
 
@@ -1283,3 +1285,4 @@ void COSILobby::_setOSIMatchOptionFromConfigManager(
 }
 
 
+#endif

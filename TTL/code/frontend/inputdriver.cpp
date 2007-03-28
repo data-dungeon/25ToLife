@@ -219,9 +219,17 @@ const char* ActionMap::GetActionText( ActionType Action )
 	case Action_SwitchWeapon:
 		return "Switch Weapon";
 	case Action_VoiceChat:
+#if defined(NETWORKING)
 		return "Voice Chat";
+#else
+		return "";
+#endif
 	case Action_ShowScores:
+#if defined(NETWORKING)
 		return "Scoreboard";
+#else
+		return "";
+#endif
 	case Action_PeekLeft:
 		return "Peek Left";
 	case Action_PeekRight:

@@ -1,3 +1,4 @@
+#if defined(NETWORKING)
 #include "TTLPCH.h"
 
 #if defined(PS2)
@@ -483,3 +484,4 @@ bool OnlineUI::EOREditAccount::_updateShutDown()
 	stop();
 	return true;
 }
+#endif

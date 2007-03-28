@@ -483,7 +483,7 @@ void ScreenPause::OnCommandQuit( void )
 	{
 		pDialog->Clear();
 		pDialog->SetTitle( "Attention!" );
-		pDialog->SetMessage( "Your progress on the current level will not be saved.\nWould you like to quit now?" );
+		pDialog->SetMessage( "Any progress you've made since your last save will be lost.\nWould you like to quit now?" );
 		pDialog->AddMenuItem( "Yes", COMMAND_QUITGAME_YES, 0 );
 		pDialog->AddMenuItem( "No", COMMAND_QUITGAME_NO, 0 );
 		pDialog->SelectMenuItem( COMMAND_QUITGAME_NO );
@@ -525,7 +525,7 @@ void ScreenPause::OnButtonPressed( int button )
 	}
 }
 #endif
-
+#if defined(NETWORKING)
 //////////////////////////////////////////////////////////////////////////
 
 void ScreenPauseOnline::OnInitialize( void )
@@ -690,7 +690,6 @@ void ScreenPauseOnline::OnCommandFriends( void )
 	#endif
 		break;
 	}
-
 }
 
 void ScreenPauseOnline::OnCommandPlayers( void )
@@ -747,7 +746,7 @@ void ScreenPauseOnline::OnDialogCommand( int Command )
 
 	return;
 }
-
+#endif
 void ScreenQuitGame::OnInitialize( void )
 {
 	g_DisableControllerRemoved = false;

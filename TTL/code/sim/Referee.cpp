@@ -11,7 +11,6 @@
 **  All Rights Reserved.
 **
 */
-
 // Precompiled header.
 #include "TTLPCH.h"
 
@@ -779,9 +778,11 @@ void Referee::SetPhase(EPhase i_phase, int32 i_startTime)
 					g_connection.ResetBPSCounters();
 					g_connection.SetConnectionTimeout(true);
 					g_console.Echo("*************** enabling voice chat channels from Referee::POPULATING ****************");
+#if defined(NETWORKING)
 					g_CVoiceChat.enableChatChannel(CVoiceChat::CHAT_CHANNEL_ALL, false);
 					g_CVoiceChat.enableChatChannel(CVoiceChat::CHAT_CHANNEL_TEAM1, false);
 					g_CVoiceChat.enableChatChannel(CVoiceChat::CHAT_CHANNEL_TEAM2, false);
+#endif
 				}
 			}
 			logMessage.d_action = "Populating";
@@ -810,10 +811,11 @@ void Referee::SetPhase(EPhase i_phase, int32 i_startTime)
 					int teamID = (blue ? 1 : 2);
 					g_CVoiceChat.enableChatChannel((( CVoiceChat::eChatChannels )teamID ), true);
 				}*/
-
+#if defined(NETWORKING)
 				// --- set voice enable
 				bool VoiceEnabled = g_GlobalProfile.VoiceParams.VoiceOutput != VOICEOUTPUT_DISABLED;
 				g_CVoiceChat.enable(VoiceEnabled);
+#endif
 			}
 			g_messageDispatcher.SendMessageToAll("BeginRound", 0,
 					INVALID_OBJECT_HANDLE);
@@ -830,15 +832,15 @@ void Referee::SetPhase(EPhase i_phase, int32 i_startTime)
 			if(ValidSingleton(CConnection))
 			{
 				g_console.Echo("*************** enabling voice chat channels from Referee::REPORTING ****************");
+#if defined(NETWORKING)
 				g_CVoiceChat.enableChatChannel(CVoiceChat::CHAT_CHANNEL_ALL, false);
 				g_CVoiceChat.enableChatChannel(CVoiceChat::CHAT_CHANNEL_TEAM1, false);
 				g_CVoiceChat.enableChatChannel(CVoiceChat::CHAT_CHANNEL_TEAM2, false);
 				g_CVoiceChat.enableChatChannel(CVoiceChat::CHAT_CHANNEL_ALL, true);
-
 				// --- set voice enable
 				bool VoiceEnabled = g_GlobalProfile.VoiceParams.VoiceOutput != VOICEOUTPUT_DISABLED;
 				g_CVoiceChat.enable(VoiceEnabled);
-
+#endif
 			}
 			break;
 		}

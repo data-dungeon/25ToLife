@@ -589,6 +589,8 @@ void ScreenOptions::OnInitialize( void )
 #endif
 
 	InitAllMeters();
+	Text *t = GetTextSprite(ID_OPTIONS_THUMBSTICKSETTINGS);
+	t->m_Text.set("Analog Settings");
 
 	// Initialize the gamma texture
 	m_GammaTexHandle = INVALID_HANDLE;
@@ -640,7 +642,8 @@ void ScreenOptions::OnTerminate( void )
 //=============================================================================
 // ScreenOptions::OnScreenIntro
 //=============================================================================
-
+static int ThumbStickMode;
+static int ButtonLayout;
 void ScreenOptions::OnScreenIntro( void )
 {
 	g_OptionsOnScreen = true;
@@ -651,6 +654,8 @@ void ScreenOptions::OnScreenIntro( void )
 		m_KeepSettings = false;
 	else
 	{
+		ThumbStickMode = g_GlobalProfile.GetThumbStickMode();
+		ButtonLayout = g_GlobalProfile.GetButtonLayout();
 		m_InvertedAiming   = g_GlobalProfile.GetInvertedAiming();
 		m_VibrationEnabled = g_GlobalProfile.GetVibration();
 		m_LookSensitivity	 = g_GlobalProfile.GetLookSensitivity();
@@ -855,6 +860,27 @@ void ScreenOptions::OnButtonCancel( void )
 	SetSoundVolume( g_GlobalProfile.GetSoundVolume() );
 	SetMusicVolume( g_GlobalProfile.GetMusicVolume() );
 	SetGammaValue( g_GlobalProfile.GetGammaValue() );
+
+	m_VibrationEnabled = !g_GlobalProfile.GetVibration();
+
+	g_GlobalProfile.SetButtonLayout(ButtonLayout);
+	// update the avatar
+	AvatarControlMapper*	c = NULL;
+	c = (AvatarControlMapper*) g_controlFocus.Find("Avatar");
+
+	AvatarControlMapper::MAPPINGSCHEME AvButtonLayout =
+		AvatarControlMapper::MAPPINGSCHEME(ButtonLayout );
+
+	if (c)
+		c->SetButtonLayout(AvButtonLayout);
+	g_GlobalProfile.SetThumbStickMode(ThumbStickMode);
+	// update the avatar
+	AvatarControlMapper::MAPPINGSCHEME AvThumbStickMode =
+		AvatarControlMapper::MAPPINGSCHEME( ThumbStickMode );
+
+	if (c)
+		c->SetThumbStickMode(AvThumbStickMode);
+	ToggleVibration();
 }
 
 //=============================================================================

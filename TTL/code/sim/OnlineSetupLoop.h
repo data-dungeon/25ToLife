@@ -6,7 +6,7 @@
 **  Desc:   A loop for doing online setup.
 **
 */
-
+#if defined(NETWORKING)
 #ifndef _ONLINE_SETUP_LOOP_H
 #define _ONLINE_SETUP_LOOP_H
 
@@ -94,3 +94,4 @@ protected:
 };
 
 #endif // _ONLINE_SETUP_LOOP_H
+#endif

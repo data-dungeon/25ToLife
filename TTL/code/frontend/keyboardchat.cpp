@@ -1,3 +1,4 @@
+#if defined(NETWORKING)
 #include "ttlpch.h"
 #include "hud/stringex.h"
 #include "frontend\KeyboardChat.h"
@@ -202,3 +203,5 @@ void KeyboardChat::TextFiltered::HandleMessage( void* i_data, ActorHandle i_send
 
 	return;
 }
+
+#endif

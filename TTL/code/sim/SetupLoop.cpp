@@ -72,12 +72,13 @@ CSetupLoop::CSetupLoop() : CTTLLoop(s_stateArray, UNINITIALIZED)
 	d_subLoop[MAIN_MENU]          = &d_mainMenu;
 	d_subLoop[CUSTOM_PLAYER]      = &d_customPlayer;
 	d_subLoop[SINGLEPLAYER_LOBBY] = &d_singlePlayerLobby;
+#if defined(NETWORKING)
 	d_subLoop[LAN_LOBBY]          = &d_lanLobby;
 #if defined( _XBOX ) || defined( PS2 ) || defined ( DIRECTX_PC )
 	d_subLoop[ONLINE_LOBBY]       = &d_onlineLobby;
 #endif
+#endif
 	d_subLoop[DEV_LOBBY]          = &d_devLobby;
-
 	// Clear parameters.
 	d_params = NULL;
 
@@ -236,7 +237,7 @@ int CSetupLoop::DetermineState(int i_state)
 			return(TERMINATE);
 		}
 		return(SINGLEPLAYER_LOBBY);
-
+#if defined(NETWORKING)
 	 case LAN_LOBBY:
 		if (!d_subLoopActive)
 		{
@@ -299,7 +300,7 @@ int CSetupLoop::DetermineState(int i_state)
 #endif
 		return ONLINE_LOBBY;
 #endif
-
+#endif
 	 case DEV_LOBBY:
 		if (!d_subLoopActive)
 		{

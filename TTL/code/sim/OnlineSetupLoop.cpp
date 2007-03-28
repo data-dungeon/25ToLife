@@ -6,7 +6,7 @@
 **  Desc:   A loop for doing online setup.
 **
 */
-
+#if defined(NETWORKING)
 #include "TTLPCH.h"
 #include "sim/OnlineSetupLoop.h"
 
@@ -385,4 +385,6 @@ void COnlineSetupLoop::RequestExit()
 {
 	Shutdown();
 }
+#endif
+
 #endif

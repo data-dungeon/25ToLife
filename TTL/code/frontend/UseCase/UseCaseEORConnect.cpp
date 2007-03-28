@@ -1,3 +1,5 @@
+#if defined(NETWORKING)
+
 #include "TTLPCH.h"
 
 #include "UseCaseEORConnect.hpp"
@@ -247,3 +249,4 @@ bool OnlineUI::EORConnect::_updateShutDown()
 	}
 	return true;
 }
+#endif

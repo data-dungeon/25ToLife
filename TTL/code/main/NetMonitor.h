@@ -4,7 +4,7 @@
 // Author		-> Dwain Skinner
 // Description	-> Network Status Monitoring and error handling
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 #ifndef _CNETMONITOR_H
 #define _CNETMONITOR_H
 
@@ -65,3 +65,4 @@ inline bool CNetMonitor::Enable( bool i_enable )
 extern CNetMonitor g_CNetMonitor;
 
 #endif // _CNETMONITOR_H
+#endif

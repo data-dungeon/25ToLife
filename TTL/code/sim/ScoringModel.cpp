@@ -1066,7 +1066,9 @@ void CScoringModel::PopulatePlayerInfo()
 		}
 	}
 	d_pPlayerInfo->d_isAlphaBlue = g_referee.GetTeamingModel().IsAlphaBlue() ? 1 : 0;
+#if defined(NETWORKING)
 	d_pPlayerInfo->RequestUpdate();
+#endif
 }
 
 /******************************************************************************/

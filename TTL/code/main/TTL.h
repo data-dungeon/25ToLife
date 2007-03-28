@@ -97,7 +97,9 @@ private:
 	CBaseLoop* d_loop[NUM_LOOPS];
 	CSetupLoop        d_setupLoop;
 	CStandAloneLoop   d_standAloneLoop;
+#if defined(NETWORKING)
 	CNetworkLoop      d_multiPlayerLoop;
+#endif
 
 	// The current game parameters
 	float				soundVolume;

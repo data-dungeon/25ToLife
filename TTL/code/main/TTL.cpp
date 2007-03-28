@@ -416,7 +416,9 @@ TTL::TTL(void)
 
 	d_loop[SETUP_LOOP]        = &d_setupLoop;
 	d_loop[SINGLEPLAYER_LOOP] = &d_standAloneLoop;
+#if defined(NETWORKING)
 	d_loop[MULTIPLAYER_LOOP]  = &d_multiPlayerLoop;
+#endif
 }
 
 /***************************************************************************/
@@ -496,12 +498,13 @@ bool TTL::Initialize(void)
 	g_debugOutput.RegisterCategory("Lag time", "LAG");
 	g_debugOutput.RegisterCategory("Loop states", "LOOP");
 
+#if defined(NETWORKING)
 	// load patch extractor DLL
 	#if defined( PS2 )
 	bool success = g_DllLoader.Load( PATCHEXT_NAME, false );
 	ASSERTS( success, "FATAL: unable to load " PATCHEXT_NAME );
 	#endif //PS2
-
+#endif
   	// initialize the gamma table
   	TextureUtil::SetGammaZeroToOne( PROFILE_DEFAULT_GAMMA );
 
@@ -660,10 +663,10 @@ bool TTL::Initialize(void)
 
 	// init save game struct
 	CSaveGame::Init();
-
+#if defined(NETWORKING)
 	// --- network error handling
 	g_CNetMonitor.initialize();
-
+#endif
 	#if defined (_XBOX)
 	if (CXboxLive::GetGameInvite() == true)
 	{
@@ -717,10 +720,10 @@ bool TTL::Run(void)
 		}
 	}
 	#endif
-
+#if defined(NETWORKING)
 	// --- network error handling
 	g_CNetMonitor.update();
-
+#endif
 
 	// update memory card thread
 	g_MemCardManager->Update();
@@ -785,9 +788,10 @@ bool TTL::Run(void)
 /***************************************************************************/
 bool TTL::Terminate(void)
 {
+#if defined(NETWORKING)
 	// --- network error handling
 	g_CNetMonitor.terminate();
-
+#endif
 	// Unmount the hogs
 	for (int hogVolume = 0; hogVolume < s_hogs; hogVolume++)
 		Media::UnmountHog(s_hogName[hogVolume]);

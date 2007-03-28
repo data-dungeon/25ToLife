@@ -4,7 +4,7 @@
 // Author		-> Dwain Skinner
 // Description	-> Network Status Monitoring and error handling
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 // Precompiled header.
 #include "TTLPCH.h"
 
@@ -295,3 +295,4 @@ void CNetMonitor::CableErrorRetry::HandleMessage( void* i_data, ActorHandle i_se
 	d_ref->m_lastErrorCode = ERROR_NONE;
 }
 
+#endif

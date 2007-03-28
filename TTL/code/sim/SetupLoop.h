@@ -98,12 +98,13 @@ class CSetupLoop : public CTTLLoop
 	CInitialLoop d_mainMenu;
 	CCustomPlayerLoop d_customPlayer;
 	CSinglePlayerLoop d_singlePlayerLobby;
+#if defined(NETWORKING)
 	CMultiPlayerLoop d_lanLobby;
 #if defined( _XBOX ) || defined( PS2 ) || defined( DIRECTX_PC )
 	COnlineSetupLoop d_onlineLobby;
 #endif
+#endif
 	CDevLobby d_devLobby;
-
 	// Is a subloop active?
 	bool d_subLoopActive;
 

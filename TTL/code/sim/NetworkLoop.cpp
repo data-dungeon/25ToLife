@@ -9,7 +9,7 @@
 **  All Rights Reserved.
 **
 */
-
+#if defined(NETWORKING)
 // Precompiled header.
 #include "TTLPCH.h"
 
@@ -1470,3 +1470,4 @@ void CNetworkLoop::GoToReportScreen(void)
 		d_currentScreen = REPORTING_SCREEN;
 	}
 }
+#endif

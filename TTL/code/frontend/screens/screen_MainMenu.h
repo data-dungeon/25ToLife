@@ -21,12 +21,14 @@ class ScreenMainMenu : public ScreenBaseClass
 	enum eStates
 	{
 		STATE_IDLE = 0,
+#if !defined(PS2)
 		STATE_GET_NETWORK_CONFIG,
 		STATE_START_CONNECTION,
 		STATE_INITIATE_CONNECTION,
 		STATE_WAIT_FOR_CONNECTION,
 		STATE_CONNECTION_VALID,
 		STATE_CONNECTION_FAILED,
+#endif
 		STATE_WAIT,
 	};
 
@@ -41,8 +43,10 @@ class ScreenMainMenu : public ScreenBaseClass
 		virtual void OnDialogCommand( int Command );
 		virtual void OnCommand( int Command );
 		void OnCommandSinglePlayer( void );
+#if !defined(PS2)
 		void OnCommandMultiPlayerOnline( void );
 		void OnCommandMultiPlayerNetwork( void );
+#endif
 		void OnCommandSignOut( void );
 
 	#ifdef _XBOX

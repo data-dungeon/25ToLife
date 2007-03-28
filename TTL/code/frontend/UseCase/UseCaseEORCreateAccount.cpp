@@ -5,7 +5,7 @@
 /// for presenting the Main Menu and allowing the player to pick what
 /// they want to do.
 ///////////////////////////////////////////////////////////////////////////////////////
-
+#if defined(NETWORKING)
 #include "TTLPCH.h"
 
 #include "UseCaseEORCreateAccount.hpp"
@@ -487,3 +487,5 @@ EORNewAccountErrorCodes OnlineUI::EORCreateAccount::_verifyScreen2()
     // Validate data
     return EORAccount::validateScreen2(_birthMonth, _birthDay, _birthYear, _zipCode, EORAccount::getCountryCode(_country));
 }
+
+#endif

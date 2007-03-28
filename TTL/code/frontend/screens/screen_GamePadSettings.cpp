@@ -224,6 +224,7 @@ void ScreenButtonMap::OnCommand( int Command )
 void ScreenButtonMap::OnButtonCancel( void )
 {
 	g_OptionsOnScreen = false;
+	PlaySoundEvent( Screen::SOUNDEVENT_PREVSCREEN );
 	EndScreen(0);
 }
 
@@ -468,10 +469,10 @@ void ScreenThumbSticks::OnScreenUpdate( void )
 		pLeftUp     = pLookUp;
 		pLeftDown   = pLookDown;
 		pLeftLeft   = pTurnLeft;
-		pLeftRight  = pTurnLeft;
+		pLeftRight  = pTurnRight;
 		pRightUp    = pMoveForward;
 		pRightDown  = pMoveBackward;
-		pRightLeft  = pMoveRight;
+		pRightLeft  = pMoveLeft;
 		pRightRight = pMoveRight;
 		break;
 
@@ -492,10 +493,10 @@ void ScreenThumbSticks::OnScreenUpdate( void )
 		pLeftUp     = pLookUp;
 		pLeftDown   = pLookDown;
 		pLeftLeft   = pMoveLeft;
-		pLeftRight  = pMoveLeft;
+		pLeftRight  = pMoveRight;
 		pRightUp    = pMoveForward;
 		pRightDown  = pMoveBackward;
-		pRightLeft  = pTurnRight;
+		pRightLeft  = pTurnLeft;
 		pRightRight = pTurnRight;
 		break;
 	}

@@ -726,7 +726,11 @@ void ScreenBaseClass::SaveProfile( void )
 		g_MemCardManager->SetOverwriteConfirm(true);
 		g_MemCardManager->SetAreYouReallySure(false);
 		g_MemCardManager->SetUseActualFileSize(false);
+#if defined(NETWORKING)
 		g_MemCardManager->SaveFile(SAVEGAME_FILENAME, FileName, 0, pBuffer, BufferSize, true, MC_SAVED_SETTINGS);
+#else
+		g_MemCardManager->SaveFile(SAVEGAME_FILENAME, FileName, 0, pBuffer, BufferSize, true, MC_SAVED_PROFILE);
+#endif
 	}
 	else
 	{

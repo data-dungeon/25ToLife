@@ -471,9 +471,9 @@ bool FrontEnd::Init( void )
 	InitScreens();
 
 	m_MemCardState = STARTUPCHECK_IDLE;
-
+#if defined(NETWORKING)
 	g_KeyboardChat.Initialize();
-
+#endif
 	return true;
 }
 
@@ -816,7 +816,9 @@ void FrontEnd::Update( void )
 
 void FrontEnd::Shutdown( void )
 {
+#if defined(NETWORKING)
 	g_KeyboardChat.Terminate();
+#endif
 	g_controlFocus.Pop("Fluff");
 	g_controlFocus.Remove("Fluff");
 
@@ -903,21 +905,27 @@ void FrontEnd::RegisterScreenHandlers( bool TrueOrFalse )
 #ifndef DIRECTX_PC
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenLevelSelect ), TrueOrFalse );
 #endif
+#if defined(NETWORKING)
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenLobbyMenu ), TrueOrFalse );
+#endif
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenMainMenu ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenMemCard ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenMySettings ), TrueOrFalse );
+#if defined(NETWORKING)
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenChatInGame ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenChatRoom ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenNetworkError ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenOnlineLobby ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenOnlineMenu ), TrueOrFalse );
+#endif
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenOnlineProfile ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenOptions ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenObjectiveSummary ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPalMode ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPause ), TrueOrFalse );
+#if defined(NETWORKING)
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPauseOnline ), TrueOrFalse );
+#endif
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPlayersList ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPlayersPopup ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPleaseWait ), TrueOrFalse );
@@ -930,10 +938,13 @@ void FrontEnd::RegisterScreenHandlers( bool TrueOrFalse )
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenTestPal60 ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenThumbSticks ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenTitle ), TrueOrFalse );
+#if defined(NETWORKING)
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenVoiceSetting ), TrueOrFalse );
+#endif
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenWeapons ), TrueOrFalse );
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenWeaponsInGame ), TrueOrFalse );
 
+#if defined(NETWORKING)
     // Online screens by Ritual
 #if defined PS2 || defined _XBOX || defined(DIRECTX_PC)
 	ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenClanCreate ), TrueOrFalse );
@@ -998,6 +1009,7 @@ void FrontEnd::RegisterScreenHandlers( bool TrueOrFalse )
 #ifdef DIRECTX_PC
    ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPCKeyBindings ), TrueOrFalse );
    ScreenHandler::RegisterClass( RUNTIME_CLASSOBJECT( ScreenPCLevelSelect ), TrueOrFalse );
+#endif
 #endif
 }
 

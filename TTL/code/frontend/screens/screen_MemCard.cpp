@@ -198,7 +198,7 @@ void ScreenMemCard::OnButtonOK( void )
 
 	if( pListBox && pListBox->GetItemCount() > 0 )
 	{
-		PlaySoundEvent( Screen::SOUNDEVENT_INVALID );
+		PlaySoundEvent( Screen::SOUNDEVENT_NEXTBUTTON );
 
 		m_Result = pListBox->CurrentSelection();
 //		EndScreen( m_Result );

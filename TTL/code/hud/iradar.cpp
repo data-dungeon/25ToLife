@@ -801,7 +801,7 @@ const Vector3 &viewerDir)
 
 	// Show enemies?
 	bool showEnemies = (!ValidSingleton(CSession) || !g_session.IsNetworked());
-
+#if defined(NETWORKING)
 	// Who is the talker?
 	DOHandle handle = g_CVoiceChat.getWhosTalking();
 	if (handle != INVALID_DOHANDLE && participant)
@@ -823,6 +823,7 @@ const Vector3 &viewerDir)
 			}
 		}
 	}
+#endif
 	// Scan the referee
 	uint8 id = g_referee.GetNextParticipant(INVALID_PARTICIPANT);
 	while (id != INVALID_PARTICIPANT)

@@ -63,7 +63,7 @@ void TalkieInstrument::Update(float dt)
 				m_talk.GetSprite(t).Hide();
 		}
 	}
-
+#if defined(NETWORKING)
 	// Show gamer tag of whoever happens to be talking 
 	m_talkerTag->Show(false);
 	DOHandle handle = g_CVoiceChat.getWhosTalking();
@@ -84,6 +84,7 @@ void TalkieInstrument::Update(float dt)
 		}
 	}
 	m_talkerTag->Update(dt);
+#endif
 	SpriteInstrument::Update(dt);
 }
 
@@ -107,7 +108,7 @@ void TalkieInstrument::SetupSprites()
 ///////////////////////////////////////////////////////////////////////////////
 TalkieInstrument::TalkState TalkieInstrument::GetTalkState()
 {
-#if 1
+#if 1 && defined(NETWORKING)
 	switch (g_CVoiceChat.getState())
 	{
 		case CVoiceChat::STATE_CHAT_TALKING:

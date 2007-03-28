@@ -157,7 +157,7 @@ bool override)
 		// Make sure this string is current (based on control config)
 		if (pause)
 		{
-			Translate("Press &Jump to continue", translated, sizeof(translated) - 1);
+			Translate("Press the \021 button to continue", translated, sizeof(translated) - 1);
 			m_skip.SetTextNoTranslate(translated);
 		}
 

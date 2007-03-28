@@ -105,7 +105,7 @@ void ScreenBriefing::InitObjectives( void )
 	}
 	else
 	{
-		SetSecondaryObjective( i , "None." );
+		SetSecondaryObjective( i , 0/*"None."*/ );
 		i++;
 	}
 

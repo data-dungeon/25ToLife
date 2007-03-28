@@ -302,12 +302,12 @@ bool GameHUD::CreateMPPanel()
 	ASSERT(playerNames);
 	if (playerNames)
 		panel->Add(InstrumentPanel::CENTER, InstrumentCluster::CENTER, "player", playerNames);
-
+#if defined(NETWORKING)
 	NetStatInstrument *netStat = new NetStatInstrument;
 	ASSERT(netStat);
 	if (netStat)
 		panel->Add(InstrumentPanel::TOPRIGHT, InstrumentCluster::CENTER, "game", netStat);
-
+#endif
 	TalkieInstrument *talkie = new TalkieInstrument;
 	ASSERT(talkie);
 	if (talkie)
@@ -481,10 +481,11 @@ bool i_posted)
 {
 	if (!d_ref->m_chat)
 		return;
-
+#if defined(NETWORKING)
 	const char *textMessage = (const char *)i_data;
 	if (textMessage)
 		d_ref->m_chat->AddText(textMessage);
+#endif
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -496,7 +497,7 @@ bool i_posted)
 {
 	if (!d_ref->m_chat)
 		return;
-
+#if defined(NETWORKING)
 	STextChat *dataIn = ( STextChat * )i_data;
 
 	if( !g_lobby.IsLAN() && ( g_CVoiceChat.isVoiceChatBanned( ) || g_CVoiceChat.isPlayerMuted( dataIn->id, dataIn->flags ) ) )
@@ -504,6 +505,7 @@ bool i_posted)
 
 	if( dataIn->text )
 		d_ref->m_chat->AddText(dataIn->text);
+#endif
 }
 
 

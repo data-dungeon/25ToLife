@@ -118,7 +118,7 @@ ObjectiveData objectives[ NUM_LEVELS ][ MAX_OBJECTIVES_PER_LEVEL ] = {
 	{ // SP_LEVEL2 Apartments
 		{ O_LEVEL2_O1 , "Get to apartment (building 4, apt 25)"	, 1.0f     , 0.0f  , 0.0f , O_PRIMARY , O_LEVEL2_O2  , O_BOOL    , "Apartments1" , true  , O_NOP , O_PRI1   , O_NO_UPDATE , O_NO_UPDATE , false , 0 , FF_DONT_RESET | FF_NO_COMPLETE_MSG },
 		{ O_LEVEL2_O2 , "Return to your car."	, 1.0f     , 0.0f  , 0.0f , O_PRIMARY , -1           , O_BOOL    , "Apartments2" , false , O_NOP , O_MARK_AT_END   , O_NO_UPDATE , O_NO_UPDATE , false , 0 , FF_NO_COMPLETE_MSG },
-		{ O_LEVEL2_O3 , "Cover up %d tags"										, 4.0f     , 0.0f  , 0.0f , O_BONUS   , -1           , O_INT     , "Apartments3" , true  , O_GTE  , O_TAGS	, O_UPDATE , O_NO_UPDATE , false , 0 , 0 },
+		{ O_LEVEL2_O3 , "Cover up %d white painted tags"										, 4.0f     , 0.0f  , 0.0f , O_BONUS   , -1           , O_INT     , "Apartments3" , true  , O_GTE  , O_TAGS	, O_UPDATE , O_NO_UPDATE , false , 0 , 0 },
 		{ O_LEVEL2_O4 , "Defeat %d enemies"										, 25.0f    , 0.0f  , 0.0f , O_STAT    , -1           , O_INT     , "Apartments4" , true  , O_GTE , O_KILLS  , O_NO_UPDATE , O_NO_UPDATE , false , 0 , 0 },
 		{ O_NO_OBJ    , "NO_OBJ"													, 0.0f	  , 0.0f  , 0.0f , O_NO_OBJ  , -1           , O_NO_TYPE , "O_NO_OBJ"    , false , O_NOP , O_UNDEF  , O_NO_UPDATE , O_NO_UPDATE , false , 0 , 0 },
 		{ O_NO_OBJ    , "NO_OBJ"													, 0.0f     , 0.0f  , 0.0f , O_NO_OBJ  , -1           , O_NO_TYPE , "O_NO_OBJ"    , false , O_NOP , O_UNDEF  , O_NO_UPDATE , O_NO_UPDATE , false , 0 , 0 },
@@ -162,7 +162,7 @@ ObjectiveData objectives[ NUM_LEVELS ][ MAX_OBJECTIVES_PER_LEVEL ] = {
 	},
 	{ // SP_LEVEL7 Tijuana
 		{ O_LEVEL7_O1 , "Find Riggs at the 'Curtains Club.'"	, 1.0f     , 0.0f  , 0.0f , O_PRIMARY , -1           , O_BOOL    , "Tijuana1"		, true  , O_NOP , O_PRI1  , O_NO_UPDATE , O_NO_UPDATE , false , 0 , FF_NO_COMPLETE_MSG },
-		{ O_LEVEL7_O2 , "Tag over %d gang tags"																						, 4.0f     , 0.0f  , 0.0f , O_BONUS   , -1           , O_INT     , "Tijuana2"		, true  , O_GTE , O_TAGS  , O_UPDATE	 , O_NO_UPDATE , false , 0 , 0 },
+		{ O_LEVEL7_O2 , "Tag over %d white painted gang tags"																						, 4.0f     , 0.0f  , 0.0f , O_BONUS   , -1           , O_INT     , "Tijuana2"		, true  , O_GTE , O_TAGS  , O_UPDATE	 , O_NO_UPDATE , false , 0 , 0 },
 		{ O_LEVEL7_O3 , "Defeat %d enemies"																								, 60.0f    , 0.0f  , 0.0f , O_STAT    , -1           , O_INT     , "Tijuana3"		, true  , O_GTE , O_KILLS , O_NO_UPDATE , O_NO_UPDATE , false , 0 , 0 },
 		{ O_NO_OBJ    , "NO_OBJ"																											, 0.0f     , 0.0f  , 0.0f , O_NO_OBJ  , -1           , O_NO_TYPE , "O_NO_OBJ"    , false , O_NOP , O_UNDEF , O_NO_UPDATE , O_NO_UPDATE , false , 0 , 0 },
 		{ O_NO_OBJ    , "NO_OBJ"																											, 0.0f     , 0.0f  , 0.0f , O_NO_OBJ  , -1           , O_NO_TYPE , "O_NO_OBJ"    , false , O_NOP , O_UNDEF , O_NO_UPDATE , O_NO_UPDATE , false , 0 , 0 },

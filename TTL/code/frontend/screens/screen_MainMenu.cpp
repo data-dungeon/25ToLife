@@ -108,9 +108,42 @@ void ScreenMainMenu::OnInitialize( void )
 	SetNextButton( ID_MAINMENU_SIGNIN );
 #else
 	SetInitialButton( ID_MAINMENU_SINGLEPLAYER );
-	SetNextButton( ID_MAINMENU_ONLINE );
-	SetNextButton( ID_MAINMENU_SYSTEMLINK );
-	SetNextButton( ID_MAINMENU_SETTINGS );
+	Sprite *s = GetSprite(ID_MAINMENU_ONLINE);
+	s->SetPositionX(718.0f);
+	s = GetSprite(ID_MAINMENU_SYSTEMLINK);
+	s->SetPositionX(718.0f);
+	s = GetSprite(ID_MAINMENU_SETTINGS);
+	s->SetPositionY(75.2f);
+	s = GetSprite(ID_MAINMENU_LOWCURSOR);
+	if(s)
+	{
+		if(s->GetPositionY() > 76.0f)
+			s->SetPositionX(718.0f);
+		s = s->Next();
+		if(s)
+		{
+			if(s->GetPositionY() > 76.0f)
+				s->SetPositionX(718.0f);
+			s = s->Next();
+			if(s)
+			{
+				if(s->GetPositionY() > 76.0f)
+					s->SetPositionX(718.0f);
+				s = s->Next();
+				if(s)
+				{
+					if(s->GetPositionY() > 76.0f)
+						s->SetPositionX(718.0f);
+				}
+			}
+		}
+	}
+	Text *t = GetTextSprite(ID_MAINMENU_HELPTEXT3);
+	t->m_Text.set("Back");
+	t = GetTextSprite(ID_MAINMENU_SINGLEPLAYER);
+	t->m_Text.set("Start Game");
+
+SetNextButton( ID_MAINMENU_SETTINGS );
 #ifdef DIRECTX_PC
 	GetSprite(ID_MAINMENU_HELPRECT)->HideAll();
 #endif
@@ -168,9 +201,10 @@ void ScreenMainMenu::OnScreenIntro( void )
 	StartButton.Show(true);
 	BackButton.Show(true);
 #endif
-
+#if defined(NETWORKING)
 	// --- we must always tear down our network connection
 	CNetZConnection::TearDown( );
+#endif
 	return;
 }
 
@@ -196,7 +230,7 @@ void ScreenMainMenu::OnScreenUpdate( void )
 	{
 		case STATE_IDLE:
 			break;
-
+#if defined(NETWORKING)
 		// --- read the network configuration and come back
 		case STATE_GET_NETWORK_CONFIG:
 #ifdef PS2
@@ -272,7 +306,7 @@ void ScreenMainMenu::OnScreenUpdate( void )
 			GotoScreen( "SCREEN_ID_LANERROR" );
 			m_state = STATE_WAIT;
 			break;
-
+#endif
 		// --- wait a tick before going back to the idle state
 		case STATE_WAIT:
 			m_state = STATE_IDLE;
@@ -309,9 +343,9 @@ void ScreenMainMenu::OnScreenUpdate( void )
 	switch( GetCurrentButtonId() )
 	{
 	case ID_MAINMENU_SINGLEPLAYER:
-		SetDescription( "Play a single player game." );
+		SetDescription( "Play the Game." );
 		break;
-
+#if !defined(PS2)
 	case ID_MAINMENU_ONLINE:
 	#ifdef _XBOX // bug 7777
 		SetDescription( "Play a multiplayer game over Xbox Live." );
@@ -323,7 +357,7 @@ void ScreenMainMenu::OnScreenUpdate( void )
 	case ID_MAINMENU_SYSTEMLINK:
 		SetDescription( "Play a multiplayer game on your local network." );
 		break;
-
+#endif
 	case ID_MAINMENU_SETTINGS:
 		SetDescription( "Customize your game settings for the current profile." );
 		break;
@@ -463,6 +497,7 @@ void ScreenMainMenu::OnCommand( int Command )
 		OnCommandSinglePlayer();
 		break;
 
+#if !defined(PS2)
 	case ID_MAINMENU_SYSTEMLINK:
 		g_mainMenuSelection = m_modeSelected = ID_MAINMENU_SYSTEMLINK;
 		m_state = STATE_GET_NETWORK_CONFIG;
@@ -472,7 +507,7 @@ void ScreenMainMenu::OnCommand( int Command )
 		g_mainMenuSelection = m_modeSelected = ID_MAINMENU_ONLINE;
 		m_state = STATE_GET_NETWORK_CONFIG;
 		break;
-
+#endif
 #ifdef _XBOX
 	case ID_MAINMENU_FRIENDS:
 		OnCommandFriends();
@@ -507,7 +542,7 @@ void ScreenMainMenu::OnCommandSinglePlayer( void )
 //=============================================================================
 // ScreenMainMenu::OnCommandMultiPlayerOnline
 //=============================================================================
-
+#if defined(NETWORKING)
 void ScreenMainMenu::OnCommandMultiPlayerOnline( void )
 {
 	// We are in single player
@@ -538,7 +573,7 @@ void ScreenMainMenu::OnCommandMultiPlayerNetwork( void )
 
 	g_messageDispatcher.SendMessageToAll( "NextLoop", (void*)"MultiPlayer_LAN", INVALID_OBJECT_HANDLE );
 }
-
+#endif
 #ifdef _XBOX
 //=============================================================================
 // ScreenMainMenu::OnCommandFriends

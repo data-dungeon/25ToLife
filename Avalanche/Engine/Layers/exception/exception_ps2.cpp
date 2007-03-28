@@ -277,7 +277,7 @@ void PlatformException::DrawRegisterPanel( u_int stat, u_int cause, u_int epc, u
 		s_disp.SetPosition( 0, stackLine + i );
 		s_disp.Printf( "Stack %2d: 0x%08x", i, callStack[ i ] );
 	}
-
+#if defined(NETWORKING)
 	// show loaded DLLs
 	CDllLoader::LoadedDLLInfo* dll;
 	int numDLL = g_DllLoader.GetLoadedDLLs( &dll, NULL );
@@ -291,6 +291,7 @@ void PlatformException::DrawRegisterPanel( u_int stat, u_int cause, u_int epc, u
 			s_disp.Printf( "%08x-%08x %s", dll[i].addr, (u32)dll[i].addr + dll[i].size - 1, dll[i].name );
 		}
 	}
+#endif
 }
 
 //============================================================================

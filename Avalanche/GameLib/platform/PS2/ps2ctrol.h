@@ -17,8 +17,10 @@
 // Resolution of our transfer functions
 #define TRANSFER_LOOKUPS 		256
 
+#if defined(NETWORKING)
 class CMouseDriver;
 class CKeyboard;
+#endif
 
 // An award for the longest class name perhaps?
 class PS2ControllerInputDriver : public ControllerInputDriver
@@ -153,10 +155,10 @@ private:
 
 	// Timing
 	u32 Now();
-
+#if defined(NETWORKING)
 	CMouseDriver				*mouse;
 	CKeyboard					*keyboard;
-
+#endif
 };
 
 /***************************************************************************/

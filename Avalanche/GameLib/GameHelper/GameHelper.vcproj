@@ -26,7 +26,7 @@
 				AdditionalOptions="-g -G0 -fno-exceptions -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
 				Optimization="0"
 				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib"
-				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2_RELAPP;PS2;ZLIB_ENABLED;$(AVUSER)"
+				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2;PS2;ZLIB_ENABLED;$(AVUSER)"
 				MinimalRebuild="FALSE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="1"
@@ -41,6 +41,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies=""
 				OutputFile="$(OutDir)\$(ProjectName).lib"/>
 			<Tool
 				Name="VCMIDLTool"/>
@@ -948,9 +949,9 @@
 			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="-g -G0 -fno-exceptions -O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalOptions="-g -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
 				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib"
-				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;ZLIB_ENABLED;$(AVUSER);CDROM;CONSUMER_BUILD"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2;PS2;ZLIB_ENABLED;$(AVUSER);CDROM;CONSUMER_BUILD"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="FALSE"
 				UsePrecompiledHeader="0"
@@ -963,6 +964,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies=""
 				OutputFile="$(OutDir)\$(ProjectName).lib"/>
 			<Tool
 				Name="VCMIDLTool"/>
@@ -1220,6 +1222,81 @@
 			<Tool
 				Name="VCPreLinkEventTool"/>
 		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -G0 -fno-exceptions -O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2;PS2;ZLIB_ENABLED;$(AVUSER);CDROM;CONSUMER_BUILD"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderFile=""
+				WarningLevel="3"
+				DebugInformationFormat="3"
+				ForcedIncludeFiles=""
+				ForcedUsingFiles=""/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)\$(ProjectName).lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="$(TTLLIB)\Engine;$(TTLLIB)\GameLib"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;ZLIB_ENABLED;$(AVUSER)"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderFile=""
+				WarningLevel="3"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -1289,6 +1366,18 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\compress.cpp">
@@ -1348,6 +1437,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -1415,6 +1516,18 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\compress2.h">
@@ -1474,6 +1587,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCustomBuildTool"/>
@@ -1541,6 +1666,18 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\deflate.cpp">
@@ -1600,6 +1737,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -1667,6 +1816,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\example.cpp">
@@ -1726,6 +1887,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -1793,6 +1966,18 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\infblock.cpp">
@@ -1852,6 +2037,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -1919,6 +2116,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\infcodes.cpp">
@@ -1978,6 +2187,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -2045,6 +2266,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\inffast.cpp">
@@ -2104,6 +2337,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -2171,6 +2416,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\inffixed.h">
@@ -2230,6 +2487,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCustomBuildTool"/>
@@ -2297,6 +2566,18 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\inftrees.cpp">
@@ -2356,6 +2637,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -2423,6 +2716,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\infutil.cpp">
@@ -2482,6 +2787,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -2549,6 +2866,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\maketree.cpp">
@@ -2608,6 +2937,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -2675,6 +3016,18 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\trees.cpp">
@@ -2734,6 +3087,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -2801,6 +3166,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\uncompr.cpp">
@@ -2860,6 +3237,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCLCompilerTool"/>
@@ -2927,6 +3316,18 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\zlib.h">
@@ -2986,6 +3387,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCustomBuildTool"/>
@@ -3053,6 +3466,18 @@
 					<Tool
 						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Compression\zutil.h">
@@ -3112,6 +3537,18 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="SN PS2 ConsumerBuild|Xbox"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox"
 					ExcludedFromBuild="TRUE">
 					<Tool
 						Name="VCCustomBuildTool"/>
@@ -3230,6 +3667,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\actorspeech.h">
@@ -3305,6 +3754,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\ctristrip.h">
@@ -3364,6 +3825,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>
@@ -3437,6 +3910,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\disphf.h">
@@ -3496,6 +3981,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>
@@ -3563,6 +4060,18 @@
 				<Tool
 					Name="VCCustomBuildTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\disphfn.hpp">
@@ -3622,6 +4131,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>
@@ -3845,6 +4366,18 @@
 					Name="VCCLCompilerTool"
 					UsePrecompiledHeader="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\GameHelperPCH.h">
@@ -4052,6 +4585,18 @@
 				<Tool
 					Name="VCCustomBuildTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\GameHelperPCH_SN.cpp">
@@ -4164,6 +4709,15 @@
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
 			<FileConfiguration
+				Name="SN PS2 ConsumerBuild|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					ForcedIncludeFiles=""/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Xbox DVD Replay|Win32"
 				ExcludedFromBuild="TRUE">
 				<Tool
@@ -4262,6 +4816,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\GameLocks.cpp">
@@ -4334,6 +4900,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\loadsom.h">
@@ -4393,6 +4971,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>
@@ -4460,6 +5050,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\lod.h">
@@ -4523,6 +5125,18 @@
 				<Tool
 					Name="VCCustomBuildTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\LogUtil.cpp">
@@ -4532,6 +5146,15 @@
 		</File>
 		<File
 			RelativePath=".\Message.cpp">
+			<FileConfiguration
+				Name="SN PS2 ConsumerBuild|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					ForcedIncludeFiles=""/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\Message.h">
@@ -4607,12 +5230,33 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\PersistentData.h">
 		</File>
 		<File
 			RelativePath=".\SharedBody.cpp">
+			<FileConfiguration
+				Name="SN PS2 ConsumerBuild|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					ForcedIncludeFiles=""/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\SharedBody.h">
@@ -4679,6 +5323,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\SimpleType.h">
@@ -4738,6 +5394,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>
@@ -4817,6 +5485,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\TableLabel.h">
@@ -4876,6 +5556,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>
@@ -4943,6 +5635,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\TableLookup.h">
@@ -5002,6 +5706,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>
@@ -5069,6 +5785,18 @@
 				<Tool
 					Name="VCCLCompilerTool"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCLCompilerTool"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\TableToken.h">
@@ -5128,6 +5856,18 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="SN PS2 ConsumerBuild|Xbox"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="SN PS2 ConsumerTest Win32|Xbox"
 				ExcludedFromBuild="TRUE">
 				<Tool
 					Name="VCCustomBuildTool"/>

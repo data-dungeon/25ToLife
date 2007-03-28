@@ -29,7 +29,7 @@
 				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g  -G0"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\NellyMoser\lib&quot;"
-				PreprocessorDefinitions="SN_TARGET_PS2_DLL;_DEBUG;SN;PS2;$(AVUSER);NETZ;USE_STL"
+				PreprocessorDefinitions="SN_TARGET_PS2_DLL;_DEBUG;SN;PS2;$(AVUSER);USE_STL"
 				MinimalRebuild="FALSE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="5"

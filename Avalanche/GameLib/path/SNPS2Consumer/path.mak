@@ -14,7 +14,7 @@ LIBS=\
 AS=ps2cc
 AS_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -29,7 +29,7 @@ AS_FLAGS=\
 DVP=ps2cc
 DVP_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -42,7 +42,7 @@ DVP_FLAGS=\
 CC=ps2cc
 CC_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -53,9 +53,8 @@ CC_FLAGS=\
 	-fdevstudio\
 	-MMD\
 	-g\
-	-G0\
 	-fno-exceptions\
-	-O2\
+	-Os\
 	-Wno-inline-static-semantics\
 	-Wa,-sn\
 	-mno-check-zero-division\
@@ -65,7 +64,7 @@ CC_FLAGS=\
 CXX=ps2cc
 CXX_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -76,9 +75,8 @@ CXX_FLAGS=\
 	-fdevstudio\
 	-MMD\
 	-g\
-	-G0\
 	-fno-exceptions\
-	-O2\
+	-Os\
 	-Wno-inline-static-semantics\
 	-Wa,-sn\
 	-fno-rtti\

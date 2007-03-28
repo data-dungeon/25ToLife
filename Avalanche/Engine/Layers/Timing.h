@@ -89,7 +89,7 @@ void EngineTimer__EndSleep();
 // we want profiling if its not a PS2/SN release build
 // we never want profiling in a CONSUMER_BUILD build..
 // but sometimes I want SNs profiler support in the PS2/SN Release build..
-#ifdef CONSUMER_BUILD
+#if defined(CONSUMER_BUILD) || defined(CONSUMER_BUILDxx)  
 #undef SUPPORT_PROFILING
 #else // CONSUMER_BUILD
 #if defined(PS2) && defined(SN)

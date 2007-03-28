@@ -9,10 +9,12 @@
 
 #include "Game/GamePCH.h"
 #include "ResourceManager.h"
+#if defined(NETWORKING)
 #ifdef PS2
 #include "Patcher/PatchExt/PatchExtractor.h"
 #endif
 #include "Network/Connection.h"
+#endif
 #include "EngineHelper/pathfile.h"
 
 CResourceManager g_resourceManager;
@@ -77,6 +79,7 @@ void CResourceManager::FinishFileLoad( int index )
 	d_files[ index ].fileHandle->Close();
 	d_files[ index ].fileHandle = NULL;
 
+#if defined(NETWORKING)
 	// apply patch
 	#ifdef PS2
 	if ( Media::GetPatchExtractor() )
@@ -104,7 +107,7 @@ void CResourceManager::FinishFileLoad( int index )
 		Media::GetPatchExtractor()->SetSourceBuffer( NULL );
 	}
 	#endif
-
+#endif
 	// if this file is a DBL, go dechunkify it.
 	if ( IsDBL( d_files[ index ].filename ) )
 	{
@@ -440,8 +443,10 @@ void CResourceManager::WaitUntilIdle()
 	while ( d_loadsPending )
 	{
 		Update();
+#if defined(NETWORKING)
 		if (ValidSingleton(CConnection))
 			g_connection.Service();
+#endif
 	}
 }
 

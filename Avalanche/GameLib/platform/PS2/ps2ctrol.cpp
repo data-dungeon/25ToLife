@@ -54,10 +54,12 @@ int slot)
 
 	// --- DAS, new mouse support
 #if 1
+#if defined(NETWORKING)
 	mouse		= new CPlatformMouse( );
 	mouse->initialize( );
 	keyboard = new CPlatformKeyboard( );
 	keyboard->initialize( );
+#endif
 #else
 	mouse = NULL;
 	keyboard = NULL;
@@ -70,6 +72,7 @@ int slot)
 PS2ControllerInputDriver::~PS2ControllerInputDriver()
 {
 	scePadPortClose(port, slot);
+#if defined(NETWORKING)
 	if( keyboard )
 	{
 		delete keyboard;
@@ -80,6 +83,7 @@ PS2ControllerInputDriver::~PS2ControllerInputDriver()
 		delete mouse;
 		mouse = NULL;
 	}
+#endif
 }
 
 /***************************************************************************/
@@ -379,7 +383,7 @@ void PS2ControllerInputDriver::BeginInput()
 				break;
 		}
 	}
-
+#if defined(NETWORKING)
 	// --- mouse input?
 	if (false && mouse && mouse->isMouseLoaded( ))
 	{
@@ -456,6 +460,7 @@ void PS2ControllerInputDriver::BeginInput()
 		}
 #endif
 	}
+#endif
 }
 
 /***************************************************************************/
@@ -463,10 +468,12 @@ void PS2ControllerInputDriver::BeginInput()
 /***************************************************************************/
 u8 PS2ControllerInputDriver::getKey( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive( ) )
 	{
 		return( keyboard->getChar( ) );
 	}
+#endif
 	return( 0 );
 }
 
@@ -475,10 +482,12 @@ u8 PS2ControllerInputDriver::getKey( void )
 /***************************************************************************/
 bool PS2ControllerInputDriver::isShiftPressed( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->isShiftPressed( ) );
 	}
+#endif
 	return false;
 }
 
@@ -487,10 +496,12 @@ bool PS2ControllerInputDriver::isShiftPressed( void )
 /***************************************************************************/
 bool PS2ControllerInputDriver::shiftReleased( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->shiftReleased( ) );
 	}
+#endif
 	return false;
 }
 
@@ -499,10 +510,12 @@ bool PS2ControllerInputDriver::shiftReleased( void )
 /***************************************************************************/
 bool PS2ControllerInputDriver::isCapsLocked( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->isCapsLocked( ) );
 	}
+#endif
 	return false;
 }
 
@@ -511,10 +524,12 @@ bool PS2ControllerInputDriver::isCapsLocked( void )
 /***************************************************************************/
 bool PS2ControllerInputDriver::capsUnLocked( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->capsUnLocked( ) );
 	}
+#endif
 	return false;
 }
 
@@ -523,37 +538,45 @@ bool PS2ControllerInputDriver::capsUnLocked( void )
 /***************************************************************************/
 bool PS2ControllerInputDriver::isUpArrow( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->isUpArrow() );
 	}
+#endif
 	return false;
 }
 
 bool PS2ControllerInputDriver::isDownArrow( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->isDownArrow() );
 	}
+#endif
 	return false;
 }
 
 bool PS2ControllerInputDriver::isLeftArrow( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->isLeftArrow() );
 	}
+#endif
 	return false;
 }
 
 bool PS2ControllerInputDriver::isRightArrow( void )
 {
+#if defined(NETWORKING)
 	if( keyboard && keyboard->isKeyboardActive() )
 	{
 		return( keyboard->isRightArrow() );
 	}
+#endif
 	return false;
 }
 

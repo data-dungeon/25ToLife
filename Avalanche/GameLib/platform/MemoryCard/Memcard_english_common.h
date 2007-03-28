@@ -17,6 +17,7 @@ enum {
 			MC_CONTINUE,
 			MC_CONTINUE_WITHOUT_SAVING,
 			MC_CONTINUE_WITHOUT_LOADING,
+			MC_CONTINUE_WITHOUT_DELETING,
 			MC_RETRY,
 			MC_QUIT,
 			MC_MANAGE_FILES,
@@ -35,6 +36,7 @@ enum {
 #define	MC_CONTINUE_TEXT						"Continue"
 #define	MC_CONTINUE_WITHOUT_SAVING_TEXT	"Continue without saving"
 #define	MC_CONTINUE_WITHOUT_LOADING_TEXT	"Continue without loading"
+#define MC_CONTINUE_WITHOUT_DELETING_TEXT "Continue without deleting"
 #define	MC_RETRY_TEXT							"Retry"
 #define	MC_QUIT_TEXT							"Quit"
 #define	MC_ENABLE_AUTOSAVE_TEXT				"Enable Autosave"

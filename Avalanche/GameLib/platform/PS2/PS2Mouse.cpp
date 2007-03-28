@@ -4,7 +4,7 @@
 // Author		-> Dwain Skinner
 // Description	-> Platform dependent mouse support for PS2
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 #include "platform/PlatformPCH.h"
 #include "platform/PS2/PS2Mouse.h"
 #include "platform/PS2/util.h"
@@ -314,3 +314,4 @@ void CPlatformMouse::debugDisplayMouseData( mouseData *mdata, int mouse_no )
 	printf("\n");
 	return;
 }
+#endif

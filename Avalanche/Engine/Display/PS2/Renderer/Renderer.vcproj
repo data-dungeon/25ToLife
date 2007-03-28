@@ -218,6 +218,40 @@
 			<Tool
 				Name="VCNMakeTool"/>
 		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="omake COMPILER=SN VERSION=CONSUMER_BUILD"
+				ReBuildCommandLine="omake clean COMPILER=SN VERSION=CONSUMER_BUILD &amp; make COMPILER=SN VERSION=CONSUMER_BUILD"
+				CleanCommandLine="omake clean COMPILER=SN VERSION=CONSUMER_BUILD"
+				Output="$(TTLLIB)\Engine\Display\PS2\Renderer\SNPS2Consumer\Renderer.lib"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1">
+			<Tool
+				Name="VCCLCompilerTool"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>

@@ -14,7 +14,7 @@ LIBS=\
 AS=ps2cc
 AS_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -29,7 +29,7 @@ AS_FLAGS=\
 DVP=ps2cc
 DVP_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -42,7 +42,7 @@ DVP_FLAGS=\
 CC=ps2cc
 CC_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -53,9 +53,8 @@ CC_FLAGS=\
 	-fdevstudio\
 	-MMD\
 	-g\
-	-G0\
 	-fno-exceptions\
-	-O2\
+	-Os\
 	-Wno-inline-static-semantics\
 	-Wa,-sn\
 	-mno-check-zero-division\
@@ -65,7 +64,7 @@ CC_FLAGS=\
 CXX=ps2cc
 CXX_FLAGS=\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-DCDROM\
@@ -76,9 +75,8 @@ CXX_FLAGS=\
 	-fdevstudio\
 	-MMD\
 	-g\
-	-G0\
 	-fno-exceptions\
-	-O2\
+	-Os\
 	-Wno-inline-static-semantics\
 	-Wa,-sn\
 	-fno-rtti\
@@ -102,7 +100,20 @@ COMPILE: $(OBJS)
 
 "SNPS2Consumer/EffectsPCH_SN.obj":
 	@echo ProDG Compiling "d:/Ttl/Avalanche/GameLib/Effects/EffectsPCH_SN.cpp"
-	$(CXX) $(CXX_FLAGS) "d:/Ttl/Avalanche/GameLib/Effects/EffectsPCH_SN.cpp" -o $@
+	$(CXX)\
+	-DSN\
+	-DSN_TARGET_PS2\
+	-DPS2\
+	-DJJS\
+	-DCDROM\
+	-DCONSUMER_BUILD\
+	-I"d:/ttl/avalanche/Engine"\
+	-I"d:/ttl/avalanche/GameLib"\
+	-I. -c\
+	-fdevstudio\
+	-MMD\
+	-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15\
+	 "d:/Ttl/Avalanche/GameLib/Effects/EffectsPCH_SN.cpp" -o $@
 
 "SNPS2Consumer/fsdfx.obj":
 	@echo ProDG Compiling "d:/Ttl/Avalanche/GameLib/Effects/fsdfx.cpp"

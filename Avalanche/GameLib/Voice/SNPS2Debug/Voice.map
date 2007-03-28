@@ -538,8 +538,8 @@ UNDEFINED
 0001aa30 00000070     0                         Quazal::VoiceChannelMember::VoiceChannelMember(const Quazal::VoiceChannelMember &)
 0001aaa0 00000094     0                         Quazal::_DDL_VoiceChannelMember::_DDL_VoiceChannelMember(const Quazal::_DDL_VoiceChannelMember &)
 0001ab38 0000009c     0                         Quazal::_DDL_VoiceChannelMember::~_DDL_VoiceChannelMember(void)
-0001abd8 00000048     0                         global constructors keyed to d__Ttl_Avalanche_GameLib_Voice_NetZ_Ps2_VoiceChat.cppHxaaaa
-0001ac20 00000048     0                         global destructors keyed to d__Ttl_Avalanche_GameLib_Voice_NetZ_Ps2_VoiceChat.cppeVaaaa
+0001abd8 00000048     0                         global constructors keyed to d__Ttl_Avalanche_GameLib_Voice_NetZ_Ps2_VoiceChat.cppiOaaaa
+0001ac20 00000048     0                         global destructors keyed to d__Ttl_Avalanche_GameLib_Voice_NetZ_Ps2_VoiceChat.cppqsbaaa
 0001ac68 00003c90     8                 d:\Ttl\Avalanche\GameLib\Voice\SNPS2Debug\VoiceChatManager.obj
 0001ac68 00000000     0                         __gnu_compiled_cplusplus
 0001ac68 00000068     0                         Quazal::VoiceChatManager::VoiceChatManager(void)

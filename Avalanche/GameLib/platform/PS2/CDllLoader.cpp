@@ -4,7 +4,7 @@
 // Author			-> Dwain Skinner
 // Description		-> SN DLL loader implementation
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 #include "platform/PlatformPCH.h"
 #include "CDllLoader.h"
 #include "Layers/Media.h"
@@ -174,3 +174,4 @@ int CDllLoader::GetLoadedDLLs( LoadedDLLInfo** info, u32* totalSize )
 }
 
 // ----------------------------------------------------------------------------
+#endif

@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="OSI"
-	ProjectGUID="{3268DDDC-ED52-4bd7-BC32-3900ACE264BD}"
+	ProjectGUID="{3268DDDC-ED52-4BD7-BC32-3900ACE264BD}"
 	SccProjectName="&quot;//depot/Avalanche/GameLib/OSI&quot;"
 	SccAuxPath=""
 	SccLocalPath="."
@@ -103,7 +103,7 @@
 				AdditionalOptions="-g -G0 -fno-exceptions -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\GameLib&quot;;&quot;$(TTLDEV)\Rendezvous\PlayStation2\Include&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\Include&quot;;&quot;$(SN_PATH)\ee-include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;;&quot;$(TTLDEV)\ttl\code&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
-				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ;USE_STL"
+				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2;PS2;$(AVUSER)USE_STL"
 				MinimalRebuild="FALSE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="1"
@@ -119,6 +119,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies=""
 				OutputFile="$(OutDir)\$(ProjectName).lib"
 				AdditionalLibraryDirectories=""/>
 			<Tool
@@ -1152,9 +1153,9 @@
 			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="-g -G0 -fno-exceptions -O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalOptions="-g -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
 				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\GameLib&quot;;&quot;$(TTLDEV)\Rendezvous\PlayStation2\Include&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\Include&quot;;&quot;$(SN_PATH)\ee-include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;;&quot;$(TTLDEV)\ttl\code&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
-				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ;CDROM;USE_STL;CONSUMER_BUILD"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2;PS2;$(AVUSER);NETZ;CDROM;USE_STL;CONSUMER_BUILD"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="FALSE"
 				UsePrecompiledHeader="0"
@@ -1169,6 +1170,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies=""
 				OutputFile="$(OutDir)\$(ProjectName).lib"/>
 			<Tool
 				Name="VCMIDLTool"/>
@@ -1597,6 +1599,83 @@
 			<Tool
 				Name="VCPreLinkEventTool"/>
 		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -G0 -fno-exceptions -O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\GameLib&quot;;&quot;$(TTLDEV)\Rendezvous\PlayStation2\Include&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\Include&quot;;&quot;$(SN_PATH)\ee-include&quot;;&quot;$(TTLDEV)\PS2\Sony\DNAS\libdnas_mc_300_scea\ee\include&quot;;&quot;$(TTLDEV)\ttl\code&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2;PS2;$(AVUSER);NETZ;CDROM;USE_STL;CONSUMER_BUILD"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough=""
+				PrecompiledHeaderFile=""
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"
+				ForcedIncludeFiles=""
+				ForcedUsingFiles=""/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)\$(ProjectName).lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="pch.hpp"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -1759,6 +1838,13 @@
 							UsePrecompiledHeader="0"
 							PrecompiledHeaderThrough=""/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="OSI.hpp">
@@ -1907,6 +1993,13 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
 						<Tool
 							Name="VCCLCompilerTool"
 							UsePrecompiledHeader="0"
@@ -2065,6 +2158,13 @@
 							UsePrecompiledHeader="0"
 							PrecompiledHeaderThrough=""/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="OSIchar.hpp">
@@ -2213,6 +2313,13 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
 						<Tool
 							Name="VCCLCompilerTool"
 							UsePrecompiledHeader="0"
@@ -2374,6 +2481,13 @@
 							UsePrecompiledHeader="0"
 							PrecompiledHeaderThrough=""/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="OSIHardwareProfile.hpp">
@@ -2522,6 +2636,13 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
 						<Tool
 							Name="VCCLCompilerTool"
 							UsePrecompiledHeader="0"
@@ -2683,6 +2804,13 @@
 							UsePrecompiledHeader="0"
 							PrecompiledHeaderThrough=""/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="OSIPlayer.hpp">
@@ -2834,6 +2962,13 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
 						<Tool
 							Name="VCCLCompilerTool"
 							UsePrecompiledHeader="0"
@@ -2992,6 +3127,13 @@
 							UsePrecompiledHeader="0"
 							PrecompiledHeaderThrough=""/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\OSIRoundStats.hpp">
@@ -3140,6 +3282,13 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
 						<Tool
 							Name="VCCLCompilerTool"
 							UsePrecompiledHeader="0"
@@ -3301,6 +3450,13 @@
 								UsePrecompiledHeader="0"
 								PrecompiledHeaderThrough=""/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="OSIAccountList.hpp">
@@ -3452,6 +3608,13 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Xbox Consumer DVD|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
 							<Tool
 								Name="VCCLCompilerTool"
 								UsePrecompiledHeader="0"
@@ -3610,6 +3773,13 @@
 								UsePrecompiledHeader="0"
 								PrecompiledHeaderThrough=""/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath=".\OSIClanInfoList.hpp">
@@ -3758,6 +3928,13 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Xbox Consumer DVD|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
 							<Tool
 								Name="VCCLCompilerTool"
 								UsePrecompiledHeader="0"
@@ -3916,6 +4093,13 @@
 								UsePrecompiledHeader="0"
 								PrecompiledHeaderThrough=""/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath=".\OSIClanMembershipList.hpp">
@@ -4064,6 +4248,13 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Xbox Consumer DVD|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
 							<Tool
 								Name="VCCLCompilerTool"
 								UsePrecompiledHeader="0"
@@ -4222,6 +4413,13 @@
 								UsePrecompiledHeader="0"
 								PrecompiledHeaderThrough=""/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="OSIHardwareProfileList.hpp">
@@ -4370,6 +4568,13 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Xbox Consumer DVD|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
 							<Tool
 								Name="VCCLCompilerTool"
 								UsePrecompiledHeader="0"
@@ -4528,6 +4733,13 @@
 								UsePrecompiledHeader="0"
 								PrecompiledHeaderThrough=""/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath=".\OSIPlayerIDList.hpp">
@@ -4676,6 +4888,13 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Xbox Consumer DVD|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
 							<Tool
 								Name="VCCLCompilerTool"
 								UsePrecompiledHeader="0"
@@ -4834,6 +5053,13 @@
 								UsePrecompiledHeader="0"
 								PrecompiledHeaderThrough=""/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath=".\OSIPlayerStatsList.hpp">
@@ -4987,6 +5213,13 @@
 								UsePrecompiledHeader="0"
 								PrecompiledHeaderThrough=""/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="SN PS2 ConsumerTest Win32|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+								PrecompiledHeaderThrough=""/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="OSIStringList.hpp">
@@ -5120,6 +5353,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -5321,6 +5560,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -5571,6 +5816,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\EidosAccountPublicDDL.cpp">
@@ -5768,6 +6024,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -6018,6 +6280,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\EidosAlertsDDL.cpp">
@@ -6215,6 +6488,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -6465,6 +6744,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\EidosClanInviteDDL.cpp">
@@ -6662,6 +6952,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -6912,6 +7208,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\EidosClanMemberDDL.cpp">
@@ -7060,6 +7367,15 @@
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="SN PS2 ConsumerBuild|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""
+							ForcedIncludeFiles=""/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="SN PS2 ConsumerBuild|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
@@ -7109,6 +7425,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -7359,6 +7681,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\EidosClanNoticeDDL.cpp">
@@ -7556,6 +7889,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -7806,6 +8145,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\EidosClanPropsDDL.cpp">
@@ -8003,6 +8353,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -8253,6 +8609,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\EidosFriendDDL.cpp">
@@ -8401,6 +8768,15 @@
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="SN PS2 ConsumerBuild|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""
+							ForcedIncludeFiles=""/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="SN PS2 ConsumerBuild|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
@@ -8450,6 +8826,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -8696,6 +9078,17 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -9116,6 +9509,26 @@
 							AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
 							Outputs="$(InputDir)\EidosAccountPrivateDDL.cpp;$(InputDir)\EidosAccountPrivateDDL.h;$(InputDir)\EidosAccountPublicDDL.cpp;$(InputDir)\EidosAccountPublicDDL.h;$(InputDir)\EidosAlertsDDL.cpp;$(InputDir)\EidosAlertsDDL.h;$(InputDir)\EidosClanInviteDDL.cpp;$(InputDir)\EidosClanInviteDDL.h;$(InputDir)\EidosClanMemberDDL.cpp;$(InputDir)\EidosClanMemberDDL.h;$(InputDir)\EidosClanNoticeDDL.cpp;$(InputDir)\EidosClanNoticeDDL.h;$(InputDir)\EidosClanPropsDDL.cpp;$(InputDir)\EidosClanPropsDDL.h;$(InputDir)\EidosFriendDDL.cpp;$(InputDir)\EidosFriendDDL.h;$(InputDir)\OSIDDF.cpp;$(InputDir)\OSIDDF.h;$(InputDir)\TTLMatchMakingDDL.cpp;$(InputDir)\TTLMatchMakingDDL.h;$(InputDir)\TTLRoundDDL.cpp;$(InputDir)\TTLRoundDDL.h;$(InputDir)\TTLSessionDDL.cpp;$(InputDir)\TTLSessionDDL.h;$(InputDir)\TTLStatsDDL.cpp;$(InputDir)\TTLStatsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Generating code from DDL for target $(TargetPath)"
+							CommandLine="&quot;$(TTLDEV)\NetZ\PlayStation2\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\PlayStation2\include&quot; -I &quot;$(TTLDEV)\RendezVous\PlayStation2\include&quot; -includeprefix &quot;OSI/PS2/&quot; PS2/OSI.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+							AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+							Outputs="$(InputDir)\EidosAccountPrivateDDL.cpp;$(InputDir)\EidosAccountPrivateDDL.h;$(InputDir)\EidosAccountPublicDDL.cpp;$(InputDir)\EidosAccountPublicDDL.h;$(InputDir)\EidosAlertsDDL.cpp;$(InputDir)\EidosAlertsDDL.h;$(InputDir)\EidosClanInviteDDL.cpp;$(InputDir)\EidosClanInviteDDL.h;$(InputDir)\EidosClanMemberDDL.cpp;$(InputDir)\EidosClanMemberDDL.h;$(InputDir)\EidosClanNoticeDDL.cpp;$(InputDir)\EidosClanNoticeDDL.h;$(InputDir)\EidosClanPropsDDL.cpp;$(InputDir)\EidosClanPropsDDL.h;$(InputDir)\EidosFriendDDL.cpp;$(InputDir)\EidosFriendDDL.h;$(InputDir)\OSIDDF.cpp;$(InputDir)\OSIDDF.h;$(InputDir)\TTLMatchMakingDDL.cpp;$(InputDir)\TTLMatchMakingDDL.h;$(InputDir)\TTLRoundDDL.cpp;$(InputDir)\TTLRoundDDL.h;$(InputDir)\TTLSessionDDL.cpp;$(InputDir)\TTLSessionDDL.h;$(InputDir)\TTLStatsDDL.cpp;$(InputDir)\TTLStatsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Generating code from DDL for target $(TargetPath)"
+							CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -I &quot;$(TTLDEV)\RendezVous\include&quot; -includeprefix &quot;OSI/PS2/&quot; PS2/OSI.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+							AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+							Outputs="$(InputDir)\EidosAccountPrivateDDL.cpp;$(InputDir)\EidosAccountPrivateDDL.h;$(InputDir)\EidosAccountPublicDDL.cpp;$(InputDir)\EidosAccountPublicDDL.h;$(InputDir)\EidosAlertsDDL.cpp;$(InputDir)\EidosAlertsDDL.h;$(InputDir)\EidosClanInviteDDL.cpp;$(InputDir)\EidosClanInviteDDL.h;$(InputDir)\EidosClanMemberDDL.cpp;$(InputDir)\EidosClanMemberDDL.h;$(InputDir)\EidosClanNoticeDDL.cpp;$(InputDir)\EidosClanNoticeDDL.h;$(InputDir)\EidosClanPropsDDL.cpp;$(InputDir)\EidosClanPropsDDL.h;$(InputDir)\EidosFriendDDL.cpp;$(InputDir)\EidosFriendDDL.h;$(InputDir)\OSIDDF.cpp;$(InputDir)\OSIDDF.h;$(InputDir)\TTLMatchMakingDDL.cpp;$(InputDir)\TTLMatchMakingDDL.h;$(InputDir)\TTLRoundDDL.cpp;$(InputDir)\TTLRoundDDL.h;$(InputDir)\TTLSessionDDL.cpp;$(InputDir)\TTLSessionDDL.h;$(InputDir)\TTLStatsDDL.cpp;$(InputDir)\TTLStatsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\OSI_ddl_rev.cpp">
@@ -9392,6 +9805,19 @@
 							Name="VCCLCompilerTool"
 							UsePrecompiledHeader="0"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\OSIDDF.cpp">
@@ -9589,6 +10015,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -9814,6 +10246,12 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="Ps2\OSIPS2.cpp">
@@ -9974,6 +10412,15 @@
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="SN PS2 ConsumerBuild|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""
+							ForcedIncludeFiles=""/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="SN PS2 ConsumerBuild|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
@@ -10023,6 +10470,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -10174,6 +10627,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -10387,6 +10846,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -10639,6 +11104,17 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="Ps2\pass_phrase.h">
@@ -10784,6 +11260,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -10936,6 +11418,15 @@
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="SN PS2 ConsumerBuild|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""
+							ForcedIncludeFiles=""/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="SN PS2 ConsumerBuild|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
@@ -10985,6 +11476,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -11210,6 +11707,12 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\TTLRoundDDL.cpp">
@@ -11407,6 +11910,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -11632,6 +12141,12 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\Ps2\TTLSessionDDL.cpp">
@@ -11829,6 +12344,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -12050,6 +12571,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -12755,6 +13282,22 @@
 							CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg"
 							Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Updating NetZ License Keys"
+							CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg"
+							Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Updating NetZ License Keys"
+							CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg"
+							Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+					</FileConfiguration>
 				</File>
 			</Filter>
 			<Filter
@@ -12954,6 +13497,18 @@
 						<Tool
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="XBox\OSIXBox.hpp">
@@ -13079,6 +13634,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -13212,6 +13773,12 @@
 						<Tool
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxClansUtility.cpp">
@@ -13337,6 +13904,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -13470,6 +14043,12 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxClansUtility.inline.hpp">
@@ -13595,6 +14174,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -13728,6 +14313,12 @@
 						<Tool
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxMatchmaking.cpp">
@@ -13853,6 +14444,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -13986,6 +14583,12 @@
 						<Tool
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxMatchmakingUtility.hpp">
@@ -14111,6 +14714,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -14244,6 +14853,12 @@
 						<Tool
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxPlayersList.hpp">
@@ -14369,6 +14984,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -14502,6 +15123,12 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxPresenceUtility.cpp">
@@ -14627,6 +15254,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -14760,6 +15393,12 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxStats.cpp">
@@ -14885,6 +15524,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"/>
@@ -15018,6 +15663,12 @@
 						<Tool
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxStatsUtility.hpp">
@@ -15143,6 +15794,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -15276,6 +15933,12 @@
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\OSIXboxUIX.cpp">
@@ -15405,6 +16068,12 @@
 						<Tool
 							Name="VCCLCompilerTool"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="XBox\OSIXboxUtility.hpp">
@@ -15530,6 +16199,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -15789,6 +16464,18 @@
 							Name="VCCLCompilerTool"
 							UsePrecompiledHeader="1"/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="1"/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\XBox\pch.hpp">
@@ -15914,6 +16601,12 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
 						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCustomBuildTool"/>
@@ -16194,6 +16887,19 @@
 							UsePrecompiledHeader="0"
 							PrecompiledHeaderThrough=""/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							UsePrecompiledHeader="0"
+							PrecompiledHeaderThrough=""/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="XBox\XboxMatchSim.h">
@@ -16425,6 +17131,17 @@
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCustomBuildTool"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox">
 						<Tool
 							Name="VCCustomBuildTool"/>
 					</FileConfiguration>

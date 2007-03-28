@@ -13,10 +13,11 @@
 #include <new.h>
 #include "Game/Managers/ResourceManager.h"
 
+#if defined(NETWORKING)
 #ifdef PS2
 #include "Patcher/PatchExt/PatchExtractor.h"
 #endif
-
+#endif
 // Local Data
 int					Media::maxOpen = 0;
 MediaFile			*Media::openList = NULL;
@@ -29,9 +30,10 @@ MediaFile			*Media::openProfile = NULL;
 s32					Media::readTotal = 0;
 
 bool				Media::m_patchingEnabled = false;
+#if defined(NETWORKING)
 char				*Media::m_pPatchBuffer = NULL;
 PatchExtractor		*Media::m_pPatchExtractor = NULL;
-
+#endif
 extern void ProcessIOPResume( bool force );
 
 // ------------------------------------------------------------------------
@@ -410,7 +412,7 @@ int extraAlloc)
 		Profiler__Stop(PROFILE_FILE_LOAD);
 		return(NULL);
 	}
-
+#if defined(NETWORKING)
 	// --- DAS 12/16/2004 , we need to check for patching now so we can allocate our memory first
 	// --- so we don't have any fragmentation if we need to patch and free the original buffer
 #ifdef PS2
@@ -434,7 +436,7 @@ int extraAlloc)
 		}
 	}
 #endif
-
+#endif
 	// Allocate the buffer
 	MEM_SET_ALLOC_FILENAME("FS ", (char *)fileName);
 	void *buffer;
@@ -456,11 +458,13 @@ int extraAlloc)
 	if (HogFile_Read(buffer, *size, hogFile) != *size)
 	{
 		memFree(buffer);
+#if defined(NETWORKING)
 #ifdef PS2
 		if( pPatchedFile )
 		{
 			memFree( pPatchedFile );
 		}
+#endif
 #endif
 		HogFile_Close(hogFile);
 		SetError(error);
@@ -472,6 +476,7 @@ int extraAlloc)
 	HogFile_Close(hogFile);
 	Profiler__Stop(PROFILE_FILE_LOAD);
 
+#if defined(NETWORKING)
 	// --- DAS 12/16/2004 , we need to check for patching now
 #ifdef PS2
 	if( buffer && m_patchingEnabled && pPatchedFile )
@@ -492,7 +497,7 @@ int extraAlloc)
 		}
 	}
 #endif
-
+#endif
 #if defined(CRCFILECHECK)
 	TRACE("Computed CRC for file \"%s\" (size %d) = 0x%x\n", fileName, *size, Hash::CalcChecksum(buffer, *size));
 #endif
@@ -944,6 +949,7 @@ u32 openFlags)
 // ----------------------------------------------------------------------------
 void Media::EnablePatching( char *pPatchBuf, int size )
 {
+#if defined(NETWORKING)
 #ifdef PS2
 	m_patchingEnabled = true;
 	m_pPatchBuffer = pPatchBuf;
@@ -961,7 +967,7 @@ void Media::EnablePatching( char *pPatchBuf, int size )
 		}
 	}
 #endif
-
+#endif
 	// --- if we get here something went wrong, so turn off patching
 	m_patchingEnabled = false;
 }
@@ -972,6 +978,7 @@ void Media::EnablePatching( char *pPatchBuf, int size )
 // ----------------------------------------------------------------------------
 void Media::DisablePatching( void )
 {
+#if defined(NETWORKING)
 #ifdef PS2
 	if( m_pPatchBuffer )
 	{
@@ -988,6 +995,7 @@ void Media::DisablePatching( void )
 			m_pPatchBuffer = NULL;
 		}
 	}
+#endif
 #endif
 	m_patchingEnabled = false;
 }
@@ -1016,8 +1024,10 @@ bool Media::isDLL(  const char *filename )
 // ----------------------------------------------------------------------------
 PatchExtractor* Media::GetPatchExtractor()
 {
+#if defined(NETWORKING)
 	if ( m_patchingEnabled )
 		return m_pPatchExtractor;
 	else
+#endif
 		return NULL;
 }

@@ -15,7 +15,7 @@ AS=ps2cc
 AS_FLAGS=\
 	-D_DEBUG\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-I"d:/ttl/avalanche/Engine"\
@@ -29,7 +29,7 @@ DVP=ps2cc
 DVP_FLAGS=\
 	-D_DEBUG\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-I"d:/ttl/avalanche/Engine"\
@@ -41,7 +41,7 @@ CC=ps2cc
 CC_FLAGS=\
 	-D_DEBUG\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-I"d:/ttl/avalanche/Engine"\
@@ -62,7 +62,7 @@ CXX=ps2cc
 CXX_FLAGS=\
 	-D_DEBUG\
 	-DSN\
-	-DSN_TARGET_PS2_RELAPP\
+	-DSN_TARGET_PS2\
 	-DPS2\
 	-DJJS\
 	-I"d:/ttl/avalanche/Engine"\

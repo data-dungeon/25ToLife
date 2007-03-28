@@ -103,7 +103,7 @@
 				AdditionalOptions="-g -G0 -fno-exceptions -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
-				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				PreprocessorDefinitions="_DEBUG;SN;SN_TARGET_PS2;PS2;$(AVUSER)"
 				MinimalRebuild="FALSE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="1"
@@ -118,6 +118,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies=""
 				OutputFile="$(OutDir)/Network.lib"
 				AdditionalLibraryDirectories=""/>
 			<Tool
@@ -1125,9 +1126,9 @@
 			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="-g -G0 -fno-exceptions -O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalOptions="-g -G0 -fno-exceptions -Os -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
 				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
-				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ;CDROM;CONSUMER_BUILD"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2;PS2;$(AVUSER);NETZ;CDROM;CONSUMER_BUILD"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="FALSE"
 				UsePrecompiledHeader="0"
@@ -1141,6 +1142,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies=""
 				OutputFile="$(OutDir)/Network.lib"/>
 			<Tool
 				Name="VCMIDLTool"/>
@@ -1557,6 +1559,82 @@
 			<Tool
 				Name="VCPreLinkEventTool"/>
 		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -G0 -fno-exceptions -O2 -Wno-inline-static-semantics -Wa,-sn -fno-rtti -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\PlayStation2\include&quot;;&quot;$(TTLDEV)\PS2\Logitech&quot;;&quot;$(TTLDEV)\PS2\Eznetcnf\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2;PS2;$(AVUSER);NETZ;CDROM;CONSUMER_BUILD"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"
+				ForcedIncludeFiles=""
+				ForcedUsingFiles=""/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="SN PS2 ConsumerTest Win32|Xbox"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			DeleteExtensionsOnClean="*.obj;*.ilk;*.pdb;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.bat;$(TargetPath);*.d">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-Wno-inline-static-semantics -Wa,-sn -fno-rtti -fno-exceptions -mno-check-zero-division -ffast-math -mvu0-use-vf0-vf15 -g -O2"
+				AdditionalIncludeDirectories="&quot;$(TTLLIB)\Engine&quot;;&quot;$(TTLLIB)\Gamelib&quot;;&quot;$(TTLDEV)\NetZ\include&quot;"
+				PreprocessorDefinitions="SN;SN_TARGET_PS2_RELAPP;PS2;$(AVUSER);NETZ"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderThrough="Network/NetworkPCH.h"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/Network.lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -1946,6 +2024,25 @@
 						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
 						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\PlayStation2\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\PlayStation2\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Generating code from DDL for target $(TargetPath)"
+						CommandLine="&quot;$(TTLDEV)\NetZ\bin\ddl&quot; -I &quot;$(TTLLIB)\Gamelib&quot; -I &quot;$(TTLDEV)\NetZ\include&quot; -p Network/NetworkPCH.h -includeprefix &quot;Network/NetZ/&quot; NetZ/Avalanche.ddl &amp; perl $(TTLPATH)\bin\FileRev.pl $(InputPath) $(InputDir)$(InputName)_ddl_rev.cpp"
+						AdditionalDependencies="$(TTLDEV)\NetZ\CurrKeys.reg"
+						Outputs="$(InputDir)\AvalancheDDF.cpp;$(InputDir)\AvalancheDDF.h;$(InputDir)\DOActorDDL.cpp;$(InputDir)\DOActorDDL.h;$(InputDir)\DOGenericDDL.cpp;$(InputDir)\DOGenericDDL.h;$(InputDir)\DOHostDDL.cpp;$(InputDir)\DOHostDDL.h;$(InputDir)\DOMessageOwnerDDL.cpp;$(InputDir)\DOMessageOwnerDDL.h;$(InputDir)\DOPathFollowerDDL.cpp;$(InputDir)\DOPathFollowerDDL.h;$(InputDir)\DOTalkerDDL.cpp;$(InputDir)\DOTalkerDDL.h;$(InputDir)\DOWorldDDL.cpp;$(InputDir)\DOWorldDDL.h;$(InputDir)\DSActorInteractionDDL.cpp;$(InputDir)\DSActorInteractionDDL.h;$(InputDir)\DSActorMigrateDDL.cpp;$(InputDir)\DSActorMigrateDDL.h;$(InputDir)\DSActorPropsDDL.cpp;$(InputDir)\DSActorPropsDDL.h;$(InputDir)\DSBufferDDL.cpp;$(InputDir)\DSBufferDDL.h;$(InputDir)\DSGroundFollowerDDL.cpp;$(InputDir)\DSGroundFollowerDDL.h;$(InputDir)\DSHostStateDDL.cpp;$(InputDir)\DSHostStateDDL.h;$(InputDir)\DSPathFollowerDDL.cpp;$(InputDir)\DSPathFollowerDDL.h;$(InputDir)\DSSessionLockDDL.cpp;$(InputDir)\DSSessionLockDDL.h;$(InputDir)\DSSixDOFDDL.cpp;$(InputDir)\DSSixDOFDDL.h;$(InputDir)\DSStartTimeDDL.cpp;$(InputDir)\DSStartTimeDDL.h;$(InputDir)\DSTalkerPropsDDL.cpp;$(InputDir)\DSTalkerPropsDDL.h;$(InputDir)\DSVectorDDL.cpp;$(InputDir)\DSVectorDDL.h;$(InputDir)\DSWorldExtentsDDL.cpp;$(InputDir)\DSWorldExtentsDDL.h;$(InputDir)$(InputName)_ddl_rev.cpp"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\Avalanche_ddl_rev.cpp">
@@ -2285,300 +2382,866 @@
 						PrecompiledHeaderThrough=""
 						PrecompiledHeaderFile=""/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=""
+						PrecompiledHeaderFile=""/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\AvalancheDDF.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\AvalancheDDF.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\AvalancheProperties.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOActor.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOActor.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOActorDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOActorDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOGeneric.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOGeneric.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOGenericDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOGenericDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOHost.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOHost.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOHostDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOHostDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOMessageOwner.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOMessageOwner.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOMessageOwnerDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOMessageOwnerDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOPathFollower.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOPathFollower.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOPathFollowerDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOPathFollowerDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOTalker.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOTalkerDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOTalkerDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOWorld.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOWorld.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DOWorldDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DOWorldDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DRGroundFollower.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DRGroundFollower.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DRModel.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DRModel.hpp">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DRPathFollower.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DRPathFollower.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DRSixDOF.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DRSixDOF.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorInteraction.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorInteraction.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorInteractionDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorInteractionDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorMigrate.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorMigrateDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorMigrateDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorProps.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorPropsDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSActorPropsDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSBuffer.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSBuffer.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSBufferDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSBufferDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSGroundFollower.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSGroundFollowerDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSGroundFollowerDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSHostState.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSHostState.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSHostStateDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSHostStateDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSPathFollower.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSPathFollowerDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSPathFollowerDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSSessionLock.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSSessionLock.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSSessionLockDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSSessionLockDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSSixDOF.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSSixDOFDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSSixDOFDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSStartTime.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSStartTimeDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSStartTimeDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSTalkerProps.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSTalkerPropsDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSTalkerPropsDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSVector.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSVector.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSVectorDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSVectorDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSWorldExtents.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\DSWorldExtentsDDL.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\DSWorldExtentsDDL.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZCompress.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZCompress.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZConnection.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZConnection.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZEncrypt.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZEncrypt.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZMessage.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZMessage.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZSession.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZSession.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZSessionSearch.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\NetZSessionSearch.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\SessionTime.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\SessionTime.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\NetZ\Translators.cpp">
 			</File>
 			<File
 				RelativePath=".\NetZ\Translators.h">
+				<FileConfiguration
+					Name="SN PS2 ConsumerBuild|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="$(TTLDEV)\NetZ\ValidKeys.reg">
@@ -2994,6 +3657,26 @@ copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Xbox Consumer DVD|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Updating NetZ License Keys"
+						CommandLine="regedit -s $(TTLDEV)\NetZ\ValidKeys.reg
+copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
+"
+						Outputs="$(TTLDEV)\NetZ\CurrKeys.reg"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="SN PS2 ConsumerTest Win32|Xbox">
 					<Tool
 						Name="VCCustomBuildTool"
 						Description="Updating NetZ License Keys"
@@ -3451,6 +4134,20 @@ copy /y $(TTLDEV)\NetZ\ValidKeys.reg $(TTLDEV)\NetZ\CurrKeys.reg
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Xbox Consumer DVD|Xbox">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Win32"
+						ExcludedFromBuild="TRUE">
+						<Tool
+							Name="VCCLCompilerTool"
+							ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="SN PS2 ConsumerTest Win32|Xbox"
+						ExcludedFromBuild="TRUE">
 						<Tool
 							Name="VCCLCompilerTool"
 							ObjectFile="$(IntDir)/$(InputName)1.obj"/>

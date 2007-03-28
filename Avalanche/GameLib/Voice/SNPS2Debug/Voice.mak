@@ -21,7 +21,6 @@ AS_FLAGS=\
 	-DSN\
 	-DPS2\
 	-DJJS\
-	-DNETZ\
 	-DUSE_STL\
 	-I"d:/ttl/avalanche/Engine"\
 	-I"d:/ttl/avalanche/Gamelib"\
@@ -40,7 +39,6 @@ DVP_FLAGS=\
 	-DSN\
 	-DPS2\
 	-DJJS\
-	-DNETZ\
 	-DUSE_STL\
 	-I"d:/ttl/avalanche/Engine"\
 	-I"d:/ttl/avalanche/Gamelib"\
@@ -57,7 +55,6 @@ CC_FLAGS=\
 	-DSN\
 	-DPS2\
 	-DJJS\
-	-DNETZ\
 	-DUSE_STL\
 	-I"d:/ttl/avalanche/Engine"\
 	-I"d:/ttl/avalanche/Gamelib"\
@@ -83,7 +80,6 @@ CXX_FLAGS=\
 	-DSN\
 	-DPS2\
 	-DJJS\
-	-DNETZ\
 	-DUSE_STL\
 	-I"d:/ttl/avalanche/Engine"\
 	-I"d:/ttl/avalanche/Gamelib"\

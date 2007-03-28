@@ -1387,7 +1387,7 @@ void OSIPS2::_processUpdateCurrentGathering( int successState, int failureState 
 
 
 
-
+#if defined(NETWORKING)
 #ifndef DIRECTX_PC
 
 /// ***************************************************************************
@@ -1629,7 +1629,7 @@ void OSIPS2::pauseDNASAuth()
 }
 
 #endif // DIRECTX_PC
-
+#endif
 
 
 

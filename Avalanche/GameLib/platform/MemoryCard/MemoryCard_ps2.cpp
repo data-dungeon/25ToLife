@@ -58,6 +58,7 @@ ts_CMemCardMsg	CMemCardMsg[] = {
 	{	MC_UNFORMATTED_CARD,		CMEMORYCARD_MEMCARD_PORT,	-1,								-1, 							-1 },								
 	{	MC_DAMAGED_CARD,			CMEMORYCARD_MEMCARD_PORT,	-1,								-1, 							-1 },								
 	{	MC_CORRUPT_CARD,			CMEMORYCARD_MEMCARD_PORT,	-1,								-1, 							-1 },								
+	{	MC_CARD_REMOVED,			CMEMORYCARD_MEMCARD_PORT,	-1,								-1, 							-1 },								
 	{	MC_COMPLETED_OK,			-1,								-1,								-1, 							-1 },
 	{	NULL,							-1,								-1,								-1, 							-1 },			// command failed
 	{	MC_FORMAT_FAILED,			CMEMORYCARD_MEMCARD_PORT,	-1,								-1, 							-1 },		
@@ -452,7 +453,16 @@ void	CMemoryCard_PS2::Load()
 
 	if (result != MEMCARD_RESULT_OK)
 	{
-		g_MemCardManager->SetResult(MEMCARD_RESULT_BADDATA);
+		result = g_MemCardMgr.Detect(g_MemCardManager->GetPort());
+		if(result == MEMCARD_RESULT_OK)
+		{
+			char ProfName[48];
+			sprintf(ProfName, "%s%s", g_MemCardManager->GetComment(), g_MemCardManager->GetExt());
+			g_MemCardMgr.SetFileName(ProfName);
+
+			result = g_MemCardMgr.Exists(g_MemCardManager->GetPort());
+		}
+		g_MemCardManager->SetResult(result == MEMCARD_RESULT_NODATA ? MEMCARD_RESULT_NODATA : MEMCARD_RESULT_BADDATA);
 		HandleResult();
 		return;
 	}
@@ -696,6 +706,7 @@ void	CMemoryCard_PS2::Save()
 
 	OverWrite = false;
 
+restart:
 	g_MemCardManager->SetPopupTitle("Save");
 	g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_IN_PROGRESS);
 	g_MemCardManager->SetCancelOperation(false);
@@ -705,6 +716,96 @@ void	CMemoryCard_PS2::Save()
 	sprintf(ProfName, "%s%s", g_MemCardManager->GetComment(), g_MemCardManager->GetExt());
 	g_MemCardMgr.SetFileName(ProfName);
 
+	g_MemCardManager->SetPopupTitle("Save");
+
+	// detect card
+	result = g_MemCardMgr.Detect(g_MemCardManager->GetPort());
+
+	// card in slot?
+	if (result != MEMCARD_RESULT_OK)
+	{
+		if (result == MEMCARD_RESULT_NOCARD)
+		{
+			// autosave on?
+			if (g_MemCardManager->GetAutosave() == true)
+			{
+
+				if (!strcmp(g_MemCardManager->GetExt(), ".pat"))
+				{
+					g_MemCardManager->DisplayPopup(CMEMCARDMSG_AUTOSAVE_REMOVED, MC_CANCEL, MC_RETRY, MC_CANCEL, MC_RETRY);
+					temp = MC_CANCEL;
+				}
+				else
+				{
+					// autosave needs to be turned off here if they say continue without saving
+					g_MemCardManager->DisplayPopup(CMEMCARDMSG_AUTOSAVE_REMOVED, MC_CONTINUE_WITHOUT_SAVING, MC_RETRY, MC_CONTINUE_WITHOUT_SAVING, MC_RETRY);
+					temp = MC_CONTINUE_WITHOUT_SAVING;
+				}
+
+				WaitOnResult();
+
+				// continue without saving?
+				if (g_MemCardManager->PopupResult() == temp)
+				{
+					g_MemCardManager->SetPopupExitResult(PR_NOCARD_CANCEL);
+					g_MemCardManager->SetAutosave(false);
+					g_MemCardManager->SetResult(MEMCARD_RESULT_NONE);
+					g_MemCardManager->RemovePopup();
+					//pab					g_MemCardManager->SetNoSave(true);
+					HandleResult();
+					return;
+				}
+				else		// try to enable autosave
+				{
+					g_MemCardManager->RemovePopup();
+
+					while (1)
+					{
+						result = g_MemCardMgr.Detect(g_MemCardManager->GetPort());
+
+						if (result == MEMCARD_RESULT_NOCARD)
+						{
+							g_MemCardManager->DisplayPopup(CMEMCARDMSG_NO_CARD_SAVE, MC_CANCEL, MC_RETRY, MC_RETRY, MC_CANCEL);
+							WaitOnResult();
+
+							// cancel so dump out, turn off autosave
+							if (g_MemCardManager->PopupResult() == MC_CANCEL)
+							{
+								g_MemCardManager->SetPopupExitResult(PR_NOCARD_CANCEL);
+								g_MemCardManager->SetAutosave(false);
+								//pab								g_MemCardManager->SetNoSave(true);
+								g_MemCardManager->SetResult(MEMCARD_RESULT_NONE);
+								g_MemCardManager->RemovePopup();
+								HandleResult();
+								return;
+							}
+							else
+								g_MemCardManager->RemovePopup();
+						}
+						else		// card was found, re-enable autosave and let it save from here.
+						{
+							if (result == MEMCARD_RESULT_OK)			// good to go
+							{
+								g_MemCardManager->SetAutosave(true);
+								g_MemCardManager->SetNoSave(false);
+								g_MemCardManager->RemovePopup();
+								break;
+							}	
+							else												// fall thru and catch error
+								g_MemCardManager->RemovePopup();
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (result != MEMCARD_RESULT_OK)
+	{
+		g_MemCardManager->SetResult(result);
+		HandleResult();
+		return;
+	}
 #if defined TURN_ON_CARD_CHANGE
 	// did card change??
 	if (g_MemCardManager->GetCardChanged(g_MemCardManager->GetPort()) == true && g_MemCardManager->GetAutosave() == true)
@@ -1020,11 +1121,11 @@ void	CMemoryCard_PS2::Save()
 					g_MemCardManager->RemovePopup();
 					g_MemCardManager->DisplayPopup(CMEMCARDMSG_SAVING_CANCELLED, MC_OK, MC_OK, MC_OK);
 					WaitOnResult();
+					goto restart;
 
 					g_MemCardManager->SetResult(MEMCARD_RESULT_NONE);
 					g_MemCardManager->SetPopupExitResult(PR_OVERWRITE_NO);
 					HandleResult();
-					return;
 				}
 				else
 				{
@@ -1264,12 +1365,15 @@ void	CMemoryCard_PS2::Delete()
 
 	if (g_MemCardManager->PopupResult() == MC_NO || CardChanged != MEMCARD_RESULT_OK)
 	{
-		g_MemCardManager->RemovePopup();
-		g_MemCardManager->DisplayPopup(CMEMCARDMSG_DELETE_CANCELLED, MC_OK, MC_OK, MC_OK);
-		WaitOnResult();
+		if(CardChanged != MEMCARD_RESULT_NOCARD)
+		{
+			g_MemCardManager->RemovePopup();
+			g_MemCardManager->DisplayPopup(CMEMCARDMSG_DELETE_CANCELLED, MC_OK, MC_OK, MC_OK);
+			WaitOnResult();
+		}
 
 		g_MemCardManager->RemovePopup();
-		g_MemCardManager->SetResult(MEMCARD_RESULT_NONE);
+		g_MemCardManager->SetResult(CardChanged == MEMCARD_RESULT_NOCARD ? MEMCARD_RESULT_NOCARD : MEMCARD_RESULT_NONE);
 		g_MemCardManager->SetPopupExitResult(PR_DELETE_NO);
 		g_MemCardManager->RemovePopup();
 		HandleResult();
@@ -1418,7 +1522,7 @@ void	CMemoryCard_PS2::GetFilesOnCard()
 	ts_CMemCardDate	Date;
 	ts_CMemCardTime	Time;
 
-	g_MemCardManager->SetPopupTitle("Finding Files");
+	g_MemCardManager->SetPopupTitle("Finding Saved Profiles");
 	g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_IN_PROGRESS);
 
 	// detect first
@@ -1495,7 +1599,7 @@ void	CMemoryCard_PS2::GetFilesOnAllCards()
 	int					change = 0;
 
 	g_MemCardManager->SetCardChanged(g_MemCardManager->GetPort(), false);
-	g_MemCardManager->SetPopupTitle("Finding Files");
+	g_MemCardManager->SetPopupTitle("Finding Saved profiles");
 	g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_IN_PROGRESS);
 
 	// 2 ports, not supporting multitap (for now)
@@ -1706,6 +1810,34 @@ void	CMemoryCard_PS2::HandleResult()
 			}
 		}
 		else
+		if (g_MemCardManager->GetState() == g_MemCardManager->CMEMORYCARD_DELETE)
+		{
+			if (!strcmp(g_MemCardManager->GetExt(), ".pat"))
+			{
+				g_MemCardManager->DisplayPopup(CMEMCARDMSG_NO_CARD_LOAD, MC_CANCEL, MC_RETRY, MC_RETRY, MC_CANCEL);
+				temp = MC_CANCEL;
+			}
+			else
+			{
+				g_MemCardManager->DisplayPopup(CMEMCARDMSG_NO_CARD_LOAD, MC_CONTINUE_WITHOUT_DELETING, MC_RETRY, MC_RETRY, MC_CONTINUE_WITHOUT_DELETING);
+				temp = MC_CONTINUE_WITHOUT_DELETING;
+			}
+		}
+		else
+		if (g_MemCardManager->GetState() == g_MemCardManager->CMEMORYCARD_LOAD)
+		{
+			if (!strcmp(g_MemCardManager->GetExt(), ".pat"))
+			{
+				g_MemCardManager->DisplayPopup(CMEMCARDMSG_NO_CARD_LOAD, MC_CANCEL, MC_RETRY, MC_RETRY, MC_CANCEL);
+				temp = MC_CANCEL;
+			}
+			else
+			{
+				g_MemCardManager->DisplayPopup(CMEMCARDMSG_CARD_REMOVED,  MC_NO, MC_NO, MC_YES, MC_NO);
+				temp = MC_NO;
+			}
+		}
+		else
 		{
 			if (!strcmp(g_MemCardManager->GetExt(), ".pat"))
 			{
@@ -1844,7 +1976,7 @@ void	CMemoryCard_PS2::HandleResult()
 					g_MemCardManager->SetPopupExitResult(PR_FORMAT_FAILED);
 					g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
 					g_MemCardManager->RemovePopup();
-					g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
+//					g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
 					return;
 				}
 			}

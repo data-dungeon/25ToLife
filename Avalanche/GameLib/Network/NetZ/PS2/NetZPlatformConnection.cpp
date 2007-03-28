@@ -4,7 +4,7 @@
 // Author			-> Dwain Skinner
 // Description		-> Platform specific implementation of CNetZConnection member functions
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 // Precompiled header
 #include "Network/NetworkPCH.h"
 
@@ -332,3 +332,4 @@ const char *CNetZConnection::GetConnectionErrorMessage(void )
 	return( m_networkMsg );
 }
 // ----------------------------------------------------------------------------
+#endif

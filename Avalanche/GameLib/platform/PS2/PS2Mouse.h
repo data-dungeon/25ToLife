@@ -4,7 +4,7 @@
 // Author		-> Dwain Skinner
 // Description	-> Platform dependent mouse support for PS2
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 #include "platform/CMouse.h"
 #include <liblgkbm.h>
 
@@ -55,3 +55,5 @@ private:
 	bool													m_kmLive;
 	mouseData											m_mouseData;
 };
+
+#endif

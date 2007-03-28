@@ -4,7 +4,7 @@
 // Author		-> Dwain Skinner
 // Description	-> Platform dependent keyboard support
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 #include "platform/PlatformPCH.h"
 #include "platform/PS2/PS2Keyboard.h"
 #include "platform/PS2/util.h"
@@ -374,4 +374,4 @@ void CPlatformKeyboard::updateSpecialKeys( void )
 		}
 	}
 }
-
+#endif

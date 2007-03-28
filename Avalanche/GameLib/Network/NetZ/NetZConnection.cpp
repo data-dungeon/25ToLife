@@ -14,7 +14,6 @@
 **    $Author: Dwain_Skinner $
 **
 */
-
 // Precompiled header
 #include "Network/NetworkPCH.h"
 
@@ -64,7 +63,7 @@ void* OurMalloc(size_t stSize);
 void OurFree(void *pBlock);
 void AllocOurMem();
 void FreeOurMem();
-
+#if defined(NETWORKING)
 // Logging
 #define DEBUG_LOG_OUTPUT      1
 #define SCREEN_LOG_OUTPUT     2
@@ -95,9 +94,9 @@ LogDevice* CNetZConnection::s_eventLogDevice = NULL;
 //#define TRACK_ALLOCS
 #endif
 #endif
-
+#endif
 CSemaphore netzMemMutex(false);
-
+#if defined(NETWORKING)
 // Define static members
 CNetZConnection::EConfigurationStatus CNetZConnection::s_configured =
 		CNetZConnection::NOT_CONFIGURED;
@@ -470,7 +469,7 @@ u32 CNetZConnection::GetMemoryUsage(void)
 	MemoryManager *QuazalMemoryManager = MemoryManager::GetDefaultMemoryManager();
 	return(QuazalMemoryManager->GetMemoryUsage( ));
 }
-
+#endif
 ////////////////////////////// Memory Management ///////////////////////////////
 
 #ifdef COLLECT_MEMORY_STATS
@@ -1039,7 +1038,7 @@ void FreeOurMem( void )
 
 	StatReset();
 }
-
+#if defined(NETWORKING)
 ///////////////////////////// Performance Counters /////////////////////////////
 
 /******************************************************************************/
@@ -1900,3 +1899,4 @@ void CNetZConnection::LoadNetworkConfigSettings(void)
 	if (traceMigration)
 		s_netSettings.d_traceFlags |= D_TRACE_MIGRATION;
 }
+#endif

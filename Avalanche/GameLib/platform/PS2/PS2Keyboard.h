@@ -4,7 +4,7 @@
 // Author		-> Dwain Skinner
 // Description	-> Platform dependent keyboard support
 // ----------------------------------------------------------------------------
-
+#if defined(NETWORKING)
 #include "platform/CKeyboard.h"
 #include <liblgkbm.h>
 
@@ -59,3 +59,4 @@ private:
 	bool													m_lArrow;
 	bool													m_rArrow;
 };
+#endif

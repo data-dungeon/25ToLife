@@ -22,7 +22,8 @@
 #endif
 
 // Define the IOPBOOTIMAGE as null to not reboot the iop
-#define IOPBOOTIMAGE (g_regionUSA ? "DATA_PS2\\IOP\\SCEA\\DNAS300.IMG" : "DATA_PS2\\IOP\\SCEE\\DNAS300.IMG" )
+//#define IOPBOOTIMAGE (g_regionUSA ? "DATA_PS2\\IOP\\SCEA\\DNAS300.IMG" : "DATA_PS2\\IOP\\SCEE\\DNAS300.IMG" )
+#define IOPBOOTIMAGE ("DATA_PS2\\IOP\\IOPRP300.IMG" )
 
 // for getting region and initial PAL flag
 extern void SetRegionAndPAL();
@@ -212,8 +213,9 @@ bool PS2App::HasTTYOutput()
 void PS2App::FinishInitialize()
 {
 	// Setup the network stuff
+#if defined(NETWORKING)
 	SetupNetworkAdapter();
-
+#endif
 	//initialize memory card subsys
 	sceMcInit();
 

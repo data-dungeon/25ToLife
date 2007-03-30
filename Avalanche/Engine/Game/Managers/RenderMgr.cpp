@@ -70,13 +70,13 @@ static ts_RenderMgr RenderMgrInit = {
 
 //yuch-- this doesn't belong in the render manager!!!	maybe the gamestate???
 	INVALID_HANDLE,		// t_Handle	WorldDBHandle;
-#ifndef CONSUMER_BUILD
+#ifndef CONSUMER_BUILDxxx
 	true,						// bool		bLighting;
 	true,						// bool		bFogEnable;
 	true,						// bool		bVertexColors;
 #endif
 	false,					// bool		bWireframe;
-#ifndef CONSUMER_BUILD
+#ifndef CONSUMER_BUILDxxx
 	false,					// bool		bBackfaceCullPatch;
 	false,					// bool		bForceZoom;
 	0.0f,						// float		fForceZoom;

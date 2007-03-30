@@ -187,7 +187,7 @@ void ScreenOnlineProfile::OnScreenIntro( void )
 
 static	ts_SaveProfile		LoadedProfile;
 static	ts_CMemCardFiles	fi;
-
+bool jjsIgnoreErrors = false;
 void ScreenOnlineProfile::OnScreenUpdate()
 {
 	int					i;
@@ -209,6 +209,7 @@ void ScreenOnlineProfile::OnScreenUpdate()
 		{
 			#if defined (PS2)
 			Ignore = true;
+			jjsIgnoreErrors = true;
 			#endif
 			g_FrontEnd.ClosePopup("SCREEN_ID_POPUPDIALOG");
 			g_MemCardManager->GetFilesOnAllCards( SAVEGAME_FILENAME, SAVEGAME_SEARCH_MASK, Ignore );
@@ -279,6 +280,7 @@ void ScreenOnlineProfile::OnScreenUpdate()
 			{
 #if defined (PS2)
 				Ignore = true;
+				jjsIgnoreErrors = true;
 #endif
 				g_MemCardManager->GetFilesOnAllCards( SAVEGAME_FILENAME, SAVEGAME_SEARCH_MASK, Ignore );
 				m_MemCardState = ONLINEPROFILE_GET_PROFILES_RESULT;
@@ -293,7 +295,7 @@ void ScreenOnlineProfile::OnScreenUpdate()
 			#if defined(PS2)
 			m_CardID = ((PS2MemCard*)g_MemCardPtr)->CardID(g_MemCardManager->GetPort());
 			#endif
-
+			jjsIgnoreErrors = false;
 			m_ProfilesFound = g_MemCardManager->GetNumFilesOnCard();
 
 			if( m_ProfilesFound == 0 )

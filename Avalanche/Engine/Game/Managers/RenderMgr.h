@@ -219,13 +219,13 @@ inline bool RenderMgr__CartoonRenderer(void);
 struct ts_RenderMgr
 {
 	t_Handle	WorldDBHandle;
-#ifndef CONSUMER_BUILD
+#ifndef CONSUMER_BUILDxxx
 	bool		bLighting;
 	bool		bFogEnable;
 	bool		bVertexColors;
 #endif
 	bool		bWireframe;
-#ifndef CONSUMER_BUILD
+#ifndef CONSUMER_BUILDxxx
 	bool		bBackfaceCullPatch;
 	bool		bForceZoom;
 	float		fForceZoom;

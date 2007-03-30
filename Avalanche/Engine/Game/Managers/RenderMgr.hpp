@@ -18,7 +18,7 @@ inline bool RenderMgr__WireframeOn(void)
 	return(RenderMgr.bWireframe);
 }
 
-#ifndef CONSUMER_BUILD
+#ifndef CONSUMER_BUILDxxx
 
 /* render control variable state */
 

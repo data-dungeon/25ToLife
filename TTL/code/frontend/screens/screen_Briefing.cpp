@@ -576,7 +576,7 @@ void ScreenObjectiveSummary::OnScreenIntro( void )
 			SetObjective( i , s );
 			SetObjectiveCompleted( i , g_secondaryObjective.IsObjectiveMet( o ) );
 			g_secondaryObjective.GetRewardString( o , s );
-			SetReward( i , s );
+			SetReward( i , ""/*s*/ );
 			i++;
 		}
 		done = g_secondaryObjective.GetNextPrimaryObjective( o );
@@ -593,7 +593,7 @@ void ScreenObjectiveSummary::OnScreenIntro( void )
 			SetObjective( i , s );
 			SetObjectiveCompleted( i , g_secondaryObjective.IsObjectiveMet( o ) );
 			g_secondaryObjective.GetRewardString( o , s );
-			SetReward( i , s );
+			SetReward( i , ""/*s*/ );
 			done = g_secondaryObjective.GetNextBonusObjective( o );
 			i++;
 		}
@@ -616,7 +616,7 @@ void ScreenObjectiveSummary::OnScreenIntro( void )
 			SetObjective( i , s );
 			SetObjectiveCompleted( i , g_secondaryObjective.IsObjectiveMet( o ) );
 			g_secondaryObjective.GetRewardString( o , s );
-			SetReward( i , s );
+			SetReward( i , ""/*s*/ );
 			done = g_secondaryObjective.GetNextStatObjective( o );
 			i++;
 		}

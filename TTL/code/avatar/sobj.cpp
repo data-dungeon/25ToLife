@@ -2073,6 +2073,11 @@ void SecondaryObjective::CDeath::HandleMessage( void* i_data , ActorHandle i_sen
 				continue;
 			}
 
+			// don't reset tags.
+			if( i == 0 && objectives[ i ][ j ].getObjectiveType()==O_HUMAN_SHIELD /*&& objectives[ i ][ j ].currentObjState!=O_COMPLETE*/ )	//JJS 
+			{
+				continue;
+			}
 			objectives[ i ][ j ].numItemsObtained = objectivesSave[ i ][ j ].numItemsObtained;
 			objectives[ i ][ j ].currentObjState = objectivesSave[ i ][ j ].currentObjState;
 			objectives[ i ][ j ].visible = objectivesSave[ i ][ j ].visible;

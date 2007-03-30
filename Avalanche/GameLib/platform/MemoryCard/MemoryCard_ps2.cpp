@@ -421,7 +421,7 @@ void	CMemoryCard_PS2::PollCards()
 	if (PollCount > 100000)
 		PollCount = 0;
 }
-
+extern bool jjsIgnoreErrors;
 //--------------------------------------------------------------//
 void	CMemoryCard_PS2::Load()
 {
@@ -462,7 +462,7 @@ void	CMemoryCard_PS2::Load()
 
 			result = g_MemCardMgr.Exists(g_MemCardManager->GetPort());
 		}
-		g_MemCardManager->SetResult(result == MEMCARD_RESULT_NODATA ? MEMCARD_RESULT_NODATA : MEMCARD_RESULT_BADDATA);
+		g_MemCardManager->SetResult((result == MEMCARD_RESULT_NODATA || result == MEMCARD_RESULT_NOCARD)? result : MEMCARD_RESULT_BADDATA);
 		HandleResult();
 		return;
 	}
@@ -1858,7 +1858,10 @@ void	CMemoryCard_PS2::HandleResult()
 			g_MemCardManager->SetPopupExitResult(PR_NOCARD_CANCEL);
 			g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
 			g_MemCardManager->RemovePopup();
-			g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
+			if (g_MemCardManager->GetState() == g_MemCardManager->CMEMORYCARD_DELETE)
+				g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_GET_FILES_ON_CARD);
+			else
+				g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
 
 //pab			if (g_MemCardManager->GetState() == g_MemCardManager->CMEMORYCARD_SAVE || g_MemCardManager->GetState() == g_MemCardManager->CMEMORYCARD_STARTUP)
 //pab				g_MemCardManager->SetNoSave(true);
@@ -1902,12 +1905,20 @@ void	CMemoryCard_PS2::HandleResult()
 
 			if (g_MemCardManager->PopupResult() == MC_NO)
 			{
-				g_MemCardManager->DisplayPopup(CMEMCARDMSG_FORMAT_CANCELLED, MC_OK, MC_OK, MC_OK);
-				WaitOnResult();
-//				g_MemCardManager->SetPopupExitResult(PR_FORMAT_NO);
-//				g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
-//				g_MemCardManager->RemovePopup();
-//				g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);	// retry save
+				if(jjsIgnoreErrors)
+				{
+					g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
+					g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
+				}
+				else
+				{
+					g_MemCardManager->DisplayPopup(CMEMCARDMSG_FORMAT_CANCELLED, MC_OK, MC_OK, MC_OK);
+					WaitOnResult();
+					g_MemCardManager->SetPopupExitResult(PR_FORMAT_NO);
+					g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
+					g_MemCardManager->RemovePopup();
+					g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);	// retry save
+				}
 				break;	// they declined format, so break out and try "save" state again.
 			}
 
@@ -1918,11 +1929,18 @@ void	CMemoryCard_PS2::HandleResult()
 					g_MemCardManager->GetState() == g_MemCardManager->CMEMORYCARD_GET_FILES_ON_CARD ||
 					g_MemCardManager->GetState() == g_MemCardManager->CMEMORYCARD_GET_FILES_ON_ALL_CARDS)
 		{
-			g_MemCardManager->DisplayPopup(CMEMCARDMSG_UNFORMATTED_CARD_OK, MC_OK, MC_OK, MC_OK);
-			WaitOnResult();
-			g_MemCardManager->SetPopupExitResult(PR_FORMAT_CANCEL);
-			g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
-			g_MemCardManager->RemovePopup();
+			if(jjsIgnoreErrors)
+			{
+				g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
+			}
+			else
+			{
+				g_MemCardManager->DisplayPopup(CMEMCARDMSG_UNFORMATTED_CARD_OK, MC_OK, MC_OK, MC_OK);
+				WaitOnResult();
+				g_MemCardManager->SetPopupExitResult(PR_FORMAT_CANCEL);
+				g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
+				g_MemCardManager->RemovePopup();
+			}
 			g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
 			break;
 		}
@@ -2115,16 +2133,24 @@ void	CMemoryCard_PS2::HandleResult()
 	case	MEMCARD_RESULT_NODATA:
 		g_MemCardManager->SetPopupTitle("");
 
-		g_MemCardManager->DisplayPopup(CMEMCARDMSG_NO_VALID_SAVE, MC_CANCEL, MC_RETRY, MC_RETRY, MC_CANCEL);
-		WaitOnResult();
-
-		if (g_MemCardManager->PopupResult() == MC_CANCEL)
+		if(jjsIgnoreErrors)
 		{
-			g_MemCardManager->SetPopupExitResult(PR_NO_VALID_SAVE_CANCEL);
 			g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
-			g_MemCardManager->RemovePopup();
 			g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
-			break;
+		}
+		else
+		{
+			g_MemCardManager->DisplayPopup(CMEMCARDMSG_NO_VALID_SAVE, MC_CANCEL, MC_RETRY, MC_RETRY, MC_CANCEL);
+			WaitOnResult();
+
+			if (g_MemCardManager->PopupResult() == MC_CANCEL)
+			{
+				g_MemCardManager->SetPopupExitResult(PR_NO_VALID_SAVE_CANCEL);
+				g_MemCardManager->SetInProgress(g_MemCardManager->CMEMORYCARD_NOTHING_IN_PROGRESS);
+				g_MemCardManager->RemovePopup();
+				g_MemCardManager->SetState(g_MemCardManager->CMEMORYCARD_IDLE);
+				break;
+			}
 		}
 		break;
 

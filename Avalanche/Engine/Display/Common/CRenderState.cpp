@@ -452,7 +452,7 @@ void RenderState__Default( void )
 	RenderState__Request( RS_ENV_MAPPING, RS_FALSE );
 	RenderState__Request( RS_OVERRIDE_COLOR, RS_FALSE );
 
-#ifndef CONSUMER_BUILD
+#ifndef CONSUMER_BUILDxxx
 	if ( RenderMgr__ForceAlphaTest() )
 	{
 		RenderState__Request( RS_ALPHAFUNC, RS_ALPHAFUNC_GREATER );
